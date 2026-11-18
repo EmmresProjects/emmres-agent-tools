@@ -1,0 +1,142 @@
+{
+  "$schema": "pec.recipes/1",
+  "description": "Packaging recipes executed by tools-pec-packager.py. Every option can be overridden with --set KEY=VALUE. Defaults here are the single source of truth for the CLI and the knowledge file.",
+  "recipes": {
+    "single-bundle": {
+      "title": "Single-bundle compressor",
+      "handler": "single_bundle",
+      "description": "Compress an approved input set into one archive with a clear root layout and a completion manifest.",
+      "produces": "one archive + pec-package-manifest.json + pec-package-index.md",
+      "options": {
+        "format": {"default": "zip", "help": "zip | tar.gz | tar.xz | tar | 7z"},
+        "level": {"default": 6, "help": "compression level 0-9"},
+        "root_folder": {"default": null, "help": "top-level folder inside the archive"},
+        "name": {"default": null, "help": "archive filename (default bundle-YYYYMMDD.<format>)"}
+      }
+    },
+    "separate-zip": {
+      "title": "Separate zip per group",
+      "handler": "separate_zip",
+      "description": "Create one archive per top-level folder, extension, or size class according to reusable grouping rules.",
+      "produces": "one archive per group + group manifest",
+      "options": {
+        "group_by": {"default": "top-level", "help": "top-level | extension | size-class"},
+        "format": {"default": "zip", "help": "archive format for each group"},
+        "level": {"default": 6, "help": "compression level 0-9"}
+      }
+    },
+    "source-release": {
+      "title": "Source release packager",
+      "handler": "source_release",
+      "description": "Deterministic source archive with generated files and secrets excluded, licenses kept, plus a round-trip check.",
+      "produces": "release archive + manifest + round-trip verification note",
+      "options": {
+        "version": {"default": "v1", "help": "release label used in the archive name"},
+        "format": {"default": "tar.gz", "help": "tar.gz | zip | tar.xz"},
+        "level": {"default": 6, "help": "compression level 0-9"},
+        "root_folder": {"default": "release", "help": "top-level folder inside the archive"},
+        "deterministic": {"default": true, "help": "zero timestamps and stable ordering"},
+        "round_trip": {"default": true, "help": "extract and re-hash the result before publishing"},
+        "include": {"default": null, "help": "optional list of glob patterns to include"},
+        "exclude": {"default": null, "help": "extra exclusion glob patterns"}
+      }
+    },
+    "project-handoff": {
+      "title": "Project handoff packager",
+      "handler": "project_handoff",
+      "description": "Clean project bundle containing the required files plus generated HANDOFF.md instructions.",
+      "produces": "handoff archive including HANDOFF.md + manifest",
+      "options": {
+        "project": {"default": null, "help": "project name used in the archive name"},
+        "owner": {"default": null, "help": "person or team receiving the handoff"},
+        "format": {"default": "zip", "help": "zip | tar.gz"},
+        "level": {"default": 6, "help": "compression level 0-9"},
+        "root_folder": {"default": "handoff", "help": "top-level folder inside the archive"},
+        "include": {"default": null, "help": "optional include globs"},
+        "exclude": {"default": null, "help": "extra exclusion globs"}
+      }
+    },
+    "evidence": {
+      "title": "Evidence collection packager",
+      "handler": "evidence",
+      "description": "Read-only, hash-verified collection with source paths, timestamps, and a chain-of-custody record.",
+      "produces": "evidence archive or directory with CUSTODY.json + manifest",
+      "options": {
+        "case_reference": {"default": "", "help": "case or ticket identifier"},
+        "collector": {"default": null, "help": "operator name recorded in custody"},
+        "read_only": {"default": true, "help": "set 0444 permissions on collected files"},
+        "archive": {"default": true, "help": "wrap the collection in a stored ZIP"},
+        "include": {"default": null, "help": "optional include globs"},
+        "exclude": {"default": null, "help": "optional exclusion globs"}
+      }
+    },
+    "dataset": {
+      "title": "Dataset delivery packager",
+      "handler": "dataset",
+      "description": "Partition a dataset into documented volumes with per-volume manifests and reconstruction instructions.",
+      "produces": "volumes/volume-*/ + per-volume manifests + RECONSTRUCTION.md",
+      "options": {
+        "volume_size": {"default": 0, "help": "target bytes per volume (0 = single volume)"},
+        "include": {"default": null, "help": "optional include globs"},
+        "exclude": {"default": null, "help": "optional exclusion globs"}
+      }
+    },
+    "media": {
+      "title": "Media delivery packager",
+      "handler": "media",
+      "description": "Group masters, proxies, captions, artwork and metadata by content type without recompression.",
+      "produces": "media/<category>/ tree (+ optional archive)",
+      "options": {
+        "deliverable": {"default": null, "help": "deliverable label used in archive names"},
+        "archive": {"default": false, "help": "also build one archive of the media tree"},
+        "format": {"default": "zip", "help": "archive format when archive=true"},
+        "level": {"default": 0, "help": "0 stores media without recompression"},
+        "include": {"default": null, "help": "optional include globs"},
+        "exclude": {"default": null, "help": "optional exclusion globs"}
+      }
+    },
+    "update-patch": {
+      "title": "Update patch packager",
+      "handler": "update_patch",
+      "description": "Bundle only changed and added files between two trees, plus rollback information and verification data.",
+      "produces": "patch files + ROLLBACK.json + manifest",
+      "options": {}
+    },
+    "redacted": {
+      "title": "Redacted sharing packager",
+      "handler": "redacted",
+      "description": "Exclude sensitive paths, record omissions in OMITTED.md, and publish an auditable manifest.",
+      "produces": "shared tree or ZIP + OMITTED.md + manifest",
+      "options": {
+        "label": {"default": "package", "help": "label used in the archive name"},
+        "archive": {"default": true, "help": "publish as a ZIP"},
+        "include": {"default": null, "help": "optional include globs"},
+        "exclude": {"default": null, "help": "extra exclusion globs"}
+      }
+    },
+    "compliance-evidence": {
+      "title": "Compliance evidence packager",
+      "handler": "compliance_evidence",
+      "description": "Bundle manifests, checksums, scan output and policy decisions for review without shipping content.",
+      "produces": "compliance/ tree with EVIDENCE-SUMMARY.json",
+      "options": {
+        "evidence_files": {"default": [], "help": "files or directories to include as evidence"},
+        "policy_reference": {"default": "", "help": "policy or control identifier"},
+        "reviewer": {"default": "", "help": "reviewer name recorded in the summary"}
+      }
+    },
+    "retention-labels": {
+      "title": "Retention policy packager",
+      "handler": "retention_labels",
+      "description": "Emit retention and classification labels for a file set without altering the data.",
+      "produces": "retention/RETENTION.json + manifest",
+      "options": {
+        "retention_days": {"default": 365, "help": "retention period recorded per file"},
+        "classification": {"default": "internal", "help": "public | internal | confidential | restricted"},
+        "legal_hold": {"default": false, "help": "mark every file as under legal hold"},
+        "include": {"default": null, "help": "optional include globs"},
+        "exclude": {"default": null, "help": "optional exclusion globs"}
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Offline Production Report",
+  "format": "docx",
+  "dest": "report.docx",
+  "blocks": [
+    {"type": "heading", "level": 1, "text": "Summary"},
+    {"type": "paragraph", "text": "An editable document created without network services."},
+    {"type": "table", "rows": [["Check", "Result"], ["Native structure", "Review required"]]}
+  ]
+}

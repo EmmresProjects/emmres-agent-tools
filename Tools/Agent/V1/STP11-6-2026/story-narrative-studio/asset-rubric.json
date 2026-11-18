@@ -1,0 +1,299 @@
+{
+ "schema": "story-narrative-studio/rubric",
+ "schema_version": 1,
+ "scale": {
+  "min": 1,
+  "max": 5,
+  "anchor_note": "1 = disruptive, 3 = publishable with revision, 5 = production ready."
+ },
+ "dimensions": [
+  {
+   "id": "coherence",
+   "label": "Coherence",
+   "weight": 9,
+   "question": "Do events, facts, and knowledge states agree with each other across the whole work?",
+   "anchors": {
+    "1": "Contradictions break the read.",
+    "3": "No major contradiction; two or three loose facts.",
+    "5": "Every fact, knowledge state, and time reference reconciles."
+   },
+   "auto_checks": [
+    "continuity",
+    "timeline_order",
+    "unresolved_promise"
+   ]
+  },
+  {
+   "id": "causality",
+   "label": "Causal Drive",
+   "weight": 9,
+   "question": "Does each scene cause the next through character choice rather than coincidence?",
+   "anchors": {
+    "1": "Scenes are a list of events.",
+    "3": "Most scenes link by consequence; some by convenience.",
+    "5": "Every scene is caused by and causes another."
+   },
+   "auto_checks": [
+    "but_therefore",
+    "scene_goal_present",
+    "coincidence_flag"
+   ]
+  },
+  {
+   "id": "character_agency",
+   "label": "Character Agency",
+   "weight": 8,
+   "question": "Do characters make costly choices that drive the plot, including the antagonist?",
+   "anchors": {
+    "1": "Events happen to passive characters.",
+    "3": "Protagonist makes most key choices.",
+    "5": "Every principal, including opposition, chooses under pressure with cost."
+   },
+   "auto_checks": [
+    "agency_verbs",
+    "passive_construction",
+    "antagonist_initiative"
+   ]
+  },
+  {
+   "id": "character_depth",
+   "label": "Character Depth",
+   "weight": 8,
+   "question": "Do characters hold contradictory wants, specific habits, and stakes they can lose?",
+   "anchors": {
+    "1": "Characters are functions.",
+    "3": "Motivation is clear; contradiction is thin.",
+    "5": "Each principal wants two incompatible things."
+   },
+   "auto_checks": [
+    "want_need_defined",
+    "speech_distinctness"
+   ]
+  },
+  {
+   "id": "theme_integration",
+   "label": "Theme Integration",
+   "weight": 8,
+   "question": "Does the thematic question get tested by action and consequence rather than stated?",
+   "anchors": {
+    "1": "Theme is announced in dialogue and never tested.",
+    "3": "Theme is present in the climax.",
+    "5": "Theme is argued by every major character's outcome."
+   },
+   "auto_checks": [
+    "theme_stated_check",
+    "thematic_question_present"
+   ]
+  },
+  {
+   "id": "structure",
+   "label": "Structural Integrity",
+   "weight": 8,
+   "question": "Does the work hit its promised turning points at the right proportion of length?",
+   "anchors": {
+    "1": "No recognisable turn or act boundary.",
+    "3": "Turns exist but drift in placement.",
+    "5": "Every promised turn lands with a cause and a cost."
+   },
+   "auto_checks": [
+    "beat_coverage",
+    "act_balance",
+    "turning_point_cost"
+   ]
+  },
+  {
+   "id": "pacing",
+   "label": "Pacing and Tension",
+   "weight": 8,
+   "question": "Does tension escalate with variation and does scene length match pressure?",
+   "anchors": {
+    "1": "Flat or uniformly loud.",
+    "3": "Escalates with one sag.",
+    "5": "Rising pressure, deliberate rests, no sag over one beat."
+   },
+   "auto_checks": [
+    "tension_curve",
+    "scene_length_variation",
+    "sag_detection"
+   ]
+  },
+  {
+   "id": "prose_clarity",
+   "label": "Prose Clarity",
+   "weight": 8,
+   "question": "Is the prose concrete, syntactically varied, and free of hedge and abstraction stacking?",
+   "anchors": {
+    "1": "Dense abstraction and tangled syntax.",
+    "3": "Readable with occasional fog.",
+    "5": "Concrete, rhythmic, no wasted sentence."
+   },
+   "auto_checks": [
+    "hedge_density",
+    "abstract_noun_density",
+    "sentence_variation",
+    "adverb_density",
+    "cliche_scan",
+    "filter_word_density"
+   ]
+  },
+  {
+   "id": "originality",
+   "label": "Originality",
+   "weight": 7,
+   "question": "Does the work combine its influences into a specific, unrepeatable expression?",
+   "anchors": {
+    "1": "Reproduces a familiar work nearly intact.",
+    "3": "Familiar furniture with one fresh angle.",
+    "5": "Specific premise, voice, and structure that could only be this work."
+   },
+   "auto_checks": [
+    "cliche_scan",
+    "premise_specificity",
+    "trope_reliance"
+   ]
+  },
+  {
+   "id": "emotional_impact",
+   "label": "Emotional Impact",
+   "weight": 8,
+   "question": "Does the work earn feeling through cost, specificity, and withheld explanation?",
+   "anchors": {
+    "1": "Emotion is announced.",
+    "3": "One earned emotional peak.",
+    "5": "Every act pays an emotional debt it opened."
+   },
+   "auto_checks": [
+    "stated_emotion",
+    "stakes_specificity",
+    "promise_payoff"
+   ]
+  },
+  {
+   "id": "dialogue_economy",
+   "label": "Dialogue and Voice",
+   "weight": 7,
+   "question": "Does each speaker sound distinct, and does dialogue do work beyond information transfer?",
+   "anchors": {
+    "1": "Interchangeable speakers explaining plot.",
+    "3": "Distinct protagonist; others blend.",
+    "5": "Every speaker is identifiable with tags removed; subtext carries the scene."
+   },
+   "auto_checks": [
+    "speech_distinctness",
+    "as_you_know_bob",
+    "tag_density",
+    "exposition_dialogue"
+   ]
+  },
+  {
+   "id": "format_readiness",
+   "label": "Format Readiness",
+   "weight": 7,
+   "question": "Does the deliverable match the production format's real constraints?",
+   "anchors": {
+    "1": "Cannot be produced in the stated medium.",
+    "3": "Mostly producible with rework.",
+    "5": "Meets every stated budget and platform constraint."
+   },
+   "auto_checks": [
+    "length_budget",
+    "page_or_panel_budget",
+    "node_or_route_validity"
+   ]
+  },
+  {
+   "id": "audience_fit",
+   "label": "Audience Fit",
+   "weight": 7,
+   "question": "Does content, vocabulary, and pacing match the declared audience envelope?",
+   "anchors": {
+    "1": "Violates the audience envelope.",
+    "3": "Occasional mismatch.",
+    "5": "Every scene fits the envelope."
+   },
+   "auto_checks": [
+    "reading_level",
+    "content_boundary_scan"
+   ]
+  },
+  {
+   "id": "representation_ethics",
+   "label": "Rights and Representation",
+   "weight": 8,
+   "question": "Are identities, cultures, and real persons handled with source discipline and consent?",
+   "anchors": {
+    "1": "Stereotype or real-person harm.",
+    "3": "Neutral but under-researched.",
+    "5": "Sources logged, sensitivity reviewed, invention labelled."
+   },
+   "auto_checks": [
+    "real_person_scan",
+    "stereotype_scan",
+    "sourcing_gaps"
+   ]
+  }
+ ],
+ "format_thresholds": {
+  "default": {
+   "min_total": 3.4,
+   "block_below": {
+    "coherence": 3,
+    "format_readiness": 3,
+    "representation_ethics": 3
+   }
+  },
+  "novel": {
+   "min_total": 3.6,
+   "block_below": {
+    "coherence": 3,
+    "causality": 3
+   }
+  },
+  "short-story": {
+   "min_total": 3.4,
+   "block_below": {
+    "coherence": 3,
+    "pacing": 3
+   }
+  },
+  "screenplay": {
+   "min_total": 3.5,
+   "block_below": {
+    "causality": 3,
+    "dialogue_economy": 3
+   }
+  },
+  "comic": {
+   "min_total": 3.4,
+   "block_below": {
+    "format_readiness": 3
+   }
+  },
+  "visual-novel": {
+   "min_total": 3.5,
+   "block_below": {
+    "format_readiness": 3,
+    "coherence": 3
+   }
+  },
+  "children": {
+   "min_total": 3.6,
+   "block_below": {
+    "audience_fit": 4,
+    "representation_ethics": 4
+   }
+  },
+  "ya": {
+   "min_total": 3.5,
+   "block_below": {
+    "audience_fit": 4
+   }
+  }
+ },
+ "severity_weights": {
+  "critical": 4.0,
+  "high": 2.5,
+  "medium": 1.0,
+  "low": 0.4
+ }
+}

@@ -1,0 +1,432 @@
+{
+  "pack_name": "pptx-agent-core-rules",
+  "pack_version": "1.0",
+  "schema_version": "1.0",
+  "description": "45 production rules across geometry, typography, colour/contrast, accessibility, structure, content, links, media, compatibility, performance, and security. Severity can be overridden per rule; rules can be disabled by id.",
+  "params": {
+    "min_font_pt": 14,
+    "min_title_pt": 24,
+    "min_contrast_normal": 4.5,
+    "min_contrast_large": 3.0,
+    "large_text_pt": 18,
+    "edge_margin_in": 0.3,
+    "overflow_tolerance": 1.12,
+    "max_slide_budget": 40,
+    "max_file_mb": 60,
+    "max_image_pixels": 3840,
+    "large_media_mb": 10,
+    "duplicate_media_min_kb": 64,
+    "max_title_chars": 90,
+    "max_bullets_per_shape": 7,
+    "max_bullet_chars": 180
+  },
+  "severity_overrides": {},
+  "disabled_rules": [],
+  "rules": [
+    {
+      "id": "GEO001",
+      "title": "Shape outside the slide canvas",
+      "category": "geometry",
+      "severity": "error",
+      "fixable": true,
+      "description": "Any shape whose bounding box extends beyond the slide edge.",
+      "fix": "Move or resize the shape inside the canvas."
+    },
+    {
+      "id": "GEO002",
+      "title": "Text inside the safe-margin band",
+      "category": "geometry",
+      "severity": "warning",
+      "fixable": true,
+      "description": "Text that sits closer than edge_margin_in to any slide edge.",
+      "fix": "Reposition the text to the theme margin grid."
+    },
+    {
+      "id": "GEO003",
+      "title": "Overlapping text frames",
+      "category": "geometry",
+      "severity": "warning",
+      "fixable": false,
+      "description": "Two text-bearing shapes overlap by 20 percent or more of the smaller one.",
+      "fix": "Separate the frames or merge them into one."
+    },
+    {
+      "id": "GEO004",
+      "title": "Zero-size shape",
+      "category": "geometry",
+      "severity": "error",
+      "fixable": false,
+      "description": "A shape with zero or negative width or height, which can break rendering.",
+      "fix": "Delete the shape or restore its geometry."
+    },
+    {
+      "id": "GEO005",
+      "title": "Text hidden behind an opaque shape",
+      "category": "geometry",
+      "severity": "error",
+      "fixable": false,
+      "description": "A text-bearing shape is almost fully covered by an opaque shape that sits above it in the z-order, so the text is invisible in the rendered slide.",
+      "fix": "Move the covering shape behind the text, shrink it, or remove its fill."
+    },
+    {
+      "id": "TYP001",
+      "title": "Font size below minimum",
+      "category": "typography",
+      "severity": "error",
+      "fixable": true,
+      "description": "Explicit body text smaller than audit.min_font_pt.",
+      "fix": "Raise the size to the minimum and re-check overflow."
+    },
+    {
+      "id": "TYP002",
+      "title": "Font outside the approved list",
+      "category": "typography",
+      "severity": "warning",
+      "fixable": true,
+      "description": "A run uses a font family not in audit.font_allowlist.",
+      "fix": "Substitute an approved font."
+    },
+    {
+      "id": "TYP003",
+      "title": "Mixed font families in one text box",
+      "category": "typography",
+      "severity": "warning",
+      "fixable": true,
+      "description": "More than two font families inside a single text frame.",
+      "fix": "Unify to one or two families."
+    },
+    {
+      "id": "TYP004",
+      "title": "Estimated text overflow",
+      "category": "typography",
+      "severity": "error",
+      "fixable": false,
+      "description": "Rendered text height exceeds the shape height by more than overflow_tolerance (font-metric estimate).",
+      "fix": "Shorten the copy or enlarge the frame."
+    },
+    {
+      "id": "TYP005",
+      "title": "Empty placeholder",
+      "category": "typography",
+      "severity": "warning",
+      "fixable": true,
+      "description": "A placeholder with no text is left on the slide.",
+      "fix": "Remove the empty placeholder."
+    },
+    {
+      "id": "TYP006",
+      "title": "Title below minimum size",
+      "category": "typography",
+      "severity": "warning",
+      "fixable": false,
+      "description": "A title run smaller than audit.min_title_pt.",
+      "fix": "Set the title to the theme title size."
+    },
+    {
+      "id": "COL001",
+      "title": "Contrast below WCAG",
+      "category": "colour",
+      "severity": "error",
+      "fixable": false,
+      "description": "Text/background contrast below 4.5:1 (3:1 for large text).",
+      "fix": "Choose a text colour with sufficient contrast."
+    },
+    {
+      "id": "COL002",
+      "title": "Text invisible on background",
+      "category": "colour",
+      "severity": "error",
+      "fixable": true,
+      "description": "Text colour is identical to the effective background.",
+      "fix": "Recolour the text for visibility."
+    },
+    {
+      "id": "A11Y001",
+      "title": "Slide has no title",
+      "category": "accessibility",
+      "severity": "error",
+      "fixable": false,
+      "description": "No title placeholder or detectable title text.",
+      "fix": "Add a title that states the slide message."
+    },
+    {
+      "id": "A11Y002",
+      "title": "Missing alt text",
+      "category": "accessibility",
+      "severity": "error",
+      "fixable": true,
+      "description": "A picture, chart, or media shape has no alt text.",
+      "fix": "Add descriptive alt text; mark decorative art as decorative."
+    },
+    {
+      "id": "A11Y003",
+      "title": "Title not first in reading order",
+      "category": "accessibility",
+      "severity": "warning",
+      "fixable": true,
+      "description": "The title placeholder is not the first text shape in the shape tree.",
+      "fix": "Move the title to the front of the reading order."
+    },
+    {
+      "id": "A11Y004",
+      "title": "Duplicate slide titles",
+      "category": "accessibility",
+      "severity": "warning",
+      "fixable": false,
+      "description": "Two or more slides share the same title, which confuses navigation and screen readers.",
+      "fix": "Give each slide a distinct, descriptive title."
+    },
+    {
+      "id": "A11Y005",
+      "title": "Table missing header row",
+      "category": "accessibility",
+      "severity": "warning",
+      "fixable": true,
+      "description": "A table does not mark its first row as a header.",
+      "fix": "Enable 'Header Row' on the table."
+    },
+    {
+      "id": "A11Y006",
+      "title": "Chart without a title",
+      "category": "accessibility",
+      "severity": "warning",
+      "fixable": false,
+      "description": "A chart has no chart title, so its message is unclear out of context.",
+      "fix": "Add a chart title or keep the slide title descriptive."
+    },
+    {
+      "id": "A11Y007",
+      "title": "Speaker notes missing",
+      "category": "accessibility",
+      "severity": "info",
+      "fixable": false,
+      "description": "More than half of the slides have no speaker notes.",
+      "fix": "Add notes so the deck can be delivered consistently."
+    },
+    {
+      "id": "A11Y008",
+      "title": "Raw URL as link text",
+      "category": "accessibility",
+      "severity": "info",
+      "fixable": false,
+      "description": "Hyperlink text is a bare URL instead of descriptive text.",
+      "fix": "Use descriptive link text."
+    },
+    {
+      "id": "STR001",
+      "title": "Empty slide",
+      "category": "structure",
+      "severity": "error",
+      "fixable": false,
+      "description": "A slide with no text, picture, chart, or table.",
+      "fix": "Delete the slide or add content."
+    },
+    {
+      "id": "STR002",
+      "title": "Deck exceeds the slide budget",
+      "category": "structure",
+      "severity": "warning",
+      "fixable": false,
+      "description": "Slide count above max_slide_budget.",
+      "fix": "Split the deck or trim content."
+    },
+    {
+      "id": "STR003",
+      "title": "Placeholder text found",
+      "category": "structure",
+      "severity": "error",
+      "fixable": false,
+      "description": "Placeholder strings such as 'lorem ipsum', 'TODO', or 'TBD' remain.",
+      "fix": "Replace the placeholder with final copy."
+    },
+    {
+      "id": "STR004",
+      "title": "Title too long",
+      "category": "structure",
+      "severity": "warning",
+      "fixable": false,
+      "description": "Title longer than max_title_chars characters.",
+      "fix": "Shorten the title to a single clear line."
+    },
+    {
+      "id": "STR005",
+      "title": "Too many bullets in one box",
+      "category": "structure",
+      "severity": "info",
+      "fixable": false,
+      "description": "More than max_bullets_per_shape paragraphs in one text box.",
+      "fix": "Split the content across slides."
+    },
+    {
+      "id": "CNT001",
+      "title": "Overlong bullet",
+      "category": "content",
+      "severity": "info",
+      "fixable": false,
+      "description": "A bullet longer than max_bullet_chars characters.",
+      "fix": "Tighten the sentence or move detail to notes."
+    },
+    {
+      "id": "LNK001",
+      "title": "Blocked hyperlink protocol",
+      "category": "links",
+      "severity": "error",
+      "fixable": true,
+      "description": "A hyperlink uses a blocked protocol (javascript:, data:, vbscript:, file:).",
+      "fix": "Remove or replace the unsafe link."
+    },
+    {
+      "id": "LNK002",
+      "title": "External web links present",
+      "category": "links",
+      "severity": "info",
+      "fixable": false,
+      "description": "The deck contains http(s) links that will not work offline.",
+      "fix": "Confirm the links are reachable for the delivery context."
+    },
+    {
+      "id": "LNK003",
+      "title": "Broken internal slide jump",
+      "category": "links",
+      "severity": "error",
+      "fixable": false,
+      "description": "A slide-jump action does not resolve to an existing slide.",
+      "fix": "Repoint the action to a live slide."
+    },
+    {
+      "id": "MED001",
+      "title": "Empty media part",
+      "category": "media",
+      "severity": "error",
+      "fixable": false,
+      "description": "A media part has zero bytes and will not play or display.",
+      "fix": "Replace or remove the media."
+    },
+    {
+      "id": "MED002",
+      "title": "Large media part",
+      "category": "media",
+      "severity": "warning",
+      "fixable": false,
+      "description": "A media part larger than large_media_mb.",
+      "fix": "Compress or link the media externally."
+    },
+    {
+      "id": "MED003",
+      "title": "Image resolution above target",
+      "category": "media",
+      "severity": "warning",
+      "fixable": false,
+      "description": "A picture's pixel edge exceeds max_image_pixels for its placement.",
+      "fix": "Run optimize to downscale the image."
+    },
+    {
+      "id": "CMP001",
+      "title": "Embedded OLE object",
+      "category": "compatibility",
+      "severity": "warning",
+      "fixable": false,
+      "description": "An embedded OLE object may not render in web or mobile viewers.",
+      "fix": "Convert the object to an image or native shape."
+    },
+    {
+      "id": "CMP002",
+      "title": "3D model part present",
+      "category": "compatibility",
+      "severity": "info",
+      "fixable": false,
+      "description": "3D models need recent PowerPoint builds and do not render on the web.",
+      "fix": "Provide a 2D fallback image."
+    },
+    {
+      "id": "CMP003",
+      "title": "Vector media may vary",
+      "category": "compatibility",
+      "severity": "warning",
+      "fixable": false,
+      "description": "EMF/WMF/SVG parts render differently across platforms.",
+      "fix": "Provide a PNG fallback for critical graphics."
+    },
+    {
+      "id": "CMP004",
+      "title": "Unapproved fonts used",
+      "category": "compatibility",
+      "severity": "warning",
+      "fixable": false,
+      "description": "Deck fonts outside audit.font_allowlist may substitute on other machines.",
+      "fix": "Switch to approved fonts or embed them at export."
+    },
+    {
+      "id": "CMP005",
+      "title": "Morph transition used",
+      "category": "compatibility",
+      "severity": "info",
+      "fixable": false,
+      "description": "Morph transitions require PowerPoint 2019 or Microsoft 365.",
+      "fix": "Confirm the target audience can play Morph."
+    },
+    {
+      "id": "PERF001",
+      "title": "File size above budget",
+      "category": "performance",
+      "severity": "error",
+      "fixable": false,
+      "description": "File larger than max_file_mb.",
+      "fix": "Run optimize and remove unused media."
+    },
+    {
+      "id": "PERF002",
+      "title": "Duplicate media",
+      "category": "performance",
+      "severity": "warning",
+      "fixable": false,
+      "description": "Byte-identical media is stored more than once.",
+      "fix": "Deduplicate the media parts."
+    },
+    {
+      "id": "PERF003",
+      "title": "Unreferenced media",
+      "category": "performance",
+      "severity": "warning",
+      "fixable": false,
+      "description": "Media parts that no slide relationship references.",
+      "fix": "Drop the unused parts with optimize --drop-unused-media."
+    },
+    {
+      "id": "SEC001",
+      "title": "VBA macro project present",
+      "category": "security",
+      "severity": "warning",
+      "fixable": false,
+      "description": "The package contains a macro project; macros are disabled by default and may be blocked by policy.",
+      "fix": "Remove the macro or distribute as .pptm with a clear trust note."
+    },
+    {
+      "id": "SEC002",
+      "title": "External relationship targets",
+      "category": "security",
+      "severity": "info",
+      "fixable": false,
+      "description": "The package links to external resources.",
+      "fix": "Confirm every external target is trusted and reachable."
+    },
+    {
+      "id": "SEC003",
+      "title": "Embedded file/object",
+      "category": "security",
+      "severity": "warning",
+      "fixable": false,
+      "description": "Embedded files must be reviewed before distribution.",
+      "fix": "Remove or sanitise the embedded content."
+    },
+    {
+      "id": "SEC004",
+      "title": "Executable or macro-enabled content",
+      "category": "security",
+      "severity": "error",
+      "fixable": false,
+      "description": "The package embeds executables or macro-enabled documents.",
+      "fix": "Remove the content and rebuild the deck."
+    }
+  ]
+}

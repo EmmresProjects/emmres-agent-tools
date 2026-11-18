@@ -1,0 +1,2543 @@
+{
+ "tool": "spreadsheet-data-finance",
+ "version": "1.0.0",
+ "source_catalog": "Spreadsheet, Data & Finance Skill Catalog (340 skills / 34 categories)",
+ "status_legend": {
+  "implemented": "runs natively in this Skill Tool through the named command",
+  "assisted": "the named command performs the deterministic part; the rest is guidance or operator work",
+  "external": "requires a platform, credential or runtime this tool does not include; use the named command to plan and prepare"
+ },
+ "limits": {
+  "max_rows_default": 200000,
+  "max_file_mb_default": 200,
+  "unsupported_by_design": [
+   "VBA/Office Scripts execution",
+   "Power Query M / DAX / data model",
+   "network, database, mailbox and PDF-extraction connectors",
+   "geocoding and basemaps",
+   "native pivot tables and slicers",
+   "Excel recalculation engine (values are not recalculated)",
+   "secure deletion and retention enforcement"
+  ]
+ },
+ "categories": [
+  {
+   "index": 1,
+   "category": "Universal Spreadsheet Intake and Compatibility",
+   "purpose": "Understand and inspect any source file safely",
+   "skills": [
+    {
+     "name": "Universal Workbook Reader",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "read",
+     "status": "implemented"
+    },
+    {
+     "name": "Workbook Structure Mapper",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "structure",
+     "status": "implemented"
+    },
+    {
+     "name": "Legacy Spreadsheet Converter",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "convert",
+     "status": "implemented",
+     "note": "legacy .xls route needs the optional xlrd package"
+    },
+    {
+     "name": "Delimited File Dialect Detector",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dialect",
+     "status": "implemented"
+    },
+    {
+     "name": "Encoding and Locale Resolver",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "encoding",
+     "status": "implemented"
+    },
+    {
+     "name": "Corrupt Workbook Triage",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "triage",
+     "status": "implemented"
+    },
+    {
+     "name": "External Link Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "links",
+     "status": "implemented"
+    },
+    {
+     "name": "Hidden Content Inspector",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "hidden",
+     "status": "implemented"
+    },
+    {
+     "name": "Workbook Version Comparator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "compare",
+     "status": "implemented"
+    },
+    {
+     "name": "Spreadsheet Import Manifest Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "manifest",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "category": "Workbook Creation and Layout Design",
+   "purpose": "Design and generate workbook structure and layout",
+   "skills": [
+    {
+     "name": "Professional Workbook Architect",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "implemented"
+    },
+    {
+     "name": "Executive Dashboard Workbook Maker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "implemented"
+    },
+    {
+     "name": "Form-Driven Spreadsheet Maker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "implemented"
+    },
+    {
+     "name": "Multi-Sheet Template Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "implemented"
+    },
+    {
+     "name": "Grid and Alignment Perfectionist",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "layout",
+     "status": "implemented"
+    },
+    {
+     "name": "Workbook Navigation Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "nav",
+     "status": "implemented"
+    },
+    {
+     "name": "Print-Ready Sheet Composer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "print-setup",
+     "status": "implemented"
+    },
+    {
+     "name": "Accessible Spreadsheet Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "qa-gate",
+     "status": "assisted",
+     "note": "accessibility checks are automated; design guidance is in knowledge-readme.md"
+    },
+    {
+     "name": "Branded Spreadsheet Theme Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "implemented"
+    },
+    {
+     "name": "Workbook Style System Manager",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "category": "Cell Editing, Formatting, and Precision",
+   "purpose": "Edit cells, formats and layout precisely",
+   "skills": [
+    {
+     "name": "Precision Cell Editor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "set-cells",
+     "status": "implemented"
+    },
+    {
+     "name": "Bulk Range Transformer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "bulk",
+     "status": "implemented"
+    },
+    {
+     "name": "Number Format Specialist",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "number-format",
+     "status": "implemented"
+    },
+    {
+     "name": "Conditional Formatting Engineer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "cond-format",
+     "status": "implemented"
+    },
+    {
+     "name": "Merged Cell Remediation Specialist",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "merge-audit",
+     "status": "implemented"
+    },
+    {
+     "name": "Row and Column Layout Optimizer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "layout",
+     "status": "implemented"
+    },
+    {
+     "name": "Formula-Preserving Sort and Filter Editor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "sort",
+     "status": "implemented"
+    },
+    {
+     "name": "Comment and Note Manager",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "set-cells",
+     "status": "implemented"
+    },
+    {
+     "name": "Hyperlink and Cross-Sheet Reference Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "nav",
+     "status": "implemented"
+    },
+    {
+     "name": "Edit Impact Previewer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "deps",
+     "status": "assisted",
+     "note": "lists dependents for a saved workbook; no live preview"
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "category": "Formula Engineering and Calculation Logic",
+   "purpose": "Author, trace and repair formulas",
+   "skills": [
+    {
+     "name": "Formula Authoring Expert",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "eval",
+     "status": "implemented"
+    },
+    {
+     "name": "Formula Debugger",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "deps",
+     "status": "implemented"
+    },
+    {
+     "name": "Dynamic Array Formula Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "eval",
+     "status": "assisted",
+     "note": "engine covers classic formulas; spill operators are not evaluated"
+    },
+    {
+     "name": "Lookup Modernization Specialist",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "explain",
+     "status": "assisted",
+     "note": "modernisation advice is textual"
+    },
+    {
+     "name": "LET and LAMBDA Formula Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "explain",
+     "status": "assisted",
+     "note": "LET/LAMBDA are not evaluated by this engine"
+    },
+    {
+     "name": "Date and Time Logic Specialist",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "eval",
+     "status": "implemented"
+    },
+    {
+     "name": "Text Parsing Formula Engineer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "eval",
+     "status": "implemented"
+    },
+    {
+     "name": "Error Handling Formula Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "explain",
+     "status": "implemented"
+    },
+    {
+     "name": "Formula Consistency Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "hardcode",
+     "status": "implemented"
+    },
+    {
+     "name": "Calculation Performance Optimizer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "scan",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "category": "Tables, Named Ranges, and Structured Models",
+   "purpose": "Structure tables, names and models",
+   "skills": [
+    {
+     "name": "Excel Table Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "implemented"
+    },
+    {
+     "name": "Named Range Architect",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "implemented"
+    },
+    {
+     "name": "Structured Reference Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "implemented"
+    },
+    {
+     "name": "Relational Workbook Modeler",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "relationships are structural, not a Power Pivot model"
+    },
+    {
+     "name": "Master Data Table Manager",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "profile",
+     "status": "assisted",
+     "note": "master-data quality report"
+    },
+    {
+     "name": "Dimension and Fact Table Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "star-schema layout only"
+    },
+    {
+     "name": "Slowly Changing Dimension Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "window",
+     "status": "assisted",
+     "note": "effective-dated change detection"
+    },
+    {
+     "name": "Workbook Data Dictionary Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "profile",
+     "status": "assisted",
+     "note": "data dictionary built from profile output"
+    },
+    {
+     "name": "Key Integrity Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dedupe",
+     "status": "implemented"
+    },
+    {
+     "name": "Schema Evolution Manager",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "compare",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "category": "Data Cleaning and Preparation",
+   "purpose": "Repair data quality with traceability",
+   "skills": [
+    {
+     "name": "Data Cleaning Workbench",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "clean",
+     "status": "implemented"
+    },
+    {
+     "name": "Duplicate Record Resolver",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dedupe",
+     "status": "implemented"
+    },
+    {
+     "name": "Missing Data Treatment Planner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "clean",
+     "status": "implemented"
+    },
+    {
+     "name": "Outlier Review Assistant",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "outliers",
+     "status": "implemented"
+    },
+    {
+     "name": "Address and Contact Normalizer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "clean",
+     "status": "implemented"
+    },
+    {
+     "name": "Category Standardization Mapper",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "crosswalk",
+     "status": "implemented"
+    },
+    {
+     "name": "Unit Conversion and Harmonization",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "clean",
+     "status": "assisted",
+     "note": "numeric/date harmonisation only; no unit table"
+    },
+    {
+     "name": "Date Repair Specialist",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "clean",
+     "status": "implemented"
+    },
+    {
+     "name": "Data Type Enforcement Engine",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "enforce",
+     "status": "implemented"
+    },
+    {
+     "name": "Clean Data Reconciliation Checker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "reconcile",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "category": "Data Validation, Forms, and Controlled Entry",
+   "purpose": "Control entry with validation and forms",
+   "skills": [
+    {
+     "name": "Data Validation Rule Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "validations",
+     "status": "implemented"
+    },
+    {
+     "name": "Cascading Dropdown Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "validations",
+     "status": "assisted",
+     "note": "dependent lists must reference helper ranges you define"
+    },
+    {
+     "name": "Spreadsheet Form Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "implemented"
+    },
+    {
+     "name": "Survey Response Workbook Maker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "implemented"
+    },
+    {
+     "name": "Intake and Request Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "implemented"
+    },
+    {
+     "name": "Approval Form Workflow Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "review-pack",
+     "status": "assisted",
+     "note": "approval artefacts, not live workflow"
+    },
+    {
+     "name": "Error Message and Input Guidance Writer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "validations",
+     "status": "implemented"
+    },
+    {
+     "name": "Protected Entry Zone Manager",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "protect",
+     "status": "implemented"
+    },
+    {
+     "name": "Offline Data Collection Template",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "implemented"
+    },
+    {
+     "name": "Form Submission Consolidator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "join",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 8,
+   "category": "Data Integration, Import, and Export",
+   "purpose": "Import, flatten and export data",
+   "skills": [
+    {
+     "name": "Multi-File Data Consolidator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "manifest",
+     "status": "assisted",
+     "note": "consolidation runs through read/join/batch"
+    },
+    {
+     "name": "Power Query Transformation Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "Power Query M steps are out of runtime scope"
+    },
+    {
+     "name": "Database-to-Spreadsheet Connector",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "no database driver or credentials are used"
+    },
+    {
+     "name": "API Data Import Planner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "no network calls are made"
+    },
+    {
+     "name": "JSON and XML Flattener",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "flatten",
+     "status": "implemented"
+    },
+    {
+     "name": "PDF Table Import Coordinator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "PDF table extraction needs a parser that is not bundled"
+    },
+    {
+     "name": "Email Attachment Data Collector",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "no mailbox integration"
+    },
+    {
+     "name": "ERP Export Normalizer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "clean",
+     "status": "assisted",
+     "note": "column normalisation only"
+    },
+    {
+     "name": "CRM Export Normalizer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "clean",
+     "status": "assisted",
+     "note": "column normalisation only"
+    },
+    {
+     "name": "Clean Export Packager",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "read",
+     "status": "assisted",
+     "note": "exports csv/json/md through --export"
+    }
+   ]
+  },
+  {
+   "index": 9,
+   "category": "Joins, Reshaping, and Data Transformation",
+   "purpose": "Join, reshape and derive datasets",
+   "skills": [
+    {
+     "name": "Dataset Join Engineer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "join",
+     "status": "implemented"
+    },
+    {
+     "name": "Pivot and Unpivot Transformer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "pivot",
+     "status": "implemented",
+     "note": "unpivot via \"unpivot\" command",
+     "secondary_commands": [
+      "unpivot"
+     ]
+    },
+    {
+     "name": "Group and Aggregate Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "aggregate",
+     "status": "implemented"
+    },
+    {
+     "name": "Window Calculation Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "window",
+     "status": "implemented"
+    },
+    {
+     "name": "Crosswalk and Mapping Engine",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "crosswalk",
+     "status": "implemented"
+    },
+    {
+     "name": "Record Expansion and Allocation Engine",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "allocate",
+     "status": "implemented"
+    },
+    {
+     "name": "Sparse Matrix and Crosstab Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "pivot",
+     "status": "assisted",
+     "note": "crosstab form"
+    },
+    {
+     "name": "Time-Series Resampler",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "resample",
+     "status": "implemented"
+    },
+    {
+     "name": "Dataset Sampling Tool",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "sample",
+     "status": "implemented"
+    },
+    {
+     "name": "Transformation Lineage Recorder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "manifest",
+     "status": "assisted",
+     "note": "lineage steps are emitted by clean/join/pivot outputs"
+    }
+   ]
+  },
+  {
+   "index": 10,
+   "category": "Pivot Tables, Cubes, and Interactive Analysis",
+   "purpose": "Cross-tab and interactive analysis",
+   "skills": [
+    {
+     "name": "PivotTable Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "pivot",
+     "status": "implemented"
+    },
+    {
+     "name": "PivotChart Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "chart",
+     "status": "assisted",
+     "note": "renders the chart; native pivot charts are not created"
+    },
+    {
+     "name": "Slicer and Timeline Architect",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "assisted",
+     "note": "native filters only"
+    },
+    {
+     "name": "Data Model Relationship Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "data-model relationships require the Excel data model"
+    },
+    {
+     "name": "DAX Measure Author",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "DAX requires a data model engine"
+    },
+    {
+     "name": "Cube Formula Specialist",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "CUBE functions require an OLAP connection"
+    },
+    {
+     "name": "Drill-Down Analysis Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "deps",
+     "status": "assisted",
+     "note": "detail path via precedent tracing"
+    },
+    {
+     "name": "Pivot Refresh and Cache Manager",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "refresh orchestration is external"
+    },
+    {
+     "name": "Interactive Scenario Pivot",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "drivers",
+     "status": "assisted",
+     "note": "scenario inputs are parameter cells"
+    },
+    {
+     "name": "Pivot Accuracy Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "reconcile",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 11,
+   "category": "Charts, Graphs, and Data Visualization",
+   "purpose": "Render correct, honest charts",
+   "skills": [
+    {
+     "name": "Chart Selection Advisor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "chart-advice",
+     "status": "implemented"
+    },
+    {
+     "name": "Professional Chart Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "chart",
+     "status": "implemented"
+    },
+    {
+     "name": "Financial Chart Specialist",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "chart",
+     "status": "assisted",
+     "note": "finance-ready labels supported; not a template library"
+    },
+    {
+     "name": "Statistical Visualization Maker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "chart",
+     "status": "assisted",
+     "note": "distribution/scatter supported; control charts via control-chart"
+    },
+    {
+     "name": "Small Multiples Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "chart",
+     "status": "assisted",
+     "note": "emit repeated charts per facet"
+    },
+    {
+     "name": "Heatmap and Matrix Visualizer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "cond-format",
+     "status": "assisted",
+     "note": "heatmaps via color_scale rules"
+    },
+    {
+     "name": "Geographic Data Visualizer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "chart",
+     "status": "external",
+     "note": "no geocoding or basemap"
+    },
+    {
+     "name": "Chart Annotation Specialist",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "chart",
+     "status": "assisted",
+     "note": "titles/footnotes/tooltips provide annotation"
+    },
+    {
+     "name": "Chart Placement and Sizing Engine",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "assisted",
+     "note": "anchors are configurable"
+    },
+    {
+     "name": "Visualization Integrity Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "viz-audit",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 12,
+   "category": "Dashboard and KPI Systems",
+   "purpose": "Define KPIs and assemble dashboards",
+   "skills": [
+    {
+     "name": "KPI Definition Architect",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "kpi",
+     "status": "implemented"
+    },
+    {
+     "name": "Balanced Scorecard Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "scorecard workbook structure"
+    },
+    {
+     "name": "Operational Dashboard Maker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "implemented"
+    },
+    {
+     "name": "Financial Dashboard Maker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "implemented"
+    },
+    {
+     "name": "Sales Dashboard Maker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "implemented"
+    },
+    {
+     "name": "Marketing Dashboard Maker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "implemented"
+    },
+    {
+     "name": "HR Dashboard Maker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "assisted",
+     "note": "supplied workforce metrics only"
+    },
+    {
+     "name": "Project Portfolio Dashboard",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "implemented"
+    },
+    {
+     "name": "Dashboard Interaction Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "assisted",
+     "note": "filters are plain input cells"
+    },
+    {
+     "name": "Dashboard QA and Reconciliation",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "reconcile",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 13,
+   "category": "Accounting and General Ledger",
+   "purpose": "Ledger mechanics and controls",
+   "skills": [
+    {
+     "name": "Chart of Accounts Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "coa",
+     "status": "implemented"
+    },
+    {
+     "name": "Journal Entry Template Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "journal-check",
+     "status": "implemented"
+    },
+    {
+     "name": "General Ledger Analyzer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "gl-summary",
+     "status": "implemented"
+    },
+    {
+     "name": "Trial Balance Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "trial-balance",
+     "status": "implemented"
+    },
+    {
+     "name": "Account Reconciliation Maker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "reconcile",
+     "status": "assisted",
+     "note": "schedule supplied by the operator"
+    },
+    {
+     "name": "Accrual and Prepayment Scheduler",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "loan",
+     "status": "assisted",
+     "note": "accrual/release arithmetic for supplied amounts"
+    },
+    {
+     "name": "Fixed Asset Register",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "depreciation",
+     "status": "assisted",
+     "note": "register structure plus schedules"
+    },
+    {
+     "name": "Lease Accounting Schedule",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "lease",
+     "status": "implemented"
+    },
+    {
+     "name": "Intercompany Reconciliation",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "bank-recon",
+     "status": "assisted",
+     "note": "due-to/due-from matching"
+    },
+    {
+     "name": "Month-End Close Checklist",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "review-pack",
+     "status": "assisted",
+     "note": "checklist artefact"
+    }
+   ]
+  },
+  {
+   "index": 14,
+   "category": "Financial Statements and Reporting",
+   "purpose": "Statements, mapping and tie-out",
+   "skills": [
+    {
+     "name": "Income Statement Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "income-statement",
+     "status": "implemented"
+    },
+    {
+     "name": "Balance Sheet Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "balance-sheet",
+     "status": "implemented"
+    },
+    {
+     "name": "Cash Flow Statement Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "cash-flow",
+     "status": "implemented"
+    },
+    {
+     "name": "Statement of Changes in Equity Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "movement schedule structure"
+    },
+    {
+     "name": "Management Accounts Pack",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "assisted",
+     "note": "pack assembly from produced tables"
+    },
+    {
+     "name": "Consolidation Workbook Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "multi-entity consolidation is not automated"
+    },
+    {
+     "name": "Financial Statement Mapping Manager",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "income-statement",
+     "status": "assisted",
+     "note": "mapping is passed in as JSON/CSV"
+    },
+    {
+     "name": "Disclosure Support Schedule Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "disclosure schedules from supplied tables"
+    },
+    {
+     "name": "Financial Report Commentary Assistant",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "narrate",
+     "status": "implemented",
+     "note": "grounded in values only"
+    },
+    {
+     "name": "Financial Statement Tie-Out Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "reconcile",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 15,
+   "category": "Budgeting, Forecasting, and Planning",
+   "purpose": "Budgets, drivers and forecasts",
+   "skills": [
+    {
+     "name": "Annual Budget Model Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "drivers",
+     "status": "implemented"
+    },
+    {
+     "name": "Rolling Forecast Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "forecast",
+     "status": "assisted",
+     "note": "rolling logic from supplied actuals"
+    },
+    {
+     "name": "Driver-Based Planning Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "drivers",
+     "status": "implemented"
+    },
+    {
+     "name": "Department Budget Template",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "department template structure"
+    },
+    {
+     "name": "Headcount and Compensation Planner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "drivers",
+     "status": "assisted",
+     "note": "position/cost drivers"
+    },
+    {
+     "name": "Capital Expenditure Planner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "loan",
+     "status": "assisted",
+     "note": "capex spend profile"
+    },
+    {
+     "name": "Cash Forecasting Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "forecast",
+     "status": "assisted",
+     "note": "receipts/payments by period"
+    },
+    {
+     "name": "Scenario and Sensitivity Planner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "drivers",
+     "status": "assisted",
+     "note": "switchable scenario sets"
+    },
+    {
+     "name": "Top-Down Bottom-Up Reconciler",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "variance",
+     "status": "assisted",
+     "note": "gap calculation"
+    },
+    {
+     "name": "Plan Submission Consolidator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "join",
+     "status": "assisted",
+     "note": "submission consolidation"
+    }
+   ]
+  },
+  {
+   "index": 16,
+   "category": "Financial Modeling and Valuation",
+   "purpose": "Valuation and model integrity",
+   "skills": [
+    {
+     "name": "Three-Statement Model Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "statement linking structure; logic must be reviewed"
+    },
+    {
+     "name": "Discounted Cash Flow Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dcf",
+     "status": "implemented"
+    },
+    {
+     "name": "Comparable Companies Analysis",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "ratios",
+     "status": "assisted",
+     "note": "comps table arithmetic"
+    },
+    {
+     "name": "Precedent Transactions Analysis",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "ratios",
+     "status": "assisted",
+     "note": "transaction multiple arithmetic"
+    },
+    {
+     "name": "Merger and Acquisition Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dcf",
+     "status": "assisted",
+     "note": "deal structure is supplied, not modelled"
+    },
+    {
+     "name": "Leveraged Buyout Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "loan",
+     "status": "assisted",
+     "note": "debt tranche schedules"
+    },
+    {
+     "name": "Project Finance Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dcf",
+     "status": "assisted",
+     "note": "project cash flows supplied"
+    },
+    {
+     "name": "Startup Financial Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "drivers",
+     "status": "assisted",
+     "note": "driver tree"
+    },
+    {
+     "name": "Real Estate Investment Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dcf",
+     "status": "assisted",
+     "note": "property cash flows supplied"
+    },
+    {
+     "name": "Model Integrity and Circularity Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "scan",
+     "status": "assisted",
+     "note": "circular references and error values are detected"
+    }
+   ]
+  },
+  {
+   "index": 17,
+   "category": "Treasury, Cash, and Banking",
+   "purpose": "Cash, debt and banking",
+   "skills": [
+    {
+     "name": "Bank Reconciliation Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "bank-recon",
+     "status": "implemented"
+    },
+    {
+     "name": "Daily Cash Position Dashboard",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "assisted",
+     "note": "cash position from supplied balances"
+    },
+    {
+     "name": "Cash Application Matcher",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "bank-recon",
+     "status": "assisted",
+     "note": "receipt-to-invoice matching"
+    },
+    {
+     "name": "Payment Run Control Sheet",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "review-pack",
+     "status": "assisted",
+     "note": "payment run control checklist"
+    },
+    {
+     "name": "Debt Schedule Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "debt-schedule",
+     "status": "implemented"
+    },
+    {
+     "name": "Foreign Exchange Exposure Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "clean",
+     "status": "assisted",
+     "note": "exposure table preparation"
+    },
+    {
+     "name": "Hedge Effectiveness Support Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "hedge accounting needs policy and valuation inputs"
+    },
+    {
+     "name": "Liquidity Stress Tester",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "drivers",
+     "status": "assisted",
+     "note": "stress scenarios as driver changes"
+    },
+    {
+     "name": "Bank Fee Analyzer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "aggregate",
+     "status": "assisted",
+     "note": "fee classification then aggregation"
+    },
+    {
+     "name": "Treasury Control Checklist",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "review-pack",
+     "status": "assisted",
+     "note": "treasury control checklist"
+    }
+   ]
+  },
+  {
+   "index": 18,
+   "category": "Accounts Receivable, Payable, and Billing",
+   "purpose": "AR/AP mechanics and billing",
+   "skills": [
+    {
+     "name": "Accounts Receivable Aging",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "aging",
+     "status": "implemented"
+    },
+    {
+     "name": "Collection Prioritization Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "scorecard",
+     "status": "assisted",
+     "note": "ranking only; collection decisions stay human"
+    },
+    {
+     "name": "Invoice Register Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "invoice register structure"
+    },
+    {
+     "name": "Accounts Payable Aging",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "aging",
+     "status": "implemented"
+    },
+    {
+     "name": "Duplicate Invoice Detector",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dup-invoices",
+     "status": "implemented"
+    },
+    {
+     "name": "Purchase Order Invoice Match",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "po-match",
+     "status": "implemented"
+    },
+    {
+     "name": "Vendor Master Review",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dedupe",
+     "status": "assisted",
+     "note": "vendor master duplicate review"
+    },
+    {
+     "name": "Recurring Billing Schedule",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "revenue-recognition",
+     "status": "assisted",
+     "note": "billing schedule arithmetic"
+    },
+    {
+     "name": "Revenue Recognition Schedule",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "revenue-recognition",
+     "status": "implemented"
+    },
+    {
+     "name": "Credit and Collections Dashboard",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "assisted",
+     "note": "collections dashboard"
+    }
+   ]
+  },
+  {
+   "index": 19,
+   "category": "Tax, Compliance, and Regulatory Support",
+   "purpose": "Tax and regulatory support",
+   "skills": [
+    {
+     "name": "Tax Data Preparation Workbook",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "manifest",
+     "status": "assisted",
+     "note": "evidence pack inventory"
+    },
+    {
+     "name": "VAT or GST Reconciliation",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "vat-recon",
+     "status": "implemented"
+    },
+    {
+     "name": "Withholding Tax Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "tracker structure"
+    },
+    {
+     "name": "Corporate Tax Provision Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "provision model structure"
+    },
+    {
+     "name": "Transfer Pricing Data Pack",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "transfer pricing requires advisor-reviewed policy"
+    },
+    {
+     "name": "Regulatory Return Data Mapper",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "crosswalk",
+     "status": "implemented",
+     "note": "field-to-return mapping"
+    },
+    {
+     "name": "Compliance Calendar Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "calendar structure"
+    },
+    {
+     "name": "Audit Request List Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "request tracker structure"
+    },
+    {
+     "name": "Control Evidence Register",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "control evidence register"
+    },
+    {
+     "name": "Regulatory Reconciliation Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "reconcile",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 20,
+   "category": "Investment, Portfolio, and Market Analysis",
+   "purpose": "Portfolio and market analysis",
+   "skills": [
+    {
+     "name": "Investment Portfolio Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "position register structure"
+    },
+    {
+     "name": "Portfolio Performance Calculator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "portfolio",
+     "status": "implemented"
+    },
+    {
+     "name": "Asset Allocation Dashboard",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "assisted",
+     "note": "allocation vs target"
+    },
+    {
+     "name": "Fixed Income Analytics Sheet",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "bond analytics from supplied cash flows"
+    },
+    {
+     "name": "Equity Research Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dcf",
+     "status": "assisted",
+     "note": "valuation module for supplied forecasts"
+    },
+    {
+     "name": "Fund and ETF Comparison",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "aggregate",
+     "status": "assisted",
+     "note": "fund metric comparison"
+    },
+    {
+     "name": "Trade Blotter and Position Reconciler",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "bank-recon",
+     "status": "assisted",
+     "note": "trade-to-position matching"
+    },
+    {
+     "name": "Risk and Return Analyzer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "risk-metrics",
+     "status": "implemented"
+    },
+    {
+     "name": "Dividend and Income Forecast",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "forecast",
+     "status": "assisted",
+     "note": "income projection from history"
+    },
+    {
+     "name": "Investment Data Quality Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "enforce",
+     "status": "assisted",
+     "note": "type/range checks on price and identifier fields"
+    }
+   ]
+  },
+  {
+   "index": 21,
+   "category": "Sales, CRM, and Revenue Operations",
+   "purpose": "Sales and revenue operations",
+   "skills": [
+    {
+     "name": "Sales Pipeline Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "pipeline tracker structure"
+    },
+    {
+     "name": "Sales Forecast Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "forecast",
+     "status": "assisted",
+     "note": "weighted forecast from stage probabilities"
+    },
+    {
+     "name": "Quota and Commission Calculator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "allocate",
+     "status": "assisted",
+     "note": "payout allocation by attainment weights"
+    },
+    {
+     "name": "Price and Discount Analyzer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "variance",
+     "status": "assisted",
+     "note": "price/discount variance"
+    },
+    {
+     "name": "Customer Profitability Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "aggregate",
+     "status": "assisted",
+     "note": "profitability by customer"
+    },
+    {
+     "name": "Renewal and Churn Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "renewal tracker structure"
+    },
+    {
+     "name": "Sales Territory Planner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "allocate",
+     "status": "assisted",
+     "note": "territory allocation by driver"
+    },
+    {
+     "name": "Lead Funnel Analyzer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "aggregate",
+     "status": "assisted",
+     "note": "funnel stage counts"
+    },
+    {
+     "name": "Revenue Waterfall Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "chart",
+     "status": "assisted",
+     "note": "waterfall rendering"
+    },
+    {
+     "name": "CRM Data Hygiene Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "profile",
+     "status": "assisted",
+     "note": "hygiene findings from profiling"
+    }
+   ]
+  },
+  {
+   "index": 22,
+   "category": "Operations, Inventory, and Supply Chain",
+   "purpose": "Inventory and supply chain",
+   "skills": [
+    {
+     "name": "Inventory Register",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "inventory register structure"
+    },
+    {
+     "name": "Inventory Reorder Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "drivers",
+     "status": "assisted",
+     "note": "reorder point arithmetic"
+    },
+    {
+     "name": "Demand Forecasting Workbook",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "forecast",
+     "status": "assisted",
+     "note": "demand projection"
+    },
+    {
+     "name": "Purchase Planning Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "drivers",
+     "status": "assisted",
+     "note": "purchase plan from drivers"
+    },
+    {
+     "name": "Supplier Performance Scorecard",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "scorecard",
+     "status": "assisted",
+     "note": "weighted supplier scoring"
+    },
+    {
+     "name": "Production Planning Sheet",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "planning sheet structure"
+    },
+    {
+     "name": "Warehouse Cycle Count Planner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "sample",
+     "status": "assisted",
+     "note": "risk-based count selection"
+    },
+    {
+     "name": "Logistics Cost Analyzer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "aggregate",
+     "status": "assisted",
+     "note": "cost aggregation by lane"
+    },
+    {
+     "name": "Order Fulfillment Dashboard",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "dashboard",
+     "status": "assisted",
+     "note": "fulfilment dashboard"
+    },
+    {
+     "name": "Supply Chain Scenario Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "montecarlo",
+     "status": "assisted",
+     "note": "scenario simulation"
+    }
+   ]
+  },
+  {
+   "index": 23,
+   "category": "Project, Resource, and Work Management",
+   "purpose": "Projects and resources",
+   "skills": [
+    {
+     "name": "Project Plan Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "WBS structure"
+    },
+    {
+     "name": "Gantt Chart Spreadsheet Maker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "Gantt-style grid with conditional formatting"
+    },
+    {
+     "name": "Resource Capacity Planner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "allocate",
+     "status": "assisted",
+     "note": "capacity allocation"
+    },
+    {
+     "name": "Timesheet and Utilization Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "timesheet structure"
+    },
+    {
+     "name": "Project Budget and Forecast",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "variance",
+     "status": "assisted",
+     "note": "budget vs actual"
+    },
+    {
+     "name": "Risk and Issue Register",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "risk register structure"
+    },
+    {
+     "name": "Action and Decision Log",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "decision log structure"
+    },
+    {
+     "name": "Benefits Realization Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "benefits tracker"
+    },
+    {
+     "name": "Portfolio Prioritization Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "scorecard",
+     "status": "assisted",
+     "note": "prioritisation scoring"
+    },
+    {
+     "name": "Project Controls Reconciliation",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "reconcile",
+     "status": "assisted",
+     "note": "controls tie-out"
+    }
+   ]
+  },
+  {
+   "index": 24,
+   "category": "Human Resources and Workforce Planning",
+   "purpose": "Workforce planning",
+   "skills": [
+    {
+     "name": "Employee Master Register",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "employee register structure"
+    },
+    {
+     "name": "Headcount Reconciliation",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "reconcile",
+     "status": "assisted",
+     "note": "headcount tie-out"
+    },
+    {
+     "name": "Recruitment Pipeline Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "recruitment tracker"
+    },
+    {
+     "name": "Workforce Planning Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "drivers",
+     "status": "assisted",
+     "note": "workforce driver model"
+    },
+    {
+     "name": "Leave and Attendance Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "leave tracker structure"
+    },
+    {
+     "name": "Training Matrix",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "training matrix"
+    },
+    {
+     "name": "Performance Review Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "review tracker structure"
+    },
+    {
+     "name": "Compensation Review Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "drivers",
+     "status": "assisted",
+     "note": "salary review arithmetic"
+    },
+    {
+     "name": "Shift and Roster Planner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "allocate",
+     "status": "assisted",
+     "note": "roster allocation"
+    },
+    {
+     "name": "Workforce Data Privacy Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "privacy-scan",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 25,
+   "category": "Statistical Analysis and Experimentation",
+   "purpose": "Statistics and experiments",
+   "skills": [
+    {
+     "name": "Descriptive Statistics Analyzer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "describe",
+     "status": "implemented",
+     "secondary_commands": [
+      "describe",
+      "assumptions"
+     ]
+    },
+    {
+     "name": "Correlation and Association Analyzer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "correlate",
+     "status": "implemented",
+     "secondary_commands": [
+      "corrmatrix"
+     ]
+    },
+    {
+     "name": "Regression Analysis Workbook",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "regress",
+     "status": "implemented"
+    },
+    {
+     "name": "Hypothesis Testing Assistant",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "ttest",
+     "status": "implemented",
+     "note": "two-sample/paired/one-sample",
+     "secondary_commands": [
+      "ttest",
+      "proportions",
+      "chisquare"
+     ]
+    },
+    {
+     "name": "ANOVA and Group Comparison",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "ttest",
+     "status": "assisted",
+     "note": "pairwise comparisons only; no post-hoc corrections"
+    },
+    {
+     "name": "A/B Test Analyzer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "abtest",
+     "status": "implemented"
+    },
+    {
+     "name": "Sample Size and Power Calculator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "samplesize",
+     "status": "implemented"
+    },
+    {
+     "name": "Control Chart Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "control-chart",
+     "status": "implemented"
+    },
+    {
+     "name": "Monte Carlo Simulation Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "montecarlo",
+     "status": "implemented"
+    },
+    {
+     "name": "Statistical Assumption Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "assumptions",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 26,
+   "category": "Data Mining, Segmentation, and Predictive Models",
+   "purpose": "Segmentation and predictive support",
+   "skills": [
+    {
+     "name": "Customer Segmentation Workbook",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "rfm",
+     "status": "implemented"
+    },
+    {
+     "name": "Cohort Analysis Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "cohort",
+     "status": "implemented"
+    },
+    {
+     "name": "Churn Risk Scoring Sheet",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "scorecard",
+     "status": "assisted",
+     "note": "transparent score only; no automated decisions"
+    },
+    {
+     "name": "Lead Scoring Model",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "scorecard",
+     "status": "assisted",
+     "note": "transparent weights only"
+    },
+    {
+     "name": "Anomaly Detection Workbook",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "outliers",
+     "status": "assisted",
+     "note": "rule and robust-statistic flags"
+    },
+    {
+     "name": "Market Basket Analyzer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "basket",
+     "status": "implemented"
+    },
+    {
+     "name": "Forecast Accuracy Evaluator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "accuracy",
+     "status": "implemented"
+    },
+    {
+     "name": "Feature Engineering Table Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "window",
+     "status": "assisted",
+     "note": "lag/rolling features"
+    },
+    {
+     "name": "Model Scoring Template",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "scorecard",
+     "status": "assisted",
+     "note": "applies supplied weights"
+    },
+    {
+     "name": "Predictive Model Monitoring",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "regress",
+     "status": "assisted",
+     "note": "drift via refit comparison"
+    }
+   ]
+  },
+  {
+   "index": 27,
+   "category": "Automation, Macros, Scripts, and Office Integration",
+   "purpose": "Automation and batch execution",
+   "skills": [
+    {
+     "name": "VBA Macro Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "VBA generation needs Excel"
+    },
+    {
+     "name": "Office Scripts Automator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "Office Scripts run in Excel for the web"
+    },
+    {
+     "name": "Power Automate Spreadsheet Workflow",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "Power Automate flows are external"
+    },
+    {
+     "name": "Python Spreadsheet Automation",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "batch",
+     "status": "implemented"
+    },
+    {
+     "name": "R Spreadsheet Analysis Bridge",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "R runtime is not bundled"
+    },
+    {
+     "name": "Macro Security Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "structure",
+     "status": "assisted",
+     "note": "reports vbaProject presence; no code audit"
+    },
+    {
+     "name": "Refresh and Distribution Scheduler",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "batch",
+     "status": "assisted",
+     "note": "the runner exists; the scheduler is external"
+    },
+    {
+     "name": "Workbook Event Handler Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "event handlers require Excel"
+    },
+    {
+     "name": "Batch Workbook Processor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "batch",
+     "status": "implemented"
+    },
+    {
+     "name": "Automation Regression Tester",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "regression",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 28,
+   "category": "Collaboration, Review, and Workflow Control",
+   "purpose": "Review and release workflow",
+   "skills": [
+    {
+     "name": "Shared Workbook Collaboration Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "collaboration-friendly structure"
+    },
+    {
+     "name": "Review and Approval Workflow",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "review-pack",
+     "status": "implemented"
+    },
+    {
+     "name": "Change Request Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "change request tracker"
+    },
+    {
+     "name": "Assumption and Decision Register",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "assumption register workbook"
+    },
+    {
+     "name": "Workbook Issue Log",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "issue log workbook"
+    },
+    {
+     "name": "Evidence Link Manager",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "set-cells",
+     "status": "assisted",
+     "note": "evidence hyperlinks on cells"
+    },
+    {
+     "name": "Version Naming and Release Manager",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "review-pack",
+     "status": "assisted",
+     "note": "naming convention checklist"
+    },
+    {
+     "name": "Coauthoring Conflict Resolver",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "compare",
+     "status": "assisted",
+     "note": "diff-based conflict review"
+    },
+    {
+     "name": "Workbook Handoff Packager",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "export-gate",
+     "status": "assisted",
+     "note": "handoff pre-flight"
+    },
+    {
+     "name": "Review Completion Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "qa-gate",
+     "status": "assisted",
+     "note": "completion checks from supplied evidence"
+    }
+   ]
+  },
+  {
+   "index": 29,
+   "category": "Security, Privacy, and Governance",
+   "purpose": "Privacy, protection and governance",
+   "skills": [
+    {
+     "name": "Spreadsheet Privacy Scanner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "privacy-scan",
+     "status": "implemented"
+    },
+    {
+     "name": "Data Redaction and Masking Tool",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "redact",
+     "status": "implemented"
+    },
+    {
+     "name": "Workbook Protection Manager",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "protect",
+     "status": "implemented"
+    },
+    {
+     "name": "Access and Distribution Register",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "access register workbook"
+    },
+    {
+     "name": "Sensitive Formula and IP Protector",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "protect",
+     "status": "assisted",
+     "note": "structure protection; formula secrecy is not cryptography"
+    },
+    {
+     "name": "Metadata and Hidden Data Scrubber",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "scrub",
+     "status": "implemented"
+    },
+    {
+     "name": "Retention and Deletion Controller",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "plan",
+     "status": "external",
+     "note": "secure deletion is an operator action outside this tool"
+    },
+    {
+     "name": "Spreadsheet Risk Classification",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "risk-classify",
+     "status": "implemented"
+    },
+    {
+     "name": "End-User Computing Control Register",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "review-pack",
+     "status": "assisted",
+     "note": "control register artefact"
+    },
+    {
+     "name": "Secure Export Gate",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "export-gate",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 30,
+   "category": "Quality Assurance, Audit, and Error Prevention",
+   "purpose": "Quality gates and audit",
+   "skills": [
+    {
+     "name": "Workbook Quality Gate",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "qa-gate",
+     "status": "implemented"
+    },
+    {
+     "name": "Balance and Control Check Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "reconcile",
+     "status": "implemented"
+    },
+    {
+     "name": "Spreadsheet Error Scanner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "scan",
+     "status": "implemented"
+    },
+    {
+     "name": "Hardcode and Override Detector",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "hardcode",
+     "status": "implemented"
+    },
+    {
+     "name": "Boundary and Edge Case Tester",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "enforce",
+     "status": "assisted",
+     "note": "type/range exception reporting for boundary values"
+    },
+    {
+     "name": "Recalculation Consistency Tester",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "eval",
+     "status": "assisted",
+     "note": "re-evaluates formulas in the sandboxed engine"
+    },
+    {
+     "name": "Visual Layout Inspector",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "qa-gate",
+     "status": "assisted",
+     "note": "structural and print checks; no pixel rendering"
+    },
+    {
+     "name": "Workbook Performance Profiler",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "structure",
+     "status": "assisted",
+     "note": "formula/object counts; no timing benchmark"
+    },
+    {
+     "name": "Reconciliation and Tie-Out Engine",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "reconcile",
+     "status": "implemented"
+    },
+    {
+     "name": "Independent Spreadsheet Model Reviewer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "qa-gate",
+     "status": "assisted",
+     "note": "checklist-based review support"
+    }
+   ]
+  },
+  {
+   "index": 31,
+   "category": "Templates for Personal, Academic, and Small-Business Use",
+   "purpose": "Personal, academic and small-business templates",
+   "skills": [
+    {
+     "name": "Personal Budget Planner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "budget planner structure"
+    },
+    {
+     "name": "Household Expense Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "expense tracker structure"
+    },
+    {
+     "name": "Debt Repayment Planner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "loan",
+     "status": "implemented"
+    },
+    {
+     "name": "Savings Goal Calculator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "drivers",
+     "status": "assisted",
+     "note": "goal projection"
+    },
+    {
+     "name": "Student Gradebook",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "gradebook structure with weighted averages"
+    },
+    {
+     "name": "Research Data Collection Sheet",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "codebook-driven collection sheet"
+    },
+    {
+     "name": "Small-Business Bookkeeping Workbook",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "bookkeeping structure"
+    },
+    {
+     "name": "Event Budget and Guest Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "event budget structure"
+    },
+    {
+     "name": "Fitness and Habit Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "habit tracker structure"
+    },
+    {
+     "name": "Home Inventory Register",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "inventory register structure"
+    }
+   ]
+  },
+  {
+   "index": 32,
+   "category": "Spatial, Scientific, Engineering, and Specialized Sheets",
+   "purpose": "Scientific and engineering sheets",
+   "skills": [
+    {
+     "name": "Engineering Calculation Sheet Designer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "unit-aware calculation structure"
+    },
+    {
+     "name": "Laboratory Data Workbook",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "lab data capture structure"
+    },
+    {
+     "name": "Quality Inspection Sheet",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "inspection sheet structure"
+    },
+    {
+     "name": "Bill of Materials Manager",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "BOM structure"
+    },
+    {
+     "name": "Maintenance Schedule and Log",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "maintenance schedule structure"
+    },
+    {
+     "name": "Geospatial Coordinate Workbook",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "coordinate validation only"
+    },
+    {
+     "name": "Energy and Utility Analyzer",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "consumption/cost analysis structure"
+    },
+    {
+     "name": "Construction Quantity and Cost Sheet",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "quantity and cost structure"
+    },
+    {
+     "name": "Clinical Operations Data Tracker",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "build",
+     "status": "assisted",
+     "note": "operations tracker structure"
+    },
+    {
+     "name": "Specialized Unit and Significant-Figure Auditor",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "enforce",
+     "status": "assisted",
+     "note": "unit and precision checks on typed columns"
+    }
+   ]
+  },
+  {
+   "index": 33,
+   "category": "AI-Assisted Spreadsheet Intelligence",
+   "purpose": "Assisted generation and explanation",
+   "skills": [
+    {
+     "name": "Natural-Language Workbook Builder",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "assist-build",
+     "status": "implemented"
+    },
+    {
+     "name": "Spreadsheet Question Answering",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "read",
+     "status": "assisted",
+     "note": "returns data for the agent to reason over"
+    },
+    {
+     "name": "Formula Explanation Assistant",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "explain",
+     "status": "implemented"
+    },
+    {
+     "name": "Intent-to-Formula Generator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "eval",
+     "status": "assisted",
+     "note": "validates an intended formula against sample inputs"
+    },
+    {
+     "name": "Text-to-Chart Generator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "chart",
+     "status": "assisted",
+     "note": "advice plus rendering"
+    },
+    {
+     "name": "Workbook Repair Copilot",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "triage",
+     "status": "assisted",
+     "note": "diagnosis plus repair plan"
+    },
+    {
+     "name": "Data Insight Narrator",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "narrate",
+     "status": "implemented"
+    },
+    {
+     "name": "Spreadsheet Task Planner",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "task-plan",
+     "status": "implemented"
+    },
+    {
+     "name": "Human-in-the-Loop Spreadsheet Agent",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "batch",
+     "status": "assisted",
+     "note": "approval gates are built into mutating commands"
+    },
+    {
+     "name": "Agent Output Verifier",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "qa-gate",
+     "status": "implemented"
+    }
+   ]
+  },
+  {
+   "index": 34,
+   "category": "End-to-End Spreadsheet Power Tools",
+   "purpose": "End-to-end workbenches",
+   "skills": [
+    {
+     "name": "All-in-One Spreadsheet Studio",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "task-plan",
+     "status": "assisted",
+     "note": "umbrella workflows decompose into staged commands"
+    },
+    {
+     "name": "Finance and Accounting Workbench",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "task-plan",
+     "status": "assisted",
+     "note": "finance workflow decomposition"
+    },
+    {
+     "name": "Data Management Workbench",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "task-plan",
+     "status": "assisted",
+     "note": "data workflow decomposition"
+    },
+    {
+     "name": "Forms and Workflow Workbench",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "task-plan",
+     "status": "assisted",
+     "note": "forms workflow decomposition"
+    },
+    {
+     "name": "Visualization and Dashboard Workbench",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "task-plan",
+     "status": "assisted",
+     "note": "visualisation workflow decomposition"
+    },
+    {
+     "name": "Spreadsheet Migration Factory",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "batch",
+     "status": "assisted",
+     "note": "multi-file migration runs"
+    },
+    {
+     "name": "Recurring Report Factory",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "batch",
+     "status": "assisted",
+     "note": "recurring report runs with validation"
+    },
+    {
+     "name": "Financial Model Factory",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "assist-build",
+     "status": "assisted",
+     "note": "model scaffold then review"
+    },
+    {
+     "name": "Spreadsheet Control Center",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "risk-classify",
+     "status": "assisted",
+     "note": "control centre classification"
+    },
+    {
+     "name": "Complete Workbook Delivery Agent",
+     "description": "Open and interpret XLSX, XLSM, XLSB, XLS, ODS, CSV, TSV, TXT, XML, JSON, HTML tables, and exported report files while preserving source meaning",
+     "command": "qa-gate",
+     "status": "assisted",
+     "note": "delivery checklist"
+    }
+   ]
+  }
+ ],
+ "tool_commands": [
+  {
+   "command": "capabilities",
+   "purpose": "list every command and the catalog capability map"
+  },
+  {
+   "command": "catalog-parse",
+   "purpose": "parse a Markdown/HTML/plain Skill catalog into structured JSON"
+  },
+  {
+   "command": "plan",
+   "purpose": "map a request or catalog to an executable stage plan"
+  },
+  {
+   "command": "task-plan",
+   "purpose": "decompose a plain-language request into staged commands"
+  }
+ ]
+}

@@ -1,0 +1,1938 @@
+[
+  {
+    "id": "powerful-work-splitter",
+    "name": "Powerful Work Splitter",
+    "category": "Orchestration, Planning, and Work Splitting",
+    "description": "Evaluates every request before execution and decides whether one response is sufficient or staged work is safer. It scores scope, file volume, dependencies, tool calls, uncertainty, and verification burden; recommends a prompt count; asks the user to accept or override that count; labels each stage X of Y; pauses at checkpoints; accepts Continue or equivalent; and permits the user to expand or reduce Y midstream. It checks stage completion, remaining dependencies, uploaded-file availability, and whether the final stage includes assembly and polish. It returns an approved stage plan, checkpoint state, continuation instruction, and a verified final package.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "single-prompt-feasibility-assessor",
+    "name": "Single-Prompt Feasibility Assessor",
+    "category": "Orchestration, Planning, and Work Splitting",
+    "description": "Determines whether a task can be completed well in one response. It compares required artifacts, context size, tool limits, risk, and validation steps against a single-turn budget. It checks all requested outputs can be created and checked without deferring essential work. It returns a one-turn decision with reasons and a fallback staged plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "adaptive-prompt-count-estimator",
+    "name": "Adaptive Prompt Count Estimator",
+    "category": "Orchestration, Planning, and Work Splitting",
+    "description": "Recommends the number of execution stages. It converts work packages, review gates, file groups, and integration steps into a practical count and recalculates it when scope changes. It checks the count is neither artificially inflated nor too small for safe verification. It returns recommended, minimum, and user-selected stage counts.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "user-controlled-stage-negotiator",
+    "name": "User-Controlled Stage Negotiator",
+    "category": "Orchestration, Planning, and Work Splitting",
+    "description": "Lets the user choose a different stage count from the recommendation. It rebalances workload and quality gates across the chosen count without dropping requirements. It checks every requirement still has an owner stage and final verification. It returns a revised stage map and explicit trade-offs.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "checkpoint-and-continue-controller",
+    "name": "Checkpoint and Continue Controller",
+    "category": "Orchestration, Planning, and Work Splitting",
+    "description": "Stops at safe boundaries and resumes only after the user signals continuation. It recognizes Continue, proceed, go on, next, and equivalent intent while rejecting ambiguous scope-changing replies. It checks saved state identifies completed work, current files, next actions, and blockers. It returns a concise checkpoint receipt and the next completed stage.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "dynamic-stage-expansion-manager",
+    "name": "Dynamic Stage Expansion Manager",
+    "category": "Orchestration, Planning, and Work Splitting",
+    "description": "Extends an active plan when the user requests more stages or new complexity appears. It preserves completed stages, renumbers future stages, redistributes remaining work, and adds new validation gates. It checks prior output remains compatible with the expanded plan. It returns an updated X of Y plan with no lost work.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "dynamic-stage-compression-manager",
+    "name": "Dynamic Stage Compression Manager",
+    "category": "Orchestration, Planning, and Work Splitting",
+    "description": "Compresses an active plan when the user wants fewer stages. It merges compatible work packages while protecting critical checks and final assembly. It checks no safety, accuracy, or deliverable requirement is silently removed. It returns a compressed plan and disclosed quality trade-offs.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "dependency-aware-task-decomposer",
+    "name": "Dependency-Aware Task Decomposer",
+    "category": "Orchestration, Planning, and Work Splitting",
+    "description": "Breaks a goal into atomic, ordered work packages. It maps prerequisites, parallel branches, shared inputs, and integration points. It checks each package has clear inputs, outputs, pass conditions, and successor links. It returns a dependency graph and executable sequence.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "parallel-workstream-coordinator",
+    "name": "Parallel Workstream Coordinator",
+    "category": "Orchestration, Planning, and Work Splitting",
+    "description": "Identifies independent branches that can run in parallel. It separates research, drafting, coding, media, and validation streams and defines merge contracts. It checks parallel outputs use compatible names, schemas, and versions. It returns a parallel execution map and merge plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "critical-path-scheduler",
+    "name": "Critical Path Scheduler",
+    "category": "Orchestration, Planning, and Work Splitting",
+    "description": "Prioritizes tasks that control total completion time. It estimates duration, uncertainty, blockers, and downstream impact. It checks critical dependencies are completed before optional polish. It returns a critical path, buffer plan, and escalation triggers.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "milestone-gatekeeper",
+    "name": "Milestone Gatekeeper",
+    "category": "Orchestration, Planning, and Work Splitting",
+    "description": "Prevents later work from starting before required evidence exists. It applies entry and exit criteria to discovery, build, test, and release stages. It checks gate evidence is concrete and reproducible. It returns pass, repair, or blocked status with next action.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "final-assembly-orchestrator",
+    "name": "Final Assembly Orchestrator",
+    "category": "Orchestration, Planning, and Work Splitting",
+    "description": "Combines outputs from all stages into one coherent result. It resolves duplication, naming conflicts, formatting drift, broken references, and missing sections. It checks the assembled artifact opens correctly and satisfies the original request. It returns a polished final package and completion summary.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "intent-resolver",
+    "name": "Intent Resolver",
+    "category": "Intake, Scope, and Requirement Control",
+    "description": "Finds the user's real desired outcome from incomplete or informal instructions. It translates goals, constraints, examples, and exclusions into testable requirements. It checks assumptions are minimal, explicit, and reversible. It returns an outcome statement and requirement set.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "requirement-ledger",
+    "name": "Requirement Ledger",
+    "category": "Intake, Scope, and Requirement Control",
+    "description": "Maintains a living list of every explicit and implied requirement. It assigns identifiers, owners, status, evidence, and acceptance tests. It checks nothing is lost during revisions or multi-stage work. It returns a traceable requirement-to-output matrix.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "constraint-extractor",
+    "name": "Constraint Extractor",
+    "category": "Intake, Scope, and Requirement Control",
+    "description": "Detects limits on format, length, tools, tone, jurisdiction, time, and audience. It separates hard constraints from preferences and examples. It checks conflicts and impossible combinations are surfaced early. It returns a prioritized constraint register.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "ambiguity-triage",
+    "name": "Ambiguity Triage",
+    "category": "Intake, Scope, and Requirement Control",
+    "description": "Decides which uncertainties can be safely assumed and which require a question. It measures impact, reversibility, and risk before interrupting the user. It checks questions are asked only when answers materially change the result. It returns a resolved assumption list or one focused clarification.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "success-criteria-designer",
+    "name": "Success Criteria Designer",
+    "category": "Intake, Scope, and Requirement Control",
+    "description": "Converts broad quality goals into observable pass conditions. It defines correctness, completeness, usability, presentation, and handoff checks. It checks criteria can actually fail and are not vague praise. It returns an acceptance checklist.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "scope-boundary-guard",
+    "name": "Scope Boundary Guard",
+    "category": "Intake, Scope, and Requirement Control",
+    "description": "Prevents accidental expansion or omission. It tracks in-scope, out-of-scope, deferred, and newly requested work. It checks changes are reflected in schedule and stage count. It returns an updated scope baseline.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "change-request-integrator",
+    "name": "Change Request Integrator",
+    "category": "Intake, Scope, and Requirement Control",
+    "description": "Processes mid-project additions, removals, and substitutions. It assesses impact on files, dependencies, tests, and completed work. It checks the change does not silently invalidate prior stages. It returns a revised plan and affected-item list.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "assumption-register",
+    "name": "Assumption Register",
+    "category": "Intake, Scope, and Requirement Control",
+    "description": "Records provisional decisions made under missing information. It links each assumption to impact, evidence, and a trigger for rechecking. It checks temporary guesses are not treated as facts. It returns a reviewable assumption log.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "acceptance-test-author",
+    "name": "Acceptance Test Author",
+    "category": "Intake, Scope, and Requirement Control",
+    "description": "Writes practical tests for each deliverable. It covers normal, boundary, failure, recovery, accessibility, and clean-state use. It checks tests map directly to requirements. It returns an executable or inspectable test plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "definition-of-done-enforcer",
+    "name": "Definition-of-Done Enforcer",
+    "category": "Intake, Scope, and Requirement Control",
+    "description": "Blocks completion claims until all required artifacts and checks pass. It verifies content, structure, packaging, naming, and reopenability. It checks partial work is labeled accurately. It returns a completion decision with remaining defects if any.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "universal-file-intake",
+    "name": "Universal File Intake",
+    "category": "File Intake, Recovery, and Asset Management",
+    "description": "Inventories all attached and generated files before work begins. It records name, type, size, readability, duplication, and intended use. It checks every referenced file is present and accessible. It returns a file inventory and processing plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "missing-file-detector",
+    "name": "Missing File Detector",
+    "category": "File Intake, Recovery, and Asset Management",
+    "description": "Finds files mentioned by the user but unavailable to the agent. It compares instructions, links, manifests, and attachment inventory. It checks work does not proceed on fabricated content. It returns a precise re-upload request naming each missing file.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "corrupt-file-triage",
+    "name": "Corrupt File Triage",
+    "category": "File Intake, Recovery, and Asset Management",
+    "description": "Diagnoses unreadable or damaged files without overwriting originals. It checks signatures, containers, embedded relationships, encoding, and recoverable content. It checks recovery preserves the source and documents limitations. It returns a repaired copy or actionable recovery report.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "re-upload-recovery-coordinator",
+    "name": "Re-Upload Recovery Coordinator",
+    "category": "File Intake, Recovery, and Asset Management",
+    "description": "Restores interrupted work after a file is uploaded again. It matches the replacement to prior state, revalidates dependencies, and reruns affected checks. It checks stale results from the missing version are not reused. It returns a resumed plan from the exact safe checkpoint.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "archive-and-package-extractor",
+    "name": "Archive and Package Extractor",
+    "category": "File Intake, Recovery, and Asset Management",
+    "description": "Safely inspects ZIP, TAR, and nested packages. It prevents path traversal, inventories contents, and preserves directory structure. It checks expected files exist and suspicious entries are isolated. It returns an extraction directory and manifest.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "file-format-identifier",
+    "name": "File Format Identifier",
+    "category": "File Intake, Recovery, and Asset Management",
+    "description": "Identifies actual format rather than trusting the extension. It uses magic bytes, container structure, and parse tests. It checks mislabeled or unsupported files are flagged. It returns a verified format map.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "duplicate-and-version-resolver",
+    "name": "Duplicate and Version Resolver",
+    "category": "File Intake, Recovery, and Asset Management",
+    "description": "Detects duplicate, near-duplicate, and conflicting versions. It compares hashes, metadata, content, and modification history. It checks the selected source of truth is explicit. It returns a deduplicated set and version decision.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "asset-naming-normalizer",
+    "name": "Asset Naming Normalizer",
+    "category": "File Intake, Recovery, and Asset Management",
+    "description": "Applies consistent, portable file and folder names. It removes unsafe characters, resolves collisions, and preserves extensions. It checks links and scripts still resolve after renaming. It returns a normalized asset tree and rename map.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "cross-file-reference-validator",
+    "name": "Cross-File Reference Validator",
+    "category": "File Intake, Recovery, and Asset Management",
+    "description": "Checks links among documents, sheets, slides, code, and media. It finds broken paths, missing relationships, and stale references. It checks all internal dependencies resolve in the final package. It returns a reference repair report.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "clean-state-package-tester",
+    "name": "Clean-State Package Tester",
+    "category": "File Intake, Recovery, and Asset Management",
+    "description": "Copies the deliverable into a clean location and opens or runs it there. It detects hidden dependencies on temporary paths, caches, or local settings. It checks the recipient can use the package independently. It returns a clean-state pass result.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "research-question-builder",
+    "name": "Research Question Builder",
+    "category": "Research, Search, and Evidence",
+    "description": "Turns a broad topic into answerable subquestions. It defines evidence needs, date range, geography, source hierarchy, and exclusions. It checks subquestions collectively cover the decision. It returns a scoped research plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "authoritative-source-finder",
+    "name": "Authoritative Source Finder",
+    "category": "Research, Search, and Evidence",
+    "description": "Prioritizes primary and official sources. It locates standards, laws, product documentation, datasets, and original studies. It checks sources are current enough and directly support claims. It returns a source set with relevance notes.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "multi-source-evidence-synthesizer",
+    "name": "Multi-Source Evidence Synthesizer",
+    "category": "Research, Search, and Evidence",
+    "description": "Combines findings without flattening disagreements. It compares definitions, methods, dates, populations, and confidence. It checks conflicts and gaps remain visible. It returns a balanced synthesis with claim-level support.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "claim-verification-auditor",
+    "name": "Claim Verification Auditor",
+    "category": "Research, Search, and Evidence",
+    "description": "Tests each important factual claim against evidence. It checks names, dates, numbers, quotations, and causal wording. It checks unsupported claims are removed or clearly qualified. It returns a verified claim ledger.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "source-freshness-monitor",
+    "name": "Source Freshness Monitor",
+    "category": "Research, Search, and Evidence",
+    "description": "Detects when time-sensitive evidence may be stale. It checks publication date, update date, version, and superseding notices. It checks current claims use current sources. It returns a freshness status and refresh list.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "citation-integrity-checker",
+    "name": "Citation Integrity Checker",
+    "category": "Research, Search, and Evidence",
+    "description": "Ensures citations point to the correct supporting material. It checks source identity, locator, quotation fidelity, and claim scope. It checks citations are neither decorative nor misplaced. It returns a corrected citation set.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "conflicting-evidence-resolver",
+    "name": "Conflicting Evidence Resolver",
+    "category": "Research, Search, and Evidence",
+    "description": "Analyzes credible disagreement rather than choosing silently. It identifies methodological, jurisdictional, temporal, and definitional causes. It checks the final conclusion reflects uncertainty honestly. It returns a conflict matrix and bounded conclusion.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "dataset-provenance-tracker",
+    "name": "Dataset Provenance Tracker",
+    "category": "Research, Search, and Evidence",
+    "description": "Records where data came from and how it changed. It captures source, license, retrieval date, filters, transformations, and joins. It checks results can be reproduced. It returns a provenance record and transformation chain.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "literature-gap-mapper",
+    "name": "Literature Gap Mapper",
+    "category": "Research, Search, and Evidence",
+    "description": "Finds unanswered areas and weak evidence. It classifies missing populations, methods, variables, replications, and time periods. It checks gaps are distinguished from search failure. It returns a prioritized gap map.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "research-brief-producer",
+    "name": "Research Brief Producer",
+    "category": "Research, Search, and Evidence",
+    "description": "Converts evidence into a decision-ready brief. It summarizes findings, confidence, trade-offs, implications, and next steps. It checks every major recommendation traces to evidence. It returns a concise research brief.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "context-window-curator",
+    "name": "Context Window Curator",
+    "category": "Knowledge, Context, and Memory",
+    "description": "Selects the most relevant material for the current stage. It compresses prior work while preserving requirements, decisions, interfaces, and blockers. It checks critical details survive summarization. It returns a stage-ready context packet.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "long-project-state-keeper",
+    "name": "Long-Project State Keeper",
+    "category": "Knowledge, Context, and Memory",
+    "description": "Maintains continuation state across pauses. It stores completed stages, open issues, file versions, decisions, and next commands. It checks resumption does not repeat or contradict prior work. It returns a durable project snapshot.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "decision-memory-manager",
+    "name": "Decision Memory Manager",
+    "category": "Knowledge, Context, and Memory",
+    "description": "Stores decisions with the conditions that made them valid. It records alternatives, rationale, evidence, owner, date, and reversal triggers. It checks outdated decisions are rechecked when conditions change. It returns a decision register.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "preference-learner",
+    "name": "Preference Learner",
+    "category": "Knowledge, Context, and Memory",
+    "description": "Applies stable user preferences without overgeneralizing. It separates durable preferences from one- time requests. It checks current instructions always override remembered defaults. It returns a personalized but controllable output profile.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "knowledge-deduplicator",
+    "name": "Knowledge Deduplicator",
+    "category": "Knowledge, Context, and Memory",
+    "description": "Merges repeated notes and overlapping facts. It preserves exceptions, provenance, and the strongest wording. It checks important nuance is not erased. It returns a compact canonical knowledge base.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "contradiction-detector",
+    "name": "Contradiction Detector",
+    "category": "Knowledge, Context, and Memory",
+    "description": "Finds incompatible statements across instructions and files. It classifies direct conflict, scope difference, version difference, and apparent conflict. It checks material conflicts are resolved before execution. It returns a contradiction report and chosen rule.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "terminology-controller",
+    "name": "Terminology Controller",
+    "category": "Knowledge, Context, and Memory",
+    "description": "Maintains consistent names, acronyms, and definitions. It creates a glossary and checks every artifact for drift. It checks domain terms remain accurate and audience-appropriate. It returns a controlled vocabulary.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "context-drift-monitor",
+    "name": "Context Drift Monitor",
+    "category": "Knowledge, Context, and Memory",
+    "description": "Detects when later work diverges from the original goal. It compares stage outputs to the requirement ledger and success criteria. It checks drift is repaired before final assembly. It returns a drift alert and correction plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "handoff-context-packager",
+    "name": "Handoff Context Packager",
+    "category": "Knowledge, Context, and Memory",
+    "description": "Prepares all information another agent or person needs to continue. It includes state, files, commands, decisions, risks, and next tests. It checks the recipient can continue without rediscovery. It returns a concise continuation packet.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "memory-privacy-filter",
+    "name": "Memory Privacy Filter",
+    "category": "Knowledge, Context, and Memory",
+    "description": "Prevents sensitive or temporary information from becoming durable memory. It classifies data by sensitivity, purpose, retention, and user intent. It checks only appropriate information persists. It returns a sanitized memory update.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "audience-aware-writer",
+    "name": "Audience-Aware Writer",
+    "category": "Writing, Editing, and Communication",
+    "description": "Adapts content to the reader's knowledge, role, and decision needs. It controls terminology, depth, examples, tone, and call to action. It checks the message is understandable without losing accuracy. It returns a reader-fit draft.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "structural-editor",
+    "name": "Structural Editor",
+    "category": "Writing, Editing, and Communication",
+    "description": "Improves organization before sentence-level polishing. It repairs hierarchy, sequence, transitions, duplication, and missing sections. It checks each section has a clear purpose. It returns a coherent revised document.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "line-editor",
+    "name": "Line Editor",
+    "category": "Writing, Editing, and Communication",
+    "description": "Improves clarity and precision sentence by sentence. It removes ambiguity, clutter, repetition, weak verbs, and inconsistent terms. It checks meaning and voice are preserved. It returns a polished draft.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "plain-language-rewriter",
+    "name": "Plain-Language Rewriter",
+    "category": "Writing, Editing, and Communication",
+    "description": "Makes complex material easier to understand. It shortens sentences, defines terms, and replaces unnecessary jargon. It checks legal or technical precision is retained. It returns an accessible plain- language version.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "tone-and-neutrality-controller",
+    "name": "Tone and Neutrality Controller",
+    "category": "Writing, Editing, and Communication",
+    "description": "Aligns voice with context while avoiding manipulation or disrespect. It checks confidence, empathy, bias, formality, and emotional temperature. It checks sensitive topics remain balanced and humane. It returns a tone-calibrated draft.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "executive-summary-builder",
+    "name": "Executive Summary Builder",
+    "category": "Writing, Editing, and Communication",
+    "description": "Condenses long material for decision-makers. It extracts the decision, evidence, risks, options, and recommendation. It checks the summary stands alone and matches the source. It returns a one-page or brief executive summary.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "email-and-message-composer",
+    "name": "Email and Message Composer",
+    "category": "Writing, Editing, and Communication",
+    "description": "Creates concise workplace communications. It optimizes subject, opening, request, context, deadline, and close. It checks the recipient knows exactly what to do. It returns multiple tone-distinct drafts.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "argument-mapper",
+    "name": "Argument Mapper",
+    "category": "Writing, Editing, and Communication",
+    "description": "Makes reasoning explicit and testable. It separates claims, evidence, warrants, objections, and rebuttals. It checks logical gaps and overclaims are visible. It returns an argument map and strengthened narrative.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "consistency-proofreader",
+    "name": "Consistency Proofreader",
+    "category": "Writing, Editing, and Communication",
+    "description": "Finds grammar, spelling, punctuation, capitalization, numbering, and style drift. It uses a defined style sheet and checks headings, lists, captions, and references. It checks corrections do not change intended meaning. It returns a publication-ready copy.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "localization-writer",
+    "name": "Localization Writer",
+    "category": "Writing, Editing, and Communication",
+    "description": "Adapts meaning for a target language and culture. It handles locale, idioms, dates, units, politeness, and domain terminology. It checks the result reads naturally and preserves intent. It returns a localized version and terminology notes.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "word-document-architect",
+    "name": "Word Document Architect",
+    "category": "Document and PDF Production",
+    "description": "Creates editable DOCX documents with professional structure. It uses styles, headings, tables, headers, footers, sections, navigation, and accessibility settings. It checks the document renders without clipping or broken layout. It returns a polished editable DOCX.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "pdf-publication-builder",
+    "name": "PDF Publication Builder",
+    "category": "Document and PDF Production",
+    "description": "Produces a stable PDF from an authoritative source document. It controls page size, fonts, bookmarks, links, metadata, and export settings. It checks the PDF renders consistently and text remains selectable where appropriate. It returns a distribution-ready PDF.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "document-template-engineer",
+    "name": "Document Template Engineer",
+    "category": "Document and PDF Production",
+    "description": "Builds reusable templates. It defines styles, placeholders, content controls, instructions, and protected regions. It checks new documents remain consistent without manual formatting. It returns an editable template and usage guide.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "multi-document-merger",
+    "name": "Multi-Document Merger",
+    "category": "Document and PDF Production",
+    "description": "Combines multiple documents while preserving structure. It normalizes styles, sections, numbering, references, and page setup. It checks the merged file has no duplicate controls or broken fields. It returns one coherent master document.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "document-accessibility-auditor",
+    "name": "Document Accessibility Auditor",
+    "category": "Document and PDF Production",
+    "description": "Checks headings, reading order, alt text, tables, links, contrast, and language. It applies safe fixes and flags judgment-dependent issues. It checks the artifact supports assistive technology. It returns an accessible document and audit report.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "tracked-change-finalizer",
+    "name": "Tracked-Change Finalizer",
+    "category": "Document and PDF Production",
+    "description": "Processes revisions safely. It accepts or rejects changes by policy, verifies remaining markup, and preserves a review copy. It checks the final version contains no unintended redlines or comments. It returns a clean final and optional marked copy.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "document-metadata-scrubber",
+    "name": "Document Metadata Scrubber",
+    "category": "Document and PDF Production",
+    "description": "Removes hidden personal and revision data. It cleans authors, comments, custom properties, paths, and editing history where supported. It checks visible content and functionality remain intact. It returns a privacy-scrubbed copy.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "form-and-content-control-builder",
+    "name": "Form and Content-Control Builder",
+    "category": "Document and PDF Production",
+    "description": "Creates fillable document fields. It defines labels, types, validation, defaults, and protection. It checks fields are keyboard-accessible and survive saving. It returns a usable fillable document.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "table-and-figure-manager",
+    "name": "Table and Figure Manager",
+    "category": "Document and PDF Production",
+    "description": "Standardizes tables, figures, captions, and cross-references. It controls widths, repeats headers, adds alt text, and updates references. It checks objects do not overflow pages or lose numbering. It returns a visually stable illustrated document.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "render-and-layout-inspector",
+    "name": "Render and Layout Inspector",
+    "category": "Document and PDF Production",
+    "description": "Renders every page and checks the actual pixels. It detects clipping, overlap, blank pages, broken glyphs, and header or footer drift. It checks all pages pass at readable zoom. It returns a verified publication artifact.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "data-intake-profiler",
+    "name": "Data Intake Profiler",
+    "category": "Spreadsheet, Data, and Analytics",
+    "description": "Profiles tabular data before analysis. It measures types, missingness, uniqueness, ranges, duplicates, and suspicious values. It checks issues are quantified rather than guessed. It returns a data-quality profile.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "schema-and-type-validator",
+    "name": "Schema and Type Validator",
+    "category": "Spreadsheet, Data, and Analytics",
+    "description": "Checks data against a declared schema. It validates required fields, types, formats, enums, keys, and relationships. It checks invalid rows are isolated with reasons. It returns a validated dataset and error table.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "data-cleaning-planner",
+    "name": "Data Cleaning Planner",
+    "category": "Spreadsheet, Data, and Analytics",
+    "description": "Designs safe, reproducible cleaning operations. It separates correction, imputation, exclusion, normalization, and enrichment. It checks raw data remains preserved. It returns a transformation plan and cleaned copy.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "spreadsheet-formula-engineer",
+    "name": "Spreadsheet Formula Engineer",
+    "category": "Spreadsheet, Data, and Analytics",
+    "description": "Builds maintainable formulas and models. It uses clear references, named ranges, error handling, and documented assumptions. It checks formulas recalculate without circular errors. It returns an auditable workbook.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "pivot-and-summary-builder",
+    "name": "Pivot and Summary Builder",
+    "category": "Spreadsheet, Data, and Analytics",
+    "description": "Creates decision-ready summaries from detailed records. It selects dimensions, measures, filters, totals, and drill paths. It checks aggregations reconcile to source data. It returns a compact summary workbook.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "statistical-analysis-runner",
+    "name": "Statistical Analysis Runner",
+    "category": "Spreadsheet, Data, and Analytics",
+    "description": "Applies appropriate descriptive or inferential methods. It checks assumptions, sample size, uncertainty, effect size, and multiple comparisons. It checks results are interpreted within design limits. It returns an analysis with reproducible calculations.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "data-visualization-designer",
+    "name": "Data Visualization Designer",
+    "category": "Spreadsheet, Data, and Analytics",
+    "description": "Chooses charts that match the question and data. It controls scale, labels, units, ordering, annotations, and accessibility. It checks visuals do not distort comparisons. It returns clear charts with plain- language insights.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "forecasting-and-scenario-modeler",
+    "name": "Forecasting and Scenario Modeler",
+    "category": "Spreadsheet, Data, and Analytics",
+    "description": "Builds bounded projections. It separates historical fit, assumptions, scenarios, uncertainty, and sensitivity. It checks forecasts are not presented as certainty. It returns a scenario model with ranges.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "reconciliation-auditor",
+    "name": "Reconciliation Auditor",
+    "category": "Spreadsheet, Data, and Analytics",
+    "description": "Compares totals across sources and transformations. It traces discrepancies through filters, joins, currency, dates, and rounding. It checks differences are explained or corrected. It returns a reconciliation statement.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "workbook-qa-inspector",
+    "name": "Workbook QA Inspector",
+    "category": "Spreadsheet, Data, and Analytics",
+    "description": "Checks formulas, formats, filters, hidden content, print areas, and error cells. It tests representative inputs and boundary cases. It checks the workbook opens and behaves correctly. It returns a verified spreadsheet package.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "repository-mapper",
+    "name": "Repository Mapper",
+    "category": "Coding and Software Engineering",
+    "description": "Builds a structural map of an unfamiliar codebase. It identifies entry points, modules, dependencies, tests, configs, and generated files. It checks important runtime paths are traced. It returns an architecture map.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "implementation-planner",
+    "name": "Implementation Planner",
+    "category": "Coding and Software Engineering",
+    "description": "Turns a feature request into code changes. It defines interfaces, files, migrations, tests, rollout, and rollback. It checks the plan fits existing conventions. It returns a change plan with acceptance tests.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "code-generator",
+    "name": "Code Generator",
+    "category": "Coding and Software Engineering",
+    "description": "Produces maintainable code from an explicit contract. It follows language idioms, project style, typing, errors, logging, and security requirements. It checks generated code compiles or parses and integrates with existing interfaces. It returns working source files.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "bug-reproducer",
+    "name": "Bug Reproducer",
+    "category": "Coding and Software Engineering",
+    "description": "Reduces a failure to the smallest repeatable case. It captures environment, inputs, expected behavior, observed behavior, and earliest bad state. It checks the reproduction fails for the right reason. It returns a minimal failing test.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "root-cause-debugger",
+    "name": "Root Cause Debugger",
+    "category": "Coding and Software Engineering",
+    "description": "Finds the smallest responsible cause. It separates input, state, logic, dependency, environment, build, and interface layers. It checks probes distinguish competing hypotheses. It returns a targeted repair.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "regression-test-author",
+    "name": "Regression Test Author",
+    "category": "Coding and Software Engineering",
+    "description": "Locks repaired behavior into automated tests. It covers the original failure, normal use, boundaries, and nearby joins. It checks the test fails before the fix and passes after it. It returns a focused regression suite.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "code-review-auditor",
+    "name": "Code Review Auditor",
+    "category": "Coding and Software Engineering",
+    "description": "Reviews changes for correctness and maintainability. It checks logic, APIs, tests, security, performance, readability, and migration risk. It checks findings are prioritized and actionable. It returns a severity- ranked review.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "dependency-upgrade-manager",
+    "name": "Dependency Upgrade Manager",
+    "category": "Coding and Software Engineering",
+    "description": "Updates libraries without uncontrolled breakage. It checks release notes, API changes, lockfiles, transitive risk, and compatibility tests. It checks the build and critical workflows pass after upgrade. It returns an upgrade patch and rollback note.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "refactoring-safeguard",
+    "name": "Refactoring Safeguard",
+    "category": "Coding and Software Engineering",
+    "description": "Improves structure while preserving behavior. It establishes tests, performs small transformations, and rechecks affected paths. It checks public contracts remain stable unless intentionally changed. It returns cleaner code with regression evidence.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "release-build-verifier",
+    "name": "Release Build Verifier",
+    "category": "Coding and Software Engineering",
+    "description": "Tests production configuration rather than development only. It builds from clean state and checks artifacts, environment variables, packaging, and startup. It checks the release artifact runs through the real user path. It returns a releasable build.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "web-architecture-designer",
+    "name": "Web Architecture Designer",
+    "category": "Web Application Engineering",
+    "description": "Defines a practical frontend and backend architecture. It selects rendering, routing, state, API, auth, persistence, and deployment patterns. It checks choices fit scale, team, accessibility, and maintenance needs. It returns an architecture specification.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "responsive-interface-builder",
+    "name": "Responsive Interface Builder",
+    "category": "Web Application Engineering",
+    "description": "Creates interfaces that adapt across viewport sizes. It uses semantic HTML, mobile-first layout, resilient components, and touch-safe controls. It checks key flows work on phone, tablet, and desktop. It returns a responsive UI.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "design-system-implementer",
+    "name": "Design System Implementer",
+    "category": "Web Application Engineering",
+    "description": "Builds reusable tokens and components. It defines color, typography, spacing, states, variants, and documentation. It checks components remain consistent and accessible. It returns a reusable component library.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "api-integration-engineer",
+    "name": "API Integration Engineer",
+    "category": "Web Application Engineering",
+    "description": "Connects the interface to services reliably. It handles schemas, authentication, retries, loading, errors, caching, and pagination. It checks failure states are visible and recoverable. It returns a tested integration layer.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "authentication-flow-builder",
+    "name": "Authentication Flow Builder",
+    "category": "Web Application Engineering",
+    "description": "Implements secure sign-in and session behavior. It covers registration, recovery, verification, roles, expiry, logout, and protected routes. It checks secrets and tokens are handled safely. It returns a complete authentication flow.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "web-accessibility-tester",
+    "name": "Web Accessibility Tester",
+    "category": "Web Application Engineering",
+    "description": "Evaluates keyboard, focus, semantics, contrast, labels, and screen-reader behavior. It tests critical journeys against WCAG-aligned checks. It checks blocking barriers are repaired. It returns an accessible web experience.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "performance-optimizer",
+    "name": "Performance Optimizer",
+    "category": "Web Application Engineering",
+    "description": "Improves loading and interaction speed. It measures bundle size, render cost, images, fonts, caching, network waterfalls, and Core Web Vitals. It checks optimizations do not break functionality. It returns a faster verified build.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "cross-browser-validator",
+    "name": "Cross-Browser Validator",
+    "category": "Web Application Engineering",
+    "description": "Tests supported browsers and device classes. It checks layout, APIs, input methods, storage, and media behavior. It checks known differences have fallbacks. It returns a compatibility report and fixes.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "seo-and-metadata-engineer",
+    "name": "SEO and Metadata Engineer",
+    "category": "Web Application Engineering",
+    "description": "Improves discoverability and sharing. It configures titles, descriptions, canonical URLs, structured data, robots, sitemap, and social cards. It checks metadata matches visible content. It returns an indexable site build.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "production-deployment-verifier",
+    "name": "Production Deployment Verifier",
+    "category": "Web Application Engineering",
+    "description": "Deploys or validates the production route. It checks domains, HTTPS, headers, environment, migrations, logs, rollback, and smoke tests. It checks the public path behaves like the tested build. It returns a verified release.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "api-contract-designer",
+    "name": "API Contract Designer",
+    "category": "APIs, Databases, and Backend Systems",
+    "description": "Defines stable service interfaces. It specifies resources, methods, schemas, errors, pagination, idempotency, and versioning. It checks clients can implement without hidden assumptions. It returns an API specification.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "database-schema-designer",
+    "name": "Database Schema Designer",
+    "category": "APIs, Databases, and Backend Systems",
+    "description": "Models data with integrity and evolution in mind. It defines keys, constraints, indexes, relationships, retention, and migration paths. It checks common queries are supported efficiently. It returns a schema and migration plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "query-optimizer",
+    "name": "Query Optimizer",
+    "category": "APIs, Databases, and Backend Systems",
+    "description": "Improves slow database access. It uses execution plans, indexes, cardinality, batching, and query rewrites. It checks performance gains are measured and correctness preserved. It returns an optimized query set.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "migration-safety-manager",
+    "name": "Migration Safety Manager",
+    "category": "APIs, Databases, and Backend Systems",
+    "description": "Plans and validates schema or data migrations. It supports backfill, dual-read or dual-write, verification, rollback, and downtime limits. It checks production data remains consistent. It returns a reversible migration runbook.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "background-job-orchestrator",
+    "name": "Background Job Orchestrator",
+    "category": "APIs, Databases, and Backend Systems",
+    "description": "Designs reliable asynchronous work. It handles queues, retries, idempotency, ordering, timeouts, dead letters, and observability. It checks duplicate execution is safe. It returns a resilient job workflow.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "cache-strategy-engineer",
+    "name": "Cache Strategy Engineer",
+    "category": "APIs, Databases, and Backend Systems",
+    "description": "Adds caching without stale-data surprises. It defines keys, TTLs, invalidation, consistency, and fallback behavior. It checks cache failures do not corrupt results. It returns a measured caching plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "webhook-reliability-handler",
+    "name": "Webhook Reliability Handler",
+    "category": "APIs, Databases, and Backend Systems",
+    "description": "Processes external events safely. It verifies signatures, deduplicates events, preserves order where needed, and retries failures. It checks replays are safe and observable. It returns a robust webhook consumer.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "data-backup-and-restore-tester",
+    "name": "Data Backup and Restore Tester",
+    "category": "APIs, Databases, and Backend Systems",
+    "description": "Validates recovery rather than only backup creation. It checks schedules, encryption, retention, restore time, and restored integrity. It checks a restore succeeds in a clean environment. It returns a recovery- tested backup system.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "service-observability-builder",
+    "name": "Service Observability Builder",
+    "category": "APIs, Databases, and Backend Systems",
+    "description": "Adds actionable metrics, logs, traces, and alerts. It links requests across components and defines service-level indicators. It checks alerts correspond to user impact. It returns an observable backend.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "rate-limit-and-abuse-guard",
+    "name": "Rate Limit and Abuse Guard",
+    "category": "APIs, Databases, and Backend Systems",
+    "description": "Protects services from overload and misuse. It applies quotas, burst control, identity, backoff, and clear errors. It checks legitimate clients remain usable. It returns a tested traffic policy.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "threat-modeler",
+    "name": "Threat Modeler",
+    "category": "Security, Privacy, and Safety",
+    "description": "Identifies realistic threats before implementation. It maps assets, trust boundaries, actors, attack paths, controls, and residual risk. It checks high-impact paths have mitigations and tests. It returns a prioritized threat model.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "secret-exposure-scanner",
+    "name": "Secret Exposure Scanner",
+    "category": "Security, Privacy, and Safety",
+    "description": "Finds credentials and sensitive tokens in files and repositories. It checks source, history, configs, logs, archives, and generated artifacts. It checks exposed secrets are revoked rather than merely deleted. It returns a remediation list.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "input-validation-engineer",
+    "name": "Input Validation Engineer",
+    "category": "Security, Privacy, and Safety",
+    "description": "Designs validation at trust boundaries. It defines allowlists, schemas, size limits, encoding, normalization, and safe errors. It checks malformed input cannot reach dangerous operations. It returns a validated input layer.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "authorization-auditor",
+    "name": "Authorization Auditor",
+    "category": "Security, Privacy, and Safety",
+    "description": "Checks who can do what to which resource. It tests roles, ownership, tenant isolation, indirect references, and privilege changes. It checks denials occur server-side and by default. It returns an access-control report.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "privacy-data-mapper",
+    "name": "Privacy Data Mapper",
+    "category": "Security, Privacy, and Safety",
+    "description": "Maps personal and sensitive data through the system. It records purpose, source, fields, storage, sharing, retention, and deletion. It checks data collection is minimized. It returns a privacy inventory.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "redaction-verifier",
+    "name": "Redaction Verifier",
+    "category": "Security, Privacy, and Safety",
+    "description": "Confirms sensitive content is actually removed. It checks visible layers, underlying text, metadata, attachments, OCR, and revision history. It checks redacted information cannot be recovered through ordinary extraction. It returns a verified sanitized artifact.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "secure-configuration-auditor",
+    "name": "Secure Configuration Auditor",
+    "category": "Security, Privacy, and Safety",
+    "description": "Reviews production settings for unsafe defaults. It checks TLS, headers, permissions, debug modes, storage, network exposure, and logging. It checks critical settings are explicit and tested. It returns a hardened configuration.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "dependency-vulnerability-triage",
+    "name": "Dependency Vulnerability Triage",
+    "category": "Security, Privacy, and Safety",
+    "description": "Evaluates reported package weaknesses. It checks exploitability, reachable code, fixed versions, breaking changes, and compensating controls. It checks responses are prioritized by real risk. It returns a remediation plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "safety-boundary-enforcer",
+    "name": "Safety Boundary Enforcer",
+    "category": "Security, Privacy, and Safety",
+    "description": "Detects requests or actions that could cause meaningful harm. It separates benign, dual-use, restricted, and disallowed components. It checks safe portions remain useful. It returns a bounded safe response.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "incident-response-coordinator",
+    "name": "Incident Response Coordinator",
+    "category": "Security, Privacy, and Safety",
+    "description": "Structures containment and recovery after a security event. It preserves evidence, limits spread, rotates access, restores service, and records lessons. It checks actions are timed and owned. It returns an incident runbook and recovery state.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "requirement-coverage-auditor",
+    "name": "Requirement Coverage Auditor",
+    "category": "Testing, Verification, and Quality Assurance",
+    "description": "Checks every requirement against an artifact and test. It finds missing, partial, conflicting, and unverified items. It checks coverage claims have evidence. It returns a coverage matrix.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "boundary-case-generator",
+    "name": "Boundary Case Generator",
+    "category": "Testing, Verification, and Quality Assurance",
+    "description": "Creates cases at limits and transitions. It covers empty, missing, repeated, extreme, malformed, and unusual inputs. It checks cases target real failure modes. It returns a boundary test set.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "integration-join-tester",
+    "name": "Integration Join Tester",
+    "category": "Testing, Verification, and Quality Assurance",
+    "description": "Tests where modules, files, tools, or stages meet. It validates schemas, names, units, ordering, versions, and error contracts. It checks interfaces work end to end. It returns an integration test report.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "visual-regression-inspector",
+    "name": "Visual Regression Inspector",
+    "category": "Testing, Verification, and Quality Assurance",
+    "description": "Compares rendered outputs at the pixel or layout level. It detects overlap, clipping, unexpected movement, color changes, and missing elements. It checks intentional changes are distinguished from defects. It returns a visual diff review.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "accessibility-qa-runner",
+    "name": "Accessibility QA Runner",
+    "category": "Testing, Verification, and Quality Assurance",
+    "description": "Tests usable access beyond visual correctness. It checks keyboard operation, screen readers, captions, language, focus, and alternatives. It checks critical user journeys remain available. It returns an accessibility pass report.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "performance-benchmark-runner",
+    "name": "Performance Benchmark Runner",
+    "category": "Testing, Verification, and Quality Assurance",
+    "description": "Measures latency, throughput, memory, size, and stability. It uses repeatable workloads, warmup, percentiles, and baselines. It checks comparisons use the same environment and limits. It returns a benchmark report.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "fuzz-and-robustness-tester",
+    "name": "Fuzz and Robustness Tester",
+    "category": "Testing, Verification, and Quality Assurance",
+    "description": "Explores unexpected inputs systematically. It generates malformed structures, random values, and adversarial sequences within safe bounds. It checks crashes and unsafe states are reproducible. It returns a minimized failure corpus.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "clean-room-reproduction-tester",
+    "name": "Clean-Room Reproduction Tester",
+    "category": "Testing, Verification, and Quality Assurance",
+    "description": "Verifies setup from an empty environment. It follows only documented dependencies and commands. It checks hidden local state is eliminated. It returns a clean-install result.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "release-gate-evaluator",
+    "name": "Release Gate Evaluator",
+    "category": "Testing, Verification, and Quality Assurance",
+    "description": "Combines required checks into a go or no-go decision. It enforces severity thresholds, waivers, owners, and expiration dates. It checks critical failures cannot be averaged away. It returns a release decision.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "post-delivery-validator",
+    "name": "Post-Delivery Validator",
+    "category": "Testing, Verification, and Quality Assurance",
+    "description": "Reopens and uses the exact final artifacts. It checks links, archives, permissions, installation, and recipient workflow. It checks the delivered copy matches the tested copy. It returns a final handoff pass.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "tool-capability-profiler",
+    "name": "Tool Capability Profiler",
+    "category": "Automation, Tools, and Operations",
+    "description": "Learns what a tool can and cannot do before using it. It records inputs, outputs, side effects, dependencies, limits, costs, and failure signals. It checks the selected tool matches the requirement. It returns a capability profile.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "minimal-toolchain-selector",
+    "name": "Minimal Toolchain Selector",
+    "category": "Automation, Tools, and Operations",
+    "description": "Chooses the smallest set of tools that can complete the job. It compares fidelity, compatibility, editability, repeatability, and repair cost. It checks unnecessary dependencies are avoided. It returns a justified toolchain.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "workflow-automation-builder",
+    "name": "Workflow Automation Builder",
+    "category": "Automation, Tools, and Operations",
+    "description": "Turns repeatable manual steps into automation. It defines triggers, inputs, state, idempotency, errors, retries, approvals, and logs. It checks the workflow can recover from interruption. It returns an automated pipeline.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "command-safety-wrapper",
+    "name": "Command Safety Wrapper",
+    "category": "Automation, Tools, and Operations",
+    "description": "Makes shell or operational commands safer. It adds dry-run, quoting, path checks, backups, timeouts, and clear exit handling. It checks destructive actions require explicit boundaries. It returns a guarded command flow.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "environment-bootstrapper",
+    "name": "Environment Bootstrapper",
+    "category": "Automation, Tools, and Operations",
+    "description": "Creates a reproducible working environment. It pins dependencies, checks versions, initializes config, and verifies prerequisites. It checks setup works from clean state. It returns a bootstrap script and setup guide.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "batch-job-manager",
+    "name": "Batch Job Manager",
+    "category": "Automation, Tools, and Operations",
+    "description": "Processes many files or records predictably. It supports manifests, concurrency, checkpoints, retries, skip rules, and summaries. It checks partial failures do not erase successful work. It returns a resumable batch run.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "scheduled-task-designer",
+    "name": "Scheduled Task Designer",
+    "category": "Automation, Tools, and Operations",
+    "description": "Creates reliable recurring work. It handles timezone, overlap, missed runs, holidays, credentials, and alerting. It checks duplicate or delayed runs remain safe. It returns a schedule and operational policy.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "log-analyzer",
+    "name": "Log Analyzer",
+    "category": "Automation, Tools, and Operations",
+    "description": "Extracts useful signals from operational logs. It parses structure, correlates events, detects patterns, and links symptoms to components. It checks sensitive fields are protected. It returns an incident- focused analysis.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "rollback-planner",
+    "name": "Rollback Planner",
+    "category": "Automation, Tools, and Operations",
+    "description": "Defines how to reverse a change safely. It captures backups, compatibility, data migration limits, triggers, and validation. It checks rollback is tested where feasible. It returns a timed rollback runbook.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "operational-runbook-writer",
+    "name": "Operational Runbook Writer",
+    "category": "Automation, Tools, and Operations",
+    "description": "Documents real procedures for operators. It includes prerequisites, commands, expected output, failure branches, escalation, and recovery. It checks a new operator can execute it safely. It returns a production runbook.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "visual-brief-interpreter",
+    "name": "Visual Brief Interpreter",
+    "category": "Image and Visual Design",
+    "description": "Converts a goal into an actionable image brief. It defines subject, style, composition, lighting, color, aspect ratio, usage, and exclusions. It checks the brief avoids contradictory directions. It returns a production-ready visual specification.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "text-to-image-art-director",
+    "name": "Text-to-Image Art Director",
+    "category": "Image and Visual Design",
+    "description": "Guides image generation toward a coherent result. It controls scene, perspective, materials, atmosphere, realism, and negative constraints. It checks generated visuals match purpose and do not invent factual details. It returns a curated image set.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "single-image-editor",
+    "name": "Single-Image Editor",
+    "category": "Image and Visual Design",
+    "description": "Applies targeted changes to one image. It handles object removal, replacement, recoloring, relighting, cleanup, crop, and background work. It checks unchanged regions remain stable. It returns an edited high-quality image.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "multi-image-consistency-editor",
+    "name": "Multi-Image Consistency Editor",
+    "category": "Image and Visual Design",
+    "description": "Coordinates edits across an image set. It matches identity, palette, lighting, scale, camera, and export settings. It checks the set feels intentionally unified. It returns a consistent asset family.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "image-restoration-specialist",
+    "name": "Image Restoration Specialist",
+    "category": "Image and Visual Design",
+    "description": "Repairs damaged or low-quality images. It reduces noise, scratches, compression, blur, and color fading while preserving identity. It checks restoration does not fabricate critical detail. It returns a restored image and limitation note.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "background-removal-and-compositor",
+    "name": "Background Removal and Compositor",
+    "category": "Image and Visual Design",
+    "description": "Separates subjects and builds clean composites. It refines hair, edges, shadows, color spill, and perspective. It checks the result holds up on light and dark backgrounds. It returns a transparent asset or finished composite.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "diagram-and-infographic-designer",
+    "name": "Diagram and Infographic Designer",
+    "category": "Image and Visual Design",
+    "description": "Turns concepts or processes into readable visuals. It chooses hierarchy, flow, icons, labels, grouping, and scale. It checks the visual can be understood without decorative clutter. It returns a clear explanatory graphic.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "brand-asset-system-builder",
+    "name": "Brand Asset System Builder",
+    "category": "Image and Visual Design",
+    "description": "Creates a coherent family of visual assets. It defines palette, typography, image treatment, shapes, and usage rules. It checks assets remain consistent across formats. It returns a reusable brand kit.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "image-accessibility-reviewer",
+    "name": "Image Accessibility Reviewer",
+    "category": "Image and Visual Design",
+    "description": "Checks whether visuals communicate inclusively. It reviews contrast, text size, color dependence, alt text needs, and cultural interpretation. It checks essential meaning has a nonvisual alternative. It returns an accessible image package.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "image-export-optimizer",
+    "name": "Image Export Optimizer",
+    "category": "Image and Visual Design",
+    "description": "Prepares assets for their final channel. It selects dimensions, format, compression, transparency, color profile, and naming. It checks quality and file size meet platform needs. It returns optimized exports.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "video-concept-developer",
+    "name": "Video Concept Developer",
+    "category": "Video, Motion, and Multimedia",
+    "description": "Transforms a message into a producible video concept. It defines audience, runtime, narrative arc, format, visual language, and call to action. It checks the concept fits resources and channel. It returns a treatment and success criteria.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "storyboard-builder",
+    "name": "Storyboard Builder",
+    "category": "Video, Motion, and Multimedia",
+    "description": "Plans shots before production. It maps framing, action, transitions, narration, text, timing, and assets. It checks every key message has a visual beat. It returns a scene-by-scene storyboard.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "text-to-video-director",
+    "name": "Text-to-Video Director",
+    "category": "Video, Motion, and Multimedia",
+    "description": "Creates precise generation instructions for video models. It controls subject continuity, camera movement, motion, environment, style, and duration. It checks prompts avoid impossible motion and unwanted text. It returns a generation plan and shot set.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "image-to-video-animator",
+    "name": "Image-to-Video Animator",
+    "category": "Video, Motion, and Multimedia",
+    "description": "Turns still images into controlled motion. It defines depth, parallax, camera path, subject movement, and loop behavior. It checks identity and composition remain stable. It returns a polished animated clip.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "video-editor",
+    "name": "Video Editor",
+    "category": "Video, Motion, and Multimedia",
+    "description": "Assembles footage into a coherent program. It selects takes, trims pacing, builds continuity, mixes graphics, and manages versions. It checks the edit serves the intended narrative. It returns a finished timeline.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "motion-graphics-designer",
+    "name": "Motion Graphics Designer",
+    "category": "Video, Motion, and Multimedia",
+    "description": "Creates titles, lower thirds, transitions, and explanatory animation. It uses consistent typography, easing, timing, and safe areas. It checks graphics remain legible on target screens. It returns a motion graphics package.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "caption-and-subtitle-producer",
+    "name": "Caption and Subtitle Producer",
+    "category": "Video, Motion, and Multimedia",
+    "description": "Creates accurate timed text. It handles segmentation, speaker labels, sound cues, reading speed, and localization. It checks captions synchronize and remain readable. It returns caption files and burned-in option.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "audio-video-sync-inspector",
+    "name": "Audio-Video Sync Inspector",
+    "category": "Video, Motion, and Multimedia",
+    "description": "Detects and repairs synchronization problems. It checks lip sync, drift, frame rate, sample rate, and edit boundaries. It checks sync holds across the full export. It returns a corrected master.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "video-quality-controller",
+    "name": "Video Quality Controller",
+    "category": "Video, Motion, and Multimedia",
+    "description": "Reviews picture, sound, captions, encoding, and playback. It checks black frames, clipping, artifacts, loudness, aspect ratio, and metadata. It checks the master plays correctly in target channels. It returns a verified delivery file.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "multimedia-package-assembler",
+    "name": "Multimedia Package Assembler",
+    "category": "Video, Motion, and Multimedia",
+    "description": "Combines masters, captions, thumbnails, transcripts, and metadata. It applies naming, versioning, checksums, and platform-specific variants. It checks all components refer to the same cut. It returns a complete distribution package.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "audio-cleanup-engineer",
+    "name": "Audio Cleanup Engineer",
+    "category": "Audio, Speech, and Music",
+    "description": "Improves noisy or inconsistent recordings. It reduces hum, hiss, clicks, room noise, and level variation without damaging speech. It checks processed audio remains natural. It returns a clean dialogue track.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "speech-editing-specialist",
+    "name": "Speech Editing Specialist",
+    "category": "Audio, Speech, and Music",
+    "description": "Edits spoken content for clarity and pacing. It removes mistakes, excessive gaps, repetitions, and filler while preserving intent. It checks cuts are seamless and meaning remains accurate. It returns a polished speech edit.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "voice-preparation-director",
+    "name": "Voice Preparation Director",
+    "category": "Audio, Speech, and Music",
+    "description": "Prepares text for high-quality speech synthesis or recording. It adds pronunciation, pauses, emphasis, pacing, and speaker direction. It checks delivery matches the intended persona and context. It returns a voice-ready script.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "transcript-producer",
+    "name": "Transcript Producer",
+    "category": "Audio, Speech, and Music",
+    "description": "Converts audio or video speech into structured text. It handles speakers, timecodes, punctuation, uncertain words, and terminology. It checks the transcript is checked against the media. It returns an accurate transcript.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "sound-design-builder",
+    "name": "Sound Design Builder",
+    "category": "Audio, Speech, and Music",
+    "description": "Creates a purposeful sonic environment. It selects ambience, effects, transitions, spatial placement, and dynamics. It checks sound supports rather than masks the message. It returns a layered sound design.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "music-brief-composer",
+    "name": "Music Brief Composer",
+    "category": "Audio, Speech, and Music",
+    "description": "Defines music needs for a scene or brand. It specifies mood, tempo, instrumentation, structure, references, and edit points. It checks the brief avoids rights ambiguity. It returns a production-ready music brief.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "mixing-engineer",
+    "name": "Mixing Engineer",
+    "category": "Audio, Speech, and Music",
+    "description": "Balances dialogue, music, and effects. It controls level, EQ, compression, space, panning, and automation. It checks priority content remains clear across devices. It returns a balanced mix.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "mastering-and-loudness-controller",
+    "name": "Mastering and Loudness Controller",
+    "category": "Audio, Speech, and Music",
+    "description": "Prepares the final audio for distribution. It sets loudness, peak, dynamics, sequencing, and format for the target platform. It checks the master avoids clipping and excessive limiting. It returns a delivery- ready master.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "audio-accessibility-producer",
+    "name": "Audio Accessibility Producer",
+    "category": "Audio, Speech, and Music",
+    "description": "Creates nonvisual and text alternatives. It supports transcripts, descriptions, speaker labels, and intelligibility checks. It checks essential information is accessible. It returns an inclusive audio package.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "audio-export-validator",
+    "name": "Audio Export Validator",
+    "category": "Audio, Speech, and Music",
+    "description": "Checks final files and metadata. It verifies codec, sample rate, channels, duration, tags, and playback. It checks exports match the approved master. It returns a verified audio package.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "presentation-storyliner",
+    "name": "Presentation Storyliner",
+    "category": "Presentation and Learning Design",
+    "description": "Builds a persuasive slide narrative. It defines audience, decision, arc, sections, evidence, and close. It checks each slide advances one clear idea. It returns a slide-by-slide storyline.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "slide-layout-designer",
+    "name": "Slide Layout Designer",
+    "category": "Presentation and Learning Design",
+    "description": "Creates readable, balanced slide layouts. It controls hierarchy, grids, whitespace, imagery, and consistent placement. It checks slides remain clear at presentation distance. It returns a polished presentation.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "data-storytelling-designer",
+    "name": "Data Storytelling Designer",
+    "category": "Presentation and Learning Design",
+    "description": "Turns analysis into an understandable visual argument. It selects the right chart, annotation, comparison, and takeaway. It checks visuals show evidence without distortion. It returns decision-ready data slides.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "speaker-notes-writer",
+    "name": "Speaker Notes Writer",
+    "category": "Presentation and Learning Design",
+    "description": "Creates delivery support for presenters. It adds talking points, transitions, timing, pronunciation, and audience prompts. It checks notes complement rather than repeat the slide. It returns presenter-ready notes.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "deck-consistency-auditor",
+    "name": "Deck Consistency Auditor",
+    "category": "Presentation and Learning Design",
+    "description": "Checks theme, typography, alignment, numbering, and visual rhythm. It finds outlier slides and broken masters. It checks the deck feels like one system. It returns a normalized deck.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "learning-objective-designer",
+    "name": "Learning Objective Designer",
+    "category": "Presentation and Learning Design",
+    "description": "Defines measurable learning outcomes. It uses observable verbs and aligns knowledge, practice, and assessment. It checks objectives match learner level and time. It returns a learning outcome map.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "lesson-sequence-builder",
+    "name": "Lesson Sequence Builder",
+    "category": "Presentation and Learning Design",
+    "description": "Organizes instruction from prior knowledge to mastery. It balances explanation, examples, practice, feedback, and review. It checks cognitive load remains manageable. It returns a lesson plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "assessment-author",
+    "name": "Assessment Author",
+    "category": "Presentation and Learning Design",
+    "description": "Creates valid questions and tasks. It aligns items to objectives, difficulty, scoring, feedback, and bias checks. It checks assessment measures the intended skill. It returns an assessment set and rubric.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "study-guide-generator",
+    "name": "Study Guide Generator",
+    "category": "Presentation and Learning Design",
+    "description": "Condenses source material into active learning support. It creates summaries, retrieval questions, worked examples, and spaced review cues. It checks content remains faithful to the source. It returns a practical study guide.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "training-evaluation-designer",
+    "name": "Training Evaluation Designer",
+    "category": "Presentation and Learning Design",
+    "description": "Measures whether instruction changed capability. It defines reaction, learning, behavior, and outcome indicators. It checks evidence goes beyond attendance. It returns an evaluation plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "business-case-builder",
+    "name": "Business Case Builder",
+    "category": "Business, Product, and Project Work",
+    "description": "Evaluates whether an initiative is worth pursuing. It models problem, options, benefits, costs, risks, dependencies, and timing. It checks assumptions and sensitivity are explicit. It returns a decision-ready business case.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "product-requirement-writer",
+    "name": "Product Requirement Writer",
+    "category": "Business, Product, and Project Work",
+    "description": "Defines a product capability for design and engineering. It captures users, jobs, scope, flows, requirements, metrics, edge cases, and non-goals. It checks requirements are testable and prioritized. It returns a product requirements document.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "roadmap-planner",
+    "name": "Roadmap Planner",
+    "category": "Business, Product, and Project Work",
+    "description": "Sequences outcomes over time without false precision. It balances strategy, dependencies, capacity, uncertainty, and learning milestones. It checks dates distinguish commitments from targets. It returns a phased roadmap.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "project-plan-builder",
+    "name": "Project Plan Builder",
+    "category": "Business, Product, and Project Work",
+    "description": "Creates an executable delivery plan. It defines work breakdown, owners, dependencies, milestones, risks, and communication. It checks the plan is maintainable as conditions change. It returns a project plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "risk-register-manager",
+    "name": "Risk Register Manager",
+    "category": "Business, Product, and Project Work",
+    "description": "Identifies and manages project uncertainty. It scores probability, impact, proximity, owner, mitigation, and contingency. It checks high exposure receives active treatment. It returns a prioritized risk register.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "stakeholder-mapper",
+    "name": "Stakeholder Mapper",
+    "category": "Business, Product, and Project Work",
+    "description": "Maps influence, needs, concerns, and engagement strategy. It distinguishes decision-makers, contributors, users, and affected groups. It checks communication matches stakeholder role. It returns an engagement map.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "meeting-decision-extractor",
+    "name": "Meeting Decision Extractor",
+    "category": "Business, Product, and Project Work",
+    "description": "Turns meeting content into accountable follow-up. It captures decisions, actions, owners, dates, open questions, and dependencies. It checks ambiguous ownership is resolved. It returns a concise action record.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "process-improvement-analyst",
+    "name": "Process Improvement Analyst",
+    "category": "Business, Product, and Project Work",
+    "description": "Finds waste and failure in a workflow. It maps current state, handoffs, delays, errors, controls, and measures. It checks improvements address root causes. It returns a future-state process plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "vendor-evaluation-designer",
+    "name": "Vendor Evaluation Designer",
+    "category": "Business, Product, and Project Work",
+    "description": "Compares providers using consistent evidence. It defines weighted criteria, demonstrations, references, security, cost, integration, and exit risk. It checks scores are traceable and comparable. It returns a vendor scorecard.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "executive-decision-memo-writer",
+    "name": "Executive Decision Memo Writer",
+    "category": "Business, Product, and Project Work",
+    "description": "Presents a choice for leadership. It states decision, context, options, evidence, risks, recommendation, and requested action. It checks the memo is concise but complete. It returns a decision memo.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "financial-model-builder",
+    "name": "Financial Model Builder",
+    "category": "Finance, Quantitative, and Decision Support",
+    "description": "Creates auditable models for planning and decisions. It separates inputs, calculations, outputs, scenarios, and checks. It checks totals reconcile and assumptions are visible. It returns a maintainable financial model.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "budget-planner",
+    "name": "Budget Planner",
+    "category": "Finance, Quantitative, and Decision Support",
+    "description": "Allocates resources against goals and constraints. It models fixed, variable, one-time, contingency, and timing effects. It checks the budget balances and variance rules are defined. It returns a budget workbook.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "unit-economics-analyzer",
+    "name": "Unit Economics Analyzer",
+    "category": "Finance, Quantitative, and Decision Support",
+    "description": "Measures value and cost at the transaction or customer level. It calculates revenue, direct cost, contribution, acquisition, retention, and payback. It checks definitions and cohorts are consistent. It returns a unit economics view.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "scenario-and-sensitivity-analyst",
+    "name": "Scenario and Sensitivity Analyst",
+    "category": "Finance, Quantitative, and Decision Support",
+    "description": "Shows how outcomes change when assumptions move. It selects key drivers, ranges, interactions, and break-even points. It checks scenarios remain plausible and labeled. It returns a sensitivity dashboard.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "investment-option-comparator",
+    "name": "Investment Option Comparator",
+    "category": "Finance, Quantitative, and Decision Support",
+    "description": "Compares alternatives under uncertainty. It uses cash flows, timing, risk, strategic fit, reversibility, and constraints. It checks methods and limitations are explicit. It returns a comparative decision model.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "pricing-strategy-modeler",
+    "name": "Pricing Strategy Modeler",
+    "category": "Finance, Quantitative, and Decision Support",
+    "description": "Evaluates pricing structures and consequences. It tests willingness-to-pay evidence, segmentation, packaging, costs, elasticity, and revenue impact. It checks recommendations account for customer and operational effects. It returns a pricing scenario model.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "cost-optimization-analyst",
+    "name": "Cost Optimization Analyst",
+    "category": "Finance, Quantitative, and Decision Support",
+    "description": "Finds savings without hiding service impact. It classifies spend, usage, commitments, waste, switching cost, and risk. It checks savings are net of implementation cost. It returns an actionable savings plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "forecast-accuracy-auditor",
+    "name": "Forecast Accuracy Auditor",
+    "category": "Finance, Quantitative, and Decision Support",
+    "description": "Evaluates forecast performance over time. It uses bias, error distribution, horizon, seasonality, and benchmark models. It checks accuracy claims use out-of-sample evidence. It returns a forecast scorecard.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "quantitative-decision-analyst",
+    "name": "Quantitative Decision Analyst",
+    "category": "Finance, Quantitative, and Decision Support",
+    "description": "Structures decisions with multiple objectives. It defines alternatives, criteria, weights, uncertainty, and sensitivity. It checks the recommendation is robust to reasonable changes. It returns a transparent decision analysis.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "financial-control-checker",
+    "name": "Financial Control Checker",
+    "category": "Finance, Quantitative, and Decision Support",
+    "description": "Tests model and reporting controls. It checks reconciliations, approvals, segregation, change history, and exception handling. It checks material discrepancies are investigated. It returns a control report.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "jurisdiction-scope-identifier",
+    "name": "Jurisdiction Scope Identifier",
+    "category": "Legal, Policy, and Compliance Support",
+    "description": "Determines which legal or policy framework matters. It extracts location, parties, activity, dates, industry, and governing terms. It checks uncertainty is not hidden. It returns a scoped issue statement.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "policy-document-analyst",
+    "name": "Policy Document Analyst",
+    "category": "Legal, Policy, and Compliance Support",
+    "description": "Extracts obligations and operational implications. It maps definitions, duties, exceptions, deadlines, records, and enforcement. It checks interpretation is separated from quoted requirements. It returns a policy obligation matrix.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "contract-clause-comparator",
+    "name": "Contract Clause Comparator",
+    "category": "Legal, Policy, and Compliance Support",
+    "description": "Compares provisions across agreements. It normalizes topics, identifies differences, and highlights allocation of risk. It checks missing or conflicting clauses are visible. It returns a clause comparison table.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "compliance-checklist-builder",
+    "name": "Compliance Checklist Builder",
+    "category": "Legal, Policy, and Compliance Support",
+    "description": "Turns requirements into observable controls. It maps obligation, owner, evidence, frequency, exception, and remediation. It checks the checklist can be audited. It returns an operational compliance plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "regulatory-change-monitor",
+    "name": "Regulatory Change Monitor",
+    "category": "Legal, Policy, and Compliance Support",
+    "description": "Tracks updates that may alter obligations. It checks effective dates, transition rules, affected scope, and superseded guidance. It checks changes are tied to concrete actions. It returns a change impact brief.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "record-retention-mapper",
+    "name": "Record Retention Mapper",
+    "category": "Legal, Policy, and Compliance Support",
+    "description": "Links information types to retention and disposal rules. It defines owner, system, duration, hold, deletion, and evidence. It checks conflicting rules are escalated. It returns a retention schedule.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "consent-and-notice-reviewer",
+    "name": "Consent and Notice Reviewer",
+    "category": "Legal, Policy, and Compliance Support",
+    "description": "Checks whether notices and choices are clear and complete. It reviews purpose, data, sharing, withdrawal, contact, and accessibility. It checks language is understandable and not misleading. It returns an improved notice.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "audit-evidence-organizer",
+    "name": "Audit Evidence Organizer",
+    "category": "Legal, Policy, and Compliance Support",
+    "description": "Packages records for review. It indexes controls, samples, approvals, logs, exceptions, and remediation. It checks evidence is complete and traceable. It returns an audit-ready evidence binder.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "policy-drafting-assistant",
+    "name": "Policy Drafting Assistant",
+    "category": "Legal, Policy, and Compliance Support",
+    "description": "Creates practical internal policy drafts. It defines purpose, scope, roles, rules, exceptions, enforcement, and review cycle. It checks the draft aligns with actual operations. It returns an implementable policy.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "legal-escalation-detector",
+    "name": "Legal Escalation Detector",
+    "category": "Legal, Policy, and Compliance Support",
+    "description": "Recognizes when professional legal review is needed. It flags high stakes, disputed interpretation, deadlines, enforcement, litigation, and material rights. It checks support remains factual without pretending to replace counsel. It returns a focused escalation brief.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "issue-intake-normalizer",
+    "name": "Issue Intake Normalizer",
+    "category": "Support, Troubleshooting, and Service",
+    "description": "Turns a vague support report into reproducible information. It captures product, version, environment, steps, expected, observed, frequency, and impact. It checks missing facts are requested efficiently. It returns a structured incident ticket.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "troubleshooting-decision-tree",
+    "name": "Troubleshooting Decision Tree",
+    "category": "Support, Troubleshooting, and Service",
+    "description": "Orders diagnostic steps from safe and likely to costly and invasive. It uses symptoms, branching tests, stop conditions, and rollback. It checks each step distinguishes possible causes. It returns a guided troubleshooting flow.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "known-issue-matcher",
+    "name": "Known-Issue Matcher",
+    "category": "Support, Troubleshooting, and Service",
+    "description": "Compares symptoms with verified known problems. It checks version, environment, signatures, and workarounds. It checks similarity is not mistaken for proof. It returns a matched issue or new investigation path.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "customer-safe-explanation-writer",
+    "name": "Customer-Safe Explanation Writer",
+    "category": "Support, Troubleshooting, and Service",
+    "description": "Explains technical problems without blame or jargon. It states impact, cause if known, workaround, fix status, and next update. It checks uncertainty is communicated honestly. It returns a clear support message.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "escalation-packager",
+    "name": "Escalation Packager",
+    "category": "Support, Troubleshooting, and Service",
+    "description": "Prepares a case for engineering or specialists. It includes reproduction, logs, artifacts, timeline, attempts, severity, and business impact. It checks the recipient can begin without repeating intake. It returns an escalation packet.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "workaround-risk-assessor",
+    "name": "Workaround Risk Assessor",
+    "category": "Support, Troubleshooting, and Service",
+    "description": "Evaluates temporary fixes. It checks reversibility, data loss, security, supportability, and affected users. It checks risky workarounds are bounded. It returns a safe workaround decision.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "service-recovery-coordinator",
+    "name": "Service Recovery Coordinator",
+    "category": "Support, Troubleshooting, and Service",
+    "description": "Restores function while preserving evidence. It prioritizes containment, failover, validation, communication, and follow-up. It checks recovery does not hide the root cause. It returns a restored service state.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "root-cause-report-writer",
+    "name": "Root Cause Report Writer",
+    "category": "Support, Troubleshooting, and Service",
+    "description": "Documents why an incident occurred and how recurrence is prevented. It separates trigger, contributing conditions, detection, response, and corrective actions. It checks the report avoids blame and vague actions. It returns a corrective-action report.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "support-knowledge-article-builder",
+    "name": "Support Knowledge Article Builder",
+    "category": "Support, Troubleshooting, and Service",
+    "description": "Converts resolved cases into reusable guidance. It writes symptoms, cause, resolution, validation, alternatives, and version scope. It checks instructions are tested by a fresh reader. It returns a publishable knowledge article.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "resolution-confirmation-agent",
+    "name": "Resolution Confirmation Agent",
+    "category": "Support, Troubleshooting, and Service",
+    "description": "Verifies the user's problem is actually solved. It retests the reported path and checks side effects. It checks closure is based on observed behavior. It returns a confirmed resolution or reopened case.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "inclusive-language-reviewer",
+    "name": "Inclusive Language Reviewer",
+    "category": "Accessibility, Inclusion, and Human Factors",
+    "description": "Finds wording that may exclude, stereotype, or confuse. It checks identity terms, assumptions, metaphors, examples, and power dynamics. It checks revisions preserve meaning and respect. It returns an inclusive draft.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "cognitive-load-reducer",
+    "name": "Cognitive Load Reducer",
+    "category": "Accessibility, Inclusion, and Human Factors",
+    "description": "Makes complex workflows easier to follow. It chunks steps, removes unnecessary choices, adds cues, and sequences disclosure. It checks users can recover from errors. It returns a lower-friction experience.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "keyboard-navigation-auditor",
+    "name": "Keyboard Navigation Auditor",
+    "category": "Accessibility, Inclusion, and Human Factors",
+    "description": "Tests complete operation without a mouse. It checks order, focus visibility, traps, shortcuts, dialogs, and dynamic updates. It checks all essential actions are reachable. It returns a keyboard-access report.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "screen-reader-experience-tester",
+    "name": "Screen Reader Experience Tester",
+    "category": "Accessibility, Inclusion, and Human Factors",
+    "description": "Reviews semantic and announced behavior. It checks landmarks, headings, labels, status messages, tables, and reading order. It checks critical journeys make sense nonvisually. It returns a screen-reader test report.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "color-and-contrast-specialist",
+    "name": "Color and Contrast Specialist",
+    "category": "Accessibility, Inclusion, and Human Factors",
+    "description": "Ensures information is not lost through color choices. It checks contrast, states, charts, links, focus, and noncolor cues. It checks visual meaning remains distinguishable. It returns an accessible color specification.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "caption-and-description-planner",
+    "name": "Caption and Description Planner",
+    "category": "Accessibility, Inclusion, and Human Factors",
+    "description": "Determines text alternatives for media. It chooses alt text, long description, captions, transcript, or audio description based on purpose. It checks alternatives communicate equivalent information. It returns an accessibility media plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "form-usability-auditor",
+    "name": "Form Usability Auditor",
+    "category": "Accessibility, Inclusion, and Human Factors",
+    "description": "Checks labels, instructions, errors, grouping, autocomplete, and recovery. It tests with keyboard and assistive technology. It checks users can complete and correct the form. It returns a repaired form flow.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "reading-level-adapter",
+    "name": "Reading Level Adapter",
+    "category": "Accessibility, Inclusion, and Human Factors",
+    "description": "Adjusts text complexity for the intended audience. It controls sentence length, vocabulary, structure, examples, and definitions. It checks essential precision remains intact. It returns a readability- appropriate version.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "internationalization-readiness-checker",
+    "name": "Internationalization Readiness Checker",
+    "category": "Accessibility, Inclusion, and Human Factors",
+    "description": "Finds design assumptions that break across locales. It checks expansion, pluralization, RTL, dates, numbers, currency, names, and sorting. It checks interfaces can localize without redesign. It returns an i18n readiness report.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "human-error-recovery-designer",
+    "name": "Human Error Recovery Designer",
+    "category": "Accessibility, Inclusion, and Human Factors",
+    "description": "Builds forgiving interactions. It adds prevention, confirmation, undo, autosave, clear errors, and preserved input. It checks mistakes are recoverable without data loss. It returns a resilient interaction design.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "deliverable-structure-designer",
+    "name": "Deliverable Structure Designer",
+    "category": "Packaging, Handoff, and Lifecycle",
+    "description": "Creates a clear final folder and file organization. It uses predictable naming, relative links, versions, and separation of source and export. It checks recipients can find the primary artifact immediately. It returns a clean package tree.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "archive-package-builder",
+    "name": "Archive Package Builder",
+    "category": "Packaging, Handoff, and Lifecycle",
+    "description": "Creates portable ZIP packages. It preserves folder structure, checks names, excludes temporary files, and tests extraction. It checks the archive contains exactly the intended deliverables. It returns a verified ZIP.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "manifest-generator",
+    "name": "Manifest Generator",
+    "category": "Packaging, Handoff, and Lifecycle",
+    "description": "Lists package contents and purposes. It records paths, types, versions, and optional checksums. It checks the manifest matches the actual archive. It returns a human-readable package manifest.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "installation-and-use-guide-writer",
+    "name": "Installation and Use Guide Writer",
+    "category": "Packaging, Handoff, and Lifecycle",
+    "description": "Explains how to open, run, edit, or continue the work. It includes prerequisites, exact steps, examples, troubleshooting, and removal. It checks a new user can succeed from clean state. It returns a practical README.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "version-release-manager",
+    "name": "Version Release Manager",
+    "category": "Packaging, Handoff, and Lifecycle",
+    "description": "Prepares a coherent release. It sets version, compatibility, changes, migration notes, known issues, and rollback. It checks all artifacts share the same release identity. It returns a release package.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "editable-source-preserver",
+    "name": "Editable Source Preserver",
+    "category": "Packaging, Handoff, and Lifecycle",
+    "description": "Ensures final outputs remain maintainable. It includes source files, fonts or licenses where allowed, linked assets, and build instructions. It checks exports can be regenerated. It returns an editable source bundle.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "license-and-attribution-checker",
+    "name": "License and Attribution Checker",
+    "category": "Packaging, Handoff, and Lifecycle",
+    "description": "Verifies reuse obligations for included assets and code. It tracks source, license, attribution, modification, and redistribution terms. It checks unknown rights are not silently packaged. It returns an attribution record.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "handoff-acceptance-tester",
+    "name": "Handoff Acceptance Tester",
+    "category": "Packaging, Handoff, and Lifecycle",
+    "description": "Uses the package as the recipient would. It tests download, extraction, opening, execution, editing, and navigation. It checks handoff friction is repaired before delivery. It returns a recipient-path pass.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "lifecycle-maintenance-planner",
+    "name": "Lifecycle Maintenance Planner",
+    "category": "Packaging, Handoff, and Lifecycle",
+    "description": "Defines how the artifact will stay useful. It sets owners, update triggers, review cadence, deprecation, backup, and archival. It checks maintenance cost is visible. It returns a lifecycle plan.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  },
+  {
+    "id": "final-completeness-auditor",
+    "name": "Final Completeness Auditor",
+    "category": "Packaging, Handoff, and Lifecycle",
+    "description": "Performs the last request-to-package review. It checks names, formats, folder structure, content, links, quality gates, and absence of temporary files. It checks no known material defect remains. It returns a final delivery decision.",
+    "execution": "evidence-workflow",
+    "limitation": "Requires domain execution and independent evidence; registration is not autonomous implementation."
+  }
+]

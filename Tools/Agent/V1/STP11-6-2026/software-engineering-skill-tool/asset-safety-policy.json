@@ -1,0 +1,131 @@
+{
+  "policy_version": "1.0.0",
+  "skill_tool_name": "software-engineering",
+  "approval_policy": {
+    "default_action_mode": "plan",
+    "require_approval_for_apply_scopes": [
+      "destructive",
+      "irreversible",
+      "privileged",
+      "publishing",
+      "financial",
+      "credential",
+      "security-sensitive"
+    ],
+    "require_approval_for_force_overwrite": true,
+    "require_non_empty_reason": true
+  },
+  "path_confinement": {
+    "forbid_null_bytes": true,
+    "forbid_system_write_roots": [
+      "/etc",
+      "/bin",
+      "/sbin",
+      "/usr",
+      "/boot",
+      "/proc",
+      "/sys",
+      "/dev",
+      "/root"
+    ],
+    "sensitive_filenames": [
+      ".env",
+      "id_rsa",
+      "id_ed25519",
+      ".git-credentials",
+      ".netrc"
+    ]
+  },
+  "allowed_verifier_binaries": [
+    "python3",
+    "node",
+    "gcc",
+    "g++",
+    "javac",
+    "java",
+    "bash",
+    "sh",
+    "git",
+    "perl",
+    "Rscript",
+    "awk",
+    "sed",
+    "openssl",
+    "sha256sum",
+    "zip",
+    "unzip"
+  ],
+  "sast_rules": [
+    {
+      "rule_id": "SEC-001",
+      "severity": "high",
+      "title": "Dynamic Code Evaluation",
+      "pattern": "\\b(eval|exec)\\s*\\(",
+      "remediation": "Replace dynamic eval/exec with ast.literal_eval, explicit dispatch tables, or validated parsers."
+    },
+    {
+      "rule_id": "SEC-002",
+      "severity": "critical",
+      "title": "Subprocess Shell Injection Surface",
+      "pattern": "subprocess\\.[a-zA-Z_]+\\([^)]*shell\\s*=\\s*True",
+      "remediation": "Pass an explicit argument list with shell=False and validate inputs before execution."
+    },
+    {
+      "rule_id": "SEC-003",
+      "severity": "critical",
+      "title": "Unsafe Deserialization",
+      "pattern": "\\b(pickle\\.loads?|yaml\\.load\\s*\\([^)]*(?!SafeLoader))",
+      "remediation": "Use JSON or yaml.safe_load with strict schema validation."
+    },
+    {
+      "rule_id": "SEC-004",
+      "severity": "high",
+      "title": "Potential SQL String Interpolation",
+      "pattern": "(SELECT|INSERT|UPDATE|DELETE)\\s+.*(%s|\\{[^}]+\\}|\\+\\s*[a-zA-Z_])",
+      "remediation": "Use parameterized queries (? or :named placeholders) rather than string concatenation."
+    },
+    {
+      "rule_id": "SEC-005",
+      "severity": "medium",
+      "title": "Weak Cryptographic Hash Function",
+      "pattern": "hashlib\\.(md5|sha1)\\s*\\(",
+      "remediation": "Use SHA-256/SHA-512 for integrity and Argon2/scrypt/PBKDF2 for password hashing."
+    },
+    {
+      "rule_id": "SEC-006",
+      "severity": "high",
+      "title": "DOM XSS innerHTML Sink",
+      "pattern": "\\.innerHTML\\s*=|dangerouslySetInnerHTML",
+      "remediation": "Use textContent or sanitize untrusted HTML with an allowlist sanitizer."
+    },
+    {
+      "rule_id": "SEC-007",
+      "severity": "critical",
+      "title": "Solidity tx.origin Authorization or Reentrancy Call",
+      "pattern": "(tx\\.origin|\\.call\\{value:)",
+      "remediation": "Use msg.sender for authorization and apply Checks-Effects-Interactions or ReentrancyGuard."
+    }
+  ],
+  "secret_patterns": [
+    {
+      "secret_id": "SECRET-AWS-KEY",
+      "title": "AWS Access Key ID Pattern",
+      "pattern": "AKIA[0-9A-Z]{16}"
+    },
+    {
+      "secret_id": "SECRET-PRIVATE-KEY",
+      "title": "PEM Private Key Header",
+      "pattern": "-----BEGIN (?:RSA |EC |OPENSSH |PRIVATE )?PRIVATE KEY-----"
+    },
+    {
+      "secret_id": "SECRET-GITHUB-TOKEN",
+      "title": "GitHub Personal or App Token Pattern",
+      "pattern": "gh[pousr]_[A-Za-z0-9_]{24,}"
+    },
+    {
+      "secret_id": "SECRET-GENERIC-ASSIGNMENT",
+      "title": "Hardcoded Credential Literal",
+      "pattern": "(?i)(api[_-]?key|secret[_-]?key|password|access[_-]?token)\\s*[:=]\\s*['\"][A-Za-z0-9_\\-/+=]{12,}['\"]"
+    }
+  ]
+}

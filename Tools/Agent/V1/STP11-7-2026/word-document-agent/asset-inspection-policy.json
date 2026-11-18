@@ -1,0 +1,194 @@
+{
+  "policy_version": 1,
+  "description": "Inspection, sanitisation, accessibility, proofing and release-gate policy for the word-document-agent skill tool. Edit this file to change what 'inspect', 'sanitize', 'a11y', 'proof' and 'qa' consider a problem. Every rule id is reported verbatim in structured output so downstream skills can map it to their own vocabulary.",
+  "sanitize": {
+    "default_mode": "report",
+    "targets": [
+      {
+        "id": "core-author",
+        "enabled": true,
+        "severity": "warning",
+        "action": "set-property",
+        "property": "creator",
+        "replacement_setting": "sanitized_author",
+        "why": "Author names travel with the file and identify the machine's owner."
+      },
+      {
+        "id": "core-last-modified-by",
+        "enabled": true,
+        "severity": "warning",
+        "action": "set-property",
+        "property": "lastModifiedBy",
+        "replacement_setting": "sanitized_author",
+        "why": "The last editor is personal metadata."
+      },
+      {
+        "id": "core-company",
+        "enabled": true,
+        "severity": "info",
+        "action": "remove-property",
+        "property": "company",
+        "why": "app.xml Company identifies the organisation."
+      },
+      {
+        "id": "core-manager",
+        "enabled": true,
+        "severity": "info",
+        "action": "remove-property",
+        "property": "manager",
+        "why": "app.xml Manager identifies a person."
+      },
+      {
+        "id": "custom-properties",
+        "enabled": true,
+        "severity": "warning",
+        "action": "remove-part",
+        "part": "docProps/custom.xml",
+        "why": "Custom properties frequently store ticket, customer or project identifiers."
+      },
+      {
+        "id": "comment-text",
+        "enabled": true,
+        "severity": "warning",
+        "action": "remove-comments",
+        "why": "Comment bodies and authors are internal review data."
+      },
+      {
+        "id": "tracked-changes",
+        "enabled": true,
+        "severity": "error",
+        "action": "accept-revisions",
+        "why": "Unaccepted revisions keep deleted text recoverable inside the file."
+      },
+      {
+        "id": "revision-authors",
+        "enabled": true,
+        "severity": "warning",
+        "action": "accept-revisions",
+        "why": "Revision provenance names individual reviewers."
+      },
+      {
+        "id": "hidden-text",
+        "enabled": true,
+        "severity": "error",
+        "action": "remove-hidden-text",
+        "why": "Hidden text is invisible on screen but present in the file."
+      },
+      {
+        "id": "white-text",
+        "enabled": true,
+        "severity": "warning",
+        "action": "report-only",
+        "colour": "FFFFFF",
+        "why": "White text is a common way to hide content; removal needs human judgement."
+      },
+      {
+        "id": "embedded-objects",
+        "enabled": true,
+        "severity": "warning",
+        "action": "report-only",
+        "why": "OLE objects and packages carry full external files."
+      },
+      {
+        "id": "custom-xml",
+        "enabled": true,
+        "severity": "warning",
+        "action": "remove-part-pattern",
+        "pattern": "^customXml/",
+        "why": "Custom XML blobs may contain source data that never shows on the page."
+      },
+      {
+        "id": "macros",
+        "enabled": true,
+        "severity": "error",
+        "action": "report-only",
+        "why": "Macro removal changes file type; do it deliberately, never silently."
+      },
+      {
+        "id": "external-links",
+        "enabled": true,
+        "severity": "info",
+        "action": "report-only",
+        "why": "External targets reveal internal URLs and file server paths."
+      },
+      {
+        "id": "document-inspection-notes",
+        "enabled": true,
+        "severity": "info",
+        "action": "remove-property",
+        "property": "Identifier",
+        "why": "GUID identifiers tie copies of a document together."
+      }
+    ]
+  },
+  "a11y": {
+    "rules": [
+      {"id": "doc-title-missing", "severity": "error", "why": "Screen readers announce the document title; it must be set."},
+      {"id": "doc-lang-missing", "severity": "error", "why": "Proofing and screen-reader pronunciation depend on the document language."},
+      {"id": "heading-skip", "severity": "error", "why": "Skipped heading levels break the outline used by assistive technology."},
+      {"id": "headings-missing", "severity": "warning", "why": "Long documents without heading styles have no navigable structure."},
+      {"id": "image-no-alt", "severity": "error", "why": "Images without alternative text are unreadable to screen readers."},
+      {"id": "ambiguous-link-text", "severity": "warning", "why": "Link text such as 'click here' is meaningless when read out of context."},
+      {"id": "table-no-header-row", "severity": "warning", "why": "Data tables need a repeating header row so readers keep column meaning."},
+      {"id": "table-empty-header", "severity": "info", "why": "A blank header cell leaves a column unlabelled."},
+      {"id": "table-irregular-columns", "severity": "warning", "why": "Ragged tables are ambiguous when read cell by cell."},
+      {"id": "hidden-content", "severity": "warning", "why": "Hidden text is invisible but still read by assistive technology in some paths."},
+      {"id": "color-only-meaning", "severity": "warning", "why": "Meaning carried only by colour is lost in mono print and to colour-blind readers."},
+      {"id": "font-below-minimum", "severity": "warning", "min_half_points": 16, "why": "Text smaller than 8 pt is hard to read."},
+      {"id": "empty-heading", "severity": "warning", "why": "An empty heading creates a dead entry in the navigation pane."},
+      {"id": "untagged-form-field", "severity": "warning", "why": "Content controls without a title/tag are announced as unknown fields."},
+      {"id": "outline-empty", "severity": "info", "why": "No outline means no table-of-contents or navigation support."}
+    ],
+    "ambiguous_link_text": ["click here", "here", "read more", "more", "link", "this link", "download"],
+    "min_body_half_points": 16
+  },
+  "proofing": {
+    "checks": [
+      {"id": "placeholder-leftover", "enabled": true, "severity": "error",
+       "patterns": ["\\{\\{[^}]{1,60}\\}\\}", "\\[TODO[^\\]]*\\]", "\\bLOREM IPSUM\\b", "\\bXXX\\b"],
+       "why": "Template placeholders left in a released document are visible defects."},
+      {"id": "todo-marker", "enabled": true, "severity": "warning",
+       "patterns": ["\\bTODO\\b", "\\bFIXME\\b", "\\bTBD\\b", "\\bTK\\b"],
+       "why": "Authoring markers must not reach recipients."},
+      {"id": "repeated-word", "enabled": true, "severity": "warning",
+       "patterns": ["\\b(\\w{3,})\\s+\\1\\b"],
+       "why": "Repeated words are the most common typo after editing."},
+      {"id": "double-space", "enabled": true, "severity": "info",
+       "patterns": ["[^\\s]  +[^\\s]"],
+       "why": "Double spaces inside sentences create uneven spacing in justified text."},
+      {"id": "straight-quote", "enabled": true, "severity": "info",
+       "patterns": ["[\\\"']\\w|\\w[\\\"']"],
+       "why": "Straight quotes look mechanical in typographic documents."},
+      {"id": "trailing-space", "enabled": true, "severity": "info",
+       "patterns": ["[ \\t]+$"],
+       "why": "Trailing spaces change line breaks and break copy-paste."},
+      {"id": "space-before-punctuation", "enabled": true, "severity": "info",
+       "patterns": ["\\s+[,.;:!?]"],
+       "why": "Space before punctuation is a frequent paste artefact."},
+      {"id": "empty-paragraph-run", "enabled": true, "severity": "info",
+       "min_run": 3,
+       "why": "Runs of empty paragraphs indicate layout made with Enter instead of spacing."}
+    ],
+    "ignore_terms": [],
+    "max_findings": 500
+  },
+  "qa_gate": {
+    "fail_on_severity": ["error"],
+    "max_warnings": 100,
+    "required_checks": ["integrity", "structure", "accessibility", "proofing"],
+    "require_no_tracked_changes": true,
+    "require_no_comments": false,
+    "require_no_placeholders": true,
+    "require_alt_text": true,
+    "min_heading_depth": 1,
+    "notes": "Set fail_on_severity to [] for an advisory-only gate; 'qa --report-only' overrides severity handling at run time."
+  },
+  "risk": {
+    "macros": "error",
+    "external-relationships": "info",
+    "dde-fields": "error",
+    "protected-view-flags": "info",
+    "dynamic-data-exchange": "warning",
+    "unlinked-or-missing-styles": "warning"
+  }
+}

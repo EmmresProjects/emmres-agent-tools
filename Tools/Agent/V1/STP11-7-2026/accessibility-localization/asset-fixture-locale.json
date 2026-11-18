@@ -1,0 +1,20 @@
+{
+  "source": {
+    "greeting": "Hello, {{name}}!",
+    "items": "You have {{count}} items.",
+    "search": "Search for {{query}}",
+    "save": "Save changes",
+    "cancel": "Cancel",
+    "status": "Your session will expire in {{minutes}} minutes.",
+    "help": "Need help? Contact support."
+  },
+  "target": {
+    "greeting": "Kumusta, {{name}}!",
+    "items": "Mayroon kang {{count}} item.",
+    "search": "Maghanap ng {{q}}",
+    "save": "I-save ang mga pagbabago",
+    "cancel": "Cancel",
+    "status": "Mag-e-expire ang session mo sa {{minutes}} minuto.",
+    "legacy": "Lumang mensahe"
+  }
+}

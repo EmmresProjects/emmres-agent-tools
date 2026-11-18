@@ -1,0 +1,133 @@
+{
+  "asset": "security-patterns",
+  "version": "1.0.0",
+  "purpose": "Deterministic redaction and classification patterns. Patterns are heuristics, not a guarantee: they reduce obvious leaks; a human reviews every redaction.",
+  "redaction_patterns": [
+    {
+      "type": "email",
+      "severity": "medium",
+      "pattern": "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+    },
+    {
+      "type": "phone",
+      "severity": "medium",
+      "pattern": "\\b(\\+?\\d{1,3}[\\s.-]?)?(\\(?\\d{3}\\)?[\\s.-]?)?\\d{3}[\\s.-]?\\d{4}\\b"
+    },
+    {
+      "type": "ssn-like",
+      "severity": "high",
+      "pattern": "\\b\\d{3}-\\d{2}-\\d{4}\\b"
+    },
+    {
+      "type": "credit-card-like",
+      "severity": "high",
+      "pattern": "\\b(?:\\d[ -]?){13,19}\\b"
+    },
+    {
+      "type": "ipv4",
+      "severity": "low",
+      "pattern": "\\b(?:(?:25[0-5]|2[0-4]\\d|1?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|1?\\d?\\d)\\b"
+    },
+    {
+      "type": "api-key-like",
+      "severity": "high",
+      "pattern": "\\b(?:sk|pk|rk|xox[abp]-|ghp_|glpat-|AKIA)[A-Za-z0-9_\\-\\/+=]{12,}\\b"
+    },
+    {
+      "type": "private-key-block",
+      "severity": "high",
+      "pattern": "-----BEGIN (?:RSA |EC |OPENSSH |PGP )?PRIVATE KEY-----"
+    },
+    {
+      "type": "passport-like",
+      "severity": "high",
+      "pattern": "\\b[A-Z][0-9]{8,9}\\b"
+    },
+    {
+      "type": "iban-like",
+      "severity": "high",
+      "pattern": "\\b[A-Z]{2}\\d{2}[A-Z0-9]{11,30}\\b"
+    },
+    {
+      "type": "long-account-like",
+      "severity": "medium",
+      "pattern": "\\b\\d{10,18}\\b"
+    }
+  ],
+  "sensitive_classes": [
+    {
+      "class": "credentials",
+      "pattern": "-----BEGIN |api[_-]?key|password|passwd|secret[_-]?key",
+      "handling": "highly-restricted"
+    },
+    {
+      "class": "government-id",
+      "pattern": "\\b\\d{3}-\\d{2}-\\d{4}\\b|passport",
+      "handling": "restricted"
+    },
+    {
+      "class": "payment-card",
+      "pattern": "card number|cardholder|cvv|cvc",
+      "handling": "restricted"
+    },
+    {
+      "class": "health",
+      "pattern": "diagnosis|prescription|medical record|patient",
+      "handling": "confidential"
+    },
+    {
+      "class": "financial",
+      "pattern": "account number|routing number|iban|swift",
+      "handling": "confidential"
+    },
+    {
+      "class": "personal-contact",
+      "pattern": "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+      "handling": "internal"
+    },
+    {
+      "class": "network-location",
+      "pattern": "\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b",
+      "handling": "internal"
+    }
+  ],
+  "limits": "Heuristics. Names, addresses and context-only identifiers are not reliably detected; manual review required.",
+  "injection_patterns": [
+    {
+      "type": "override-instructions",
+      "pattern": "ignore (all )?(previous|prior|above) (instructions|prompts)"
+    },
+    {
+      "type": "override-instructions",
+      "pattern": "disregard (all )?(previous|prior|above)"
+    },
+    {
+      "type": "role-assumption",
+      "pattern": "you are now (a|an|the)|from now on,? you"
+    },
+    {
+      "type": "system-prompt-exfil",
+      "pattern": "(reveal|print|repeat|show) (your )?(system )?(prompt|instructions)"
+    },
+    {
+      "type": "tool-invocation",
+      "pattern": "(run|execute|call) (the )?(tool|command|shell|function)s?"
+    },
+    {
+      "type": "secret-exfil",
+      "pattern": "(send|email|upload|post) (the )?(api|secret|password|key|credential)"
+    },
+    {
+      "type": "data-exfil",
+      "pattern": "forward (this|the|all) (data|conversation|file)"
+    },
+    {
+      "type": "jailbreak",
+      "pattern": "DAN\\b|jailbreak|do anything now"
+    },
+    {
+      "type": "urgency-manipulation",
+      "pattern": "(urgent|immediately).{0,40}(approve|authorize|pay|transfer|click)"
+    }
+  ]
+}

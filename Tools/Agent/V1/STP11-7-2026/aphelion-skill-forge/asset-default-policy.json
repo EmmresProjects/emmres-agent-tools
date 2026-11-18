@@ -1,0 +1,701 @@
+{
+  "version": "1.0.0",
+  "description": "Default operating policy for the Aphelion Skill Forge. Tune per organisation; every value is overridable with --policy.",
+  "defaults": {
+    "max_input_bytes": 4000000,
+    "max_items": 500,
+    "max_tool_files": 12,
+    "max_assets": 8,
+    "max_output_bytes": 8000000,
+    "timeout_seconds": 120,
+    "retries": 2,
+    "retry_backoff_seconds": 0.25,
+    "strict": false,
+    "require_approval_for_risk": [
+      "elevated",
+      "high"
+    ],
+    "allow_command_provider": false,
+    "command_provider_allowlist": [],
+    "checkpoint_every_step": true,
+    "profile_min_keywords": 2,
+    "max_profiles": 2,
+    "max_file_bytes": 1048576
+  },
+  "risk_levels": {
+    "low": {
+      "rank": 1,
+      "approval": false,
+      "note": "Read-only local generation, no side effects."
+    },
+    "standard": {
+      "rank": 2,
+      "approval": false,
+      "note": "Creates or edits ordinary local files."
+    },
+    "elevated": {
+      "rank": 3,
+      "approval": true,
+      "note": "Touches delivery, shared state, schema, or code execution."
+    },
+    "high": {
+      "rank": 4,
+      "approval": true,
+      "note": "Privileged, irreversible, security, financial, or publishing impact."
+    }
+  },
+  "rules": [
+    {
+      "id": "destructive",
+      "label": "Destructive or irreversible operation",
+      "risk": "high",
+      "patterns": [
+        "delete|remove|destroy|wipe|purge|overwrite|truncate|drop table|force[- ]push|rm -rf|erase"
+      ]
+    },
+    {
+      "id": "credentials",
+      "label": "Credentials, secrets, or key material",
+      "risk": "high",
+      "patterns": [
+        "credential|secret|api[ _-]?key|password|token|private key|kms|certificate|rotate key|vault"
+      ]
+    },
+    {
+      "id": "publishing",
+      "label": "Publishing or external distribution",
+      "risk": "high",
+      "patterns": [
+        "publish|deploy|release to|send email|post to|notify (customer|user|tenant)|go[- ]live|external distribution"
+      ]
+    },
+    {
+      "id": "financial",
+      "label": "Financial transaction or money movement",
+      "risk": "high",
+      "patterns": [
+        "payment|invoice|billing|refund|transfer funds|purchase order|payroll|tax filing|wire"
+      ]
+    },
+    {
+      "id": "privileged-infrastructure",
+      "label": "Privileged infrastructure change",
+      "risk": "high",
+      "patterns": [
+        "production|prod cluster|terraform apply|kubectl apply|iam|root account|firewall|dns record|migration apply"
+      ]
+    },
+    {
+      "id": "sensitive-data",
+      "label": "Sensitive or personal data handling",
+      "risk": "elevated",
+      "patterns": [
+        "personal data|pii|phi|medical record|passport|biometric|gdpr|hipaa|consent|minor"
+      ]
+    },
+    {
+      "id": "security-testing",
+      "label": "Security testing or exploitation",
+      "risk": "high",
+      "patterns": [
+        "penetration|exploit|vulnerability scan|payload|fuzz|red team|attack"
+      ]
+    },
+    {
+      "id": "code-execution",
+      "label": "Arbitrary code, shell, or network execution",
+      "risk": "elevated",
+      "patterns": [
+        "shell|subprocess|execute code|eval\\(|curl \\||remote endpoint|webhook"
+      ]
+    },
+    {
+      "id": "legal-advice",
+      "label": "Legal, regulatory, or compliance determination",
+      "risk": "high",
+      "patterns": [
+        "legal advice|contract clause|court|lawsuit|statute|regulator|litigation"
+      ]
+    },
+    {
+      "id": "schema-change",
+      "label": "Schema or data contract change",
+      "risk": "elevated",
+      "patterns": [
+        "migration|schema change|alter table|breaking change|api contract"
+      ]
+    }
+  ],
+  "profiles": {
+    "agent-orchestration": {
+      "keywords": [
+        "agent",
+        "orchestrat",
+        "intent",
+        "decompos",
+        "router",
+        "multi-agent",
+        "approval gate",
+        "checkpoint",
+        "scheduler",
+        "dependency graph"
+      ],
+      "domain": "agent-orchestration",
+      "artifacts": [
+        "plan.json",
+        "routing-table.md"
+      ],
+      "checks": [
+        "every capability has an owner and stop condition",
+        "dependency cycles detected",
+        "approval boundary declared"
+      ],
+      "risk": "elevated"
+    },
+    "memory-personalization": {
+      "keywords": [
+        "memory",
+        "personalization",
+        "preference",
+        "continuity",
+        "decision ledger",
+        "entity memory"
+      ],
+      "domain": "memory-personalization",
+      "artifacts": [
+        "memory-record.json",
+        "preference-summary.md"
+      ],
+      "checks": [
+        "no secrets captured",
+        "retention window stated",
+        "record deletable"
+      ],
+      "risk": "elevated"
+    },
+    "research-evidence": {
+      "keywords": [
+        "search",
+        "browsing",
+        "citation",
+        "source",
+        "evidence",
+        "fact check",
+        "provenance"
+      ],
+      "domain": "research-evidence",
+      "artifacts": [
+        "evidence-table.md",
+        "citations.json"
+      ],
+      "checks": [
+        "each claim carries a source and date",
+        "competing claims compared",
+        "stale sources flagged"
+      ],
+      "risk": "standard"
+    },
+    "document-engineering": {
+      "keywords": [
+        "document",
+        "docx",
+        "word",
+        "pdf",
+        "ingest",
+        "ocr",
+        "form",
+        "redact",
+        "archive"
+      ],
+      "domain": "document-engineering",
+      "artifacts": [
+        "document.docx",
+        "structure-audit.md"
+      ],
+      "checks": [
+        "page geometry preserved",
+        "styles are native",
+        "redaction verified not visual-only"
+      ],
+      "risk": "elevated"
+    },
+    "presentation-engineering": {
+      "keywords": [
+        "slide",
+        "presentation",
+        "deck",
+        "pptx",
+        "powerpoint",
+        "master",
+        "speaker notes"
+      ],
+      "domain": "presentation-engineering",
+      "artifacts": [
+        "deck.pptx",
+        "object-inventory.json"
+      ],
+      "checks": [
+        "objects stay editable",
+        "master layouts reused",
+        "notes preserved"
+      ],
+      "risk": "standard"
+    },
+    "diagram-visual-logic": {
+      "keywords": [
+        "diagram",
+        "uml",
+        "svg",
+        "flowchart",
+        "notation",
+        "connector"
+      ],
+      "domain": "diagram-visual-logic",
+      "artifacts": [
+        "diagram.svg",
+        "notation-check.md"
+      ],
+      "checks": [
+        "notation conformance checked",
+        "labels do not overlap",
+        "export is vector"
+      ],
+      "risk": "standard"
+    },
+    "spreadsheet-modelling": {
+      "keywords": [
+        "spreadsheet",
+        "excel",
+        "xlsx",
+        "formula",
+        "workbook",
+        "pivot",
+        "model"
+      ],
+      "domain": "spreadsheet-modelling",
+      "artifacts": [
+        "workbook.xlsx",
+        "formula-audit.md"
+      ],
+      "checks": [
+        "formulas recalculate",
+        "no hard-coded totals",
+        "ranges named where reused"
+      ],
+      "risk": "elevated"
+    },
+    "data-analysis": {
+      "keywords": [
+        "data",
+        "statistic",
+        "dataset",
+        "analysis",
+        "chart",
+        "dashboard",
+        "regression",
+        "visualization"
+      ],
+      "domain": "data-analysis",
+      "artifacts": [
+        "analysis-report.md",
+        "assumptions.md"
+      ],
+      "checks": [
+        "missing values disclosed",
+        "uncertainty reported",
+        "source traceable"
+      ],
+      "risk": "standard"
+    },
+    "software-engineering": {
+      "keywords": [
+        "code",
+        "repository",
+        "api",
+        "test",
+        "debug",
+        "refactor",
+        "dependency",
+        "release",
+        "web app"
+      ],
+      "domain": "software-engineering",
+      "artifacts": [
+        "patch.diff",
+        "build-report.md"
+      ],
+      "checks": [
+        "build passes",
+        "tests added or updated",
+        "rollback path recorded"
+      ],
+      "risk": "elevated"
+    },
+    "data-platform": {
+      "keywords": [
+        "database",
+        "schema",
+        "migration",
+        "pipeline",
+        "lineage",
+        "warehouse",
+        "etl"
+      ],
+      "domain": "data-platform",
+      "artifacts": [
+        "migration.sql",
+        "lineage.md"
+      ],
+      "checks": [
+        "migration reversible",
+        "dry run completed",
+        "row-count expectation recorded"
+      ],
+      "risk": "high"
+    },
+    "cloud-operations": {
+      "keywords": [
+        "cloud",
+        "devops",
+        "kubernetes",
+        "container",
+        "infrastructure",
+        "observability",
+        "incident",
+        "deploy"
+      ],
+      "domain": "cloud-operations",
+      "artifacts": [
+        "plan.txt",
+        "runbook.md"
+      ],
+      "checks": [
+        "plan reviewed before apply",
+        "blast radius named",
+        "maintenance window agreed"
+      ],
+      "risk": "high"
+    },
+    "security-privacy": {
+      "keywords": [
+        "security",
+        "privacy",
+        "threat",
+        "vulnerab",
+        "identity",
+        "access control",
+        "compliance evidence",
+        "encryption"
+      ],
+      "domain": "security-privacy",
+      "artifacts": [
+        "findings.md",
+        "evidence.json"
+      ],
+      "checks": [
+        "scope and authorization recorded",
+        "no live exploitation",
+        "evidence minimized"
+      ],
+      "risk": "high"
+    },
+    "automation-connectors": {
+      "keywords": [
+        "automation",
+        "workflow",
+        "connector",
+        "schedule",
+        "event",
+        "webhook",
+        "retry",
+        "escalation"
+      ],
+      "domain": "automation-connectors",
+      "artifacts": [
+        "workflow.json",
+        "audit-trail.md"
+      ],
+      "checks": [
+        "retry and backoff defined",
+        "idempotency keys used",
+        "escalation path present"
+      ],
+      "risk": "elevated"
+    },
+    "media-production": {
+      "keywords": [
+        "image",
+        "audio",
+        "video",
+        "speech",
+        "music",
+        "render",
+        "caption",
+        "codec",
+        "transcript"
+      ],
+      "domain": "media-production",
+      "artifacts": [
+        "render.mp4",
+        "qc-report.md"
+      ],
+      "checks": [
+        "captions time-aligned",
+        "loudness or color normalized",
+        "licence and consent recorded"
+      ],
+      "risk": "standard"
+    },
+    "design-accessibility": {
+      "keywords": [
+        "design",
+        "ux",
+        "usability",
+        "accessib",
+        "wcag",
+        "contrast",
+        "design system",
+        "user flow"
+      ],
+      "domain": "design-accessibility",
+      "artifacts": [
+        "tokens.json",
+        "a11y-report.md"
+      ],
+      "checks": [
+        "contrast checked",
+        "focus order documented",
+        "reduced-motion respected"
+      ],
+      "risk": "standard"
+    },
+    "product-delivery": {
+      "keywords": [
+        "product",
+        "project",
+        "backlog",
+        "requirement",
+        "risk",
+        "launch",
+        "retrospective",
+        "stakeholder"
+      ],
+      "domain": "product-delivery",
+      "artifacts": [
+        "plan.md",
+        "risk-log.md"
+      ],
+      "checks": [
+        "acceptance criteria testable",
+        "risks have owners",
+        "dependencies scheduled"
+      ],
+      "risk": "standard"
+    },
+    "business-finance": {
+      "keywords": [
+        "business",
+        "strategy",
+        "market",
+        "vendor",
+        "finance",
+        "budget",
+        "forecast",
+        "reconcil",
+        "audit"
+      ],
+      "domain": "business-finance",
+      "artifacts": [
+        "model.xlsx",
+        "controls.md"
+      ],
+      "checks": [
+        "reconciliation ties out",
+        "period and currency stated",
+        "assumptions separated from facts"
+      ],
+      "risk": "high"
+    },
+    "legal-compliance": {
+      "keywords": [
+        "legal",
+        "policy",
+        "compliance",
+        "clause",
+        "obligation",
+        "regulation",
+        "consent"
+      ],
+      "domain": "legal-compliance",
+      "artifacts": [
+        "summary.md",
+        "obligation-table.md"
+      ],
+      "checks": [
+        "counsel review flagged",
+        "citation to clause or statute",
+        "not presented as final legal advice"
+      ],
+      "risk": "high"
+    },
+    "education-learning": {
+      "keywords": [
+        "education",
+        "lesson",
+        "curriculum",
+        "assessment",
+        "tutor",
+        "rubric",
+        "learning"
+      ],
+      "domain": "education-learning",
+      "artifacts": [
+        "lesson.md",
+        "rubric.md"
+      ],
+      "checks": [
+        "objectives measurable",
+        "assessment maps to objectives",
+        "reading level reported"
+      ],
+      "risk": "standard"
+    },
+    "science-engineering": {
+      "keywords": [
+        "experiment",
+        "simulation",
+        "calculation",
+        "calibration",
+        "requirement",
+        "physics",
+        "chemistry",
+        "engineering"
+      ],
+      "domain": "science-engineering",
+      "artifacts": [
+        "report.md",
+        "uncertainty.json"
+      ],
+      "checks": [
+        "units and tolerances stated",
+        "calibration recorded",
+        "uncertainty propagated"
+      ],
+      "risk": "elevated"
+    },
+    "localization": {
+      "keywords": [
+        "localization",
+        "translation",
+        "locale",
+        "multilingual",
+        "terminology",
+        "rtl",
+        "language"
+      ],
+      "domain": "localization",
+      "artifacts": [
+        "strings.xlf",
+        "locale-qa.md"
+      ],
+      "checks": [
+        "glossary applied",
+        "locale formats checked",
+        "text expansion budget respected"
+      ],
+      "risk": "standard"
+    },
+    "knowledge-management": {
+      "keywords": [
+        "knowledge",
+        "taxonomy",
+        "enterprise content",
+        "meeting",
+        "provenance",
+        "freshness",
+        "discoverability"
+      ],
+      "domain": "knowledge-management",
+      "artifacts": [
+        "taxonomy.json",
+        "provenance.md"
+      ],
+      "checks": [
+        "provenance attached",
+        "freshness date present",
+        "duplicates merged"
+      ],
+      "risk": "standard"
+    },
+    "games-spatial": {
+      "keywords": [
+        "game",
+        "level",
+        "3d",
+        "animation",
+        "xr",
+        "spatial",
+        "npc",
+        "pbr",
+        "build"
+      ],
+      "domain": "games-spatial",
+      "artifacts": [
+        "design-doc.md",
+        "perf-budget.json"
+      ],
+      "checks": [
+        "performance budget stated",
+        "asset licence recorded",
+        "input paths cover accessibility"
+      ],
+      "risk": "standard"
+    },
+    "quality-evaluation": {
+      "keywords": [
+        "benchmark",
+        "evaluation",
+        "rubric",
+        "golden",
+        "adversarial",
+        "regression",
+        "latency",
+        "cost profile"
+      ],
+      "domain": "quality-evaluation",
+      "artifacts": [
+        "benchmark.json",
+        "score-guide.md"
+      ],
+      "checks": [
+        "test set representative",
+        "scoring reproducible",
+        "cost per run reported"
+      ],
+      "risk": "standard"
+    },
+    "packaging-delivery": {
+      "keywords": [
+        "packaging",
+        "manifest",
+        "integrity",
+        "rollback",
+        "delivery",
+        "release",
+        "reproducible",
+        "archive"
+      ],
+      "domain": "packaging-delivery",
+      "artifacts": [
+        "artifact.zip",
+        "manifest.json"
+      ],
+      "checks": [
+        "integrity hashes verified",
+        "clean-room extraction tested",
+        "rollback bundle kept"
+      ],
+      "risk": "elevated"
+    }
+  }
+}

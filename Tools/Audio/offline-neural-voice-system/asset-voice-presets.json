@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "updated": "2026-11-15",
+  "description": "Voice and delivery presets for the Offline Neural Voice Skill Tool. Engine params map to Piper length_scale / noise_scale / noise_w. rate < 1 is slower delivery. loudness_lufs and peak_dbfs are mastering targets.",
+  "presets": {
+    "friendly-male-30s": {
+      "display_name": "Friendly Male 30s (default)",
+      "description": "Warm, welcoming, conversational American-English male voice in a 30s age style. Natural energy, medium pace, slight smile effect, chest-resonance target (implemented via model choice + gentle low-mid emphasis guidance, not DSP pitch shifting).",
+      "language": "en-US",
+      "gender_presentation": "male",
+      "age_style": "30s",
+      "tone": [
+        "warm",
+        "welcoming",
+        "friendly"
+      ],
+      "delivery": "conversational",
+      "energy": "natural",
+      "pace": "medium",
+      "engine": "piper",
+      "engine_params": {
+        "length_scale": 1.08,
+        "noise_scale": 0.667,
+        "noise_w": 0.8,
+        "sentence_silence": 0.3
+      },
+      "ssml_profile": {
+        "default_rate": "medium",
+        "greeting_break_ms": 240,
+        "emphasis_rate_scale": 0.94
+      },
+      "mastering": {
+        "loudness_lufs": -14.0,
+        "peak_dbfs": -1.0,
+        "trim_silence_db": -45.0
+      },
+      "notes": "Bundled en_US-lessac-medium (MIT) is the reference model. Piper has no true pitch control; chest-resonance and smile effects are approximate targets achieved through model selection, pace and written delivery rather than DSP. length_scale 1.08 keeps the default delivery a natural medium pace while making the 2.5-4s greeting acceptance window robust across stochastic synthesis runs."
+    },
+    "warm-narrator": {
+      "display_name": "Warm Narrator",
+      "description": "Slightly slower, intimate narration with steady warmth; good for intros and long-form reading.",
+      "language": "en-US",
+      "gender_presentation": "male",
+      "age_style": "30s",
+      "tone": [
+        "warm",
+        "steady",
+        "intimate"
+      ],
+      "delivery": "narration",
+      "energy": "moderate",
+      "pace": "medium-slow",
+      "engine": "piper",
+      "engine_params": {
+        "length_scale": 1.12,
+        "noise_scale": 0.667,
+        "noise_w": 0.8,
+        "sentence_silence": 0.4
+      },
+      "ssml_profile": {
+        "default_rate": "slow",
+        "greeting_break_ms": 300,
+        "emphasis_rate_scale": 0.92
+      },
+      "mastering": {
+        "loudness_lufs": -16.0,
+        "peak_dbfs": -1.5,
+        "trim_silence_db": -45.0
+      },
+      "notes": "-16 LUFS suits long-form narration platforms."
+    },
+    "bright-enthusiastic": {
+      "display_name": "Bright Enthusiastic",
+      "description": "Upbeat, energetic delivery for announcements and promos; faster rate, higher noise variation.",
+      "language": "en-US",
+      "gender_presentation": "male",
+      "age_style": "30s",
+      "tone": [
+        "bright",
+        "energetic",
+        "exciting"
+      ],
+      "delivery": "promotional",
+      "energy": "high",
+      "pace": "medium-fast",
+      "engine": "piper",
+      "engine_params": {
+        "length_scale": 0.92,
+        "noise_scale": 0.72,
+        "noise_w": 0.85,
+        "sentence_silence": 0.22
+      },
+      "ssml_profile": {
+        "default_rate": "fast",
+        "greeting_break_ms": 180,
+        "emphasis_rate_scale": 0.95
+      },
+      "mastering": {
+        "loudness_lufs": -14.0,
+        "peak_dbfs": -1.0,
+        "trim_silence_db": -45.0
+      },
+      "notes": "Watch emphasis overuse; more than ~2 emphasized spans per sentence sounds forced."
+    },
+    "calm-instructional": {
+      "display_name": "Calm Instructional",
+      "description": "Clear, patient, low-energy delivery for tutorials and documentation reading.",
+      "language": "en-US",
+      "gender_presentation": "male",
+      "age_style": "30s",
+      "tone": [
+        "calm",
+        "patient",
+        "clear"
+      ],
+      "delivery": "instructional",
+      "energy": "low-moderate",
+      "pace": "medium-slow",
+      "engine": "piper",
+      "engine_params": {
+        "length_scale": 1.15,
+        "noise_scale": 0.6,
+        "noise_w": 0.75,
+        "sentence_silence": 0.45
+      },
+      "ssml_profile": {
+        "default_rate": "slow",
+        "greeting_break_ms": 320,
+        "emphasis_rate_scale": 0.9
+      },
+      "mastering": {
+        "loudness_lufs": -16.0,
+        "peak_dbfs": -1.5,
+        "trim_silence_db": -48.0
+      },
+      "notes": "Good default for accessibility-oriented content."
+    },
+    "empathetic-checkin": {
+      "display_name": "Empathetic Check-in",
+      "description": "Soft, sincere, unhurried delivery for supportive messages; lower loudness.",
+      "language": "en-US",
+      "gender_presentation": "male",
+      "age_style": "30s",
+      "tone": [
+        "soft",
+        "sincere",
+        "empathetic"
+      ],
+      "delivery": "empathetic",
+      "energy": "low",
+      "pace": "slow",
+      "engine": "piper",
+      "engine_params": {
+        "length_scale": 1.2,
+        "noise_scale": 0.58,
+        "noise_w": 0.7,
+        "sentence_silence": 0.5
+      },
+      "ssml_profile": {
+        "default_rate": "x-slow",
+        "greeting_break_ms": 400,
+        "emphasis_rate_scale": 0.9
+      },
+      "mastering": {
+        "loudness_lufs": -16.0,
+        "peak_dbfs": -2.0,
+        "trim_silence_db": -48.0
+      },
+      "notes": "Keep transcripts warm and plain; never use for synthetic impersonation."
+    }
+  }
+}

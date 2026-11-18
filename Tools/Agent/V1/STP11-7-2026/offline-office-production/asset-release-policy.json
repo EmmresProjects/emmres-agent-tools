@@ -1,0 +1,14 @@
+{
+  "required_checks": [
+    "visual_review_passed",
+    "native_reopen_passed",
+    "compatibility_passed",
+    "accessibility_passed",
+    "security_review_passed",
+    "privacy_review_passed",
+    "formula_validation_passed",
+    "signature_validation_passed",
+    "archival_validation_passed",
+    "clean_state_reopen_passed"
+  ]
+}

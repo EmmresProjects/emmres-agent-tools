@@ -1,0 +1,752 @@
+{
+ "categories": {
+  "1": {
+   "workflow": [
+    "Run `brief` to convert the idea into a structured production brief with IP risk flags.",
+    "Run `constraints` to fix canvas, tile grid, palette budget, and file-size budgets before drawing.",
+    "Run `scope` to break the project into asset families with effort estimates.",
+    "Run `art-bible` to lock palette, outline, shading, animation, and naming rules.",
+    "Generate a starter palette (`palette-generate`) and 2-3 silhouette thumbnails (`sprite-generate`, `silhouette`).",
+    "Review the brief with stakeholders; record approvals via `license-record --status approved`."
+   ],
+   "checklist": [
+    "Canvas and display scale decided before any art",
+    "Palette budget and ramps documented",
+    "Animation list with frame budgets",
+    "Naming convention fixed",
+    "IP/originality review done",
+    "Acceptance criteria are testable (validate/seam-check/compare)"
+   ],
+   "pitfalls": [
+    "Starting to draw before constraints are fixed",
+    "Scope without variants/states counted",
+    "Referencing protected characters or logos instead of original designs"
+   ],
+   "commands": [
+    "brief out/brief.json --idea \"cozy forest shrine icon set\" --platform game-pc --animation idle",
+    "constraints out/constraints.json --platform retro-handheld --system gameboy",
+    "scope out/scope.json --items characters:3,props:12,tiles:48,icons:20,animations:6",
+    "art-bible out/art-bible.md --title \"Forest Shrine\" --palette out/pal.json"
+   ]
+  },
+  "2": {
+   "workflow": [
+    "Block silhouettes first; check with `silhouette` at play size.",
+    "Build clusters with controlled stair-step rhythm; avoid 1-1-1 jaggies.",
+    "Add linework with `outline` (outer/inner/inline) only where it helps readability.",
+    "Use `dither` for gradients/materials; keep it deliberate, not noise.",
+    "Finish with `cleanup` to remove orphan pixels and stray alpha."
+   ],
+   "checklist": [
+    "Silhouette reads at x1",
+    "Contour rhythm intentional",
+    "No orphan pixels (cleanup reports 0)",
+    "Negative space preserved",
+    "Line weight consistent with resolution"
+   ],
+   "pitfalls": [
+    "Detailing before clusters",
+    "Anti-aliasing that blurs the pixel aesthetic",
+    "Uniform dither everywhere instead of material-driven use"
+   ],
+   "commands": [
+    "silhouette in.png out/sil.png",
+    "outline in.png out/outlined.png --color #1a1822 --mode outer",
+    "dither in.png out/dithered.png --palette out/pal.json --matrix 4",
+    "cleanup in.png out/clean.png --passes 2"
+   ]
+  },
+  "3": {
+   "workflow": [
+    "Generate or extract a base palette (`palette-generate`, `palette-extract`).",
+    "Audit ramps with `palette-analyze` (duplicates, weak value steps, CVD collisions).",
+    "Apply/reduce with `palette-apply`; export indexed PNG when a transparent index is needed.",
+    "Plan recolors with `palette-swap` (index-aligned teams/costumes).",
+    "Create lighting variants with `recolor --preset night|sunset|...`.",
+    "Convert formats for editors with `palette-convert`."
+   ],
+   "checklist": [
+    "Hue-shifted shadows/lights",
+    "Value steps readable at play size",
+    "No duplicate/near-duplicate entries",
+    "CVD close-pairs reviewed",
+    "Transparent index reserved for indexed exports"
+   ],
+   "pitfalls": [
+    "Pure grayscale ramps for everything",
+    "Reducing colors after dithering (double damage)",
+    "Palette drift between asset families"
+   ],
+   "commands": [
+    "palette-generate out/pal.json --mood forest --scheme triadic --ramps 3 --steps 5",
+    "palette-extract ref.png out/extracted.gpl --colors 16 --sort luminance",
+    "palette-analyze out/pal.json --image art.png --report out/pal-report.json --swatches out/cvd.png",
+    "palette-apply art.png out/art-16.png --palette out/pal.json --indexed out/art-indexed.png",
+    "palette-swap hero.png out/hero-team2.png --src out/pal.json --dst out/pal-team2.json",
+    "recolor scene.png out/scene-night.png --preset night --colors 24"
+   ]
+  },
+  "4": {
+   "workflow": [
+    "Generate base candidates with `sprite-generate --kind creature|robot|...` and a fixed seed.",
+    "Refine silhouettes manually in your editor; keep proportions animation-ready.",
+    "Build turnarounds with `transform` flips and consistent pivot via `tags --set-pivot`.",
+    "Split modular parts with `split-layers --mode component`; recombine with `composite`.",
+    "Create state/team variants with `palette-swap` and `recolor`.",
+    "Run `critique` for readability metrics before approval."
+   ],
+   "checklist": [
+    "Readable silhouette at play size",
+    "Consistent proportions across views",
+    "Modular layers align to a shared pivot",
+    "Variants keep ramp structure",
+    "Facing/hit states distinguishable without color alone"
+   ],
+   "pitfalls": [
+    "Mirroring asymmetric equipment",
+    "Variants that change value structure, not just hue",
+    "Over-detailing tiny sprites"
+   ],
+   "commands": [
+    "sprite-generate out/sprites --kind creature --count 8 --seed 21 --sheet out/sprites.png",
+    "split-layers hero.png out/hero-layers --mode component",
+    "critique hero.png --output out/hero-critique.md --json-out out/hero-critique.json"
+   ]
+  },
+  "5": {
+   "workflow": [
+    "Generate icon families with `icon-generate` (potion/coin/gem/sword/...).",
+    "Keep framing, light direction, and outline weight identical across the family.",
+    "Use rarity/value cues via ramps, not just hue.",
+    "Check tiny sizes with `platform-export --preset emote` and `critique`.",
+    "Batch variants with `batch` + `palette-swap` jobs."
+   ],
+   "checklist": [
+    "Consistent margins and light",
+    "Readable at 16px and 28px",
+    "Rarity readable without color (shape/border cue)",
+    "Family shares palette"
+   ],
+   "pitfalls": [
+    "Inconsistent perspective within a set",
+    "1px details that vanish at display size"
+   ],
+   "commands": [
+    "icon-generate out/icons --kind all --size 16 --sheet out/icons.png",
+    "icon-generate out/coins --kind coin --variants 4 --seed 9",
+    "platform-export icon.png out/emotes --preset emote"
+   ]
+  },
+  "6": {
+   "workflow": [
+    "Plan depth layers (sky, far, mid, near, foreground) before painting.",
+    "Generate ground/material bases with `pattern-generate` and `tileset-generate`.",
+    "Composite layers with `composite`; keep each layer editable.",
+    "Create lighting scenarios with `recolor` presets; keep the neutral master.",
+    "Add weather with `effect-generate --kind rain|snow|smoke`.",
+    "Verify panorama loops with `seam-check --preview`."
+   ],
+   "checklist": [
+    "Focal hierarchy and value grouping",
+    "Parallax layers separated cleanly",
+    "Lighting variants share geometry",
+    "Seams verified for looping vistas"
+   ],
+   "pitfalls": [
+    "Mixing pixel densities between layers",
+    "Baking weather into the master"
+   ],
+   "commands": [
+    "pattern-generate out/ground.png --kind grass --size 32 --preview out/ground-2x2.png",
+    "composite out/scene.png sky.png mountains.png trees.png --layers-json out/layers.json",
+    "seam-check panorama.png --preview out/pano-tiled.png --fix out/pano-fixed.png",
+    "effect-generate out/rain --kind rain --size 96 --frames 16 --animation out/rain.gif"
+   ]
+  },
+  "7": {
+   "workflow": [
+    "Fix tile size and projection; generate autotiles with `tileset-generate --mode 16|47`.",
+    "Preview placement with `--preview-map` (ASCII map).",
+    "Check seams with `seam-check`; fix repetition with `--variants`.",
+    "Export map data with `tilemap-export` (TMX/TSX/Tiled JSON/CSV).",
+    "Pack engine atlases with `sheet-pack --extrude 2 --padding 2`."
+   ],
+   "checklist": [
+    "All 16/47 neighbor cases covered",
+    "Corners and inner corners correct",
+    "No visible seams in tiled preview",
+    "GIDs validated against tilecount",
+    "Collision layer aligned to art grid"
+   ],
+   "pitfalls": [
+    "Padding>0 tilesets fed to grid tilemap exporters (use --padding 0)",
+    "Forgetting diagonal rules in blob sets",
+    "Single-variant tiling that shows obvious repeats"
+   ],
+   "commands": [
+    "tileset-generate out/grass.png --terrain grass --mode 47 --tile-size 16 --preview-map map.txt",
+    "tilemap-export --map level.csv --tileset-image out/grass.png --tile-size 16 --outdir out/map --name level1",
+    "seam-check tile.png --preview out/tile-3x3.png"
+   ]
+  },
+  "8": {
+   "workflow": [
+    "Choose projection (top-down, side, front, 2:1 iso) and lock it in the art bible.",
+    "For iso/voxel work, build models with `voxel-build` and render with `voxel-render --view iso`.",
+    "Use `iso-primitive` for consistent diamond tiles/cubes.",
+    "Generate turntables with `voxel-turntable` (4 exact 90-degree views).",
+    "Audit consistency with `validate --detect-resample` and manual projection review."
+   ],
+   "checklist": [
+    "One projection per asset family",
+    "2:1 iso steps stay on grid",
+    "Verticals vertical in iso",
+    "Scale consistent across objects"
+   ],
+   "pitfalls": [
+    "Mixing true iso with 30-degree dimetric accidentally",
+    "Rotating pixel art at arbitrary angles"
+   ],
+   "commands": [
+    "voxel-build out/tree.json --heightmap tree-height.png --max-height 10",
+    "voxel-render out/tree.json out/tree-iso.png --view iso --scale 6",
+    "voxel-turntable out/tree.json out/tree-views --animation out/tree.gif",
+    "iso-primitive tile out/iso-tile.png --size 16 --color #7a9b4e"
+   ]
+  },
+  "9": {
+   "workflow": [
+    "Start from a strong key pose; generate base loops with `motion-generate` (idle-bob, jump, walk-bob).",
+    "Hand-tune keys in your editor; keep feet planted on contact frames.",
+    "Set timing with `anim-encode --fps/--hold`; use `tags` for state ranges and events.",
+    "Check loop closure and duplicates with `validate` (animation checks).",
+    "Add secondary motion 1-2 frames behind the body."
+   ],
+   "checklist": [
+    "Contact/down/pass/up keys present for walks",
+    "Loop closes (validate)",
+    "No foot sliding on contact frames",
+    "Timing matches game feel",
+    "Events (footstep/hit) on exact frames"
+   ],
+   "pitfalls": [
+    "Even spacing everywhere (robotic motion)",
+    "Mirroring walk cycles without checking facing",
+    "Sub-pixel drift from non-integer offsets"
+   ],
+   "commands": [
+    "motion-generate hero.png --kind idle-bob --frames 8 --animation out/idle.gif --sheet out/idle-sheet.png",
+    "tags out/idle.json --init --frames 8 --size 24x24 --add-tag idle:0:7 --add-event 2:footstep",
+    "validate out/idle.gif --min-frames 4"
+   ]
+  },
+  "10": {
+   "workflow": [
+    "Generate effect bases with `effect-generate` (fire, explosion, water, energy, ...).",
+    "Use `palette-cycle` for water/lava/neon signage animation from a single still.",
+    "Add impact feedback with `motion-generate --kind shake|hit-flash`.",
+    "Transitions: `motion-generate --kind dissolve`, `glitch` for signal effects.",
+    "QA with `validate` (flash risk, duplicates, loop closure)."
+   ],
+   "checklist": [
+    "Effect reads against both dark and light backgrounds",
+    "Flash-risk check passes",
+    "Exact-loop effects loop seamlessly",
+    "Particle counts within budget"
+   ],
+   "pitfalls": [
+    "Full-screen white flashes (accessibility)",
+    "Effects that obscure gameplay silhouettes",
+    "Non-looping 'loops' that pop"
+   ],
+   "commands": [
+    "effect-generate out/fire --kind fire --size 48 --frames 24 --animation out/fire.gif",
+    "palette-cycle water-still.png out/water.gif --palette out/pal.json --start 2 --end 7 --fps 10",
+    "motion-generate hero.png --kind hit-flash --frames 8 --animation out/hit.gif"
+   ]
+  },
+  "11": {
+   "workflow": [
+    "Extract frames with `anim-decode` (GIF/APNG/WebP) or `sheet-slice` (grid/auto).",
+    "Normalize sizes (`pad`) and trim with offset metadata (`trim --meta`).",
+    "Pack with `sheet-pack` (padding/extrusion/POT) and export metadata (`--meta-format`).",
+    "Record pivots/tags/events with `tags`; feed tags into `sheet-pack --tags-json`.",
+    "Validate the atlas with `validate sheet.json --sheet sheet.png`."
+   ],
+   "checklist": [
+    "Frame dimensions consistent",
+    "Offsets preserved when trimming",
+    "Extrusion >= 1 for filtered engines",
+    "Metadata bounds/overlaps pass",
+    "Pivots normalized and consistent"
+   ],
+   "pitfalls": [
+    "Trimming without recording offsets (sprites jump in engine)",
+    "Zero padding with bilinear filtering (bleeding)",
+    "Losing frame order in packed layouts"
+   ],
+   "commands": [
+    "sheet-slice sheet.png out/frames --grid 32x32 --spacing 1",
+    "sheet-pack out/frames --output out/atlas.png --layout packed --padding 2 --extrude 1 --power-of-two --meta out/atlas.json --meta-format json-hash",
+    "validate out/atlas.json --sheet out/atlas.png",
+    "atlas-meta out/atlas.json out/atlas.xml --format xml"
+   ]
+  },
+  "12": {
+   "workflow": [
+    "Work on copies; never edit the only master (overwrite guard + --force approval).",
+    "Recolor with `palette-swap`/`recolor`; replace backgrounds with `remove-bg` + `composite`.",
+    "Relight with `recolor` presets or hand-passes; keep the neutral master.",
+    "Split flattened art into layers with `split-layers` before structural edits.",
+    "Harmonize collections by applying one palette (`palette-apply`) and scale policy.",
+    "Restore damaged art with `restore` (grid detection + requantize)."
+   ],
+   "checklist": [
+    "Originals preserved",
+    "Edits reversible (layers/manifests)",
+    "Palette indexes preserved for swaps",
+    "Background removal checked at edges"
+   ],
+   "pitfalls": [
+    "Destructive overwrites without approval",
+    "Hue shifts that break material identity",
+    "Flood-fill removal eating interior colors"
+   ],
+   "commands": [
+    "remove-bg sprite.png out/sprite-alpha.png --tolerance 10",
+    "split-layers flat.png out/layers --mode color --max-layers 16",
+    "restore damaged-x4.png out/native.png --cleanup --upscale 4"
+   ]
+  },
+  "13": {
+   "workflow": [
+    "Convert with `convert` (box downscale + palette + optional dither/cleanup/outline).",
+    "Pick native width from the target use (16/32/64/128), not from the source size.",
+    "For animation sources: `anim-decode` frames, then `convert` each with the SAME palette.",
+    "Portraits/photos: only with authorization; keep recognizable non-sensitive features.",
+    "Finish with `cleanup` and a preview at integer scale (`--preview-scale`)."
+   ],
+   "checklist": [
+    "Deliberate pixel clusters (not just downsampled)",
+    "Palette locked across frames",
+    "No palette flicker in converted animations",
+    "Authorized source material"
+   ],
+   "pitfalls": [
+    "Converting at too-high resolution (looks like a photo, not pixel art)",
+    "Per-frame auto palettes causing flicker",
+    "Tracing protected artwork"
+   ],
+   "commands": [
+    "convert photo.jpg out/portrait.png --width 64 --colors 24 --dither bayer4 --cleanup --preview-scale 4",
+    "convert frame.png out/frame-px.png --width 96 --palette out/locked.json --dither none"
+   ]
+  },
+  "14": {
+   "workflow": [
+    "Build voxel models from heightmaps/boxes with `voxel-build`; edit JSON or .vox in voxel editors.",
+    "Render with `voxel-render` (iso/front/side/top); lighting is face-shaded for block clarity.",
+    "Produce 4-direction turntables with `voxel-turntable`.",
+    "Export sprite stacks with `voxel-stack` for pseudo-3D engines.",
+    "Generate normal maps for hybrid 3D with `normal-map`."
+   ],
+   "checklist": [
+    "Block clarity preserved (no smoothing)",
+    "Consistent light direction across views",
+    ".vox roundtrip verified",
+    "Stack axis documented"
+   ],
+   "pitfalls": [
+    "Arbitrary-angle voxel rotation (resampling)",
+    "Over-large models exceeding limits"
+   ],
+   "commands": [
+    "voxel-build out/model.vox --box 8x8x8 --color #7a9b4e",
+    "voxel-render out/model.vox out/model.png --view iso --scale 6",
+    "voxel-stack out/model.vox out/stack.png"
+   ]
+  },
+  "15": {
+   "workflow": [
+    "Plan shots with `storyboard-generate` (board + markdown + animatic GIF).",
+    "Assemble/preview loops with `anim-encode` (exact frame closure for ambient loops).",
+    "Add titles/lower-thirds with `text-render --effect`.",
+    "Burn captions and export SRT with `caption-render`.",
+    "Author delivery encodes with `script-author ffmpeg` (MP4/GIF/WebM pipelines).",
+    "Composite layers with `composite`; keep masters lossless."
+   ],
+   "checklist": [
+    "Integer scaling in every encode",
+    "Captions readable and timed",
+    "Loop closure exact for ambient loops",
+    "Platform aspect variants exported"
+   ],
+   "pitfalls": [
+    "Encoding at non-integer scales (shimmer)",
+    "Losing alpha in MP4 (use WebM/VP9 alpha or ProRes)",
+    "Baking captions into the only master"
+   ],
+   "commands": [
+    "storyboard-generate --demo --output out/board.png --animatic out/animatic.gif",
+    "caption-render clip.gif out/clip-captioned.gif --cues captions.srt --srt-out out/captions.srt",
+    "script-author ffmpeg out/scripts --fps 12"
+   ]
+  },
+  "16": {
+   "workflow": [
+    "Define UI palette/borders with `ui-generate panel` (nine-slice margins exported).",
+    "Generate button state strips with `ui-generate button` (normal/hover/pressed/disabled/focus).",
+    "Build bars/dialogs/slots/cursors with the matching kinds.",
+    "Check contrast and CVD with `palette-analyze`; check sizes with `validate`.",
+    "Export responsive sets with `platform-export`."
+   ],
+   "checklist": [
+    "All control states present",
+    "Focus state visible without color alone",
+    "Text fits with localization expansion",
+    "Nine-slice margins documented",
+    "Contrast >= 4.5 for text"
+   ],
+   "pitfalls": [
+    "Scaling nine-slice panels non-integer (broken borders)",
+    "Disabled states that look active"
+   ],
+   "commands": [
+    "ui-generate button out/btn.png --width 64 --height 20 --label PLAY",
+    "ui-generate bar out/hp.png --width 96 --height 10 --value 0.6 --accent #e05555",
+    "ui-generate dialog out/dialog.png --width 160 --height 48 --label GUIDE"
+   ]
+  },
+  "17": {
+   "workflow": [
+    "Render text with the built-in 5x7/3x5 bitmap fonts (`text-render`).",
+    "Export glyph atlases + mapping with `font-sheet` for engine text systems.",
+    "Animate with `--effect type|wave|bounce|flicker|rainbow`.",
+    "Check small-text contrast with `palette-analyze`; plan localization space.",
+    "Use {heart}/{star}/{coin} symbol tokens for HUD icons."
+   ],
+   "checklist": [
+    "Glyph spacing consistent",
+    "No ambiguous letterforms at target size",
+    "Localization expansion budgeted",
+    "Symbol tokens documented"
+   ],
+   "pitfalls": [
+    "Mixing font scales non-integer",
+    "Rainbow effects that destroy readability"
+   ],
+   "commands": [
+    "text-render \"SCORE 1250 {coin}\" out/score.png --font 3x5 --scale 2 --outline #1a1822",
+    "font-sheet out/font.png --font 5x7 --cols 16",
+    "text-render \"LEVEL UP\" out/levelup.gif --effect wave --frames 12 --scale 2"
+   ]
+  },
+  "18": {
+   "workflow": [
+    "Generate engine files with `engine-export <target>` (godot/unity/web/phaser/pixi/...).",
+    "Follow the written setup guide for filtering (nearest), mipmaps (off), compression (none).",
+    "Use integer camera/viewport scaling; enable pixel snapping.",
+    "For retro targets, export reference palettes + constraints (`engine-export retro`).",
+    "Verify imports by reopening in the engine (manual step; see limitations)."
+   ],
+   "checklist": [
+    "Nearest filtering everywhere",
+    "No mipmap/compression damage",
+    "PPU/tile size consistent",
+    "Integer viewport scaling",
+    "Pivots match engine convention"
+   ],
+   "pitfalls": [
+    "Letting the engine auto-compress pixel textures",
+    "Mixing PPU between asset families"
+   ],
+   "commands": [
+    "engine-export godot out/godot --input out/atlas.png --atlas-json out/atlas-simple.json --name hero --fps 12",
+    "engine-export unity out/unity --input hero.png --ppu 16",
+    "engine-export web out/web --input out/atlas.png --atlas-json out/atlas-simple.json",
+    "engine-export retro out/retro --system gameboy"
+   ]
+  },
+  "19": {
+   "workflow": [
+    "Export masters lossless (PNG/APNG); previews as GIF/WebP (`anim-encode`).",
+    "Numbered sequences for video tools: `sequence-export`.",
+    "Aseprite workflows: `aseprite-export` (sheet + JSON with tags) or `script-author aseprite-lua`.",
+    "Convert palettes for any editor with `palette-convert` (gpl/pal/act/ase/hex/json/png).",
+    "SVG pixel grids: `svg-export` (crispEdges rects).",
+    "Package masters + derivatives + checksums with `audit`."
+   ],
+   "checklist": [
+    "Lossless masters preserved",
+    "GIF timing quantized to 10ms steps",
+    "Indexed PNG transparent index correct",
+    "Palette formats roundtrip",
+    "Editor-specific project files handled in the editor (not here)"
+   ],
+   "pitfalls": [
+    "Saving pixel art as JPEG",
+    "GIF delays < 20ms (browsers clamp)",
+    "Claiming native .aseprite/.psd writing (not implemented)"
+   ],
+   "commands": [
+    "anim-encode out/frames --output out/preview.gif --fps 12 --scale 4",
+    "sequence-export out/frames --outdir out/seq --format png --prefix frame-",
+    "palette-convert out/pal.json out/pal.gpl",
+    "svg-export icon.png out/icon.svg"
+   ]
+  },
+  "20": {
+   "workflow": [
+    "Scale only by integer factors (`scale --factor`); downscale with box when unavoidable.",
+    "Audit filtering/resample damage with `validate --detect-resample`.",
+    "Prevent atlas bleed with `sheet-pack --extrude 2 --padding 2`.",
+    "Simulate displays with `display-sim` (crt/lcd/led/gameboy/mono/1bit).",
+    "Budget file sizes with `validate --max-bytes`; optimize GIF via shared palettes.",
+    "Export thumbnails/store crops with `platform-export`."
+   ],
+   "checklist": [
+    "No non-integer scaling in final delivery",
+    "Grid integrity score >= 0.985",
+    "Atlas edges extruded",
+    "Display previews are separate from masters"
+   ],
+   "pitfalls": [
+    "Bilinear 'just this once'",
+    "Mipmaps on pixel atlases",
+    "CRT simulation baked into masters"
+   ],
+   "commands": [
+    "scale sprite.png out/sprite-x4.png --factor 4",
+    "validate art.png --detect-resample",
+    "display-sim scene.png out/scene-crt.png --mode crt --scale 3",
+    "validate preview.gif --max-bytes 2097152"
+   ]
+  },
+  "21": {
+   "workflow": [
+    "Define seeds + parameters; generate with `sprite-generate`/`tileset-generate`/`pattern-generate`.",
+    "Record seeds in manifests (all generators write JSON manifests).",
+    "Curate outputs with `critique` + `validate`; reject duplicates/off-palette results.",
+    "Batch controlled variants with `batch` jobs (palette-swap/recolor/scale).",
+    "Synthesize motion families with `motion-generate`/`effect-generate` at fixed seeds."
+   ],
+   "checklist": [
+    "Same seed => same output (deterministic)",
+    "Manifests record seeds/params",
+    "Curation gate before delivery",
+    "Variant rules documented"
+   ],
+   "pitfalls": [
+    "Unseeded randomness in pipelines",
+    "Shipping uncurated generator noise"
+   ],
+   "commands": [
+    "sprite-generate out/batch --kind robot --count 16 --seed 100 --sheet out/robots.png",
+    "pattern-generate out/fabric.png --kind weave --seed 5 --preview out/fabric-2x2.png",
+    "batch jobs.json --report out/batch-report.json"
+   ]
+  },
+  "22": {
+   "workflow": [
+    "Author external scripts with `script-author` (ffmpeg/imagemagick/aseprite-lua/batch-job).",
+    "Run repeatable pipelines with `batch` (stop-on-error, structured reports).",
+    "Enforce naming with `audit --naming`; completeness with `--require`.",
+    "CI gate: `validate` + `seam-check` + `compare` + `reopen-test` with exit codes.",
+    "Diagnose failures with `reopen-test` and batch reports."
+   ],
+   "checklist": [
+    "Pipelines deterministic and seeded",
+    "Exit codes wired into CI",
+    "Scripts syntax-checked (bash -n / node --check via reopen-test)",
+    "No arbitrary shell execution inside the tool"
+   ],
+   "pitfalls": [
+    "Executing generated scripts blindly",
+    "Nondeterministic packing order",
+    "Ignoring structured error reports"
+   ],
+   "commands": [
+    "script-author ffmpeg out/scripts --fps 12",
+    "batch pipeline.json --report out/report.json --continue-on-error",
+    "audit out/ out/audit.json --naming \"[a-z0-9-]+\\.(png|json)\" --markdown out/audit.md"
+   ]
+  },
+  "23": {
+   "workflow": [
+    "Run `validate` for dimensions/colors/alpha/grid/naming/size/animation checks.",
+    "Check tiles with `seam-check`; atlases with `validate atlas.json --sheet atlas.png`.",
+    "Regression-test against approved references with `compare --diff-image`.",
+    "Accessibility: flash-risk in `validate`, CVD in `palette-analyze`.",
+    "Completeness with `audit --require`; final artifacts with `reopen-test`."
+   ],
+   "checklist": [
+    "All checks pass or are explicitly waived",
+    "References approved before compare",
+    "Flash-risk reviewed for animated content",
+    "Every final artifact reopened"
+   ],
+   "pitfalls": [
+    "Treating heuristic checks as artistic approval",
+    "Skipping reopen tests on 'obvious' files"
+   ],
+   "commands": [
+    "validate hero.png --max-colors 16 --binary-alpha --naming \"hero-[a-z]+-\\d{2}\\.png\"",
+    "compare new.png approved.png --diff-image out/diff.png --max-diff-pct 0.5",
+    "reopen-test out/final --report out/reopen.json"
+   ]
+  },
+  "24": {
+   "workflow": [
+    "Extract surviving frames/sprites with `anim-decode`/`sheet-slice`.",
+    "Detect native grid and restore with `restore --cleanup`.",
+    "Recover palettes with `palette-extract`; verify with `palette-analyze`.",
+    "Migrate formats with `palette-convert`/`atlas-meta`; document losses.",
+    "Archive with `audit` (checksums, provenance, licenses)."
+   ],
+   "checklist": [
+    "Originals untouched",
+    "Restoration changes documented",
+    "Recovered palette verified against evidence",
+    "Checksums recorded"
+   ],
+   "pitfalls": [
+    "'Restoring' by smoothing",
+    "Guessing timing without evidence",
+    "Distributing extracted assets without rights"
+   ],
+   "commands": [
+    "restore old-upscaled.png out/restored.png --cleanup --upscale 4",
+    "palette-extract screenshot.png out/recovered.gpl --colors 16",
+    "audit legacy/ out/legacy-audit.json --license \"used with permission\" --markdown out/legacy.md"
+   ]
+  },
+  "25": {
+   "workflow": [
+    "Export platform sets with `platform-export` (app-icon/emote/badge/sticker/store/social/wallpaper).",
+    "Build review/sale catalogs with `contact-sheet --labels --title`.",
+    "Add titles to key art with `text-render`; keep crops platform-safe.",
+    "Record licenses and approvals with `license-record` and `audit`."
+   ],
+   "checklist": [
+    "Readable at smallest platform size",
+    "Safe margins on all crops",
+    "Transparent backgrounds where required",
+    "License/attribution recorded"
+   ],
+   "pitfalls": [
+    "One master crop stretched to every aspect",
+    "Emotes unreadable at 28px"
+   ],
+   "commands": [
+    "platform-export mascot.png out/store --preset store",
+    "platform-export mascot.png out/stickers --preset sticker --outline-color #1a1822",
+    "contact-sheet out/icons --output out/catalog.png --labels --title \"Icon Pack v1\""
+   ]
+  },
+  "26": {
+   "workflow": [
+    "Generate lessons/guides with `guide --skill/--category` (catalog-driven).",
+    "Create practice sessions with `practice --seed`.",
+    "Critique with measurements via `critique`; score with `rubric`.",
+    "Document production rules with `art-bible`; record licenses with `license-record`.",
+    "Coordinate reviews: compare versions with `compare`, track approvals in license records."
+   ],
+   "checklist": [
+    "Feedback is specific and measurable",
+    "Exercises have pass criteria",
+    "Attribution complete",
+    "Handoff includes masters + exports + metadata"
+   ],
+   "pitfalls": [
+    "Vague critique ('make it pop')",
+    "Practice without constraints or goals"
+   ],
+   "commands": [
+    "guide out/walk-guide.md --skill \"Walk Cycle Animator\"",
+    "practice out/session.json --count 5 --seed 42",
+    "rubric out/rubric.json --title \"Sprint 4 Review\"",
+    "license-record hero.png out/hero-license.json --creator \"You\" --license CC-BY-4.0 --status approved"
+   ]
+  },
+  "27": {
+   "workflow": [
+    "Pick domain constraints first (accuracy, age-appropriateness, non-diagnostic symbols).",
+    "Use generators for bases: `pattern-generate`, `tileset-generate`, `icon-generate`, `ui-generate`.",
+    "Data visuals: keep values exact; encode with position/length, not just color.",
+    "Medical/safety symbols: add shape redundancy; run `palette-analyze` CVD checks.",
+    "Historical scenes: record source notes via `license-record --source`."
+   ],
+   "checklist": [
+    "Domain accuracy reviewed by a human",
+    "Symbols unambiguous without color",
+    "Age/platform content limits respected",
+    "Sources recorded"
+   ],
+   "pitfalls": [
+    "Medical symbols that imply diagnosis",
+    "Charts that distort values for style"
+   ],
+   "commands": [
+    "ui-generate bar out/meter.png --width 120 --height 12 --value 0.42 --segmented",
+    "pattern-generate out/textile.png --kind weave --palette out/pal.json",
+    "palette-analyze out/pal.json --swatches out/cvd-check.png"
+   ]
+  },
+  "28": {
+   "workflow": [
+    "Keep style systems as presentation layers, never baked into masters.",
+    "CRT/LCD/LED/monochrome previews: `display-sim`.",
+    "Controlled corruption: `glitch --seed --intensity`.",
+    "Emissive/neon: `effect-generate --kind energy` + `recolor --preset neon`.",
+    "Shadows: `shadow --blob`; normals: `normal-map`.",
+    "Document shader/material settings in engine guides (`engine-export`)."
+   ],
+   "checklist": [
+    "Masters remain clean",
+    "Effects seeded/reproducible",
+    "Monochrome versions still read (value design)",
+    "Normal maps tested in-engine"
+   ],
+   "pitfalls": [
+    "Baking CRT scanlines into sprites",
+    "Glitch that damages file integrity (effect is pixel-level only)"
+   ],
+   "commands": [
+    "display-sim scene.png out/scene-crt.png --mode crt --scale 3 --intensity 0.6",
+    "glitch sprite.png out/glitch.png --seed 12 --intensity 0.5",
+    "shadow hero.png out/hero-shadow.png --blob",
+    "normal-map stone.png out/stone-normal.png --strength 2"
+   ]
+  },
+  "29": {
+   "workflow": [
+    "Record provenance for every asset: `audit` (checksums/sources/licenses) + `license-record`.",
+    "Run IP keyword checks in `brief`; redesign flagged concepts toward originals.",
+    "Apply consent/privacy review for real-person portraits before production.",
+    "Destructive safety: outputs refuse overwrite without --force; use --dry-run first.",
+    "Verify claims with `validate`/`reopen-test` before reporting completion.",
+    "Report capabilities honestly with `capabilities` (modes + limitations).",
+    "Scan packages for secrets/unsafe paths with `audit`.",
+    "Recover from failures: batch stop-on-error + reports; fix smallest layer, rerun checks."
+   ],
+   "checklist": [
+    "Provenance complete",
+    "No secrets/unsafe paths in package",
+    "Overwrites approved explicitly",
+    "Completion claims backed by reopened artifacts",
+    "Limitations stated, not hidden"
+   ],
+   "pitfalls": [
+    "Claiming untested integrations work",
+    "Overwriting masters without approval",
+    "Skipping secret scans before sharing packages"
+   ],
+   "commands": [
+    "audit out/ out/provenance.json --creator \"Studio\" --license CC-BY-4.0 --markdown out/provenance.md",
+    "capabilities --json",
+    "reopen-test out/final --report out/reopen.json",
+    "batch jobs.json --dry-run"
+   ]
+  }
+ }
+}

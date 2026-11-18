@@ -1,0 +1,297 @@
+{
+  "config_version": "1.0",
+  "description": "Runtime configuration for the google-slides-agent-catalog Skill Tool. Paths are resolved relative to the directory that contains this file unless they are absolute. No secrets are stored here; credentials are read from environment variables at run time.",
+  "paths": {
+    "catalog": "asset-slides-catalog.json",
+    "risk_policy": "asset-risk-policy.json",
+    "plan_schema": "asset-plan-schema.json",
+    "spec_template": "asset-spec-template.md",
+    "output_dir": null
+  },
+  "limits": {
+    "max_source_bytes": 8388608,
+    "max_skills": 2000,
+    "max_matches": 15,
+    "max_batch_requests": 100,
+    "api_timeout_seconds": 20,
+    "api_max_retries": 3,
+    "api_backoff_seconds": 0.5,
+    "max_report_items": 500
+  },
+  "match": {
+    "min_score": 3.0,
+    "name_weight": 3,
+    "description_weight": 1,
+    "category_weight": 1,
+    "max_query_tokens": 60,
+    "extra_stopwords": [
+      "please", "need", "want", "would", "could", "should", "make", "made", "using", "use",
+      "with", "from", "into", "onto", "that", "this", "these", "those", "then", "than",
+      "also", "just", "very", "some", "any", "all", "each", "for", "and", "the", "our",
+      "your", "their", "deck", "decks", "slide", "slides", "presentation", "presentations",
+      "google", "file", "files", "skill", "skills", "agent", "task", "tasks", "help"
+    ],
+    "synonyms": {
+      "deck": "presentation",
+      "slideshow": "presentation",
+      "slide": "slide",
+      "typography": "font",
+      "typeface": "font",
+      "picture": "image",
+      "photo": "image",
+      "graphic": "image",
+      "graph": "chart",
+      "plot": "chart",
+      "sheet": "sheets",
+      "spreadsheet": "sheets",
+      "a11y": "accessibility",
+      "contrast": "contrast",
+      "caption": "captions",
+      "colour": "color",
+      "localise": "localize",
+      "localisation": "localization",
+      "translate": "translation",
+      "translator": "translation",
+      "arabic": "rtl",
+      "hebrew": "rtl",
+      "japanese": "cjk",
+      "chinese": "cjk",
+      "korean": "cjk",
+      "pdf": "export",
+      "pptx": "powerpoint",
+      "decktemplate": "theme",
+      "brand": "theme",
+      "logo": "theme",
+      "animate": "animation",
+      "video": "video",
+      "audio": "audio",
+      "narration": "audio",
+      "notes": "notes",
+      "presenter": "presenter",
+      "rehearse": "presenter",
+      "share": "sharing",
+      "shared": "sharing",
+      "public": "publish",
+      "web": "publish"
+    }
+  },
+  "phases": [
+    {
+      "id": "prepare",
+      "label": "Prepare files and canvas",
+      "purpose": "Establish the file, page setup, workspace and editing foundation before content work.",
+      "checkpoint": "Create a named version checkpoint before the first structural edit.",
+      "surfaces": ["Files menu", "Page setup", "Drive folder and naming policy", "Editor view controls"],
+      "categories": ["file-lifecycle-and-drive-operations", "page-setup-print-and-handouts", "view-navigation-and-workspace-control"]
+    },
+    {
+      "id": "design-system",
+      "label": "Build theme and layouts",
+      "purpose": "Define masters, layout families, placeholders, fonts and color roles once, centrally.",
+      "checkpoint": "Capture the theme build in its own named version before applying it to content slides.",
+      "surfaces": ["Theme builder", "Masters", "Layouts", "Placeholder editors"],
+      "categories": ["theme-builder-masters-and-layouts"]
+    },
+    {
+      "id": "structure",
+      "label": "Structure slides and linked objects",
+      "purpose": "Set slide order, layouts, backgrounds, skip state and cross-file relationships.",
+      "checkpoint": "Record slide order and skip state so reordering can be reverted.",
+      "surfaces": ["Filmstrip", "Layout application", "Background controls", "Linked objects"],
+      "categories": ["slides-layouts-backgrounds-and-ordering", "linked-objects-and-cross-file-workflows"]
+    },
+    {
+      "id": "build",
+      "label": "Create content objects",
+      "purpose": "Create editable text, images, shapes, lines, tables, charts, diagrams and language quality.",
+      "checkpoint": "Insert content as native editable objects; snapshot before bulk replacements.",
+      "surfaces": ["Insert menu", "Text boxes", "Image options", "Shape tools", "Line tools", "Tables", "Charts", "Diagrams", "Spelling"],
+      "categories": [
+        "text-boxes-and-typography",
+        "images-and-image-formatting",
+        "shapes-word-art-and-visual-components",
+        "lines-arrows-curves-and-connectors",
+        "tables-and-structured-content",
+        "charts-and-linked-google-sheets-data",
+        "preset-diagrams-and-custom-diagram-systems",
+        "spelling-dictionary-voice-typing-and-preferences"
+      ]
+    },
+    {
+      "id": "layout",
+      "label": "Arrange, align and format",
+      "purpose": "Control stacking, alignment, distribution, guides, precision and object effects.",
+      "checkpoint": "Verify geometry against guides before effects are applied.",
+      "surfaces": ["Arrange menu", "Align and distribute controls", "Guides and rulers", "Size and position panel", "Format options"],
+      "categories": [
+        "arrange-alignment-distribution-and-layers",
+        "guides-rulers-snapping-and-precision",
+        "format-options-and-object-effects",
+        "editing-clipboard-and-selection"
+      ]
+    },
+    {
+      "id": "media",
+      "label": "Add media and motion",
+      "purpose": "Add audio, video, transitions and animations that survive real delivery.",
+      "checkpoint": "Confirm media access permissions and fetch playback success before recording.",
+      "surfaces": ["Insert audio", "Insert video", "Transition panel", "Animation panel"],
+      "categories": ["audio-and-video", "motion-animation-and-transitions"]
+    },
+    {
+      "id": "interop",
+      "label": "Handle imports and conversions",
+      "purpose": "Exchange files with PowerPoint and other formats without hidden damage.",
+      "checkpoint": "Keep the original imported file untouched; repair only a copy.",
+      "surfaces": ["File import", "Import slides", "PPTX compatibility"],
+      "categories": ["import-and-powerpoint-compatibility"]
+    },
+    {
+      "id": "localize",
+      "label": "Localize content",
+      "purpose": "Adapt text, terminology, locale formats and bidirectional layout.",
+      "checkpoint": "Freeze the source-language version before creating language variants.",
+      "surfaces": ["Text extraction", "Glossary control", "Paragraph direction", "Font coverage"],
+      "categories": ["localization-and-multilingual-slides"]
+    },
+    {
+      "id": "protect",
+      "label": "Apply privacy and governance gates",
+      "purpose": "Scan, minimize and gate content before any audience can reach it.",
+      "checkpoint": "Never publish or share until this phase reports a pass.",
+      "surfaces": ["Publish to web controls", "Sharing dialog", "Version history", "Notes and comments"],
+      "categories": ["security-privacy-and-governance"]
+    },
+    {
+      "id": "assure",
+      "label": "Assure accessibility",
+      "purpose": "Verify alt text, reading order, contrast, captions, keyboard operation and language.",
+      "checkpoint": "Re-run accessibility checks after every layout change.",
+      "surfaces": ["Alt text panel", "Tab order", "Captions", "Screen reader walkthrough"],
+      "categories": ["accessibility-and-inclusive-design"]
+    },
+    {
+      "id": "verify",
+      "label": "Verify quality and fidelity",
+      "purpose": "Run regression, playback, export and accessibility tests before release.",
+      "checkpoint": "Record the tested version before fixes are applied.",
+      "surfaces": ["Playback walkthrough", "Export preview", "Recipient access test"],
+      "categories": ["quality-assurance-and-regression"]
+    },
+    {
+      "id": "recover",
+      "label": "Repair and recover",
+      "purpose": "Apply the smallest responsible repair and re-run dependent checks.",
+      "checkpoint": "Preserve the failed state for diagnosis before rolling back.",
+      "surfaces": ["Version history", "Named versions", "Layout reset", "Fallback routes"],
+      "categories": ["repair-recovery-and-workarounds"]
+    },
+    {
+      "id": "automate",
+      "label": "Automate and extend",
+      "purpose": "Automate repeatable work with Apps Script and vetted add-ons under least privilege.",
+      "checkpoint": "Require script scope review and a dry run before unattended execution.",
+      "surfaces": ["Apps Script editor", "Triggers", "Add-ons marketplace", "OAuth consent"],
+      "categories": ["apps-script-and-automation", "add-ons-and-third-party-integrations"]
+    },
+    {
+      "id": "deliver",
+      "label": "Deliver and export",
+      "purpose": "Operate presenter delivery and produce static outputs that match the deck.",
+      "checkpoint": "Test the delivery route as an audience member before the live session.",
+      "surfaces": ["Presenter view", "Present controls", "Download and export", "Print settings"],
+      "categories": ["presenter-view-and-live-delivery", "export-and-static-output"]
+    },
+    {
+      "id": "access",
+      "label": "Configure access",
+      "purpose": "Assign least-privilege roles and confirm collaborator access paths.",
+      "checkpoint": "Record the approved permission matrix and the approver before changes.",
+      "surfaces": ["Share dialog", "Drive permissions", "Shared drive roles", "Comment assignments"],
+      "categories": ["sharing-permissions-and-collaboration"]
+    },
+    {
+      "id": "distribute",
+      "label": "Publish and distribute",
+      "purpose": "Publish, embed, email or link the deck through approved channels only.",
+      "checkpoint": "Require explicit approval and a post-send route verification.",
+      "surfaces": ["Publish to web", "Embed code", "Email collaborators", "Deep links"],
+      "categories": ["email-links-publishing-and-distribution"]
+    },
+    {
+      "id": "support",
+      "label": "Document and support",
+      "purpose": "Record help, training and feature-discovery pointers for the delivered system.",
+      "checkpoint": "Attach the capability record to the delivered deck version.",
+      "surfaces": ["Help search", "Training resources", "Feature discovery"],
+      "categories": ["search-help-training-and-feature-discovery"]
+    },
+    {
+      "id": "evaluate",
+      "label": "Evaluate and maintain",
+      "purpose": "Score coverage, benchmark reliability and maintain skills as Slides changes.",
+      "checkpoint": "Store benchmark results with the skill version they describe.",
+      "surfaces": ["Coverage scoring", "Benchmarks", "Skill registry"],
+      "categories": ["evaluation-benchmarking-and-skill-management"]
+    }
+  ],
+  "gates": [
+    {
+      "id": "workspace-account",
+      "requirement": "A Google Workspace or consumer Google account with Slides enabled is required; detect edition and admin policy before acting.",
+      "applies_to_categories": [
+        "file-lifecycle-and-drive-operations",
+        "sharing-permissions-and-collaboration",
+        "email-links-publishing-and-distribution",
+        "linked-objects-and-cross-file-workflows"
+      ]
+    },
+    {
+      "id": "admin-policy",
+      "requirement": "Publishing, external sharing, add-ons and Apps Script may be disabled by administrator policy; confirm availability before planning dependent steps.",
+      "applies_to_categories": [
+        "email-links-publishing-and-distribution",
+        "apps-script-and-automation",
+        "add-ons-and-third-party-integrations",
+        "security-privacy-and-governance"
+      ]
+    },
+    {
+      "id": "media-permissions",
+      "requirement": "Embedded audio, video and linked files must be readable by the intended audience or playback fails for them.",
+      "applies_to_categories": ["audio-and-video", "linked-objects-and-cross-file-workflows"]
+    },
+    {
+      "id": "font-availability",
+      "requirement": "Fonts, captions and language features vary by account, locale and device; verify rendering before delivery.",
+      "applies_to_categories": ["text-boxes-and-typography", "localization-and-multilingual-slides"]
+    },
+    {
+      "id": "browser-capability",
+      "requirement": "Clipboard, voice typing, full-screen and presenter features depend on browser and OS support; verify in a clean supported browser.",
+      "applies_to_categories": ["editing-clipboard-and-selection", "view-navigation-and-workspace-control", "presenter-view-and-live-delivery"]
+    },
+    {
+      "id": "rollout-staging",
+      "requirement": "Recent Slides features roll out gradually by account, region and browser; detect availability rather than assuming it.",
+      "applies_to_categories": ["evaluation-benchmarking-and-skill-management", "search-help-training-and-feature-discovery"]
+    }
+  ],
+  "approval": {
+    "token_env": "GSLIDES_SKILL_APPROVAL_TOKEN",
+    "token_file": null,
+    "note": "Approval tokens are supplied by the operator at run time; no token is stored in this package."
+  },
+  "spec_defaults": {
+    "owner": "Unassigned skill owner",
+    "version": "0.1.0",
+    "deprecation_policy": "Review at every Google Slides feature rollout; retire when an equivalent native capability supersedes this skill.",
+    "success_condition_template": "The requested Slides outcome is produced as native editable objects, verified with recipient-equivalent access, and no unintended object, permission or export change remains."
+  },
+  "api": {
+    "slides_base_url": "https://slides.googleapis.com/v1",
+    "drive_base_url": "https://www.googleapis.com/drive/v3",
+    "token_env": "GSLIDES_ACCESS_TOKEN",
+    "user_agent": "google-slides-agent-catalog/1.0"
+  }
+}

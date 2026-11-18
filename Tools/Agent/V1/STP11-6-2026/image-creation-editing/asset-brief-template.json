@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "comment": "Canonical brief shape used by tools-imagekit-plan.py. Missing fields are inferred from the brief text; anything still unknown is reported as an open question rather than invented.",
+  "fields": {
+    "project": {"type": "string", "default": "untitled-project", "description": "Stable project or campaign identifier used in filenames."},
+    "title": {"type": "string", "default": "", "description": "Human title of the requested asset."},
+    "purpose": {"type": "string", "enum": ["awareness", "conversion", "editorial", "education", "documentation", "identity", "entertainment", "technical"], "infer": true},
+    "audience": {"type": "string", "default": "", "description": "Who the image is for; drives tone, complexity and legibility."},
+    "subject": {"type": "string", "required": true, "description": "What must be visible. Multiple subjects may be listed."},
+    "subject_type": {"type": "string", "enum": ["person", "product", "environment", "architecture", "creature", "abstract", "data"], "infer": true},
+    "action": {"type": "string", "default": "", "description": "What is happening, if anything."},
+    "setting": {"type": "string", "default": "", "description": "Location or environment."},
+    "style": {"type": "string", "default": "photographic", "description": "Medium or treatment."},
+    "mood": {"type": "string", "default": "", "description": "Emotional register."},
+    "framing": {"type": "string", "enum": ["close-up", "medium", "wide", "full", "top-down"], "infer": true},
+    "lighting": {"type": "string", "infer": true},
+    "palette": {"type": "array", "items": "hex", "default": [], "description": "Explicit brand or mood colours."},
+    "dimensions": {"type": "string", "default": "", "description": "WIDTHxHEIGHT in pixels; inferred from output_use when absent."},
+    "output_use": {"type": "string", "default": "web-hero", "description": "Key into asset-prompt-presets.json output_uses."},
+    "format": {"type": "string", "default": "", "description": "png, jpg, webp, tiff, gif, pdf."},
+    "transparency": {"type": "boolean", "default": false},
+    "text_in_image": {"type": "boolean", "default": false},
+    "copy": {"type": "array", "items": "string", "default": [], "description": "Headline, subhead, CTA strings when text is rendered."},
+    "must_include": {"type": "array", "items": "string", "default": []},
+    "must_exclude": {"type": "array", "items": "string", "default": []},
+    "references": {"type": "array", "items": "path", "default": [], "description": "Reference images for structure, palette or material only."},
+    "acceptance_criteria": {"type": "array", "items": "string", "default": []},
+    "rights_context": {"type": "string", "default": "", "description": "Known licence, consent or brand-permission context."},
+    "disclosure_required": {"type": "boolean", "default": true}
+  },
+  "open_question_rules": [
+    "subject is empty -> ask what must be visible before generating",
+    "audience is empty -> ask who the image is for",
+    "dimensions and output_use both empty -> default to web-hero 1920x1080 and report the assumption",
+    "text_in_image true but copy empty -> ask for the exact strings, never invent customer-facing copy",
+    "references given without rights_context -> flag that reference rights are unverified"
+  ],
+  "acceptance_criterion_library": {
+    "technical": ["matches requested dimensions exactly", "file opens in the target application", "colour mode and transparency match the delivery spec"],
+    "visual": ["single clear focal point", "no tangencies on the subject outline", "text legible at target display size"],
+    "brand": ["palette within tolerance of brand colours", "logo clear-space preserved", "no unapproved typefaces"],
+    "safety": ["no identifiable real person without consent", "synthetic disclosure attached when photorealistic", "no protected marks reproduced without rights"]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "studio-easing-curves",
+  "version": "1.0",
+  "description": "Easing presets for tweens, camera moves, retimes and UI motion. The names map 1:1 to the ease() implementations in tools-anim.py; this asset documents them for planning tools and external consumers.",
+  "presets": {
+    "linear": {"use": "mechanical motion, cameras, fades under music beats"},
+    "quad_in": {"use": "objects leaving frame; anticipations"},
+    "quad_out": {"use": "arrivals, settle-into-pose, smoke puffs"},
+    "quad_in_out": {"use": "default character move between poses"},
+    "cubic_in": {"use": "heavy objects building momentum"},
+    "cubic_out": {"use": "fast attack decelerating into a hold"},
+    "cubic_in_out": {"use": "smooth full moves; longer travel"},
+    "back_out": {"use": "overshoot then settle (take/double-take)"},
+    "elastic_out": {"use": "soft bodies, springs, comic reactions"},
+    "bounce_out": {"use": "ballistic impacts, squash objects landing"}
+  },
+  "timing_rules": [
+    {"rule": "slow-in slow-out", "applies": "almost all organic motion; add spacing charts"},
+    {"rule": "anticipation", "frames": "6-12 before fast action"},
+    {"rule": "follow-through", "frames": "4-10 after a stop, scaled to mass"},
+    {"rule": "overshoot", "amount": "5-15 percent of the move, then 1-2 corrective swings"}
+  ],
+  "camera_move_defaults": {
+    "pan": "quad_in_out over 12-48 frames",
+    "truck_in": "cubic_in_out; keep 10 percent margin at frame edges",
+    "shake_decay": "0.92 per frame with 3Hz wobble"
+  }
+}

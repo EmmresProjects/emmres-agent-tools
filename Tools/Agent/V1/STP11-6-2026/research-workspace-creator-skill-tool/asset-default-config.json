@@ -1,0 +1,112 @@
+{
+  "skill_tool_name": "research-workspace-creator",
+  "version": "1.0.0",
+  "resources": {
+    "catalog_path": "research-workspace-creator/asset-capability-catalog.json",
+    "policy_rules_path": "research-workspace-creator/asset-policy-rules.json",
+    "output_schemas_path": "research-workspace-creator/asset-output-schemas.json",
+    "templates_path": "research-workspace-creator/asset-prompt-and-report-templates.json",
+    "sample_bundle_path": "research-workspace-creator/asset-sample-research-bundle.json"
+  },
+  "workspace_defaults": {
+    "workspace_dir": "workspace-runs/default",
+    "zones": [
+      "inputs",
+      "staging",
+      "kb",
+      "indexes",
+      "checkpoints",
+      "cache",
+      "logs",
+      "deliverables"
+    ],
+    "sqlite_db_filename": "knowledge-store.sqlite3",
+    "provenance_ledger_filename": "provenance-ledger.jsonl",
+    "event_log_filename": "events.jsonl"
+  },
+  "limits": {
+    "timeout_seconds": 30,
+    "max_retries": 2,
+    "retry_backoff_seconds": 0.4,
+    "max_input_bytes": 26214400,
+    "max_download_bytes": 10485760,
+    "max_files_scanned": 2000,
+    "max_directory_depth": 8,
+    "max_sql_rows": 500,
+    "max_code_exec_seconds": 10,
+    "cache_max_bytes": 52428800,
+    "cache_ttl_seconds": 86400,
+    "crawl_max_pages": 15,
+    "crawl_delay_seconds": 0.5
+  },
+  "indexing": {
+    "chunk_size_chars": 800,
+    "chunk_overlap_chars": 120,
+    "top_k_default": 5,
+    "hybrid_bm25_weight": 0.55,
+    "hybrid_tfidf_weight": 0.45,
+    "rrf_k": 60
+  },
+  "providers": {
+    "network_enabled_default": false,
+    "user_agent": "research-workspace-creator/1.0 (+portable-skill-tool)",
+    "search_provider": {
+      "mode": "configurable-http-or-offline-corpus",
+      "endpoint_env": "RWC_SEARCH_API_URL",
+      "api_key_env": "RWC_SEARCH_API_KEY",
+      "timeout_seconds": 15
+    },
+    "scholarly_provider": {
+      "mode": "configurable-http-or-bibtex-local",
+      "endpoint_env": "RWC_SCHOLARLY_API_URL",
+      "timeout_seconds": 15
+    },
+    "llm_provider": {
+      "mode": "local-deterministic-or-configurable-http",
+      "endpoint_env": "RWC_LLM_API_URL",
+      "api_key_env": "RWC_LLM_API_KEY",
+      "model_env": "RWC_LLM_MODEL",
+      "default_model": "local-structured-synthesizer"
+    },
+    "embedding_provider": {
+      "mode": "builtin-tfidf-cosine",
+      "endpoint_env": "RWC_EMBED_API_URL",
+      "api_key_env": "RWC_EMBED_API_KEY"
+    },
+    "enterprise_connectors": {
+      "mode": "mounted-export-or-configurable-webhook",
+      "config_env": "RWC_CONNECTORS_JSON"
+    },
+    "storage_backend": {
+      "type": "local-filesystem-sqlite",
+      "enable_fts5": true
+    }
+  },
+  "citations": {
+    "default_style": "apa",
+    "supported_styles": [
+      "apa",
+      "mla",
+      "chicago",
+      "ieee",
+      "bibtex",
+      "markdown"
+    ]
+  },
+  "safety": {
+    "allow_external_paths_default": false,
+    "require_approval_for": [
+      "destructive_delete",
+      "overwrite_protected",
+      "code_or_subprocess_execution",
+      "package_or_repo_acquisition",
+      "sql_write_if_non_select",
+      "external_publish_or_overwrite_archive",
+      "credential_or_policy_override"
+    ],
+    "redact_secrets_in_outputs": true,
+    "redact_pii_in_outputs": false,
+    "enforce_robots_txt": true,
+    "block_private_network_ssrf": true
+  }
+}

@@ -1,0 +1,395 @@
+{
+  "schema_version": "1.0",
+  "title": "Startup self-test probe manifest",
+  "note": "Every probe is executed with a timeout, without a shell, and only for version output. Probe results never modify media or devices.",
+  "probes": [
+    {
+      "capability_id": "tool:python3",
+      "binary": "python3",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P0",
+      "capability_class": "runtime",
+      "host_type": "any",
+      "remediation": "install Python 3.9 or newer",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:git",
+      "binary": "git",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P0",
+      "capability_class": "build",
+      "host_type": "any",
+      "remediation": "install git and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:sha256sum",
+      "binary": "sha256sum",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P0",
+      "capability_class": "hashing",
+      "host_type": "any",
+      "remediation": "install coreutils (sha256sum is optional; hashing is built in)",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:b3sum",
+      "binary": "b3sum",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P2",
+      "capability_class": "hashing",
+      "host_type": "any",
+      "remediation": "install b3sum only if BLAKE3 manifests are required",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:sqlite3",
+      "binary": "sqlite3",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P1",
+      "capability_class": "database",
+      "host_type": "any",
+      "remediation": "install sqlite3 and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:cmake",
+      "binary": "cmake",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P1",
+      "capability_class": "build",
+      "host_type": "any",
+      "remediation": "install cmake and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:ninja",
+      "binary": "ninja",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P1",
+      "capability_class": "build",
+      "host_type": "any",
+      "remediation": "install ninja and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:gcc",
+      "binary": "gcc",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P1",
+      "capability_class": "build",
+      "host_type": "any",
+      "remediation": "install gcc and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:clang",
+      "binary": "clang",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P1",
+      "capability_class": "build",
+      "host_type": "any",
+      "remediation": "install clang and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:gdb",
+      "binary": "gdb",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P1",
+      "capability_class": "debugger",
+      "host_type": "any",
+      "remediation": "install gdb and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:lldb",
+      "binary": "lldb",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P2",
+      "capability_class": "debugger",
+      "host_type": "any",
+      "remediation": "install LLVM/LLDB for macOS and ARM debugging",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:mame",
+      "binary": "mame",
+      "version_args": [
+        "-version"
+      ],
+      "priority": "P0",
+      "capability_class": "emulator",
+      "host_type": "any",
+      "remediation": "install MAME and keep its DAT sets versioned",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:retroarch",
+      "binary": "retroarch",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P0",
+      "capability_class": "emulator",
+      "host_type": "any",
+      "remediation": "install RetroArch with separately tracked Libretro cores",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:mednafen",
+      "binary": "mednafen",
+      "version_args": [
+        "-version"
+      ],
+      "priority": "P1",
+      "capability_class": "emulator",
+      "host_type": "any",
+      "remediation": "install mednafen and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:analyzeHeadless",
+      "binary": "analyzeHeadless",
+      "version_args": [],
+      "priority": "P1",
+      "capability_class": "reverse-engineering",
+      "host_type": "any",
+      "remediation": "install Ghidra and expose analyzeHeadless on PATH",
+      "requires_license": false,
+      "alternatives": [
+        "ghidraRun",
+        "ghidra"
+      ]
+    },
+    {
+      "capability_id": "tool:r2",
+      "binary": "r2",
+      "version_args": [
+        "-v"
+      ],
+      "priority": "P1",
+      "capability_class": "reverse-engineering",
+      "host_type": "any",
+      "remediation": "install radare2 or Rizin",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:rizin",
+      "binary": "rizin",
+      "version_args": [
+        "-v"
+      ],
+      "priority": "P2",
+      "capability_class": "reverse-engineering",
+      "host_type": "any",
+      "remediation": "install rizin and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:chdman",
+      "binary": "chdman",
+      "version_args": [
+        "--help"
+      ],
+      "priority": "P1",
+      "capability_class": "media",
+      "host_type": "any",
+      "remediation": "install MAME tools for CHD conversion and verification",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:ffmpeg",
+      "binary": "ffmpeg",
+      "version_args": [
+        "-version"
+      ],
+      "priority": "P0",
+      "capability_class": "media",
+      "host_type": "any",
+      "remediation": "install ffmpeg and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:ffprobe",
+      "binary": "ffprobe",
+      "version_args": [
+        "-version"
+      ],
+      "priority": "P0",
+      "capability_class": "media",
+      "host_type": "any",
+      "remediation": "install ffprobe and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:7z",
+      "binary": "7z",
+      "version_args": [
+        "i"
+      ],
+      "priority": "P0",
+      "capability_class": "archive",
+      "host_type": "any",
+      "remediation": "install 7-Zip (p7zip) for archive inspection",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:qemu-system-x86_64",
+      "binary": "qemu-system-x86_64",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P2",
+      "capability_class": "virtualization",
+      "host_type": "any",
+      "remediation": "install QEMU when a virtualized worker is required",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:verilator",
+      "binary": "verilator",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P2",
+      "capability_class": "fpga",
+      "host_type": "any",
+      "remediation": "install verilator and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:iverilog",
+      "binary": "iverilog",
+      "version_args": [
+        "-V"
+      ],
+      "priority": "P2",
+      "capability_class": "fpga",
+      "host_type": "any",
+      "remediation": "install iverilog and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:yosys",
+      "binary": "yosys",
+      "version_args": [
+        "-V"
+      ],
+      "priority": "P2",
+      "capability_class": "fpga",
+      "host_type": "any",
+      "remediation": "install yosys and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:nextpnr",
+      "binary": "nextpnr",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P3",
+      "capability_class": "fpga",
+      "host_type": "any",
+      "remediation": "install nextpnr and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:aaru",
+      "binary": "aaru",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P2",
+      "capability_class": "media",
+      "host_type": "any",
+      "remediation": "install Aaru for optical and magnetic imaging workflows",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:ddrescue",
+      "binary": "ddrescue",
+      "version_args": [
+        "--version"
+      ],
+      "priority": "P2",
+      "capability_class": "media",
+      "host_type": "any",
+      "remediation": "install GNU ddrescue for damaged-media recovery passes",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:exiftool",
+      "binary": "exiftool",
+      "version_args": [
+        "-ver"
+      ],
+      "priority": "P2",
+      "capability_class": "media",
+      "host_type": "any",
+      "remediation": "install exiftool and place it on PATH",
+      "requires_license": false
+    },
+    {
+      "capability_id": "tool:identify",
+      "binary": "identify",
+      "version_args": [
+        "-version"
+      ],
+      "priority": "P2",
+      "capability_class": "media",
+      "host_type": "any",
+      "remediation": "install ImageMagick for capture and screenshot metadata",
+      "requires_license": false
+    }
+  ],
+  "hardware_classes": [
+    {
+      "id": "optical-drive",
+      "probe": "optical_drive_present",
+      "status_when_missing": "PHYSICAL HARDWARE REQUIRED",
+      "note": "an optical drive is required for disc imaging workflows"
+    },
+    {
+      "id": "cartridge-reader",
+      "probe": "serial_reader_present",
+      "status_when_missing": "PHYSICAL HARDWARE REQUIRED",
+      "note": "serial-connected cartridge readers appear as ttyACM/ttyUSB devices"
+    },
+    {
+      "id": "removable-block-device",
+      "probe": "removable_block_device_present",
+      "status_when_missing": "PHYSICAL HARDWARE REQUIRED",
+      "note": "card readers and USB storage appear as block devices"
+    },
+    {
+      "id": "gpu",
+      "probe": "gpu_present",
+      "status_when_missing": "GPU REQUIRED",
+      "note": "GPU workers are needed for rendering, shader and capture comparison"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "description": "Default configuration for ai-image-toolkit. Copy this file, change values, and pass it with --config. Never store secrets here; the provider API key is read from the environment variable named in provider.api_key_env.",
+  "output_dir": "ai-image-toolkit-output",
+  "limits": {
+    "max_pixels": 40000000,
+    "max_file_bytes": 209715200,
+    "max_batch_items": 200,
+    "max_variants": 50,
+    "max_contact_sheet_items": 64,
+    "max_layers": 20,
+    "max_text_chars": 4000,
+    "timeout_seconds": 300
+  },
+  "retries": {
+    "max_attempts": 3,
+    "backoff_seconds": 1.0
+  },
+  "provider": {
+    "enabled": false,
+    "endpoint": "",
+    "allowed_hosts": ["127.0.0.1", "localhost"],
+    "health_path": "/health",
+    "submit_path": "/generate",
+    "timeout_seconds": 120,
+    "api_key_env": "AIIMG_PROVIDER_KEY"
+  },
+  "fonts": {
+    "truetype": ""
+  },
+  "color_profiles": {
+    "display_p3": "",
+    "cmyk": ""
+  },
+  "economics": {
+    "storage_rate_gb_month": 0.10
+  },
+  "thresholds": {
+    "duplicate_dhash_distance": 5,
+    "near_duplicate_dhash_distance": 8,
+    "blank_stddev": 2.0,
+    "regression_mean_abs_diff": 2.0,
+    "regression_changed_percent": 1.0,
+    "regression_hash_distance": 6,
+    "seam_ratio": 1.8,
+    "outlier_z": 2.0
+  }
+}

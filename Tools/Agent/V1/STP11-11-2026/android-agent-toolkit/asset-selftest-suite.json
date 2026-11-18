@@ -1,0 +1,287 @@
+{
+  "suite_id": "android-agent-toolkit-startup-selftest",
+  "schema_version": 1,
+  "description": "Startup self-test. tool entries use the whitelisted registry; builtin entries check the toolkit parsers against embedded binary fixtures (PASS/FAIL); host, license and device entries report catalog statuses.",
+  "entries": [
+    {
+      "id": "tool-apktool",
+      "kind": "tool",
+      "tool": "apktool",
+      "critical": true,
+      "first_repair": true,
+      "repair": "Download a versioned apktool jar, set APKTOOL_JAR, then: integrity pins-add"
+    },
+    {
+      "id": "builtin-axml-package",
+      "kind": "builtin",
+      "check": "axml-package",
+      "critical": true,
+      "blob_b64": "AwAIAOQAAAABABwAjAAAAAMAAAAAAAAAAAAAACgAAAAAAAAAAAAAABQAAAAmAAAACABtAGEAbgBpAGYAZQBzAHQAAAAHAHAAYQBjAGsAYQBnAGUAAAAcAGMAbwBtAC4AdABvAG8AbABrAGkAdAAuAHMAZQBsAGYAdABlAHMAdAAuAGYAaQB4AHQAdQByAGUAAAAAAAIBEAA4AAAAAQAAAP//////////AAAAABQAFAABAAAAAAAAAP////8BAAAAAgAAAAgAAAMCAAAAAwEQABgAAAABAAAA//////////8AAAAA",
+      "expect": {
+        "package": "com.toolkit.selftest.fixture"
+      }
+    },
+    {
+      "id": "builtin-dex-header",
+      "kind": "builtin",
+      "check": "dex-header",
+      "critical": true,
+      "blob_b64": "ZGV4CjAzNQDtC2DMC1vJ7kcoWdxOSiOFw6V+UJ/2ISRwAAAAcAAAAHhWNBIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwAAAHAAAAAAAAAAcAAAAA==",
+      "expect": {
+        "class_defs_size": 7
+      }
+    },
+    {
+      "id": "builtin-elf-machine",
+      "kind": "builtin",
+      "check": "elf-machine",
+      "critical": true,
+      "blob_b64": "f0VMRgIBAQAAAAAAAAAAAAMAtwABAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAOAAAAEAAAAAAAA==",
+      "expect": {
+        "machine": "AArch64"
+      }
+    },
+    {
+      "id": "builtin-zip-fixture",
+      "kind": "builtin",
+      "check": "zip-fixture",
+      "critical": true,
+      "blob_b64": "UEsDBBQAAAAIAJkUaV2GphA2BwAAAAUAAAANAAAAYXNzZXRzL29rLnR4dMtIzcnJBwBQSwMEFAAAAAgAmRRpXfGGbHoFAAAAAwAAAAcAAABkdXAudHh0y89LBQBQSwMEFAAAAAgAmRRpXWaKyhEFAAAAAwAAAAcAAABkdXAudHh0KynPBwBQSwMEFAAAAAgAmRRpXYMW3IwDAAAAAQAAAA0AAAAuLi9lc2NhcGUudHh0qwAAUEsBAhQDFAAAAAgAmRRpXYamEDYHAAAABQAAAA0AAAAAAAAAAAAAAIABAAAAAGFzc2V0cy9vay50eHRQSwECFAMUAAAACACZFGld8YZsegUAAAADAAAABwAAAAAAAAAAAAAAgAEyAAAAZHVwLnR4dFBLAQIUAxQAAAAIAJkUaV1misoRBQAAAAMAAAAHAAAAAAAAAAAAAACAAVwAAABkdXAudHh0UEsBAhQDFAAAAAgAmRRpXYMW3IwDAAAAAQAAAA0AAAAAAAAAAAAAAIABhgAAAC4uL2VzY2FwZS50eHRQSwUGAAAAAAQABADgAAAAtAAAAAAA",
+      "expect": {
+        "issue_codes": [
+          "duplicate-entries",
+          "path-traversal"
+        ]
+      }
+    },
+    {
+      "id": "builtin-triage-sample",
+      "kind": "builtin",
+      "check": "triage-sample",
+      "critical": true,
+      "file": "asset-sample-failures.txt",
+      "expect": {
+        "min_blocks": 4,
+        "kinds": [
+          "java_crash",
+          "anr",
+          "native_tombstone",
+          "installer_failure"
+        ]
+      }
+    },
+    {
+      "id": "host-kvm",
+      "kind": "host",
+      "critical": false
+    },
+    {
+      "id": "sdk-license",
+      "kind": "license",
+      "critical": false
+    },
+    {
+      "id": "device-adb",
+      "kind": "device",
+      "critical": false
+    },
+    {
+      "id": "tool-java",
+      "kind": "tool",
+      "tool": "java",
+      "critical": true
+    },
+    {
+      "id": "tool-git",
+      "kind": "tool",
+      "tool": "git",
+      "critical": true
+    },
+    {
+      "id": "tool-zip",
+      "kind": "tool",
+      "tool": "zip",
+      "critical": true
+    },
+    {
+      "id": "tool-unzip",
+      "kind": "tool",
+      "tool": "unzip",
+      "critical": true
+    },
+    {
+      "id": "tool-file",
+      "kind": "tool",
+      "tool": "file",
+      "critical": true
+    },
+    {
+      "id": "tool-strings",
+      "kind": "tool",
+      "tool": "strings",
+      "critical": true
+    },
+    {
+      "id": "tool-readelf",
+      "kind": "tool",
+      "tool": "readelf",
+      "critical": true
+    },
+    {
+      "id": "tool-objdump",
+      "kind": "tool",
+      "tool": "objdump",
+      "critical": true
+    },
+    {
+      "id": "tool-adb",
+      "kind": "tool",
+      "tool": "adb",
+      "critical": false
+    },
+    {
+      "id": "tool-fastboot",
+      "kind": "tool",
+      "tool": "fastboot",
+      "critical": false
+    },
+    {
+      "id": "tool-sdkmanager",
+      "kind": "tool",
+      "tool": "sdkmanager",
+      "critical": false
+    },
+    {
+      "id": "tool-avdmanager",
+      "kind": "tool",
+      "tool": "avdmanager",
+      "critical": false
+    },
+    {
+      "id": "tool-aapt2",
+      "kind": "tool",
+      "tool": "aapt2",
+      "critical": false
+    },
+    {
+      "id": "tool-apksigner",
+      "kind": "tool",
+      "tool": "apksigner",
+      "critical": false
+    },
+    {
+      "id": "tool-zipalign",
+      "kind": "tool",
+      "tool": "zipalign",
+      "critical": false
+    },
+    {
+      "id": "tool-bundletool",
+      "kind": "tool",
+      "tool": "bundletool",
+      "critical": false
+    },
+    {
+      "id": "tool-keytool",
+      "kind": "tool",
+      "tool": "keytool",
+      "critical": false
+    },
+    {
+      "id": "tool-jadx",
+      "kind": "tool",
+      "tool": "jadx",
+      "critical": false
+    },
+    {
+      "id": "tool-baksmali",
+      "kind": "tool",
+      "tool": "baksmali",
+      "critical": false
+    },
+    {
+      "id": "tool-gradle",
+      "kind": "tool",
+      "tool": "gradle",
+      "critical": false
+    },
+    {
+      "id": "tool-ndk-build",
+      "kind": "tool",
+      "tool": "ndk-build",
+      "critical": false
+    },
+    {
+      "id": "tool-cmake",
+      "kind": "tool",
+      "tool": "cmake",
+      "critical": false
+    },
+    {
+      "id": "tool-emulator",
+      "kind": "tool",
+      "tool": "emulator",
+      "critical": false
+    },
+    {
+      "id": "tool-sqlite3",
+      "kind": "tool",
+      "tool": "sqlite3",
+      "critical": false
+    },
+    {
+      "id": "tool-ffmpeg",
+      "kind": "tool",
+      "tool": "ffmpeg",
+      "critical": false
+    },
+    {
+      "id": "tool-node",
+      "kind": "tool",
+      "tool": "node",
+      "critical": false
+    },
+    {
+      "id": "tool-python3",
+      "kind": "tool",
+      "tool": "python3",
+      "critical": false
+    },
+    {
+      "id": "tool-openssl",
+      "kind": "tool",
+      "tool": "openssl",
+      "critical": false
+    },
+    {
+      "id": "tool-gpg",
+      "kind": "tool",
+      "tool": "gpg",
+      "critical": false
+    },
+    {
+      "id": "tool-curl",
+      "kind": "tool",
+      "tool": "curl",
+      "critical": false
+    },
+    {
+      "id": "tool-jq",
+      "kind": "tool",
+      "tool": "jq",
+      "critical": false
+    },
+    {
+      "id": "tool-mobsf",
+      "kind": "tool",
+      "tool": "mobsf",
+      "critical": false
+    },
+    {
+      "id": "tool-frida",
+      "kind": "tool",
+      "tool": "frida",
+      "critical": false
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "updated": "2026-11-15",
+  "required_acceptance": {
+    "name": "greetings-friends",
+    "text": "Greetings, friends! Welcome to my video.",
+    "ssml": "<speak>Greetings, friends!<break time=\"240ms\"/><emphasis level=\"strong\">Welcome</emphasis> to my video.</speak>",
+    "duration_min_s": 2.5,
+    "duration_max_s": 4.0,
+    "requirements": [
+      "intelligible en-US speech",
+      "brief pause after 'friends' (>= 150 ms)",
+      "clear emphasis on 'Welcome'",
+      "no robotic buzzing",
+      "no missing, truncated or cut-off words",
+      "peak <= -1 dBFS",
+      "integrated loudness near -14 LUFS (online video)"
+    ],
+    "expected_words": ["greetings", "friends", "welcome", "to", "my", "video"]
+  },
+  "regression_corpus": [
+    {"id": "numbers", "text": "The deploy finished at 14:30 on 2026-11-15 with 98% coverage."},
+    {"id": "acronym", "text": "The CPU and GPU reports are in the PDF."},
+    {"id": "currency", "text": "The bundle is $1,249.99 this week only."},
+    {"id": "url", "text": "Docs live at https://example.com/guide — visit www.example.com for more."},
+    {"id": "long-text", "text": "Today we walk through the offline neural voice system. It runs entirely on your CPU. There is no first-run download. Every step is deterministic, from installation to mastering. You will hear clean audio, measured in LUFS, with a peak below minus one decibel full scale."}
+  ]
+}

@@ -1,0 +1,1303 @@
+{
+  "version": 1,
+  "source": "Ultimate Translation Skill Catalog supplied by user",
+  "categories": 16,
+  "capabilities": [
+    {
+      "id": "catalog-01-01",
+      "category_number": 1,
+      "category": "Core Translation and Language Intelligence",
+      "name": "Ultimate Translator",
+      "description": "Translate text of any practical length across languages while preserving meaning, intent, tone, terminology, structure, numbers, names, and formatting. Detect source languages, handle mixed- language content, explain uncertainties, and produce literal, natural, formal, or audience-adapted versions.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-01-02",
+      "category_number": 1,
+      "category": "Core Translation and Language Intelligence",
+      "name": "Language Auto-Detection and Segmentation",
+      "description": "Identify languages, scripts, dialect shifts, code-switching, borrowed words, and untranslated spans at sentence or token level. Split multilingual inputs into translation-ready segments without damaging context.",
+      "command": "detect",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-01-03",
+      "category_number": 1,
+      "category": "Core Translation and Language Intelligence",
+      "name": "Context-Aware Long-Form Translator",
+      "description": "Translate books, reports, manuals, archives, and large collections in ordered chunks with rolling context, chapter memory, terminology consistency, cross-reference preservation, and resumable progress.",
+      "command": "translate --resume",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-01-04",
+      "category_number": 1,
+      "category": "Core Translation and Language Intelligence",
+      "name": "Meaning and Intent Preserver",
+      "description": "Protect implied meaning, emotional force, politeness, humor, ambiguity, and speaker intent instead of translating words mechanically. Flag meanings that cannot be carried directly into the target language.",
+      "command": "translate --mode natural",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-01-05",
+      "category_number": 1,
+      "category": "Core Translation and Language Intelligence",
+      "name": "Register and Tone Adapter",
+      "description": "Translate into formal, casual, academic, technical, legal, friendly, persuasive, child- friendly, or brand-specific language while retaining the original message.",
+      "command": "translate --tone formal",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-01-06",
+      "category_number": 1,
+      "category": "Core Translation and Language Intelligence",
+      "name": "Dialect and Regional Variant Translator",
+      "description": "Translate between regional forms such as European and Brazilian Portuguese, Latin American and Peninsular Spanish, Simplified and Traditional Chinese usage, and other locale-specific variants.",
+      "command": "translate --target pt-BR",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-01-07",
+      "category_number": 1,
+      "category": "Core Translation and Language Intelligence",
+      "name": "Transliteration and Script Converter",
+      "description": "Convert names and text between writing systems using configurable standards, pronunciation-based rendering, reversible transliteration where possible, and side-by-side native script.",
+      "command": "transliterate",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-01-08",
+      "category_number": 1,
+      "category": "Core Translation and Language Intelligence",
+      "name": "Low-Resource Language Assistant",
+      "description": "Support scarce-resource languages through careful segmentation, glossing, user-provided dictionaries, parallel examples, confidence labels, and human-review queues rather than inventing certainty.",
+      "command": "translate --domain low-resource --glossary TERMS",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-01-09",
+      "category_number": 1,
+      "category": "Core Translation and Language Intelligence",
+      "name": "Pidgin, Creole, and Vernacular Translator",
+      "description": "Handle vernacular grammar, nonstandard spelling, community expressions, and mixed vocabularies while preserving identity and avoiding forced standardization.",
+      "command": "translate --vernacular",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-01-10",
+      "category_number": 1,
+      "category": "Core Translation and Language Intelligence",
+      "name": "Parallel Bilingual Output Builder",
+      "description": "Produce source-target parallel text by sentence, paragraph, table row, or timecode for review, study, publishing, and translation-memory import.",
+      "command": "align",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-02-01",
+      "category_number": 2,
+      "category": "Localization Planning and Orchestration",
+      "name": "Localization Project Orchestrator",
+      "description": "Plan and coordinate end-to-end localization across content, software, media, reviewers, vendors, languages, milestones, dependencies, approvals, and release gates.",
+      "command": "plan",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-02-02",
+      "category_number": 2,
+      "category": "Localization Planning and Orchestration",
+      "name": "Locale Coverage Planner",
+      "description": "Define target locales, language-region pairs, scripts, fallback behavior, plural rules, date and number conventions, fonts, input requirements, and market-specific risks.",
+      "command": "locale plan",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-02-03",
+      "category_number": 2,
+      "category": "Localization Planning and Orchestration",
+      "name": "Translation Workflow Router",
+      "description": "Route content to machine translation, language models, subject specialists, native reviewers, transcreators, or legal review based on risk, content type, confidence, and deadline.",
+      "command": "plan",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-02-04",
+      "category_number": 2,
+      "category": "Localization Planning and Orchestration",
+      "name": "Localization Scope Estimator",
+      "description": "Estimate word counts, subtitle minutes, interface strings, screenshots, audio hours, review effort, complexity, dependencies, and delivery phases from supplied assets.",
+      "command": "inspect",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-02-05",
+      "category_number": 2,
+      "category": "Localization Planning and Orchestration",
+      "name": "Localization Status Tracker",
+      "description": "Track every asset, language, owner, stage, blocker, review state, defect, and final approval with resumable checkpoints and concise progress summaries.",
+      "command": "project status",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-02-06",
+      "category_number": 2,
+      "category": "Localization Planning and Orchestration",
+      "name": "Multi-Vendor Handoff Manager",
+      "description": "Prepare consistent handoff packages for agencies and freelancers with instructions, glossaries, style guides, file maps, references, acceptance criteria, and return validation.",
+      "command": "project handoff",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-02-07",
+      "category_number": 2,
+      "category": "Localization Planning and Orchestration",
+      "name": "Continuous Localization Coordinator",
+      "description": "Connect changing source content to incremental translation, identify new or modified strings, avoid retranslating unchanged material, and prepare release-ready deltas.",
+      "command": "delta",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-02-08",
+      "category_number": 2,
+      "category": "Localization Planning and Orchestration",
+      "name": "Human-in-the-Loop Review Designer",
+      "description": "Design review stages, reviewer roles, sampling rates, escalation rules, adjudication methods, and evidence requirements for reliable multilingual output.",
+      "command": "project sample",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-03-01",
+      "category_number": 3,
+      "category": "Terminology, Memory, and Style",
+      "name": "Terminology Extraction Specialist",
+      "description": "Extract candidate terms, names, abbreviations, product labels, commands, domain phrases, and forbidden translations from source materials with context examples.",
+      "command": "terms extract",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-03-02",
+      "category_number": 3,
+      "category": "Terminology, Memory, and Style",
+      "name": "Multilingual Glossary Builder",
+      "description": "Create approved source-target termbases with definitions, part of speech, locale, capitalization, gender, usage notes, prohibited variants, and review status.",
+      "command": "terms validate",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-03-03",
+      "category_number": 3,
+      "category": "Terminology, Memory, and Style",
+      "name": "Translation Memory Builder",
+      "description": "Create reusable aligned source-target segments, remove duplicates, normalize formatting, attach metadata, and preserve context for future translations.",
+      "command": "memory build",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-03-04",
+      "category_number": 3,
+      "category": "Terminology, Memory, and Style",
+      "name": "Translation Memory Cleaner",
+      "description": "Detect mismatched pairs, stale translations, duplicates, inconsistent punctuation, corrupted tags, wrong languages, and low-quality segments before reuse.",
+      "command": "memory clean",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-03-05",
+      "category_number": 3,
+      "category": "Terminology, Memory, and Style",
+      "name": "Terminology Consistency Enforcer",
+      "description": "Check translations against approved terms and flag missing, altered, inflected, or contextually incorrect terminology without blindly replacing valid variants.",
+      "command": "terms check",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-03-06",
+      "category_number": 3,
+      "category": "Terminology, Memory, and Style",
+      "name": "Brand Voice Localization",
+      "description": "Translate to a defined brand voice using approved vocabulary, sentence rhythm, inclusivity rules, prohibited claims, and channel-specific style.",
+      "command": "translate --style STYLE",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-03-07",
+      "category_number": 3,
+      "category": "Terminology, Memory, and Style",
+      "name": "Multilingual Style Guide Author",
+      "description": "Create practical rules for tone, punctuation, capitalization, numbers, units, names, links, UI length, gender, accessibility, and reviewer decisions per locale.",
+      "command": "terms style",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-03-08",
+      "category_number": 3,
+      "category": "Terminology, Memory, and Style",
+      "name": "Name and Proper-Noun Authority",
+      "description": "Maintain consistent treatment of people, places, organizations, fictional terms, titles, honorifics, and pronunciation across all assets.",
+      "command": "terms check",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-04-01",
+      "category_number": 4,
+      "category": "Documents, Files, and Structured Content",
+      "name": "Universal File Translation Intake",
+      "description": "Inspect supplied files, identify formats, encodings, embedded assets, tables, comments, metadata, hidden text, and extraction risks, then choose a safe translation path.",
+      "command": "inspect",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-04-02",
+      "category_number": 4,
+      "category": "Documents, Files, and Structured Content",
+      "name": "DOCX Translation Preserver",
+      "description": "Translate Word documents while preserving headings, styles, lists, tables, footnotes, endnotes, comments, links, captions, fields, headers, footers, and page structure.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-04-03",
+      "category_number": 4,
+      "category": "Documents, Files, and Structured Content",
+      "name": "PDF Translation and Reconstruction",
+      "description": "Extract or OCR PDF content, translate it, and reconstruct readable pages while preserving reading order, tables, labels, figures, links, and redaction boundaries.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-04-04",
+      "category_number": 4,
+      "category": "Documents, Files, and Structured Content",
+      "name": "Spreadsheet Localization",
+      "description": "Translate workbooks while preserving formulas, cell types, named ranges, validations, comments, hidden sheets, filters, charts, references, and locale-sensitive number formats.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-04-05",
+      "category_number": 4,
+      "category": "Documents, Files, and Structured Content",
+      "name": "Presentation Localization",
+      "description": "Translate slide text, speaker notes, diagrams, charts, and image labels while managing text expansion, font coverage, alignment, and visual hierarchy.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-04-06",
+      "category_number": 4,
+      "category": "Documents, Files, and Structured Content",
+      "name": "Plain Text and Markdown Translator",
+      "description": "Translate TXT and Markdown while protecting headings, code fences, links, frontmatter, placeholders, references, lists, and inline markup.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-04-07",
+      "category_number": 4,
+      "category": "Documents, Files, and Structured Content",
+      "name": "HTML and XML Safe Translator",
+      "description": "Translate human-readable nodes and attributes while preserving tags, entities, namespaces, IDs, templates, scripts, styles, and machine-readable values.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-04-08",
+      "category_number": 4,
+      "category": "Documents, Files, and Structured Content",
+      "name": "JSON and YAML Localization",
+      "description": "Translate only designated values while preserving keys, syntax, escapes, nesting, ordering requirements, variables, and schema constraints.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-04-09",
+      "category_number": 4,
+      "category": "Documents, Files, and Structured Content",
+      "name": "CSV and Database Export Translator",
+      "description": "Translate selected columns in delimited or tabular exports while preserving row identity, delimiters, quoting, nulls, encodings, and import compatibility.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-04-10",
+      "category_number": 4,
+      "category": "Documents, Files, and Structured Content",
+      "name": "OCR and Scanned Document Translator",
+      "description": "Recognize text from scans and photos, restore reading order, mark uncertain characters, translate the content, and keep coordinates for review or re-layout.",
+      "command": "ocr",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-05-01",
+      "category_number": 5,
+      "category": "Websites, Pages, and Online Content",
+      "name": "Website Localization Architect",
+      "description": "Inventory pages, templates, components, CMS entries, metadata, structured data, forms, cookies, navigation, errors, and dynamic content for complete website localization.",
+      "command": "inspect",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-05-02",
+      "category_number": 5,
+      "category": "Websites, Pages, and Online Content",
+      "name": "Webpage Translator",
+      "description": "Translate visible page content, alternative text, labels, tooltips, placeholders, validation messages, metadata, and accessibility text while preserving links and layout.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-05-03",
+      "category_number": 5,
+      "category": "Websites, Pages, and Online Content",
+      "name": "CMS Content Localizer",
+      "description": "Prepare and localize entries, taxonomies, reusable blocks, menus, SEO fields, media metadata, and publishing states for content management systems.",
+      "command": "translate --keys FIELDS",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-05-04",
+      "category_number": 5,
+      "category": "Websites, Pages, and Online Content",
+      "name": "SEO Multilingual Localizer",
+      "description": "Localize titles, descriptions, headings, URLs, keywords, internal anchors, structured data, and search intent without keyword stuffing or false claims.",
+      "command": "translate --domain seo",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-05-05",
+      "category_number": 5,
+      "category": "Websites, Pages, and Online Content",
+      "name": "E-commerce Catalog Localizer",
+      "description": "Translate product names, variants, specifications, sizing, ingredients, warnings, shipping details, reviews, filters, and marketplace attributes consistently.",
+      "command": "translate --columns COLUMNS",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-05-06",
+      "category_number": 5,
+      "category": "Websites, Pages, and Online Content",
+      "name": "Web Form and Error Message Localizer",
+      "description": "Translate labels, hints, consent text, validation, success states, and error recovery language with clear, accessible, culturally appropriate wording.",
+      "command": "translate --accessibility",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-05-07",
+      "category_number": 5,
+      "category": "Websites, Pages, and Online Content",
+      "name": "Right-to-Left Web QA",
+      "description": "Check bidirectional text, mirroring, alignment, icons, punctuation, numbers, mixed scripts, forms, tables, and responsive behavior for RTL locales.",
+      "command": "qa",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-05-08",
+      "category_number": 5,
+      "category": "Websites, Pages, and Online Content",
+      "name": "Static Site Localization Packager",
+      "description": "Create locale folders, translated page files, route maps, hreflang plans, fallback rules, asset lists, and deployment-ready handoffs.",
+      "command": "web",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-06-01",
+      "category_number": 6,
+      "category": "Software, Apps, and Interface Localization",
+      "name": "Software String Localizer",
+      "description": "Translate resource bundles and string catalogs while protecting keys, placeholders, escape sequences, markup, accelerator keys, and developer comments.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-06-02",
+      "category_number": 6,
+      "category": "Software, Apps, and Interface Localization",
+      "name": "Complete UI Text Localizer",
+      "description": "Translate every user-facing button, menu, label, dialog, tooltip, notification, onboarding step, empty state, error, help link, and accessibility announcement.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-06-03",
+      "category_number": 6,
+      "category": "Software, Apps, and Interface Localization",
+      "name": "Mobile App Localizer",
+      "description": "Localize iOS and Android resources, permission prompts, store text, widgets, notifications, deep links, screenshots, and device-specific layout constraints.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-06-04",
+      "category_number": 6,
+      "category": "Software, Apps, and Interface Localization",
+      "name": "Desktop Application Localizer",
+      "description": "Localize menus, ribbons, installers, system tray items, preferences, dialogs, shortcuts, status messages, update flows, and help files.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-06-05",
+      "category_number": 6,
+      "category": "Software, Apps, and Interface Localization",
+      "name": "Plural and Gender Rule Engineer",
+      "description": "Implement locale-aware plural, grammatical gender, select, and inflection logic using message-format patterns and test cases.",
+      "command": "locale plural",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-06-06",
+      "category_number": 6,
+      "category": "Software, Apps, and Interface Localization",
+      "name": "Placeholder and Token Guardian",
+      "description": "Protect variables, interpolation tokens, ICU syntax, printf specifiers, HTML fragments, commands, paths, and runtime markers during translation.",
+      "command": "qa",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-06-07",
+      "category_number": 6,
+      "category": "Software, Apps, and Interface Localization",
+      "name": "UI Length and Expansion Tester",
+      "description": "Predict and detect clipping, wrapping, truncation, overlap, tiny controls, and unusable navigation caused by translated text expansion.",
+      "command": "qa",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-06-08",
+      "category_number": 6,
+      "category": "Software, Apps, and Interface Localization",
+      "name": "Pseudolocalization Generator",
+      "description": "Generate accented, expanded, bracketed, bidirectional, and stress-test strings to expose hard-coded text, encoding issues, and layout defects before translation.",
+      "command": "pseudolocalize",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-06-09",
+      "category_number": 6,
+      "category": "Software, Apps, and Interface Localization",
+      "name": "Installer and Update Localizer",
+      "description": "Translate installation, repair, upgrade, rollback, license, privacy, progress, failure, and restart flows without weakening safety instructions.",
+      "command": "translate --domain safety",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-06-10",
+      "category_number": 6,
+      "category": "Software, Apps, and Interface Localization",
+      "name": "App Store Listing Localizer",
+      "description": "Localize app title, subtitle, description, keywords, release notes, subscription text, screenshots, promotional copy, and review-response templates by market.",
+      "command": "adapt transcreate",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-07-01",
+      "category_number": 7,
+      "category": "Games and Interactive Entertainment",
+      "name": "Full Game Localization Orchestrator",
+      "description": "Coordinate complete localization of dialogue, UI, quests, items, tutorials, lore, achievements, maps, subtitles, voice, store pages, patches, and platform text.",
+      "command": "plan",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-07-02",
+      "category_number": 7,
+      "category": "Games and Interactive Entertainment",
+      "name": "Game String and Asset Extractor",
+      "description": "Inventory translatable strings from scripts, tables, engines, resource files, images, textures, videos, and build outputs while preserving stable identifiers.",
+      "command": "repository",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-07-03",
+      "category_number": 7,
+      "category": "Games and Interactive Entertainment",
+      "name": "Dialogue and Character Voice Localizer",
+      "description": "Translate dialogue while preserving character identity, relationships, humor, speech patterns, emotional arcs, lore, and line-length constraints.",
+      "command": "translate --character-voice VOICE",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-07-04",
+      "category_number": 7,
+      "category": "Games and Interactive Entertainment",
+      "name": "Quest and Narrative Continuity Checker",
+      "description": "Verify names, objectives, branching choices, callbacks, chronology, pronouns, variables, and consequences across nonlinear stories.",
+      "command": "narrative",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-07-05",
+      "category_number": 7,
+      "category": "Games and Interactive Entertainment",
+      "name": "Game UI and HUD Localizer",
+      "description": "Translate menus, inventory, combat text, controls, prompts, tutorials, tooltips, maps, and heads-up displays with strict space and readability constraints.",
+      "command": "translate --domain game-ui",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-07-06",
+      "category_number": 7,
+      "category": "Games and Interactive Entertainment",
+      "name": "Item, Ability, and Lore Terminologist",
+      "description": "Build and enforce consistent names and descriptions for items, skills, factions, locations, creatures, currencies, statistics, and worldbuilding concepts.",
+      "command": "terms check",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-07-07",
+      "category_number": 7,
+      "category": "Games and Interactive Entertainment",
+      "name": "In-Game Subtitle Localizer",
+      "description": "Create readable, timed subtitles for cinematics and gameplay while handling speaker IDs, sound cues, line breaks, safe areas, and rapid dialogue.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-07-08",
+      "category_number": 7,
+      "category": "Games and Interactive Entertainment",
+      "name": "Game Voice-Over Localization Planner",
+      "description": "Prepare casting briefs, pronunciation guides, scripts, takes, file naming, timing constraints, pickups, and implementation metadata for dubbed games.",
+      "command": "subtitles package",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-07-09",
+      "category_number": 7,
+      "category": "Games and Interactive Entertainment",
+      "name": "Branching Script Localization",
+      "description": "Translate conditional and branching dialogue while preserving variables, logic, state conditions, choice labels, and re-entry context.",
+      "command": "narrative",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-07-10",
+      "category_number": 7,
+      "category": "Games and Interactive Entertainment",
+      "name": "Game Localization QA",
+      "description": "Test builds for untranslated text, overflow, broken tokens, wrong context, inconsistent lore, audio-subtitle mismatch, encoding defects, and progression blockers.",
+      "command": "qa",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-08-01",
+      "category_number": 8,
+      "category": "Audio, Speech, and Transcription",
+      "name": "Universal Audio Transcriber",
+      "description": "Transcribe clear or noisy recordings with timestamps, speaker turns, language detection, punctuation, confidence markers, and configurable verbatim detail.",
+      "command": "transcribe",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-08-02",
+      "category_number": 8,
+      "category": "Audio, Speech, and Transcription",
+      "name": "Multilingual Speech Translator",
+      "description": "Convert speech into translated text while tracking speakers, code-switching, domain vocabulary, names, numbers, and uncertain audio.",
+      "command": "transcribe --target LOCALE",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-08-03",
+      "category_number": 8,
+      "category": "Audio, Speech, and Transcription",
+      "name": "Speaker Diarization Specialist",
+      "description": "Separate and label speakers across interviews, meetings, panels, calls, lectures, and overlapping conversation, with manual correction support.",
+      "command": "transcribe --diarize",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-08-04",
+      "category_number": 8,
+      "category": "Audio, Speech, and Transcription",
+      "name": "Audio Cleanup and Transcription Prep",
+      "description": "Assess noise, clipping, silence, channel imbalance, speed, and segmentation, then prepare audio chunks and metadata for reliable transcription.",
+      "command": "audio prepare",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-08-05",
+      "category_number": 8,
+      "category": "Audio, Speech, and Transcription",
+      "name": "Podcast Localization Producer",
+      "description": "Create translated transcripts, show notes, chapters, subtitles, dubbed scripts, localized titles, descriptions, and publication assets for podcasts.",
+      "command": "transcribe",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-08-06",
+      "category_number": 8,
+      "category": "Audio, Speech, and Transcription",
+      "name": "Meeting and Lecture Translator",
+      "description": "Produce multilingual transcripts, summaries, action items, definitions, questions, and time-linked notes from meetings, classes, and presentations.",
+      "command": "adapt meeting",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-08-07",
+      "category_number": 8,
+      "category": "Audio, Speech, and Transcription",
+      "name": "Pronunciation Lexicon Builder",
+      "description": "Create pronunciation entries for names, brands, technical terms, acronyms, and fictional vocabulary using native-script guidance or phonetic notation.",
+      "command": "adapt pronunciation",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-08-08",
+      "category_number": 8,
+      "category": "Audio, Speech, and Transcription",
+      "name": "Accessible Audio Description Script Translator",
+      "description": "Translate audio-description scripts while preserving timing, concise visual detail, character identification, and respectful accessibility language.",
+      "command": "translate --domain audio-description",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-09-01",
+      "category_number": 9,
+      "category": "Subtitles, Captions, and Video Localization",
+      "name": "Subtitle File Translator",
+      "description": "Translate SRT, VTT, ASS, SSA, TTML, and related subtitle formats while preserving sequence numbers, timestamps, styles, positioning, and metadata.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-09-02",
+      "category_number": 9,
+      "category": "Subtitles, Captions, and Video Localization",
+      "name": "Subtitle Timing and Segmentation Editor",
+      "description": "Adjust cue boundaries, reading speed, shot changes, pauses, line breaks, overlaps, and synchronization without losing meaning.",
+      "command": "subtitles adjust",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-09-03",
+      "category_number": 9,
+      "category": "Subtitles, Captions, and Video Localization",
+      "name": "Closed Caption Localizer",
+      "description": "Translate dialogue plus sound effects, music cues, speaker labels, and accessibility context using consistent caption conventions.",
+      "command": "translate",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-09-04",
+      "category_number": 9,
+      "category": "Subtitles, Captions, and Video Localization",
+      "name": "Video Transcription and Translation",
+      "description": "Transcribe all spoken content, identify on-screen text, translate both, and produce time- aligned scripts, captions, and review notes.",
+      "command": "transcribe",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-09-05",
+      "category_number": 9,
+      "category": "Subtitles, Captions, and Video Localization",
+      "name": "On-Screen Text Localizer",
+      "description": "Detect and translate titles, lower thirds, signs, labels, interfaces, credits, callouts, and burned-in text with replacement timing and placement notes.",
+      "command": "visual",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-09-06",
+      "category_number": 9,
+      "category": "Subtitles, Captions, and Video Localization",
+      "name": "Dubbing Script Adapter",
+      "description": "Adapt translated dialogue for natural performance, timing, mouth movements, character voice, breath, emotion, and local audience expectations.",
+      "command": "adapt dubbing",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-09-07",
+      "category_number": 9,
+      "category": "Subtitles, Captions, and Video Localization",
+      "name": "Lip-Sync Dialogue Adapter",
+      "description": "Rewrite lines to match visible mouth movement, duration, pauses, emphasis, and acting beats while preserving plot-critical meaning.",
+      "command": "adapt lip-sync",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-09-08",
+      "category_number": 9,
+      "category": "Subtitles, Captions, and Video Localization",
+      "name": "Voice-Over Production Packager",
+      "description": "Prepare actor-ready scripts, cue sheets, pronunciation notes, file names, character references, time limits, pickups, and delivery structure.",
+      "command": "subtitles package",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-09-09",
+      "category_number": 9,
+      "category": "Subtitles, Captions, and Video Localization",
+      "name": "Video Localization QA",
+      "description": "Check translated video for subtitle sync, reading speed, cropping, text-safe areas, missing graphics, audio balance, pronunciation, and final export integrity.",
+      "command": "subtitles qa",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-09-10",
+      "category_number": 9,
+      "category": "Subtitles, Captions, and Video Localization",
+      "name": "Short-Form Social Video Localizer",
+      "description": "Localize hooks, captions, overlays, hashtags, calls to action, voice scripts, and platform descriptions for brief vertical or square videos.",
+      "command": "adapt campaign",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-10-01",
+      "category_number": 10,
+      "category": "Images, Visual Text, and Design",
+      "name": "Image Text Detector and Translator",
+      "description": "Locate text in screenshots, posters, comics, diagrams, signs, scans, and product images, then translate it with bounding boxes and reading order.",
+      "command": "ocr",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-10-02",
+      "category_number": 10,
+      "category": "Images, Visual Text, and Design",
+      "name": "Screenshot Localization",
+      "description": "Translate interface screenshots, preserve context, identify truncation risks, and provide replacement text mapped to every visible control and message.",
+      "command": "visual",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-10-03",
+      "category_number": 10,
+      "category": "Images, Visual Text, and Design",
+      "name": "Graphic Text Replacement Planner",
+      "description": "Create a layer-by-layer plan for replacing text in raster or editable artwork, including fonts, size, color, alignment, effects, and expansion handling.",
+      "command": "visual",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-10-04",
+      "category_number": 10,
+      "category": "Images, Visual Text, and Design",
+      "name": "Comic and Manga Localizer",
+      "description": "Translate dialogue, captions, sound effects, signs, notes, and cultural references while preserving character voice, panel order, balloon limits, and visual humor.",
+      "command": "visual",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-10-05",
+      "category_number": 10,
+      "category": "Images, Visual Text, and Design",
+      "name": "Diagram and Infographic Localizer",
+      "description": "Translate labels, legends, axes, callouts, instructions, citations, and alt text while keeping relationships and data accurate.",
+      "command": "visual",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-10-06",
+      "category_number": 10,
+      "category": "Images, Visual Text, and Design",
+      "name": "Packaging and Label Localizer",
+      "description": "Translate product packaging, ingredients, directions, warnings, claims, certifications, legal lines, and variable fields with market-specific review flags.",
+      "command": "visual --domain packaging",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-10-07",
+      "category_number": 10,
+      "category": "Images, Visual Text, and Design",
+      "name": "Optical Layout Reconstruction",
+      "description": "Rebuild OCR-derived text blocks with corrected order, spacing, paragraphs, tables, columns, and visual grouping after translation.",
+      "command": "visual",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-10-08",
+      "category_number": 10,
+      "category": "Images, Visual Text, and Design",
+      "name": "Multilingual Font Compatibility Auditor",
+      "description": "Check glyph coverage, shaping, ligatures, diacritics, vertical writing, RTL behavior, fallback fonts, licensing notes, and visual consistency.",
+      "command": "font",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-11-01",
+      "category_number": 11,
+      "category": "Legal, Policy, Medical, and Technical Domains",
+      "name": "Legal Translation Assistant",
+      "description": "Translate contracts, policies, notices, filings, and evidence with clause alignment, defined- term consistency, jurisdiction flags, and explicit human-review requirements.",
+      "command": "translate --domain legal",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-11-02",
+      "category_number": 11,
+      "category": "Legal, Policy, Medical, and Technical Domains",
+      "name": "Privacy and Consent Localizer",
+      "description": "Translate privacy notices, consent dialogs, cookie text, data rights, retention language, and permissions without simplifying legally material distinctions.",
+      "command": "translate --domain legal",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-11-03",
+      "category_number": 11,
+      "category": "Legal, Policy, Medical, and Technical Domains",
+      "name": "Medical Translation Assistant",
+      "description": "Translate patient information, forms, instructions, reports, and educational content with terminology control, dosage preservation, uncertainty flags, and clinical review routing.",
+      "command": "translate --domain medical",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-11-04",
+      "category_number": 11,
+      "category": "Legal, Policy, Medical, and Technical Domains",
+      "name": "Pharmaceutical Label Localizer",
+      "description": "Translate medicine labels, contraindications, warnings, storage, usage instructions, adverse reactions, and packaging text with strict number and unit checks.",
+      "command": "translate --domain pharmaceutical",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-11-05",
+      "category_number": 11,
+      "category": "Legal, Policy, Medical, and Technical Domains",
+      "name": "Technical Manual Translator",
+      "description": "Translate procedures, specifications, warnings, parts, controls, diagrams, tables, and troubleshooting steps while preserving numbering and cross-references.",
+      "command": "translate --domain technical",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-11-06",
+      "category_number": 11,
+      "category": "Legal, Policy, Medical, and Technical Domains",
+      "name": "Software Documentation Localizer",
+      "description": "Translate API guides, tutorials, release notes, command references, examples, warnings, and UI references while protecting code and identifiers.",
+      "command": "translate --domain software-docs",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-11-07",
+      "category_number": 11,
+      "category": "Legal, Policy, Medical, and Technical Domains",
+      "name": "Scientific and Academic Translator",
+      "description": "Translate papers, abstracts, methods, results, equations, citations, units, terminology, and figure text without overstating conclusions.",
+      "command": "translate --domain scientific",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-11-08",
+      "category_number": 11,
+      "category": "Legal, Policy, Medical, and Technical Domains",
+      "name": "Financial Content Localizer",
+      "description": "Translate reports, disclosures, statements, product information, and investor materials while preserving figures, periods, currencies, definitions, and risk language.",
+      "command": "translate --domain financial",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-11-09",
+      "category_number": 11,
+      "category": "Legal, Policy, Medical, and Technical Domains",
+      "name": "Safety-Critical Instruction Translator",
+      "description": "Translate emergency, industrial, transportation, and operational instructions with controlled language, warning hierarchy, exact units, and mandatory expert validation.",
+      "command": "translate --domain safety",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-11-10",
+      "category_number": 11,
+      "category": "Legal, Policy, Medical, and Technical Domains",
+      "name": "Patent and Claims Translator",
+      "description": "Translate technical patent material with consistent terms, claim dependency preservation, figure references, and clear separation between literal and interpretive wording.",
+      "command": "translate --domain patent",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-12-01",
+      "category_number": 12,
+      "category": "Cultural Adaptation and Transcreation",
+      "name": "Marketing Transcreator",
+      "description": "Recreate campaign meaning, persuasion, rhythm, and emotional effect for a target market rather than translating literally, with rationale and back-translation.",
+      "command": "adapt transcreate",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-12-02",
+      "category_number": 12,
+      "category": "Cultural Adaptation and Transcreation",
+      "name": "Slogan and Tagline Adapter",
+      "description": "Generate concise local alternatives that preserve brand intent, memorability, tone, and constraints, then screen for awkward or harmful interpretations.",
+      "command": "adapt transcreate",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-12-03",
+      "category_number": 12,
+      "category": "Cultural Adaptation and Transcreation",
+      "name": "Humor, Idiom, and Wordplay Adapter",
+      "description": "Replace jokes, idioms, puns, rhymes, and cultural references with functional equivalents while documenting unavoidable trade-offs.",
+      "command": "adapt transcreate",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-12-04",
+      "category_number": 12,
+      "category": "Cultural Adaptation and Transcreation",
+      "name": "Cultural Sensitivity Reviewer",
+      "description": "Flag stereotypes, taboo topics, symbols, gestures, imagery, colors, names, examples, and assumptions that may be confusing or harmful in a locale.",
+      "command": "adapt cultural-review",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-12-05",
+      "category_number": 12,
+      "category": "Cultural Adaptation and Transcreation",
+      "name": "Inclusive Language Localizer",
+      "description": "Apply respectful, audience-appropriate inclusive language while accounting for grammatical gender, identity terms, disability language, and local norms.",
+      "command": "adapt inclusive-review",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-12-06",
+      "category_number": 12,
+      "category": "Cultural Adaptation and Transcreation",
+      "name": "Campaign Variant Generator",
+      "description": "Produce locale-specific headline, body, CTA, social, email, and ad variants within channel limits and approved claim boundaries.",
+      "command": "adapt campaign",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-12-07",
+      "category_number": 12,
+      "category": "Cultural Adaptation and Transcreation",
+      "name": "Back-Translation and Intent Check",
+      "description": "Translate localized content back into the source language to expose meaning drift, omissions, added claims, tone changes, and cultural substitutions.",
+      "command": "adapt back-translate",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-12-08",
+      "category_number": 12,
+      "category": "Cultural Adaptation and Transcreation",
+      "name": "Local Market Readability Adapter",
+      "description": "Adjust sentence length, vocabulary, examples, measurement systems, references, and reading level for the target audience without changing facts.",
+      "command": "translate --reading-level LEVEL",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-13-01",
+      "category_number": 13,
+      "category": "Quality Assurance and Validation",
+      "name": "Multilingual Quality Assurance Engine",
+      "description": "Check accuracy, completeness, fluency, terminology, grammar, spelling, punctuation, formatting, tags, numbers, names, consistency, and locale conventions.",
+      "command": "qa",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-13-02",
+      "category_number": 13,
+      "category": "Quality Assurance and Validation",
+      "name": "Source-to-Target Completeness Checker",
+      "description": "Detect untranslated, omitted, duplicated, added, reordered, or mismatched segments across files, pages, slides, strings, subtitles, and audio scripts.",
+      "command": "qa",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-13-03",
+      "category_number": 13,
+      "category": "Quality Assurance and Validation",
+      "name": "Number, Date, and Unit Validator",
+      "description": "Compare all quantities, currencies, dates, times, percentages, ranges, signs, separators, conversions, and measurement units against the source.",
+      "command": "qa",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-13-04",
+      "category_number": 13,
+      "category": "Quality Assurance and Validation",
+      "name": "Tag and Placeholder Validator",
+      "description": "Verify that protected tags, tokens, variables, links, shortcuts, escapes, and markup remain valid, complete, and correctly ordered.",
+      "command": "qa",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-13-05",
+      "category_number": 13,
+      "category": "Quality Assurance and Validation",
+      "name": "Linguistic Defect Classifier",
+      "description": "Classify errors by severity and type, capture evidence, recommend corrections, track recurrence, and distinguish preference from objective defect.",
+      "command": "qa",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-13-06",
+      "category_number": 13,
+      "category": "Quality Assurance and Validation",
+      "name": "Bilingual Reviewer Assistant",
+      "description": "Present aligned source and target content with glossary hits, context, risk flags, comments, decisions, and accept-reject workflows.",
+      "command": "review",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-13-07",
+      "category_number": 13,
+      "category": "Quality Assurance and Validation",
+      "name": "Consistency Checker Across Assets",
+      "description": "Compare names, terms, UI labels, capitalization, slogans, and recurring sentences across documents, apps, subtitles, websites, and marketing files.",
+      "command": "qa",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-13-08",
+      "category_number": 13,
+      "category": "Quality Assurance and Validation",
+      "name": "Locale Formatting Validator",
+      "description": "Check decimal and thousands separators, currencies, addresses, phone numbers, postal codes, calendars, time formats, sorting, collation, and directionality.",
+      "command": "qa",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-13-09",
+      "category_number": 13,
+      "category": "Quality Assurance and Validation",
+      "name": "Regression Localization Tester",
+      "description": "Compare new localized builds or files against prior approved versions to surface new defects, lost translations, changed IDs, and layout regressions.",
+      "command": "delta",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-13-10",
+      "category_number": 13,
+      "category": "Quality Assurance and Validation",
+      "name": "Final Release Readiness Auditor",
+      "description": "Confirm all requested locales, assets, approvals, defects, exports, fonts, metadata, accessibility elements, and delivery structures are complete before release.",
+      "command": "project release",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-14-01",
+      "category_number": 14,
+      "category": "Accessibility and Learning",
+      "name": "Accessible Multilingual Content Localizer",
+      "description": "Translate headings, link purpose, alt text, labels, instructions, tables, reading order, captions, and plain-language content without weakening accessibility.",
+      "command": "translate --accessibility",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-14-02",
+      "category_number": 14,
+      "category": "Accessibility and Learning",
+      "name": "Easy-Language Translator",
+      "description": "Create simplified versions with short sentences, common words, explicit steps, and controlled concepts while preserving essential meaning and safety.",
+      "command": "translate --tone easy-language",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-14-03",
+      "category_number": 14,
+      "category": "Accessibility and Learning",
+      "name": "Sign-Language Script Adapter",
+      "description": "Prepare spoken or written content for sign-language interpretation by clarifying structure, names, timing, spatial references, and visual context.",
+      "command": "adapt sign-language",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-14-04",
+      "category_number": 14,
+      "category": "Accessibility and Learning",
+      "name": "Language Learning Parallelizer",
+      "description": "Create aligned translations with vocabulary notes, grammar explanations, pronunciation help, graded difficulty, exercises, and answer keys.",
+      "command": "align --learning",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-14-05",
+      "category_number": 14,
+      "category": "Accessibility and Learning",
+      "name": "Interlinear Gloss Builder",
+      "description": "Produce word-by-word or morpheme-by-morpheme glosses with grammatical labels, literal translation, and natural translation for linguistic study.",
+      "command": "adapt gloss",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-14-06",
+      "category_number": 14,
+      "category": "Accessibility and Learning",
+      "name": "Reading-Level Localizer",
+      "description": "Adapt translations to a specified reading level while preserving required terminology, facts, instructions, and respectful tone.",
+      "command": "translate --reading-level LEVEL",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-14-07",
+      "category_number": 14,
+      "category": "Accessibility and Learning",
+      "name": "Multilingual Assessment Localizer",
+      "description": "Translate tests, rubrics, choices, instructions, distractors, and scoring notes while protecting difficulty, validity, and answer equivalence.",
+      "command": "translate --domain assessment",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-14-08",
+      "category_number": 14,
+      "category": "Accessibility and Learning",
+      "name": "Alt Text Translation Specialist",
+      "description": "Translate alternative text concisely while preserving the image's purpose, relevant visual details, functional meaning, and surrounding context.",
+      "command": "translate --accessibility",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-15-01",
+      "category_number": 15,
+      "category": "Automation, Integration, and Delivery",
+      "name": "Batch Translation Pipeline",
+      "description": "Process large folders and mixed file sets with format detection, protected-content rules, resumable jobs, naming conventions, error logs, and per-file validation.",
+      "command": "batch",
+      "mode": "hybrid"
+    },
+    {
+      "id": "catalog-15-02",
+      "category_number": 15,
+      "category": "Automation, Integration, and Delivery",
+      "name": "Localization API Integrator",
+      "description": "Design requests, authentication handling, batching, retries, quotas, idempotency, callbacks, and validation for translation and localization services.",
+      "command": "translate --provider http --allow-network",
+      "mode": "provider"
+    },
+    {
+      "id": "catalog-15-03",
+      "category_number": 15,
+      "category": "Automation, Integration, and Delivery",
+      "name": "Repository Localization Assistant",
+      "description": "Scan source repositories for resources, hard-coded text, locale files, duplicate strings, missing keys, and changes, then prepare reviewable updates.",
+      "command": "repository",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-15-04",
+      "category_number": 15,
+      "category": "Automation, Integration, and Delivery",
+      "name": "CI Localization Gate",
+      "description": "Add automated checks for missing translations, broken message syntax, placeholder mismatches, unsupported locales, pseudolocalization defects, and untranslated releases.",
+      "command": "validate ci",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-15-05",
+      "category_number": 15,
+      "category": "Automation, Integration, and Delivery",
+      "name": "File Format Conversion Coordinator",
+      "description": "Convert assets into translation-safe intermediate formats and back while preserving IDs, metadata, structure, fidelity, and audit trails.",
+      "command": "convert",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-15-06",
+      "category_number": 15,
+      "category": "Automation, Integration, and Delivery",
+      "name": "Localization Package Builder",
+      "description": "Assemble clean delivery folders containing localized assets, source references, termbases, memories, QA reports, reviewer notes, and import instructions.",
+      "command": "project handoff",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-15-07",
+      "category_number": 15,
+      "category": "Automation, Integration, and Delivery",
+      "name": "Multilingual Content Synchronizer",
+      "description": "Keep equivalent content aligned across locales when source pages, product data, help articles, policies, or campaigns change.",
+      "command": "delta",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-15-08",
+      "category_number": 15,
+      "category": "Automation, Integration, and Delivery",
+      "name": "Translation Change Detector",
+      "description": "Identify source edits at segment level, classify their impact, reuse valid prior translations, and isolate only content that needs retranslation.",
+      "command": "delta",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-15-09",
+      "category_number": 15,
+      "category": "Automation, Integration, and Delivery",
+      "name": "Secure Translation Workspace Manager",
+      "description": "Apply least-access handling, temporary-file controls, redaction options, retention rules, secret detection, and safe handoff practices for sensitive materials.",
+      "command": "secure",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-15-10",
+      "category_number": 15,
+      "category": "Automation, Integration, and Delivery",
+      "name": "Localization Archive Curator",
+      "description": "Organize approved translations, versions, glossaries, memories, source snapshots, decisions, and release packages for reliable future reuse.",
+      "command": "project handoff --archive",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-16-01",
+      "category_number": 16,
+      "category": "Review, Reporting, and Governance",
+      "name": "Localization Decision Log",
+      "description": "Record disputed terms, approved solutions, rationale, owner, affected assets, effective date, and future-use guidance.",
+      "command": "project update",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-16-02",
+      "category_number": 16,
+      "category": "Review, Reporting, and Governance",
+      "name": "Reviewer Feedback Consolidator",
+      "description": "Merge comments from multiple reviewers, remove duplicates, surface conflicts, preserve evidence, and create an actionable correction list.",
+      "command": "project feedback",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-16-03",
+      "category_number": 16,
+      "category": "Review, Reporting, and Governance",
+      "name": "Localization Metrics Reporter",
+      "description": "Report volume, completion, turnaround, rework, defect density, severity, terminology compliance, reuse, and review status without hiding quality risks.",
+      "command": "project metrics",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-16-04",
+      "category_number": 16,
+      "category": "Review, Reporting, and Governance",
+      "name": "Language Quality Sampling Planner",
+      "description": "Define representative samples by risk, content type, locale, change level, and reviewer capacity, with escalation when defects exceed thresholds.",
+      "command": "project sample",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-16-05",
+      "category_number": 16,
+      "category": "Review, Reporting, and Governance",
+      "name": "Multilingual Content Inventory",
+      "description": "Create a searchable catalog of every source and localized asset, language, owner, version, location, status, dependency, and last approval.",
+      "command": "project status",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-16-06",
+      "category_number": 16,
+      "category": "Review, Reporting, and Governance",
+      "name": "Approval and Sign-Off Coordinator",
+      "description": "Collect linguistic, product, legal, accessibility, and release approvals with clear scope, exceptions, dates, and accountable owners.",
+      "command": "project update --confirm-sensitive",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-16-07",
+      "category_number": 16,
+      "category": "Review, Reporting, and Governance",
+      "name": "Localization Risk Register",
+      "description": "Track risks involving meaning, law, safety, culture, privacy, schedule, vendors, compatibility, fonts, and unsupported formats with mitigations and triggers.",
+      "command": "project update",
+      "mode": "offline"
+    },
+    {
+      "id": "catalog-16-08",
+      "category_number": 16,
+      "category": "Review, Reporting, and Governance",
+      "name": "Post-Release Feedback Analyzer",
+      "description": "Collect and categorize user reports, store reviews, support tickets, telemetry clues, and reviewer findings to prioritize localization fixes.",
+      "command": "project feedback",
+      "mode": "offline"
+    }
+  ]
+}

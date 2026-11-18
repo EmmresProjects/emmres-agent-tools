@@ -1,0 +1,52 @@
+{
+  "name": "studio-render-presets",
+  "version": "1.0",
+  "description": "Export and encode presets used by the export/encode commands (tools-encode.py). Values feed ffmpeg (or the built-in encoders) exactly as recorded so exports are reproducible; change them here, never per-invocation from memory.",
+  "image_sequence": {
+    "frames_png": {"format": "png", "bit_depth": 8, "alpha": true, "compression": 6},
+    "frames_png_16": {"format": "png", "bit_depth": 16, "alpha": true},
+    "frames_bmp": {"format": "bmp", "bpp": 24, "alpha": false},
+    "frames_tga": {"format": "tga", "alpha": true},
+    "jpeg_proxy": {"format": "jpg", "quality": 2, "requires": "external encoder (ffmpeg/cwebp/magick)", "alpha": false}
+  },
+  "animation": {
+    "gif_review": {"format": "gif", "max_colors": 256, "dither": "bayer", "disposal": 2, "loop": 0},
+    "gif_web": {"format": "gif", "max_colors": 128, "dither": true, "loop": 0},
+    "apng_alpha": {"format": "apng", "dispose": 2, "blend": 1, "loop": 0},
+    "webp_anim": {"format": "webp", "requires": "cwebp or ffmpeg with libwebp_anim", "quality": 85, "alpha": true}
+  },
+  "video": {
+    "h264_review": {
+      "container": "mp4", "codec": "libx264", "crf": 18, "preset": "medium",
+      "pix_fmt": "yuv420p", "faststart": true, "requires": "ffmpeg"
+    },
+    "h264_proxy": {
+      "container": "mp4", "codec": "libx264", "crf": 28, "preset": "veryfast",
+      "scale": 0.5, "pix_fmt": "yuv420p", "requires": "ffmpeg"
+    },
+    "master_lossless": {
+      "container": "mkv", "codec": "ffv1", "level": 3, "gop": 1, "slices": 24,
+      "pix_fmt": "bgra", "requires": "ffmpeg"
+    },
+    "master_mezzanine": {
+      "container": "mov", "codec": "prores_ks", "profile": 3, "pix_fmt": "yuva444p10le",
+      "requires": "ffmpeg"
+    },
+    "alpha_video": {
+      "options": [
+        {"name": "png sequence + wav", "alpha": true, "built_in": true},
+        {"name": "vp9 webm (yuva420p)", "alpha": true, "requires": "ffmpeg"},
+        {"name": "prores 4444 mov", "alpha": true, "requires": "ffmpeg"}
+      ],
+      "note": "verify straight vs premultiplied alpha before compositing elsewhere"
+    }
+  },
+  "audio": {
+    "master_wav": {"format": "wav", "sample_rate": 48000, "channels": 2, "bits": 24},
+    "proxy_wav": {"format": "wav", "sample_rate": 22050, "channels": 1, "bits": 16}
+  },
+  "review": {
+    "contact_sheet": {"columns": 6, "cell": [320, 180], "label": "frame number"},
+    "burnin": {"color": "#ffd200", "corner": "tl", "content": "shot id + version + frame/timecode"}
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "seg-1",
+    "src_lang": "en",
+    "tgt_lang": "fil",
+    "source": "The journal retracted the paper after an investigation into data fabrication.",
+    "target": "Binawi ng journal ang papel pagkatapos ng imbestigasyon tungkol sa paggawa-gawa ng datos."
+  },
+  {
+    "id": "seg-2",
+    "src_lang": "en",
+    "tgt_lang": "fil",
+    "source": "Nine of 412 articles were retracted, and five of those nine retractions cited image duplication.",
+    "target": "Siyam sa 412 artikulo ang binawi, at lima sa siyam na pagbawi ay nagtukoy ng pagdoble ng larawan."
+  },
+  {
+    "id": "seg-3",
+    "src_lang": "en",
+    "tgt_lang": "fil",
+    "source": "Corrections must be published with a DOI and linked to the original article.",
+    "target": "Dapat ilathala ang mga pagwawasto nang may DOI at naka-link sa orihinal na artikulo."
+  }
+]

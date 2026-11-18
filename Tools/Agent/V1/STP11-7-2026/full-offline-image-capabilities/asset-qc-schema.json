@@ -1,0 +1,59 @@
+{
+  "schema": "foic.qc-report/1",
+  "title": "Offline image QC report contract",
+  "type": "object",
+  "required": ["schema", "generated_at", "tool", "policy", "summary", "results"],
+  "properties": {
+    "schema": {"type": "string", "enum": ["foic.qc-report/1"]},
+    "generated_at": {"type": "string", "minLength": 8},
+    "tool": {"type": "string"},
+    "policy": {"type": "string"},
+    "backend": {"type": "string", "enum": ["pillow", "stdlib"]},
+    "checks_run": {"type": "array", "items": {"type": "string"}},
+    "schema_validation": {"type": "object"},
+    "summary": {
+      "type": "object",
+      "required": ["checked", "passed", "warned", "failed", "skipped", "verdict"],
+      "properties": {
+        "checked": {"type": "integer", "minimum": 0},
+        "passed": {"type": "integer", "minimum": 0},
+        "warned": {"type": "integer", "minimum": 0},
+        "failed": {"type": "integer", "minimum": 0},
+        "skipped": {"type": "integer", "minimum": 0},
+        "verdict": {"type": "string", "enum": ["pass", "warn", "fail"]}
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "status", "checks"],
+        "properties": {
+          "path": {"type": "string"},
+          "status": {"type": "string", "enum": ["pass", "warn", "fail", "error"]},
+          "image": {"type": "object"},
+          "fingerprints": {"type": "object"},
+          "checks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "status", "severity", "message"],
+              "properties": {
+                "id": {"type": "string"},
+                "status": {"type": "string", "enum": ["pass", "warn", "fail", "skip"]},
+                "severity": {"type": "string", "enum": ["error", "warn", "info"]},
+                "message": {"type": "string"},
+                "metrics": {"type": "object"}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false,
+  "validator_subset": [
+    "type", "required", "properties", "items", "enum", "minimum", "maximum",
+    "minLength", "maxLength", "additionalProperties"
+  ]
+}

@@ -1,0 +1,20 @@
+# image-creation-editing Skill Tool — required Python packages
+# Install with:  python -m pip install -r tools-requirements.txt
+#
+# Verified against: Python 3.13.16, Pillow 13.0.0
+# Minimum supported: Python 3.9, Pillow 10.0
+
+Pillow>=10.0
+
+# Nothing else is required. Pillow ships the codecs used here:
+#   PNG, JPEG, WebP, TIFF, GIF, BMP  - standard wheels
+#   AVIF                              - Pillow 11+ wheels (checked by `doctor`)
+#   PDF output                        - Pillow writes it via its built-in PDF plugin
+#   TrueType/OpenType text            - Pillow FreeType build (checked by `doctor`)
+#
+# Optional, not required by any command:
+#   pillow-avif-plugin   only if your Pillow build does not list AVIF in `doctor`
+#
+# No network client, no cloud SDK, no AI model package is installed or required.
+# External image providers are reached with the standard library (urllib) and
+# only when you configure them yourself and set providers.allow_network = true.

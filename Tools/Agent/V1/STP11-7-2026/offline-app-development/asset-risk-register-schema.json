@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://offline-app-development.local/schemas/risk-register.schema.json",
+  "title": "Offline App Development Risk / Constraint Register",
+  "description": "Schema for the JSON register managed by `tools-offline-app-dev.py risk`. One file per register (default: the --store directory). severity and likelihood are integers 1-5; exposure = severity * likelihood (computed by the tool, stored for convenience). The tool validates records itself and ignores unknown keys with a warning; this schema is the portable contract for external validators (ajv, jsonschema, etc.).",
+  "type": "object",
+  "required": ["schema_version", "register", "records"],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "register": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "created": {"type": "string", "format": "date-time"},
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "category", "severity", "likelihood", "status", "owner", "created", "updated"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^R-[0-9]{4}$"},
+          "title": {"type": "string", "minLength": 1},
+          "category": {"type": "string", "enum": ["technical", "schedule", "security", "compliance", "privacy", "performance", "accessibility", "dependency", "distribution", "offline-constraint", "toolchain", "data", "vendor", "other"]},
+          "severity": {"type": "integer", "minimum": 1, "maximum": 5},
+          "likelihood": {"type": "integer", "minimum": 1, "maximum": 5},
+          "exposure": {"type": "integer", "minimum": 1, "maximum": 25},
+          "status": {"type": "string", "enum": ["open", "mitigating", "accepted", "closed", "transferred"]},
+          "owner": {"type": "string", "minLength": 1},
+          "mitigation": {"type": "string"},
+          "contingency": {"type": "string"},
+          "evidence": {"type": "string"},
+          "created": {"type": "string", "format": "date-time"},
+          "updated": {"type": "string", "format": "date-time"},
+          "closed": {"type": ["string", "null"], "format": "date-time"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

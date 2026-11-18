@@ -1,0 +1,129 @@
+{
+  "brief_version": "1.0",
+  "title": "Protecting Q4 retention without adding headcount",
+  "purpose": "decide",
+  "purpose_detail": "Get steering-committee approval for a retention programme that reallocates the existing support budget instead of hiring.",
+  "audience": {
+    "primary": "steering committee",
+    "secondary": "customer success leads",
+    "size": "9 people in the room",
+    "expertise": "executive",
+    "language": "en",
+    "objections": [
+      "We already tried a retention push in Q2",
+      "Support is already at capacity",
+      "The budget is committed elsewhere"
+    ]
+  },
+  "delivery": {
+    "mode": "live-stage",
+    "venue": "Board room, 55-inch display, one shared laptop",
+    "duration_minutes": 25,
+    "recorded": false,
+    "asynchronous": false,
+    "devices": [
+      "Windows laptop",
+      "projector"
+    ],
+    "network": "unreliable"
+  },
+  "constraints": {
+    "slides_target": 18,
+    "deadline": "2026-11-14",
+    "must_include": [
+      "churn trend",
+      "cost of the programme",
+      "owner and date"
+    ],
+    "must_exclude": [
+      "customer names",
+      "individual account data"
+    ],
+    "brand_assets": [
+      "corporate logo (vector)"
+    ],
+    "approved_fonts": [
+      "Segoe UI"
+    ],
+    "logo_required": false,
+    "editability": "editable-source-required"
+  },
+  "priorities": [
+    "precision",
+    "data_visuals",
+    "compatibility",
+    "offline",
+    "accessibility"
+  ],
+  "platform": {
+    "preferred": "powerpoint",
+    "must_support": [
+      "pptx",
+      "pdf"
+    ],
+    "forbidden": []
+  },
+  "content": {
+    "source_files": [
+      "asset-example-content.md"
+    ],
+    "data_files": []
+  },
+  "narrative": {
+    "framework": "executive-scia",
+    "tone": "plain",
+    "language": "en"
+  },
+  "accessibility": {
+    "standard": "wcag-aa",
+    "captions_required": false,
+    "screen_reader_required": false,
+    "reduced_motion": true,
+    "min_body_pt": 16
+  },
+  "security": {
+    "confidential": true,
+    "external_audience": false,
+    "pii_expected": false,
+    "retention_days": 180,
+    "public_publishing": false
+  },
+  "call_to_action": {
+    "decision": "Approve the retention pilot and reallocate 0.6 FTE from the onboarding queue",
+    "owner": "VP Customer Success",
+    "deadline": "2026-11-21"
+  },
+  "success_criteria": [
+    "Committee approves or rejects the pilot in this meeting",
+    "Every number on screen is traceable to the Q3 review pack",
+    "The deck opens and presents from the venue laptop with no network"
+  ],
+  "theme": "aurora",
+  "review_checkpoints": [
+    {
+      "stage": "claims-and-sources",
+      "approver": "Head of Analytics",
+      "required": true
+    },
+    {
+      "stage": "sensitive-content",
+      "approver": "Data Protection Officer",
+      "required": true
+    },
+    {
+      "stage": "brand-and-legal",
+      "approver": "Brand team",
+      "required": true
+    },
+    {
+      "stage": "accessibility",
+      "approver": "Presentation owner",
+      "required": true
+    },
+    {
+      "stage": "external-publishing",
+      "approver": "not applicable",
+      "required": false
+    }
+  ]
+}

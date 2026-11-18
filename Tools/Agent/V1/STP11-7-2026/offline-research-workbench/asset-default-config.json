@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "profile": "offline-default",
+  "workspace": {
+    "default": "rwt-workspace"
+  },
+  "limits": {
+    "max_file_mb": 64,
+    "max_files_per_ingest": 500,
+    "max_scan_depth": 6,
+    "max_words_per_segment": 220,
+    "max_query_terms": 32,
+    "max_document_words": 200000,
+    "timeout_seconds": 30,
+    "adapter_timeout_seconds": 60,
+    "retries": 1,
+    "max_jobs_per_run": 50
+  },
+  "languages": {
+    "default": "en",
+    "supported": ["en", "fil", "es", "fr", "de", "pt", "id", "ar", "zh", "ja", "ko", "hi", "vi", "ru", "it", "nl", "tr", "th"],
+    "required_for_coverage": ["en"],
+    "stopword_sets": ["en", "fil"]
+  },
+  "search": {
+    "default_limit": 10,
+    "bm25_k1": 1.2,
+    "bm25_b": 0.75,
+    "embedding_dims": 512,
+    "min_relevance": 0.01,
+    "diversity_penalty": 0.25,
+    "proximity_window": 10
+  },
+  "quoting": {
+    "default_max_words": 120,
+    "default_max_ratio": 0.1,
+    "require_context_words": 12,
+    "max_quote_words_hard": 400
+  },
+  "licensing": {
+    "max_total_words": null,
+    "restricted_licenses": ["all-rights-reserved", "proprietary", "unknown"],
+    "share_alike": ["cc-by-sa-4.0", "cc-by-sa-3.0", "odbl-1.0", "gpl-3.0"],
+    "noncommercial": ["cc-by-nc-4.0", "cc-by-nc-sa-4.0", "cc-by-nc-nd-4.0"],
+    "no_derivatives": ["cc-by-nd-4.0", "cc-by-nc-nd-4.0"]
+  },
+  "approval": {
+    "gated_actions": [
+      "corpus.delete",
+      "corpus.rollback",
+      "guard.export",
+      "guard.redact-commit",
+      "guard.retention-purge",
+      "workflow.publish",
+      "workflow.archive-sign",
+      "workflow.embargo-lift",
+      "eval.release-gate-override"
+    ],
+    "required_role": "approver",
+    "second_reviewer_actions": ["workflow.publish", "guard.export"]
+  },
+  "adapters": {
+    "root": "adapters",
+    "kinds": {
+      "mt": {
+        "description": "Local neural machine translation command. Reads {\"text\",\"src_lang\",\"tgt_lang\"} JSON on stdin and writes {\"translation\"} JSON on stdout.",
+        "command": null,
+        "timeout_seconds": 60,
+        "retries": 0,
+        "max_chars": 20000
+      },
+      "embed": {
+        "description": "Local embedding command. Reads {\"texts\":[...]} and writes {\"vectors\":[[...]]}.",
+        "command": null,
+        "timeout_seconds": 60,
+        "retries": 0,
+        "max_chars": 200000
+      },
+      "ocr": {
+        "description": "Local OCR command. Reads {\"path\",\"language\"} and writes {\"text\",\"confidence\"}.",
+        "command": null,
+        "timeout_seconds": 120,
+        "retries": 0,
+        "max_chars": 500000
+      },
+      "asr": {
+        "description": "Local speech-to-text command. Reads {\"path\",\"language\"} and writes {\"segments\":[{\"start_ms\",\"end_ms\",\"text\",\"speaker\"}]}.",
+        "command": null,
+        "timeout_seconds": 180,
+        "retries": 0,
+        "max_chars": 500000
+      },
+      "extract": {
+        "description": "Local document text extractor for PDF/Office/EPUB. Reads {\"path\"} and writes {\"text\"}.",
+        "command": null,
+        "timeout_seconds": 120,
+        "retries": 0,
+        "max_chars": 500000
+      },
+      "rerank": {
+        "description": "Local cross-encoder reranker. Reads {\"query\",\"passages\":[...]} and writes {\"scores\":[...]}.",
+        "command": null,
+        "timeout_seconds": 60,
+        "retries": 0,
+        "max_chars": 200000
+      }
+    }
+  },
+  "translation": {
+    "default_pair": ["en", "fil"],
+    "fuzzy_match_threshold": 0.7,
+    "length_ratio_min": 0.5,
+    "length_ratio_max": 2.5,
+    "placeholder_patterns": ["\\{[^{}]+\\}", "%[sdif]", "\\$\\{[^{}]+\\}", "<[^<>\\s]+>"],
+    "severity_weights": {"critical": 10, "major": 5, "minor": 1},
+    "acceptance_threshold": 95,
+    "max_segment_chars": 5000
+  },
+  "evaluation": {
+    "thresholds": {
+      "retrieval_recall": 0.8,
+      "factcheck_accuracy": 0.85,
+      "citation_accuracy": 0.9,
+      "language_score": 95,
+      "clean_state_health": 0.9
+    },
+    "leakage_terms_action": "fail",
+    "max_benchmark_items": 500
+  },
+  "privacy": {
+    "identifier_patterns": {
+      "email": "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+      "phone": "(?:\\+\\d{1,3}[ -]?)?(?:\\(\\d{2,4}\\)[ -]?)?\\d{3,4}[- .]?\\d{3,4}(?:[- .]?\\d{2,4})?",
+      "ph_phone": "(?:\\+63|0)9\\d{2}[- .]?\\d{3}[- .]?\\d{4}",
+      "national_id": "\\b\\d{3}-\\d{2}-\\d{4}\\b",
+      "credit_card": "\\b(?:\\d[ -]?){13,16}\\b",
+      "iban": "\\b[A-Z]{2}\\d{2}[A-Z0-9]{10,30}\\b",
+      "ipv4": "\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b",
+      "orcid": "\\b\\d{4}-\\d{4}-\\d{4}-\\d{3}[0-9X]\\b",
+      "doi": "\\b10\\.\\d{4,9}/[-._;()/:A-Za-z0-9]+\\b"
+    },
+    "redaction_token": "[REDACTED]",
+    "salt_env": "RWT_REDACTION_SALT",
+    "quasi_identifiers": ["age", "sex", "barangay", "occupation", "diagnosis", "school", "employer"]
+  },
+  "sensitivity_labels": [
+    "public", "internal", "confidential", "personal", "health", "legal-privileged",
+    "financial", "export-controlled", "restricted"
+  ],
+  "delivery": {
+    "archive_format": "zip",
+    "include_manifest": true,
+    "max_package_mb": 256,
+    "required_accessibility_checks": ["headings", "alt_text", "lang_attribute", "table_headers", "link_text"]
+  },
+  "mirror": {
+    "path": "mirror"
+  }
+}

@@ -1,0 +1,43 @@
+# Sample pronunciation lexicon (CMU ARPABET style)
+# Format: WORD<TAB>PH PH PH
+# Copy into a work package as lexicon.txt, extend with project vocabulary,
+# then reference it from the manifest (kind: lexicon).
+# ARPABET stress digits: 0 = no stress, 1 = primary, 2 = secondary.
+tomato	T AH0 M AA1 T OW2
+potato	P AH0 T EY1 T OW2
+caramel	K AA1 R AH0 M AH0 L
+data	D EY1 T AH0
+read	R IY1 D
+read	R EH1 D
+live	L AY1 V
+live	L IH1 V
+record	R EH1 K ER0 D
+record	R IH0 K AO1 R D
+produce	P R AA1 D UW0 S
+produce	P R AH0 D UW1 S
+voice	V OY1 S
+speech	S P IY1 CH
+through	TH R UW1
+though	DH OW1
+thought	TH AO1 T
+colleague	K AA1 L IY0 G
+cache	K AE1 SH
+queue	K Y UW1
+ubuntu	UW0 B UW1 N T UW0
+gif	JH IH1 F
+jibe	JH AY1 B
+schedule	S K EH1 JH UW0 L
+schedule	SH EH1 JH UW0 L
+route	R UW1 T
+route	R AW1 T
+privacy	P R IH1 V AH0 S IY0
+privacy	P R AY1 V AH0 S IY0
+cebu	S EH1 B UW0
+manila	M AH0 N IH1 L AH0
+narrative	N AE1 R AH0 T IH0 V
+methodology	M EH2 TH AH0 D AA1 L AH0 JH IY0
+pseudonym	S UW1 D AH0 N IH2 M
+hyperbole	HH AY0 P ER1 B AH0 L IY2
+epitome	IH0 P IH1 T AH0 M IY0
+niche	N IH1 SH
+niche	N IY1 SH

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "updated": "2026-11-15",
+  "description": "Acronyms (exact, uppercase, word-boundary match) and custom word pronunciations applied during normalization. Spoken forms are fed to the engine; espeak G2P does the final phonemization.",
+  "acronyms": {
+    "AI": "A I", "ASR": "A S R", "API": "A P I", "CPU": "C P U", "GPU": "G P U",
+    "CLI": "C L I", "CRUD": "crud", "CSS": "C S S", "CSV": "C S V", "DOM": "dom",
+    "DNS": "D N S", "EOF": "E O F", "FAQ": "F A Q", "GB": "gigabytes", "GUI": "G U I",
+    "HTML": "H T M L", "HTTP": "H T T P", "HTTPS": "H T T P S", "IDE": "I D E",
+    "IP": "I P", "JSON": "jay-son", "KB": "kilobytes", "LLM": "L L M", "MB": "megabytes",
+    "NAS": "N A S", "NLP": "N L P", "ONNX": "on-en-ex", "OS": "o s", "OSS": "O S S",
+    "PDF": "P D F", "PNG": "P N G", "RAM": "ram", "REST": "rest", "SDK": "S D K",
+    "SQL": "sequel", "SSD": "S S D", "SSH": "S S H", "TB": "terabytes", "TCP": "T C P",
+    "TOC": "table of contents", "TTS": "text to speech", "UDP": "U D P", "UI": "U I",
+    "URL": "U R L", "USB": "U S B", "UX": "U X", "WAV": "wave", "YAML": "yam-el",
+    "OAI": "O A I", "URLS": "U R L s", "IOS": "i O S"
+  },
+  "words": {
+    "agentic": "agentic",
+    "nginx": "engine X",
+    "sqlite": "S Q L lite",
+    "postgres": "post-gres",
+    "postgresql": "post-gree S Q L",
+    "gif": "jiff",
+    "kubectl": "kube control",
+    "pytorch": "pie torch",
+    "onnxjs": "on en ex J S",
+    "linux": "lin-ex",
+    "debconf": "deb conf"
+  },
+  "homographs_note": "Context-free homographs (read, record, bass, tear, wind) are not disambiguated automatically; use SSML <sub alias=...> or rephrase."
+}

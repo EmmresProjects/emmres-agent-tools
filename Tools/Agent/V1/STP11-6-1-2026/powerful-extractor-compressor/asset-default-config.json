@@ -1,0 +1,96 @@
+{
+  "$schema": "pec.config/1",
+  "version": "1.0.0",
+  "state_dir": ".pec-state",
+  "limits": {
+    "max_entries": 200000,
+    "max_total_bytes": 21474836480,
+    "max_entry_bytes": 8589934592,
+    "max_ratio": 200.0,
+    "max_depth": 5,
+    "max_path_length": 255,
+    "max_seconds": 3600.0,
+    "max_scan_bytes": 4194304,
+    "io_chunk_bytes": 1048576,
+    "max_workers": 4,
+    "retries": 2,
+    "retry_backoff_seconds": 0.5,
+    "max_report_entries": 50000,
+    "max_volume_size": 0
+  },
+  "policy": {
+    "overwrite": "never",
+    "allow_symlinks": false,
+    "allow_hardlinks": false,
+    "allow_absolute_paths": false,
+    "follow_nested": true,
+    "strip_executable_bits": true,
+    "quarantine_permissions": "0500",
+    "deny_extensions": [
+      ".exe", ".dll", ".scr", ".com", ".pif", ".bat", ".cmd",
+      ".vbs", ".ps1", ".msi", ".lnk", ".jar", ".hta", ".reg"
+    ],
+    "protected_roots": [
+      "/etc", "/usr", "/bin", "/sbin", "/boot", "/var/lib",
+      "C:/Windows", "C:/Program Files"
+    ],
+    "allowed_output_roots": [],
+    "requires_approval": ["overwrite", "delete", "decrypt", "publish-encrypted", "dispose"],
+    "metadata_junk": [
+      ".DS_Store", "Thumbs.db", "desktop.ini", "__MACOSX/", ".git/",
+      "node_modules/", "__pycache__/"
+    ],
+    "secret_gate": "warn",
+    "max_name_length": 200
+  },
+  "compression": {
+    "format": "zip",
+    "level": 6,
+    "deterministic": true,
+    "store_extensions": [
+      ".jpg", ".jpeg", ".png", ".gif", ".webp", ".mp3", ".mp4", ".m4a",
+      ".avi", ".mkv", ".mov", ".zip", ".gz", ".xz", ".bz2", ".7z", ".rar",
+      ".zst", ".pdf", ".docx", ".xlsx", ".pptx"
+    ],
+    "volume_size": 0,
+    "include_manifest": true,
+    "root_folder": true
+  },
+  "extraction": {
+    "nest": false,
+    "quarantine": false,
+    "checkpoint": true,
+    "publish": "atomic",
+    "organize": "none",
+    "hash_algorithm": "sha256",
+    "default_password_env": "PEC_ARCHIVE_PASSWORD"
+  },
+  "scanner": {
+    "enable_secret_scan": true,
+    "max_findings": 500,
+    "min_confidence": "medium",
+    "scan_text_extensions": [
+      ".txt", ".md", ".json", ".yaml", ".yml", ".ini", ".cfg", ".env", ".csv",
+      ".xml", ".py", ".js", ".ts", ".sh", ".ps1", ".java", ".go", ".rb", ".php",
+      ".sql", ".html", ".css", ".toml"
+    ]
+  },
+  "notify": {
+    "webhook_url": "",
+    "allowlist": [],
+    "timeout_seconds": 5.0,
+    "retries": 1,
+    "hmac_secret_env": "PEC_WEBHOOK_SECRET"
+  },
+  "backends": {
+    "prefer_native": true,
+    "seven_zip": "",
+    "unrar": "",
+    "sevenzip_module": "py7zr",
+    "rar_module": "rarfile",
+    "zstd_module": "zstandard"
+  },
+  "recipes_file": "asset-recipes.json",
+  "content_types_file": "asset-content-types.json",
+  "secret_patterns_file": "asset-secret-patterns.json"
+}

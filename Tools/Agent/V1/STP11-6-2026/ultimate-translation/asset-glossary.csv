@@ -1,0 +1,9 @@
+source,target,source_locale,target_locale,status,term_type,case_sensitive,forbidden,definition,part_of_speech,notes,pronunciation
+Hello world.,Hola mundo.,en,es,approved,phrase,false,,"Example greeting for offline verification",phrase,Review before production reuse,
+Hello,Hola,en,es,approved,phrase,false,,Greeting,interjection,,
+Save,Guardar,en,es,approved,command,false,,"Persist current work",verb,UI command,
+Cancel,Cancelar,en,es,approved,command,false,,"Dismiss without applying",verb,UI command,
+Close,Cerrar,en,es,approved,command,false,,"Close the current view",verb,UI command,
+File,Archivo,en,es,approved,label,false,,"File menu",noun,UI label,
+Warning,Advertencia,en,es,approved,safety,false,,"Warning heading",noun,Preserve warning hierarchy,
+Open settings,Abrir configuración,en,es,approved,phrase,false,,"Open the settings view",phrase,Example command,

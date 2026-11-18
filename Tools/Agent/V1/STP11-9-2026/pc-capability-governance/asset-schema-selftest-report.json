@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pc-capability-governance self-test report",
+  "description": "Contract-shaped report emitted by `self-test`. Every capability record carries all eleven required Startup Self-Test Contract fields.",
+  "type": "object",
+  "required": ["tool", "tool_version", "schema_version", "operation", "run_id", "generated_at", "host", "summary", "contract", "capabilities", "evidence", "ok"],
+  "properties": {
+    "tool": {"type": "string", "pattern": "^pc-capability-governance$"},
+    "tool_version": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "operation": {"type": "string", "enum": ["self-test"]},
+    "run_id": {"type": "string", "pattern": "^run-[0-9]{8}T[0-9]{6}Z-[0-9a-f]{8}$"},
+    "generated_at": {"type": "string"},
+    "host": {
+      "type": "object",
+      "required": ["host_type", "architecture", "virtualization_present", "gpu_present", "network_available"],
+      "properties": {
+        "host_type": {"type": "string"},
+        "architecture": {"type": "string"},
+        "kernel": {"type": "string"},
+        "python_version": {"type": "string"},
+        "cpu_count": {"type": ["integer", "null"], "minimum": 0},
+        "virtualization_present": {"type": "boolean"},
+        "virtualization_marker": {"type": "string"},
+        "gpu_present": {"type": "boolean"},
+        "gpu_markers": {"type": "array", "items": {"type": "string"}},
+        "network_available": {"type": ["boolean", "null"]},
+        "offline_mode": {"type": "boolean"}
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["total", "usable", "blocked", "by_status"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 0},
+        "usable": {"type": "integer", "minimum": 0},
+        "blocked": {"type": "integer", "minimum": 0},
+        "by_status": {"type": "object"}
+      }
+    },
+    "deterministic": {
+      "type": ["object", "null"],
+      "properties": {
+        "runs": {"type": "integer", "minimum": 1},
+        "deterministic": {"type": "boolean"},
+        "status_drift": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "contract": {
+      "type": "object",
+      "required": ["statuses", "fields", "issues", "valid"],
+      "properties": {
+        "statuses": {"type": "array", "minItems": 9, "items": {"type": "string"}},
+        "fields": {"type": "array", "minItems": 11, "items": {"type": "string"}},
+        "issues": {"type": "array", "items": {"type": "object"}},
+        "valid": {"type": "boolean"}
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["capability_id", "status", "detected_command", "detected_version", "host_type", "architecture", "requirements", "test_command", "exit_code", "evidence_path", "recommended_action"],
+        "properties": {
+          "capability_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$"},
+          "label": {"type": "string"},
+          "category": {"type": "string"},
+          "status": {
+            "type": "string",
+            "enum": ["FOUND", "MISSING", "WRONG VERSION", "BROKEN", "LICENSE REQUIRED", "WINDOWS HOST REQUIRED", "GPU REQUIRED", "VIRTUALIZATION REQUIRED", "NETWORK REQUIRED"]
+          },
+          "detected_command": {"type": "string"},
+          "detected_version": {"type": ["string", "null"]},
+          "host_type": {"type": "string"},
+          "architecture": {"type": "string"},
+          "requirements": {
+            "type": "object",
+            "required": ["os", "arch"],
+            "properties": {
+              "os": {"type": "array", "items": {"type": "string"}},
+              "arch": {"type": "array", "items": {"type": "string"}},
+              "gpu": {"type": "boolean"},
+              "virtualization": {"type": "boolean"},
+              "network": {"type": "boolean"}
+            }
+          },
+          "test_command": {"type": "string"},
+          "exit_code": {"type": ["integer", "null"]},
+          "evidence_path": {"type": "string"},
+          "recommended_action": {"type": "string"},
+          "license_required": {"type": "boolean"},
+          "version_window": {"type": "object"},
+          "detail": {"type": "string"},
+          "duration_ms": {"type": "integer", "minimum": 0}
+        }
+      }
+    },
+    "capability_count": {"type": "integer", "minimum": 1},
+    "missing_tool_count": {"type": "integer", "minimum": 0},
+    "evidence": {
+      "type": "object",
+      "required": ["run_id", "evidence_dir", "files"],
+      "properties": {
+        "run_id": {"type": "string"},
+        "evidence_dir": {"type": "string", "pattern": "^(?!/)(?!.*/../)"},
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "path", "sha256"],
+            "properties": {
+              "name": {"type": "string"},
+              "path": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "duration_ms": {"type": "integer", "minimum": 0},
+    "preflight": {"type": "array", "items": {"type": "object"}},
+    "report_path": {"type": "string"},
+    "ok": {"type": "boolean"}
+  }
+}

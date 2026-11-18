@@ -1,0 +1,93 @@
+{
+  "name": "studio-color-palettes",
+  "version": "1.0",
+  "description": "Named, role-labeled palettes with ramps and protected colors. Used by palette commands, pixel-art limit checks, palette swaps and color scripts (tools-imaging.py / tools-assets.py). Extend with project palettes; keep role labels stable so downstream commands can protect them.",
+  "roles": ["line", "shadow", "base", "light", "highlight", "effect", "bg", "accent"],
+  "palettes": {
+    "studio-neutral": {
+      "colors": [
+        {"hex": "#1b1b22", "role": "line"},
+        {"hex": "#3d3d4a", "role": "shadow"},
+        {"hex": "#8a8a96", "role": "base"},
+        {"hex": "#c9c9d2", "role": "light"},
+        {"hex": "#f4f4f8", "role": "highlight"},
+        {"hex": "#20262e", "role": "bg"},
+        {"hex": "#e0a54b", "role": "accent"}
+      ],
+      "protected": ["#1b1b22", "#e0a54b"]
+    },
+    "cel-warm": {
+      "colors": [
+        {"hex": "#2a1a1a", "role": "line"},
+        {"hex": "#6b3a34", "role": "shadow"},
+        {"hex": "#c66b4e", "role": "base"},
+        {"hex": "#e89a6d", "role": "light"},
+        {"hex": "#f6c89a", "role": "highlight"},
+        {"hex": "#2d2438", "role": "bg"},
+        {"hex": "#7cc5b8", "role": "accent"}
+      ],
+      "protected": ["#2a1a1a"]
+    },
+    "pixel-limited-16": {
+      "colors": [
+        {"hex": "#0f0d12", "role": "line"},
+        {"hex": "#2b2233", "role": "shadow"},
+        {"hex": "#4a3c5a", "role": "shadow"},
+        {"hex": "#7a6284", "role": "base"},
+        {"hex": "#a68db0", "role": "base"},
+        {"hex": "#d2c2d8", "role": "light"},
+        {"hex": "#f2ecf5", "role": "highlight"},
+        {"hex": "#12303a", "role": "bg"},
+        {"hex": "#1f5e6b", "role": "bg"},
+        {"hex": "#3fa08c", "role": "effect"},
+        {"hex": "#9fd8bd", "role": "effect"},
+        {"hex": "#5c1f2e", "role": "accent"},
+        {"hex": "#a8324a", "role": "accent"},
+        {"hex": "#e0655f", "role": "accent"},
+        {"hex": "#f2a05e", "role": "accent"},
+        {"hex": "#f7d789", "role": "highlight"}
+      ],
+      "protected": ["#0f0d12", "#f2ecf5"],
+      "note": "16-color limited palette for pixel work; index-stable for palette swaps"
+    },
+    "pixel-gameboy-4": {
+      "colors": [
+        {"hex": "#0f380f", "role": "line"},
+        {"hex": "#306230", "role": "shadow"},
+        {"hex": "#8bac0f", "role": "base"},
+        {"hex": "#9bbc0f", "role": "light"}
+      ],
+      "protected": ["#0f380f", "#9bbc0f"],
+      "note": "DMG-style 4-shade green palette"
+    },
+    "story-night": {
+      "colors": [
+        {"hex": "#10141f", "role": "bg"},
+        {"hex": "#1c2536", "role": "bg"},
+        {"hex": "#2e3d55", "role": "shadow"},
+        {"hex": "#51678a", "role": "base"},
+        {"hex": "#8aa2c4", "role": "light"},
+        {"hex": "#cfe0f2", "role": "highlight"},
+        {"hex": "#ffd27d", "role": "accent"}
+      ],
+      "protected": ["#ffd27d"]
+    },
+    "story-day": {
+      "colors": [
+        {"hex": "#dfeaf2", "role": "bg"},
+        {"hex": "#bcd4e6", "role": "bg"},
+        {"hex": "#7fa8c9", "role": "shadow"},
+        {"hex": "#4f7ba6", "role": "base"},
+        {"hex": "#33587e", "role": "line"},
+        {"hex": "#f5e3b8", "role": "accent"},
+        {"hex": "#e07856", "role": "accent"}
+      ],
+      "protected": ["#33587e"]
+    }
+  },
+  "color_script_defaults": {
+    "beats": ["establish", "development", "turn", "climax", "resolve"],
+    "value_path_desc": "value contrast rises toward the climax, then settles",
+    "notes": "color scripts map each beat to a palette key plus value/saturation deltas"
+  }
+}

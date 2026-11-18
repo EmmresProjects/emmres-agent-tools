@@ -1,0 +1,19 @@
+{
+  "name": "hero-production-line",
+  "steps": [
+    {"id": "frames", "module": "author", "op": "frames",
+     "args": {"spec": "asset-sf-sample-spec.json", "output": "build/frames"}},
+    {"id": "palette-preview", "module": "author", "op": "palette",
+     "depends_on": [],
+     "args": {"seed": "hero", "preview": "build/palette.png", "output": "build/palette.json"}},
+    {"id": "sheet", "module": "sheet", "op": "compose", "depends_on": ["frames"],
+     "args": {"input": "build/frames", "output": "build/hero.png",
+              "metadata": "build/hero.json", "cell": "64x64", "cols": 5, "padding": 2}},
+    {"id": "check", "module": "validate", "op": "sheet", "depends_on": ["sheet"],
+     "args": {"input": "build/hero.png", "metadata": "build/hero.json",
+              "output": "build/sheet-check.json"}, "allow_failure": true},
+    {"id": "unity", "module": "engine", "op": "unity", "depends_on": ["sheet"],
+     "args": {"metadata": "build/hero.json", "output": "build/unity.json", "ppu": 64},
+     "approve": ["engine-unity"]}
+  ]
+}

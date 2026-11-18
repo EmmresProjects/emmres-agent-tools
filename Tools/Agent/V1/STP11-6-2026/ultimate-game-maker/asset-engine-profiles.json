@@ -1,0 +1,251 @@
+{
+  "schema_id": "ugm-engine-profiles-1.0",
+  "default": "html5",
+  "evidence_policy": "Exact engine, editor, SDK, compiler, and package versions must come from the brief or user-supplied local official documentation. The tool never guesses version behavior.",
+  "profiles": [
+    {
+      "id": "html5",
+      "display_name": "Web, HTML5, JavaScript, and Browser Games",
+      "language": "javascript",
+      "platform": "browser",
+      "version_fields": [
+        "ecmascript",
+        "browser"
+      ],
+      "source_generation": "runnable-standalone-prototype",
+      "build": "single self-contained HTML file",
+      "runtime_check": "parse HTML, check JavaScript syntax, and execute pure game logic in a bounded harness when Node is available",
+      "external_runtime_required": false,
+      "official_docs_required": false,
+      "version_evidence_required": [
+        "language standard from brief"
+      ]
+    },
+    {
+      "id": "unity",
+      "display_name": "Unity",
+      "language": "csharp",
+      "platform": "configurable",
+      "version_fields": [
+        "engine_version",
+        "editor_version",
+        "render_pipeline",
+        "package_manifest"
+      ],
+      "source_generation": "production-packet-only",
+      "build": "documented from supplied official version evidence",
+      "runtime_check": "no Unity compiler is bundled",
+      "external_runtime_required": true,
+      "official_docs_required": true,
+      "version_evidence_required": [
+        "engine_version",
+        "package_manifest",
+        "render_pipeline"
+      ]
+    },
+    {
+      "id": "unreal",
+      "display_name": "Unreal Engine",
+      "language": "cpp-or-blueprint",
+      "platform": "configurable",
+      "version_fields": [
+        "engine_version",
+        "cpp_standard",
+        "build_tool"
+      ],
+      "source_generation": "production-packet-only",
+      "build": "documented from supplied official version evidence",
+      "runtime_check": "no Unreal toolchain is bundled",
+      "external_runtime_required": true,
+      "official_docs_required": true,
+      "version_evidence_required": [
+        "engine_version",
+        "cpp_standard",
+        "build_tool"
+      ]
+    },
+    {
+      "id": "godot",
+      "display_name": "Godot",
+      "language": "gdscript-or-csharp",
+      "platform": "configurable",
+      "version_fields": [
+        "engine_version",
+        "export_template_version",
+        "script_language"
+      ],
+      "source_generation": "production-packet-only",
+      "build": "documented from supplied official version evidence",
+      "runtime_check": "no Godot editor or export templates are bundled",
+      "external_runtime_required": true,
+      "official_docs_required": true,
+      "version_evidence_required": [
+        "engine_version",
+        "export_template_version",
+        "script_language"
+      ]
+    },
+    {
+      "id": "python",
+      "display_name": "Python, Pygame, RenPy, and Scripting Games",
+      "language": "python",
+      "platform": "desktop",
+      "version_fields": [
+        "python_version",
+        "package_lock",
+        "framework_version"
+      ],
+      "source_generation": "production-packet-only",
+      "build": "documented dependency lock and entry-point instructions",
+      "runtime_check": "no game framework is bundled",
+      "external_runtime_required": true,
+      "official_docs_required": true,
+      "version_evidence_required": [
+        "python_version",
+        "package_lock",
+        "framework_version"
+      ]
+    },
+    {
+      "id": "native",
+      "display_name": "C, C++, C#, Java, and Native Frameworks",
+      "language": "configurable",
+      "platform": "configurable",
+      "version_fields": [
+        "compiler",
+        "language_standard",
+        "graphics_backend",
+        "abi"
+      ],
+      "source_generation": "production-packet-only",
+      "build": "documented build graph and ownership contract",
+      "runtime_check": "no native compiler or graphics SDK is bundled",
+      "external_runtime_required": true,
+      "official_docs_required": true,
+      "version_evidence_required": [
+        "compiler",
+        "language_standard",
+        "graphics_backend"
+      ]
+    },
+    {
+      "id": "creator-platform",
+      "display_name": "Additional Engines and Creator Platforms",
+      "language": "platform-specific",
+      "platform": "configurable",
+      "version_fields": [
+        "editor_version",
+        "extension_versions",
+        "export_target"
+      ],
+      "source_generation": "production-packet-only",
+      "build": "documented from supplied official version evidence",
+      "runtime_check": "no third-party editor is bundled",
+      "external_runtime_required": true,
+      "official_docs_required": true,
+      "version_evidence_required": [
+        "editor_version",
+        "extension_versions",
+        "export_target"
+      ]
+    },
+    {
+      "id": "custom-engine",
+      "display_name": "Custom Engines, Compilers, IDEs, and Developer Tooling",
+      "language": "configurable",
+      "platform": "configurable",
+      "version_fields": [
+        "compiler",
+        "language_standard",
+        "bytecode_version",
+        "toolchain_lock"
+      ],
+      "source_generation": "production-packet-only",
+      "build": "documented bounded grammar and toolchain lock",
+      "runtime_check": "no custom compiler is executed",
+      "external_runtime_required": true,
+      "official_docs_required": true,
+      "version_evidence_required": [
+        "compiler",
+        "language_standard",
+        "bytecode_version"
+      ]
+    },
+    {
+      "id": "xr",
+      "display_name": "XR, AR, VR, MR, and Spatial Games",
+      "language": "configurable",
+      "platform": "xr-device",
+      "version_fields": [
+        "openxr_version",
+        "device_profile",
+        "input_profile"
+      ],
+      "source_generation": "production-packet-only",
+      "build": "documented comfort and device-fallback checks",
+      "runtime_check": "no XR runtime or headset is bundled",
+      "external_runtime_required": true,
+      "official_docs_required": true,
+      "version_evidence_required": [
+        "openxr_version",
+        "device_profile",
+        "input_profile"
+      ]
+    },
+    {
+      "id": "multiplatform",
+      "display_name": "Mobile, Console, Desktop, and Platform Integration",
+      "language": "configurable",
+      "platform": "configurable",
+      "version_fields": [
+        "sdk_version",
+        "compiler",
+        "package_format",
+        "input_ids"
+      ],
+      "source_generation": "production-packet-only",
+      "build": "documented platform abstraction and certification checklist",
+      "runtime_check": "no platform SDK or certification service is bundled",
+      "external_runtime_required": true,
+      "official_docs_required": true,
+      "version_evidence_required": [
+        "sdk_version",
+        "compiler",
+        "package_format"
+      ]
+    }
+  ],
+  "aliases": {
+    "unity3d": "unity",
+    "unreal-engine": "unreal",
+    "godot-engine": "godot",
+    "web": "html5",
+    "browser": "html5",
+    "html": "html5",
+    "javascript": "html5",
+    "typescript": "html5",
+    "pygame": "python",
+    "renpy": "python",
+    "python3": "python",
+    "sdl": "native",
+    "sfml": "native",
+    "opengl": "native",
+    "vulkan": "native",
+    "monogame": "native",
+    "gamemaker": "creator-platform",
+    "construct": "creator-platform",
+    "defold": "creator-platform",
+    "roblox": "creator-platform",
+    "bevy": "creator-platform",
+    "openxr": "xr",
+    "vr": "xr",
+    "ar": "xr",
+    "mr": "xr",
+    "android": "multiplatform",
+    "ios": "multiplatform",
+    "windows": "multiplatform",
+    "macos": "multiplatform",
+    "linux": "multiplatform",
+    "console": "multiplatform"
+  }
+}

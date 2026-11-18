@@ -1,0 +1,240 @@
+{
+  "schema_id": "ugm-production-request-schema-1.0",
+  "title": "unified ultimate-game-maker production request",
+  "description": "Schema for a production request consumed by 'tools-game-maker.py production-plan' and checked by 'tools-game-maker.py validate-request'. Unknown properties are rejected so typos fail loudly instead of being silently ignored.",
+  "type": "object",
+  "required": [
+    "project",
+    "capabilities"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "request_version": {
+      "type": "string",
+      "enum": [
+        "1.0"
+      ],
+      "description": "Request format version. Omit for 1.0."
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9 ._'()\\-]*$"
+        },
+        "genre": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "goal": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "engine": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "engine-agnostic",
+            "unity",
+            "unreal",
+            "godot",
+            "web",
+            "python",
+            "native",
+            "gamemaker",
+            "construct",
+            "defold",
+            "cocos",
+            "rpg-maker",
+            "roblox",
+            "cryengine",
+            "o3de",
+            "bevy",
+            "custom"
+          ]
+        },
+        "engine_version": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "language": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "platforms": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          }
+        },
+        "dimension": {
+          "type": "string",
+          "enum": [
+            "2d",
+            "3d",
+            "2d-hd",
+            "mixed"
+          ]
+        },
+        "scope": {
+          "type": "string",
+          "enum": [
+            "prototype",
+            "vertical-slice",
+            "full-game",
+            "live-service"
+          ]
+        },
+        "team_size": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500
+        },
+        "weeks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 520
+        },
+        "target_fps": {
+          "type": "integer",
+          "minimum": 15,
+          "maximum": 360
+        },
+        "constraints": {
+          "type": "array",
+          "maxItems": 30,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          }
+        },
+        "acceptance_criteria": {
+          "type": "array",
+          "maxItems": 30,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "description": "Any combination of selectors. Selectors are unioned, then 'exclude' is subtracted.",
+      "properties": {
+        "skills": {
+          "type": "array",
+          "maxItems": 330,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          }
+        },
+        "categories": {
+          "type": "array",
+          "maxItems": 33,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          }
+        },
+        "phases": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "type": "string",
+            "pattern": "^(phase-[1-5]|[1-5])$"
+          }
+        },
+        "tags": {
+          "type": "array",
+          "maxItems": 40,
+          "items": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 40
+          }
+        },
+        "exclude": {
+          "type": "array",
+          "maxItems": 330,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          }
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 330
+        }
+      }
+    },
+    "overrides": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "verification_commands": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 400
+          }
+        },
+        "performance_budget_ms": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dir": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "format": {
+          "type": "string",
+          "enum": [
+            "json",
+            "markdown",
+            "both"
+          ]
+        },
+        "include_specs": {
+          "type": "boolean"
+        },
+        "overwrite": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

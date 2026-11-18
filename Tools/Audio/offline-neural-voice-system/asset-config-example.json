@@ -1,0 +1,27 @@
+{
+  "comment": "Copy to ov-config.json and pass --config ov-config.json. All keys optional; these are the defaults shown for reference.",
+  "engine": "auto",
+  "preset": "friendly-male-30s",
+  "model": "asset-voice-lessac-medium.onnx",
+  "model_config": "asset-voice-lessac-medium.onnx.json",
+  "loudness_target_lufs": -14.0,
+  "peak_dbfs": -1.0,
+  "sample_rate": 22050,
+  "sentence_silence": 0.3,
+  "trim_silence_db": -45.0,
+  "trim_pad_ms": 40,
+  "fade_ms": 6,
+  "max_text_chars": 5000,
+  "max_chunk_chars": 600,
+  "synthesis_timeout_s": 120,
+  "engine_retries": 1,
+  "venv": ".ov-venv",
+  "provenance": true,
+  "compressor": {
+    "enabled": true,
+    "threshold_db": -14.0,
+    "ratio": 3.0,
+    "attack_ms": 5.0,
+    "release_ms": 90.0
+  }
+}

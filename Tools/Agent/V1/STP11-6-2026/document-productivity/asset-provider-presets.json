@@ -1,0 +1,323 @@
+{
+  "schema_version": "1.0",
+  "default_provider": "local",
+  "providers": {
+    "local": {
+      "enabled": true,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "stdlib-local",
+      "capabilities": [
+        "read",
+        "write",
+        "inspect",
+        "convert",
+        "validate",
+        "package"
+      ],
+      "limitations": [
+        "No live Microsoft 365, Google Workspace, Canva, or Adobe service calls."
+      ]
+    },
+    "microsoft-graph": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "microsoft-word": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "microsoft-excel": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "office-scripts": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "word-vba": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "excel-vba": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "google-apps-script": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "google-drive": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "google-docs": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "google-sheets": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "sharepoint": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "onedrive": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "power-automate": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "power-apps": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "adobe-acrobat": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "canva": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "libreoffice": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "crm": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "erp": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "database": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "webhook": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "electronic-signature": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    },
+    "pdf": {
+      "enabled": false,
+      "network": false,
+      "endpoint": null,
+      "auth_env": null,
+      "adapter": "plan-only",
+      "capabilities": [
+        "integration-plan"
+      ],
+      "limitations": [
+        "Disabled offline adapter. No credentials, endpoints, scripts, API calls, or remote writes are included."
+      ]
+    }
+  }
+}

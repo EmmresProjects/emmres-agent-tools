@@ -1,0 +1,21 @@
+{
+  "_purpose": "Runtime defaults loaded by tools-core.load_config(). Copy this file, edit values, then pass --config path/to/your-config.json. Unknown keys are rejected, so keep the key names exactly as they are here.",
+  "_version": "1.0.0",
+  "workspace_root": ".",
+  "default_encoding": "utf-8",
+  "encoding_errors": "strict",
+  "default_output_format": "text",
+  "style_profile": "neutral-us",
+  "locale": "en-US",
+  "default_timeout_s": 20,
+  "retries": 0,
+  "allow_overwrite": false,
+  "approval_required_for_write": false,
+  "max_input_bytes": 4194304,
+  "paths": {
+    "input_dir": ".",
+    "output_dir": "."
+  },
+  "max_pipeline_depth": 4,
+  "slow_capability_ms": 2000
+}

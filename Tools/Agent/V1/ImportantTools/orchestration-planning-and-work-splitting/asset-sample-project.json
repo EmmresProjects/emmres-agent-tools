@@ -1,0 +1,32 @@
+{
+  "title": "Unified reporting toolkit",
+  "goal": "Build and validate a reusable reporting toolkit with staged delivery",
+  "requirements": [
+    {"id": "R001", "text": "Inventory all named and attached input files", "critical": true},
+    {"id": "R002", "text": "Normalize and validate the data schema"},
+    {"id": "R003", "text": "Produce the analytical workbook with reconciling totals"},
+    {"id": "R004", "text": "Write a standalone executive summary"},
+    {"id": "R005", "text": "Verify every requirement has an artifact and a test"},
+    {"id": "R006", "text": "Package the final deliverable as a clean, reopenable archive"}
+  ],
+  "files": [
+    {"name": "source-data.csv", "size_bytes": 20480, "present": true, "readable": true, "intended_use": "analysis input"},
+    {"name": "style-guide.md", "size_bytes": 1200, "present": true, "readable": true, "intended_use": "writing standard"}
+  ],
+  "work_packages": [
+    {"id": "WP001", "name": "File intake and inventory", "depends_on": [], "duration": 1, "stream": "research", "requirement_ids": ["R001"], "inputs": ["source-data.csv"], "outputs": ["inventory.json"], "pass_conditions": ["every named file present and readable"]},
+    {"id": "WP002", "name": "Schema normalization", "depends_on": ["WP001"], "duration": 2, "stream": "coding", "requirement_ids": ["R002"], "outputs": ["normalized.csv"], "pass_conditions": ["schema validation passes"]},
+    {"id": "WP003", "name": "Workbook construction", "depends_on": ["WP002"], "duration": 3, "stream": "coding", "requirement_ids": ["R003"], "outputs": ["analysis.xlsx"], "pass_conditions": ["totals reconcile to source data"]},
+    {"id": "WP004", "name": "Executive summary drafting", "depends_on": ["WP001"], "duration": 1, "stream": "drafting", "requirement_ids": ["R004"], "outputs": ["summary.md"], "pass_conditions": ["summary stands alone and matches source"]}
+  ],
+  "artifacts": [
+    {"name": "analysis.xlsx", "type": "workbook", "required": true},
+    {"name": "summary.md", "type": "document", "required": true}
+  ],
+  "tool_calls": 9,
+  "uncertainty": 0.35,
+  "verification_burden": 6,
+  "context_chars": 48000,
+  "parallel_streams": 3,
+  "source_format": "json"
+}

@@ -1,0 +1,68 @@
+{
+ "title": "Platform activation review",
+ "author": "Product Analytics",
+ "language": "en",
+ "theme": {
+  "accent1": "1F5C9E",
+  "font": "Calibri"
+ },
+ "slides": [
+  {
+   "type": "title",
+   "title": "Platform activation review",
+   "subtitle": "Q4 results and the Q1 decision",
+   "presenter": "Product Analytics",
+   "date": "12 November 2025",
+   "notes": "Open with the single decision we need today."
+  },
+  {
+   "type": "content",
+   "title": "Activation improved because setup doubt was removed",
+   "claim": "First-run clarity was the largest lever we tested",
+   "bullets": [
+    "Time to first value fell from 9 days to 4 days",
+    "Setup support tickets dropped 38 percent",
+    "Trial-to-paid conversion rose from 11 to 19 percent"
+   ],
+   "footnote": "Source: 2025 activation cohort analysis (n=4,120)"
+  },
+  {
+   "type": "kpi",
+   "title": "Three metrics moved together in the same quarter",
+   "cards": [
+    {
+     "value": "4",
+     "unit": " days",
+     "label": "Time to first value",
+     "delta": "-5 days vs Q3",
+     "source": "activation cohort analysis"
+    },
+    {
+     "value": "19",
+     "unit": "%",
+     "label": "Trial to paid",
+     "delta": "+8 pts vs Q3",
+     "source": "activation cohort analysis"
+    },
+    {
+     "value": "38",
+     "unit": "%",
+     "label": "Fewer setup tickets",
+     "delta": "-38% vs Q3",
+     "source": "support ticket classification"
+    }
+   ],
+   "footnote": "Source: activation cohort analysis, October 2025"
+  },
+  {
+   "type": "process",
+   "title": "The redesigned first-run path has four steps",
+   "steps": [
+    "Invite the team",
+    "Import one dataset",
+    "Generate a first report",
+    "Share the result"
+   ]
+  }
+ ]
+}

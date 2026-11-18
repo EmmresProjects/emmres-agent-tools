@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "paths": {
+    "catalog": "asset-skill-catalog.json",
+    "policy": "asset-approval-policy.json",
+    "contract": "asset-output-contract.schema.json",
+    "formula_patterns": "asset-formula-patterns.json",
+    "worksheet_template": "asset-plan-template.md",
+    "governance_checklist": "asset-governance-checklist.md",
+    "default_output_dir": "runs",
+    "approval_store": "runs/approvals.json"
+  },
+  "limits": {
+    "max_input_bytes": 4000000,
+    "max_skills_per_build": 280,
+    "max_catalog_categories": 60,
+    "max_skills_per_category": 40,
+    "max_findings_per_audit": 200,
+    "workbook_row_cap": 5000
+  },
+  "timeouts": {
+    "read_seconds": 30,
+    "write_seconds": 30,
+    "workbook_seconds": 120
+  },
+  "retries": {
+    "file_write": 3,
+    "backoff_seconds": 0.2
+  },
+  "integrations": {
+    "drive": true,
+    "sheets_api": true,
+    "forms": false,
+    "apps_script": false,
+    "gmail": false,
+    "calendar": false,
+    "bigquery": false,
+    "looker": false,
+    "addons": false
+  },
+  "outputs": {
+    "write_workbook": true,
+    "write_csv_fallback": true,
+    "plan_json": "activation-plan.json",
+    "plan_markdown": "activation-plan.md",
+    "workbook": "activation-review.xlsx",
+    "manifest": "bundle-manifest.json",
+    "audit_report": "risk-audit.json",
+    "csv_fallback": "activation-plan.csv"
+  },
+  "approvals": {
+    "ttl_hours": 24,
+    "require_human_confirmation": true,
+    "gate_scope": "*"
+  },
+  "capabilities": {
+    "allow_derived_semantics": false,
+    "default_risk": "medium"
+  }
+}

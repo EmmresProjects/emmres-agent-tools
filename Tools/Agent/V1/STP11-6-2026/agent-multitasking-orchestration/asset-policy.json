@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "name": "local-orchestration-safety-policy",
+  "description": "Configurable, conservative rules for the local deterministic runtime. The tool never executes shell commands, arbitrary code, network calls, connectors, or external tools.",
+  "provider": "local-deterministic",
+  "execution": {
+    "allow_shell": false,
+    "allow_network": false,
+    "allow_arbitrary_code": false,
+    "allow_external_tools": false,
+    "max_external_calls": 0,
+    "state_effects": ["local-json-output", "local-json-checkpoint"],
+    "cleanup": "remove-ephemeral-worker-context-after-mission"
+  },
+  "approval": {
+    "required_risks": ["high", "critical"],
+    "required_for_actions": [
+      "destructive",
+      "irreversible",
+      "privileged",
+      "publishing",
+      "financial",
+      "credential",
+      "security-sensitive",
+      "permission-change",
+      "external-tool"
+    ],
+    "required_fields": [
+      "schema_version",
+      "status",
+      "action",
+      "scope",
+      "approved_by",
+      "reason",
+      "issued_at",
+      "expires_at"
+    ],
+    "allowed_status": "approved",
+    "default_validity_hours": 24,
+    "no_auto_approval": true,
+    "pending_packet_status": "pending"
+  },
+  "risk_order": ["low", "medium", "high", "critical"],
+  "category_risk_floor": {
+    "safety-permissions-and-governance": "high",
+    "human-collaboration-and-oversight": "medium",
+    "workflow-automation-and-tool-use": "medium",
+    "scale-distribution-and-federation": "medium"
+  },
+  "keyword_risks": {
+    "critical": [
+      "secret", "credential", "privileged", "publish", "irreversible", "override",
+      "delete", "erase", "destroy", "retire", "dispose", "permission", "security-sensitive"
+    ],
+    "high": [
+      "approval", "governance", "compliance", "policy", "sandbox", "isolation",
+      "rollback", "recovery", "fallback", "connector", "external tool", "invocation",
+      "sign-off", "exception", "tenant", "consensus", "replication", "partition",
+      "red team", "chaos", "breaker", "preemption", "arbitration"
+    ],
+    "medium": [
+      "budget", "quota", "rate limit", "quality gate", "certification", "audit",
+      "monitor", "alert", "drift", "conflict", "version", "schedule", "deadline"
+    ]
+  },
+  "explicit_capability_risks": {
+    "instance-manager": "critical",
+    "ephemeral-worker-launcher": "high",
+    "instance-isolation-guard": "critical",
+    "preemption-manager": "high",
+    "forgetting-policy-manager": "high",
+    "cross-task-memory-firewall": "high",
+    "red-team-blue-team-coordinator": "high",
+    "merge-conflict-resolver": "high",
+    "arbitration-manager": "high",
+    "rollback-coordinator": "critical",
+    "disaster-recovery-orchestrator": "high",
+    "chaos-scenario-tester": "high",
+    "permission-boundary-manager": "critical",
+    "action-approval-gate": "critical",
+    "secret-handling-guard": "critical",
+    "separation-of-duties-enforcer": "high",
+    "sandbox-policy-manager": "high",
+    "human-escalation-gate": "high",
+    "knowledge-base-publisher": "high",
+    "tool-invocation-planner": "high",
+    "connector-access-manager": "high",
+    "automation-dry-run-manager": "high",
+    "tool-failure-fallback-router": "high",
+    "approval-packet-composer": "high",
+    "exception-request-manager": "high",
+    "sign-off-tracker": "high",
+    "human-override-protector": "critical",
+    "distributed-consensus-coordinator": "high",
+    "replication-controller": "high",
+    "partition-recovery-manager": "high",
+    "tenant-isolation-manager": "critical",
+    "self-repairing-workflow-manager": "high",
+    "mission-evolution-manager": "high"
+  },
+  "destructive_terms": ["retire", "dispose", "delete", "erase", "rollback", "override", "publish", "permission change"],
+  "recovery": {
+    "checkpoint_policy": "atomic-json-after-each-completed-task",
+    "resume_policy": "skip-completed-tasks-from-matching-mission-id",
+    "cancellation_policy": "cooperative-deadline-and-cancel-file",
+    "max_cleanup_files": 32
+  }
+}

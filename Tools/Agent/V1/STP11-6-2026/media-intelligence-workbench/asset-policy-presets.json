@@ -1,0 +1,172 @@
+{
+  "version": "1.0.0",
+  "description": "Policy presets and review gates for the Media Intelligence Workbench Skill Tool. Gates are data, not code: the planner attaches the gates listed on each catalog skill and the workbench refuses to mark a deliverable 'release-ready' while a mandatory gate is unsatisfied.",
+  "default_preset": "standard",
+  "presets": {
+    "draft": {
+      "summary": "Internal exploration only. Lowest friction, still non-destructive.",
+      "confidence_review_threshold": 0.55,
+      "confidence_escalate_threshold": 0.35,
+      "require_human_review_categories": [],
+      "require_approval_for_writes": true,
+      "allow_publication_claims": false,
+      "retention_days": 7,
+      "max_files": 200,
+      "max_file_bytes": 1073741824,
+      "max_pixels": 80000000,
+      "max_audio_seconds": 7200,
+      "max_video_frames_sampled": 240,
+      "notes": "No output may be labelled publication-ready; every deliverable carries a draft banner."
+    },
+    "standard": {
+      "summary": "Default for production research, reporting and review workflows.",
+      "confidence_review_threshold": 0.7,
+      "confidence_escalate_threshold": 0.45,
+      "require_human_review_categories": ["cat-16", "cat-17", "cat-18", "cat-25"],
+      "require_approval_for_writes": true,
+      "allow_publication_claims": false,
+      "retention_days": 90,
+      "max_files": 1000,
+      "max_file_bytes": 4294967296,
+      "max_pixels": 80000000,
+      "max_audio_seconds": 14400,
+      "max_video_frames_sampled": 600,
+      "notes": "Any finding routed to a forensic, safety, clinical or governance decision requires a named human reviewer."
+    },
+    "conservative": {
+      "summary": "Sensitive, regulated or high-impact contexts.",
+      "confidence_review_threshold": 0.85,
+      "confidence_escalate_threshold": 0.6,
+      "require_human_review_categories": ["cat-07", "cat-10", "cat-14", "cat-15", "cat-16", "cat-17", "cat-18", "cat-19", "cat-24", "cat-25"],
+      "require_approval_for_writes": true,
+      "allow_publication_claims": false,
+      "retention_days": 30,
+      "max_files": 200,
+      "max_file_bytes": 1073741824,
+      "max_pixels": 40000000,
+      "max_audio_seconds": 3600,
+      "max_video_frames_sampled": 300,
+      "notes": "Escalate early and often. No affected-person, employment, education, housing, lending, health or legal decision may rest on this tool's output."
+    }
+  },
+  "gates": {
+    "gate-ingestion-safety": {
+      "title": "Ingestion safety screen",
+      "trigger": "Any file entering the workbench.",
+      "required_action": "Run `inspect` (safety scan) before any decode. Block on verdict=block and surface the findings with byte offsets.",
+      "approval_required": false,
+      "blocks_release": true
+    },
+    "gate-evidence-check": {
+      "title": "Evidence completeness check",
+      "trigger": "Any claim produced by an analysis unit.",
+      "required_action": "Each claim must carry a source file plus a timecode, region, span or byte offset. Unsupported statements must be marked as inference.",
+      "approval_required": false,
+      "blocks_release": true
+    },
+    "gate-human-review-on-low-confidence": {
+      "title": "Low-confidence human review",
+      "trigger": "Unit confidence below the preset review threshold, or any abstention.",
+      "required_action": "Route the case to a reviewer with the evidence bundle and the specific unanswered question.",
+      "approval_required": false,
+      "blocks_release": true
+    },
+    "gate-accessibility-review": {
+      "title": "Accessibility review",
+      "trigger": "Caption, description, contrast, flashing or sign-language deliverables.",
+      "required_action": "A human checks reading speed, line breaks, obstruction and flash thresholds against the published criteria; automated metrics are aids only.",
+      "approval_required": false,
+      "blocks_release": true
+    },
+    "gate-non-destructive": {
+      "title": "Non-destructive processing",
+      "trigger": "Any transformation.",
+      "required_action": "Write to a new output path, keep the original read-only, record parameters and a recipe id so the operation can be reproduced or rolled back.",
+      "approval_required": false,
+      "blocks_release": true
+    },
+    "gate-approval-before-write": {
+      "title": "Approval before writing outputs",
+      "trigger": "Any command that creates, rewrites or deletes files.",
+      "required_action": "The caller must pass `--approve` (interactive terminals get a prompt; non-interactive runs are refused).",
+      "approval_required": true,
+      "blocks_release": true
+    },
+    "gate-privacy-review": {
+      "title": "Privacy review",
+      "trigger": "Media containing people, voices, plates, screens, documents or location cues.",
+      "required_action": "Decide redaction scope, aggregate-only reporting and retention before outputs leave the workspace.",
+      "approval_required": false,
+      "blocks_release": true
+    },
+    "gate-approval-before-publish": {
+      "title": "Publication approval",
+      "trigger": "Any release, publication, external distribution or rights-affecting use.",
+      "required_action": "Named human sign-off after consent, rights, redaction persistence and accessibility checks.",
+      "approval_required": true,
+      "blocks_release": true
+    },
+    "gate-evidence-preservation": {
+      "title": "Forensic evidence preservation",
+      "trigger": "Authenticity, provenance or dispute work.",
+      "required_action": "Hash originals, keep read-only copies, record chain-of-custody entries and never analyse a modified original.",
+      "approval_required": false,
+      "blocks_release": true
+    },
+    "gate-forensic-review": {
+      "title": "Forensic finding review",
+      "trigger": "Any manipulation, splice or provenance conclusion.",
+      "required_action": "Second-qualified-reviewer pass that argues alternative explanations, compression effects and tool limits; no certainty claims.",
+      "approval_required": true,
+      "blocks_release": true
+    },
+    "gate-no-autonomous-action": {
+      "title": "No autonomous consequential action",
+      "trigger": "Safety, security, clinical or enforcement contexts.",
+      "required_action": "Outputs are advisory only. Do not dispatch, enforce, diagnose, deny or discipline on the basis of media analysis alone.",
+      "approval_required": false,
+      "blocks_release": true
+    },
+    "gate-escalation": {
+      "title": "Escalation path",
+      "trigger": "Urgent audible or visible cues (alarms, smoke, distress, crashes).",
+      "required_action": "Confirm with corroborating cues or certified sensors; escalate to the responsible human channel and log the alert with timestamps.",
+      "approval_required": false,
+      "blocks_release": true
+    },
+    "gate-clinical-review": {
+      "title": "Clinical review",
+      "trigger": "Medical, laboratory or diagnostic-adjacent media.",
+      "required_action": "Qualified clinician reviews acquisition quality and any observation; the workbench never issues a diagnosis.",
+      "approval_required": true,
+      "blocks_release": true
+    },
+    "gate-checkpoint": {
+      "title": "Checkpoint and resume",
+      "trigger": "Multi-stage or long-running pipelines.",
+      "required_action": "Persist stage status, hashes and parameters so a restart does not repeat completed work.",
+      "approval_required": false,
+      "blocks_release": false
+    },
+    "gate-reproducibility": {
+      "title": "Reproducibility",
+      "trigger": "Evaluation, benchmark or audit outputs.",
+      "required_action": "Record tool versions, parameters, seeds, input fingerprints and metric definitions with the result.",
+      "approval_required": false,
+      "blocks_release": true
+    },
+    "gate-audit-trail": {
+      "title": "Audit trail",
+      "trigger": "Governance, rights or retention workflows.",
+      "required_action": "Append-only log of source, consent, tools, parameters, reviewers, outputs and decisions.",
+      "approval_required": false,
+      "blocks_release": true
+    }
+  },
+  "abstention_rules": [
+    "If a required input (e.g. a reliable scale reference, a calibrated thermal frame, a consent record) is absent, the unit must abstain and state the missing input rather than estimate.",
+    "Absent provenance metadata is not evidence of manipulation; absence must be reported as 'not available'.",
+    "Never convert a visual or acoustic observation into an identity, diagnosis, intent, guilt or protected-trait inference.",
+    "Do not report a measurement outside the validated range of the metric; state the tolerance or the reason for abstaining."
+  ]
+}

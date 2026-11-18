@@ -1,0 +1,2734 @@
+{
+ "name": "aphelion-agent-skill-catalog",
+ "title": "Aphelion Agent Skill Catalog",
+ "version": "1.0.0",
+ "source": {
+  "file": "Aphelion_Agent_Skill_Catalog.pdf",
+  "pages": 72,
+  "categories": 34,
+  "skills": 408
+ },
+ "note": "Reference dataset extracted from the supplied catalog PDF; used to recognise, unify and enrich Skill Tool specifications. Entries are catalog concepts, not implemented skills.",
+ "categories": [
+  {
+   "number": 1,
+   "name": "Agent Foundations and Orchestration",
+   "slug": "agent-foundations-and-orchestration",
+   "focus": "Complex requests, tools, agents, dependencies, and approval boundaries.",
+   "domain": "agent-orchestration",
+   "risk": "elevated",
+   "approval_required": false,
+   "artifacts": [
+    "plan.json",
+    "routing-table.md"
+   ],
+   "checks": [
+    "every capability has an owner and stop condition",
+    "dependency cycles detected",
+    "approval boundary declared"
+   ],
+   "skills": [
+    {
+     "id": "intent-clarifier",
+     "name": "Intent Clarifier",
+     "description": "a repeatable, tool-aware workflow. The Intent Clarifier accepts explicit source material and optimized specifically for intent clarifier, with clear inputs, outputs, stop conditions, and a minimal- change policy."
+    },
+    {
+     "id": "task-decomposer",
+     "name": "Task Decomposer",
+     "description": "a repeatable, tool-aware workflow. The Task Decomposer accepts explicit source material and optimized specifically for task decomposer, with clear inputs, outputs, stop conditions, and a minimal- change policy."
+    },
+    {
+     "id": "plan-to-execution-router",
+     "name": "Plan-to-Execution Router",
+     "description": "a repeatable, tool-aware workflow. The Plan-to-Execution Router accepts explicit source material and optimized specifically for plan-to-execution router, with clear inputs, outputs, stop conditions, and a"
+    },
+    {
+     "id": "multi-agent-coordinator",
+     "name": "Multi-Agent Coordinator",
+     "description": "a repeatable, tool-aware workflow. The Multi-Agent Coordinator accepts explicit source material and optimized specifically for multi-agent coordinator, with clear inputs, outputs, stop conditions, and a"
+    },
+    {
+     "id": "tool-selection-optimizer",
+     "name": "Tool Selection Optimizer",
+     "description": "a repeatable, tool-aware workflow. The Tool Selection Optimizer accepts explicit source material and optimized specifically for tool selection optimizer, with clear inputs, outputs, stop conditions, and a"
+    },
+    {
+     "id": "context-window-manager",
+     "name": "Context Window Manager",
+     "description": "a repeatable, tool-aware workflow. The Context Window Manager accepts explicit source material and optimized specifically for context window manager, with clear inputs, outputs, stop conditions, and a"
+    },
+    {
+     "id": "constraint-resolver",
+     "name": "Constraint Resolver",
+     "description": "a repeatable, tool-aware workflow. The Constraint Resolver accepts explicit source material and optimized specifically for constraint resolver, with clear inputs, outputs, stop conditions, and a"
+    },
+    {
+     "id": "dependency-graph-builder",
+     "name": "Dependency Graph Builder",
+     "description": "a repeatable, tool-aware workflow. The Dependency Graph Builder accepts explicit source material and constraints, preserves data and structure that are outside scope, produces an editable or reusable optimized specifically for dependency graph builder, with clear inputs, outputs, stop conditions, and a"
+    },
+    {
+     "id": "parallel-work-scheduler",
+     "name": "Parallel Work Scheduler",
+     "description": "a repeatable, tool-aware workflow. The Parallel Work Scheduler accepts explicit source material and optimized specifically for parallel work scheduler, with clear inputs, outputs, stop conditions, and a"
+    },
+    {
+     "id": "human-approval-gate",
+     "name": "Human Approval Gate",
+     "description": "a repeatable, tool-aware workflow. The Human Approval Gate accepts explicit source material and optimized specifically for human approval gate, with clear inputs, outputs, stop conditions, and a"
+    },
+    {
+     "id": "long-running-job-checkpointer",
+     "name": "Long-Running Job Checkpointer",
+     "description": "a repeatable, tool-aware workflow. The Long-Running Job Checkpointer accepts explicit source delivery. It is optimized specifically for long-running job checkpointer, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "outcome-acceptance-judge",
+     "name": "Outcome Acceptance Judge",
+     "description": "a repeatable, tool-aware workflow. The Outcome Acceptance Judge accepts explicit source material and constraints, preserves data and structure that are outside scope, produces an editable or reusable optimized specifically for outcome acceptance judge, with clear inputs, outputs, stop conditions, and a"
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "name": "Memory and Personalization",
+   "slug": "memory-and-personalization",
+   "focus": "Durable preferences, project state, prior decisions, and privacy-safe continuity.",
+   "domain": "memory-personalization",
+   "risk": "elevated",
+   "approval_required": false,
+   "artifacts": [
+    "memory-record.json",
+    "preference-summary.md"
+   ],
+   "checks": [
+    "no secrets captured",
+    "retention window stated",
+    "user can delete a memory record"
+   ],
+   "skills": [
+    {
+     "id": "memory-classifier",
+     "name": "Memory Classifier",
+     "description": "through a repeatable, tool-aware workflow. The Memory Classifier accepts explicit source material and optimized specifically for memory classifier, with clear inputs, outputs, stop conditions, and a minimal- change policy."
+    },
+    {
+     "id": "preference-learner",
+     "name": "Preference Learner",
+     "description": "through a repeatable, tool-aware workflow. The Preference Learner accepts explicit source material and constraints, preserves data and structure that are outside scope, produces an editable or reusable optimized specifically for preference learner, with clear inputs, outputs, stop conditions, and a"
+    },
+    {
+     "id": "project-continuity-keeper",
+     "name": "Project Continuity Keeper",
+     "description": "through a repeatable, tool-aware workflow. The Project Continuity Keeper accepts explicit source delivery. It is optimized specifically for project continuity keeper, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "decision-ledger",
+     "name": "Decision Ledger",
+     "description": "through a repeatable, tool-aware workflow. The Decision Ledger accepts explicit source material and optimized specifically for decision ledger, with clear inputs, outputs, stop conditions, and a minimal- change policy."
+    },
+    {
+     "id": "failure-lesson-recorder",
+     "name": "Failure Lesson Recorder",
+     "description": "through a repeatable, tool-aware workflow. The Failure Lesson Recorder accepts explicit source delivery. It is optimized specifically for failure lesson recorder, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "entity-memory-resolver",
+     "name": "Entity Memory Resolver",
+     "description": "through a repeatable, tool-aware workflow. The Entity Memory Resolver accepts explicit source delivery. It is optimized specifically for entity memory resolver, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "temporal-memory-expirer",
+     "name": "Temporal Memory Expirer",
+     "description": "through a repeatable, tool-aware workflow. The Temporal Memory Expirer accepts explicit source delivery. It is optimized specifically for temporal memory expirer, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "privacy-aware-memory-filter",
+     "name": "Privacy-Aware Memory Filter",
+     "description": "through a repeatable, tool-aware workflow. The Privacy-Aware Memory Filter accepts explicit source delivery. It is optimized specifically for privacy-aware memory filter, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "memory-conflict-reconciler",
+     "name": "Memory Conflict Reconciler",
+     "description": "through a repeatable, tool-aware workflow. The Memory Conflict Reconciler accepts explicit source delivery. It is optimized specifically for memory conflict reconciler, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "personal-style-adapter",
+     "name": "Personal Style Adapter",
+     "description": "through a repeatable, tool-aware workflow. The Personal Style Adapter accepts explicit source delivery. It is optimized specifically for personal style adapter, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "reusable-prompt-librarian",
+     "name": "Reusable Prompt Librarian",
+     "description": "through a repeatable, tool-aware workflow. The Reusable Prompt Librarian accepts explicit source delivery. It is optimized specifically for reusable prompt librarian, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "continuation-state-restorer",
+     "name": "Continuation State Restorer",
+     "description": "through a repeatable, tool-aware workflow. The Continuation State Restorer accepts explicit source delivery. It is optimized specifically for continuation state restorer, with clear inputs, outputs, stop"
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "name": "Search, Browsing, and Evidence",
+   "slug": "search-browsing-and-evidence",
+   "focus": "Public or connected sources, competing claims, citations, dates, and evidence quality.",
+   "domain": "research-evidence",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "evidence-table.md",
+    "citations.json"
+   ],
+   "checks": [
+    "each claim carries a source and date",
+    "competing claims compared",
+    "stale sources flagged"
+   ],
+   "skills": [
+    {
+     "id": "query-expansion-researcher",
+     "name": "Query Expansion Researcher",
+     "description": "quality through a repeatable, tool-aware workflow. The Query Expansion Researcher accepts explicit before delivery. It is optimized specifically for query expansion researcher, with clear inputs, outputs,"
+    },
+    {
+     "id": "source-authority-ranker",
+     "name": "Source Authority Ranker",
+     "description": "quality through a repeatable, tool-aware workflow. The Source Authority Ranker accepts explicit before delivery. It is optimized specifically for source authority ranker, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "web-fact-verifier",
+     "name": "Web Fact Verifier",
+     "description": "quality through a repeatable, tool-aware workflow. The Web Fact Verifier accepts explicit source delivery. It is optimized specifically for web fact verifier, with clear inputs, outputs, stop conditions,"
+    },
+    {
+     "id": "citation-traceability-builder",
+     "name": "Citation Traceability Builder",
+     "description": "quality through a repeatable, tool-aware workflow. The Citation Traceability Builder accepts explicit before delivery. It is optimized specifically for citation traceability builder, with clear inputs, outputs,"
+    },
+    {
+     "id": "claim-to-evidence-mapper",
+     "name": "Claim-to-Evidence Mapper",
+     "description": "quality through a repeatable, tool-aware workflow. The Claim-to-Evidence Mapper accepts explicit before delivery. It is optimized specifically for claim-to-evidence mapper, with clear inputs, outputs,"
+    },
+    {
+     "id": "conflicting-source-reconciler",
+     "name": "Conflicting Source Reconciler",
+     "description": "quality through a repeatable, tool-aware workflow. The Conflicting Source Reconciler accepts explicit before delivery. It is optimized specifically for conflicting source reconciler, with clear inputs, outputs,"
+    },
+    {
+     "id": "deep-literature-scout",
+     "name": "Deep Literature Scout",
+     "description": "quality through a repeatable, tool-aware workflow. The Deep Literature Scout accepts explicit source delivery. It is optimized specifically for deep literature scout, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "current-events-monitor",
+     "name": "Current Events Monitor",
+     "description": "quality through a repeatable, tool-aware workflow. The Current Events Monitor accepts explicit source delivery. It is optimized specifically for current events monitor, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "archive-and-historical-researcher",
+     "name": "Archive and Historical Researcher",
+     "description": "quality through a repeatable, tool-aware workflow. The Archive and Historical Researcher accepts recovery before delivery. It is optimized specifically for archive and historical researcher, with clear"
+    },
+    {
+     "id": "dataset-discovery-scout",
+     "name": "Dataset Discovery Scout",
+     "description": "quality through a repeatable, tool-aware workflow. The Dataset Discovery Scout accepts explicit before delivery. It is optimized specifically for dataset discovery scout, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "research-gap-detector",
+     "name": "Research Gap Detector",
+     "description": "quality through a repeatable, tool-aware workflow. The Research Gap Detector accepts explicit source delivery. It is optimized specifically for research gap detector, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "evidence-packager",
+     "name": "Evidence Packager",
+     "description": "quality through a repeatable, tool-aware workflow. The Evidence Packager accepts explicit source delivery. It is optimized specifically for evidence packager, with clear inputs, outputs, stop conditions,"
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "name": "Document Ingestion and Understanding",
+   "slug": "document-ingestion-and-understanding",
+   "focus": "Editable and scanned documents, page structure, tables, forms, metadata, and provenance.",
+   "domain": "document-ingestion",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "extracted-structure.json",
+    "provenance.md"
+   ],
+   "checks": [
+    "page numbers preserved",
+    "tables kept attached to captions",
+    "OCR confidence reported"
+   ],
+   "skills": [
+    {
+     "id": "universal-document-reader",
+     "name": "Universal Document Reader",
+     "description": "provenance through a repeatable, tool-aware workflow. The Universal Document Reader accepts recovery before delivery. It is optimized specifically for universal document reader, with clear inputs,"
+    },
+    {
+     "id": "ocr-recovery-specialist",
+     "name": "OCR Recovery Specialist",
+     "description": "provenance through a repeatable, tool-aware workflow. The OCR Recovery Specialist accepts explicit before delivery. It is optimized specifically for ocr recovery specialist, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "document-structure-parser",
+     "name": "Document Structure Parser",
+     "description": "provenance through a repeatable, tool-aware workflow. The Document Structure Parser accepts recovery before delivery. It is optimized specifically for document structure parser, with clear inputs,"
+    },
+    {
+     "id": "heading-and-outline-extractor",
+     "name": "Heading and Outline Extractor",
+     "description": "provenance through a repeatable, tool-aware workflow. The Heading and Outline Extractor accepts recovery before delivery. It is optimized specifically for heading and outline extractor, with clear"
+    },
+    {
+     "id": "table-recognition-engine",
+     "name": "Table Recognition Engine",
+     "description": "provenance through a repeatable, tool-aware workflow. The Table Recognition Engine accepts explicit before delivery. It is optimized specifically for table recognition engine, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "footnote-and-citation-extractor",
+     "name": "Footnote and Citation Extractor",
+     "description": "provenance through a repeatable, tool-aware workflow. The Footnote and Citation Extractor accepts recovery before delivery. It is optimized specifically for footnote and citation extractor, with clear"
+    },
+    {
+     "id": "form-field-interpreter",
+     "name": "Form Field Interpreter",
+     "description": "provenance through a repeatable, tool-aware workflow. The Form Field Interpreter accepts explicit before delivery. It is optimized specifically for form field interpreter, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "scanned-document-cleaner",
+     "name": "Scanned Document Cleaner",
+     "description": "provenance through a repeatable, tool-aware workflow. The Scanned Document Cleaner accepts recovery before delivery. It is optimized specifically for scanned document cleaner, with clear inputs,"
+    },
+    {
+     "id": "document-entity-extractor",
+     "name": "Document Entity Extractor",
+     "description": "provenance through a repeatable, tool-aware workflow. The Document Entity Extractor accepts recovery before delivery. It is optimized specifically for document entity extractor, with clear inputs,"
+    },
+    {
+     "id": "cross-document-comparator",
+     "name": "Cross-Document Comparator",
+     "description": "provenance through a repeatable, tool-aware workflow. The Cross-Document Comparator accepts recovery before delivery. It is optimized specifically for cross-document comparator, with clear inputs,"
+    },
+    {
+     "id": "sensitive-content-detector",
+     "name": "Sensitive Content Detector",
+     "description": "provenance through a repeatable, tool-aware workflow. The Sensitive Content Detector accepts recovery before delivery. It is optimized specifically for sensitive content detector, with clear inputs,"
+    },
+    {
+     "id": "document-provenance-tracker",
+     "name": "Document Provenance Tracker",
+     "description": "provenance through a repeatable, tool-aware workflow. The Document Provenance Tracker accepts recovery before delivery. It is optimized specifically for document provenance tracker, with clear"
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "name": "Word and Long-Form Documents",
+   "slug": "word-and-long-form-documents",
+   "focus": "Professional docx files with styles, fields, references, review markup, and accessible structure.",
+   "domain": "word-documents",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "document.docx",
+    "style-audit.md"
+   ],
+   "checks": [
+    "headings are real styles",
+    "fields updated",
+    "accessibility tags present"
+   ],
+   "skills": [
+    {
+     "id": "docx-authoring-engineer",
+     "name": "DOCX Authoring Engineer",
+     "description": "accessible structure through a repeatable, tool-aware workflow. The DOCX Authoring Engineer failure recovery before delivery. It is optimized specifically for docx authoring engineer, with clear"
+    },
+    {
+     "id": "template-constrained-writer",
+     "name": "Template-Constrained Writer",
+     "description": "accessible structure through a repeatable, tool-aware workflow. The Template-Constrained Writer failure recovery before delivery. It is optimized specifically for template-constrained writer, with clear"
+    },
+    {
+     "id": "style-and-numbering-normalizer",
+     "name": "Style and Numbering Normalizer",
+     "description": "accessible structure through a repeatable, tool-aware workflow. The Style and Numbering Normalizer failure recovery before delivery. It is optimized specifically for style and numbering normalizer, with"
+    },
+    {
+     "id": "tracked-changes-manager",
+     "name": "Tracked Changes Manager",
+     "description": "accessible structure through a repeatable, tool-aware workflow. The Tracked Changes Manager failure recovery before delivery. It is optimized specifically for tracked changes manager, with clear"
+    },
+    {
+     "id": "comment-resolution-assistant",
+     "name": "Comment Resolution Assistant",
+     "description": "accessible structure through a repeatable, tool-aware workflow. The Comment Resolution Assistant failure recovery before delivery. It is optimized specifically for comment resolution assistant, with"
+    },
+    {
+     "id": "table-of-contents-builder",
+     "name": "Table of Contents Builder",
+     "description": "accessible structure through a repeatable, tool-aware workflow. The Table of Contents Builder accepts recovery before delivery. It is optimized specifically for table of contents builder, with clear inputs,"
+    },
+    {
+     "id": "cross-reference-maintainer",
+     "name": "Cross-Reference Maintainer",
+     "description": "accessible structure through a repeatable, tool-aware workflow. The Cross-Reference Maintainer failure recovery before delivery. It is optimized specifically for cross-reference maintainer, with clear"
+    },
+    {
+     "id": "section-layout-controller",
+     "name": "Section Layout Controller",
+     "description": "accessible structure through a repeatable, tool-aware workflow. The Section Layout Controller accepts recovery before delivery. It is optimized specifically for section layout controller, with clear inputs,"
+    },
+    {
+     "id": "accessible-document-auditor",
+     "name": "Accessible Document Auditor",
+     "description": "accessible structure through a repeatable, tool-aware workflow. The Accessible Document Auditor failure recovery before delivery. It is optimized specifically for accessible document auditor, with clear"
+    },
+    {
+     "id": "mail-merge-composer",
+     "name": "Mail Merge Composer",
+     "description": "accessible structure through a repeatable, tool-aware workflow. The Mail Merge Composer accepts recovery before delivery. It is optimized specifically for mail merge composer, with clear inputs,"
+    },
+    {
+     "id": "contract-redline-preparer",
+     "name": "Contract Redline Preparer",
+     "description": "accessible structure through a repeatable, tool-aware workflow. The Contract Redline Preparer failure recovery before delivery. It is optimized specifically for contract redline preparer, with clear"
+    },
+    {
+     "id": "publication-ready-exporter",
+     "name": "Publication-Ready Exporter",
+     "description": "accessible structure through a repeatable, tool-aware workflow. The Publication-Ready Exporter failure recovery before delivery. It is optimized specifically for publication-ready exporter, with clear"
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "name": "PDF Engineering",
+   "slug": "pdf-engineering",
+   "focus": "Pdf packages, forms, page geometry, redaction, archive requirements, and render fidelity.",
+   "domain": "pdf-engineering",
+   "risk": "elevated",
+   "approval_required": true,
+   "artifacts": [
+    "document.pdf",
+    "render-check.md"
+   ],
+   "checks": [
+    "page geometry matches source",
+    "fonts embedded",
+    "redaction verified not visual-only"
+   ],
+   "skills": [
+    {
+     "id": "pdf-preflight-inspector",
+     "name": "PDF Preflight Inspector",
+     "description": "render fidelity through a repeatable, tool-aware workflow. The PDF Preflight Inspector accepts explicit before delivery. It is optimized specifically for pdf preflight inspector, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "searchable-pdf-ocr-builder",
+     "name": "Searchable PDF OCR Builder",
+     "description": "render fidelity through a repeatable, tool-aware workflow. The Searchable PDF OCR Builder accepts recovery before delivery. It is optimized specifically for searchable pdf ocr builder, with clear inputs,"
+    },
+    {
+     "id": "pdf-form-filler",
+     "name": "PDF Form Filler",
+     "description": "render fidelity through a repeatable, tool-aware workflow. The PDF Form Filler accepts explicit source delivery. It is optimized specifically for pdf form filler, with clear inputs, outputs, stop conditions, and a"
+    },
+    {
+     "id": "true-redaction-processor",
+     "name": "True Redaction Processor",
+     "description": "render fidelity through a repeatable, tool-aware workflow. The True Redaction Processor accepts recovery before delivery. It is optimized specifically for true redaction processor, with clear inputs,"
+    },
+    {
+     "id": "pdf-merge-and-split-operator",
+     "name": "PDF Merge and Split Operator",
+     "description": "render fidelity through a repeatable, tool-aware workflow. The PDF Merge and Split Operator accepts recovery before delivery. It is optimized specifically for pdf merge and split operator, with clear inputs,"
+    },
+    {
+     "id": "page-geometry-corrector",
+     "name": "Page Geometry Corrector",
+     "description": "render fidelity through a repeatable, tool-aware workflow. The Page Geometry Corrector accepts recovery before delivery. It is optimized specifically for page geometry corrector, with clear inputs,"
+    },
+    {
+     "id": "pdf-accessibility-remediator",
+     "name": "PDF Accessibility Remediator",
+     "description": "render fidelity through a repeatable, tool-aware workflow. The PDF Accessibility Remediator accepts recovery before delivery. It is optimized specifically for pdf accessibility remediator, with clear inputs,"
+    },
+    {
+     "id": "pdf-annotation-extractor",
+     "name": "PDF Annotation Extractor",
+     "description": "render fidelity through a repeatable, tool-aware workflow. The PDF Annotation Extractor accepts recovery before delivery. It is optimized specifically for pdf annotation extractor, with clear inputs,"
+    },
+    {
+     "id": "pdf-visual-difference-checker",
+     "name": "PDF Visual Difference Checker",
+     "description": "render fidelity through a repeatable, tool-aware workflow. The PDF Visual Difference Checker accepts recovery before delivery. It is optimized specifically for pdf visual difference checker, with clear"
+    },
+    {
+     "id": "pdf-metadata-scrubber",
+     "name": "PDF Metadata Scrubber",
+     "description": "render fidelity through a repeatable, tool-aware workflow. The PDF Metadata Scrubber accepts recovery before delivery. It is optimized specifically for pdf metadata scrubber, with clear inputs,"
+    },
+    {
+     "id": "pdf-repair-and-normalizer",
+     "name": "PDF Repair and Normalizer",
+     "description": "render fidelity through a repeatable, tool-aware workflow. The PDF Repair and Normalizer accepts recovery before delivery. It is optimized specifically for pdf repair and normalizer, with clear inputs,"
+    },
+    {
+     "id": "pdf-and-a-archive-packager",
+     "name": "PDF/A Archive Packager",
+     "description": "render fidelity through a repeatable, tool-aware workflow. The PDF/A Archive Packager accepts recovery before delivery. It is optimized specifically for pdf/a archive packager, with clear inputs,"
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "name": "Presentation and Slide Engineering",
+   "slug": "presentation-and-slide-engineering",
+   "focus": "Source-aware powerpoint packages, editable objects, masters, notes, media, and protected slides.",
+   "domain": "presentation-engineering",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "deck.pptx",
+    "object-inventory.json"
+   ],
+   "checks": [
+    "objects stay editable",
+    "master layouts reused",
+    "notes preserved"
+   ],
+   "skills": [
+    {
+     "id": "ooxml-presentation-inspector",
+     "name": "OOXML Presentation Inspector",
+     "description": "protected slides through a repeatable, tool-aware workflow. The OOXML Presentation Inspector failure recovery before delivery. It is optimized specifically for ooxml presentation inspector, with clear"
+    },
+    {
+     "id": "slide-object-inventory-builder",
+     "name": "Slide Object Inventory Builder",
+     "description": "protected slides through a repeatable, tool-aware workflow. The Slide Object Inventory Builder failure recovery before delivery. It is optimized specifically for slide object inventory builder, with"
+    },
+    {
+     "id": "source-aware-slide-editor",
+     "name": "Source-Aware Slide Editor",
+     "description": "protected slides through a repeatable, tool-aware workflow. The Source-Aware Slide Editor accepts recovery before delivery. It is optimized specifically for source-aware slide editor, with clear inputs,"
+    },
+    {
+     "id": "protected-slide-enforcer",
+     "name": "Protected Slide Enforcer",
+     "description": "protected slides through a repeatable, tool-aware workflow. The Protected Slide Enforcer accepts recovery before delivery. It is optimized specifically for protected slide enforcer, with clear inputs,"
+    },
+    {
+     "id": "theme-and-master-reuser",
+     "name": "Theme and Master Reuser",
+     "description": "protected slides through a repeatable, tool-aware workflow. The Theme and Master Reuser accepts recovery before delivery. It is optimized specifically for theme and master reuser, with clear inputs,"
+    },
+    {
+     "id": "minimal-diff-slide-patcher",
+     "name": "Minimal-Diff Slide Patcher",
+     "description": "protected slides through a repeatable, tool-aware workflow. The Minimal-Diff Slide Patcher accepts recovery before delivery. It is optimized specifically for minimal-diff slide patcher, with clear inputs,"
+    },
+    {
+     "id": "native-chart-slide-builder",
+     "name": "Native Chart Slide Builder",
+     "description": "protected slides through a repeatable, tool-aware workflow. The Native Chart Slide Builder accepts recovery before delivery. It is optimized specifically for native chart slide builder, with clear inputs,"
+    },
+    {
+     "id": "editable-uml-slide-builder",
+     "name": "Editable UML Slide Builder",
+     "description": "protected slides through a repeatable, tool-aware workflow. The Editable UML Slide Builder accepts recovery before delivery. It is optimized specifically for editable uml slide builder, with clear inputs,"
+    },
+    {
+     "id": "speaker-notes-preserver",
+     "name": "Speaker Notes Preserver",
+     "description": "protected slides through a repeatable, tool-aware workflow. The Speaker Notes Preserver accepts recovery before delivery. It is optimized specifically for speaker notes preserver, with clear inputs,"
+    },
+    {
+     "id": "animation-and-media-preserver",
+     "name": "Animation and Media Preserver",
+     "description": "protected slides through a repeatable, tool-aware workflow. The Animation and Media Preserver failure recovery before delivery. It is optimized specifically for animation and media preserver, with"
+    },
+    {
+     "id": "slide-render-regression-tester",
+     "name": "Slide Render Regression Tester",
+     "description": "protected slides through a repeatable, tool-aware workflow. The Slide Render Regression Tester failure recovery before delivery. It is optimized specifically for slide render regression tester, with"
+    },
+    {
+     "id": "pptx-to-pdf-handoff-packager",
+     "name": "PPTX-to-PDF Handoff Packager",
+     "description": "protected slides through a repeatable, tool-aware workflow. The PPTX-to-PDF Handoff Packager failure recovery before delivery. It is optimized specifically for pptx-to-pdf handoff packager, with clear"
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "name": "Diagram, UML, and Visual Logic",
+   "slug": "diagram-uml-and-visual-logic",
+   "focus": "Semantic diagrams, native shapes, connectors, layout constraints, notation, and code alignment.",
+   "domain": "diagram-notation",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "diagram.svg",
+    "notation-check.md"
+   ],
+   "checks": [
+    "notation conformance checked",
+    "layout constraints respected",
+    "labels do not overlap"
+   ],
+   "skills": [
+    {
+     "id": "diagram-type-recognizer",
+     "name": "Diagram Type Recognizer",
+     "description": "code alignment through a repeatable, tool-aware workflow. The Diagram Type Recognizer accepts recovery before delivery. It is optimized specifically for diagram type recognizer, with clear inputs,"
+    },
+    {
+     "id": "uml-class-modeler",
+     "name": "UML Class Modeler",
+     "description": "code alignment through a repeatable, tool-aware workflow. The UML Class Modeler accepts explicit before delivery. It is optimized specifically for uml class modeler, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "state-machine-modeler",
+     "name": "State Machine Modeler",
+     "description": "code alignment through a repeatable, tool-aware workflow. The State Machine Modeler accepts recovery before delivery. It is optimized specifically for state machine modeler, with clear inputs,"
+    },
+    {
+     "id": "sequence-diagram-composer",
+     "name": "Sequence Diagram Composer",
+     "description": "code alignment through a repeatable, tool-aware workflow. The Sequence Diagram Composer accepts recovery before delivery. It is optimized specifically for sequence diagram composer, with clear inputs,"
+    },
+    {
+     "id": "architecture-diagram-builder",
+     "name": "Architecture Diagram Builder",
+     "description": "code alignment through a repeatable, tool-aware workflow. The Architecture Diagram Builder accepts recovery before delivery. It is optimized specifically for architecture diagram builder, with clear"
+    },
+    {
+     "id": "connector-anchor-maintainer",
+     "name": "Connector Anchor Maintainer",
+     "description": "code alignment through a repeatable, tool-aware workflow. The Connector Anchor Maintainer accepts recovery before delivery. It is optimized specifically for connector anchor maintainer, with clear"
+    },
+    {
+     "id": "constraint-based-auto-layout",
+     "name": "Constraint-Based Auto Layout",
+     "description": "code alignment through a repeatable, tool-aware workflow. The Constraint-Based Auto Layout accepts recovery before delivery. It is optimized specifically for constraint-based auto layout, with clear inputs,"
+    },
+    {
+     "id": "notation-validator",
+     "name": "Notation Validator",
+     "description": "code alignment through a repeatable, tool-aware workflow. The Notation Validator accepts explicit before delivery. It is optimized specifically for notation validator, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "code-to-diagram-synchronizer",
+     "name": "Code-to-Diagram Synchronizer",
+     "description": "code alignment through a repeatable, tool-aware workflow. The Code-to-Diagram Synchronizer failure recovery before delivery. It is optimized specifically for code-to-diagram synchronizer, with"
+    },
+    {
+     "id": "diagram-round-trip-editor",
+     "name": "Diagram Round-Trip Editor",
+     "description": "code alignment through a repeatable, tool-aware workflow. The Diagram Round-Trip Editor accepts recovery before delivery. It is optimized specifically for diagram round-trip editor, with clear inputs,"
+    },
+    {
+     "id": "progressive-disclosure-designer",
+     "name": "Progressive Disclosure Designer",
+     "description": "code alignment through a repeatable, tool-aware workflow. The Progressive Disclosure Designer failure recovery before delivery. It is optimized specifically for progressive disclosure designer, with"
+    },
+    {
+     "id": "diagram-accessibility-narrator",
+     "name": "Diagram Accessibility Narrator",
+     "description": "code alignment through a repeatable, tool-aware workflow. The Diagram Accessibility Narrator failure recovery before delivery. It is optimized specifically for diagram accessibility narrator, with"
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "name": "Spreadsheets and Tabular Work",
+   "slug": "spreadsheets-and-tabular-work",
+   "focus": "Excel workbooks, formulas, tables, ranges, formatting, models, and protection rules.",
+   "domain": "spreadsheets",
+   "risk": "elevated",
+   "approval_required": false,
+   "artifacts": [
+    "workbook.xlsx",
+    "formula-audit.md"
+   ],
+   "checks": [
+    "formulas recalculate",
+    "no hard-coded totals",
+    "ranges named where reused"
+   ],
+   "skills": [
+    {
+     "id": "workbook-structure-auditor",
+     "name": "Workbook Structure Auditor",
+     "description": "rules through a repeatable, tool-aware workflow. The Workbook Structure Auditor accepts explicit before delivery. It is optimized specifically for workbook structure auditor, with clear inputs, outputs,"
+    },
+    {
+     "id": "formula-integrity-checker",
+     "name": "Formula Integrity Checker",
+     "description": "rules through a repeatable, tool-aware workflow. The Formula Integrity Checker accepts explicit before delivery. It is optimized specifically for formula integrity checker, with clear inputs, outputs,"
+    },
+    {
+     "id": "spreadsheet-cleaning-operator",
+     "name": "Spreadsheet Cleaning Operator",
+     "description": "rules through a repeatable, tool-aware workflow. The Spreadsheet Cleaning Operator accepts explicit before delivery. It is optimized specifically for spreadsheet cleaning operator, with clear inputs,"
+    },
+    {
+     "id": "table-normalization-builder",
+     "name": "Table Normalization Builder",
+     "description": "rules through a repeatable, tool-aware workflow. The Table Normalization Builder accepts explicit before delivery. It is optimized specifically for table normalization builder, with clear inputs, outputs,"
+    },
+    {
+     "id": "pivot-table-designer",
+     "name": "Pivot Table Designer",
+     "description": "rules through a repeatable, tool-aware workflow. The Pivot Table Designer accepts explicit source delivery. It is optimized specifically for pivot table designer, with clear inputs, outputs, stop conditions,"
+    },
+    {
+     "id": "conditional-formatting-manager",
+     "name": "Conditional Formatting Manager",
+     "description": "rules through a repeatable, tool-aware workflow. The Conditional Formatting Manager accepts explicit before delivery. It is optimized specifically for conditional formatting manager, with clear inputs,"
+    },
+    {
+     "id": "data-validation-rule-builder",
+     "name": "Data Validation Rule Builder",
+     "description": "rules through a repeatable, tool-aware workflow. The Data Validation Rule Builder accepts explicit before delivery. It is optimized specifically for data validation rule builder, with clear inputs, outputs,"
+    },
+    {
+     "id": "workbook-reconciliation-analyst",
+     "name": "Workbook Reconciliation Analyst",
+     "description": "rules through a repeatable, tool-aware workflow. The Workbook Reconciliation Analyst accepts explicit before delivery. It is optimized specifically for workbook reconciliation analyst, with clear inputs,"
+    },
+    {
+     "id": "scenario-and-sensitivity-modeler",
+     "name": "Scenario and Sensitivity Modeler",
+     "description": "rules through a repeatable, tool-aware workflow. The Scenario and Sensitivity Modeler accepts explicit before delivery. It is optimized specifically for scenario and sensitivity modeler, with clear inputs,"
+    },
+    {
+     "id": "spreadsheet-accessibility-auditor",
+     "name": "Spreadsheet Accessibility Auditor",
+     "description": "rules through a repeatable, tool-aware workflow. The Spreadsheet Accessibility Auditor accepts recovery before delivery. It is optimized specifically for spreadsheet accessibility auditor, with clear"
+    },
+    {
+     "id": "protected-range-preserver",
+     "name": "Protected Range Preserver",
+     "description": "rules through a repeatable, tool-aware workflow. The Protected Range Preserver accepts explicit before delivery. It is optimized specifically for protected range preserver, with clear inputs, outputs,"
+    },
+    {
+     "id": "excel-export-verifier",
+     "name": "Excel Export Verifier",
+     "description": "rules through a repeatable, tool-aware workflow. The Excel Export Verifier accepts explicit source delivery. It is optimized specifically for excel export verifier, with clear inputs, outputs, stop"
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "name": "Data Analysis and Statistics",
+   "slug": "data-analysis-and-statistics",
+   "focus": "Real datasets, assumptions, missing values, statistical methods, uncertainty, and reproducibility.",
+   "domain": "data-analysis",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "analysis.ipynb",
+    "assumptions.md"
+   ],
+   "checks": [
+    "missing values disclosed",
+    "test assumptions stated",
+    "uncertainty reported"
+   ],
+   "skills": [
+    {
+     "id": "exploratory-data-analyst",
+     "name": "Exploratory Data Analyst",
+     "description": "reproducibility through a repeatable, tool-aware workflow. The Exploratory Data Analyst accepts recovery before delivery. It is optimized specifically for exploratory data analyst, with clear inputs,"
+    },
+    {
+     "id": "descriptive-statistics-engine",
+     "name": "Descriptive Statistics Engine",
+     "description": "reproducibility through a repeatable, tool-aware workflow. The Descriptive Statistics Engine accepts recovery before delivery. It is optimized specifically for descriptive statistics engine, with clear inputs,"
+    },
+    {
+     "id": "hypothesis-test-selector",
+     "name": "Hypothesis Test Selector",
+     "description": "reproducibility through a repeatable, tool-aware workflow. The Hypothesis Test Selector accepts recovery before delivery. It is optimized specifically for hypothesis test selector, with clear inputs,"
+    },
+    {
+     "id": "regression-modeling-assistant",
+     "name": "Regression Modeling Assistant",
+     "description": "reproducibility through a repeatable, tool-aware workflow. The Regression Modeling Assistant accepts recovery before delivery. It is optimized specifically for regression modeling assistant, with clear"
+    },
+    {
+     "id": "time-series-forecaster",
+     "name": "Time Series Forecaster",
+     "description": "reproducibility through a repeatable, tool-aware workflow. The Time Series Forecaster accepts explicit before delivery. It is optimized specifically for time series forecaster, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "cohort-analysis-builder",
+     "name": "Cohort Analysis Builder",
+     "description": "reproducibility through a repeatable, tool-aware workflow. The Cohort Analysis Builder accepts recovery before delivery. It is optimized specifically for cohort analysis builder, with clear inputs,"
+    },
+    {
+     "id": "anomaly-detection-analyst",
+     "name": "Anomaly Detection Analyst",
+     "description": "reproducibility through a repeatable, tool-aware workflow. The Anomaly Detection Analyst accepts recovery before delivery. It is optimized specifically for anomaly detection analyst, with clear inputs,"
+    },
+    {
+     "id": "experiment-design-reviewer",
+     "name": "Experiment Design Reviewer",
+     "description": "reproducibility through a repeatable, tool-aware workflow. The Experiment Design Reviewer accepts recovery before delivery. It is optimized specifically for experiment design reviewer, with clear inputs,"
+    },
+    {
+     "id": "survey-analysis-specialist",
+     "name": "Survey Analysis Specialist",
+     "description": "reproducibility through a repeatable, tool-aware workflow. The Survey Analysis Specialist accepts recovery before delivery. It is optimized specifically for survey analysis specialist, with clear inputs,"
+    },
+    {
+     "id": "geospatial-data-analyst",
+     "name": "Geospatial Data Analyst",
+     "description": "reproducibility through a repeatable, tool-aware workflow. The Geospatial Data Analyst accepts recovery before delivery. It is optimized specifically for geospatial data analyst, with clear inputs,"
+    },
+    {
+     "id": "uncertainty-quantifier",
+     "name": "Uncertainty Quantifier",
+     "description": "reproducibility through a repeatable, tool-aware workflow. The Uncertainty Quantifier accepts explicit before delivery. It is optimized specifically for uncertainty quantifier, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "reproducible-analysis-packager",
+     "name": "Reproducible Analysis Packager",
+     "description": "reproducibility through a repeatable, tool-aware workflow. The Reproducible Analysis Packager failure recovery before delivery. It is optimized specifically for reproducible analysis packager, with"
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "name": "Data Visualization and Storytelling",
+   "slug": "data-visualization-and-storytelling",
+   "focus": "Accurate charts, dashboards, source traceability, readable labels, and accessible visual narratives.",
+   "domain": "data-visualization",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "charts.svg",
+    "chart-spec.json"
+   ],
+   "checks": [
+    "axis scales labelled",
+    "color choices contrast-checked",
+    "source line on every chart"
+   ],
+   "skills": [
+    {
+     "id": "chart-type-advisor",
+     "name": "Chart Type Advisor",
+     "description": "visual narratives through a repeatable, tool-aware workflow. The Chart Type Advisor accepts explicit before delivery. It is optimized specifically for chart type advisor, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "editable-chart-generator",
+     "name": "Editable Chart Generator",
+     "description": "visual narratives through a repeatable, tool-aware workflow. The Editable Chart Generator accepts recovery before delivery. It is optimized specifically for editable chart generator, with clear inputs,"
+    },
+    {
+     "id": "axis-and-scale-auditor",
+     "name": "Axis and Scale Auditor",
+     "description": "visual narratives through a repeatable, tool-aware workflow. The Axis and Scale Auditor accepts recovery before delivery. It is optimized specifically for axis and scale auditor, with clear inputs,"
+    },
+    {
+     "id": "label-collision-resolver",
+     "name": "Label Collision Resolver",
+     "description": "visual narratives through a repeatable, tool-aware workflow. The Label Collision Resolver accepts recovery before delivery. It is optimized specifically for label collision resolver, with clear inputs,"
+    },
+    {
+     "id": "dashboard-information-architect",
+     "name": "Dashboard Information Architect",
+     "description": "visual narratives through a repeatable, tool-aware workflow. The Dashboard Information Architect failure recovery before delivery. It is optimized specifically for dashboard information architect, with"
+    },
+    {
+     "id": "kpi-card-designer",
+     "name": "KPI Card Designer",
+     "description": "visual narratives through a repeatable, tool-aware workflow. The KPI Card Designer accepts explicit before delivery. It is optimized specifically for kpi card designer, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "color-safe-visualization-stylist",
+     "name": "Color-Safe Visualization Stylist",
+     "description": "visual narratives through a repeatable, tool-aware workflow. The Color-Safe Visualization Stylist failure recovery before delivery. It is optimized specifically for color-safe visualization stylist, with"
+    },
+    {
+     "id": "data-narrative-composer",
+     "name": "Data Narrative Composer",
+     "description": "visual narratives through a repeatable, tool-aware workflow. The Data Narrative Composer accepts recovery before delivery. It is optimized specifically for data narrative composer, with clear inputs,"
+    },
+    {
+     "id": "chart-source-traceability-manager",
+     "name": "Chart Source Traceability Manager",
+     "description": "visual narratives through a repeatable, tool-aware workflow. The Chart Source Traceability Manager failure recovery before delivery. It is optimized specifically for chart source traceability manager, with"
+    },
+    {
+     "id": "interactive-visualization-builder",
+     "name": "Interactive Visualization Builder",
+     "description": "visual narratives through a repeatable, tool-aware workflow. The Interactive Visualization Builder failure recovery before delivery. It is optimized specifically for interactive visualization builder, with"
+    },
+    {
+     "id": "misleading-chart-detector",
+     "name": "Misleading Chart Detector",
+     "description": "visual narratives through a repeatable, tool-aware workflow. The Misleading Chart Detector accepts recovery before delivery. It is optimized specifically for misleading chart detector, with clear inputs,"
+    },
+    {
+     "id": "visualization-regression-tester",
+     "name": "Visualization Regression Tester",
+     "description": "visual narratives through a repeatable, tool-aware workflow. The Visualization Regression Tester failure recovery before delivery. It is optimized specifically for visualization regression tester, with"
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "name": "Software Engineering",
+   "slug": "software-engineering",
+   "focus": "Repositories, apis, dependencies, configuration, performance, releases, and maintainable implementation.",
+   "domain": "software-engineering",
+   "risk": "elevated",
+   "approval_required": false,
+   "artifacts": [
+    "patch.diff",
+    "build-report.md"
+   ],
+   "checks": [
+    "build passes",
+    "no new dependency without note",
+    "rollback path recorded"
+   ],
+   "skills": [
+    {
+     "id": "repository-mapper",
+     "name": "Repository Mapper",
+     "description": "maintainable implementation through a repeatable, tool-aware workflow. The Repository Mapper failure recovery before delivery. It is optimized specifically for repository mapper, with clear inputs,"
+    },
+    {
+     "id": "codebase-onboarding-guide",
+     "name": "Codebase Onboarding Guide",
+     "description": "maintainable implementation through a repeatable, tool-aware workflow. The Codebase Onboarding Guide accepts explicit source material and constraints, preserves data and structure that are outside and failure recovery before delivery. It is optimized specifically for codebase onboarding guide, with"
+    },
+    {
+     "id": "feature-implementation-planner",
+     "name": "Feature Implementation Planner",
+     "description": "maintainable implementation through a repeatable, tool-aware workflow. The Feature Implementation Planner accepts explicit source material and constraints, preserves data and structure that are outside and failure recovery before delivery. It is optimized specifically for feature implementation planner, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "refactoring-engineer",
+     "name": "Refactoring Engineer",
+     "description": "maintainable implementation through a repeatable, tool-aware workflow. The Refactoring Engineer failure recovery before delivery. It is optimized specifically for refactoring engineer, with clear inputs,"
+    },
+    {
+     "id": "api-client-builder",
+     "name": "API Client Builder",
+     "description": "maintainable implementation through a repeatable, tool-aware workflow. The API Client Builder failure recovery before delivery. It is optimized specifically for api client builder, with clear inputs,"
+    },
+    {
+     "id": "command-line-tool-builder",
+     "name": "Command-Line Tool Builder",
+     "description": "maintainable implementation through a repeatable, tool-aware workflow. The Command-Line Tool Builder accepts explicit source material and constraints, preserves data and structure that are outside and failure recovery before delivery. It is optimized specifically for command-line tool builder, with"
+    },
+    {
+     "id": "library-packaging-engineer",
+     "name": "Library Packaging Engineer",
+     "description": "maintainable implementation through a repeatable, tool-aware workflow. The Library Packaging Engineer accepts explicit source material and constraints, preserves data and structure that are traceability, and failure recovery before delivery. It is optimized specifically for library packaging engineer, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "configuration-manager",
+     "name": "Configuration Manager",
+     "description": "maintainable implementation through a repeatable, tool-aware workflow. The Configuration Manager failure recovery before delivery. It is optimized specifically for configuration manager, with clear"
+    },
+    {
+     "id": "dependency-upgrade-assistant",
+     "name": "Dependency Upgrade Assistant",
+     "description": "maintainable implementation through a repeatable, tool-aware workflow. The Dependency Upgrade Assistant accepts explicit source material and constraints, preserves data and structure that are traceability, and failure recovery before delivery. It is optimized specifically for dependency upgrade assistant, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "performance-profiling-analyst",
+     "name": "Performance Profiling Analyst",
+     "description": "maintainable implementation through a repeatable, tool-aware workflow. The Performance Profiling Analyst accepts explicit source material and constraints, preserves data and structure that are outside and failure recovery before delivery. It is optimized specifically for performance profiling analyst, with"
+    },
+    {
+     "id": "backward-compatibility-guardian",
+     "name": "Backward Compatibility Guardian",
+     "description": "maintainable implementation through a repeatable, tool-aware workflow. The Backward Compatibility Guardian accepts explicit source material and constraints, preserves data and structure that are traceability, and failure recovery before delivery. It is optimized specifically for backward compatibility guardian, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "release-readiness-reviewer",
+     "name": "Release Readiness Reviewer",
+     "description": "maintainable implementation through a repeatable, tool-aware workflow. The Release Readiness Reviewer accepts explicit source material and constraints, preserves data and structure that are traceability, and failure recovery before delivery. It is optimized specifically for release readiness reviewer, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "name": "Code Quality, Testing, and Debugging",
+   "slug": "code-quality-testing-and-debugging",
+   "focus": "Tests, failures, traces, coverage, minimal reproductions, root causes, and regressions.",
+   "domain": "code-quality",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "test-report.md",
+    "minimal-repro.md"
+   ],
+   "checks": [
+    "failure reproduced before fix",
+    "coverage delta shown",
+    "regression test added"
+   ],
+   "skills": [
+    {
+     "id": "static-analysis-orchestrator",
+     "name": "Static Analysis Orchestrator",
+     "description": "regressions through a repeatable, tool-aware workflow. The Static Analysis Orchestrator accepts recovery before delivery. It is optimized specifically for static analysis orchestrator, with clear inputs,"
+    },
+    {
+     "id": "unit-test-generator",
+     "name": "Unit Test Generator",
+     "description": "regressions through a repeatable, tool-aware workflow. The Unit Test Generator accepts explicit before delivery. It is optimized specifically for unit test generator, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "integration-test-designer",
+     "name": "Integration Test Designer",
+     "description": "regressions through a repeatable, tool-aware workflow. The Integration Test Designer accepts explicit before delivery. It is optimized specifically for integration test designer, with clear inputs, outputs,"
+    },
+    {
+     "id": "end-to-end-test-builder",
+     "name": "End-to-End Test Builder",
+     "description": "regressions through a repeatable, tool-aware workflow. The End-to-End Test Builder accepts explicit before delivery. It is optimized specifically for end-to-end test builder, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "property-based-test-designer",
+     "name": "Property-Based Test Designer",
+     "description": "regressions through a repeatable, tool-aware workflow. The Property-Based Test Designer accepts recovery before delivery. It is optimized specifically for property-based test designer, with clear inputs,"
+    },
+    {
+     "id": "mutation-testing-planner",
+     "name": "Mutation Testing Planner",
+     "description": "regressions through a repeatable, tool-aware workflow. The Mutation Testing Planner accepts explicit before delivery. It is optimized specifically for mutation testing planner, with clear inputs, outputs,"
+    },
+    {
+     "id": "bug-reproduction-minimizer",
+     "name": "Bug Reproduction Minimizer",
+     "description": "regressions through a repeatable, tool-aware workflow. The Bug Reproduction Minimizer accepts recovery before delivery. It is optimized specifically for bug reproduction minimizer, with clear inputs,"
+    },
+    {
+     "id": "root-cause-investigator",
+     "name": "Root Cause Investigator",
+     "description": "regressions through a repeatable, tool-aware workflow. The Root Cause Investigator accepts explicit before delivery. It is optimized specifically for root cause investigator, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "regression-suite-curator",
+     "name": "Regression Suite Curator",
+     "description": "regressions through a repeatable, tool-aware workflow. The Regression Suite Curator accepts explicit before delivery. It is optimized specifically for regression suite curator, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "test-fixture-generator",
+     "name": "Test Fixture Generator",
+     "description": "regressions through a repeatable, tool-aware workflow. The Test Fixture Generator accepts explicit before delivery. It is optimized specifically for test fixture generator, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "coverage-gap-analyst",
+     "name": "Coverage Gap Analyst",
+     "description": "regressions through a repeatable, tool-aware workflow. The Coverage Gap Analyst accepts explicit before delivery. It is optimized specifically for coverage gap analyst, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "failure-recovery-engineer",
+     "name": "Failure Recovery Engineer",
+     "description": "regressions through a repeatable, tool-aware workflow. The Failure Recovery Engineer accepts recovery before delivery. It is optimized specifically for failure recovery engineer, with clear inputs,"
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "name": "Web Application Development",
+   "slug": "web-application-development",
+   "focus": "Responsive interfaces, components, services, authentication, accessibility, seo, and production behavior.",
+   "domain": "web-development",
+   "risk": "elevated",
+   "approval_required": false,
+   "artifacts": [
+    "pages/",
+    "lighthouse-summary.md"
+   ],
+   "checks": [
+    "keyboard navigation works",
+    "no secrets in client bundle",
+    "routes resolve"
+   ],
+   "skills": [
+    {
+     "id": "responsive-frontend-builder",
+     "name": "Responsive Frontend Builder",
+     "description": "and production behavior through a repeatable, tool-aware workflow. The Responsive Frontend Builder failure recovery before delivery. It is optimized specifically for responsive frontend builder, with clear"
+    },
+    {
+     "id": "design-to-web-translator",
+     "name": "Design-to-Web Translator",
+     "description": "and production behavior through a repeatable, tool-aware workflow. The Design-to-Web Translator failure recovery before delivery. It is optimized specifically for design-to-web translator, with clear"
+    },
+    {
+     "id": "component-library-engineer",
+     "name": "Component Library Engineer",
+     "description": "and production behavior through a repeatable, tool-aware workflow. The Component Library Engineer failure recovery before delivery. It is optimized specifically for component library engineer, with clear"
+    },
+    {
+     "id": "state-management-architect",
+     "name": "State Management Architect",
+     "description": "and production behavior through a repeatable, tool-aware workflow. The State Management Architect failure recovery before delivery. It is optimized specifically for state management architect, with clear"
+    },
+    {
+     "id": "backend-api-builder",
+     "name": "Backend API Builder",
+     "description": "and production behavior through a repeatable, tool-aware workflow. The Backend API Builder accepts recovery before delivery. It is optimized specifically for backend api builder, with clear inputs, outputs,"
+    },
+    {
+     "id": "authentication-flow-implementer",
+     "name": "Authentication Flow Implementer",
+     "description": "and production behavior through a repeatable, tool-aware workflow. The Authentication Flow Implementer accepts explicit source material and constraints, preserves data and structure that are traceability, and failure recovery before delivery. It is optimized specifically for authentication flow implementer, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "form-and-validation-engineer",
+     "name": "Form and Validation Engineer",
+     "description": "and production behavior through a repeatable, tool-aware workflow. The Form and Validation Engineer accepts explicit source material and constraints, preserves data and structure that are traceability, and failure recovery before delivery. It is optimized specifically for form and validation engineer, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "web-performance-optimizer",
+     "name": "Web Performance Optimizer",
+     "description": "and production behavior through a repeatable, tool-aware workflow. The Web Performance Optimizer failure recovery before delivery. It is optimized specifically for web performance optimizer, with clear"
+    },
+    {
+     "id": "accessibility-first-web-reviewer",
+     "name": "Accessibility-First Web Reviewer",
+     "description": "and production behavior through a repeatable, tool-aware workflow. The Accessibility-First Web Reviewer accepts explicit source material and constraints, preserves data and structure that are traceability, and failure recovery before delivery. It is optimized specifically for accessibility-first web reviewer, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "seo-and-metadata-manager",
+     "name": "SEO and Metadata Manager",
+     "description": "and production behavior through a repeatable, tool-aware workflow. The SEO and Metadata Manager failure recovery before delivery. It is optimized specifically for seo and metadata manager, with clear"
+    },
+    {
+     "id": "progressive-web-app-builder",
+     "name": "Progressive Web App Builder",
+     "description": "and production behavior through a repeatable, tool-aware workflow. The Progressive Web App Builder failure recovery before delivery. It is optimized specifically for progressive web app builder, with clear"
+    },
+    {
+     "id": "production-web-release-verifier",
+     "name": "Production Web Release Verifier",
+     "description": "and production behavior through a repeatable, tool-aware workflow. The Production Web Release Verifier accepts explicit source material and constraints, preserves data and structure that are outside and failure recovery before delivery. It is optimized specifically for production web release verifier, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    }
+   ]
+  },
+  {
+   "number": 15,
+   "name": "Databases and Data Engineering",
+   "slug": "databases-and-data-engineering",
+   "focus": "Schemas, queries, migrations, pipelines, lineage, quality contracts, backup, and recovery.",
+   "domain": "databases",
+   "risk": "high",
+   "approval_required": true,
+   "artifacts": [
+    "migration.sql",
+    "lineage.md"
+   ],
+   "checks": [
+    "migration reversible",
+    "dry run completed",
+    "row-count expectation recorded"
+   ],
+   "skills": [
+    {
+     "id": "schema-designer",
+     "name": "Schema Designer",
+     "description": "recovery through a repeatable, tool-aware workflow. The Schema Designer accepts explicit source delivery. It is optimized specifically for schema designer, with clear inputs, outputs, stop conditions,"
+    },
+    {
+     "id": "sql-query-optimizer",
+     "name": "SQL Query Optimizer",
+     "description": "recovery through a repeatable, tool-aware workflow. The SQL Query Optimizer accepts explicit source delivery. It is optimized specifically for sql query optimizer, with clear inputs, outputs, stop conditions,"
+    },
+    {
+     "id": "database-migration-planner",
+     "name": "Database Migration Planner",
+     "description": "recovery through a repeatable, tool-aware workflow. The Database Migration Planner accepts explicit before delivery. It is optimized specifically for database migration planner, with clear inputs, outputs,"
+    },
+    {
+     "id": "etl-pipeline-builder",
+     "name": "ETL Pipeline Builder",
+     "description": "recovery through a repeatable, tool-aware workflow. The ETL Pipeline Builder accepts explicit source delivery. It is optimized specifically for etl pipeline builder, with clear inputs, outputs, stop conditions,"
+    },
+    {
+     "id": "data-quality-monitor",
+     "name": "Data Quality Monitor",
+     "description": "recovery through a repeatable, tool-aware workflow. The Data Quality Monitor accepts explicit source delivery. It is optimized specifically for data quality monitor, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "change-data-capture-designer",
+     "name": "Change Data Capture Designer",
+     "description": "recovery through a repeatable, tool-aware workflow. The Change Data Capture Designer accepts recovery before delivery. It is optimized specifically for change data capture designer, with clear"
+    },
+    {
+     "id": "master-data-resolver",
+     "name": "Master Data Resolver",
+     "description": "recovery through a repeatable, tool-aware workflow. The Master Data Resolver accepts explicit source delivery. It is optimized specifically for master data resolver, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "data-lineage-mapper",
+     "name": "Data Lineage Mapper",
+     "description": "recovery through a repeatable, tool-aware workflow. The Data Lineage Mapper accepts explicit source delivery. It is optimized specifically for data lineage mapper, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "warehouse-modeling-engineer",
+     "name": "Warehouse Modeling Engineer",
+     "description": "recovery through a repeatable, tool-aware workflow. The Warehouse Modeling Engineer accepts recovery before delivery. It is optimized specifically for warehouse modeling engineer, with clear"
+    },
+    {
+     "id": "streaming-data-processor",
+     "name": "Streaming Data Processor",
+     "description": "recovery through a repeatable, tool-aware workflow. The Streaming Data Processor accepts explicit before delivery. It is optimized specifically for streaming data processor, with clear inputs, outputs,"
+    },
+    {
+     "id": "backup-and-restore-tester",
+     "name": "Backup and Restore Tester",
+     "description": "recovery through a repeatable, tool-aware workflow. The Backup and Restore Tester accepts explicit before delivery. It is optimized specifically for backup and restore tester, with clear inputs, outputs,"
+    },
+    {
+     "id": "data-contract-validator",
+     "name": "Data Contract Validator",
+     "description": "recovery through a repeatable, tool-aware workflow. The Data Contract Validator accepts explicit before delivery. It is optimized specifically for data contract validator, with clear inputs, outputs, stop"
+    }
+   ]
+  },
+  {
+   "number": 16,
+   "name": "Cloud, DevOps, and Operations",
+   "slug": "cloud-devops-and-operations",
+   "focus": "Infrastructure, containers, delivery pipelines, observability, incidents, costs, and resilience.",
+   "domain": "cloud-operations",
+   "risk": "high",
+   "approval_required": true,
+   "artifacts": [
+    "plan.txt",
+    "runbook.md"
+   ],
+   "checks": [
+    "plan reviewed before apply",
+    "blast radius named",
+    "maintenance window agreed"
+   ],
+   "skills": [
+    {
+     "id": "infrastructure-as-code-engineer",
+     "name": "Infrastructure-as-Code Engineer",
+     "description": "resilience through a repeatable, tool-aware workflow. The Infrastructure-as-Code Engineer accepts recovery before delivery. It is optimized specifically for infrastructure-as-code engineer, with clear"
+    },
+    {
+     "id": "container-build-optimizer",
+     "name": "Container Build Optimizer",
+     "description": "resilience through a repeatable, tool-aware workflow. The Container Build Optimizer accepts explicit before delivery. It is optimized specifically for container build optimizer, with clear inputs, outputs,"
+    },
+    {
+     "id": "ci-and-cd-pipeline-builder",
+     "name": "CI/CD Pipeline Builder",
+     "description": "resilience through a repeatable, tool-aware workflow. The CI/CD Pipeline Builder accepts explicit before delivery. It is optimized specifically for ci/cd pipeline builder, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "environment-parity-auditor",
+     "name": "Environment Parity Auditor",
+     "description": "resilience through a repeatable, tool-aware workflow. The Environment Parity Auditor accepts explicit before delivery. It is optimized specifically for environment parity auditor, with clear inputs, outputs,"
+    },
+    {
+     "id": "cloud-cost-analyst",
+     "name": "Cloud Cost Analyst",
+     "description": "resilience through a repeatable, tool-aware workflow. The Cloud Cost Analyst accepts explicit source delivery. It is optimized specifically for cloud cost analyst, with clear inputs, outputs, stop conditions,"
+    },
+    {
+     "id": "observability-stack-designer",
+     "name": "Observability Stack Designer",
+     "description": "resilience through a repeatable, tool-aware workflow. The Observability Stack Designer accepts recovery before delivery. It is optimized specifically for observability stack designer, with clear inputs,"
+    },
+    {
+     "id": "incident-triage-assistant",
+     "name": "Incident Triage Assistant",
+     "description": "resilience through a repeatable, tool-aware workflow. The Incident Triage Assistant accepts explicit before delivery. It is optimized specifically for incident triage assistant, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "runbook-generator",
+     "name": "Runbook Generator",
+     "description": "resilience through a repeatable, tool-aware workflow. The Runbook Generator accepts explicit source delivery. It is optimized specifically for runbook generator, with clear inputs, outputs, stop conditions,"
+    },
+    {
+     "id": "capacity-planning-analyst",
+     "name": "Capacity Planning Analyst",
+     "description": "resilience through a repeatable, tool-aware workflow. The Capacity Planning Analyst accepts explicit before delivery. It is optimized specifically for capacity planning analyst, with clear inputs, outputs,"
+    },
+    {
+     "id": "disaster-recovery-planner",
+     "name": "Disaster Recovery Planner",
+     "description": "resilience through a repeatable, tool-aware workflow. The Disaster Recovery Planner accepts explicit before delivery. It is optimized specifically for disaster recovery planner, with clear inputs, outputs,"
+    },
+    {
+     "id": "blue-green-deployment-operator",
+     "name": "Blue-Green Deployment Operator",
+     "description": "resilience through a repeatable, tool-aware workflow. The Blue-Green Deployment Operator accepts recovery before delivery. It is optimized specifically for blue-green deployment operator, with clear"
+    },
+    {
+     "id": "production-readiness-gatekeeper",
+     "name": "Production Readiness Gatekeeper",
+     "description": "resilience through a repeatable, tool-aware workflow. The Production Readiness Gatekeeper accepts recovery before delivery. It is optimized specifically for production readiness gatekeeper, with clear"
+    }
+   ]
+  },
+  {
+   "number": 17,
+   "name": "Cybersecurity, Privacy, and Trust",
+   "slug": "cybersecurity-privacy-and-trust",
+   "focus": "Threats, vulnerabilities, identities, sensitive data, controls, evidence, and secure defaults.",
+   "domain": "security-privacy",
+   "risk": "high",
+   "approval_required": true,
+   "artifacts": [
+    "findings.md",
+    "evidence.json"
+   ],
+   "checks": [
+    "scope and authorization recorded",
+    "no live exploitation",
+    "evidence minimized"
+   ],
+   "skills": [
+    {
+     "id": "threat-model-builder",
+     "name": "Threat Model Builder",
+     "description": "defaults through a repeatable, tool-aware workflow. The Threat Model Builder accepts explicit source delivery. It is optimized specifically for threat model builder, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "secure-code-reviewer",
+     "name": "Secure Code Reviewer",
+     "description": "defaults through a repeatable, tool-aware workflow. The Secure Code Reviewer accepts explicit source delivery. It is optimized specifically for secure code reviewer, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "secrets-exposure-scanner",
+     "name": "Secrets Exposure Scanner",
+     "description": "defaults through a repeatable, tool-aware workflow. The Secrets Exposure Scanner accepts explicit before delivery. It is optimized specifically for secrets exposure scanner, with clear inputs, outputs,"
+    },
+    {
+     "id": "vulnerability-triage-analyst",
+     "name": "Vulnerability Triage Analyst",
+     "description": "defaults through a repeatable, tool-aware workflow. The Vulnerability Triage Analyst accepts explicit before delivery. It is optimized specifically for vulnerability triage analyst, with clear inputs, outputs,"
+    },
+    {
+     "id": "identity-and-access-reviewer",
+     "name": "Identity and Access Reviewer",
+     "description": "defaults through a repeatable, tool-aware workflow. The Identity and Access Reviewer accepts explicit before delivery. It is optimized specifically for identity and access reviewer, with clear inputs, outputs,"
+    },
+    {
+     "id": "privacy-impact-assessor",
+     "name": "Privacy Impact Assessor",
+     "description": "defaults through a repeatable, tool-aware workflow. The Privacy Impact Assessor accepts explicit before delivery. It is optimized specifically for privacy impact assessor, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "data-classification-enforcer",
+     "name": "Data Classification Enforcer",
+     "description": "defaults through a repeatable, tool-aware workflow. The Data Classification Enforcer accepts explicit before delivery. It is optimized specifically for data classification enforcer, with clear inputs, outputs,"
+    },
+    {
+     "id": "security-control-mapper",
+     "name": "Security Control Mapper",
+     "description": "defaults through a repeatable, tool-aware workflow. The Security Control Mapper accepts explicit before delivery. It is optimized specifically for security control mapper, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "phishing-simulation-designer",
+     "name": "Phishing Simulation Designer",
+     "description": "defaults through a repeatable, tool-aware workflow. The Phishing Simulation Designer accepts explicit before delivery. It is optimized specifically for phishing simulation designer, with clear inputs, outputs,"
+    },
+    {
+     "id": "incident-evidence-organizer",
+     "name": "Incident Evidence Organizer",
+     "description": "defaults through a repeatable, tool-aware workflow. The Incident Evidence Organizer accepts explicit before delivery. It is optimized specifically for incident evidence organizer, with clear inputs, outputs,"
+    },
+    {
+     "id": "supply-chain-risk-reviewer",
+     "name": "Supply Chain Risk Reviewer",
+     "description": "defaults through a repeatable, tool-aware workflow. The Supply Chain Risk Reviewer accepts explicit before delivery. It is optimized specifically for supply chain risk reviewer, with clear inputs, outputs,"
+    },
+    {
+     "id": "security-hardening-verifier",
+     "name": "Security Hardening Verifier",
+     "description": "defaults through a repeatable, tool-aware workflow. The Security Hardening Verifier accepts explicit before delivery. It is optimized specifically for security hardening verifier, with clear inputs, outputs,"
+    }
+   ]
+  },
+  {
+   "number": 18,
+   "name": "Automation and Connected Workflows",
+   "slug": "automation-and-connected-workflows",
+   "focus": "Events, connectors, approvals, schedules, retries, audit trails, and human escalation.",
+   "domain": "automation-connectors",
+   "risk": "elevated",
+   "approval_required": true,
+   "artifacts": [
+    "workflow.json",
+    "audit-trail.md"
+   ],
+   "checks": [
+    "retry and backoff defined",
+    "idempotency keys used",
+    "escalation path present"
+   ],
+   "skills": [
+    {
+     "id": "workflow-opportunity-miner",
+     "name": "Workflow Opportunity Miner",
+     "description": "escalation through a repeatable, tool-aware workflow. The Workflow Opportunity Miner accepts recovery before delivery. It is optimized specifically for workflow opportunity miner, with clear inputs,"
+    },
+    {
+     "id": "trigger-action-automation-builder",
+     "name": "Trigger-Action Automation Builder",
+     "description": "escalation through a repeatable, tool-aware workflow. The Trigger-Action Automation Builder accepts recovery before delivery. It is optimized specifically for trigger-action automation builder, with clear"
+    },
+    {
+     "id": "connector-schema-interpreter",
+     "name": "Connector Schema Interpreter",
+     "description": "escalation through a repeatable, tool-aware workflow. The Connector Schema Interpreter accepts recovery before delivery. It is optimized specifically for connector schema interpreter, with clear"
+    },
+    {
+     "id": "email-intake-automator",
+     "name": "Email Intake Automator",
+     "description": "escalation through a repeatable, tool-aware workflow. The Email Intake Automator accepts explicit before delivery. It is optimized specifically for email intake automator, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "approval-workflow-designer",
+     "name": "Approval Workflow Designer",
+     "description": "escalation through a repeatable, tool-aware workflow. The Approval Workflow Designer accepts recovery before delivery. It is optimized specifically for approval workflow designer, with clear inputs,"
+    },
+    {
+     "id": "document-routing-operator",
+     "name": "Document Routing Operator",
+     "description": "escalation through a repeatable, tool-aware workflow. The Document Routing Operator accepts recovery before delivery. It is optimized specifically for document routing operator, with clear inputs,"
+    },
+    {
+     "id": "scheduled-report-automator",
+     "name": "Scheduled Report Automator",
+     "description": "escalation through a repeatable, tool-aware workflow. The Scheduled Report Automator accepts recovery before delivery. It is optimized specifically for scheduled report automator, with clear inputs,"
+    },
+    {
+     "id": "webhook-integration-builder",
+     "name": "Webhook Integration Builder",
+     "description": "escalation through a repeatable, tool-aware workflow. The Webhook Integration Builder accepts recovery before delivery. It is optimized specifically for webhook integration builder, with clear inputs,"
+    },
+    {
+     "id": "robotic-task-orchestrator",
+     "name": "Robotic Task Orchestrator",
+     "description": "escalation through a repeatable, tool-aware workflow. The Robotic Task Orchestrator accepts explicit before delivery. It is optimized specifically for robotic task orchestrator, with clear inputs, outputs,"
+    },
+    {
+     "id": "retry-and-idempotency-engineer",
+     "name": "Retry and Idempotency Engineer",
+     "description": "escalation through a repeatable, tool-aware workflow. The Retry and Idempotency Engineer accepts recovery before delivery. It is optimized specifically for retry and idempotency engineer, with clear"
+    },
+    {
+     "id": "automation-audit-logger",
+     "name": "Automation Audit Logger",
+     "description": "escalation through a repeatable, tool-aware workflow. The Automation Audit Logger accepts explicit before delivery. It is optimized specifically for automation audit logger, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "human-in-the-loop-escalator",
+     "name": "Human-in-the-Loop Escalator",
+     "description": "escalation through a repeatable, tool-aware workflow. The Human-in-the-Loop Escalator accepts recovery before delivery. It is optimized specifically for human-in-the-loop escalator, with clear inputs,"
+    }
+   ]
+  },
+  {
+   "number": 19,
+   "name": "Image Understanding and Creation",
+   "slug": "image-understanding-and-creation",
+   "focus": "Visual interpretation, generation, editing, composition, restoration, branding, and accessibility.",
+   "domain": "image-media",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "images/",
+    "alt-text.md"
+   ],
+   "checks": [
+    "alt text for every asset",
+    "resolution and license recorded",
+    "edits preserved non-destructively"
+   ],
+   "skills": [
+    {
+     "id": "image-content-analyzer",
+     "name": "Image Content Analyzer",
+     "description": "accessibility through a repeatable, tool-aware workflow. The Image Content Analyzer accepts explicit before delivery. It is optimized specifically for image content analyzer, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "visual-ocr-extractor",
+     "name": "Visual OCR Extractor",
+     "description": "accessibility through a repeatable, tool-aware workflow. The Visual OCR Extractor accepts explicit before delivery. It is optimized specifically for visual ocr extractor, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "diagram-image-interpreter",
+     "name": "Diagram Image Interpreter",
+     "description": "accessibility through a repeatable, tool-aware workflow. The Diagram Image Interpreter accepts recovery before delivery. It is optimized specifically for diagram image interpreter, with clear inputs,"
+    },
+    {
+     "id": "text-to-image-art-director",
+     "name": "Text-to-Image Art Director",
+     "description": "accessibility through a repeatable, tool-aware workflow. The Text-to-Image Art Director accepts recovery before delivery. It is optimized specifically for text-to-image art director, with clear inputs,"
+    },
+    {
+     "id": "single-image-editor",
+     "name": "Single Image Editor",
+     "description": "accessibility through a repeatable, tool-aware workflow. The Single Image Editor accepts explicit before delivery. It is optimized specifically for single image editor, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "multi-image-compositor",
+     "name": "Multi-Image Compositor",
+     "description": "accessibility through a repeatable, tool-aware workflow. The Multi-Image Compositor accepts explicit before delivery. It is optimized specifically for multi-image compositor, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "background-removal-specialist",
+     "name": "Background Removal Specialist",
+     "description": "accessibility through a repeatable, tool-aware workflow. The Background Removal Specialist accepts recovery before delivery. It is optimized specifically for background removal specialist, with clear"
+    },
+    {
+     "id": "image-upscaling-and-restoration",
+     "name": "Image Upscaling and Restoration",
+     "description": "accessibility through a repeatable, tool-aware workflow. The Image Upscaling and Restoration accepts recovery before delivery. It is optimized specifically for image upscaling and restoration, with clear"
+    },
+    {
+     "id": "brand-safe-asset-generator",
+     "name": "Brand-Safe Asset Generator",
+     "description": "accessibility through a repeatable, tool-aware workflow. The Brand-Safe Asset Generator accepts recovery before delivery. It is optimized specifically for brand-safe asset generator, with clear inputs,"
+    },
+    {
+     "id": "product-mockup-composer",
+     "name": "Product Mockup Composer",
+     "description": "accessibility through a repeatable, tool-aware workflow. The Product Mockup Composer accepts recovery before delivery. It is optimized specifically for product mockup composer, with clear inputs,"
+    },
+    {
+     "id": "image-accessibility-describer",
+     "name": "Image Accessibility Describer",
+     "description": "accessibility through a repeatable, tool-aware workflow. The Image Accessibility Describer accepts recovery before delivery. It is optimized specifically for image accessibility describer, with clear"
+    },
+    {
+     "id": "visual-consistency-reviewer",
+     "name": "Visual Consistency Reviewer",
+     "description": "accessibility through a repeatable, tool-aware workflow. The Visual Consistency Reviewer accepts recovery before delivery. It is optimized specifically for visual consistency reviewer, with clear inputs,"
+    }
+   ]
+  },
+  {
+   "number": 20,
+   "name": "Audio, Speech, and Music",
+   "slug": "audio-speech-and-music",
+   "focus": "Recordings, transcripts, voices, music, loudness, captions, localization, and delivery formats.",
+   "domain": "audio-speech",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "audio.wav",
+    "transcript.vtt"
+   ],
+   "checks": [
+    "loudness normalized",
+    "captions time-aligned",
+    "consent for voice recorded"
+   ],
+   "skills": [
+    {
+     "id": "audio-cleanup-engineer",
+     "name": "Audio Cleanup Engineer",
+     "description": "delivery formats through a repeatable, tool-aware workflow. The Audio Cleanup Engineer accepts recovery before delivery. It is optimized specifically for audio cleanup engineer, with clear inputs,"
+    },
+    {
+     "id": "speech-transcription-processor",
+     "name": "Speech Transcription Processor",
+     "description": "delivery formats through a repeatable, tool-aware workflow. The Speech Transcription Processor failure recovery before delivery. It is optimized specifically for speech transcription processor, with"
+    },
+    {
+     "id": "speaker-turn-segmenter",
+     "name": "Speaker Turn Segmenter",
+     "description": "delivery formats through a repeatable, tool-aware workflow. The Speaker Turn Segmenter accepts recovery before delivery. It is optimized specifically for speaker turn segmenter, with clear inputs,"
+    },
+    {
+     "id": "caption-timing-builder",
+     "name": "Caption Timing Builder",
+     "description": "delivery formats through a repeatable, tool-aware workflow. The Caption Timing Builder accepts recovery before delivery. It is optimized specifically for caption timing builder, with clear inputs,"
+    },
+    {
+     "id": "text-to-speech-director",
+     "name": "Text-to-Speech Director",
+     "description": "delivery formats through a repeatable, tool-aware workflow. The Text-to-Speech Director accepts recovery before delivery. It is optimized specifically for text-to-speech director, with clear inputs,"
+    },
+    {
+     "id": "voice-style-consistency-reviewer",
+     "name": "Voice Style Consistency Reviewer",
+     "description": "delivery formats through a repeatable, tool-aware workflow. The Voice Style Consistency Reviewer failure recovery before delivery. It is optimized specifically for voice style consistency reviewer, with"
+    },
+    {
+     "id": "podcast-episode-producer",
+     "name": "Podcast Episode Producer",
+     "description": "delivery formats through a repeatable, tool-aware workflow. The Podcast Episode Producer accepts recovery before delivery. It is optimized specifically for podcast episode producer, with clear inputs,"
+    },
+    {
+     "id": "sound-effect-designer",
+     "name": "Sound Effect Designer",
+     "description": "delivery formats through a repeatable, tool-aware workflow. The Sound Effect Designer accepts recovery before delivery. It is optimized specifically for sound effect designer, with clear inputs,"
+    },
+    {
+     "id": "music-arrangement-assistant",
+     "name": "Music Arrangement Assistant",
+     "description": "delivery formats through a repeatable, tool-aware workflow. The Music Arrangement Assistant accepts recovery before delivery. It is optimized specifically for music arrangement assistant, with clear"
+    },
+    {
+     "id": "audio-loudness-normalizer",
+     "name": "Audio Loudness Normalizer",
+     "description": "delivery formats through a repeatable, tool-aware workflow. The Audio Loudness Normalizer accepts recovery before delivery. It is optimized specifically for audio loudness normalizer, with clear inputs,"
+    },
+    {
+     "id": "multilingual-dubbing-coordinator",
+     "name": "Multilingual Dubbing Coordinator",
+     "description": "delivery formats through a repeatable, tool-aware workflow. The Multilingual Dubbing Coordinator failure recovery before delivery. It is optimized specifically for multilingual dubbing coordinator, with"
+    },
+    {
+     "id": "audio-delivery-packager",
+     "name": "Audio Delivery Packager",
+     "description": "delivery formats through a repeatable, tool-aware workflow. The Audio Delivery Packager accepts recovery before delivery. It is optimized specifically for audio delivery packager, with clear inputs,"
+    }
+   ]
+  },
+  {
+   "number": 21,
+   "name": "Video and Motion Production",
+   "slug": "video-and-motion-production",
+   "focus": "Footage, storyboards, edits, motion, captions, encoding, continuity, and quality control.",
+   "domain": "video-production",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "render.mp4",
+    "qc-report.md"
+   ],
+   "checks": [
+    "frame and audio sync checked",
+    "captions burned and sidecar",
+    "continuity notes kept"
+   ],
+   "skills": [
+    {
+     "id": "video-content-inspector",
+     "name": "Video Content Inspector",
+     "description": "control through a repeatable, tool-aware workflow. The Video Content Inspector accepts explicit before delivery. It is optimized specifically for video content inspector, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "text-to-video-storyboarder",
+     "name": "Text-to-Video Storyboarder",
+     "description": "control through a repeatable, tool-aware workflow. The Text-to-Video Storyboarder accepts explicit before delivery. It is optimized specifically for text-to-video storyboarder, with clear inputs, outputs,"
+    },
+    {
+     "id": "image-to-video-animator",
+     "name": "Image-to-Video Animator",
+     "description": "control through a repeatable, tool-aware workflow. The Image-to-Video Animator accepts explicit before delivery. It is optimized specifically for image-to-video animator, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "video-edit-planner",
+     "name": "Video Edit Planner",
+     "description": "control through a repeatable, tool-aware workflow. The Video Edit Planner accepts explicit source delivery. It is optimized specifically for video edit planner, with clear inputs, outputs, stop conditions,"
+    },
+    {
+     "id": "clip-assembly-operator",
+     "name": "Clip Assembly Operator",
+     "description": "control through a repeatable, tool-aware workflow. The Clip Assembly Operator accepts explicit source delivery. It is optimized specifically for clip assembly operator, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "motion-graphics-designer",
+     "name": "Motion Graphics Designer",
+     "description": "control through a repeatable, tool-aware workflow. The Motion Graphics Designer accepts explicit before delivery. It is optimized specifically for motion graphics designer, with clear inputs, outputs,"
+    },
+    {
+     "id": "subtitle-and-caption-burner",
+     "name": "Subtitle and Caption Burner",
+     "description": "control through a repeatable, tool-aware workflow. The Subtitle and Caption Burner accepts explicit before delivery. It is optimized specifically for subtitle and caption burner, with clear inputs, outputs,"
+    },
+    {
+     "id": "scene-continuity-reviewer",
+     "name": "Scene Continuity Reviewer",
+     "description": "control through a repeatable, tool-aware workflow. The Scene Continuity Reviewer accepts explicit before delivery. It is optimized specifically for scene continuity reviewer, with clear inputs, outputs,"
+    },
+    {
+     "id": "color-and-exposure-normalizer",
+     "name": "Color and Exposure Normalizer",
+     "description": "control through a repeatable, tool-aware workflow. The Color and Exposure Normalizer accepts recovery before delivery. It is optimized specifically for color and exposure normalizer, with clear"
+    },
+    {
+     "id": "video-accessibility-packager",
+     "name": "Video Accessibility Packager",
+     "description": "control through a repeatable, tool-aware workflow. The Video Accessibility Packager accepts explicit before delivery. It is optimized specifically for video accessibility packager, with clear inputs, outputs,"
+    },
+    {
+     "id": "encoding-and-format-optimizer",
+     "name": "Encoding and Format Optimizer",
+     "description": "control through a repeatable, tool-aware workflow. The Encoding and Format Optimizer accepts recovery before delivery. It is optimized specifically for encoding and format optimizer, with clear"
+    },
+    {
+     "id": "video-quality-control-reviewer",
+     "name": "Video Quality Control Reviewer",
+     "description": "control through a repeatable, tool-aware workflow. The Video Quality Control Reviewer accepts recovery before delivery. It is optimized specifically for video quality control reviewer, with clear"
+    }
+   ]
+  },
+  {
+   "number": 22,
+   "name": "Multimodal Reasoning and Conversion",
+   "slug": "multimodal-reasoning-and-conversion",
+   "focus": "Consistent transformations among text, images, audio, video, diagrams, documents, and code.",
+   "domain": "multimodal-conversion",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "converted/",
+    "fidelity-report.md"
+   ],
+   "checks": [
+    "round-trip fidelity measured",
+    "unsupported structures preserved",
+    "source traceable"
+   ],
+   "skills": [
+    {
+     "id": "image-to-document-converter",
+     "name": "Image-to-Document Converter",
+     "description": "documents, and code through a repeatable, tool-aware workflow. The Image-to-Document Converter failure recovery before delivery. It is optimized specifically for image-to-document converter, with"
+    },
+    {
+     "id": "image-to-web-interface-rebuilder",
+     "name": "Image-to-Web Interface Rebuilder",
+     "description": "documents, and code through a repeatable, tool-aware workflow. The Image-to-Web Interface Rebuilder accepts explicit source material and constraints, preserves data and structure that are traceability, and failure recovery before delivery. It is optimized specifically for image-to-web interface rebuilder, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "screenshot-to-code-translator",
+     "name": "Screenshot-to-Code Translator",
+     "description": "documents, and code through a repeatable, tool-aware workflow. The Screenshot-to-Code Translator failure recovery before delivery. It is optimized specifically for screenshot-to-code translator, with"
+    },
+    {
+     "id": "video-to-report-synthesizer",
+     "name": "Video-to-Report Synthesizer",
+     "description": "documents, and code through a repeatable, tool-aware workflow. The Video-to-Report Synthesizer failure recovery before delivery. It is optimized specifically for video-to-report synthesizer, with clear"
+    },
+    {
+     "id": "audio-to-action-items-extractor",
+     "name": "Audio-to-Action-Items Extractor",
+     "description": "documents, and code through a repeatable, tool-aware workflow. The Audio-to-Action-Items Extractor failure recovery before delivery. It is optimized specifically for audio-to-action-items extractor, with"
+    },
+    {
+     "id": "diagram-to-structured-model-converter",
+     "name": "Diagram-to-Structured-Model Converter",
+     "description": "documents, and code through a repeatable, tool-aware workflow. The Diagram-to-Structured-Model Converter accepts explicit source material and constraints, preserves data and structure that are traceability, and failure recovery before delivery. It is optimized specifically for diagram-to-structured- model converter, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "document-to-slide-adapter",
+     "name": "Document-to-Slide Adapter",
+     "description": "documents, and code through a repeatable, tool-aware workflow. The Document-to-Slide Adapter failure recovery before delivery. It is optimized specifically for document-to-slide adapter, with clear"
+    },
+    {
+     "id": "spreadsheet-to-narrative-writer",
+     "name": "Spreadsheet-to-Narrative Writer",
+     "description": "documents, and code through a repeatable, tool-aware workflow. The Spreadsheet-to-Narrative Writer failure recovery before delivery. It is optimized specifically for spreadsheet-to-narrative writer, with"
+    },
+    {
+     "id": "text-to-infographic-planner",
+     "name": "Text-to-Infographic Planner",
+     "description": "documents, and code through a repeatable, tool-aware workflow. The Text-to-Infographic Planner failure recovery before delivery. It is optimized specifically for text-to-infographic planner, with clear"
+    },
+    {
+     "id": "cross-modal-consistency-checker",
+     "name": "Cross-Modal Consistency Checker",
+     "description": "documents, and code through a repeatable, tool-aware workflow. The Cross-Modal Consistency Checker accepts explicit source material and constraints, preserves data and structure that are traceability, and failure recovery before delivery. It is optimized specifically for cross-modal consistency checker, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "media-provenance-recorder",
+     "name": "Media Provenance Recorder",
+     "description": "documents, and code through a repeatable, tool-aware workflow. The Media Provenance Recorder failure recovery before delivery. It is optimized specifically for media provenance recorder, with clear"
+    },
+    {
+     "id": "accessible-alternate-format-generator",
+     "name": "Accessible Alternate Format Generator",
+     "description": "documents, and code through a repeatable, tool-aware workflow. The Accessible Alternate Format Generator accepts explicit source material and constraints, preserves data and structure that are traceability, and failure recovery before delivery. It is optimized specifically for accessible alternate format generator, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    }
+   ]
+  },
+  {
+   "number": 23,
+   "name": "Design, UX, and Accessibility",
+   "slug": "design-ux-and-accessibility",
+   "focus": "Design systems, user flows, usability, inclusive interaction, and wcag-aligned validation.",
+   "domain": "design-ux-a11y",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "tokens.json",
+    "a11y-report.md"
+   ],
+   "checks": [
+    "WCAG contrast checked",
+    "focus order documented",
+    "motion respects reduced-motion"
+   ],
+   "skills": [
+    {
+     "id": "design-system-extractor",
+     "name": "Design System Extractor",
+     "description": "validation through a repeatable, tool-aware workflow. The Design System Extractor accepts explicit before delivery. It is optimized specifically for design system extractor, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "user-journey-mapper",
+     "name": "User Journey Mapper",
+     "description": "validation through a repeatable, tool-aware workflow. The User Journey Mapper accepts explicit before delivery. It is optimized specifically for user journey mapper, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "information-architecture-designer",
+     "name": "Information Architecture Designer",
+     "description": "validation through a repeatable, tool-aware workflow. The Information Architecture Designer accepts recovery before delivery. It is optimized specifically for information architecture designer, with clear"
+    },
+    {
+     "id": "wireframe-critic",
+     "name": "Wireframe Critic",
+     "description": "validation through a repeatable, tool-aware workflow. The Wireframe Critic accepts explicit source delivery. It is optimized specifically for wireframe critic, with clear inputs, outputs, stop conditions,"
+    },
+    {
+     "id": "usability-test-planner",
+     "name": "Usability Test Planner",
+     "description": "validation through a repeatable, tool-aware workflow. The Usability Test Planner accepts explicit before delivery. It is optimized specifically for usability test planner, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "wcag-accessibility-auditor",
+     "name": "WCAG Accessibility Auditor",
+     "description": "validation through a repeatable, tool-aware workflow. The WCAG Accessibility Auditor accepts explicit before delivery. It is optimized specifically for wcag accessibility auditor, with clear inputs, outputs,"
+    },
+    {
+     "id": "color-contrast-remediator",
+     "name": "Color Contrast Remediator",
+     "description": "validation through a repeatable, tool-aware workflow. The Color Contrast Remediator accepts explicit before delivery. It is optimized specifically for color contrast remediator, with clear inputs, outputs,"
+    },
+    {
+     "id": "keyboard-navigation-reviewer",
+     "name": "Keyboard Navigation Reviewer",
+     "description": "validation through a repeatable, tool-aware workflow. The Keyboard Navigation Reviewer accepts recovery before delivery. It is optimized specifically for keyboard navigation reviewer, with clear"
+    },
+    {
+     "id": "screen-reader-flow-verifier",
+     "name": "Screen Reader Flow Verifier",
+     "description": "validation through a repeatable, tool-aware workflow. The Screen Reader Flow Verifier accepts recovery before delivery. It is optimized specifically for screen reader flow verifier, with clear inputs,"
+    },
+    {
+     "id": "inclusive-content-designer",
+     "name": "Inclusive Content Designer",
+     "description": "validation through a repeatable, tool-aware workflow. The Inclusive Content Designer accepts explicit before delivery. It is optimized specifically for inclusive content designer, with clear inputs, outputs,"
+    },
+    {
+     "id": "interaction-pattern-reviewer",
+     "name": "Interaction Pattern Reviewer",
+     "description": "validation through a repeatable, tool-aware workflow. The Interaction Pattern Reviewer accepts recovery before delivery. It is optimized specifically for interaction pattern reviewer, with clear inputs,"
+    },
+    {
+     "id": "design-qa-handoff-builder",
+     "name": "Design QA Handoff Builder",
+     "description": "validation through a repeatable, tool-aware workflow. The Design QA Handoff Builder accepts explicit before delivery. It is optimized specifically for design qa handoff builder, with clear inputs, outputs,"
+    }
+   ]
+  },
+  {
+   "number": 24,
+   "name": "Product and Project Management",
+   "slug": "product-and-project-management",
+   "focus": "Requirements, backlogs, plans, risks, decisions, launches, stakeholders, and retrospectives.",
+   "domain": "product-project",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "plan.md",
+    "risk-log.md"
+   ],
+   "checks": [
+    "acceptance criteria testable",
+    "risks have owners",
+    "dependencies scheduled"
+   ],
+   "skills": [
+    {
+     "id": "product-requirements-composer",
+     "name": "Product Requirements Composer",
+     "description": "retrospectives through a repeatable, tool-aware workflow. The Product Requirements Composer failure recovery before delivery. It is optimized specifically for product requirements composer, with"
+    },
+    {
+     "id": "backlog-decomposer",
+     "name": "Backlog Decomposer",
+     "description": "retrospectives through a repeatable, tool-aware workflow. The Backlog Decomposer accepts explicit before delivery. It is optimized specifically for backlog decomposer, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "user-story-quality-reviewer",
+     "name": "User Story Quality Reviewer",
+     "description": "retrospectives through a repeatable, tool-aware workflow. The User Story Quality Reviewer accepts recovery before delivery. It is optimized specifically for user story quality reviewer, with clear inputs,"
+    },
+    {
+     "id": "acceptance-criteria-builder",
+     "name": "Acceptance Criteria Builder",
+     "description": "retrospectives through a repeatable, tool-aware workflow. The Acceptance Criteria Builder accepts recovery before delivery. It is optimized specifically for acceptance criteria builder, with clear inputs,"
+    },
+    {
+     "id": "roadmap-scenario-planner",
+     "name": "Roadmap Scenario Planner",
+     "description": "retrospectives through a repeatable, tool-aware workflow. The Roadmap Scenario Planner accepts recovery before delivery. It is optimized specifically for roadmap scenario planner, with clear inputs,"
+    },
+    {
+     "id": "risk-and-dependency-manager",
+     "name": "Risk and Dependency Manager",
+     "description": "retrospectives through a repeatable, tool-aware workflow. The Risk and Dependency Manager accepts recovery before delivery. It is optimized specifically for risk and dependency manager, with clear"
+    },
+    {
+     "id": "sprint-planning-assistant",
+     "name": "Sprint Planning Assistant",
+     "description": "retrospectives through a repeatable, tool-aware workflow. The Sprint Planning Assistant accepts recovery before delivery. It is optimized specifically for sprint planning assistant, with clear inputs,"
+    },
+    {
+     "id": "meeting-to-action-tracker",
+     "name": "Meeting-to-Action Tracker",
+     "description": "retrospectives through a repeatable, tool-aware workflow. The Meeting-to-Action Tracker accepts recovery before delivery. It is optimized specifically for meeting-to-action tracker, with clear inputs,"
+    },
+    {
+     "id": "decision-record-maintainer",
+     "name": "Decision Record Maintainer",
+     "description": "retrospectives through a repeatable, tool-aware workflow. The Decision Record Maintainer accepts recovery before delivery. It is optimized specifically for decision record maintainer, with clear inputs,"
+    },
+    {
+     "id": "stakeholder-update-writer",
+     "name": "Stakeholder Update Writer",
+     "description": "retrospectives through a repeatable, tool-aware workflow. The Stakeholder Update Writer accepts recovery before delivery. It is optimized specifically for stakeholder update writer, with clear inputs,"
+    },
+    {
+     "id": "launch-readiness-coordinator",
+     "name": "Launch Readiness Coordinator",
+     "description": "retrospectives through a repeatable, tool-aware workflow. The Launch Readiness Coordinator accepts recovery before delivery. It is optimized specifically for launch readiness coordinator, with clear"
+    },
+    {
+     "id": "postmortem-facilitator",
+     "name": "Postmortem Facilitator",
+     "description": "retrospectives through a repeatable, tool-aware workflow. The Postmortem Facilitator accepts explicit before delivery. It is optimized specifically for postmortem facilitator, with clear inputs, outputs, stop"
+    }
+   ]
+  },
+  {
+   "number": 25,
+   "name": "Business, Strategy, and Operations",
+   "slug": "business-strategy-and-operations",
+   "focus": "Markets, operating processes, vendors, customers, metrics, procedures, and executive decisions.",
+   "domain": "business-operations",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "brief.md",
+    "metrics.json"
+   ],
+   "checks": [
+    "assumptions separated from facts",
+    "vendor and cost notes present",
+    "approval for spend"
+   ],
+   "skills": [
+    {
+     "id": "market-landscape-analyst",
+     "name": "Market Landscape Analyst",
+     "description": "executive decisions through a repeatable, tool-aware workflow. The Market Landscape Analyst accepts recovery before delivery. It is optimized specifically for market landscape analyst, with clear inputs,"
+    },
+    {
+     "id": "competitive-comparison-builder",
+     "name": "Competitive Comparison Builder",
+     "description": "executive decisions through a repeatable, tool-aware workflow. The Competitive Comparison Builder failure recovery before delivery. It is optimized specifically for competitive comparison builder, with"
+    },
+    {
+     "id": "business-case-modeler",
+     "name": "Business Case Modeler",
+     "description": "executive decisions through a repeatable, tool-aware workflow. The Business Case Modeler accepts recovery before delivery. It is optimized specifically for business case modeler, with clear inputs,"
+    },
+    {
+     "id": "operating-model-designer",
+     "name": "Operating Model Designer",
+     "description": "executive decisions through a repeatable, tool-aware workflow. The Operating Model Designer accepts recovery before delivery. It is optimized specifically for operating model designer, with clear inputs,"
+    },
+    {
+     "id": "process-improvement-analyst",
+     "name": "Process Improvement Analyst",
+     "description": "executive decisions through a repeatable, tool-aware workflow. The Process Improvement Analyst failure recovery before delivery. It is optimized specifically for process improvement analyst, with"
+    },
+    {
+     "id": "standard-operating-procedure-writer",
+     "name": "Standard Operating Procedure Writer",
+     "description": "executive decisions through a repeatable, tool-aware workflow. The Standard Operating Procedure Writer accepts explicit source material and constraints, preserves data and structure that are outside and failure recovery before delivery. It is optimized specifically for standard operating procedure writer, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "vendor-evaluation-assistant",
+     "name": "Vendor Evaluation Assistant",
+     "description": "executive decisions through a repeatable, tool-aware workflow. The Vendor Evaluation Assistant failure recovery before delivery. It is optimized specifically for vendor evaluation assistant, with clear"
+    },
+    {
+     "id": "procurement-requirements-builder",
+     "name": "Procurement Requirements Builder",
+     "description": "executive decisions through a repeatable, tool-aware workflow. The Procurement Requirements Builder accepts explicit source material and constraints, preserves data and structure that are outside and failure recovery before delivery. It is optimized specifically for procurement requirements builder, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "customer-feedback-synthesizer",
+     "name": "Customer Feedback Synthesizer",
+     "description": "executive decisions through a repeatable, tool-aware workflow. The Customer Feedback Synthesizer failure recovery before delivery. It is optimized specifically for customer feedback synthesizer, with"
+    },
+    {
+     "id": "service-blueprint-designer",
+     "name": "Service Blueprint Designer",
+     "description": "executive decisions through a repeatable, tool-aware workflow. The Service Blueprint Designer failure recovery before delivery. It is optimized specifically for service blueprint designer, with clear"
+    },
+    {
+     "id": "balanced-scorecard-builder",
+     "name": "Balanced Scorecard Builder",
+     "description": "executive decisions through a repeatable, tool-aware workflow. The Balanced Scorecard Builder failure recovery before delivery. It is optimized specifically for balanced scorecard builder, with clear"
+    },
+    {
+     "id": "executive-brief-composer",
+     "name": "Executive Brief Composer",
+     "description": "executive decisions through a repeatable, tool-aware workflow. The Executive Brief Composer accepts recovery before delivery. It is optimized specifically for executive brief composer, with clear inputs,"
+    }
+   ]
+  },
+  {
+   "number": 26,
+   "name": "Finance and Accounting",
+   "slug": "finance-and-accounting",
+   "focus": "Statements, budgets, forecasts, controls, reconciliations, pricing, investments, and audit evidence.",
+   "domain": "finance-accounting",
+   "risk": "high",
+   "approval_required": true,
+   "artifacts": [
+    "model.xlsx",
+    "controls.md"
+   ],
+   "checks": [
+    "reconciliation ties out",
+    "formulas audited",
+    "period and currency stated"
+   ],
+   "skills": [
+    {
+     "id": "financial-statement-analyzer",
+     "name": "Financial Statement Analyzer",
+     "description": "and audit evidence through a repeatable, tool-aware workflow. The Financial Statement Analyzer failure recovery before delivery. It is optimized specifically for financial statement analyzer, with clear"
+    },
+    {
+     "id": "budget-builder",
+     "name": "Budget Builder",
+     "description": "and audit evidence through a repeatable, tool-aware workflow. The Budget Builder accepts explicit before delivery. It is optimized specifically for budget builder, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "cash-flow-forecaster",
+     "name": "Cash Flow Forecaster",
+     "description": "and audit evidence through a repeatable, tool-aware workflow. The Cash Flow Forecaster accepts recovery before delivery. It is optimized specifically for cash flow forecaster, with clear inputs,"
+    },
+    {
+     "id": "variance-analysis-writer",
+     "name": "Variance Analysis Writer",
+     "description": "and audit evidence through a repeatable, tool-aware workflow. The Variance Analysis Writer accepts recovery before delivery. It is optimized specifically for variance analysis writer, with clear inputs,"
+    },
+    {
+     "id": "unit-economics-modeler",
+     "name": "Unit Economics Modeler",
+     "description": "and audit evidence through a repeatable, tool-aware workflow. The Unit Economics Modeler accepts recovery before delivery. It is optimized specifically for unit economics modeler, with clear inputs,"
+    },
+    {
+     "id": "pricing-scenario-analyst",
+     "name": "Pricing Scenario Analyst",
+     "description": "and audit evidence through a repeatable, tool-aware workflow. The Pricing Scenario Analyst accepts recovery before delivery. It is optimized specifically for pricing scenario analyst, with clear inputs,"
+    },
+    {
+     "id": "capital-investment-evaluator",
+     "name": "Capital Investment Evaluator",
+     "description": "and audit evidence through a repeatable, tool-aware workflow. The Capital Investment Evaluator failure recovery before delivery. It is optimized specifically for capital investment evaluator, with clear"
+    },
+    {
+     "id": "invoice-reconciliation-assistant",
+     "name": "Invoice Reconciliation Assistant",
+     "description": "and audit evidence through a repeatable, tool-aware workflow. The Invoice Reconciliation Assistant failure recovery before delivery. It is optimized specifically for invoice reconciliation assistant, with"
+    },
+    {
+     "id": "expense-policy-checker",
+     "name": "Expense Policy Checker",
+     "description": "and audit evidence through a repeatable, tool-aware workflow. The Expense Policy Checker accepts recovery before delivery. It is optimized specifically for expense policy checker, with clear inputs,"
+    },
+    {
+     "id": "financial-controls-reviewer",
+     "name": "Financial Controls Reviewer",
+     "description": "and audit evidence through a repeatable, tool-aware workflow. The Financial Controls Reviewer failure recovery before delivery. It is optimized specifically for financial controls reviewer, with clear"
+    },
+    {
+     "id": "management-reporting-packager",
+     "name": "Management Reporting Packager",
+     "description": "and audit evidence through a repeatable, tool-aware workflow. The Management Reporting Packager failure recovery before delivery. It is optimized specifically for management reporting packager, with"
+    },
+    {
+     "id": "audit-evidence-organizer",
+     "name": "Audit Evidence Organizer",
+     "description": "and audit evidence through a repeatable, tool-aware workflow. The Audit Evidence Organizer accepts recovery before delivery. It is optimized specifically for audit evidence organizer, with clear inputs,"
+    }
+   ]
+  },
+  {
+   "number": 27,
+   "name": "Legal, Policy, and Compliance Support",
+   "slug": "legal-policy-and-compliance-support",
+   "focus": "Clauses, obligations, policies, regulations, records, consent, evidence, and legal handoff.",
+   "domain": "legal-compliance",
+   "risk": "high",
+   "approval_required": true,
+   "artifacts": [
+    "summary.md",
+    "obligation-table.md"
+   ],
+   "checks": [
+    "counsel review flagged",
+    "citation to clause or statute",
+    "no legal advice presented as final"
+   ],
+   "skills": [
+    {
+     "id": "policy-comparison-analyst",
+     "name": "Policy Comparison Analyst",
+     "description": "handoff through a repeatable, tool-aware workflow. The Policy Comparison Analyst accepts explicit before delivery. It is optimized specifically for policy comparison analyst, with clear inputs, outputs,"
+    },
+    {
+     "id": "clause-extraction-specialist",
+     "name": "Clause Extraction Specialist",
+     "description": "handoff through a repeatable, tool-aware workflow. The Clause Extraction Specialist accepts explicit before delivery. It is optimized specifically for clause extraction specialist, with clear inputs, outputs,"
+    },
+    {
+     "id": "obligation-register-builder",
+     "name": "Obligation Register Builder",
+     "description": "handoff through a repeatable, tool-aware workflow. The Obligation Register Builder accepts explicit before delivery. It is optimized specifically for obligation register builder, with clear inputs, outputs,"
+    },
+    {
+     "id": "contract-risk-spotter",
+     "name": "Contract Risk Spotter",
+     "description": "handoff through a repeatable, tool-aware workflow. The Contract Risk Spotter accepts explicit source delivery. It is optimized specifically for contract risk spotter, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "regulatory-change-monitor",
+     "name": "Regulatory Change Monitor",
+     "description": "handoff through a repeatable, tool-aware workflow. The Regulatory Change Monitor accepts explicit before delivery. It is optimized specifically for regulatory change monitor, with clear inputs, outputs,"
+    },
+    {
+     "id": "compliance-evidence-mapper",
+     "name": "Compliance Evidence Mapper",
+     "description": "handoff through a repeatable, tool-aware workflow. The Compliance Evidence Mapper accepts explicit before delivery. It is optimized specifically for compliance evidence mapper, with clear inputs, outputs,"
+    },
+    {
+     "id": "records-retention-classifier",
+     "name": "Records Retention Classifier",
+     "description": "handoff through a repeatable, tool-aware workflow. The Records Retention Classifier accepts explicit before delivery. It is optimized specifically for records retention classifier, with clear inputs, outputs,"
+    },
+    {
+     "id": "consent-language-reviewer",
+     "name": "Consent Language Reviewer",
+     "description": "handoff through a repeatable, tool-aware workflow. The Consent Language Reviewer accepts explicit before delivery. It is optimized specifically for consent language reviewer, with clear inputs, outputs,"
+    },
+    {
+     "id": "policy-drafting-assistant",
+     "name": "Policy Drafting Assistant",
+     "description": "handoff through a repeatable, tool-aware workflow. The Policy Drafting Assistant accepts explicit before delivery. It is optimized specifically for policy drafting assistant, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "due-diligence-organizer",
+     "name": "Due Diligence Organizer",
+     "description": "handoff through a repeatable, tool-aware workflow. The Due Diligence Organizer accepts explicit before delivery. It is optimized specifically for due diligence organizer, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "issue-escalation-matrix-builder",
+     "name": "Issue Escalation Matrix Builder",
+     "description": "handoff through a repeatable, tool-aware workflow. The Issue Escalation Matrix Builder accepts recovery before delivery. It is optimized specifically for issue escalation matrix builder, with clear"
+    },
+    {
+     "id": "legal-review-handoff-preparer",
+     "name": "Legal Review Handoff Preparer",
+     "description": "handoff through a repeatable, tool-aware workflow. The Legal Review Handoff Preparer accepts recovery before delivery. It is optimized specifically for legal review handoff preparer, with clear"
+    }
+   ]
+  },
+  {
+   "number": 28,
+   "name": "Education and Learning",
+   "slug": "education-and-learning",
+   "focus": "Curricula, lessons, assessments, tutoring, rubrics, accessibility, and evidence-based learning support.",
+   "domain": "education-learning",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "lesson.md",
+    "rubric.md"
+   ],
+   "checks": [
+    "objectives measurable",
+    "reading level reported",
+    "assessment maps to objectives"
+   ],
+   "skills": [
+    {
+     "id": "curriculum-mapper",
+     "name": "Curriculum Mapper",
+     "description": "based learning support through a repeatable, tool-aware workflow. The Curriculum Mapper accepts recovery before delivery. It is optimized specifically for curriculum mapper, with clear inputs, outputs,"
+    },
+    {
+     "id": "lesson-plan-builder",
+     "name": "Lesson Plan Builder",
+     "description": "based learning support through a repeatable, tool-aware workflow. The Lesson Plan Builder accepts recovery before delivery. It is optimized specifically for lesson plan builder, with clear inputs, outputs,"
+    },
+    {
+     "id": "study-guide-generator",
+     "name": "Study Guide Generator",
+     "description": "based learning support through a repeatable, tool-aware workflow. The Study Guide Generator failure recovery before delivery. It is optimized specifically for study guide generator, with clear"
+    },
+    {
+     "id": "adaptive-tutor",
+     "name": "Adaptive Tutor",
+     "description": "based learning support through a repeatable, tool-aware workflow. The Adaptive Tutor accepts explicit before delivery. It is optimized specifically for adaptive tutor, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "rubric-designer",
+     "name": "Rubric Designer",
+     "description": "based learning support through a repeatable, tool-aware workflow. The Rubric Designer accepts recovery before delivery. It is optimized specifically for rubric designer, with clear inputs, outputs,"
+    },
+    {
+     "id": "assessment-item-writer",
+     "name": "Assessment Item Writer",
+     "description": "based learning support through a repeatable, tool-aware workflow. The Assessment Item Writer failure recovery before delivery. It is optimized specifically for assessment item writer, with clear"
+    },
+    {
+     "id": "answer-key-validator",
+     "name": "Answer Key Validator",
+     "description": "based learning support through a repeatable, tool-aware workflow. The Answer Key Validator accepts recovery before delivery. It is optimized specifically for answer key validator, with clear inputs,"
+    },
+    {
+     "id": "citation-aware-research-coach",
+     "name": "Citation-Aware Research Coach",
+     "description": "based learning support through a repeatable, tool-aware workflow. The Citation-Aware Research Coach accepts explicit source material and constraints, preserves data and structure that are outside and failure recovery before delivery. It is optimized specifically for citation-aware research coach, with"
+    },
+    {
+     "id": "lab-activity-designer",
+     "name": "Lab Activity Designer",
+     "description": "based learning support through a repeatable, tool-aware workflow. The Lab Activity Designer accepts recovery before delivery. It is optimized specifically for lab activity designer, with clear inputs,"
+    },
+    {
+     "id": "learning-progress-analyst",
+     "name": "Learning Progress Analyst",
+     "description": "based learning support through a repeatable, tool-aware workflow. The Learning Progress Analyst failure recovery before delivery. It is optimized specifically for learning progress analyst, with clear"
+    },
+    {
+     "id": "academic-integrity-reviewer",
+     "name": "Academic Integrity Reviewer",
+     "description": "based learning support through a repeatable, tool-aware workflow. The Academic Integrity Reviewer failure recovery before delivery. It is optimized specifically for academic integrity reviewer, with clear"
+    },
+    {
+     "id": "accessible-learning-material-adapter",
+     "name": "Accessible Learning Material Adapter",
+     "description": "based learning support through a repeatable, tool-aware workflow. The Accessible Learning Material Adapter accepts explicit source material and constraints, preserves data and structure that are outside and failure recovery before delivery. It is optimized specifically for accessible learning material adapter, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    }
+   ]
+  },
+  {
+   "number": 29,
+   "name": "Scientific and Engineering Work",
+   "slug": "scientific-and-engineering-work",
+   "focus": "Experiments, calculations, simulations, requirements, uncertainty, calibration, and reproducibility.",
+   "domain": "science-engineering",
+   "risk": "elevated",
+   "approval_required": false,
+   "artifacts": [
+    "report.md",
+    "uncertainty.json"
+   ],
+   "checks": [
+    "units and tolerances stated",
+    "calibration recorded",
+    "uncertainty propagated"
+   ],
+   "skills": [
+    {
+     "id": "experiment-protocol-designer",
+     "name": "Experiment Protocol Designer",
+     "description": "and reproducibility through a repeatable, tool-aware workflow. The Experiment Protocol Designer failure recovery before delivery. It is optimized specifically for experiment protocol designer, with"
+    },
+    {
+     "id": "measurement-uncertainty-analyst",
+     "name": "Measurement Uncertainty Analyst",
+     "description": "and reproducibility through a repeatable, tool-aware workflow. The Measurement Uncertainty Analyst failure recovery before delivery. It is optimized specifically for measurement uncertainty analyst, with"
+    },
+    {
+     "id": "scientific-literature-synthesizer",
+     "name": "Scientific Literature Synthesizer",
+     "description": "and reproducibility through a repeatable, tool-aware workflow. The Scientific Literature Synthesizer failure recovery before delivery. It is optimized specifically for scientific literature synthesizer, with"
+    },
+    {
+     "id": "simulation-workflow-builder",
+     "name": "Simulation Workflow Builder",
+     "description": "and reproducibility through a repeatable, tool-aware workflow. The Simulation Workflow Builder failure recovery before delivery. It is optimized specifically for simulation workflow builder, with clear"
+    },
+    {
+     "id": "engineering-requirement-tracer",
+     "name": "Engineering Requirement Tracer",
+     "description": "and reproducibility through a repeatable, tool-aware workflow. The Engineering Requirement Tracer failure recovery before delivery. It is optimized specifically for engineering requirement tracer, with"
+    },
+    {
+     "id": "cad-review-checklist-builder",
+     "name": "CAD Review Checklist Builder",
+     "description": "and reproducibility through a repeatable, tool-aware workflow. The CAD Review Checklist Builder failure recovery before delivery. It is optimized specifically for cad review checklist builder, with clear"
+    },
+    {
+     "id": "calibration-record-manager",
+     "name": "Calibration Record Manager",
+     "description": "and reproducibility through a repeatable, tool-aware workflow. The Calibration Record Manager failure recovery before delivery. It is optimized specifically for calibration record manager, with clear"
+    },
+    {
+     "id": "failure-mode-and-effects-analyst",
+     "name": "Failure Mode and Effects Analyst",
+     "description": "and reproducibility through a repeatable, tool-aware workflow. The Failure Mode and Effects Analyst failure recovery before delivery. It is optimized specifically for failure mode and effects analyst, with"
+    },
+    {
+     "id": "technical-calculation-verifier",
+     "name": "Technical Calculation Verifier",
+     "description": "and reproducibility through a repeatable, tool-aware workflow. The Technical Calculation Verifier failure recovery before delivery. It is optimized specifically for technical calculation verifier, with clear"
+    },
+    {
+     "id": "research-data-steward",
+     "name": "Research Data Steward",
+     "description": "and reproducibility through a repeatable, tool-aware workflow. The Research Data Steward accepts recovery before delivery. It is optimized specifically for research data steward, with clear inputs,"
+    },
+    {
+     "id": "reproducibility-auditor",
+     "name": "Reproducibility Auditor",
+     "description": "and reproducibility through a repeatable, tool-aware workflow. The Reproducibility Auditor accepts recovery before delivery. It is optimized specifically for reproducibility auditor, with clear inputs,"
+    },
+    {
+     "id": "technical-report-composer",
+     "name": "Technical Report Composer",
+     "description": "and reproducibility through a repeatable, tool-aware workflow. The Technical Report Composer failure recovery before delivery. It is optimized specifically for technical report composer, with clear"
+    }
+   ]
+  },
+  {
+   "number": 30,
+   "name": "Localization and Global Communication",
+   "slug": "localization-and-global-communication",
+   "focus": "Terminology, translation, locale rules, cultural fit, layout direction, and multilingual release qa.",
+   "domain": "localization",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "strings.xlf",
+    "locale-qa.md"
+   ],
+   "checks": [
+    "terminology glossary applied",
+    "locale formats checked",
+    "text expansion budget respected"
+   ],
+   "skills": [
+    {
+     "id": "terminology-manager",
+     "name": "Terminology Manager",
+     "description": "multilingual release QA through a repeatable, tool-aware workflow. The Terminology Manager accepts recovery before delivery. It is optimized specifically for terminology manager, with clear inputs,"
+    },
+    {
+     "id": "document-translator",
+     "name": "Document Translator",
+     "description": "multilingual release QA through a repeatable, tool-aware workflow. The Document Translator accepts recovery before delivery. It is optimized specifically for document translator, with clear inputs,"
+    },
+    {
+     "id": "software-localization-adapter",
+     "name": "Software Localization Adapter",
+     "description": "multilingual release QA through a repeatable, tool-aware workflow. The Software Localization Adapter failure recovery before delivery. It is optimized specifically for software localization adapter, with clear"
+    },
+    {
+     "id": "subtitle-translator",
+     "name": "Subtitle Translator",
+     "description": "multilingual release QA through a repeatable, tool-aware workflow. The Subtitle Translator accepts recovery before delivery. It is optimized specifically for subtitle translator, with clear inputs, outputs,"
+    },
+    {
+     "id": "locale-formatting-validator",
+     "name": "Locale Formatting Validator",
+     "description": "multilingual release QA through a repeatable, tool-aware workflow. The Locale Formatting Validator failure recovery before delivery. It is optimized specifically for locale formatting validator, with clear"
+    },
+    {
+     "id": "right-to-left-layout-reviewer",
+     "name": "Right-to-Left Layout Reviewer",
+     "description": "multilingual release QA through a repeatable, tool-aware workflow. The Right-to-Left Layout Reviewer failure recovery before delivery. It is optimized specifically for right-to-left layout reviewer, with clear"
+    },
+    {
+     "id": "cultural-adaptation-reviewer",
+     "name": "Cultural Adaptation Reviewer",
+     "description": "multilingual release QA through a repeatable, tool-aware workflow. The Cultural Adaptation Reviewer failure recovery before delivery. It is optimized specifically for cultural adaptation reviewer, with clear"
+    },
+    {
+     "id": "translation-quality-estimator",
+     "name": "Translation Quality Estimator",
+     "description": "multilingual release QA through a repeatable, tool-aware workflow. The Translation Quality Estimator failure recovery before delivery. It is optimized specifically for translation quality estimator, with clear"
+    },
+    {
+     "id": "bilingual-glossary-builder",
+     "name": "Bilingual Glossary Builder",
+     "description": "multilingual release QA through a repeatable, tool-aware workflow. The Bilingual Glossary Builder failure recovery before delivery. It is optimized specifically for bilingual glossary builder, with clear"
+    },
+    {
+     "id": "multilingual-seo-adapter",
+     "name": "Multilingual SEO Adapter",
+     "description": "multilingual release QA through a repeatable, tool-aware workflow. The Multilingual SEO Adapter failure recovery before delivery. It is optimized specifically for multilingual seo adapter, with clear"
+    },
+    {
+     "id": "localized-accessibility-reviewer",
+     "name": "Localized Accessibility Reviewer",
+     "description": "multilingual release QA through a repeatable, tool-aware workflow. The Localized Accessibility Reviewer accepts explicit source material and constraints, preserves data and structure that are traceability, and failure recovery before delivery. It is optimized specifically for localized accessibility reviewer, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "language-release-packager",
+     "name": "Language Release Packager",
+     "description": "multilingual release QA through a repeatable, tool-aware workflow. The Language Release Packager failure recovery before delivery. It is optimized specifically for language release packager, with clear"
+    }
+   ]
+  },
+  {
+   "number": 31,
+   "name": "Knowledge Management and Enterprise Content",
+   "slug": "knowledge-management-and-enterprise-content",
+   "focus": "Taxonomies, connected knowledge, provenance, freshness, discoverability, and content lifecycle.",
+   "domain": "knowledge-management",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "taxonomy.json",
+    "provenance.md"
+   ],
+   "checks": [
+    "provenance attached",
+    "freshness date present",
+    "duplicate concepts merged"
+   ],
+   "skills": [
+    {
+     "id": "knowledge-base-architect",
+     "name": "Knowledge Base Architect",
+     "description": "content lifecycle through a repeatable, tool-aware workflow. The Knowledge Base Architect accepts recovery before delivery. It is optimized specifically for knowledge base architect, with clear inputs,"
+    },
+    {
+     "id": "content-taxonomy-designer",
+     "name": "Content Taxonomy Designer",
+     "description": "content lifecycle through a repeatable, tool-aware workflow. The Content Taxonomy Designer accepts recovery before delivery. It is optimized specifically for content taxonomy designer, with clear inputs,"
+    },
+    {
+     "id": "semantic-tagging-engine",
+     "name": "Semantic Tagging Engine",
+     "description": "content lifecycle through a repeatable, tool-aware workflow. The Semantic Tagging Engine accepts recovery before delivery. It is optimized specifically for semantic tagging engine, with clear inputs,"
+    },
+    {
+     "id": "duplicate-knowledge-detector",
+     "name": "Duplicate Knowledge Detector",
+     "description": "content lifecycle through a repeatable, tool-aware workflow. The Duplicate Knowledge Detector failure recovery before delivery. It is optimized specifically for duplicate knowledge detector, with"
+    },
+    {
+     "id": "faq-builder",
+     "name": "FAQ Builder",
+     "description": "content lifecycle through a repeatable, tool-aware workflow. The FAQ Builder accepts explicit source delivery. It is optimized specifically for faq builder, with clear inputs, outputs, stop conditions, and a"
+    },
+    {
+     "id": "expertise-locator",
+     "name": "Expertise Locator",
+     "description": "content lifecycle through a repeatable, tool-aware workflow. The Expertise Locator accepts explicit before delivery. It is optimized specifically for expertise locator, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "meeting-knowledge-extractor",
+     "name": "Meeting Knowledge Extractor",
+     "description": "content lifecycle through a repeatable, tool-aware workflow. The Meeting Knowledge Extractor failure recovery before delivery. It is optimized specifically for meeting knowledge extractor, with"
+    },
+    {
+     "id": "policy-knowledge-synchronizer",
+     "name": "Policy Knowledge Synchronizer",
+     "description": "content lifecycle through a repeatable, tool-aware workflow. The Policy Knowledge Synchronizer failure recovery before delivery. It is optimized specifically for policy knowledge synchronizer, with"
+    },
+    {
+     "id": "knowledge-freshness-monitor",
+     "name": "Knowledge Freshness Monitor",
+     "description": "content lifecycle through a repeatable, tool-aware workflow. The Knowledge Freshness Monitor failure recovery before delivery. It is optimized specifically for knowledge freshness monitor, with"
+    },
+    {
+     "id": "answer-provenance-builder",
+     "name": "Answer Provenance Builder",
+     "description": "content lifecycle through a repeatable, tool-aware workflow. The Answer Provenance Builder accepts recovery before delivery. It is optimized specifically for answer provenance builder, with clear inputs,"
+    },
+    {
+     "id": "content-lifecycle-manager",
+     "name": "Content Lifecycle Manager",
+     "description": "content lifecycle through a repeatable, tool-aware workflow. The Content Lifecycle Manager accepts recovery before delivery. It is optimized specifically for content lifecycle manager, with clear inputs,"
+    },
+    {
+     "id": "enterprise-search-tuner",
+     "name": "Enterprise Search Tuner",
+     "description": "content lifecycle through a repeatable, tool-aware workflow. The Enterprise Search Tuner accepts recovery before delivery. It is optimized specifically for enterprise search tuner, with clear inputs,"
+    }
+   ]
+  },
+  {
+   "number": 32,
+   "name": "Games, 3D, and Spatial Experiences",
+   "slug": "games-3d-and-spatial-experiences",
+   "focus": "Gameplay, levels, economies, 3d assets, animation, xr interaction, optimization, and builds.",
+   "domain": "games-spatial",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "design-doc.md",
+    "perf-budget.json"
+   ],
+   "checks": [
+    "perf budget stated",
+    "asset license recorded",
+    "input paths cover accessibility"
+   ],
+   "skills": [
+    {
+     "id": "game-design-document-builder",
+     "name": "Game Design Document Builder",
+     "description": "and builds through a repeatable, tool-aware workflow. The Game Design Document Builder accepts recovery before delivery. It is optimized specifically for game design document builder, with clear"
+    },
+    {
+     "id": "gameplay-system-architect",
+     "name": "Gameplay System Architect",
+     "description": "and builds through a repeatable, tool-aware workflow. The Gameplay System Architect accepts explicit before delivery. It is optimized specifically for gameplay system architect, with clear inputs, outputs,"
+    },
+    {
+     "id": "level-design-planner",
+     "name": "Level Design Planner",
+     "description": "and builds through a repeatable, tool-aware workflow. The Level Design Planner accepts explicit before delivery. It is optimized specifically for level design planner, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "game-economy-balancer",
+     "name": "Game Economy Balancer",
+     "description": "and builds through a repeatable, tool-aware workflow. The Game Economy Balancer accepts explicit before delivery. It is optimized specifically for game economy balancer, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "npc-behavior-designer",
+     "name": "NPC Behavior Designer",
+     "description": "and builds through a repeatable, tool-aware workflow. The NPC Behavior Designer accepts explicit before delivery. It is optimized specifically for npc behavior designer, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "quest-and-dialogue-composer",
+     "name": "Quest and Dialogue Composer",
+     "description": "and builds through a repeatable, tool-aware workflow. The Quest and Dialogue Composer accepts recovery before delivery. It is optimized specifically for quest and dialogue composer, with clear"
+    },
+    {
+     "id": "3d-scene-optimizer",
+     "name": "3D Scene Optimizer",
+     "description": "and builds through a repeatable, tool-aware workflow. The 3D Scene Optimizer accepts explicit source delivery. It is optimized specifically for 3d scene optimizer, with clear inputs, outputs, stop conditions,"
+    },
+    {
+     "id": "pbr-material-planner",
+     "name": "PBR Material Planner",
+     "description": "and builds through a repeatable, tool-aware workflow. The PBR Material Planner accepts explicit before delivery. It is optimized specifically for pbr material planner, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "animation-state-machine-builder",
+     "name": "Animation State Machine Builder",
+     "description": "and builds through a repeatable, tool-aware workflow. The Animation State Machine Builder accepts recovery before delivery. It is optimized specifically for animation state machine builder, with clear"
+    },
+    {
+     "id": "xr-interaction-designer",
+     "name": "XR Interaction Designer",
+     "description": "and builds through a repeatable, tool-aware workflow. The XR Interaction Designer accepts explicit before delivery. It is optimized specifically for xr interaction designer, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "spatial-performance-auditor",
+     "name": "Spatial Performance Auditor",
+     "description": "and builds through a repeatable, tool-aware workflow. The Spatial Performance Auditor accepts recovery before delivery. It is optimized specifically for spatial performance auditor, with clear inputs,"
+    },
+    {
+     "id": "build-packaging-verifier",
+     "name": "Build Packaging Verifier",
+     "description": "and builds through a repeatable, tool-aware workflow. The Build Packaging Verifier accepts explicit before delivery. It is optimized specifically for build packaging verifier, with clear inputs, outputs, stop"
+    }
+   ]
+  },
+  {
+   "number": 33,
+   "name": "Quality Evaluation and Benchmarking",
+   "slug": "quality-evaluation-and-benchmarking",
+   "focus": "Representative tests, score guides, adversarial cases, costs, regressions, and comparable reporting.",
+   "domain": "quality-evaluation",
+   "risk": "standard",
+   "approval_required": false,
+   "artifacts": [
+    "benchmark.json",
+    "score-guide.md"
+   ],
+   "checks": [
+    "test set representative",
+    "scoring reproducible",
+    "cost per run reported"
+   ],
+   "skills": [
+    {
+     "id": "capability-benchmark-designer",
+     "name": "Capability Benchmark Designer",
+     "description": "comparable reporting through a repeatable, tool-aware workflow. The Capability Benchmark Designer failure recovery before delivery. It is optimized specifically for capability benchmark designer, with"
+    },
+    {
+     "id": "golden-test-set-curator",
+     "name": "Golden Test Set Curator",
+     "description": "comparable reporting through a repeatable, tool-aware workflow. The Golden Test Set Curator accepts recovery before delivery. It is optimized specifically for golden test set curator, with clear inputs,"
+    },
+    {
+     "id": "rubric-and-scoring-builder",
+     "name": "Rubric and Scoring Builder",
+     "description": "comparable reporting through a repeatable, tool-aware workflow. The Rubric and Scoring Builder failure recovery before delivery. It is optimized specifically for rubric and scoring builder, with clear"
+    },
+    {
+     "id": "adversarial-test-generator",
+     "name": "Adversarial Test Generator",
+     "description": "comparable reporting through a repeatable, tool-aware workflow. The Adversarial Test Generator failure recovery before delivery. It is optimized specifically for adversarial test generator, with clear"
+    },
+    {
+     "id": "boundary-case-tester",
+     "name": "Boundary Case Tester",
+     "description": "comparable reporting through a repeatable, tool-aware workflow. The Boundary Case Tester accepts recovery before delivery. It is optimized specifically for boundary case tester, with clear inputs,"
+    },
+    {
+     "id": "hallucination-risk-evaluator",
+     "name": "Hallucination Risk Evaluator",
+     "description": "comparable reporting through a repeatable, tool-aware workflow. The Hallucination Risk Evaluator failure recovery before delivery. It is optimized specifically for hallucination risk evaluator, with clear"
+    },
+    {
+     "id": "tool-use-accuracy-judge",
+     "name": "Tool-Use Accuracy Judge",
+     "description": "comparable reporting through a repeatable, tool-aware workflow. The Tool-Use Accuracy Judge failure recovery before delivery. It is optimized specifically for tool-use accuracy judge, with clear"
+    },
+    {
+     "id": "artifact-quality-inspector",
+     "name": "Artifact Quality Inspector",
+     "description": "comparable reporting through a repeatable, tool-aware workflow. The Artifact Quality Inspector failure recovery before delivery. It is optimized specifically for artifact quality inspector, with clear"
+    },
+    {
+     "id": "accessibility-benchmark-runner",
+     "name": "Accessibility Benchmark Runner",
+     "description": "comparable reporting through a repeatable, tool-aware workflow. The Accessibility Benchmark Runner failure recovery before delivery. It is optimized specifically for accessibility benchmark runner, with"
+    },
+    {
+     "id": "latency-and-cost-profiler",
+     "name": "Latency and Cost Profiler",
+     "description": "comparable reporting through a repeatable, tool-aware workflow. The Latency and Cost Profiler failure recovery before delivery. It is optimized specifically for latency and cost profiler, with clear"
+    },
+    {
+     "id": "regression-benchmark-manager",
+     "name": "Regression Benchmark Manager",
+     "description": "comparable reporting through a repeatable, tool-aware workflow. The Regression Benchmark Manager accepts explicit source material and constraints, preserves data and structure that are traceability, and failure recovery before delivery. It is optimized specifically for regression benchmark manager, with clear inputs, outputs, stop conditions, and a minimal-change policy."
+    },
+    {
+     "id": "model-comparison-reporter",
+     "name": "Model Comparison Reporter",
+     "description": "comparable reporting through a repeatable, tool-aware workflow. The Model Comparison Reporter failure recovery before delivery. It is optimized specifically for model comparison reporter, with clear"
+    }
+   ]
+  },
+  {
+   "number": 34,
+   "name": "Packaging, Delivery, and Recovery",
+   "slug": "packaging-delivery-and-recovery",
+   "focus": "Versioned artifacts, manifests, integrity checks, reproducible setup, rollback, and clean handoff.",
+   "domain": "packaging-delivery",
+   "risk": "elevated",
+   "approval_required": true,
+   "artifacts": [
+    "artifact.zip",
+    "manifest.json"
+   ],
+   "checks": [
+    "integrity hashes verified",
+    "clean-room extraction tested",
+    "rollback bundle kept"
+   ],
+   "skills": [
+    {
+     "id": "artifact-manifest-builder",
+     "name": "Artifact Manifest Builder",
+     "description": "clean handoff through a repeatable, tool-aware workflow. The Artifact Manifest Builder accepts recovery before delivery. It is optimized specifically for artifact manifest builder, with clear inputs,"
+    },
+    {
+     "id": "versioned-delivery-packager",
+     "name": "Versioned Delivery Packager",
+     "description": "clean handoff through a repeatable, tool-aware workflow. The Versioned Delivery Packager accepts recovery before delivery. It is optimized specifically for versioned delivery packager, with clear inputs,"
+    },
+    {
+     "id": "checksum-and-integrity-verifier",
+     "name": "Checksum and Integrity Verifier",
+     "description": "clean handoff through a repeatable, tool-aware workflow. The Checksum and Integrity Verifier accepts recovery before delivery. It is optimized specifically for checksum and integrity verifier, with clear"
+    },
+    {
+     "id": "clean-state-reproduction-tester",
+     "name": "Clean-State Reproduction Tester",
+     "description": "clean handoff through a repeatable, tool-aware workflow. The Clean-State Reproduction Tester failure recovery before delivery. It is optimized specifically for clean-state reproduction tester, with"
+    },
+    {
+     "id": "dependency-lockfile-manager",
+     "name": "Dependency Lockfile Manager",
+     "description": "clean handoff through a repeatable, tool-aware workflow. The Dependency Lockfile Manager accepts recovery before delivery. It is optimized specifically for dependency lockfile manager, with clear"
+    },
+    {
+     "id": "archive-structure-validator",
+     "name": "Archive Structure Validator",
+     "description": "clean handoff through a repeatable, tool-aware workflow. The Archive Structure Validator accepts recovery before delivery. It is optimized specifically for archive structure validator, with clear inputs,"
+    },
+    {
+     "id": "editable-source-handoff-builder",
+     "name": "Editable Source Handoff Builder",
+     "description": "clean handoff through a repeatable, tool-aware workflow. The Editable Source Handoff Builder accepts recovery before delivery. It is optimized specifically for editable source handoff builder, with clear"
+    },
+    {
+     "id": "rollback-bundle-creator",
+     "name": "Rollback Bundle Creator",
+     "description": "clean handoff through a repeatable, tool-aware workflow. The Rollback Bundle Creator accepts explicit before delivery. It is optimized specifically for rollback bundle creator, with clear inputs, outputs, stop"
+    },
+    {
+     "id": "failure-isolation-coordinator",
+     "name": "Failure Isolation Coordinator",
+     "description": "clean handoff through a repeatable, tool-aware workflow. The Failure Isolation Coordinator accepts recovery before delivery. It is optimized specifically for failure isolation coordinator, with clear inputs,"
+    },
+    {
+     "id": "cross-platform-compatibility-tester",
+     "name": "Cross-Platform Compatibility Tester",
+     "description": "clean handoff through a repeatable, tool-aware workflow. The Cross-Platform Compatibility Tester failure recovery before delivery. It is optimized specifically for cross-platform compatibility tester, with"
+    },
+    {
+     "id": "release-notes-composer",
+     "name": "Release Notes Composer",
+     "description": "clean handoff through a repeatable, tool-aware workflow. The Release Notes Composer accepts recovery before delivery. It is optimized specifically for release notes composer, with clear inputs,"
+    },
+    {
+     "id": "final-delivery-gatekeeper",
+     "name": "Final Delivery Gatekeeper",
+     "description": "clean handoff through a repeatable, tool-aware workflow. The Final Delivery Gatekeeper accepts recovery before delivery. It is optimized specifically for final delivery gatekeeper, with clear inputs, Implementation Standard for Every Future Skill Trigger precision: State exactly when the skill should activate and when a different skill should be preferred. Input contract: List accepted files, schemas, connectors, required fields, optional fields, and size limits. Output contract: Define filenames, formats, folder structure, editability, metadata, and delivery expectations. Source-first behavior: Inspect provided material before generating replacements; reuse existing objects and conventions when safe. Scope control: Use allowlists, denylists, protected items, approvals, and irreversible-action gates. Verification: Run structural, semantic, visual, accessibility, integrity, and clean-state checks that can fail. Recovery: Preserve the last passing state, isolate the earliest bad state, repair the smallest cause, and rerun affected checks. Provenance: Record where material came from, which transformations were applied, and which claims remain uncertain. Security and privacy: Minimize data exposure, avoid secrets in logs, respect permissions, and scrub sensitive metadata when required. Handoff: Return usable artifacts, not process residue; include editable sources and reproducible instructions when appropriate."
+    }
+   ]
+  }
+ ]
+}

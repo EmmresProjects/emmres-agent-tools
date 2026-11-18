@@ -1,0 +1,84 @@
+{
+  "source": "AI Image Skill Catalog - quality rubrics and delivery specifications",
+  "visual_quality_rubric": {
+    "dimensions": [
+      {"id": "composition", "label": "Composition", "weight": 0.18, "description": "Balance, focal clarity, rule-of-thirds alignment, edge tension."},
+      {"id": "exposure", "label": "Exposure", "weight": 0.14, "description": "Histogram distribution, clipping in shadows and highlights."},
+      {"id": "contrast", "label": "Contrast", "weight": 0.10, "description": "Tonal separation between subject and ground."},
+      {"id": "color", "label": "Colour", "weight": 0.12, "description": "Saturation distribution, palette coherence, no channel clipping."},
+      {"id": "sharpness", "label": "Sharpness", "weight": 0.18, "description": "Edge energy and focus; blur detection."},
+      {"id": "noise", "label": "Noise", "weight": 0.10, "description": "Sensor or compression noise versus intentional grain."},
+      {"id": "artifacts", "label": "Artefacts", "weight": 0.12, "description": "Banding, blocking, tiling seams, halos, duplicates."},
+      {"id": "resolution", "label": "Resolution fit", "weight": 0.06, "description": "Sufficient pixels for the intended delivery size."}
+    ],
+    "bands": [
+      {"id": "pass", "label": "Pass", "min": 80, "action": "Release candidate."},
+      {"id": "revise", "label": "Revise", "min": 60, "action": "Target the two lowest dimensions and re-render."},
+      {"id": "reject", "label": "Reject", "min": 0, "action": "Re-render from the prompt, not from a rescue edit."}
+    ],
+    "thresholds": {
+      "clip_high_pct": 2.0,
+      "clip_low_pct": 5.0,
+      "min_sharpness": 12.0,
+      "max_noise_sigma": 9.0,
+      "min_contrast_ratio": 1.35,
+      "saturation_min": 0.04,
+      "saturation_max": 0.92,
+      "banding_step_pct": 1.2
+    }
+  },
+  "artifact_checks": [
+    {"id": "banding", "label": "Gradient banding", "method": "detect contour steps in smooth luminance ramps"},
+    {"id": "blocking", "label": "JPEG blocking", "method": "measure 8x8 block boundary energy"},
+    {"id": "tile_seam", "label": "Tiling seam", "method": "detect periodic discontinuity at 512 px intervals"},
+    {"id": "halo", "label": "Edge halo", "method": "detect bright rim around high-contrast subject boundaries"},
+    {"id": "duplication", "label": "Duplicated region", "method": "detect horizontally or vertically repeated blocks"},
+    {"id": "flat_region", "label": "Flat / dead region", "method": "detect large areas with near-zero variance"},
+    {"id": "clipping", "label": "Channel clipping", "method": "measure pure black and pure white pixel share"},
+    {"id": "aspect", "label": "Unexpected aspect", "method": "compare rendered aspect to the requested aspect"}
+  ],
+  "adherence_checks": [
+    {"id": "subject_present", "label": "Requested subject appears"},
+    {"id": "attributes", "label": "Requested attributes appear"},
+    {"id": "relationships", "label": "Requested relationships are correct"},
+    {"id": "count", "label": "Object count is correct"},
+    {"id": "style", "label": "Requested style is applied"},
+    {"id": "composition", "label": "Requested framing is respected"},
+    {"id": "exclusions", "label": "Explicitly excluded content is absent"},
+    {"id": "text", "label": "Requested text is legible and exact"},
+    {"id": "no_artifacts", "label": "No blocking artefacts in key regions"}
+  ],
+  "delivery": {
+    "web": {"min_width": 1200, "max_bytes": 500000, "formats": ["png", "jpeg", "webp", "avif"], "color_spaces": ["srgb"], "note": "Strip metadata on public web delivery."},
+    "social": {"min_width": 1080, "max_bytes": 8000000, "formats": ["png", "jpeg"], "color_spaces": ["srgb"], "note": "Keep the focal point inside the platform crop."},
+    "print": {"min_dpi": 300, "max_bytes": 200000000, "formats": ["tiff", "png"], "color_spaces": ["cmyk_oriented"], "note": "Supply bleed and keep the safe area 5 mm inside the trim."},
+    "email": {"max_width": 1200, "max_bytes": 2000000, "formats": ["jpeg", "png", "webp"], "color_spaces": ["srgb"], "note": "Inline images must stay under 2 MB."},
+    "archive": {"max_bytes": 0, "formats": ["png", "tiff", "psd", "svg", "json"], "color_spaces": ["srgb", "display_p3", "cmyk_oriented"], "note": "Retain editable sources and sidecars."}
+  },
+  "naming": {
+    "patterns": {
+      "campaign": "{campaign}_{index}_{slug}",
+      "product": "{sku}_{angle}_{colorway}_{seed}",
+      "editorial": "{date}_{section}_{slug}_v{version}",
+      "web": "{slug}_{width}x{height}_{hash8}"
+    },
+    "rules": [
+      "lowercase kebab-case slug",
+      "no spaces, no parentheses, no diacritics",
+      "include the campaign or SKU identifier",
+      "include the seed when the asset must be reproducible",
+      "never overwrite: version instead"
+    ]
+  },
+  "print": {
+    "dpi_targets": {"poster_large": 150, "poster_small": 300, "book": 300, "packaging": 300, "large_format": 120},
+    "bleed_mm": 3.0,
+    "safe_margin_mm": 5.0,
+    "viewing_distance_rule": "characters should be roughly 1/30 of the viewing distance in mm"
+  },
+  "human_review": {
+    "sampling": {"first_pass": 0.20, "escalation": 0.05, "full": 0.0},
+    "disagreement": {"second_reviewer": true, "third_reviewer_above_delta": 15, "adjudication_hours": 24},
+    "thresholds": {"accept_score": 80, "reject_score": 55}
+  }
+}

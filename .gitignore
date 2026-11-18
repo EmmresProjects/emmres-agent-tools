@@ -1,0 +1,43 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+*.key
+*.pem
+*.pfx
+*.p12
+*.jks
+*.keystore
+
+# Generated caches and temporary files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+_cache/
+_downloads/
+tmp/
+temp/
+logs/
+*.log
+
+# Local runtime environments
+.venv/
+venv/
+
+# Build output
+build/
+dist/
+out/
+*.egg-info/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

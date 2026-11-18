@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "policy_version": "1.0.0",
+  "notes": "Thresholds used by tools-audio-qa.py. Every value here is editable; gates read the delivery preset for loudness, peak, format and channel targets.",
+  "default_preset": "streaming-music",
+  "integrated_tolerance_lu": 1.0,
+  "silence_threshold_dbfs": -60.0,
+  "click_sensitivity": 8.0,
+  "max_clipped_runs": 0,
+  "max_dc_offset": 0.002,
+  "max_clicks_per_minute": 2,
+  "min_correlation": -0.2,
+  "max_mono_loss_db": -6.0,
+  "max_silence_ratio": 0.98,
+  "check_integrity": true,
+  "check_clipping": true,
+  "check_dc": true,
+  "check_clicks": true,
+  "check_stereo": true,
+  "check_silence": true,
+  "gates": [
+    {
+      "id": "loudness.integrated",
+      "label": "Integrated loudness within the preset target",
+      "metric": "integrated_lufs",
+      "severity": "fail"
+    },
+    {
+      "id": "level.true_peak",
+      "label": "True peak below the preset ceiling",
+      "metric": "true_peak_dbtp",
+      "severity": "fail"
+    },
+    {
+      "id": "loudness.range",
+      "label": "Loudness range inside the style guide",
+      "metric": "loudness_range_lu",
+      "severity": "warn"
+    },
+    {
+      "id": "integrity.structure",
+      "label": "Container and chunk structure valid",
+      "metric": "structurally_valid",
+      "severity": "fail"
+    },
+    {
+      "id": "integrity.sample_rate",
+      "label": "Sample rate matches the delivery spec",
+      "metric": "sample_rate",
+      "severity": "warn"
+    },
+    {
+      "id": "integrity.bit_depth",
+      "label": "Bit depth at or above the delivery spec",
+      "metric": "bit_depth",
+      "severity": "warn"
+    },
+    {
+      "id": "level.clipping",
+      "label": "No runs of clipped samples",
+      "metric": "clipped_runs",
+      "severity": "fail"
+    },
+    {
+      "id": "defects.dc_offset",
+      "label": "DC offset under the tolerance",
+      "metric": "dc_offset_max",
+      "severity": "warn"
+    },
+    {
+      "id": "defects.clicks",
+      "label": "No transient clicks or dropouts",
+      "metric": "click_count",
+      "severity": "warn"
+    },
+    {
+      "id": "stereo.correlation",
+      "label": "Positive enough stereo correlation for mono safety",
+      "metric": "correlation",
+      "severity": "fail"
+    },
+    {
+      "id": "stereo.mono_fold",
+      "label": "Mono fold-down keeps most of the energy",
+      "metric": "mono_fold_loss_db",
+      "severity": "warn"
+    },
+    {
+      "id": "structure.silence",
+      "label": "Programme is not effectively silent",
+      "metric": "silence_ratio",
+      "severity": "warn"
+    }
+  ]
+}

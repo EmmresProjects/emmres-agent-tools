@@ -1,0 +1,21 @@
+{
+  "dat_id": "local-trusted-dat",
+  "name": "Operator-maintained trusted DAT",
+  "version": "1970-01-01",
+  "source": "operator-supplied (No-Intro, Redump, TOSEC, MAME or an in-house catalog)",
+  "license": "record the license of the DAT source here",
+  "schema_version": "1.0",
+  "match_order": [
+    "sha256",
+    "sha1",
+    "md5",
+    "crc32+size"
+  ],
+  "notes": [
+    "One entry per known-good file. Populate the hashes from a DAT source you are licensed to use.",
+    "This template ships with zero entries on purpose: the tool never invents hashes or claims.",
+    "Add entries, then run: tools-console-agent.py verify --dat <this file> --path <files>",
+    "Entries match in match_order sequence; 'crc32+size' is the weakest fallback and is reported as such."
+  ],
+  "entries": []
+}

@@ -1,0 +1,191 @@
+{
+  "schema": "foic.pipeline-presets/1",
+  "version": "1.0.0",
+  "models": {
+    "sdxl-base": {
+      "family": "sdxl",
+      "class": "stable-diffusion-xl",
+      "component_files": ["sdxl_base.safetensors", "model_index.json"],
+      "format": "safetensors",
+      "default_resolution": [1024, 1024],
+      "supported_resolutions": [[1024, 1024], [1152, 896], [896, 1152], [1216, 832], [832, 1216], [1344, 768], [768, 1344]],
+      "vae": "sdxl-vae-fp16-fix",
+      "text_encoders": ["clip-vit-large-g14", "clip-vit-bigG"],
+      "tokenizer_limit": 77,
+      "dual_text_encoder": true,
+      "vram_gb_min": 10,
+      "vram_gb_recommended": 16,
+      "license": "creativeml-openrail-m",
+      "runtime": "diffusers"
+    },
+    "sd15-base": {
+      "family": "sd15",
+      "class": "stable-diffusion-1.5",
+      "component_files": ["v1-5-pruned-emaonly.safetensors", "model_index.json"],
+      "format": "safetensors",
+      "default_resolution": [512, 512],
+      "supported_resolutions": [[512, 512], [768, 512], [512, 768], [640, 640]],
+      "vae": "sd15-vae-ft-mse",
+      "text_encoders": ["clip-vit-large-g14"],
+      "tokenizer_limit": 75,
+      "dual_text_encoder": false,
+      "vram_gb_min": 4,
+      "vram_gb_recommended": 8,
+      "license": "creativeml-openrail-m",
+      "runtime": "diffusers"
+    },
+    "flux-dev": {
+      "family": "flux",
+      "class": "flux.1-dev",
+      "component_files": ["flux1-dev.safetensors", "model_index.json"],
+      "format": "safetensors",
+      "default_resolution": [1024, 1024],
+      "supported_resolutions": [[1024, 1024], [1152, 896], [896, 1152], [1360, 768]],
+      "vae": "flux-ae",
+      "text_encoders": ["clip-vit-large-g14", "t5-xxl"],
+      "tokenizer_limit": 512,
+      "dual_text_encoder": true,
+      "vram_gb_min": 16,
+      "vram_gb_recommended": 24,
+      "license": "flux.1-dev-non-commercial",
+      "runtime": "diffusers"
+    },
+    "sd3-medium": {
+      "family": "sd3",
+      "class": "stable-diffusion-3-medium",
+      "component_files": ["sd3_medium.safetensors", "model_index.json"],
+      "format": "safetensors",
+      "default_resolution": [1024, 1024],
+      "supported_resolutions": [[1024, 1024], [1152, 896], [896, 1152]],
+      "vae": "sd3-vae",
+      "text_encoders": ["clip-vit-large-g14", "clip-vit-bigG", "t5-xxl"],
+      "tokenizer_limit": 256,
+      "dual_text_encoder": true,
+      "vram_gb_min": 12,
+      "vram_gb_recommended": 20,
+      "license": "stability-ai-community",
+      "runtime": "diffusers"
+    }
+  },
+  "samplers": {
+    "dpm++_2m_karras": {"scheduler": "karras", "family": "dpm-solver++", "order": 2, "default_steps": 28, "min_steps": 15, "sde": false},
+    "euler_a": {"scheduler": "ancestral", "family": "euler", "order": 1, "default_steps": 30, "min_steps": 18, "sde": false},
+    "euler": {"scheduler": "linear", "family": "euler", "order": 1, "default_steps": 30, "min_steps": 20, "sde": false},
+    "ddim": {"scheduler": "linear", "family": "ddim", "order": 1, "default_steps": 40, "min_steps": 25, "sde": false},
+    "unipc": {"scheduler": "linear", "family": "unipc", "order": 2, "default_steps": 25, "min_steps": 12, "sde": false},
+    "lcm": {"scheduler": "lcm", "family": "lcm", "order": 1, "default_steps": 6, "min_steps": 4, "sde": false},
+    "heun": {"scheduler": "karras", "family": "heun", "order": 2, "default_steps": 24, "min_steps": 15, "sde": false}
+  },
+  "operations": {
+    "txt2img": {
+      "steps": 30,
+      "guidance": 7.0,
+      "sampler": "dpm++_2m_karras",
+      "seed": -1,
+      "batch_size": 1,
+      "tiling": false,
+      "requires": ["model", "prompt"]
+    },
+    "img2img": {
+      "steps": 30,
+      "guidance": 7.0,
+      "sampler": "dpm++_2m_karras",
+      "denoise_strength": 0.65,
+      "seed": -1,
+      "resize_mode": "crop-and-resize",
+      "requires": ["model", "prompt", "input_image"]
+    },
+    "inpaint": {
+      "steps": 34,
+      "guidance": 7.5,
+      "sampler": "dpm++_2m_karras",
+      "denoise_strength": 0.85,
+      "mask_blur": 8,
+      "inpaint_area": "only-masked",
+      "seed": -1,
+      "requires": ["model", "prompt", "input_image", "mask"]
+    },
+    "outpaint": {
+      "steps": 34,
+      "guidance": 7.5,
+      "sampler": "dpm++_2m_karras",
+      "denoise_strength": 0.9,
+      "expand": {"left": 256, "right": 256, "top": 0, "bottom": 0},
+      "mask_feather": 24,
+      "seed": -1,
+      "requires": ["model", "prompt", "input_image"]
+    },
+    "upscale": {
+      "upscaler": "real-esrgan-x4plus",
+      "scale": 4,
+      "tile_size": 512,
+      "tile_overlap": 32,
+      "face_enhance": false,
+      "denoise_before_upscale": 0.0,
+      "sharpen_after": 0.2,
+      "seed": -1,
+      "requires": ["input_image"]
+    },
+    "controlnet": {
+      "steps": 32,
+      "guidance": 7.0,
+      "sampler": "dpm++_2m_karras",
+      "control_type": "canny",
+      "control_weight": 0.85,
+      "guidance_start": 0.0,
+      "guidance_end": 0.85,
+      "control_mode": "balanced",
+      "seed": -1,
+      "requires": ["model", "prompt", "control_image"]
+    },
+    "lora": {
+      "steps": 30,
+      "guidance": 7.0,
+      "sampler": "dpm++_2m_karras",
+      "loras": [],
+      "seed": -1,
+      "requires": ["model", "prompt"]
+    },
+    "remove-bg": {
+      "segmenter": "sam-vit-b",
+      "alpha_matting": true,
+      "matting_erode": 10,
+      "refine_edges": true,
+      "postprocess_mask": true,
+      "requires": ["input_image"]
+    },
+    "restore-face": {
+      "restorer": "gfpgan-v1.4",
+      "fidelity_weight": 0.7,
+      "upscale": 2,
+      "detect_faces_first": true,
+      "seed": -1,
+      "requires": ["input_image"]
+    }
+  },
+  "memory_fallbacks": {
+    "vram_ladder_gb": [4, 6, 8, 10, 12, 16, 24, 32],
+    "rules": [
+      {"when_vram_below_gb": 6, "apply": ["attention_slicing", "vae_tiling", "fp16", "sequential_cpu_offload"], "max_resolution": [512, 512]},
+      {"when_vram_below_gb": 10, "apply": ["attention_slicing", "vae_tiling", "fp16", "model_cpu_offload"], "max_resolution": [768, 768]},
+      {"when_vram_below_gb": 16, "apply": ["attention_slicing", "vae_tiling", "fp16"], "max_resolution": [1024, 1024]},
+      {"when_vram_below_gb": 24, "apply": ["vae_tiling", "fp16"], "max_resolution": [1280, 1280]},
+      {"when_vram_below_gb": 999, "apply": [], "max_resolution": [2048, 2048]}
+    ],
+    "cpu_only": {
+      "apply": ["attention_slicing", "vae_tiling", "fp32", "cpu_offload", "tiled_upscale"],
+      "max_resolution": [512, 512],
+      "note": "CPU execution is supported but slow; the plan records the quality-neutral flag and the expected slowdown."
+    },
+    "quantization_options": ["none", "fp16", "bf16", "int8-dynamic", "nf4"],
+    "oom_recovery": ["retry_lower_resolution", "enable_tiling", "enable_attention_slicing", "enable_offload", "switch_to_cpu"]
+  },
+  "control_types": ["canny", "softedge-hed", "depth-midas", "normal-bae", "openpose", "lineart", "scribble", "seg-ofade20k", "tile", "inpaint", "mlsd", "shuffle", "reference"],
+  "output": {
+    "format": "png",
+    "quality": 95,
+    "write_provenance": true,
+    "strip_metadata": false,
+    "filename_template": "{kind}-{model}-{seed:08d}.png"
+  }
+}

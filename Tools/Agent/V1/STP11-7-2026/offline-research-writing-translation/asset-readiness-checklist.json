@@ -1,0 +1,62 @@
+{
+  "asset": "readiness-checklist",
+  "version": "1.0.0",
+  "purpose": "Publication-readiness gate checks evaluated by collections.readiness / workflow.gate. Evidence JSON maps check id -> true when satisfied.",
+  "checks": [
+    {
+      "id": "sources-ingested",
+      "description": "All cited sources ingested and hash-recorded in the corpus",
+      "required": true
+    },
+    {
+      "id": "claims-linked",
+      "description": "Every material claim linked to evidence with locators",
+      "required": true
+    },
+    {
+      "id": "citations-verified",
+      "description": "Citations resolve and quotations match sources (claims.quote-verify)",
+      "required": true
+    },
+    {
+      "id": "numbers-rechecked",
+      "description": "All reported statistics recomputed (numbers.recheck / audit-stat)",
+      "required": true
+    },
+    {
+      "id": "calibration-pass",
+      "description": "Overconfident-language pass complete (text.calibration) or waivers logged",
+      "required": true
+    },
+    {
+      "id": "accessibility-pass",
+      "description": "Accessible deliverable check passed (deliver.accessible-check / pdf-preflight)",
+      "required": true
+    },
+    {
+      "id": "rights-cleared",
+      "description": "Licenses/embargoes/attribution verified for all included material (security.rights)",
+      "required": true
+    },
+    {
+      "id": "redaction-applied",
+      "description": "Sensitive content scan clean or redacted (security.redact-scan)",
+      "required": true
+    },
+    {
+      "id": "translation-qa",
+      "description": "QA score >= 95 with zero critical errors for each language edition",
+      "required": false
+    },
+    {
+      "id": "approver-signoff",
+      "description": "Named approver recorded in the decision log (workflow.gate)",
+      "required": true
+    },
+    {
+      "id": "handoff-packaged",
+      "description": "Reproducible handoff archive built and reopen-tested (deliver.handoff + reopen)",
+      "required": true
+    }
+  ]
+}

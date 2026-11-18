@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "schemes": {
+    "cyrillic-latin-basic": {
+      "source_script": "cyrl",
+      "target_script": "latn",
+      "language_note": "A reversible scholarly-style basic Cyrillic mapping, not pronunciation-based transliteration or a passport/legal-name standard.",
+      "digraphs": {"А": "A", "а": "a", "Б": "B", "б": "b", "В": "V", "в": "v", "Г": "G", "г": "g", "Д": "D", "д": "d", "Е": "E", "е": "e", "Ё": "Ë", "ё": "ë", "Ж": "Ž", "ж": "ž", "З": "Z", "з": "z", "И": "I", "и": "i", "Й": "J", "й": "j", "К": "K", "к": "k", "Л": "L", "л": "l", "М": "M", "м": "m", "Н": "N", "н": "n", "О": "O", "о": "o", "П": "P", "п": "p", "Р": "R", "р": "r", "С": "S", "с": "s", "Т": "T", "т": "t", "У": "U", "у": "u", "Ф": "F", "ф": "f", "Х": "H", "х": "h", "Ц": "C", "ц": "c", "Ч": "Č", "ч": "č", "Ш": "Š", "ш": "š", "Щ": "Ŝ", "щ": "ŝ", "Ъ": "ʺ", "ъ": "ʺ", "Ы": "Y", "ы": "y", "Ь": "ʹ", "ь": "ʹ", "Э": "È", "э": "è", "Ю": "Û", "ю": "û", "Я": "Â", "я": "â"}
+    },
+    "greek-latin-basic": {
+      "source_script": "grek",
+      "target_script": "latn",
+      "language_note": "A configurable monotonic Greek character mapping, not a complete ISO 843 phonetic or historic polytonic implementation.",
+      "digraphs": {"Α": "A", "α": "a", "Β": "V", "β": "v", "Γ": "G", "γ": "g", "Δ": "D", "δ": "d", "Ε": "E", "ε": "e", "Ζ": "Z", "ζ": "z", "Η": "Ī", "η": "ī", "Θ": "Th", "θ": "th", "Ι": "I", "ι": "i", "Κ": "K", "κ": "k", "Λ": "L", "λ": "l", "Μ": "M", "μ": "m", "Ν": "N", "ν": "n", "Ξ": "X", "ξ": "x", "Ο": "O", "ο": "o", "Π": "P", "π": "p", "Ρ": "R", "ρ": "r", "Σ": "S", "σ": "s", "ς": "s", "Τ": "T", "τ": "t", "Υ": "Y", "υ": "y", "Φ": "F", "φ": "f", "Χ": "Ch", "χ": "ch", "Ψ": "Ps", "ψ": "ps", "Ω": "Ō", "ω": "ō"}
+    }
+  }
+}

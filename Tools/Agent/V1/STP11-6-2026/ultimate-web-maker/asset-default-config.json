@@ -1,0 +1,685 @@
+{
+  "schema_version": 1,
+  "limits": {
+    "max_brief_bytes": 1048576,
+    "max_selection_bytes": 262144,
+    "max_config_bytes": 1048576,
+    "max_project_files": 2500,
+    "max_project_entries": 10000,
+    "max_file_bytes": 1048576,
+    "max_total_bytes": 33554432,
+    "max_depth": 12,
+    "max_findings": 500,
+    "operation_timeout_seconds": 90
+  },
+  "scanner": {
+    "skip_directories": [
+      ".git",
+      ".hg",
+      ".svn",
+      "node_modules",
+      ".venv",
+      "venv",
+      "__pycache__",
+      ".cache",
+      ".next",
+      "dist",
+      "build",
+      "coverage",
+      "vendor",
+      "target",
+      "out"
+    ],
+    "text_extensions": [
+      ".html",
+      ".htm",
+      ".css",
+      ".scss",
+      ".sass",
+      ".less",
+      ".js",
+      ".mjs",
+      ".cjs",
+      ".jsx",
+      ".ts",
+      ".tsx",
+      ".json",
+      ".webmanifest",
+      ".svg",
+      ".xml",
+      ".yml",
+      ".yaml",
+      ".toml",
+      ".md",
+      ".txt",
+      ".php",
+      ".py",
+      ".go",
+      ".rb",
+      ".java",
+      ".cs",
+      ".rs",
+      ".sql",
+      ".sh",
+      ".conf",
+      ".ini",
+      ".properties",
+      ".dockerfile"
+    ],
+    "fail_on": "high"
+  },
+  "profiles": {
+    "editorial": {
+      "background": "#f4f0e8",
+      "surface": "#fffdf8",
+      "ink": "#17211d",
+      "muted": "#5b665f",
+      "accent": "#a84832",
+      "accent_ink": "#ffffff",
+      "font_stack": "Georgia, 'Times New Roman', serif"
+    },
+    "studio": {
+      "background": "#101713",
+      "surface": "#1a241e",
+      "ink": "#f4f5ee",
+      "muted": "#b5c1b8",
+      "accent": "#c1fa70",
+      "accent_ink": "#14200f",
+      "font_stack": "Arial, Helvetica, sans-serif"
+    },
+    "minimal": {
+      "background": "#f7f8fb",
+      "surface": "#ffffff",
+      "ink": "#172033",
+      "muted": "#53627a",
+      "accent": "#315bd6",
+      "accent_ink": "#ffffff",
+      "font_stack": "Arial, Helvetica, sans-serif"
+    }
+  },
+  "approval_policy": {
+    "explicit_approval_required_for": [
+      "publishing",
+      "deployment",
+      "dns_changes",
+      "live_payments",
+      "credential_use",
+      "production_data_changes",
+      "destructive_overwrite",
+      "privileged_security_changes"
+    ],
+    "scaffold_overwrite": "never",
+    "report_overwrite_flag": "--force"
+  },
+  "workflows": {
+    "1": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Outcome and audience brief",
+        "User journeys and scoped feature list",
+        "Milestones, risks, and acceptance gates"
+      ],
+      "checks": [
+        "State the single primary outcome and how it will be observed.",
+        "Name primary users and map their highest-value journey from entry to completion.",
+        "Separate launch-critical features from later work; give each feature an observable acceptance check.",
+        "Record constraints, integrations, assumptions, owners, and unresolved decisions."
+      ]
+    },
+    "2": {
+      "kind": "research",
+      "audit_tags": [],
+      "deliverables": [
+        "Version and compatibility questions",
+        "Official-source verification checklist",
+        "Reproducible environment notes"
+      ],
+      "checks": [
+        "Record exact runtime, framework, package, browser, protocol, and hosting versions in scope.",
+        "Verify every version-sensitive claim against the relevant official documentation and release notes.",
+        "Run the proposed syntax and behavior in the actual target environment; record commands and results.",
+        "Do not treat this offline tool's catalog or heuristics as current documentation research."
+      ]
+    },
+    "3": {
+      "kind": "design",
+      "audit_tags": [],
+      "deliverables": [
+        "Design direction and visual hierarchy",
+        "Reusable color and type tokens",
+        "Responsive composition notes"
+      ],
+      "checks": [
+        "Tie the visual concept to audience, product character, and content rather than a generic preset.",
+        "Define semantic color roles, readable type scales, spacing rhythm, and component states.",
+        "Check contrast, focus visibility, reduced motion, and narrow-screen composition with people and tools.",
+        "Treat the selected profile as a starting point; replace it with approved brand tokens when available."
+      ]
+    },
+    "4": {
+      "kind": "audit",
+      "audit_tags": [
+        "responsive",
+        "performance",
+        "accessibility"
+      ],
+      "deliverables": [
+        "Responsive CSS findings",
+        "Layout and design-token review checklist"
+      ],
+      "checks": [
+        "Exercise narrow, wide, zoomed, and content-heavy viewports; avoid fixed-width clipping.",
+        "Verify focus styles, reduced-motion behavior, logical reading order, and text resizing.",
+        "Check layout containment and image sizing at the actual supported browser widths."
+      ]
+    },
+    "5": {
+      "kind": "audit",
+      "audit_tags": [
+        "html",
+        "accessibility",
+        "seo",
+        "navigation"
+      ],
+      "deliverables": [
+        "Semantic markup and local-link findings",
+        "Document-structure checklist"
+      ],
+      "checks": [
+        "Use landmarks, headings, labels, and native controls for their intended meaning.",
+        "Verify document language, title, description, metadata, form labels, and media alternatives.",
+        "Resolve local URLs and fragments; validate rendered behavior in target browsers."
+      ]
+    },
+    "6": {
+      "kind": "audit",
+      "audit_tags": [
+        "javascript",
+        "security",
+        "performance"
+      ],
+      "deliverables": [
+        "Browser-code heuristic findings",
+        "State, async, and error-handling checklist"
+      ],
+      "checks": [
+        "Keep UI state and asynchronous flows explicit; provide loading, success, and failure behavior.",
+        "Avoid unsafe HTML sinks and dynamic-code execution; validate untrusted data at boundaries.",
+        "Test keyboard interaction, storage privacy, error recovery, and performance on representative devices."
+      ]
+    },
+    "7": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Framework fit and migration decision record",
+        "Routing, rendering, data, and deployment questions"
+      ],
+      "checks": [
+        "Confirm framework and version from the project, not from assumptions or this static catalog.",
+        "Choose routing, rendering, state, data-fetching, and server boundaries based on requirements.",
+        "Verify official migration guidance, supported browser targets, build behavior, and hosting constraints.",
+        "Run the framework's own install, type, build, and test commands only in a trusted development environment."
+      ]
+    },
+    "8": {
+      "kind": "audit",
+      "audit_tags": [
+        "accessibility",
+        "performance",
+        "javascript"
+      ],
+      "deliverables": [
+        "Interaction and motion safety review",
+        "Keyboard and reduced-motion checklist"
+      ],
+      "checks": [
+        "Make hover-only actions available to keyboard and touch users.",
+        "Respect prefers-reduced-motion and provide a meaningful no-animation path.",
+        "Test focus, loading, disabled, success, error, and repeated-activation states."
+      ]
+    },
+    "9": {
+      "kind": "audit",
+      "audit_tags": [
+        "accessibility",
+        "html"
+      ],
+      "deliverables": [
+        "Static accessibility findings",
+        "Manual assistive-technology test plan"
+      ],
+      "checks": [
+        "Test all journeys with keyboard only, visible focus, zoom, and a screen reader.",
+        "Verify names, roles, values, error announcements, contrast, captions, and focus restoration.",
+        "Use automated findings as prompts for manual review; this tool does not certify WCAG conformance."
+      ]
+    },
+    "10": {
+      "kind": "audit",
+      "audit_tags": [
+        "navigation",
+        "seo",
+        "html"
+      ],
+      "deliverables": [
+        "Route, link, and fragment findings",
+        "Navigation and search acceptance checklist"
+      ],
+      "checks": [
+        "Make route labels predictable and preserve a usable back/share URL experience.",
+        "Test empty, invalid, filtered, and no-result states for search and navigation.",
+        "Check local links and fragments, active states, redirect intent, and keyboard operability."
+      ]
+    },
+    "11": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Content types and editorial workflow",
+        "Roles, preview, media, and migration controls"
+      ],
+      "checks": [
+        "Define content models, required fields, ownership, draft and preview behavior.",
+        "Map editor roles and least-privilege publishing permissions.",
+        "Plan media accessibility, localization, backup, API, and rollback before CMS migration.",
+        "Verify CMS version, plugins, and hosting requirements against official sources."
+      ]
+    },
+    "12": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Catalog, cart, and order flow specification",
+        "Payment, privacy, and operational gate checklist"
+      ],
+      "checks": [
+        "Specify product variants, inventory, tax, shipping, promotions, refunds, and order states.",
+        "Use a compliant hosted payment provider; never store raw card data in application code or this tool.",
+        "Test idempotency, failed payments, retries, refunds, webhooks, and reconciliation in a sandbox.",
+        "Require human approval and provider-specific review before live transactions or publishing."
+      ]
+    },
+    "13": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Identity flows and threat checklist",
+        "Session, roles, recovery, and abuse-control requirements"
+      ],
+      "checks": [
+        "Select a maintained identity provider or a reviewed authentication design; never embed credentials.",
+        "Specify session rotation, logout, recovery, verification, MFA/passkeys, roles, and audit events.",
+        "Threat-model account enumeration, credential stuffing, session theft, and privilege escalation.",
+        "Test recovery and abuse controls without using real user credentials in fixtures."
+      ]
+    },
+    "14": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Support journey and case workflow",
+        "Privacy-aware CRM and escalation requirements"
+      ],
+      "checks": [
+        "Define searchable help, ticket states, service targets, escalation, and human handoff.",
+        "Map customer data fields, consent, retention, access, and deletion behavior.",
+        "Test notification delivery, duplicate messages, failures, and accessible communication alternatives."
+      ]
+    },
+    "15": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "API boundary and error contract",
+        "Authentication, persistence, and observability checklist"
+      ],
+      "checks": [
+        "Define request and response schemas, validation, status codes, pagination, and error shape.",
+        "Specify identity, authorization, rate limits, idempotency, timeouts, and data ownership.",
+        "Add contract, integration, failure-path, migration, and observability tests before release.",
+        "Do not run or deploy server code from this tool; review commands in the target runtime separately."
+      ]
+    },
+    "16": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Runtime and language compatibility matrix",
+        "Build, concurrency, memory, and deployment questions"
+      ],
+      "checks": [
+        "Record the exact requested runtime, compiler, package manager, and supported versions.",
+        "Verify language-specific behavior and dependencies in the official runtime documentation.",
+        "Design bounded concurrency, resource handling, errors, health checks, and reproducible builds.",
+        "Do not claim compilation or runtime support until the target environment has been tested."
+      ]
+    },
+    "17": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Integration contract and dependency map",
+        "Auth, retry, and failure-mode checklist"
+      ],
+      "checks": [
+        "Document each provider's owner, version, data exchanged, authentication, and failure behavior.",
+        "Set bounded timeouts, retries with backoff, rate limits, idempotency, and circuit/fallback behavior.",
+        "Keep secrets in the target platform's secret store and redact them from logs and reports.",
+        "Test contract drift, outage, duplicate delivery, and credential rotation without live side effects."
+      ]
+    },
+    "18": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Data model and lifecycle sketch",
+        "Migration, retention, and restore verification plan"
+      ],
+      "checks": [
+        "Define entities, constraints, ownership, indexes, transaction boundaries, and deletion rules.",
+        "Plan backward-compatible migrations, backup verification, restore tests, and rollback limits.",
+        "Review query patterns, contention, sensitive fields, retention, and access boundaries.",
+        "Require approval before production schema or data changes."
+      ]
+    },
+    "19": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Event and delivery semantics",
+        "Queue, retry, deduplication, and backpressure checklist"
+      ],
+      "checks": [
+        "Specify event schema, ordering, delivery guarantee, ownership, and idempotency key.",
+        "Define retry limits, dead-letter handling, replay safety, backpressure, and retention.",
+        "Test delayed, duplicate, out-of-order, malformed, and unavailable-consumer scenarios."
+      ]
+    },
+    "20": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Provider-neutral cloud architecture outline",
+        "Identity, network, region, cost, and recovery questions"
+      ],
+      "checks": [
+        "Record availability, data location, budget, scaling, recovery, and compliance constraints.",
+        "Apply least privilege, private networking, encryption, observability, and backup controls.",
+        "Compare provider-specific services only after verifying current official docs and cost estimates.",
+        "Require explicit approval before provisioning, modifying, or deleting cloud resources."
+      ]
+    },
+    "21": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Domain, DNS, certificate, and CDN cutover plan",
+        "Propagation, health-check, and rollback criteria"
+      ],
+      "checks": [
+        "Inventory current records, TTLs, ownership, redirects, certificates, and dependencies.",
+        "Prepare a staged cutover, propagation checks, origin validation, and rollback window.",
+        "Never change live DNS, certificates, or domains without owner approval and a verified recovery path."
+      ]
+    },
+    "22": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Repeatable environment and infrastructure review",
+        "State, secret, policy, and rollback safeguards"
+      ],
+      "checks": [
+        "Pin base images and dependencies; run containers as non-root and minimize attack surface.",
+        "Protect infrastructure state, isolate environments, and keep secrets out of images and source.",
+        "Review plans and diffs before apply; protect production state and require explicit approval.",
+        "Test clean setup, health checks, rollback, and artifact provenance in the real platform."
+      ]
+    },
+    "23": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Release workflow and test gates",
+        "Staging, migration, provenance, and rollback plan"
+      ],
+      "checks": [
+        "Run locked, reproducible dependencies and failing tests from a clean checkout.",
+        "Add lint, type, unit, integration, security, accessibility, and build gates appropriate to the stack.",
+        "Separate preview, staging, and production credentials; review release provenance and migrations.",
+        "Require approval before production deployment and define rollback and health criteria."
+      ]
+    },
+    "24": {
+      "kind": "audit",
+      "audit_tags": [
+        "security",
+        "privacy"
+      ],
+      "deliverables": [
+        "Static security and secret-exposure findings",
+        "Threat, privacy, and incident-response checklist"
+      ],
+      "checks": [
+        "Review trust boundaries, input validation, output encoding, headers, sessions, and least privilege.",
+        "Check source and configuration for secret exposure without copying secret values into reports.",
+        "Document personal-data purpose, consent, retention, access, deletion, and breach response.",
+        "Treat static findings as triage, not a penetration test or security certification."
+      ]
+    },
+    "25": {
+      "kind": "audit",
+      "audit_tags": [
+        "performance",
+        "responsive"
+      ],
+      "deliverables": [
+        "Source-level performance heuristics",
+        "Real-device measurement and budget checklist"
+      ],
+      "checks": [
+        "Measure actual field and lab performance on representative devices and networks.",
+        "Review image dimensions/formats, font loading, JavaScript work, caching, and server latency.",
+        "Set and monitor performance budgets; fix the largest measured user-facing bottleneck first.",
+        "This scanner does not calculate Core Web Vitals or execute browser profiling."
+      ]
+    },
+    "26": {
+      "kind": "audit",
+      "audit_tags": [
+        "seo",
+        "privacy",
+        "navigation"
+      ],
+      "deliverables": [
+        "Metadata and discoverability findings",
+        "Privacy-aware measurement and experiment checklist"
+      ],
+      "checks": [
+        "Verify title, descriptions, canonical URLs, crawl rules, structured data, and redirect intent.",
+        "Test rendered pages and actual search-index behavior; static source checks are incomplete.",
+        "Use consent-aware, minimized analytics; document attribution and experiment limits.",
+        "Do not claim rankings, indexing, or analytics validity without live verification."
+      ]
+    },
+    "27": {
+      "kind": "audit",
+      "audit_tags": [
+        "pwa",
+        "performance",
+        "security"
+      ],
+      "deliverables": [
+        "Manifest and service-worker source checks",
+        "Offline, update, storage, and fallback test plan"
+      ],
+      "checks": [
+        "Verify install metadata, icons, scope, secure-context requirements, and browser support.",
+        "Test offline routes, cache invalidation, quota exhaustion, stale data, and update recovery.",
+        "Review service-worker origin and cache boundaries; do not cache sensitive responses by default.",
+        "This tool does not emulate browser install or offline behavior."
+      ]
+    },
+    "28": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Desktop/mobile shell and native capability plan",
+        "Bridge, permission, signing, and release checklist"
+      ],
+      "checks": [
+        "Choose exact runtime and platforms; verify versions and store requirements officially.",
+        "Constrain native bridges, permissions, deep links, update channels, and packaged secrets.",
+        "Test signing, installers, device matrices, accessibility, and recovery on actual target devices.",
+        "No desktop or mobile build is performed by this static Python tool."
+      ]
+    },
+    "29": {
+      "kind": "audit",
+      "audit_tags": [
+        "media",
+        "performance",
+        "accessibility"
+      ],
+      "deliverables": [
+        "Media reference and accessibility findings",
+        "Codec, bandwidth, permission, and fallback checklist"
+      ],
+      "checks": [
+        "Verify caption/transcript alternatives, playback controls, autoplay policy, and permission prompts.",
+        "Measure media transfer size and test bandwidth adaptation and failure fallbacks.",
+        "Test codec support and device behavior in the actual target browsers and networks.",
+        "The scanner does not decode media or initiate camera, microphone, or WebRTC access."
+      ]
+    },
+    "30": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Tenant, role, workflow, and data-isolation design",
+        "Billing, audit, support, and operational checklist"
+      ],
+      "checks": [
+        "Enforce tenant isolation at every query, cache, file, job, and administrative boundary.",
+        "Specify roles, onboarding, billing lifecycle, audit logs, support access, and data export/deletion.",
+        "Test cross-tenant access, failure handling, billing reconciliation, and restore procedures.",
+        "Require approval before live billing, account, or production-data actions."
+      ]
+    },
+    "31": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Website-type and audience requirements",
+        "Content, workflow, trust, and acceptance checklist"
+      ],
+      "checks": [
+        "Adapt page structure, vocabulary, navigation, search, and interactions to the actual audience.",
+        "Identify domain-specific privacy, safety, moderation, transactional, and accessibility needs.",
+        "Validate claims, ownership, legal requirements, and content with accountable subject-matter reviewers."
+      ]
+    },
+    "32": {
+      "kind": "audit",
+      "audit_tags": [
+        "i18n",
+        "accessibility",
+        "navigation"
+      ],
+      "deliverables": [
+        "Locale and directionality source findings",
+        "Translation parity and regional QA checklist"
+      ],
+      "checks": [
+        "Test locale routes, fallback behavior, date/number/currency formatting, and translated content parity.",
+        "Exercise right-to-left layout, bidirectional text, font coverage, and language metadata.",
+        "Review region-specific content and compliance with local experts; no legal compliance is inferred here."
+      ]
+    },
+    "33": {
+      "kind": "audit",
+      "audit_tags": [
+        "accessibility",
+        "html",
+        "javascript",
+        "navigation",
+        "performance",
+        "responsive",
+        "security",
+        "seo",
+        "quality",
+        "media",
+        "pwa",
+        "i18n"
+      ],
+      "deliverables": [
+        "Static quality findings",
+        "Browser/device/test-matrix and regression plan"
+      ],
+      "checks": [
+        "Run clean install, lint, type, unit, integration, browser, mobile, and accessibility checks for the actual stack.",
+        "Include empty, extreme, repeated, delayed, offline, unauthorized, and failed-dependency cases.",
+        "Make regression checks fail on defects and rerun linked tests after the smallest repair.",
+        "This local analyzer does not run browsers, load tests, APIs, or external services."
+      ]
+    },
+    "34": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Service objectives, metrics, alerts, and runbook",
+        "Cost, capacity, backup, restore, and incident checklist"
+      ],
+      "checks": [
+        "Define user-centered SLIs/SLOs, alert owners, escalation, and incident communication.",
+        "Set cost and capacity guardrails; test backup restoration and recovery objectives.",
+        "Plan post-incident review, action ownership, retention, and failure-safe behavior.",
+        "No production metrics or provider state are accessed by this tool."
+      ]
+    },
+    "35": {
+      "kind": "planning",
+      "audit_tags": [],
+      "deliverables": [
+        "Legacy inventory and staged migration path",
+        "URL/data preservation, regression, and rollback plan"
+      ],
+      "checks": [
+        "Inventory runtime versions, routes, dependencies, data ownership, integrations, and known behavior.",
+        "Preserve source, URLs, data, accessibility, and user-visible behavior through small reversible stages.",
+        "Build regression coverage and backup/rollback points before each migration step.",
+        "Require system-owner approval; this tool does not edit or migrate an existing repository automatically."
+      ]
+    },
+    "36": {
+      "kind": "orchestration",
+      "audit_tags": [
+        "accessibility",
+        "html",
+        "javascript",
+        "navigation",
+        "performance",
+        "responsive",
+        "security",
+        "seo",
+        "quality",
+        "media",
+        "pwa",
+        "i18n"
+      ],
+      "deliverables": [
+        "Traceable brief-to-plan mapping",
+        "Checked local vertical slice and staged expansion sequence"
+      ],
+      "checks": [
+        "Map each request to a named capability, artifact, and observable acceptance check.",
+        "Build a minimal vertical slice with supported local tools, then verify it before expansion.",
+        "Preserve passing artifacts, isolate the earliest failing layer, repair narrowly, and rerun linked checks.",
+        "Require human approval before publishing, deployment, credentials, payments, destructive edits, or privileged actions.",
+        "Use the separate scaffold and audit commands for the implemented static HTML/CSS/JavaScript path."
+      ]
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Minimum Simulator and device matrix from Appendix B of the iOS/iPadOS Agent Skill Catalog, expressed as lanes the Skill Tool can schedule. Runtime and device hints are templates: replace them with the runtimes actually installed on the macOS worker.",
+  "lane_sources": {
+    "runtime_hints": ["oldest available iOS runtime", "representative middle runtime", "latest stable runtime"],
+    "device_hints": ["iPhone SE (3rd generation)", "iPhone 15", "iPad (10th generation)", "iPad Pro 13-inch (M4)"],
+    "note": "lanes carry hints, not device UDIDs; a lane never targets an unreserved physical device"
+  },
+  "required_checks": {
+    "simulator": ["build", "install", "launch", "screenshot", "logs", "terminate", "uninstall"],
+    "device": ["pairing", "trust", "provisioning eligibility", "install", "launch", "logs", "screenshot"],
+    "clean_state": ["erase or fresh device", "first launch", "permission prompts", "account absence", "cache independence"]
+  },
+  "lanes": [
+    {
+      "environment": "simulator",
+      "device_hint": "iPhone SE (3rd generation)",
+      "runtime_hint": "oldest available iOS runtime",
+      "focus": "minimum deployment behaviour, migration, launch, layout on the smallest screen",
+      "checks": ["build", "install", "launch", "migration", "ui-smoke"],
+      "special": ["constrained screen", "lowest memory class", "keyboard presentation"]
+    },
+    {
+      "environment": "simulator",
+      "device_hint": "iPhone 15",
+      "runtime_hint": "representative middle iOS runtime",
+      "focus": "regression, platform services, persistence",
+      "checks": ["build", "install", "launch", "unit-tests", "ui-smoke"],
+      "special": ["behaviour transition between OS versions"]
+    },
+    {
+      "environment": "simulator",
+      "device_hint": "iPhone 15 Pro Max",
+      "runtime_hint": "latest stable iOS runtime",
+      "focus": "current compatibility, full smoke and UI suites",
+      "checks": ["build", "install", "launch", "unit-tests", "ui-tests", "accessibility"],
+      "special": ["Dynamic Island regions", "large safe areas"]
+    },
+    {
+      "environment": "simulator",
+      "device_hint": "iPad (10th generation)",
+      "runtime_hint": "latest stable iOS runtime",
+      "focus": "iPad experience: multitasking, pointer, keyboard, orientation",
+      "checks": ["build", "install", "launch", "split-view", "external-keyboard", "orientation"],
+      "special": ["stage-style windows", "pointer hover", "iPad navigation"]
+    },
+    {
+      "environment": "simulator",
+      "device_hint": "iPad Pro 13-inch (M4)",
+      "runtime_hint": "latest stable iOS runtime",
+      "focus": "large-screen layout and text scaling",
+      "checks": ["layout", "dynamic-type", "localization-matrix", "snapshot"],
+      "special": ["string expansion", "RTL layouts"]
+    },
+    {
+      "environment": "device",
+      "device_hint": "owned physical iPhone (oldest supported hardware)",
+      "runtime_hint": "oldest supported iOS release you can obtain",
+      "focus": "signing, sensors, camera, real APNs, GPU, performance",
+      "checks": ["pairing", "trust", "install", "launch", "crash-collection", "thermal"],
+      "special": ["real device proof is required before any installability claim"]
+    },
+    {
+      "environment": "device",
+      "device_hint": "owned physical iPad (current hardware)",
+      "runtime_hint": "current iOS release",
+      "focus": "real-device iPad multitasking and performance",
+      "checks": ["pairing", "trust", "install", "launch", "multitasking", "performance"],
+      "special": ["physical iPad proof for split view and pointer"]
+    }
+  ]
+}

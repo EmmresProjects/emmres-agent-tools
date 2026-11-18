@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "description": "Approval and evidence policy for the ultimate-game-maker gate engine. It decides which capability action needs a recorded human approval, what counts as usable evidence, and what blocks a gate at each stage.",
+  "approval_required_actions": [
+    {
+      "id": "publish-release",
+      "match": ["publish", "release", "store-submission", "submission", "signing-key-use", "autonomous-publish"],
+      "reason": "Publishing or signing an artifact is irreversible and reaches players or a store.",
+      "approval_record": "approver name, timestamp, artifact hash, and target channel"
+    },
+    {
+      "id": "financial",
+      "match": ["monetization-change", "pricing-change", "payment", "license-purchase", "sdk-license", "live-event-publish"],
+      "reason": "Money, licensing, or contractual spend cannot be undone by an agent.",
+      "approval_record": "approver name, budget or license reference, and scope"
+    },
+    {
+      "id": "credential-secret",
+      "match": ["credential-change", "secret", "key", "certificate", "production-migration"],
+      "reason": "Credential and production-data actions can expose users or destroy data.",
+      "approval_record": "approver name, change ticket, and backup reference"
+    },
+    {
+      "id": "destructive",
+      "match": ["delete", "overwrite", "binary-analysis", "redistribution", "api-breaking-change", "grammar-breaking-change", "scope-cut", "test-deletion", "plugin-enable", "asset-import-destructive", "autonomous-delete"],
+      "reason": "Destructive or breaking actions can remove work, break ecosystems, or lose provenance.",
+      "approval_record": "approver name, affected paths or APIs, and rollback plan"
+    },
+    {
+      "id": "privileged",
+      "match": ["device-access", "admin", "privileged", "security-exception", "compliance-signoff", "privacy-policy-change", "content-publish", "service-endpoint-change"],
+      "reason": "Privileged, policy, or safety actions carry legal and security consequences.",
+      "approval_record": "approver name, policy reference, and expiry date"
+    }
+  ],
+  "evidence": {
+    "accepted_statuses": ["pass", "fail", "waiver", "missing"],
+    "min_evidence_chars": 12,
+    "waiver_requires": ["approver", "reason"],
+    "min_waiver_reason_chars": 12,
+    "notes": "A check can only be marked pass with evidence text at or above min_evidence_chars; 'waiver' needs a named approver and a written reason. Anything else is treated as missing."
+  },
+  "gate_profiles": {
+    "draft": {
+      "description": "Early work in progress: report only, never block.",
+      "block_on": [],
+      "treat_missing_as_failure": false,
+      "allow_waivers": true
+    },
+    "milestone": {
+      "description": "Milestone closure: required functional, quality, compatibility, security, and accessibility checks must pass; missing required checks block.",
+      "block_on": ["functional", "quality", "compatibility", "security", "accessibility", "robustness", "determinism", "functional-quality"],
+      "treat_missing_as_failure": true,
+      "allow_waivers": true
+    },
+    "release": {
+      "description": "Release or publish: every required check must pass or carry a named waiver; missing checks always block.",
+      "block_on": ["*"],
+      "treat_missing_as_failure": true,
+      "allow_waivers": true,
+      "require_approvals": true
+    }
+  },
+  "default_profile": "milestone"
+}

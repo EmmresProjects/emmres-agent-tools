@@ -1,0 +1,813 @@
+{
+ "schema_version": "1.0",
+ "dataset_id": "offline-game-development-archetypes",
+ "description": "The six description archetypes of the source catalog. catalog_template rebuilds any capability's description from its subject; sections is the section contract a spec must satisfy for that archetype; gates and evidence_kinds are what closes the work; inference_rules classify a capability named in a user's own file.",
+ "usage_order": [
+  "match the stored description against catalog_template",
+  "if it matches, the archetype and subject are authoritative",
+  "if it does not, apply inference_rules to the capability name and generate the catalog wording from catalog_template",
+  "render sections in order; a section is only satisfied when every field is filled or explicitly marked unknown"
+ ],
+ "archetypes": {
+  "implement": {
+   "label": "Implement",
+   "intent": "Build one reusable production capability end to end, with declared boundaries, offline inputs, measured budgets, and acceptance proof.",
+   "default_owner": "gameplay-programmer",
+   "plan_phase": "build",
+   "gates": [
+    {
+     "id": "rights-cleared",
+     "rule": "every consumed and produced asset has a license record that permits this project's use and redistribution",
+     "severity": "block"
+    },
+    {
+     "id": "budget-within",
+     "rule": "each named metric is measured on the declared target and inside its ceiling",
+     "severity": "block"
+    },
+    {
+     "id": "offline-reproducible",
+     "rule": "a clean machine reproduces the build from the offline bundle with no hidden download",
+     "severity": "block"
+    },
+    {
+     "id": "target-acceptance",
+     "rule": "the capability passes on a real target build, not only in the editor",
+     "severity": "block"
+    }
+   ],
+   "evidence_kinds": [
+    "build-artifact",
+    "test-report",
+    "measurement",
+    "rights-record"
+   ],
+   "sections": [
+    {
+     "id": "inputs",
+     "title": "Declared inputs",
+     "purpose": "Every file, setting, and local dependency the capability consumes, with the pinned offline location.",
+     "fields": [
+      "path_or_source",
+      "format",
+      "pinned_version",
+      "license_ref",
+      "size_limit",
+      "owner"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "outputs",
+     "title": "Declared outputs",
+     "purpose": "Artifacts produced, their format contract, destination, and the consumer of each one.",
+     "fields": [
+      "artifact",
+      "format",
+      "destination",
+      "consumer",
+      "retention"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "offline_dependencies",
+     "title": "Offline dependencies",
+     "purpose": "Cached engine modules, packages, models, and toolchains required with the network blocked.",
+     "fields": [
+      "dependency",
+      "version",
+      "cached_path",
+      "integrity",
+      "network_free"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "rights_metadata",
+     "title": "Rights metadata",
+     "purpose": "License and provenance record for each consumed and produced asset.",
+     "fields": [
+      "asset",
+      "license",
+      "provenance_source",
+      "commercial_use",
+      "redistribution",
+      "attribution",
+      "record_path"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "performance_budgets",
+     "title": "Performance budgets",
+     "purpose": "Numeric ceilings the capability must stay inside on the declared target profile.",
+     "fields": [
+      "metric",
+      "budget",
+      "measured",
+      "target_profile"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "diagnostics",
+     "title": "Diagnostics",
+     "purpose": "Structured signals that show what the capability did and why it failed.",
+     "fields": [
+      "signal",
+      "channel",
+      "level",
+      "fields",
+      "retention"
+     ],
+     "blocking": false
+    },
+    {
+     "id": "tests",
+     "title": "Tests",
+     "purpose": "Automated checks that must run in the local test path before the capability is called done.",
+     "fields": [
+      "test",
+      "kind",
+      "command_hint",
+      "pass_condition",
+      "cadence"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "target_acceptance",
+     "title": "Target-build acceptance criteria",
+     "purpose": "Observable acceptance on a real target build, not only in the editor.",
+     "fields": [
+      "criterion",
+      "target",
+      "method",
+      "threshold",
+      "evidence"
+     ],
+     "blocking": true
+    }
+   ],
+   "catalog_template": "Implement {subject} as a focused reusable game-development capability with declared inputs and outputs, offline dependencies, rights metadata, performance budgets, diagnostics, tests, and target-build acceptance criteria."
+  },
+  "define": {
+   "label": "Define",
+   "intent": "Settle a decision and its boundaries in writing, with named owners and constraints, so downstream work has one reference to build against.",
+   "default_owner": "technical-director",
+   "plan_phase": "decide",
+   "gates": [
+    {
+     "id": "scope-agreed",
+     "rule": "the boundary and the non-goals are written down and accepted by the named owners",
+     "severity": "block"
+    },
+    {
+     "id": "owners-confirmed",
+     "rule": "every decision in scope has one accountable role",
+     "severity": "block"
+    },
+    {
+     "id": "constraints-checked",
+     "rule": "platform, engine, and rights constraints were verified against the offline bundle, not assumed",
+     "severity": "block"
+    },
+    {
+     "id": "completion-verified",
+     "rule": "the completion condition was tested against a real case",
+     "severity": "block"
+    }
+   ],
+   "evidence_kinds": [
+    "decision-record",
+    "review-signoff",
+    "updated-spec",
+    "milestone-note"
+   ],
+   "sections": [
+    {
+     "id": "prerequisites",
+     "title": "Prerequisites",
+     "purpose": "What must exist or be decided before this definition can be written down at all.",
+     "fields": [
+      "item",
+      "why_needed",
+      "owner",
+      "verified_by"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "owners",
+     "title": "Owners and decision rights",
+     "purpose": "Who defines, who reviews, and who can change the definition later.",
+     "fields": [
+      "role",
+      "responsibility",
+      "decision_right",
+      "changed_by"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "constraints",
+     "title": "Platform and engine constraints",
+     "purpose": "Hard limits from the engine, the platform, and the offline environment.",
+     "fields": [
+      "constraint",
+      "kind",
+      "source",
+      "impact"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "ordered_steps",
+     "title": "Ordered steps",
+     "purpose": "The sequence the definition prescribes, each with its output.",
+     "fields": [
+      "step",
+      "action",
+      "output",
+      "owner"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "license_gates",
+     "title": "License gates",
+     "purpose": "Rights conditions that stop this definition from shipping as written.",
+     "fields": [
+      "asset",
+      "license",
+      "allowed_use",
+      "blocker"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "quality_budgets",
+     "title": "Quality budgets",
+     "purpose": "The numeric or observable bar the result must clear, with how it is measured.",
+     "fields": [
+      "metric",
+      "budget",
+      "how_measured",
+      "severity"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "fallback_paths",
+     "title": "Fallback paths",
+     "purpose": "What the team does when the preferred route is unavailable offline.",
+     "fields": [
+      "trigger",
+      "fallback",
+      "cost",
+      "decided_by"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "evidence_required",
+     "title": "Required evidence",
+     "purpose": "The artefacts that prove the definition was followed.",
+     "fields": [
+      "evidence",
+      "format",
+      "filed_by",
+      "retention"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "completion",
+     "title": "Verified completion condition",
+     "purpose": "The one sentence that says this is done, and how it was tested.",
+     "fields": [
+      "condition",
+      "verified_by",
+      "date"
+     ],
+     "blocking": true
+    }
+   ],
+   "catalog_template": "Define {subject} with prerequisites, owners, platform and engine constraints, ordered steps, license gates, quality budgets, fallback paths, required evidence, and a verified completion condition."
+  },
+  "evaluate": {
+   "label": "Evaluate",
+   "intent": "Measure a real build or asset against a stated threshold with repeatable checks, and record the evidence, the failure detail, and the retest.",
+   "default_owner": "qa-lead",
+   "plan_phase": "verify",
+   "gates": [
+    {
+     "id": "checks-designed",
+     "rule": "each check names its tool, its threshold, and its fixture before it runs",
+     "severity": "block"
+    },
+    {
+     "id": "checks-executed",
+     "rule": "every automated and manual check has a recorded result on the declared target",
+     "severity": "block"
+    },
+    {
+     "id": "thresholds-recorded",
+     "rule": "measured values are stored beside the threshold they were judged against",
+     "severity": "block"
+    },
+    {
+     "id": "regression-retest-filed",
+     "rule": "a failed check has remediation and a passing retest attached",
+     "severity": "block"
+    }
+   ],
+   "evidence_kinds": [
+    "test-report",
+    "measurement",
+    "failure-evidence",
+    "regression-retest"
+   ],
+   "sections": [
+    {
+     "id": "check_design",
+     "title": "Check design",
+     "purpose": "What is checked, how, and how often, decided before any measurement.",
+     "fields": [
+      "check",
+      "kind",
+      "tool",
+      "frequency"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "automated_checks",
+     "title": "Automated checks",
+     "purpose": "Checks that run in the local test path with a pass threshold.",
+     "fields": [
+      "check",
+      "command_hint",
+      "pass_threshold",
+      "fixture"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "manual_checks",
+     "title": "Manual checks",
+     "purpose": "Checks that need a human on a device, with the protocol written down.",
+     "fields": [
+      "check",
+      "protocol",
+      "observer",
+      "target"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "measurements",
+     "title": "Measured results",
+     "purpose": "The numbers actually observed, with unit and profile.",
+     "fields": [
+      "metric",
+      "measured",
+      "unit",
+      "profile",
+      "delta_vs_previous"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "failure_evidence",
+     "title": "Failure evidence",
+     "purpose": "What a failure leaves behind that someone else can read.",
+     "fields": [
+      "artifact",
+      "path",
+      "format",
+      "redaction"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "remediation",
+     "title": "Remediation",
+     "purpose": "The fix owed for each failure, with its owner.",
+     "fields": [
+      "finding",
+      "fix",
+      "owner",
+      "severity"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "regression_retest",
+     "title": "Regression retest",
+     "purpose": "How the fix is proven and where the retest is filed.",
+     "fields": [
+      "retest",
+      "condition",
+      "recorded_by",
+      "date"
+     ],
+     "blocking": true
+    }
+   ],
+   "catalog_template": "Evaluate {subject} with repeatable automated and manual checks, record the engine, platform, hardware, scene or build, measured result, pass threshold, failure evidence, and exact remediation and regression retest."
+  },
+  "operate": {
+   "label": "Operate",
+   "intent": "Run a service or toolchain day to day with monitoring, budgets, an owner on call, and a rehearsed rollback.",
+   "default_owner": "live-ops-engineer",
+   "plan_phase": "operate",
+   "gates": [
+    {
+     "id": "runbook-reviewed",
+     "rule": "the runbook was followed start to finish by someone who did not write it",
+     "severity": "block"
+    },
+    {
+     "id": "monitoring-live",
+     "rule": "each signal has a threshold and an alert route that fired in a drill",
+     "severity": "block"
+    },
+    {
+     "id": "rollback-tested",
+     "rule": "the revert path was executed and measured on a real build",
+     "severity": "block"
+    },
+    {
+     "id": "handover-accepted",
+     "rule": "the owning team accepted the operating responsibility in writing",
+     "severity": "block"
+    }
+   ],
+   "evidence_kinds": [
+    "run-log",
+    "monitoring-snapshot",
+    "incident-note",
+    "drill-report"
+   ],
+   "sections": [
+    {
+     "id": "runbook",
+     "title": "Runbook",
+     "purpose": "The steps to start, observe, and stop the thing, with expected output.",
+     "fields": [
+      "step",
+      "command_hint",
+      "expected",
+      "operator"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "monitoring",
+     "title": "Monitoring",
+     "purpose": "Signals watched continuously, with thresholds and routes.",
+     "fields": [
+      "signal",
+      "threshold",
+      "alert_route",
+      "retention"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "incident_response",
+     "title": "Incident response",
+     "purpose": "What to do first when it breaks, and who is told.",
+     "fields": [
+      "scenario",
+      "first_action",
+      "escalate_to",
+      "evidence"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "maintenance",
+     "title": "Maintenance and rollback",
+     "purpose": "Scheduled work and the tested way back.",
+     "fields": [
+      "task",
+      "cadence",
+      "owner",
+      "rollback"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "health_budgets",
+     "title": "Health budgets",
+     "purpose": "Operating limits that, once crossed, mean the service is unhealthy.",
+     "fields": [
+      "metric",
+      "target",
+      "measured",
+      "severity"
+     ],
+     "blocking": true
+    }
+   ],
+   "catalog_template": "Operate {subject} through versioned configuration, bounded CPU, GPU, memory, storage, and network budgets, safe persistence, structured diagnostics, offline fallback behavior, and automated gameplay regression tests."
+  },
+  "create": {
+   "label": "Create",
+   "intent": "Produce a build or generated artifact from pinned inputs, reproducibly, and prove it works after creation.",
+   "default_owner": "build-engineer",
+   "plan_phase": "produce",
+   "gates": [
+    {
+     "id": "inputs-pinned",
+     "rule": "every input has a version and a checksum recorded with the offline bundle",
+     "severity": "block"
+    },
+    {
+     "id": "rights-cleared",
+     "rule": "each input and each produced asset cleared its license gate",
+     "severity": "block"
+    },
+    {
+     "id": "deterministic",
+     "rule": "two runs from the same pinned inputs produce the same artifact set",
+     "severity": "block"
+    },
+    {
+     "id": "post-build-validated",
+     "rule": "the produced artifact imports, launches, or plays on the target",
+     "severity": "block"
+    }
+   ],
+   "evidence_kinds": [
+    "build-log",
+    "checksum",
+    "rights-record",
+    "post-build-report"
+   ],
+   "sections": [
+    {
+     "id": "pinned_inputs",
+     "title": "Pinned local inputs",
+     "purpose": "Exact input set, version, and local location; no hidden downloads.",
+     "fields": [
+      "input",
+      "version",
+      "cached_path",
+      "integrity"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "license_integrity",
+     "title": "License and integrity checks",
+     "purpose": "Rights verification and checksum verification before the build starts.",
+     "fields": [
+      "check",
+      "applies_to",
+      "rule",
+      "on_fail"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "deterministic_settings",
+     "title": "Deterministic settings",
+     "purpose": "Settings frozen so two runs produce the same result.",
+     "fields": [
+      "setting",
+      "value",
+      "source",
+      "variation_risk"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "platform_metadata",
+     "title": "Platform metadata",
+     "purpose": "Manifest fields, version strings, and platform identifiers carried by the artifact.",
+     "fields": [
+      "field",
+      "value",
+      "required_by"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "rollback_cleanup",
+     "title": "Rollback or cleanup",
+     "purpose": "How a bad output is reverted or removed without leaving state behind.",
+     "fields": [
+      "trigger",
+      "action",
+      "residue_check"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "post_build_validation",
+     "title": "Post-build validation",
+     "purpose": "Import, launch, or playback proof that the produced artifact actually works.",
+     "fields": [
+      "validation",
+      "method",
+      "pass_condition",
+      "target"
+     ],
+     "blocking": true
+    }
+   ],
+   "catalog_template": "Create {subject} from pinned local inputs with license and integrity checks, deterministic settings, platform metadata, rollback or cleanup behavior, and a post-build import, launch, or playback validation."
+  },
+  "provide": {
+   "label": "Provide",
+   "intent": "Ship a reusable interface, kit, or template to other teams with a contract, a version policy, and a support route.",
+   "default_owner": "tools-programmer",
+   "plan_phase": "provide",
+   "gates": [
+    {
+     "id": "contract-published",
+     "rule": "the interface contract and its limits are written where consumers read them",
+     "severity": "block"
+    },
+    {
+     "id": "version-pinned",
+     "rule": "consumers depend on a named version, not on a moving branch",
+     "severity": "block"
+    },
+    {
+     "id": "adoption-verified",
+     "rule": "at least one real consumer integrated and verified it",
+     "severity": "block"
+    },
+    {
+     "id": "support-routed",
+     "rule": "questions have a named first responder and a docs path",
+     "severity": "block"
+    }
+   ],
+   "evidence_kinds": [
+    "package-manifest",
+    "version-notes",
+    "adoption-record",
+    "support-handoff"
+   ],
+   "sections": [
+    {
+     "id": "contract",
+     "title": "Public contract",
+     "purpose": "What consumers may rely on, and what is explicitly not promised.",
+     "fields": [
+      "item",
+      "version",
+      "guaranteed",
+      "consumers"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "version_policy",
+     "title": "Version and support policy",
+     "purpose": "How it changes, how long old versions live, and what counts as breaking.",
+     "fields": [
+      "artifact",
+      "scheme",
+      "support_window",
+      "break_policy"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "packaging",
+     "title": "Packaging and distribution",
+     "purpose": "What ships, where it lands offline, and how integrity is checked.",
+     "fields": [
+      "contents",
+      "destination",
+      "checksum",
+      "size_budget"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "adoption",
+     "title": "Adoption path",
+     "purpose": "The steps a consuming project takes, and how each is verified.",
+     "fields": [
+      "target",
+      "integration_step",
+      "verification",
+      "owner"
+     ],
+     "blocking": true
+    },
+    {
+     "id": "support",
+     "title": "Support and escalation",
+     "purpose": "Where a question goes first, and who is woken if it is on fire.",
+     "fields": [
+      "question_type",
+      "first_responder",
+      "docs_path",
+      "escalation"
+     ],
+     "blocking": true
+    }
+   ],
+   "catalog_template": "Provide {subject} with capability detection, offline mocks, platform-specific implementations, error recovery, compatibility tests, and documented limitations for every supported target."
+  }
+ },
+ "inference_rules": [
+  {
+   "if_name_contains": [
+    "test",
+    "audit",
+    "review",
+    "benchmark",
+    "verification",
+    "acceptance",
+    "profiler"
+   ],
+   "then": "evaluate"
+  },
+  {
+   "if_name_contains": [
+    "policy",
+    "brief",
+    "plan",
+    "matrix",
+    "definition",
+    "philosophy",
+    "guideline",
+    "standard",
+    "spec",
+    "roadmap",
+    "manifest-of-record",
+    "governance"
+   ],
+   "then": "define"
+  },
+  {
+   "if_name_contains": [
+    "generator",
+    "builder",
+    "packager",
+    "installer",
+    "bundler",
+    "exporter",
+    "importer",
+    "converter",
+    "compiler",
+    "scaffold",
+    "cook",
+    "patch"
+   ],
+   "then": "create"
+  },
+  {
+   "if_name_contains": [
+    "server",
+    "service",
+    "runtime",
+    "manager",
+    "daemon",
+    "queue",
+    "monitor",
+    "scheduler",
+    "worker",
+    "gateway"
+   ],
+   "then": "operate"
+  },
+  {
+   "if_name_contains": [
+    "kit",
+    "template",
+    "interface",
+    "adapter",
+    "bridge",
+    "library",
+    "sdk",
+    "preset",
+    "shader",
+    "api"
+   ],
+   "then": "provide"
+  },
+  {
+   "if_name_contains": [
+    "system",
+    "framework",
+    "toolchain",
+    "pipeline",
+    "module",
+    "handler"
+   ],
+   "then": "implement"
+  }
+ ],
+ "default_archetype": "implement"
+}

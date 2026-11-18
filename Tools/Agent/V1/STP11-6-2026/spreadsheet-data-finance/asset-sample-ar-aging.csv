@@ -1,0 +1,9 @@
+invoice_number,customer,date,due_date,amount,currency,paid,dispute
+INV-3001,Northwind Traders,2025-03-01,2025-03-31,118750.00,USD,false,
+INV-3002,Contoso Ltd,2025-03-15,2025-04-14,45200.00,USD,false,price query
+INV-3003,Fabrikam Inc,2025-02-10,2025-03-12,22400.00,USD,true,
+INV-3004,Adventure Works,2025-04-02,2025-05-02,5760.00,USD,false,
+INV-3005,Tailspin Toys,2025-01-20,2025-02-19,18750.00,USD,false,awaiting PO copy
+INV-3006,Proseware Inc,2025-04-18,2025-05-18,8550.00,USD,false,
+INV-3007,Wingtip Toys,2025-02-28,2025-03-30,7440.00,USD,true,
+INV-3008,Lucerne Publishing,2025-05-06,2025-06-05,6118.00,USD,false,

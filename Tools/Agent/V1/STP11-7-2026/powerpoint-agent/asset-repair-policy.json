@@ -1,0 +1,77 @@
+{
+  "policy_version": "1.0",
+  "description": "Which audit rules the repair engine may fix automatically. Any rule not listed here is left for a human. Data-destructive or content-authoring fixes are never automatic.",
+  "max_changes": 500,
+  "fixers": {
+    "TYP001": {
+      "fixer": "raise-font-size",
+      "requires_approval": false,
+      "note": "Raises explicit small runs to audit.min_font_pt. Re-audit afterwards: larger text can overflow."
+    },
+    "TYP002": {
+      "fixer": "substitute-font",
+      "requires_approval": false,
+      "note": "Replaces unapproved fonts with the theme body font."
+    },
+    "TYP003": {
+      "fixer": "normalize-fonts",
+      "requires_approval": false,
+      "note": "Unifies mixed families inside one text box to the dominant font."
+    },
+    "TYP005": {
+      "fixer": "remove-empty-placeholder",
+      "requires_approval": false,
+      "note": "Removes placeholders that carry no text."
+    },
+    "COL001": {
+      "fixer": "fix-contrast",
+      "requires_approval": false,
+      "note": "Recolours low-contrast explicit text to the nearest readable theme colour."
+    },
+    "COL002": {
+      "fixer": "fix-invisible-text",
+      "requires_approval": false,
+      "note": "Recolours text that matches its background."
+    },
+    "GEO001": {
+      "fixer": "move-inside-slide",
+      "requires_approval": false,
+      "note": "Nudges shapes fully inside the canvas."
+    },
+    "A11Y003": {
+      "fixer": "reading-order",
+      "requires_approval": false,
+      "note": "Moves the title placeholder to the front of the shape tree."
+    },
+    "A11Y005": {
+      "fixer": "table-header",
+      "requires_approval": false,
+      "note": "Marks the first row of a table as a header row."
+    },
+    "A11Y002": {
+      "fixer": "alt-text",
+      "requires_approval": true,
+      "note": "Generates alt text from the nearest caption or file name; review the wording."
+    },
+    "LNK001": {
+      "fixer": "remove-blocked-link",
+      "requires_approval": true,
+      "note": "Strips blocked hyperlink protocols from runs."
+    }
+  },
+  "never_automatic": [
+    "TYP004",
+    "GEO004",
+    "A11Y001",
+    "STR001",
+    "STR003",
+    "STR004",
+    "SEC001",
+    "SEC004",
+    "CMP001",
+    "MED001",
+    "PERF001",
+    "PERF002",
+    "PERF003"
+  ]
+}

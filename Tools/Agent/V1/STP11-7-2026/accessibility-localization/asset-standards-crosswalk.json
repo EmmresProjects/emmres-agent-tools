@@ -1,0 +1,552 @@
+{
+  "standard": "Crosswalk (planning aid)",
+  "sources": [
+    "WCAG 2.2 A/AA",
+    "EN 301 549",
+    "Section 508 (2017)",
+    "ISO 30071-1:2019"
+  ],
+  "warning": "Verify exact clauses against the current published standards before legal, procurement, or conformance claims.",
+  "entries": [
+    {
+      "wcag": "1.1.1",
+      "wcag_title": "Non-text Content",
+      "level": "A",
+      "en_301_549": "9.1.1.1 Non-text content",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Requirements; 8.3 Design",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.2.1",
+      "wcag_title": "Audio-only and Video-only (Prerecorded)",
+      "level": "A",
+      "en_301_549": "9.1.2.1 Audio-only / video-only",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.2.2",
+      "wcag_title": "Captions (Prerecorded)",
+      "level": "A",
+      "en_301_549": "9.1.2.2 Captions",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Requirements; 8.3 Design",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.2.3",
+      "wcag_title": "Audio Description or Media Alternative (Prerecorded)",
+      "level": "A",
+      "en_301_549": "9.1.2.3 Audio description / media alternative",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.2.4",
+      "wcag_title": "Captions (Live)",
+      "level": "AA",
+      "en_301_549": "9.1.2.4 Captions (live)",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.2.5",
+      "wcag_title": "Audio Description (Prerecorded)",
+      "level": "AA",
+      "en_301_549": "9.1.2.5 Audio description",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.3.1",
+      "wcag_title": "Info and Relationships",
+      "level": "A",
+      "en_301_549": "9.1.1.1 / 9.1.3.1 Info and relationships",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.3.2",
+      "wcag_title": "Meaningful Sequence",
+      "level": "A",
+      "en_301_549": "9.1.3.2 Meaningful sequence",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.3.3",
+      "wcag_title": "Sensory Characteristics",
+      "level": "A",
+      "en_301_549": "9.1.3.3 Sensory characteristics",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.3.4",
+      "wcag_title": "Orientation",
+      "level": "AA",
+      "en_301_549": "9.1.3.4 Orientation",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.3.5",
+      "wcag_title": "Identify Input Purpose",
+      "level": "AA",
+      "en_301_549": "9.1.3.5 Identify input purpose",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.4.1",
+      "wcag_title": "Use of Color",
+      "level": "A",
+      "en_301_549": "9.1.4.1 Use of color",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.4.2",
+      "wcag_title": "Audio Control",
+      "level": "A",
+      "en_301_549": "9.1.4.2 Audio control",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.4.3",
+      "wcag_title": "Contrast (Minimum)",
+      "level": "AA",
+      "en_301_549": "9.1.4.3 Contrast (minimum)",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Requirements; 8.3 Design",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.4.4",
+      "wcag_title": "Resize Text",
+      "level": "AA",
+      "en_301_549": "9.1.4.4 Resize text",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.4.5",
+      "wcag_title": "Images of Text",
+      "level": "AA",
+      "en_301_549": "9.1.4.5 Images of text",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.4.6",
+      "wcag_title": "Contrast (Enhanced)",
+      "level": "AAA",
+      "en_301_549": "9.1.4.6 Contrast (enhanced)",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.4.10",
+      "wcag_title": "Reflow",
+      "level": "AA",
+      "en_301_549": "9.1.4.10 Reflow",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.4.11",
+      "wcag_title": "Non-text Contrast",
+      "level": "AA",
+      "en_301_549": "9.1.4.11 Non-text contrast",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.4.12",
+      "wcag_title": "Text Spacing",
+      "level": "AA",
+      "en_301_549": "9.1.4.12 Text spacing",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "1.4.13",
+      "wcag_title": "Content on Hover or Focus",
+      "level": "AA",
+      "en_301_549": "9.1.4.13 Content on hover or focus",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.1.1",
+      "wcag_title": "Keyboard",
+      "level": "A",
+      "en_301_549": "9.2.1.1 Keyboard",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Requirements; 8.3 Design",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.1.2",
+      "wcag_title": "No Keyboard Trap",
+      "level": "A",
+      "en_301_549": "9.2.1.2 No keyboard trap",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.1.4",
+      "wcag_title": "Character Key Shortcuts",
+      "level": "A",
+      "en_301_549": "9.2.1.4 Character key shortcuts",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.2.1",
+      "wcag_title": "Timing Adjustable",
+      "level": "A",
+      "en_301_549": "9.2.2.1 Timing adjustable",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.2.2",
+      "wcag_title": "Pause, Stop, Hide",
+      "level": "A",
+      "en_301_549": "9.2.2.2 Pause, stop, hide",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.2.6",
+      "wcag_title": "Timeouts",
+      "level": "A",
+      "en_301_549": "9.2.2.6 Timeouts",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.3.1",
+      "wcag_title": "Three Flashes or Below Threshold",
+      "level": "A",
+      "en_301_549": "9.2.3.1 Three flashes",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.3.3",
+      "wcag_title": "Animation from Interactions",
+      "level": "AA",
+      "en_301_549": "9.2.3.3 Animation from interactions",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.4.1",
+      "wcag_title": "Bypass Blocks",
+      "level": "A",
+      "en_301_549": "9.2.4.1 Bypass blocks",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.4.2",
+      "wcag_title": "Page Titled",
+      "level": "A",
+      "en_301_549": "9.2.4.2 Page titled",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.4.3",
+      "wcag_title": "Focus Order",
+      "level": "A",
+      "en_301_549": "9.2.4.3 Focus order",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.4.4",
+      "wcag_title": "Link Purpose (In Context)",
+      "level": "A",
+      "en_301_549": "9.2.4.4 Link purpose",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.4.5",
+      "wcag_title": "Multiple Ways",
+      "level": "AA",
+      "en_301_549": "9.2.4.5 Multiple ways",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.4.6",
+      "wcag_title": "Headings and Labels",
+      "level": "AA",
+      "en_301_549": "9.2.4.6 Headings and labels",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.4.7",
+      "wcag_title": "Focus Visible",
+      "level": "AA",
+      "en_301_549": "9.2.4.7 Focus visible",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Requirements; 8.3 Design",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.4.8",
+      "wcag_title": "Location",
+      "level": "AA",
+      "en_301_549": "9.2.4.8 Location",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.4.11",
+      "wcag_title": "Focus Not Obscured (Minimum)",
+      "level": "AA",
+      "en_301_549": "9.2.4.11 Focus not obscured (minimum)",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.5.1",
+      "wcag_title": "Pointer Gestures",
+      "level": "A",
+      "en_301_549": "9.2.5.1 Pointer gestures",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.5.2",
+      "wcag_title": "Pointer Cancellation",
+      "level": "A",
+      "en_301_549": "9.2.5.2 Pointer cancellation",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.5.3",
+      "wcag_title": "Label in Name",
+      "level": "A",
+      "en_301_549": "9.2.5.3 Label in name",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.5.4",
+      "wcag_title": "Motion Actuation",
+      "level": "A",
+      "en_301_549": "9.2.5.4 Motion actuation",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.5.7",
+      "wcag_title": "Dragging Movements",
+      "level": "AA",
+      "en_301_549": "9.2.5.7 Dragging movements",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "2.5.8",
+      "wcag_title": "Target Size (Minimum) (2.2)",
+      "level": "AA",
+      "en_301_549": "9.2.5.8 Target size (minimum)",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.1.1",
+      "wcag_title": "Language of Page",
+      "level": "A",
+      "en_301_549": "9.3.1.1 Language of page",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.1.2",
+      "wcag_title": "Language of Parts",
+      "level": "AA",
+      "en_301_549": "9.3.1.2 Language of parts",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.2.1",
+      "wcag_title": "On Focus",
+      "level": "A",
+      "en_301_549": "9.3.2.1 On focus",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.2.2",
+      "wcag_title": "On Input",
+      "level": "A",
+      "en_301_549": "9.3.2.2 On input",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.2.3",
+      "wcag_title": "Consistent Navigation",
+      "level": "AA",
+      "en_301_549": "9.3.2.3 Consistent navigation",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.2.4",
+      "wcag_title": "Consistent Identification",
+      "level": "AA",
+      "en_301_549": "9.3.2.4 Consistent identification",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.2.6",
+      "wcag_title": "Consistent Help",
+      "level": "A",
+      "en_301_549": "9.3.2.6 Consistent help",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.3.1",
+      "wcag_title": "Error Identification",
+      "level": "A",
+      "en_301_549": "9.3.3.1 Error identification",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Requirements; 8.3 Design",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.3.2",
+      "wcag_title": "Labels or Instructions",
+      "level": "A",
+      "en_301_549": "9.3.3.2 Labels or instructions",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.3.3",
+      "wcag_title": "Error Suggestion",
+      "level": "AA",
+      "en_301_549": "9.3.3.3 Error suggestion",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.3.4",
+      "wcag_title": "Error Prevention (Legal, Financial, Data)",
+      "level": "AA",
+      "en_301_549": "9.3.3.4 Error prevention",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.3.6",
+      "wcag_title": "Redundant Entry",
+      "level": "A",
+      "en_301_549": "9.3.3.6 Redundant entry",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.3.7",
+      "wcag_title": "Accessible Authentication",
+      "level": "AA",
+      "en_301_549": "9.3.3.7 Accessible authentication",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "3.3.8",
+      "wcag_title": "Accessible Authentication (Enhanced)",
+      "level": "AAA",
+      "en_301_549": "9.3.3.8 Accessible authentication (enhanced)",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "4.1.2",
+      "wcag_title": "Name, Role, Value",
+      "level": "A",
+      "en_301_549": "9.4.1.2 Name, role, value",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Requirements; 8.3 Design",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    },
+    {
+      "wcag": "4.1.3",
+      "wcag_title": "Status Messages",
+      "level": "AA",
+      "en_301_549": "9.4.1.3 Status messages",
+      "section_508": "E205.4 / 602.3 (WCAG 2.0 A/AA incorporated by reference; verify current provision)",
+      "iso_30071_1": "8.2 Accessibility requirements; 8.3 Design and build; 9.1 Test",
+      "note": "Clause families are a planning aid. Confirm exact clause text, exceptions, and current editions before legal or procurement use."
+    }
+  ]
+}

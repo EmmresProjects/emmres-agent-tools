@@ -1,0 +1,2953 @@
+{
+  "title": "Environment, Workspace, Sandbox, and File Management",
+  "source": "Environment-Workspace-Sandbox-Management-Skill-Catalog.pdf",
+  "categories": [
+    {
+      "number": 1,
+      "name": "Workspace Discovery and State Inspection",
+      "slug": "workspace-discovery-and-state-inspection"
+    },
+    {
+      "number": 2,
+      "name": "File and Folder Organization",
+      "slug": "file-and-folder-organization"
+    },
+    {
+      "number": 3,
+      "name": "Safe File Operations and Preservation",
+      "slug": "safe-file-operations-and-preservation"
+    },
+    {
+      "number": 4,
+      "name": "Temporary Files, Scratch Space, and Cleanup",
+      "slug": "temporary-files-scratch-space-and-cleanup"
+    },
+    {
+      "number": 5,
+      "name": "Environment Creation and Isolation",
+      "slug": "environment-creation-and-isolation"
+    },
+    {
+      "number": 6,
+      "name": "Dependency Installation and Package Management",
+      "slug": "dependency-installation-and-package-management"
+    },
+    {
+      "number": 7,
+      "name": "Reproducible Environment Management",
+      "slug": "reproducible-environment-management"
+    },
+    {
+      "number": 8,
+      "name": "Tool Discovery and Capability Routing",
+      "slug": "tool-discovery-and-capability-routing"
+    },
+    {
+      "number": 9,
+      "name": "Process, Service, and Job Management",
+      "slug": "process-service-and-job-management"
+    },
+    {
+      "number": 10,
+      "name": "Resource and Capacity Management",
+      "slug": "resource-and-capacity-management"
+    },
+    {
+      "number": 11,
+      "name": "Permissions, Ownership, and Access Control",
+      "slug": "permissions-ownership-and-access-control"
+    },
+    {
+      "number": 12,
+      "name": "Secrets, Credentials, and Sensitive Data",
+      "slug": "secrets-credentials-and-sensitive-data"
+    },
+    {
+      "number": 13,
+      "name": "Logging, Observability, and Audit Trails",
+      "slug": "logging-observability-and-audit-trails"
+    },
+    {
+      "number": 14,
+      "name": "Input Intake and Artifact Staging",
+      "slug": "input-intake-and-artifact-staging"
+    },
+    {
+      "number": 15,
+      "name": "Output, Build, and Deliverable Management",
+      "slug": "output-build-and-deliverable-management"
+    },
+    {
+      "number": 16,
+      "name": "Backups, Snapshots, and Recovery",
+      "slug": "backups-snapshots-and-recovery"
+    },
+    {
+      "number": 17,
+      "name": "Build, Compilation, and Execution Workspaces",
+      "slug": "build-compilation-and-execution-workspaces"
+    },
+    {
+      "number": 18,
+      "name": "Test Environment and Fixture Management",
+      "slug": "test-environment-and-fixture-management"
+    },
+    {
+      "number": 19,
+      "name": "Data Workspace Management",
+      "slug": "data-workspace-management"
+    },
+    {
+      "number": 20,
+      "name": "Media and Rendering Workspace Management",
+      "slug": "media-and-rendering-workspace-management"
+    },
+    {
+      "number": 21,
+      "name": "Document and Office Workspace Management",
+      "slug": "document-and-office-workspace-management"
+    },
+    {
+      "number": 22,
+      "name": "Web and Application Development Workspaces",
+      "slug": "web-and-application-development-workspaces"
+    },
+    {
+      "number": 23,
+      "name": "Container, VM, and Sandbox Operations",
+      "slug": "container-vm-and-sandbox-operations"
+    },
+    {
+      "number": 24,
+      "name": "Network and Connectivity Environment Management",
+      "slug": "network-and-connectivity-environment-management"
+    },
+    {
+      "number": 25,
+      "name": "Cross-Platform and Compatibility Environments",
+      "slug": "cross-platform-and-compatibility-environments"
+    },
+    {
+      "number": 26,
+      "name": "Workspace Security and Supply Chain",
+      "slug": "workspace-security-and-supply-chain"
+    },
+    {
+      "number": 27,
+      "name": "Automation, Orchestration, and Workflow Control",
+      "slug": "automation-orchestration-and-workflow-control"
+    },
+    {
+      "number": 28,
+      "name": "Quality Assurance and Validation",
+      "slug": "quality-assurance-and-validation"
+    },
+    {
+      "number": 29,
+      "name": "Collaboration and Multi-Agent Workspaces",
+      "slug": "collaboration-and-multi-agent-workspaces"
+    },
+    {
+      "number": 30,
+      "name": "Maintenance, Archiving, and Lifecycle Management",
+      "slug": "maintenance-archiving-and-lifecycle-management"
+    },
+    {
+      "number": 31,
+      "name": "End-to-End Workspace Governance",
+      "slug": "end-to-end-workspace-governance"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "workspace-inventory-scanner",
+      "number": "1.1",
+      "category": 1,
+      "name": "Workspace Inventory Scanner",
+      "description": "Enumerates authorized files, folders, tools, runtimes, mounts, environment variables, processes, and resource limits without altering state.",
+      "route": "inspect.inventory",
+      "mode": "inspection"
+    },
+    {
+      "id": "current-state-snapshotter",
+      "number": "1.2",
+      "category": 1,
+      "name": "Current State Snapshotter",
+      "description": "Captures a reproducible summary of paths, versions, permissions, disk use, active services, and recent outputs before work begins.",
+      "route": "inspect.snapshot",
+      "mode": "inspection"
+    },
+    {
+      "id": "hidden-and-system-artifact-inspector",
+      "number": "1.3",
+      "category": 1,
+      "name": "Hidden and System Artifact Inspector",
+      "description": "Finds hidden files, dot directories, temporary state, caches, lockfiles, metadata, and generated artifacts relevant to the task.",
+      "route": "inspect.hidden",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-dependency-mapper",
+      "number": "1.4",
+      "category": 1,
+      "name": "Workspace Dependency Mapper",
+      "description": "Maps relationships among source files, generated outputs, packages, tools, configurations, datasets, and final deliverables.",
+      "route": "inspect.dependencies",
+      "mode": "inspection"
+    },
+    {
+      "id": "recent-change-investigator",
+      "number": "1.5",
+      "category": 1,
+      "name": "Recent Change Investigator",
+      "description": "Identifies recently changed files, timestamps, sizes, owners, and likely producing commands while separating evidence from inference.",
+      "route": "inspect.recent",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-health-assessor",
+      "number": "1.6",
+      "category": 1,
+      "name": "Workspace Health Assessor",
+      "description": "Checks disk capacity, path validity, permissions, corruption indicators, stale locks, broken links, and obvious environmental blockers.",
+      "route": "inspect.health",
+      "mode": "inspection"
+    },
+    {
+      "id": "tool-availability-surveyor",
+      "number": "1.7",
+      "category": 1,
+      "name": "Tool Availability Surveyor",
+      "description": "Determines which CLIs, libraries, interpreters, compilers, renderers, and utilities are installed and callable.",
+      "route": "system.tools",
+      "mode": "inspection"
+    },
+    {
+      "id": "environment-capability-matrix-builder",
+      "number": "1.8",
+      "category": 1,
+      "name": "Environment Capability Matrix Builder",
+      "description": "Records supported formats, languages, tool versions, hardware features, network limits, and known incompatibilities.",
+      "route": "system.matrix",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-search-indexer",
+      "number": "1.9",
+      "category": 1,
+      "name": "Workspace Search Indexer",
+      "description": "Builds a bounded index for filenames, metadata, text, symbols, hashes, and file types to support fast local discovery.",
+      "route": "inspect.index",
+      "mode": "inspection"
+    },
+    {
+      "id": "state-difference-reporter",
+      "number": "1.10",
+      "category": 1,
+      "name": "State Difference Reporter",
+      "description": "Compares two workspace snapshots and reports additions, removals, modifications, permission changes, and resource drift.",
+      "route": "inspect.diff",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-layout-architect",
+      "number": "2.1",
+      "category": 2,
+      "name": "Workspace Layout Architect",
+      "description": "Designs a clear project structure for inputs, sources, scripts, references, assets, builds, tests, reports, and final deliverables.",
+      "route": "files.layout",
+      "mode": "action"
+    },
+    {
+      "id": "file-classification-organizer",
+      "number": "2.2",
+      "category": 2,
+      "name": "File Classification Organizer",
+      "description": "Groups files by purpose, format, owner, lifecycle, project, sensitivity, and deliverable status using reversible rules.",
+      "route": "inspect.classify",
+      "mode": "inspection"
+    },
+    {
+      "id": "folder-consolidation-planner",
+      "number": "2.3",
+      "category": 2,
+      "name": "Folder Consolidation Planner",
+      "description": "Finds fragmented or duplicate project trees and proposes a safe canonical structure before moving content.",
+      "route": "inspect.duplicates",
+      "mode": "inspection"
+    },
+    {
+      "id": "naming-convention-enforcer",
+      "number": "2.4",
+      "category": 2,
+      "name": "Naming Convention Enforcer",
+      "description": "Applies documented names, dates, versions, identifiers, and extensions with collision checks and reversible mappings.",
+      "route": "files.transfer",
+      "mode": "action"
+    },
+    {
+      "id": "batch-move-and-copy-operator",
+      "number": "2.5",
+      "category": 2,
+      "name": "Batch Move and Copy Operator",
+      "description": "Moves or copies approved files with preflight checks, conflict handling, progress tracking, and post-operation verification.",
+      "route": "files.transfer",
+      "mode": "action"
+    },
+    {
+      "id": "directory-tree-simplifier",
+      "number": "2.6",
+      "category": 2,
+      "name": "Directory Tree Simplifier",
+      "description": "Reduces unnecessary nesting, ambiguous folders, duplicate staging areas, and orphaned output locations without losing provenance.",
+      "route": "assess.simplify",
+      "mode": "assessment"
+    },
+    {
+      "id": "project-boundary-separator",
+      "number": "2.7",
+      "category": 2,
+      "name": "Project Boundary Separator",
+      "description": "Separates unrelated projects, user inputs, generated files, shared assets, and temporary work to prevent accidental cross-contamination.",
+      "route": "inspect.boundaries",
+      "mode": "inspection"
+    },
+    {
+      "id": "final-deliverable-folder-curator",
+      "number": "2.8",
+      "category": 2,
+      "name": "Final Deliverable Folder Curator",
+      "description": "Ensures final output folders contain only requested deliverables with correct names, structure, and no scratch artifacts.",
+      "route": "domain.delivery",
+      "mode": "inspection"
+    },
+    {
+      "id": "archive-structure-designer",
+      "number": "2.9",
+      "category": 2,
+      "name": "Archive Structure Designer",
+      "description": "Packages completed or inactive work into logical, documented, searchable archives with checksums and restore instructions.",
+      "route": "files.archive",
+      "mode": "action"
+    },
+    {
+      "id": "folder-integrity-auditor",
+      "number": "2.10",
+      "category": 2,
+      "name": "Folder Integrity Auditor",
+      "description": "Checks for missing expected files, broken references, duplicate names, empty directories, permission errors, and inconsistent layout.",
+      "route": "inspect.structure",
+      "mode": "inspection"
+    },
+    {
+      "id": "original-file-preservation-guardian",
+      "number": "3.1",
+      "category": 3,
+      "name": "Original File Preservation Guardian",
+      "description": "Creates verified working copies and prevents accidental overwrite of user-supplied or source-of-truth files.",
+      "route": "files.transfer",
+      "mode": "action"
+    },
+    {
+      "id": "reversible-file-operation-manager",
+      "number": "3.2",
+      "category": 3,
+      "name": "Reversible File Operation Manager",
+      "description": "Uses previews, backups, transaction logs, and rollback mappings for renames, moves, conversions, and deletions.",
+      "route": "files.transfer",
+      "mode": "action"
+    },
+    {
+      "id": "copy-integrity-verifier",
+      "number": "3.3",
+      "category": 3,
+      "name": "Copy Integrity Verifier",
+      "description": "Confirms file count, size, hash, metadata, and openability after copying or migration.",
+      "route": "files.verify",
+      "mode": "inspection"
+    },
+    {
+      "id": "safe-delete-coordinator",
+      "number": "3.4",
+      "category": 3,
+      "name": "Safe Delete Coordinator",
+      "description": "Uses explicit approval, dependency checks, quarantine or trash staging, and retention windows before permanent deletion.",
+      "route": "files.quarantine",
+      "mode": "action"
+    },
+    {
+      "id": "overwrite-conflict-resolver",
+      "number": "3.5",
+      "category": 3,
+      "name": "Overwrite Conflict Resolver",
+      "description": "Detects collisions and chooses approved skip, rename, merge, version, or replace behavior with evidence.",
+      "route": "files.transfer",
+      "mode": "action"
+    },
+    {
+      "id": "atomic-file-writer",
+      "number": "3.6",
+      "category": 3,
+      "name": "Atomic File Writer",
+      "description": "Writes outputs through temporary files and atomic replacement to avoid partially written final artifacts.",
+      "route": "files.write",
+      "mode": "action"
+    },
+    {
+      "id": "file-lock-and-concurrency-manager",
+      "number": "3.7",
+      "category": 3,
+      "name": "File Lock and Concurrency Manager",
+      "description": "Detects active writers, stale locks, shared access, and race conditions before modifying files.",
+      "route": "files.lock",
+      "mode": "action"
+    },
+    {
+      "id": "symlink-and-shortcut-safety-inspector",
+      "number": "3.8",
+      "category": 3,
+      "name": "Symlink and Shortcut Safety Inspector",
+      "description": "Resolves links, detects loops or broken targets, and prevents operations from escaping authorized workspace boundaries.",
+      "route": "inspect.symlinks",
+      "mode": "inspection"
+    },
+    {
+      "id": "metadata-preservation-specialist",
+      "number": "3.9",
+      "category": 3,
+      "name": "Metadata Preservation Specialist",
+      "description": "Preserves or deliberately normalizes timestamps, permissions, ownership, extended attributes, and document metadata.",
+      "route": "files.metadata",
+      "mode": "action"
+    },
+    {
+      "id": "file-operation-recovery-specialist",
+      "number": "3.10",
+      "category": 3,
+      "name": "File Operation Recovery Specialist",
+      "description": "Reconstructs the earliest failed operation, preserves completed work, and resumes safely from the last verified checkpoint.",
+      "route": "files.rollback",
+      "mode": "action"
+    },
+    {
+      "id": "scratch-workspace-creator",
+      "number": "4.1",
+      "category": 4,
+      "name": "Scratch Workspace Creator",
+      "description": "Creates isolated temporary directories with clear ownership, purpose, quotas, and automatic cleanup boundaries.",
+      "route": "files.scratch",
+      "mode": "action"
+    },
+    {
+      "id": "temporary-artifact-tracker",
+      "number": "4.2",
+      "category": 4,
+      "name": "Temporary Artifact Tracker",
+      "description": "Records intermediate files, producing steps, dependencies, last use, and eligibility for cleanup.",
+      "route": "inspect.scratch",
+      "mode": "inspection"
+    },
+    {
+      "id": "cache-lifecycle-manager",
+      "number": "4.3",
+      "category": 4,
+      "name": "Cache Lifecycle Manager",
+      "description": "Identifies tool, package, build, render, browser, and data caches and clears only approved, reproducible content.",
+      "route": "inspect.caches",
+      "mode": "inspection"
+    },
+    {
+      "id": "stale-output-detector",
+      "number": "4.4",
+      "category": 4,
+      "name": "Stale Output Detector",
+      "description": "Finds outputs older than their inputs, abandoned partial files, obsolete renders, and superseded packages.",
+      "route": "inspect.stale",
+      "mode": "inspection"
+    },
+    {
+      "id": "safe-cleanup-planner",
+      "number": "4.5",
+      "category": 4,
+      "name": "Safe Cleanup Planner",
+      "description": "Produces a deletion candidate list with size savings, risk, dependencies, and retention recommendations before acting.",
+      "route": "inspect.cleanup",
+      "mode": "inspection"
+    },
+    {
+      "id": "disk-space-reclaimer",
+      "number": "4.6",
+      "category": 4,
+      "name": "Disk Space Reclaimer",
+      "description": "Recovers space from verified temporary files, duplicate caches, old builds, and logs while protecting source data.",
+      "route": "files.quarantine",
+      "mode": "action"
+    },
+    {
+      "id": "orphaned-artifact-collector",
+      "number": "4.7",
+      "category": 4,
+      "name": "Orphaned Artifact Collector",
+      "description": "Finds generated files with no current producer, reference, owner, or delivery purpose and stages them for review.",
+      "route": "inspect.orphans",
+      "mode": "inspection"
+    },
+    {
+      "id": "cleanup-exclusion-manager",
+      "number": "4.8",
+      "category": 4,
+      "name": "Cleanup Exclusion Manager",
+      "description": "Protects user uploads, final deliverables, active builds, logs under investigation, and referenced assets from cleanup.",
+      "route": "inspect.exclusions",
+      "mode": "inspection"
+    },
+    {
+      "id": "post-task-workspace-sanitizer",
+      "number": "4.9",
+      "category": 4,
+      "name": "Post-Task Workspace Sanitizer",
+      "description": "Removes secrets, transient credentials, temporary downloads, debug residue, and unnecessary intermediates after delivery.",
+      "route": "files.quarantine",
+      "mode": "action"
+    },
+    {
+      "id": "cleanup-verification-auditor",
+      "number": "4.10",
+      "category": 4,
+      "name": "Cleanup Verification Auditor",
+      "description": "Confirms required files still open, builds still run, outputs remain intact, and reclaimed space matches expectations.",
+      "route": "domain.cleanup",
+      "mode": "inspection"
+    },
+    {
+      "id": "task-environment-architect",
+      "number": "5.1",
+      "category": 5,
+      "name": "Task Environment Architect",
+      "description": "Selects local process, virtual environment, container, virtual machine, or sandbox isolation according to dependencies and risk.",
+      "route": "assess.isolation",
+      "mode": "assessment"
+    },
+    {
+      "id": "python-virtual-environment-manager",
+      "number": "5.2",
+      "category": 5,
+      "name": "Python Virtual Environment Manager",
+      "description": "Creates versioned Python environments, installs pinned packages, records interpreters, and validates imports.",
+      "route": "runtime.venv",
+      "mode": "action"
+    },
+    {
+      "id": "node-environment-manager",
+      "number": "5.3",
+      "category": 5,
+      "name": "Node Environment Manager",
+      "description": "Creates isolated Node.js environments with pinned runtime, lockfile-respecting installation, scripts, and package validation.",
+      "route": "runtime.npm",
+      "mode": "action"
+    },
+    {
+      "id": "container-workspace-builder",
+      "number": "5.4",
+      "category": 5,
+      "name": "Container Workspace Builder",
+      "description": "Creates reproducible container environments with minimal base images, mounted inputs, controlled outputs, and non-root defaults.",
+      "route": "runtime.container-build",
+      "mode": "action"
+    },
+    {
+      "id": "ephemeral-test-environment-creator",
+      "number": "5.5",
+      "category": 5,
+      "name": "Ephemeral Test Environment Creator",
+      "description": "Builds disposable environments for experiments, untrusted inputs, compatibility checks, and failure reproduction.",
+      "route": "runtime.venv",
+      "mode": "action"
+    },
+    {
+      "id": "multi-version-runtime-manager",
+      "number": "5.6",
+      "category": 5,
+      "name": "Multi-Version Runtime Manager",
+      "description": "Coordinates side-by-side Python, Node.js, Java, .NET, Ruby, Go, and other runtime versions without global conflicts.",
+      "route": "system.runtimes",
+      "mode": "inspection"
+    },
+    {
+      "id": "environment-template-designer",
+      "number": "5.7",
+      "category": 5,
+      "name": "Environment Template Designer",
+      "description": "Creates reusable environment blueprints for recurring document, data, code, media, web, and testing workflows.",
+      "route": "assess.environment",
+      "mode": "assessment"
+    },
+    {
+      "id": "offline-environment-builder",
+      "number": "5.8",
+      "category": 5,
+      "name": "Offline Environment Builder",
+      "description": "Prepares cached dependencies, local package sources, checksums, and instructions for network-restricted execution.",
+      "route": "assess.offline",
+      "mode": "assessment"
+    },
+    {
+      "id": "gpu-and-accelerator-environment-planner",
+      "number": "5.9",
+      "category": 5,
+      "name": "GPU and Accelerator Environment Planner",
+      "description": "Detects available accelerators, runtime compatibility, memory limits, drivers, and CPU fallbacks.",
+      "route": "system.gpu",
+      "mode": "inspection"
+    },
+    {
+      "id": "environment-isolation-auditor",
+      "number": "5.10",
+      "category": 5,
+      "name": "Environment Isolation Auditor",
+      "description": "Checks mounts, permissions, network access, secrets, user identity, resource limits, and host leakage.",
+      "route": "system.isolation",
+      "mode": "inspection"
+    },
+    {
+      "id": "dependency-requirement-resolver",
+      "number": "6.1",
+      "category": 6,
+      "name": "Dependency Requirement Resolver",
+      "description": "Interprets manifests, imports, build files, errors, and documentation to identify the smallest required dependency set.",
+      "route": "system.requirements",
+      "mode": "inspection"
+    },
+    {
+      "id": "pinned-package-installer",
+      "number": "6.2",
+      "category": 6,
+      "name": "Pinned Package Installer",
+      "description": "Installs exact approved versions with lockfiles, hashes when available, and recorded sources.",
+      "route": "runtime.pip",
+      "mode": "action"
+    },
+    {
+      "id": "system-package-manager-operator",
+      "number": "6.3",
+      "category": 6,
+      "name": "System Package Manager Operator",
+      "description": "Uses apt, dnf, yum, apk, brew, winget, or other approved managers with minimal changes and validation.",
+      "route": "assess.system-package",
+      "mode": "assessment"
+    },
+    {
+      "id": "language-package-manager-operator",
+      "number": "6.4",
+      "category": 6,
+      "name": "Language Package Manager Operator",
+      "description": "Uses pip, uv, conda, npm, pnpm, yarn, Maven, Gradle, NuGet, Cargo, Go modules, Composer, or Bundler appropriately.",
+      "route": "runtime.npm",
+      "mode": "action"
+    },
+    {
+      "id": "dependency-conflict-diagnostician",
+      "number": "6.5",
+      "category": 6,
+      "name": "Dependency Conflict Diagnostician",
+      "description": "Identifies incompatible constraints, transitive conflicts, ABI mismatches, and resolver differences and proposes minimal repairs.",
+      "route": "system.dependencies",
+      "mode": "inspection"
+    },
+    {
+      "id": "build-tool-bootstrapper",
+      "number": "6.6",
+      "category": 6,
+      "name": "Build Tool Bootstrapper",
+      "description": "Installs or configures compilers, linkers, SDKs, build systems, renderers, and platform tools required by the task.",
+      "route": "system.tools",
+      "mode": "inspection"
+    },
+    {
+      "id": "optional-dependency-selector",
+      "number": "6.7",
+      "category": 6,
+      "name": "Optional Dependency Selector",
+      "description": "Installs only feature-relevant extras and avoids unnecessary heavy, risky, or conflicting packages.",
+      "route": "system.extras",
+      "mode": "inspection"
+    },
+    {
+      "id": "package-source-and-trust-reviewer",
+      "number": "6.8",
+      "category": 6,
+      "name": "Package Source and Trust Reviewer",
+      "description": "Checks repository source, signatures, checksums, provenance, maintenance, and license before installation.",
+      "route": "system.provenance",
+      "mode": "inspection"
+    },
+    {
+      "id": "dependency-installation-verifier",
+      "number": "6.9",
+      "category": 6,
+      "name": "Dependency Installation Verifier",
+      "description": "Runs import, version, executable, smoke, and minimal workflow checks after installation.",
+      "route": "runtime.verify",
+      "mode": "inspection"
+    },
+    {
+      "id": "package-rollback-and-removal-manager",
+      "number": "6.10",
+      "category": 6,
+      "name": "Package Rollback and Removal Manager",
+      "description": "Restores previous package state, removes failed additions, and verifies preserved workflows after rollback.",
+      "route": "assess.package-rollback",
+      "mode": "assessment"
+    },
+    {
+      "id": "environment-manifest-author",
+      "number": "7.1",
+      "category": 7,
+      "name": "Environment Manifest Author",
+      "description": "Records operating system, architecture, runtime, packages, tools, variables, paths, and required external services.",
+      "route": "inspect.snapshot",
+      "mode": "inspection"
+    },
+    {
+      "id": "lockfile-and-version-pinning-specialist",
+      "number": "7.2",
+      "category": 7,
+      "name": "Lockfile and Version Pinning Specialist",
+      "description": "Creates or validates lockfiles and exact tool versions for deterministic rebuilds.",
+      "route": "system.lockfile",
+      "mode": "inspection"
+    },
+    {
+      "id": "reproducible-build-environment-designer",
+      "number": "7.3",
+      "category": 7,
+      "name": "Reproducible Build Environment Designer",
+      "description": "Captures compiler, SDK, locale, timezone, environment variables, inputs, and build commands that affect outputs.",
+      "route": "assess.build",
+      "mode": "assessment"
+    },
+    {
+      "id": "clean-state-rebuild-tester",
+      "number": "7.4",
+      "category": 7,
+      "name": "Clean-State Rebuild Tester",
+      "description": "Recreates the environment from manifests in a fresh location and runs the primary workflow end to end.",
+      "route": "domain.clean-rebuild",
+      "mode": "inspection"
+    },
+    {
+      "id": "environment-drift-detector",
+      "number": "7.5",
+      "category": 7,
+      "name": "Environment Drift Detector",
+      "description": "Compares current state with the approved manifest and reports changed packages, tools, variables, files, and permissions.",
+      "route": "inspect.diff",
+      "mode": "inspection"
+    },
+    {
+      "id": "platform-compatibility-matrix-builder",
+      "number": "7.6",
+      "category": 7,
+      "name": "Platform Compatibility Matrix Builder",
+      "description": "Documents supported operating systems, architectures, runtime versions, optional features, and known incompatibilities.",
+      "route": "system.matrix",
+      "mode": "inspection"
+    },
+    {
+      "id": "deterministic-locale-and-time-manager",
+      "number": "7.7",
+      "category": 7,
+      "name": "Deterministic Locale and Time Manager",
+      "description": "Controls locale, encoding, timezone, clock assumptions, and sorting behavior to reduce environment-dependent results.",
+      "route": "system.locale",
+      "mode": "inspection"
+    },
+    {
+      "id": "seed-and-randomness-manager",
+      "number": "7.8",
+      "category": 7,
+      "name": "Seed and Randomness Manager",
+      "description": "Records and controls random seeds, nondeterministic libraries, parallelism, and reproducibility limitations.",
+      "route": "system.seed",
+      "mode": "inspection"
+    },
+    {
+      "id": "environment-export-and-import-specialist",
+      "number": "7.9",
+      "category": 7,
+      "name": "Environment Export and Import Specialist",
+      "description": "Exports portable declarations and restores them in another approved workspace with validation.",
+      "route": "files.archive",
+      "mode": "action"
+    },
+    {
+      "id": "reproducibility-limitation-reporter",
+      "number": "7.10",
+      "category": 7,
+      "name": "Reproducibility Limitation Reporter",
+      "description": "Documents components that cannot be fully pinned, external services, proprietary tools, and expected variation.",
+      "route": "assess.limitations",
+      "mode": "assessment"
+    },
+    {
+      "id": "tool-catalog-builder",
+      "number": "8.1",
+      "category": 8,
+      "name": "Tool Catalog Builder",
+      "description": "Maintains an inventory of available commands, scripts, libraries, skills, templates, connectors, and supported interfaces.",
+      "route": "system.tools",
+      "mode": "inspection"
+    },
+    {
+      "id": "tool-suitability-router",
+      "number": "8.2",
+      "category": 8,
+      "name": "Tool Suitability Router",
+      "description": "Chooses the smallest capable tool chain based on format, task, safety, repeatability, quality, speed, and repair cost.",
+      "route": "assess.tool-route",
+      "mode": "assessment"
+    },
+    {
+      "id": "tool-interface-inspector",
+      "number": "8.3",
+      "category": 8,
+      "name": "Tool Interface Inspector",
+      "description": "Learns command syntax, inputs, outputs, side effects, dependencies, limits, error signals, and expected artifacts.",
+      "route": "system.tools",
+      "mode": "inspection"
+    },
+    {
+      "id": "toolchain-composition-designer",
+      "number": "8.4",
+      "category": 8,
+      "name": "Toolchain Composition Designer",
+      "description": "Combines discovery, transformation, validation, rendering, packaging, and recovery tools into a checked workflow.",
+      "route": "workflow.design",
+      "mode": "inspection"
+    },
+    {
+      "id": "tool-version-compatibility-analyst",
+      "number": "8.5",
+      "category": 8,
+      "name": "Tool Version Compatibility Analyst",
+      "description": "Checks whether connected tool versions can exchange files, schemas, plugins, and runtime artifacts.",
+      "route": "system.matrix",
+      "mode": "inspection"
+    },
+    {
+      "id": "fallback-tool-planner",
+      "number": "8.6",
+      "category": 8,
+      "name": "Fallback Tool Planner",
+      "description": "Defines safe alternatives when a preferred tool is missing, incompatible, unlicensed, or unable to process the artifact.",
+      "route": "assess.fallback",
+      "mode": "assessment"
+    },
+    {
+      "id": "tool-output-normalizer",
+      "number": "8.7",
+      "category": 8,
+      "name": "Tool Output Normalizer",
+      "description": "Converts heterogeneous logs, paths, statuses, and reports into consistent records for orchestration.",
+      "route": "domain.logs",
+      "mode": "inspection"
+    },
+    {
+      "id": "tool-side-effect-auditor",
+      "number": "8.8",
+      "category": 8,
+      "name": "Tool Side-Effect Auditor",
+      "description": "Identifies network access, file writes, caches, global state, services, environment mutation, and cleanup needs.",
+      "route": "system.isolation",
+      "mode": "inspection"
+    },
+    {
+      "id": "tool-performance-profiler",
+      "number": "8.9",
+      "category": 8,
+      "name": "Tool Performance Profiler",
+      "description": "Measures startup, runtime, memory, disk, output size, and scaling behavior on representative workloads.",
+      "route": "runtime.exec",
+      "mode": "action"
+    },
+    {
+      "id": "tool-retirement-and-replacement-manager",
+      "number": "8.10",
+      "category": 8,
+      "name": "Tool Retirement and Replacement Manager",
+      "description": "Detects obsolete tools, identifies replacements, migrates workflows, and validates equivalent outcomes.",
+      "route": "assess.retirement",
+      "mode": "assessment"
+    },
+    {
+      "id": "process-inventory-inspector",
+      "number": "9.1",
+      "category": 9,
+      "name": "Process Inventory Inspector",
+      "description": "Lists authorized running processes, commands, owners, resources, parents, ports, and start times.",
+      "route": "system.processes",
+      "mode": "inspection"
+    },
+    {
+      "id": "task-process-launcher",
+      "number": "9.2",
+      "category": 9,
+      "name": "Task Process Launcher",
+      "description": "Starts approved commands with controlled working directory, environment, limits, logs, and exit handling.",
+      "route": "runtime.exec",
+      "mode": "action"
+    },
+    {
+      "id": "long-running-job-supervisor",
+      "number": "9.3",
+      "category": 9,
+      "name": "Long-Running Job Supervisor",
+      "description": "Tracks progress, heartbeat, resource use, checkpoints, timeouts, and completion for lengthy tasks.",
+      "route": "runtime.service-status",
+      "mode": "inspection"
+    },
+    {
+      "id": "background-service-manager",
+      "number": "9.4",
+      "category": 9,
+      "name": "Background Service Manager",
+      "description": "Starts, stops, restarts, and validates approved local services with explicit ownership and cleanup.",
+      "route": "runtime.service-start",
+      "mode": "action"
+    },
+    {
+      "id": "process-tree-controller",
+      "number": "9.5",
+      "category": 9,
+      "name": "Process Tree Controller",
+      "description": "Manages parent and child processes, prevents orphaned workers, and terminates only task-owned process trees.",
+      "route": "runtime.service-stop",
+      "mode": "action"
+    },
+    {
+      "id": "stuck-process-diagnostician",
+      "number": "9.6",
+      "category": 9,
+      "name": "Stuck Process Diagnostician",
+      "description": "Distinguishes slow work, deadlock, blocked I/O, wait state, resource exhaustion, and crashed workers.",
+      "route": "system.processes",
+      "mode": "inspection"
+    },
+    {
+      "id": "graceful-shutdown-coordinator",
+      "number": "9.7",
+      "category": 9,
+      "name": "Graceful Shutdown Coordinator",
+      "description": "Requests orderly stop, saves state, flushes outputs, closes files, and escalates termination only when necessary.",
+      "route": "runtime.service-stop",
+      "mode": "action"
+    },
+    {
+      "id": "job-queue-manager",
+      "number": "9.8",
+      "category": 9,
+      "name": "Job Queue Manager",
+      "description": "Schedules independent tasks, dependencies, concurrency, priorities, retries, and resource-aware execution.",
+      "route": "workflow.run",
+      "mode": "action"
+    },
+    {
+      "id": "scheduled-task-manager",
+      "number": "9.9",
+      "category": 9,
+      "name": "Scheduled Task Manager",
+      "description": "Creates bounded recurring jobs with clear ownership, timing, logging, failure alerts, and safe removal.",
+      "route": "runtime.schedule",
+      "mode": "action"
+    },
+    {
+      "id": "process-cleanup-auditor",
+      "number": "9.10",
+      "category": 9,
+      "name": "Process Cleanup Auditor",
+      "description": "Confirms no unwanted services, workers, ports, locks, temporary credentials, or background jobs remain.",
+      "route": "domain.cleanup",
+      "mode": "inspection"
+    },
+    {
+      "id": "disk-capacity-planner",
+      "number": "10.1",
+      "category": 10,
+      "name": "Disk Capacity Planner",
+      "description": "Estimates input, temporary, cache, build, render, package, and backup storage before large operations.",
+      "route": "system.disk",
+      "mode": "inspection"
+    },
+    {
+      "id": "memory-budget-manager",
+      "number": "10.2",
+      "category": 10,
+      "name": "Memory Budget Manager",
+      "description": "Allocates memory limits, batch sizes, streaming strategies, and spill-to-disk behavior for constrained workloads.",
+      "route": "system.memory",
+      "mode": "inspection"
+    },
+    {
+      "id": "cpu-and-concurrency-planner",
+      "number": "10.3",
+      "category": 10,
+      "name": "CPU and Concurrency Planner",
+      "description": "Chooses worker counts, thread limits, process parallelism, and scheduling to avoid oversubscription.",
+      "route": "system.cpu",
+      "mode": "inspection"
+    },
+    {
+      "id": "gpu-memory-manager",
+      "number": "10.4",
+      "category": 10,
+      "name": "GPU Memory Manager",
+      "description": "Plans model, batch, texture, render, and fallback behavior around available accelerator memory.",
+      "route": "system.gpu",
+      "mode": "inspection"
+    },
+    {
+      "id": "network-bandwidth-manager",
+      "number": "10.5",
+      "category": 10,
+      "name": "Network Bandwidth Manager",
+      "description": "Controls downloads, uploads, mirrors, retries, compression, concurrency, and offline caching.",
+      "route": "system.network",
+      "mode": "inspection"
+    },
+    {
+      "id": "file-descriptor-and-handle-monitor",
+      "number": "10.6",
+      "category": 10,
+      "name": "File Descriptor and Handle Monitor",
+      "description": "Detects leaks, excessive open files, watcher limits, pipe exhaustion, and platform-specific handle constraints.",
+      "route": "system.fd",
+      "mode": "inspection"
+    },
+    {
+      "id": "quota-and-limit-inspector",
+      "number": "10.7",
+      "category": 10,
+      "name": "Quota and Limit Inspector",
+      "description": "Checks filesystem, container, cloud, API, package, process, and user quotas before execution.",
+      "route": "system.quota",
+      "mode": "inspection"
+    },
+    {
+      "id": "resource-contention-diagnostician",
+      "number": "10.8",
+      "category": 10,
+      "name": "Resource Contention Diagnostician",
+      "description": "Identifies competing processes, locks, I/O saturation, cache pressure, and throttling.",
+      "route": "system.contention",
+      "mode": "inspection"
+    },
+    {
+      "id": "adaptive-workload-controller",
+      "number": "10.9",
+      "category": 10,
+      "name": "Adaptive Workload Controller",
+      "description": "Adjusts batch size, concurrency, quality, and retry timing within declared limits based on observed capacity.",
+      "route": "system.adaptive",
+      "mode": "inspection"
+    },
+    {
+      "id": "resource-usage-reporter",
+      "number": "10.10",
+      "category": 10,
+      "name": "Resource Usage Reporter",
+      "description": "Summarizes measured CPU, memory, disk, GPU, network, duration, peaks, and remaining headroom.",
+      "route": "system.resources",
+      "mode": "inspection"
+    },
+    {
+      "id": "filesystem-permission-inspector",
+      "number": "11.1",
+      "category": 11,
+      "name": "Filesystem Permission Inspector",
+      "description": "Reads ownership, mode bits, ACLs, inheritance, mount flags, and effective access for authorized paths.",
+      "route": "inspect.metadata",
+      "mode": "inspection"
+    },
+    {
+      "id": "least-privilege-workspace-designer",
+      "number": "11.2",
+      "category": 11,
+      "name": "Least-Privilege Workspace Designer",
+      "description": "Grants only required read, write, execute, network, device, and service access to each task.",
+      "route": "assess.least-privilege",
+      "mode": "assessment"
+    },
+    {
+      "id": "permission-repair-specialist",
+      "number": "11.3",
+      "category": 11,
+      "name": "Permission Repair Specialist",
+      "description": "Applies the smallest approved ownership or access correction and verifies both success and non-expansion.",
+      "route": "files.chmod",
+      "mode": "action"
+    },
+    {
+      "id": "shared-workspace-access-planner",
+      "number": "11.4",
+      "category": 11,
+      "name": "Shared Workspace Access Planner",
+      "description": "Defines user, group, service, collaborator, and automation access with clear boundaries and handoff rules.",
+      "route": "assess.access",
+      "mode": "assessment"
+    },
+    {
+      "id": "privilege-escalation-gatekeeper",
+      "number": "11.5",
+      "category": 11,
+      "name": "Privilege Escalation Gatekeeper",
+      "description": "Requires explicit necessity and authorization before elevated commands, and limits duration and scope.",
+      "route": "workflow.gate",
+      "mode": "inspection"
+    },
+    {
+      "id": "read-only-mount-manager",
+      "number": "11.6",
+      "category": 11,
+      "name": "Read-Only Mount Manager",
+      "description": "Uses read-only mounts or copies for source materials and untrusted artifacts whenever practical.",
+      "route": "assess.readonly",
+      "mode": "assessment"
+    },
+    {
+      "id": "executable-permission-manager",
+      "number": "11.7",
+      "category": 11,
+      "name": "Executable Permission Manager",
+      "description": "Controls which scripts and binaries are executable and prevents accidental execution of data files.",
+      "route": "files.chmod",
+      "mode": "action"
+    },
+    {
+      "id": "access-inheritance-auditor",
+      "number": "11.8",
+      "category": 11,
+      "name": "Access Inheritance Auditor",
+      "description": "Detects unintended inherited permissions, public exposure, writable parents, and privilege drift.",
+      "route": "inspect.permissions",
+      "mode": "inspection"
+    },
+    {
+      "id": "service-account-workspace-manager",
+      "number": "11.9",
+      "category": 11,
+      "name": "Service Account Workspace Manager",
+      "description": "Assigns isolated directories, credentials, ownership, quotas, and logs to automated identities.",
+      "route": "assess.service-account",
+      "mode": "assessment"
+    },
+    {
+      "id": "permission-change-ledger",
+      "number": "11.10",
+      "category": 11,
+      "name": "Permission Change Ledger",
+      "description": "Records approved access changes, reasons, previous state, affected paths, and rollback instructions.",
+      "route": "workflow.ledger",
+      "mode": "action"
+    },
+    {
+      "id": "secret-discovery-scanner",
+      "number": "12.1",
+      "category": 12,
+      "name": "Secret Discovery Scanner",
+      "description": "Finds credentials, tokens, keys, connection strings, cookies, private certificates, and sensitive environment variables in authorized scope.",
+      "route": "inspect.secrets",
+      "mode": "inspection"
+    },
+    {
+      "id": "secret-redaction-operator",
+      "number": "12.2",
+      "category": 12,
+      "name": "Secret Redaction Operator",
+      "description": "Removes or masks secrets from logs, reports, screenshots, exports, and shared artifacts while preserving diagnostic value.",
+      "route": "files.redact",
+      "mode": "action"
+    },
+    {
+      "id": "environment-variable-secret-manager",
+      "number": "12.3",
+      "category": 12,
+      "name": "Environment Variable Secret Manager",
+      "description": "Injects temporary credentials through approved environment mechanisms without writing them into source or deliverables.",
+      "route": "system.env-secrets",
+      "mode": "inspection"
+    },
+    {
+      "id": "credential-scope-auditor",
+      "number": "12.4",
+      "category": 12,
+      "name": "Credential Scope Auditor",
+      "description": "Checks whether credentials have only required permissions, environments, resources, and expiration.",
+      "route": "assess.credential-scope",
+      "mode": "assessment"
+    },
+    {
+      "id": "temporary-credential-lifecycle-manager",
+      "number": "12.5",
+      "category": 12,
+      "name": "Temporary Credential Lifecycle Manager",
+      "description": "Obtains, uses, rotates, expires, and removes short-lived credentials for approved tasks.",
+      "route": "assess.credential-lifecycle",
+      "mode": "assessment"
+    },
+    {
+      "id": "secret-file-permission-guardian",
+      "number": "12.6",
+      "category": 12,
+      "name": "Secret File Permission Guardian",
+      "description": "Restricts sensitive files, key material, configuration, and backups to authorized identities.",
+      "route": "inspect.permissions",
+      "mode": "inspection"
+    },
+    {
+      "id": "sensitive-dataset-boundary-manager",
+      "number": "12.7",
+      "category": 12,
+      "name": "Sensitive Dataset Boundary Manager",
+      "description": "Separates confidential, personal, licensed, regulated, and public data into appropriately controlled zones.",
+      "route": "assess.sensitive-boundaries",
+      "mode": "assessment"
+    },
+    {
+      "id": "log-privacy-filter",
+      "number": "12.8",
+      "category": 12,
+      "name": "Log Privacy Filter",
+      "description": "Prevents command arguments, URLs, headers, payloads, stack traces, and debug output from leaking secrets or personal data.",
+      "route": "files.redact",
+      "mode": "action"
+    },
+    {
+      "id": "credential-incident-recovery-planner",
+      "number": "12.9",
+      "category": 12,
+      "name": "Credential Incident Recovery Planner",
+      "description": "Supports revocation, rotation, cache clearing, history review, and affected-artifact cleanup after exposure.",
+      "route": "assess.credential-incident",
+      "mode": "assessment"
+    },
+    {
+      "id": "final-artifact-secret-auditor",
+      "number": "12.10",
+      "category": 12,
+      "name": "Final Artifact Secret Auditor",
+      "description": "Checks final packages, metadata, hidden files, comments, manifests, and embedded content before delivery.",
+      "route": "inspect.secret-final",
+      "mode": "inspection"
+    },
+    {
+      "id": "execution-log-architect",
+      "number": "13.1",
+      "category": 13,
+      "name": "Execution Log Architect",
+      "description": "Designs clear timestamped logs for commands, stages, inputs, outputs, statuses, durations, and failures without secrets.",
+      "route": "assess.logging",
+      "mode": "assessment"
+    },
+    {
+      "id": "structured-log-normalizer",
+      "number": "13.2",
+      "category": 13,
+      "name": "Structured Log Normalizer",
+      "description": "Converts mixed text logs into structured events with severity, component, job, correlation ID, and timestamp.",
+      "route": "domain.logs",
+      "mode": "inspection"
+    },
+    {
+      "id": "cross-tool-log-correlator",
+      "number": "13.3",
+      "category": 13,
+      "name": "Cross-Tool Log Correlator",
+      "description": "Aligns build, render, test, process, service, and system logs to locate the earliest observed mismatch.",
+      "route": "domain.logs",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-activity-ledger",
+      "number": "13.4",
+      "category": 13,
+      "name": "Workspace Activity Ledger",
+      "description": "Records authorized file operations, environment changes, tool use, checkpoints, and delivery events.",
+      "route": "workflow.ledger",
+      "mode": "action"
+    },
+    {
+      "id": "log-rotation-and-retention-manager",
+      "number": "13.5",
+      "category": 13,
+      "name": "Log Rotation and Retention Manager",
+      "description": "Controls log size, compression, retention, deletion, and investigation holds.",
+      "route": "workflow.log-rotate",
+      "mode": "action"
+    },
+    {
+      "id": "progress-and-heartbeat-monitor",
+      "number": "13.6",
+      "category": 13,
+      "name": "Progress and Heartbeat Monitor",
+      "description": "Tracks active long-running tasks and detects silent hangs, stalled output, and lost workers.",
+      "route": "runtime.service-status",
+      "mode": "inspection"
+    },
+    {
+      "id": "failure-signal-extractor",
+      "number": "13.7",
+      "category": 13,
+      "name": "Failure Signal Extractor",
+      "description": "Finds relevant errors, warnings, stack traces, exit codes, and surrounding context from noisy output.",
+      "route": "domain.logs",
+      "mode": "inspection"
+    },
+    {
+      "id": "audit-trail-integrity-checker",
+      "number": "13.8",
+      "category": 13,
+      "name": "Audit Trail Integrity Checker",
+      "description": "Checks ordering, completeness, timestamps, identity, missing intervals, and unexpected modification of records.",
+      "route": "workflow.log-verify",
+      "mode": "inspection"
+    },
+    {
+      "id": "human-readable-run-summary-author",
+      "number": "13.9",
+      "category": 13,
+      "name": "Human-Readable Run Summary Author",
+      "description": "Creates concise operational summaries of completed steps, outputs, limitations, and recoveries when requested.",
+      "route": "workflow.summary",
+      "mode": "inspection"
+    },
+    {
+      "id": "logging-cleanup-and-privacy-auditor",
+      "number": "13.10",
+      "category": 13,
+      "name": "Logging Cleanup and Privacy Auditor",
+      "description": "Removes debug residue and sensitive logs from deliverables while retaining required operational records.",
+      "route": "inspect.secrets",
+      "mode": "inspection"
+    },
+    {
+      "id": "user-upload-intake-manager",
+      "number": "14.1",
+      "category": 14,
+      "name": "User Upload Intake Manager",
+      "description": "Inventories uploaded files, preserves originals, checks names and types, and creates isolated working copies.",
+      "route": "files.intake",
+      "mode": "action"
+    },
+    {
+      "id": "input-completeness-auditor",
+      "number": "14.2",
+      "category": 14,
+      "name": "Input Completeness Auditor",
+      "description": "Checks whether required source files, credentials, schemas, assets, versions, and instructions are present.",
+      "route": "domain.validate",
+      "mode": "inspection"
+    },
+    {
+      "id": "unknown-file-triage-manager",
+      "number": "14.3",
+      "category": 14,
+      "name": "Unknown File Triage Manager",
+      "description": "Uses signatures, metadata, parsers, and safe inspection to classify unfamiliar or mislabeled artifacts.",
+      "route": "domain.validate",
+      "mode": "inspection"
+    },
+    {
+      "id": "input-quarantine-controller",
+      "number": "14.4",
+      "category": 14,
+      "name": "Input Quarantine Controller",
+      "description": "Separates untrusted, executable, malformed, encrypted, or oversized inputs pending safe analysis.",
+      "route": "files.quarantine",
+      "mode": "action"
+    },
+    {
+      "id": "input-naming-and-collision-resolver",
+      "number": "14.5",
+      "category": 14,
+      "name": "Input Naming and Collision Resolver",
+      "description": "Normalizes staging names while preserving original names and preventing overwrites.",
+      "route": "assess.naming",
+      "mode": "assessment"
+    },
+    {
+      "id": "input-provenance-recorder",
+      "number": "14.6",
+      "category": 14,
+      "name": "Input Provenance Recorder",
+      "description": "Tracks source, upload time, owner, license, checksum, and relationship to derived artifacts.",
+      "route": "files.intake",
+      "mode": "action"
+    },
+    {
+      "id": "batch-intake-organizer",
+      "number": "14.7",
+      "category": 14,
+      "name": "Batch Intake Organizer",
+      "description": "Stages large collections by project, format, priority, sensitivity, and processing readiness.",
+      "route": "files.intake",
+      "mode": "action"
+    },
+    {
+      "id": "input-decompression-manager",
+      "number": "14.8",
+      "category": 14,
+      "name": "Input Decompression Manager",
+      "description": "Extracts authorized archives with path, size, nesting, symlink, and expansion protections.",
+      "route": "files.extract",
+      "mode": "action"
+    },
+    {
+      "id": "input-validation-router",
+      "number": "14.9",
+      "category": 14,
+      "name": "Input Validation Router",
+      "description": "Sends files to appropriate syntax, structural, semantic, or media validation before processing.",
+      "route": "domain.validate",
+      "mode": "inspection"
+    },
+    {
+      "id": "staging-area-readiness-auditor",
+      "number": "14.10",
+      "category": 14,
+      "name": "Staging Area Readiness Auditor",
+      "description": "Confirms originals, working copies, permissions, space, manifests, and processing order before execution.",
+      "route": "domain.readiness",
+      "mode": "inspection"
+    },
+    {
+      "id": "output-path-planner",
+      "number": "15.1",
+      "category": 15,
+      "name": "Output Path Planner",
+      "description": "Assigns deterministic output names and locations separated from sources, temporary files, and previous versions.",
+      "route": "assess.output",
+      "mode": "assessment"
+    },
+    {
+      "id": "build-artifact-organizer",
+      "number": "15.2",
+      "category": 15,
+      "name": "Build Artifact Organizer",
+      "description": "Groups binaries, packages, reports, renders, logs, checks, and metadata by target, version, and status.",
+      "route": "inspect.classify",
+      "mode": "inspection"
+    },
+    {
+      "id": "deliverable-naming-specialist",
+      "number": "15.3",
+      "category": 15,
+      "name": "Deliverable Naming Specialist",
+      "description": "Applies requested names, extensions, version rules, and folder structures exactly.",
+      "route": "assess.naming",
+      "mode": "assessment"
+    },
+    {
+      "id": "artifact-promotion-manager",
+      "number": "15.4",
+      "category": 15,
+      "name": "Artifact Promotion Manager",
+      "description": "Moves outputs from scratch to candidate to validated final state only after required checks pass.",
+      "route": "files.transfer",
+      "mode": "action"
+    },
+    {
+      "id": "output-collision-preventer",
+      "number": "15.5",
+      "category": 15,
+      "name": "Output Collision Preventer",
+      "description": "Detects existing outputs and applies approved versioning, overwrite, skip, or archive behavior.",
+      "route": "inspect.duplicates",
+      "mode": "inspection"
+    },
+    {
+      "id": "deliverable-completeness-auditor",
+      "number": "15.6",
+      "category": 15,
+      "name": "Deliverable Completeness Auditor",
+      "description": "Maps every direct requirement to a final artifact and checks missing, extra, stale, or duplicate items.",
+      "route": "domain.delivery",
+      "mode": "inspection"
+    },
+    {
+      "id": "final-file-reopen-tester",
+      "number": "15.7",
+      "category": 15,
+      "name": "Final File Reopen Tester",
+      "description": "Opens, renders, imports, executes, or extracts final artifacts through the recipient’s real use path.",
+      "route": "domain.validate",
+      "mode": "inspection"
+    },
+    {
+      "id": "multi-format-delivery-coordinator",
+      "number": "15.8",
+      "category": 15,
+      "name": "Multi-Format Delivery Coordinator",
+      "description": "Keeps DOCX, PDF, PPTX, XLSX, archives, media, code, and metadata variants aligned and verified.",
+      "route": "domain.validate",
+      "mode": "inspection"
+    },
+    {
+      "id": "delivery-package-builder",
+      "number": "15.9",
+      "category": 15,
+      "name": "Delivery Package Builder",
+      "description": "Creates clean folders and ZIP archives with the requested hierarchy and no scratch or hidden residue.",
+      "route": "files.archive",
+      "mode": "action"
+    },
+    {
+      "id": "handoff-readiness-reporter",
+      "number": "15.10",
+      "category": 15,
+      "name": "Handoff Readiness Reporter",
+      "description": "Confirms names, locations, openability, editability, completeness, and known limitations before delivery.",
+      "route": "domain.readiness",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-snapshot-manager",
+      "number": "16.1",
+      "category": 16,
+      "name": "Workspace Snapshot Manager",
+      "description": "Creates named snapshots before risky changes and verifies snapshot completeness and restore access.",
+      "route": "inspect.snapshot",
+      "mode": "inspection"
+    },
+    {
+      "id": "incremental-backup-planner",
+      "number": "16.2",
+      "category": 16,
+      "name": "Incremental Backup Planner",
+      "description": "Backs up changed data efficiently while preserving base state, retention, and restore points.",
+      "route": "assess.incremental",
+      "mode": "assessment"
+    },
+    {
+      "id": "versioned-file-backup-manager",
+      "number": "16.3",
+      "category": 16,
+      "name": "Versioned File Backup Manager",
+      "description": "Stores prior approved versions of important files with timestamps, notes, and conflict-free naming.",
+      "route": "files.archive",
+      "mode": "action"
+    },
+    {
+      "id": "restore-point-validator",
+      "number": "16.4",
+      "category": 16,
+      "name": "Restore Point Validator",
+      "description": "Tests that selected files, folders, environments, and configurations can be restored without damaging current state.",
+      "route": "domain.archive-verify",
+      "mode": "inspection"
+    },
+    {
+      "id": "partial-recovery-specialist",
+      "number": "16.5",
+      "category": 16,
+      "name": "Partial Recovery Specialist",
+      "description": "Restores only affected components while preserving newer valid work elsewhere.",
+      "route": "files.extract",
+      "mode": "action"
+    },
+    {
+      "id": "corrupt-workspace-recovery-manager",
+      "number": "16.6",
+      "category": 16,
+      "name": "Corrupt Workspace Recovery Manager",
+      "description": "Uses snapshots, backups, manifests, checksums, and unaffected artifacts to reconstruct a usable state.",
+      "route": "assess.corruption",
+      "mode": "assessment"
+    },
+    {
+      "id": "accidental-deletion-recovery-specialist",
+      "number": "16.7",
+      "category": 16,
+      "name": "Accidental Deletion Recovery Specialist",
+      "description": "Searches trash, versions, snapshots, caches, temporary files, and backups within authorized scope.",
+      "route": "files.rollback",
+      "mode": "action"
+    },
+    {
+      "id": "environment-rollback-manager",
+      "number": "16.8",
+      "category": 16,
+      "name": "Environment Rollback Manager",
+      "description": "Restores packages, configuration, services, variables, and tool versions after a failed change.",
+      "route": "assess.environment-rollback",
+      "mode": "assessment"
+    },
+    {
+      "id": "recovery-drill-designer",
+      "number": "16.9",
+      "category": 16,
+      "name": "Recovery Drill Designer",
+      "description": "Creates safe exercises for backup, restore, corruption, deletion, and environment-loss scenarios.",
+      "route": "domain.clean-rebuild",
+      "mode": "inspection"
+    },
+    {
+      "id": "recovery-evidence-auditor",
+      "number": "16.10",
+      "category": 16,
+      "name": "Recovery Evidence Auditor",
+      "description": "Confirms restored content, permissions, references, checksums, openability, and resumed workflow behavior.",
+      "route": "domain.archive-verify",
+      "mode": "inspection"
+    },
+    {
+      "id": "build-workspace-initializer",
+      "number": "17.1",
+      "category": 17,
+      "name": "Build Workspace Initializer",
+      "description": "Creates source, build, dependency, cache, test, artifact, and log areas appropriate to the build system.",
+      "route": "files.layout",
+      "mode": "action"
+    },
+    {
+      "id": "compiler-toolchain-manager",
+      "number": "17.2",
+      "category": 17,
+      "name": "Compiler Toolchain Manager",
+      "description": "Selects compilers, linkers, SDKs, targets, optimization, debug symbols, and architecture settings.",
+      "route": "system.tools",
+      "mode": "inspection"
+    },
+    {
+      "id": "incremental-build-coordinator",
+      "number": "17.3",
+      "category": 17,
+      "name": "Incremental Build Coordinator",
+      "description": "Uses dependency graphs and caches while detecting stale or invalid artifacts.",
+      "route": "assess.incremental-build",
+      "mode": "assessment"
+    },
+    {
+      "id": "clean-build-operator",
+      "number": "17.4",
+      "category": 17,
+      "name": "Clean Build Operator",
+      "description": "Removes only generated build state and reconstructs outputs from declared sources and dependencies.",
+      "route": "runtime.exec",
+      "mode": "action"
+    },
+    {
+      "id": "cross-compilation-environment-planner",
+      "number": "17.5",
+      "category": 17,
+      "name": "Cross-Compilation Environment Planner",
+      "description": "Configures host, target, sysroot, toolchain, libraries, emulators, and artifact validation.",
+      "route": "assess.cross-build",
+      "mode": "assessment"
+    },
+    {
+      "id": "build-cache-manager",
+      "number": "17.6",
+      "category": 17,
+      "name": "Build Cache Manager",
+      "description": "Controls keys, storage, sharing, invalidation, compression, and recovery for build caches.",
+      "route": "inspect.caches",
+      "mode": "inspection"
+    },
+    {
+      "id": "build-failure-diagnostician",
+      "number": "17.7",
+      "category": 17,
+      "name": "Build Failure Diagnostician",
+      "description": "Separates source, dependency, compiler, linker, environment, permission, path, and resource causes.",
+      "route": "domain.logs",
+      "mode": "inspection"
+    },
+    {
+      "id": "artifact-signing-workspace-manager",
+      "number": "17.8",
+      "category": 17,
+      "name": "Artifact Signing Workspace Manager",
+      "description": "Stages approved signing tools and credentials with restricted access and post-signing cleanup.",
+      "route": "assess.signing",
+      "mode": "assessment"
+    },
+    {
+      "id": "build-reproducibility-tester",
+      "number": "17.9",
+      "category": 17,
+      "name": "Build Reproducibility Tester",
+      "description": "Compares clean builds for byte, metadata, symbol, manifest, and functional consistency.",
+      "route": "domain.clean-rebuild",
+      "mode": "inspection"
+    },
+    {
+      "id": "execution-workspace-runner",
+      "number": "17.10",
+      "category": 17,
+      "name": "Execution Workspace Runner",
+      "description": "Runs produced artifacts with controlled arguments, environment, timeouts, logs, and output capture.",
+      "route": "runtime.exec",
+      "mode": "action"
+    },
+    {
+      "id": "test-workspace-architect",
+      "number": "18.1",
+      "category": 18,
+      "name": "Test Workspace Architect",
+      "description": "Separates fixtures, generated data, expected results, actual outputs, logs, and reports from production artifacts.",
+      "route": "files.layout",
+      "mode": "action"
+    },
+    {
+      "id": "test-fixture-curator",
+      "number": "18.2",
+      "category": 18,
+      "name": "Test Fixture Curator",
+      "description": "Creates minimal, representative, boundary, malformed, and regression fixtures with clear ownership and licenses.",
+      "route": "files.intake",
+      "mode": "action"
+    },
+    {
+      "id": "test-data-reset-manager",
+      "number": "18.3",
+      "category": 18,
+      "name": "Test Data Reset Manager",
+      "description": "Restores clean test databases, files, accounts, caches, and state between runs.",
+      "route": "files.rollback",
+      "mode": "action"
+    },
+    {
+      "id": "isolated-test-run-coordinator",
+      "number": "18.4",
+      "category": 18,
+      "name": "Isolated Test Run Coordinator",
+      "description": "Assigns unique temporary directories, ports, identifiers, and resources to prevent cross-test interference.",
+      "route": "runtime.exec",
+      "mode": "action"
+    },
+    {
+      "id": "golden-output-manager",
+      "number": "18.5",
+      "category": 18,
+      "name": "Golden Output Manager",
+      "description": "Stores approved expected outputs with versioning, review, and intentional-update procedures.",
+      "route": "files.transfer",
+      "mode": "action"
+    },
+    {
+      "id": "test-artifact-collector",
+      "number": "18.6",
+      "category": 18,
+      "name": "Test Artifact Collector",
+      "description": "Preserves failed-case logs, screenshots, diffs, traces, inputs, and environment state for reproduction.",
+      "route": "domain.delivery",
+      "mode": "inspection"
+    },
+    {
+      "id": "flaky-test-environment-diagnostician",
+      "number": "18.7",
+      "category": 18,
+      "name": "Flaky Test Environment Diagnostician",
+      "description": "Finds shared state, timing, random seed, port, filesystem, locale, resource, and dependency causes.",
+      "route": "domain.logs",
+      "mode": "inspection"
+    },
+    {
+      "id": "parallel-test-resource-scheduler",
+      "number": "18.8",
+      "category": 18,
+      "name": "Parallel Test Resource Scheduler",
+      "description": "Allocates workers, devices, databases, ports, files, and quotas safely across concurrent tests.",
+      "route": "system.cpu",
+      "mode": "inspection"
+    },
+    {
+      "id": "regression-environment-preserver",
+      "number": "18.9",
+      "category": 18,
+      "name": "Regression Environment Preserver",
+      "description": "Keeps known failure fixtures and exact tool versions needed to verify future repairs.",
+      "route": "domain.clean-rebuild",
+      "mode": "inspection"
+    },
+    {
+      "id": "test-environment-teardown-auditor",
+      "number": "18.10",
+      "category": 18,
+      "name": "Test Environment Teardown Auditor",
+      "description": "Confirms temporary accounts, services, ports, files, credentials, and generated state are removed.",
+      "route": "domain.cleanup",
+      "mode": "inspection"
+    },
+    {
+      "id": "raw-data-preservation-manager",
+      "number": "19.1",
+      "category": 19,
+      "name": "Raw Data Preservation Manager",
+      "description": "Stores immutable raw inputs separately from cleaned, transformed, analytical, and published data.",
+      "route": "files.transfer",
+      "mode": "action"
+    },
+    {
+      "id": "dataset-directory-architect",
+      "number": "19.2",
+      "category": 19,
+      "name": "Dataset Directory Architect",
+      "description": "Organizes data by source, date, schema, version, sensitivity, partition, and processing stage.",
+      "route": "files.layout",
+      "mode": "action"
+    },
+    {
+      "id": "data-manifest-and-schema-manager",
+      "number": "19.3",
+      "category": 19,
+      "name": "Data Manifest and Schema Manager",
+      "description": "Records files, rows, fields, types, units, identifiers, provenance, and known quality limitations.",
+      "route": "domain.data-schema",
+      "mode": "inspection"
+    },
+    {
+      "id": "large-dataset-staging-planner",
+      "number": "19.4",
+      "category": 19,
+      "name": "Large Dataset Staging Planner",
+      "description": "Uses chunking, streaming, partitioning, compression, indexes, and disk-aware processing.",
+      "route": "assess.large-data",
+      "mode": "assessment"
+    },
+    {
+      "id": "data-cache-and-intermediate-manager",
+      "number": "19.5",
+      "category": 19,
+      "name": "Data Cache and Intermediate Manager",
+      "description": "Tracks derived tables, feature stores, query caches, and recomputation rules.",
+      "route": "inspect.caches",
+      "mode": "inspection"
+    },
+    {
+      "id": "database-workspace-provisioner",
+      "number": "19.6",
+      "category": 19,
+      "name": "Database Workspace Provisioner",
+      "description": "Creates approved local databases, schemas, users, storage, backups, and connection configurations.",
+      "route": "runtime.sqlite",
+      "mode": "action"
+    },
+    {
+      "id": "data-lineage-organizer",
+      "number": "19.7",
+      "category": 19,
+      "name": "Data Lineage Organizer",
+      "description": "Maps raw sources through transformations, joins, filters, models, reports, and final exports.",
+      "route": "domain.data-lineage",
+      "mode": "inspection"
+    },
+    {
+      "id": "sensitive-data-zone-manager",
+      "number": "19.8",
+      "category": 19,
+      "name": "Sensitive Data Zone Manager",
+      "description": "Applies separation, permissions, encryption, retention, and redaction rules to restricted datasets.",
+      "route": "inspect.secrets",
+      "mode": "inspection"
+    },
+    {
+      "id": "data-workspace-quality-auditor",
+      "number": "19.9",
+      "category": 19,
+      "name": "Data Workspace Quality Auditor",
+      "description": "Checks duplicates, partial exports, stale partitions, schema drift, broken references, and inconsistent versions.",
+      "route": "domain.data-schema",
+      "mode": "inspection"
+    },
+    {
+      "id": "data-project-archive-curator",
+      "number": "19.10",
+      "category": 19,
+      "name": "Data Project Archive Curator",
+      "description": "Packages raw references, transformations, environments, reports, schemas, and reproducibility instructions.",
+      "route": "files.archive",
+      "mode": "action"
+    },
+    {
+      "id": "media-project-workspace-architect",
+      "number": "20.1",
+      "category": 20,
+      "name": "Media Project Workspace Architect",
+      "description": "Organizes source footage, audio, graphics, proxies, caches, project files, renders, and final masters.",
+      "route": "files.layout",
+      "mode": "action"
+    },
+    {
+      "id": "proxy-and-transcode-manager",
+      "number": "20.2",
+      "category": 20,
+      "name": "Proxy and Transcode Manager",
+      "description": "Creates verified editing proxies and links them reliably to high-quality source media.",
+      "route": "runtime.transcode",
+      "mode": "action"
+    },
+    {
+      "id": "render-queue-manager",
+      "number": "20.3",
+      "category": 20,
+      "name": "Render Queue Manager",
+      "description": "Schedules document, image, video, audio, 3D, and animation renders with dependencies, priorities, and retries.",
+      "route": "workflow.run",
+      "mode": "action"
+    },
+    {
+      "id": "render-cache-controller",
+      "number": "20.4",
+      "category": 20,
+      "name": "Render Cache Controller",
+      "description": "Manages preview, shader, waveform, thumbnail, frame, and application caches without deleting needed state.",
+      "route": "inspect.caches",
+      "mode": "inspection"
+    },
+    {
+      "id": "color-and-font-resource-manager",
+      "number": "20.5",
+      "category": 20,
+      "name": "Color and Font Resource Manager",
+      "description": "Tracks profiles, LUTs, fonts, licenses, substitutions, installation, and output consistency.",
+      "route": "system.tools",
+      "mode": "inspection"
+    },
+    {
+      "id": "media-asset-relink-specialist",
+      "number": "20.6",
+      "category": 20,
+      "name": "Media Asset Relink Specialist",
+      "description": "Repairs missing, moved, renamed, offline, or variant media references in project files.",
+      "route": "inspect.dependencies",
+      "mode": "inspection"
+    },
+    {
+      "id": "frame-sequence-organizer",
+      "number": "20.7",
+      "category": 20,
+      "name": "Frame Sequence Organizer",
+      "description": "Manages numbered frames, gaps, duplicates, naming, ranges, alpha, resolution, and assembly.",
+      "route": "inspect.media",
+      "mode": "inspection"
+    },
+    {
+      "id": "media-storage-capacity-planner",
+      "number": "20.8",
+      "category": 20,
+      "name": "Media Storage Capacity Planner",
+      "description": "Estimates source, proxy, cache, render, version, and archive requirements for large productions.",
+      "route": "system.disk",
+      "mode": "inspection"
+    },
+    {
+      "id": "render-verification-operator",
+      "number": "20.9",
+      "category": 20,
+      "name": "Render Verification Operator",
+      "description": "Checks rendered frames or pages for completeness, clipping, corruption, color, audio, timing, and expected count.",
+      "route": "domain.media",
+      "mode": "inspection"
+    },
+    {
+      "id": "media-delivery-package-curator",
+      "number": "20.10",
+      "category": 20,
+      "name": "Media Delivery Package Curator",
+      "description": "Packages editable projects, linked assets, fonts, licenses, previews, masters, and platform derivatives.",
+      "route": "files.archive",
+      "mode": "action"
+    },
+    {
+      "id": "document-project-organizer",
+      "number": "21.1",
+      "category": 21,
+      "name": "Document Project Organizer",
+      "description": "Separates source documents, templates, references, images, intermediate renders, reviews, and final publications.",
+      "route": "files.layout",
+      "mode": "action"
+    },
+    {
+      "id": "template-and-style-asset-manager",
+      "number": "21.2",
+      "category": 21,
+      "name": "Template and Style Asset Manager",
+      "description": "Curates approved Word, PowerPoint, Excel, PDF, branding, and style resources with versions and usage notes.",
+      "route": "files.intake",
+      "mode": "action"
+    },
+    {
+      "id": "document-conversion-workspace-planner",
+      "number": "21.3",
+      "category": 21,
+      "name": "Document Conversion Workspace Planner",
+      "description": "Creates safe source, converted, rendered, compared, and final areas for format conversion workflows.",
+      "route": "assess.conversion",
+      "mode": "assessment"
+    },
+    {
+      "id": "office-render-and-verification-manager",
+      "number": "21.4",
+      "category": 21,
+      "name": "Office Render and Verification Manager",
+      "description": "Coordinates DOCX, PPTX, XLSX, and PDF rendering, image inspection, corrections, and final export.",
+      "route": "runtime.render",
+      "mode": "action"
+    },
+    {
+      "id": "linked-asset-and-font-manager",
+      "number": "21.5",
+      "category": 21,
+      "name": "Linked Asset and Font Manager",
+      "description": "Tracks embedded and linked images, fonts, themes, charts, media, and external data dependencies.",
+      "route": "inspect.dependencies",
+      "mode": "inspection"
+    },
+    {
+      "id": "document-review-state-organizer",
+      "number": "21.6",
+      "category": 21,
+      "name": "Document Review State Organizer",
+      "description": "Separates drafts, comments, tracked changes, clean copies, approved versions, and publication-ready files.",
+      "route": "assess.review",
+      "mode": "assessment"
+    },
+    {
+      "id": "multi-document-assembly-manager",
+      "number": "21.7",
+      "category": 21,
+      "name": "Multi-Document Assembly Manager",
+      "description": "Coordinates section order, templates, numbering, styles, cross-references, and source preservation across merged works.",
+      "route": "files.assemble",
+      "mode": "action"
+    },
+    {
+      "id": "spreadsheet-model-workspace-manager",
+      "number": "21.8",
+      "category": 21,
+      "name": "Spreadsheet Model Workspace Manager",
+      "description": "Separates inputs, calculations, scenarios, outputs, charts, macros, data connections, and audit copies.",
+      "route": "domain.document",
+      "mode": "inspection"
+    },
+    {
+      "id": "presentation-asset-workspace-manager",
+      "number": "21.9",
+      "category": 21,
+      "name": "Presentation Asset Workspace Manager",
+      "description": "Organizes slides, masters, visual assets, notes, sources, exports, and speaker handoff materials.",
+      "route": "domain.document",
+      "mode": "inspection"
+    },
+    {
+      "id": "office-deliverable-hygiene-auditor",
+      "number": "21.10",
+      "category": 21,
+      "name": "Office Deliverable Hygiene Auditor",
+      "description": "Checks metadata, comments, hidden sheets, notes, tracked changes, broken links, and unintended private content.",
+      "route": "domain.document",
+      "mode": "inspection"
+    },
+    {
+      "id": "repository-workspace-initializer",
+      "number": "22.1",
+      "category": 22,
+      "name": "Repository Workspace Initializer",
+      "description": "Creates source, configuration, dependencies, tests, docs, public assets, builds, and deployment areas.",
+      "route": "runtime.git-init",
+      "mode": "action"
+    },
+    {
+      "id": "development-server-manager",
+      "number": "22.2",
+      "category": 22,
+      "name": "Development Server Manager",
+      "description": "Starts approved local servers with ports, environment variables, logs, health checks, and cleanup.",
+      "route": "runtime.service-start",
+      "mode": "action"
+    },
+    {
+      "id": "environment-configuration-manager",
+      "number": "22.3",
+      "category": 22,
+      "name": "Environment Configuration Manager",
+      "description": "Separates development, test, staging, and production-like configuration without exposing secrets.",
+      "route": "system.env-secrets",
+      "mode": "inspection"
+    },
+    {
+      "id": "frontend-package-workspace-manager",
+      "number": "22.4",
+      "category": 22,
+      "name": "Frontend Package Workspace Manager",
+      "description": "Maintains node modules, lockfiles, build caches, static assets, source maps, and bundle outputs.",
+      "route": "runtime.npm",
+      "mode": "action"
+    },
+    {
+      "id": "backend-service-workspace-manager",
+      "number": "22.5",
+      "category": 22,
+      "name": "Backend Service Workspace Manager",
+      "description": "Organizes APIs, workers, databases, migrations, queues, logs, fixtures, and service configuration.",
+      "route": "runtime.service-start",
+      "mode": "action"
+    },
+    {
+      "id": "port-and-endpoint-coordinator",
+      "number": "22.6",
+      "category": 22,
+      "name": "Port and Endpoint Coordinator",
+      "description": "Allocates ports, hostnames, callback URLs, service discovery, and collision-free local routing.",
+      "route": "system.port",
+      "mode": "inspection"
+    },
+    {
+      "id": "local-domain-and-certificate-manager",
+      "number": "22.7",
+      "category": 22,
+      "name": "Local Domain and Certificate Manager",
+      "description": "Creates approved local host mappings and development certificates with clear trust and removal procedures.",
+      "route": "assess.certificates",
+      "mode": "assessment"
+    },
+    {
+      "id": "web-build-artifact-manager",
+      "number": "22.8",
+      "category": 22,
+      "name": "Web Build Artifact Manager",
+      "description": "Organizes static assets, server bundles, source maps, manifests, reports, and deployment packages.",
+      "route": "domain.web",
+      "mode": "inspection"
+    },
+    {
+      "id": "application-workspace-smoke-tester",
+      "number": "22.9",
+      "category": 22,
+      "name": "Application Workspace Smoke Tester",
+      "description": "Runs install, build, start, tests, critical routes, APIs, uploads, and shutdown from a clean state.",
+      "route": "runtime.exec",
+      "mode": "action"
+    },
+    {
+      "id": "development-workspace-teardown-operator",
+      "number": "22.10",
+      "category": 22,
+      "name": "Development Workspace Teardown Operator",
+      "description": "Stops services, removes temporary data, clears task-owned credentials, and preserves required project state.",
+      "route": "runtime.service-stop",
+      "mode": "action"
+    },
+    {
+      "id": "container-image-builder",
+      "number": "23.1",
+      "category": 23,
+      "name": "Container Image Builder",
+      "description": "Builds minimal, reproducible images with pinned bases, layered dependencies, non-root users, and health checks.",
+      "route": "runtime.container-build",
+      "mode": "action"
+    },
+    {
+      "id": "container-runtime-operator",
+      "number": "23.2",
+      "category": 23,
+      "name": "Container Runtime Operator",
+      "description": "Runs containers with controlled mounts, ports, networks, environment variables, limits, and cleanup.",
+      "route": "runtime.container-run",
+      "mode": "action"
+    },
+    {
+      "id": "container-volume-manager",
+      "number": "23.3",
+      "category": 23,
+      "name": "Container Volume Manager",
+      "description": "Creates, inspects, backs up, restores, and removes task-owned volumes with data safety checks.",
+      "route": "assess.container-volumes",
+      "mode": "assessment"
+    },
+    {
+      "id": "container-network-manager",
+      "number": "23.4",
+      "category": 23,
+      "name": "Container Network Manager",
+      "description": "Creates isolated networks, service aliases, exposed ports, and approved external access.",
+      "route": "assess.container-network",
+      "mode": "assessment"
+    },
+    {
+      "id": "container-image-cache-manager",
+      "number": "23.5",
+      "category": 23,
+      "name": "Container Image Cache Manager",
+      "description": "Controls pulls, layers, pruning, provenance, vulnerability information, and disk usage.",
+      "route": "inspect.caches",
+      "mode": "inspection"
+    },
+    {
+      "id": "virtual-machine-workspace-manager",
+      "number": "23.6",
+      "category": 23,
+      "name": "Virtual Machine Workspace Manager",
+      "description": "Creates snapshots, storage, networking, guest tools, resource limits, and isolated operating environments.",
+      "route": "runtime.vm",
+      "mode": "action"
+    },
+    {
+      "id": "sandbox-policy-designer",
+      "number": "23.7",
+      "category": 23,
+      "name": "Sandbox Policy Designer",
+      "description": "Defines allowed commands, paths, mounts, devices, network destinations, time, memory, and process constraints.",
+      "route": "workflow.policy",
+      "mode": "inspection"
+    },
+    {
+      "id": "untrusted-artifact-analysis-sandbox",
+      "number": "23.8",
+      "category": 23,
+      "name": "Untrusted Artifact Analysis Sandbox",
+      "description": "Runs authorized suspicious or unknown artifacts in an isolated environment with observation and safe teardown.",
+      "route": "assess.untrusted",
+      "mode": "assessment"
+    },
+    {
+      "id": "sandbox-escape-boundary-auditor",
+      "number": "23.9",
+      "category": 23,
+      "name": "Sandbox Escape Boundary Auditor",
+      "description": "Checks mounts, sockets, devices, privileges, host paths, credentials, and network exposure for isolation weaknesses.",
+      "route": "system.isolation",
+      "mode": "inspection"
+    },
+    {
+      "id": "container-and-vm-teardown-auditor",
+      "number": "23.10",
+      "category": 23,
+      "name": "Container and VM Teardown Auditor",
+      "description": "Confirms task-owned machines, containers, images, volumes, networks, snapshots, and secrets are handled as intended.",
+      "route": "domain.cleanup",
+      "mode": "inspection"
+    },
+    {
+      "id": "network-capability-inspector",
+      "number": "24.1",
+      "category": 24,
+      "name": "Network Capability Inspector",
+      "description": "Checks authorized DNS, routing, proxy, internet access, local services, ports, and transfer limits.",
+      "route": "system.network",
+      "mode": "inspection"
+    },
+    {
+      "id": "proxy-configuration-manager",
+      "number": "24.2",
+      "category": 24,
+      "name": "Proxy Configuration Manager",
+      "description": "Configures approved HTTP, HTTPS, SOCKS, package, and application proxies with scoped credentials and cleanup.",
+      "route": "assess.proxy",
+      "mode": "assessment"
+    },
+    {
+      "id": "offline-and-restricted-network-planner",
+      "number": "24.3",
+      "category": 24,
+      "name": "Offline and Restricted Network Planner",
+      "description": "Prepares mirrors, caches, bundles, allowlists, and alternate workflows for limited connectivity.",
+      "route": "assess.offline",
+      "mode": "assessment"
+    },
+    {
+      "id": "local-service-network-designer",
+      "number": "24.4",
+      "category": 24,
+      "name": "Local Service Network Designer",
+      "description": "Creates safe loopback, bridge, container, or test networks with documented endpoints and isolation.",
+      "route": "assess.local-network",
+      "mode": "assessment"
+    },
+    {
+      "id": "port-availability-manager",
+      "number": "24.5",
+      "category": 24,
+      "name": "Port Availability Manager",
+      "description": "Finds and reserves available ports, prevents collisions, and releases them after task completion.",
+      "route": "system.port",
+      "mode": "inspection"
+    },
+    {
+      "id": "network-download-reliability-manager",
+      "number": "24.6",
+      "category": 24,
+      "name": "Network Download Reliability Manager",
+      "description": "Uses retries, resume, mirrors, checksums, timeouts, and bandwidth limits for approved downloads.",
+      "route": "runtime.download",
+      "mode": "action"
+    },
+    {
+      "id": "certificate-trust-store-manager",
+      "number": "24.7",
+      "category": 24,
+      "name": "Certificate Trust Store Manager",
+      "description": "Adds and removes approved development certificates, records scope, and avoids permanent broad trust changes.",
+      "route": "assess.certificates",
+      "mode": "assessment"
+    },
+    {
+      "id": "network-failure-simulation-planner",
+      "number": "24.8",
+      "category": 24,
+      "name": "Network Failure Simulation Planner",
+      "description": "Applies controlled latency, loss, offline, DNS failure, and reconnect scenarios in test environments.",
+      "route": "assess.network-failure",
+      "mode": "assessment"
+    },
+    {
+      "id": "connectivity-diagnostician",
+      "number": "24.9",
+      "category": 24,
+      "name": "Connectivity Diagnostician",
+      "description": "Separates DNS, proxy, firewall, route, TLS, authentication, service, and application failures.",
+      "route": "system.network",
+      "mode": "inspection"
+    },
+    {
+      "id": "network-state-cleanup-auditor",
+      "number": "24.10",
+      "category": 24,
+      "name": "Network State Cleanup Auditor",
+      "description": "Confirms temporary proxies, tunnels, host entries, certificates, ports, and test networks are removed.",
+      "route": "domain.cleanup",
+      "mode": "inspection"
+    },
+    {
+      "id": "operating-system-compatibility-planner",
+      "number": "25.1",
+      "category": 25,
+      "name": "Operating System Compatibility Planner",
+      "description": "Defines supported Linux, Windows, macOS, mobile, and container environments and their differences.",
+      "route": "system.matrix",
+      "mode": "inspection"
+    },
+    {
+      "id": "architecture-compatibility-manager",
+      "number": "25.2",
+      "category": 25,
+      "name": "Architecture Compatibility Manager",
+      "description": "Handles x86, x86-64, ARM, ARM64, emulation, cross-builds, and architecture-specific dependencies.",
+      "route": "system.matrix",
+      "mode": "inspection"
+    },
+    {
+      "id": "shell-compatibility-specialist",
+      "number": "25.3",
+      "category": 25,
+      "name": "Shell Compatibility Specialist",
+      "description": "Adapts commands across Bash, POSIX shell, Zsh, Fish, PowerShell, CMD, and platform path conventions.",
+      "route": "assess.shell",
+      "mode": "assessment"
+    },
+    {
+      "id": "path-and-filesystem-compatibility-analyst",
+      "number": "25.4",
+      "category": 25,
+      "name": "Path and Filesystem Compatibility Analyst",
+      "description": "Checks separators, case sensitivity, reserved names, path length, permissions, symlinks, and line endings.",
+      "route": "system.compat",
+      "mode": "inspection"
+    },
+    {
+      "id": "encoding-and-locale-compatibility-manager",
+      "number": "25.5",
+      "category": 25,
+      "name": "Encoding and Locale Compatibility Manager",
+      "description": "Tests Unicode, code pages, sorting, decimal formats, dates, input methods, and multilingual filenames.",
+      "route": "system.locale",
+      "mode": "inspection"
+    },
+    {
+      "id": "runtime-compatibility-tester",
+      "number": "25.6",
+      "category": 25,
+      "name": "Runtime Compatibility Tester",
+      "description": "Runs primary workflows across declared runtime and library versions with aligned fixtures.",
+      "route": "domain.clean-rebuild",
+      "mode": "inspection"
+    },
+    {
+      "id": "binary-and-abi-compatibility-manager",
+      "number": "25.7",
+      "category": 25,
+      "name": "Binary and ABI Compatibility Manager",
+      "description": "Checks shared libraries, loaders, symbols, runtimes, architecture, and platform packaging.",
+      "route": "system.binary",
+      "mode": "inspection"
+    },
+    {
+      "id": "compatibility-shim-workspace-designer",
+      "number": "25.8",
+      "category": 25,
+      "name": "Compatibility Shim Workspace Designer",
+      "description": "Creates isolated adapters, wrapper scripts, configuration, and tests for legacy or differing environments.",
+      "route": "assess.shim",
+      "mode": "assessment"
+    },
+    {
+      "id": "emulation-environment-manager",
+      "number": "25.9",
+      "category": 25,
+      "name": "Emulation Environment Manager",
+      "description": "Sets up approved emulators for architecture, operating system, browser, device, or legacy software testing.",
+      "route": "runtime.vm",
+      "mode": "action"
+    },
+    {
+      "id": "compatibility-findings-reporter",
+      "number": "25.10",
+      "category": 25,
+      "name": "Compatibility Findings Reporter",
+      "description": "Documents supported combinations, failures, causes, workarounds, and unverified environments.",
+      "route": "assess.compat-report",
+      "mode": "assessment"
+    },
+    {
+      "id": "workspace-threat-surface-reviewer",
+      "number": "26.1",
+      "category": 26,
+      "name": "Workspace Threat Surface Reviewer",
+      "description": "Inventories executable inputs, network access, package sources, credentials, services, permissions, and shared boundaries.",
+      "route": "domain.security",
+      "mode": "inspection"
+    },
+    {
+      "id": "dependency-provenance-inspector",
+      "number": "26.2",
+      "category": 26,
+      "name": "Dependency Provenance Inspector",
+      "description": "Checks package source, version, signature, checksum, lockfile, maintainer, and build provenance where available.",
+      "route": "system.provenance",
+      "mode": "inspection"
+    },
+    {
+      "id": "malicious-package-risk-gatekeeper",
+      "number": "26.3",
+      "category": 26,
+      "name": "Malicious Package Risk Gatekeeper",
+      "description": "Blocks suspicious names, unexpected install scripts, typo-squatting indicators, untrusted repositories, and excessive permissions.",
+      "route": "domain.security",
+      "mode": "inspection"
+    },
+    {
+      "id": "executable-intake-safety-reviewer",
+      "number": "26.4",
+      "category": 26,
+      "name": "Executable Intake Safety Reviewer",
+      "description": "Checks file identity, source, signature, hash, permissions, and sandbox requirements before execution.",
+      "route": "domain.validate",
+      "mode": "inspection"
+    },
+    {
+      "id": "build-script-safety-inspector",
+      "number": "26.5",
+      "category": 26,
+      "name": "Build Script Safety Inspector",
+      "description": "Reviews authorized setup, install, build, and post-install scripts for destructive or unexpected behavior.",
+      "route": "domain.security",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-integrity-baseline-manager",
+      "number": "26.6",
+      "category": 26,
+      "name": "Workspace Integrity Baseline Manager",
+      "description": "Creates approved hashes, manifests, permissions, and expected files for later change detection.",
+      "route": "inspect.snapshot",
+      "mode": "inspection"
+    },
+    {
+      "id": "unauthorized-change-detector",
+      "number": "26.7",
+      "category": 26,
+      "name": "Unauthorized Change Detector",
+      "description": "Finds unexpected binaries, scripts, startup entries, modified tools, new services, and permission changes.",
+      "route": "inspect.diff",
+      "mode": "inspection"
+    },
+    {
+      "id": "software-bill-of-materials-organizer",
+      "number": "26.8",
+      "category": 26,
+      "name": "Software Bill of Materials Organizer",
+      "description": "Creates and stores dependency, component, version, license, and provenance records for deliverables.",
+      "route": "domain.sbom",
+      "mode": "inspection"
+    },
+    {
+      "id": "security-finding-containment-coordinator",
+      "number": "26.9",
+      "category": 26,
+      "name": "Security Finding Containment Coordinator",
+      "description": "Isolates affected artifacts, preserves evidence, blocks propagation, and prepares remediation steps.",
+      "route": "assess.containment",
+      "mode": "assessment"
+    },
+    {
+      "id": "secure-workspace-release-auditor",
+      "number": "26.10",
+      "category": 26,
+      "name": "Secure Workspace Release Auditor",
+      "description": "Checks secrets, dependencies, permissions, metadata, provenance, tests, and package contents before handoff.",
+      "route": "domain.release",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-task-orchestrator",
+      "number": "27.1",
+      "category": 27,
+      "name": "Workspace Task Orchestrator",
+      "description": "Coordinates discovery, setup, processing, testing, rendering, packaging, cleanup, and recovery with dependency control.",
+      "route": "workflow.run",
+      "mode": "action"
+    },
+    {
+      "id": "idempotent-workspace-automation-designer",
+      "number": "27.2",
+      "category": 27,
+      "name": "Idempotent Workspace Automation Designer",
+      "description": "Creates rerunnable scripts that detect current state and avoid duplicate or destructive actions.",
+      "route": "workflow.design",
+      "mode": "inspection"
+    },
+    {
+      "id": "checkpoint-and-resume-manager",
+      "number": "27.3",
+      "category": 27,
+      "name": "Checkpoint and Resume Manager",
+      "description": "Records safe milestones and resumes long workflows without repeating completed or consequential steps.",
+      "route": "workflow.resume",
+      "mode": "action"
+    },
+    {
+      "id": "parallel-work-scheduler",
+      "number": "27.4",
+      "category": 27,
+      "name": "Parallel Work Scheduler",
+      "description": "Runs only independent tasks concurrently and controls shared files, ports, resources, and output joins.",
+      "route": "workflow.run",
+      "mode": "action"
+    },
+    {
+      "id": "retry-and-backoff-controller",
+      "number": "27.5",
+      "category": 27,
+      "name": "Retry and Backoff Controller",
+      "description": "Retries transient failures within limits and stops on deterministic errors or unsafe repeated side effects.",
+      "route": "workflow.run",
+      "mode": "action"
+    },
+    {
+      "id": "workflow-state-machine-designer",
+      "number": "27.6",
+      "category": 27,
+      "name": "Workflow State Machine Designer",
+      "description": "Defines stages, transitions, pass conditions, failures, rollback, and final completion state.",
+      "route": "workflow.design",
+      "mode": "inspection"
+    },
+    {
+      "id": "automation-dry-run-specialist",
+      "number": "27.7",
+      "category": 27,
+      "name": "Automation Dry-Run Specialist",
+      "description": "Previews file operations, installations, commands, and cleanup without modifying state.",
+      "route": "workflow.design",
+      "mode": "inspection"
+    },
+    {
+      "id": "workflow-configuration-manager",
+      "number": "27.8",
+      "category": 27,
+      "name": "Workflow Configuration Manager",
+      "description": "Stores parameters, paths, versions, feature flags, and environment settings in validated configuration.",
+      "route": "workflow.policy",
+      "mode": "inspection"
+    },
+    {
+      "id": "automation-evidence-collector",
+      "number": "27.9",
+      "category": 27,
+      "name": "Automation Evidence Collector",
+      "description": "Captures command status, outputs, artifacts, checks, durations, and failures without leaking secrets.",
+      "route": "workflow.evidence",
+      "mode": "inspection"
+    },
+    {
+      "id": "orchestration-recovery-specialist",
+      "number": "27.10",
+      "category": 27,
+      "name": "Orchestration Recovery Specialist",
+      "description": "Finds the earliest failed stage, preserves passing outputs, repairs the smallest layer, and reruns affected checks.",
+      "route": "workflow.recover",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-requirement-coverage-auditor",
+      "number": "28.1",
+      "category": 28,
+      "name": "Workspace Requirement Coverage Auditor",
+      "description": "Maps every requested environment, file, tool, output, organization, and cleanup requirement to a checked result.",
+      "route": "domain.requirements",
+      "mode": "inspection"
+    },
+    {
+      "id": "structural-workspace-validator",
+      "number": "28.2",
+      "category": 28,
+      "name": "Structural Workspace Validator",
+      "description": "Checks directory layout, expected files, manifests, syntax, paths, permissions, and naming.",
+      "route": "inspect.structure",
+      "mode": "inspection"
+    },
+    {
+      "id": "semantic-workflow-validator",
+      "number": "28.3",
+      "category": 28,
+      "name": "Semantic Workflow Validator",
+      "description": "Confirms that files and environments represent the intended content and behavior, not merely valid structure.",
+      "route": "domain.validate",
+      "mode": "inspection"
+    },
+    {
+      "id": "boundary-condition-tester",
+      "number": "28.4",
+      "category": 28,
+      "name": "Boundary Condition Tester",
+      "description": "Tests empty, missing, oversized, read-only, low-space, long-path, Unicode, duplicate, and interrupted conditions.",
+      "route": "domain.validate",
+      "mode": "inspection"
+    },
+    {
+      "id": "join-and-integration-tester",
+      "number": "28.5",
+      "category": 28,
+      "name": "Join and Integration Tester",
+      "description": "Checks that tools, environments, files, services, and outputs connect correctly across workflow stages.",
+      "route": "domain.clean-rebuild",
+      "mode": "inspection"
+    },
+    {
+      "id": "regression-workspace-tester",
+      "number": "28.6",
+      "category": 28,
+      "name": "Regression Workspace Tester",
+      "description": "Verifies preserved workflows, source files, outputs, and environment behavior after changes.",
+      "route": "domain.clean-rebuild",
+      "mode": "inspection"
+    },
+    {
+      "id": "clean-state-acceptance-tester",
+      "number": "28.7",
+      "category": 28,
+      "name": "Clean-State Acceptance Tester",
+      "description": "Recreates the workflow from a fresh workspace using only declared inputs and instructions.",
+      "route": "domain.clean-rebuild",
+      "mode": "inspection"
+    },
+    {
+      "id": "presentation-and-deliverable-auditor",
+      "number": "28.8",
+      "category": 28,
+      "name": "Presentation and Deliverable Auditor",
+      "description": "Checks final artifact readability, layout, naming, structure, editability, and requested packaging.",
+      "route": "domain.delivery",
+      "mode": "inspection"
+    },
+    {
+      "id": "handoff-path-tester",
+      "number": "28.9",
+      "category": 28,
+      "name": "Handoff Path Tester",
+      "description": "Opens, runs, edits, imports, extracts, or renders the final result through the recipient’s expected path.",
+      "route": "domain.archive-verify",
+      "mode": "inspection"
+    },
+    {
+      "id": "completion-claim-validator",
+      "number": "28.10",
+      "category": 28,
+      "name": "Completion Claim Validator",
+      "description": "Allows completion only when outputs exist, checks passed, requested structure matches, and no known material defect remains.",
+      "route": "domain.release",
+      "mode": "inspection"
+    },
+    {
+      "id": "shared-workspace-architect",
+      "number": "29.1",
+      "category": 29,
+      "name": "Shared Workspace Architect",
+      "description": "Designs clear ownership, boundaries, shared assets, interfaces, outputs, and conflict rules for multiple contributors.",
+      "route": "assess.collaboration",
+      "mode": "assessment"
+    },
+    {
+      "id": "agent-worktree-manager",
+      "number": "29.2",
+      "category": 29,
+      "name": "Agent Worktree Manager",
+      "description": "Creates isolated branches or worktrees for concurrent agent tasks and prevents overlapping edits.",
+      "route": "runtime.git-worktree",
+      "mode": "action"
+    },
+    {
+      "id": "task-handoff-state-packager",
+      "number": "29.3",
+      "category": 29,
+      "name": "Task Handoff State Packager",
+      "description": "Packages inputs, current state, decisions, dependencies, open issues, and expected outputs for another agent.",
+      "route": "workflow.evidence",
+      "mode": "inspection"
+    },
+    {
+      "id": "concurrent-edit-conflict-resolver",
+      "number": "29.4",
+      "category": 29,
+      "name": "Concurrent Edit Conflict Resolver",
+      "description": "Detects overlapping changes, preserves both versions, and integrates only validated compatible edits.",
+      "route": "inspect.diff",
+      "mode": "inspection"
+    },
+    {
+      "id": "shared-resource-lock-manager",
+      "number": "29.5",
+      "category": 29,
+      "name": "Shared Resource Lock Manager",
+      "description": "Coordinates access to files, ports, devices, databases, models, and render queues across agents.",
+      "route": "files.lock",
+      "mode": "action"
+    },
+    {
+      "id": "multi-agent-output-integrator",
+      "number": "29.6",
+      "category": 29,
+      "name": "Multi-Agent Output Integrator",
+      "description": "Validates interfaces, merges compatible parts, resolves naming and style differences, and tests the joined result.",
+      "route": "domain.delivery",
+      "mode": "inspection"
+    },
+    {
+      "id": "agent-provenance-recorder",
+      "number": "29.7",
+      "category": 29,
+      "name": "Agent Provenance Recorder",
+      "description": "Tracks which agent or process produced each artifact, version, decision, and validation result.",
+      "route": "workflow.ledger",
+      "mode": "action"
+    },
+    {
+      "id": "review-and-approval-workspace-manager",
+      "number": "29.8",
+      "category": 29,
+      "name": "Review and Approval Workspace Manager",
+      "description": "Organizes candidate, reviewed, approved, rejected, revised, and final outputs with clear status.",
+      "route": "assess.review",
+      "mode": "assessment"
+    },
+    {
+      "id": "cross-agent-regression-coordinator",
+      "number": "29.9",
+      "category": 29,
+      "name": "Cross-Agent Regression Coordinator",
+      "description": "Reruns affected tests after integration and protects previously accepted behavior.",
+      "route": "domain.clean-rebuild",
+      "mode": "inspection"
+    },
+    {
+      "id": "shared-workspace-cleanup-coordinator",
+      "number": "29.10",
+      "category": 29,
+      "name": "Shared Workspace Cleanup Coordinator",
+      "description": "Removes abandoned branches, temporary outputs, stale locks, and task-owned resources without harming active work.",
+      "route": "domain.cleanup",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-lifecycle-planner",
+      "number": "30.1",
+      "category": 30,
+      "name": "Workspace Lifecycle Planner",
+      "description": "Defines creation, active use, review, delivery, retention, archive, restore, and disposal stages.",
+      "route": "assess.lifecycle",
+      "mode": "assessment"
+    },
+    {
+      "id": "project-closure-manager",
+      "number": "30.2",
+      "category": 30,
+      "name": "Project Closure Manager",
+      "description": "Confirms deliverables, documentation, licenses, environment manifests, cleanup, backups, and ownership before closure.",
+      "route": "domain.release",
+      "mode": "inspection"
+    },
+    {
+      "id": "long-term-archive-curator",
+      "number": "30.3",
+      "category": 30,
+      "name": "Long-Term Archive Curator",
+      "description": "Packages sources, editable files, dependencies, checksums, documentation, previews, and restore instructions.",
+      "route": "files.archive",
+      "mode": "action"
+    },
+    {
+      "id": "format-longevity-planner",
+      "number": "30.4",
+      "category": 30,
+      "name": "Format Longevity Planner",
+      "description": "Selects open or widely supported archival formats and preserves originals plus documented conversions.",
+      "route": "assess.formats",
+      "mode": "assessment"
+    },
+    {
+      "id": "environment-deprecation-manager",
+      "number": "30.5",
+      "category": 30,
+      "name": "Environment Deprecation Manager",
+      "description": "Identifies unsupported runtimes and tools, plans migration, and retains reproducible legacy environments when needed.",
+      "route": "assess.retirement",
+      "mode": "assessment"
+    },
+    {
+      "id": "archive-reopen-tester",
+      "number": "30.6",
+      "category": 30,
+      "name": "Archive Reopen Tester",
+      "description": "Restores archived projects into clean workspaces and verifies key files, tools, and workflows.",
+      "route": "domain.archive-verify",
+      "mode": "inspection"
+    },
+    {
+      "id": "retention-policy-enforcer",
+      "number": "30.7",
+      "category": 30,
+      "name": "Retention Policy Enforcer",
+      "description": "Applies approved retention periods to inputs, outputs, logs, backups, secrets, and temporary data.",
+      "route": "files.quarantine",
+      "mode": "action"
+    },
+    {
+      "id": "workspace-cost-and-storage-optimizer",
+      "number": "30.8",
+      "category": 30,
+      "name": "Workspace Cost and Storage Optimizer",
+      "description": "Balances retention, performance, archive tiers, recomputation cost, and recovery objectives.",
+      "route": "system.disk",
+      "mode": "inspection"
+    },
+    {
+      "id": "dormant-workspace-auditor",
+      "number": "30.9",
+      "category": 30,
+      "name": "Dormant Workspace Auditor",
+      "description": "Finds abandoned environments, services, volumes, caches, credentials, and projects for review.",
+      "route": "assess.dormant",
+      "mode": "assessment"
+    },
+    {
+      "id": "lifecycle-documentation-author",
+      "number": "30.10",
+      "category": 30,
+      "name": "Lifecycle Documentation Author",
+      "description": "Records maintenance owners, update procedures, rebuild steps, recovery paths, and known limitations.",
+      "route": "workflow.summary",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-control-plane-designer",
+      "number": "31.1",
+      "category": 31,
+      "name": "Workspace Control Plane Designer",
+      "description": "Defines naming, layout, environment, tools, permissions, resources, logs, checks, cleanup, and delivery standards.",
+      "route": "workflow.policy",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-policy-enforcer",
+      "number": "31.2",
+      "category": 31,
+      "name": "Workspace Policy Enforcer",
+      "description": "Applies approved rules for source preservation, installations, network access, secrets, outputs, and deletion.",
+      "route": "workflow.policy",
+      "mode": "inspection"
+    },
+    {
+      "id": "change-approval-gatekeeper",
+      "number": "31.3",
+      "category": 31,
+      "name": "Change Approval Gatekeeper",
+      "description": "Requires appropriate approval for global installs, privilege changes, destructive operations, network exposure, and source-of-truth replacement.",
+      "route": "workflow.gate",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-risk-assessor",
+      "number": "31.4",
+      "category": 31,
+      "name": "Workspace Risk Assessor",
+      "description": "Ranks proposed actions by reversibility, blast radius, data sensitivity, dependency impact, and recovery readiness.",
+      "route": "workflow.risk",
+      "mode": "inspection"
+    },
+    {
+      "id": "operational-runbook-author",
+      "number": "31.5",
+      "category": 31,
+      "name": "Operational Runbook Author",
+      "description": "Creates exact setup, execution, validation, recovery, cleanup, and handoff instructions for recurring workflows.",
+      "route": "workflow.summary",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-compliance-evidence-curator",
+      "number": "31.6",
+      "category": 31,
+      "name": "Workspace Compliance Evidence Curator",
+      "description": "Collects only requested manifests, approvals, validation reports, and operational records for review.",
+      "route": "workflow.evidence",
+      "mode": "inspection"
+    },
+    {
+      "id": "environment-standards-auditor",
+      "number": "31.7",
+      "category": 31,
+      "name": "Environment Standards Auditor",
+      "description": "Checks workspaces against declared organizational, security, accessibility, reproducibility, and maintenance standards.",
+      "route": "domain.release",
+      "mode": "inspection"
+    },
+    {
+      "id": "workspace-incident-coordinator",
+      "number": "31.8",
+      "category": 31,
+      "name": "Workspace Incident Coordinator",
+      "description": "Preserves evidence, contains affected state, restores service, validates recovery, and documents transferable lessons.",
+      "route": "workflow.recover",
+      "mode": "inspection"
+    },
+    {
+      "id": "continuous-workspace-improvement-analyst",
+      "number": "31.9",
+      "category": 31,
+      "name": "Continuous Workspace Improvement Analyst",
+      "description": "Uses observed failures, waste, delays, tool gaps, and repeated manual work to improve templates and automation.",
+      "route": "workflow.summary",
+      "mode": "inspection"
+    },
+    {
+      "id": "ultimate-workspace-steward",
+      "number": "31.10",
+      "category": 31,
+      "name": "Ultimate Workspace Steward",
+      "description": "Combines discovery, organization, environment setup, resource control, validation, cleanup, recovery, and clean delivery as one governed workflow.",
+      "route": "workflow.run",
+      "mode": "action"
+    }
+  ]
+}

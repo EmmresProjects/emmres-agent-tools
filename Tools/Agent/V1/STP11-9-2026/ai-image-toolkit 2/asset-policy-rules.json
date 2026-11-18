@@ -1,0 +1,566 @@
+{
+  "description": "Editable policy rulesets for policy.run and related operations. These are keyword and pattern screens for triage only. They are NOT a substitute for a trained safety classifier or for human or legal review. A rule has either 'any' (one regex match triggers it) or 'all' (every regex must match somewhere in the text). Severity: block > review > warn. Matching runs on normalised text (lowercase, zero-width characters removed, common leetspeak substitutions applied).",
+  "decision_order": [
+    "block",
+    "review",
+    "warn",
+    "allow"
+  ],
+  "rulesets": {
+    "content-safety": {
+      "description": "Visual content safety triage for requests (violence, self-harm, weapons, fraud)",
+      "rules": [
+        {
+          "id": "cs-violence-gore",
+          "any": [
+            "\\bgore\\b",
+            "\\bdismember",
+            "\\bbeheading",
+            "\\bmutilat"
+          ],
+          "severity": "review",
+          "message": "Graphic violence requested",
+          "alternative": "Show the scene implied off-frame or use a stylised, non-graphic composition."
+        },
+        {
+          "id": "cs-violence-scene",
+          "any": [
+            "\\bbloody\\b",
+            "\\bblood (splatter|spatter|pool|soaked|stains?)",
+            "\\bcorpses?\\b",
+            "\\bdead bod(y|ies)\\b",
+            "\\bmurder(ed|ing)?\\b",
+            "\\bstab(bed|bing|s)?\\b",
+            "\\bdecapitat",
+            "\\bcrime scene\\b"
+          ],
+          "severity": "review",
+          "message": "Violent or gore-adjacent scene requested",
+          "alternative": "Imply the event off-frame, or show the aftermath in a non-graphic, stylised composition."
+        },
+        {
+          "id": "cs-self-harm",
+          "any": [
+            "\\bself[- ]?harm\\b",
+            "\\bsuicide\\b",
+            "\\bcutting (my|your) (arm|wrist)"
+          ],
+          "severity": "block",
+          "message": "Self-harm imagery requested",
+          "alternative": "Route to supportive resources and do not generate the image."
+        },
+        {
+          "id": "cs-weapon-making",
+          "any": [
+            "\\b(build|make|assemble) (a |an )?(bomb|explosive|firearm|silencer)"
+          ],
+          "severity": "block",
+          "message": "Instructions or imagery for weapon construction",
+          "alternative": "Use a generic product or film-prop look without construction detail."
+        },
+        {
+          "id": "cs-fraud-document",
+          "any": [
+            "\\bfake (passport|driver'?s license|id card|banknote|currency|receipt)",
+            "\\bcounterfeit\\b"
+          ],
+          "severity": "block",
+          "message": "Forged document or currency",
+          "alternative": "Use a clearly fictional, watermarked specimen template."
+        },
+        {
+          "id": "cs-hate-symbols",
+          "any": [
+            "\\bnazi\\b",
+            "\\bswastika\\b",
+            "\\bwhite power\\b"
+          ],
+          "severity": "review",
+          "message": "Hateful symbols or extremist imagery",
+          "alternative": "Remove the symbol or use historical context reviewed by a human."
+        }
+      ],
+      "obfuscation_check": true
+    },
+    "age": {
+      "description": "Age-sensitive triage. Any sexualised request involving minors or apparent minors is blocked.",
+      "rules": [
+        {
+          "id": "age-minor-sexual",
+          "all": [
+            "\\b(child|children|kid|kids|minor|minors|teen|teens|teenager|underage|schoolgirl|schoolboy|toddler|preteen|young girl|young boy)\\b",
+            "\\b(nude|naked|nsfw|erotic|sexual|sexy|lingerie|bikini|provocative|undress)"
+          ],
+          "severity": "block",
+          "message": "Sexualised content involving minors or apparent minors is prohibited",
+          "alternative": "None. Do not generate or edit this content."
+        },
+        {
+          "id": "age-ambiguous",
+          "any": [
+            "\\blooks? (very )?young\\b",
+            "\\bappears? (to be )?(young|underage)\\b",
+            "\\byoung-looking\\b"
+          ],
+          "severity": "review",
+          "message": "Age is ambiguous; verify adulthood before any edit",
+          "alternative": "Use an adult subject with documented age verification."
+        }
+      ]
+    },
+    "deepfake": {
+      "description": "Impersonation and deceptive realism triage",
+      "rules": [
+        {
+          "id": "df-public-figure-realistic",
+          "all": [
+            "\\b(realistic|photorealistic|photo|video|footage|real)\\b",
+            "\\b(president|prime minister|senator|politician|celebrity|actor|actress|singer|influencer|ceo|minister|mayor|governor)\\b"
+          ],
+          "severity": "review",
+          "message": "Realistic depiction of a public figure may be impersonation",
+          "alternative": "Use an obviously fictional illustration with no real person's likeness."
+        },
+        {
+          "id": "df-fake-event",
+          "any": [
+            "\\bfake (photo|image|video|footage|news|interview)\\b",
+            "\\bdeepfake\\b",
+            "\\bstaged (protest|attack|disaster|crime)\\b"
+          ],
+          "severity": "block",
+          "message": "Request to create deceptive media",
+          "alternative": "Label clearly as an illustrative mock-up that is not a real event."
+        },
+        {
+          "id": "df-voice-or-speech",
+          "any": [
+            "\\bmake (him|her|them) say\\b",
+            "\\bmake (it|the video) look like (he|she|they) said\\b"
+          ],
+          "severity": "review",
+          "message": "Request implies fabricated statements by a person",
+          "alternative": "Do not attribute statements to real people."
+        }
+      ]
+    },
+    "copyright": {
+      "description": "Close imitation, trademark and reconstruction triage. The brand list in 'brand_terms' is an example; maintain your own.",
+      "brand_terms": [
+        "disney",
+        "marvel",
+        "pokemon",
+        "nintendo",
+        "coca-cola",
+        "nike",
+        "apple logo",
+        "mickey mouse",
+        "star wars",
+        "harry potter"
+      ],
+      "rules": [
+        {
+          "id": "cp-brand-character",
+          "any": [
+            "\\bdisney\\b",
+            "\\bmarvel\\b",
+            "\\bpokemon\\b",
+            "\\bnintendo\\b",
+            "\\bcoca-?cola\\b",
+            "\\bnike\\b",
+            "\\bmickey mouse\\b",
+            "\\bstar wars\\b",
+            "\\bharry potter\\b",
+            "\\bapple logo\\b"
+          ],
+          "severity": "review",
+          "message": "Protected brand, character or logo referenced",
+          "alternative": "Describe an original character or product with a different silhouette, colours and name."
+        },
+        {
+          "id": "cp-exact-copy",
+          "any": [
+            "\\bexact (copy|replica|reproduction)\\b",
+            "\\bidentical to\\b",
+            "\\breplicate the (cover|poster|album|logo)\\b",
+            "\\bcopy of the (painting|photograph|cover)\\b"
+          ],
+          "severity": "block",
+          "message": "Request for exact reproduction of a protected work",
+          "alternative": "Create an original composition using only general visual attributes."
+        },
+        {
+          "id": "cp-living-artist-style",
+          "any": [
+            "\\bin the style of [a-z]+ [a-z]+\\b",
+            "\\bby [a-z]+ [a-z]+ style\\b"
+          ],
+          "severity": "review",
+          "message": "Named artist style request; check whether the artist is living",
+          "alternative": "Use policy.rewrite_style to convert the request into visual attributes."
+        }
+      ]
+    },
+    "likeness": {
+      "description": "Identifiable person, consent and private-setting triage",
+      "rules": [
+        {
+          "id": "lk-private-person",
+          "any": [
+            "\\bmy (ex|boss|coworker|neighbou?r|classmate|roommate|landlord|teacher)\\b",
+            "\\b(photo|picture|image) of (a )?(real|specific|actual) (person|woman|man|girl|boy|human)\\b"
+          ],
+          "severity": "review",
+          "message": "Identifiable private person requested",
+          "alternative": "Use a fictional character or a composite with no identifiable features; obtain written consent for real people."
+        },
+        {
+          "id": "lk-public-figure",
+          "any": [
+            "\\breal (celebrit(y|ies)|politicians?|actors?|actress(es)?|singers?|influencers?|public figures?|presidents?|senators?)\\b",
+            "\\b(celebrit(y|ies)|politicians?|influencers?)\\b"
+          ],
+          "severity": "review",
+          "message": "Real public figure requested; likeness and endorsement rules apply",
+          "alternative": "Use a fictional character. For real public figures, obtain rights clearance and do not imply endorsement."
+        },
+        {
+          "id": "lk-no-consent",
+          "any": [
+            "\\bwithout (their |his |her )?(consent|permission|knowledge)\\b",
+            "\\bsecretly (photo|film|record|edit)"
+          ],
+          "severity": "block",
+          "message": "Request states no consent",
+          "alternative": "Obtain consent and document the intended use."
+        },
+        {
+          "id": "lk-private-setting",
+          "any": [
+            "\\b(bedroom|bathroom|changing room|locker room|hospital room)\\b"
+          ],
+          "severity": "review",
+          "message": "Private setting with a person; confirm consent and purpose",
+          "alternative": "Use a neutral, public or fictional setting."
+        }
+      ]
+    },
+    "adversarial": {
+      "description": "Prompt obfuscation, instruction override and tool-chaining triage",
+      "rules": [
+        {
+          "id": "adv-override",
+          "any": [
+            "\\bignore (all |any )?(previous|prior|above|earlier) (instructions|rules|prompts?)",
+            "\\bdisregard (the )?(safety|policy|rules|guidelines)",
+            "\\byou are now (in )?(developer|dan|unrestricted) mode\\b"
+          ],
+          "severity": "block",
+          "message": "Instruction override attempt",
+          "alternative": "Restate the creative request without bypass language."
+        },
+        {
+          "id": "adv-bypass",
+          "any": [
+            "\\bbypass (the )?(filter|safety|moderation|classifier|watermark)",
+            "\\bevade (the )?(filter|detection|moderation)",
+            "\\bremove (the )?(watermark|c2pa|content credentials)\\b"
+          ],
+          "severity": "block",
+          "message": "Request to bypass safeguards or provenance",
+          "alternative": "Keep watermarks and content credentials; request a licensed export instead."
+        },
+        {
+          "id": "adv-encoded",
+          "any": [
+            "\\bbase64\\b",
+            "\\brot13\\b",
+            "\\bhex-encoded\\b",
+            "\\bdecode (this|the following)\\b"
+          ],
+          "severity": "review",
+          "message": "Encoded instruction text",
+          "alternative": "Write the request in plain text."
+        },
+        {
+          "id": "adv-roleplay",
+          "any": [
+            "\\bpretend (you are|to be) (an? )?(unfiltered|uncensored)",
+            "\\bact as (an? )?(unfiltered|uncensored)"
+          ],
+          "severity": "block",
+          "message": "Roleplay used to bypass limits",
+          "alternative": "Ask for the visual goal directly."
+        }
+      ],
+      "obfuscation_check": true
+    },
+    "misleading": {
+      "description": "Edits that change events, evidence, documents, products or claims",
+      "rules": [
+        {
+          "id": "ml-evidence",
+          "any": [
+            "\\bfake (evidence|receipt|document|certificate|test result|lab result)\\b",
+            "\\bdoctored (photo|image|evidence)\\b"
+          ],
+          "severity": "block",
+          "message": "Edit would fabricate evidence or documents",
+          "alternative": "Label the image as an illustration and remove any claim that it is evidence."
+        },
+        {
+          "id": "ml-news",
+          "any": [
+            "\\bnews (photo|image|footage)\\b",
+            "\\bpress (photo|image)\\b",
+            "\\breal (event|disaster|crime scene|accident)\\b"
+          ],
+          "severity": "review",
+          "message": "Edit presented as news or a real event",
+          "alternative": "Use a clearly labelled illustration."
+        },
+        {
+          "id": "ml-product-claim",
+          "any": [
+            "\\bbefore and after\\b.*\\b(result|cure|guaranteed|clinically)\\b",
+            "\\bclinically proven\\b",
+            "\\bguaranteed results\\b"
+          ],
+          "severity": "review",
+          "message": "Visual implies an unverified product or medical claim",
+          "alternative": "Show a verified demonstration or remove the claim."
+        }
+      ]
+    },
+    "portrait-ethics": {
+      "description": "Ethical portrait workflow triage: consent, minors, sensitive edits, stereotyping",
+      "rules": [
+        {
+          "id": "pe-minor",
+          "any": [
+            "\\b(child|children|kid|kids|minor|teen|teenager|toddler)\\b"
+          ],
+          "severity": "review",
+          "message": "Portrait involves a minor; require guardian consent and extra review",
+          "alternative": "Use an adult model or an illustration with no identifiable features."
+        },
+        {
+          "id": "pe-skin-alteration",
+          "any": [
+            "\\b(lighten|whiten|bleach|fair) (the )?(skin|complexion)\\b",
+            "\\bmake (her|him|them) (look )?(whiter|paler)\\b"
+          ],
+          "severity": "review",
+          "message": "Skin-tone alteration can reinforce colour bias",
+          "alternative": "Keep natural skin tone; use neutral lighting instead."
+        },
+        {
+          "id": "pe-body-edit",
+          "any": [
+            "\\b(slimmer|thinner) body\\b",
+            "\\bmake (her|him|them) (thinner|skinnier)\\b",
+            "\\b(bigger|larger) (breasts|chest|hips)\\b"
+          ],
+          "severity": "review",
+          "message": "Body-shape edit of a person needs consent and purpose review",
+          "alternative": "Use a styling or posing change instead."
+        },
+        {
+          "id": "pe-stereotype",
+          "any": [
+            "\\b(racial|ethnic) (stereotype|caricature)\\b",
+            "\\bcaricature of (a )?(race|religion|ethnic group)\\b"
+          ],
+          "severity": "block",
+          "message": "Stereotyping or caricature of a group",
+          "alternative": "Depict individuals with specific, respectful, non-stereotyped details."
+        }
+      ]
+    },
+    "medical": {
+      "description": "Educational medical imagery safety and privacy triage",
+      "rules": [
+        {
+          "id": "md-real-patient",
+          "any": [
+            "\\breal patient\\b",
+            "\\bidentifiable patient\\b",
+            "\\bmy (own )?(scan|x-?ray|mri|ct scan|biopsy)\\b"
+          ],
+          "severity": "block",
+          "message": "Identifiable or real patient data",
+          "alternative": "Use an anonymised, licensed atlas image or a generic anatomical diagram."
+        },
+        {
+          "id": "md-diagnostic",
+          "any": [
+            "\\bdiagnos(e|is|tic) (from|using) (this|the) (image|photo|scan)\\b",
+            "\\bcure (for|of)\\b",
+            "\\bproof of (cure|treatment)\\b"
+          ],
+          "severity": "review",
+          "message": "Image framed as diagnostic or as proof of treatment",
+          "alternative": "Label the image as educational and non-diagnostic."
+        }
+      ]
+    },
+    "cultural": {
+      "description": "Cultural and locale sensitivity triage. Extend with locale-specific entries.",
+      "rules": [
+        {
+          "id": "cu-sacred-misuse",
+          "any": [
+            "\\b(sacred|religious|ceremonial) (symbol|item|object|attire|garment)s? (on|as) (decor|decoration|fashion|costume|merch|shoes|floor|tattoo)"
+          ],
+          "severity": "review",
+          "message": "Sacred or ceremonial item used in a casual or commercial context",
+          "alternative": "Remove the item or consult a cultural reviewer for the target locale."
+        },
+        {
+          "id": "cu-caricature",
+          "any": [
+            "\\bcaricature\\b",
+            "\\bstereotypical\\b"
+          ],
+          "severity": "review",
+          "message": "Caricature or stereotypical depiction",
+          "alternative": "Use accurate, respectful, specific details."
+        },
+        {
+          "id": "cu-map-dispute",
+          "any": [
+            "\\bdisputed (border|territory|map)\\b",
+            "\\bmap of (the )?disputed\\b"
+          ],
+          "severity": "review",
+          "message": "Disputed territory or map",
+          "alternative": "Use a neutral map reviewed for the target locale."
+        }
+      ]
+    },
+    "marketplace": {
+      "description": "Example marketplace claim and overlay triage. Replace with the specific marketplace policy you must follow.",
+      "rules": [
+        {
+          "id": "mp-claim-overlay",
+          "any": [
+            "\\bbest seller\\b",
+            "\\b#1\\b",
+            "\\bfree shipping\\b",
+            "\\b50% off\\b",
+            "\\blimited time\\b"
+          ],
+          "severity": "review",
+          "message": "Promotional overlay text; check the marketplace policy",
+          "alternative": "Keep the main image free of promotional text."
+        },
+        {
+          "id": "mp-contact-info",
+          "any": [
+            "\\b\\d{3}[- ]\\d{3}[- ]\\d{4}\\b",
+            "\\b[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}\\b"
+          ],
+          "severity": "block",
+          "message": "Contact information in an image",
+          "alternative": "Remove contact details."
+        }
+      ]
+    }
+  },
+  "artist_style_map": {
+    "_note": "Maintain your own list. Only list artists whose work is public domain or who have granted permission. Replace names with visual attributes.",
+    "monet": "soft impressionist brushwork and light-filled colour",
+    "van gogh": "bold swirling brushstrokes and saturated yellows",
+    "hokusai": "bold woodblock-style outlines and flat colour fields with wave patterns"
+  },
+  "disclosure_templates": {
+    "edit_phrases": {
+      "generated": "created with generative AI",
+      "edited": "edited with AI-assisted tools",
+      "composited": "composited from several images with AI-assisted edits",
+      "upscaled": "enhanced with AI-assisted upscaling",
+      "restored": "restored with AI-assisted tools"
+    },
+    "contexts": {
+      "social": {
+        "short": "AI: {edit_phrase}.",
+        "long": "This image was {edit_phrase}. {tool_clause}"
+      },
+      "ecommerce": {
+        "short": "Image {edit_phrase}.",
+        "long": "Product image {edit_phrase}. Colours and details may vary slightly from the physical product."
+      },
+      "editorial": {
+        "short": "Illustration: {edit_phrase}.",
+        "long": "Illustration {edit_phrase}. It does not depict a real event or person."
+      },
+      "advertising": {
+        "short": "AI-generated visual, {edit_phrase}.",
+        "long": "This visual was {edit_phrase}. Performance or results shown are illustrative."
+      },
+      "internal": {
+        "short": "{edit_phrase}.",
+        "long": "Internal asset {edit_phrase}. Review before external use."
+      }
+    }
+  },
+  "release_checklist": {
+    "rights": "Every source, reference and model licence is recorded and permits this use.",
+    "privacy": "No identifiable private people, plates, addresses or screens remain, and metadata is stripped or reviewed.",
+    "factuality": "Every claim shown in or around the image is verified or removed.",
+    "security": "No secrets, internal file names or hidden data are present in the file or metadata.",
+    "disclosure": "The AI generation or editing disclosure text is attached.",
+    "brand": "Approved colours, fonts, logo clear space and tone are checked.",
+    "accessibility": "Alt text is written and text-image contrast passes.",
+    "platform": "Dimensions, format, file size and policy rules for the destination are confirmed."
+  },
+  "workflow": {
+    "states": [
+      "draft",
+      "in_review",
+      "approved",
+      "published",
+      "rejected"
+    ],
+    "transitions": {
+      "submit_review": {
+        "from": [
+          "draft",
+          "rejected"
+        ],
+        "to": "in_review",
+        "needs_approval": false
+      },
+      "approve": {
+        "from": [
+          "in_review"
+        ],
+        "to": "approved",
+        "needs_approval": false,
+        "requires_different_actor": true
+      },
+      "reject": {
+        "from": [
+          "in_review"
+        ],
+        "to": "rejected",
+        "needs_approval": false
+      },
+      "publish": {
+        "from": [
+          "approved"
+        ],
+        "to": "published",
+        "needs_approval": true
+      },
+      "revise": {
+        "from": [
+          "rejected",
+          "approved"
+        ],
+        "to": "draft",
+        "needs_approval": false
+      }
+    }
+  }
+}

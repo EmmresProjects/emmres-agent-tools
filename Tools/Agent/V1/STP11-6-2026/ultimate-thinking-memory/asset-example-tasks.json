@@ -1,0 +1,9 @@
+{
+  "tasks": [
+    {"id": "design", "duration": 3, "value": 8, "effort": 2, "risk": 2, "status": "done"},
+    {"id": "build", "deps": ["design"], "duration": 5, "value": 10, "effort": 5, "risk": 3, "status": "todo"},
+    {"id": "docs", "deps": ["design"], "duration": 1, "value": 2, "effort": 1, "risk": 0.5, "status": "todo"},
+    {"id": "test", "deps": ["build"], "duration": 2, "value": 6, "effort": 2, "risk": 1, "status": "todo", "deadline": 10},
+    {"id": "launch", "deps": ["test", "docs"], "duration": 1, "value": 9, "effort": 1, "risk": 2, "status": "todo"}
+  ]
+}

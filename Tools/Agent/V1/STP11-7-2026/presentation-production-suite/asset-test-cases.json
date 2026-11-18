@@ -1,0 +1,305 @@
+{
+ "version": "1.0.0",
+ "purpose": "Acceptance cases executed by tools-selftest.py. Each case builds its own fixtures in a temporary directory, drives the primary CLI through its real interface, and asserts observable outcomes. Run all: python tools-selftest.py. Run one: python tools-selftest.py --case <id>.",
+ "fixture_builders": {
+  "clean-deck.pptx": "16:9 deck with claim titles, bullets, a sourced footnote, an alt-texted picture, no personal metadata; must pass the gate",
+  "defect-deck.pptx": "one instance of each repairable defect: low-contrast 11pt text, off-canvas box, overflowing frame, alt-text-less picture, shadowed card, near-duplicate colours, near-misaligned panels, email/API key/UNC path, TODO note, hidden obsolete slide, personal metadata",
+  "edge-deck.pptx": "4:3 deck with an empty slide, zero-size shape, rotated textbox, CJK and RTL text",
+  "deck-spec.json": "valid declarative spec covering title, content, kpi and process slide types",
+  "bad-spec.json": "invalid spec: empty title, empty bullets, unknown slide type",
+  "strict-config.json": "profile large-stage with min_text_pt 22 and a brand allow-list",
+  "corrupt.pptx": "non-ZIP bytes with a PK header, used to test failure isolation",
+  "blockdeps/sitecustomize.py": "import hook that makes pptx and PIL unimportable, used by the deps case"
+ },
+ "cases": [
+  {
+   "id": "env",
+   "description": "selfcheck and capabilities report a ready environment",
+   "fixtures": [],
+   "asserts": [
+    "selfcheck exits 0 and reports ready",
+    "capabilities lists >=60 engines and >=20 commands",
+    "catalog registers 324 capabilities",
+    "help renders, help <command> documents flags",
+    "unknown help topic exits 2"
+   ]
+  },
+  {
+   "id": "shape",
+   "description": "the shipped folder structure satisfies the packaging rules",
+   "fixtures": [],
+   "asserts": [
+    "no SKILL.md in the Skill Tool folder",
+    "no internal subfolders",
+    "every file carries a tools-/knowledge-/asset- prefix",
+    "exactly one knowledge-readme.md",
+    "file count within limits"
+   ]
+  },
+  {
+   "id": "deps",
+   "description": "commands degrade cleanly when optional dependencies are absent",
+   "fixtures": [
+    "clean-deck.pptx",
+    "blockdeps/sitecustomize.py"
+   ],
+   "asserts": [
+    "selfcheck exits 3 and names both missing libraries",
+    "capabilities/validate-config/catalog/help still work",
+    "inspect without python-pptx exits 3 with a runtime message",
+    "render without Pillow exits 3 with guidance",
+    "convert-units needs no optional dependencies"
+   ]
+  },
+  {
+   "id": "config",
+   "description": "config validation accepts valid files and rejects invalid ones",
+   "fixtures": [
+    "strict-config.json"
+   ],
+   "asserts": [
+    "default config validates",
+    "user config merges and switches profile",
+    "invalid config exits 2 with the type error"
+   ]
+  },
+  {
+   "id": "inspect",
+   "description": "inspect produces a neutral model with real geometry",
+   "fixtures": [
+    "clean-deck.pptx"
+   ],
+   "asserts": [
+    "neutral model has 3 slides",
+    "canvas width is 960pt",
+    "text extracted verbatim",
+    "sha256 recorded",
+    "missing deck exits 2"
+   ]
+  },
+  {
+   "id": "audit-clean",
+   "description": "a clean deck audits with zero errors and a high score",
+   "fixtures": [
+    "clean-deck.pptx"
+   ],
+   "asserts": [
+    "exit 0",
+    "zero error findings",
+    "overall score >= 80",
+    "audit.json/report.md/report.html written",
+    "report contains scorecards and limits"
+   ]
+  },
+  {
+   "id": "audit-defects",
+   "description": "the defect deck is detected and gated",
+   "fixtures": [
+    "defect-deck.pptx"
+   ],
+   "asserts": [
+    "exit 1 with --fail-on error",
+    "all seeded defect classes detected",
+    "score < 80",
+    "defect queue ranked with an error first",
+    "gate blocks"
+   ]
+  },
+  {
+   "id": "repair",
+   "description": "repair is dry-run-first, approved when needed, and verified after writing",
+   "fixtures": [
+    "defect-deck.pptx"
+   ],
+   "asserts": [
+    "approval-required scope without --approve exits 2",
+    "dry run writes no deck",
+    "apply writes a healthy package",
+    "errors do not increase",
+    "bounds/type/alt-text/overflow repaired on re-audit",
+    "backup taken",
+    "second run is idempotent"
+   ]
+  },
+  {
+   "id": "normalize",
+   "description": "alignment, spacing and colour normalization are idempotent",
+   "fixtures": [
+    "defect-deck.pptx"
+   ],
+   "asserts": [
+    "normalize applies changes",
+    "second run is idempotent",
+    "colour drift collapsed"
+   ]
+  },
+  {
+   "id": "governance",
+   "description": "governance scrubs metadata, notes and sensitive text",
+   "fixtures": [
+    "defect-deck.pptx"
+   ],
+   "asserts": [
+    "sensitive matches redacted",
+    "personal metadata cleared",
+    "notes stripped",
+    "changes recorded",
+    "visibility update works",
+    "out-of-range slide exits 2"
+   ]
+  },
+  {
+   "id": "author",
+   "description": "author builds a deck from a spec and rejects an invalid spec",
+   "fixtures": [
+    "deck-spec.json",
+    "bad-spec.json"
+   ],
+   "asserts": [
+    "4 slides built",
+    "no blocking validation errors",
+    "reopens with 4 slides",
+    "invalid spec exits 2 and writes nothing",
+    "existing output requires --force"
+   ]
+  },
+  {
+   "id": "render",
+   "description": "render produces real PNGs and a contact sheet",
+   "fixtures": [
+    "clean-deck.pptx"
+   ],
+   "asserts": [
+    "3 PNGs at 960x540",
+    "contact sheet produced",
+    "render manifest count matches"
+   ]
+  },
+  {
+   "id": "regression",
+   "description": "compare detects real changes and ignores unchanged decks",
+   "fixtures": [
+    "clean-deck.pptx",
+    "defect-deck.pptx"
+   ],
+   "asserts": [
+    "identical decks show no changes and identical renders",
+    "different decks show structural and visual changes"
+   ]
+  },
+  {
+   "id": "snapshot",
+   "description": "snapshot records a reproducible model and a deck copy",
+   "fixtures": [
+    "clean-deck.pptx"
+   ],
+   "asserts": [
+    "label recorded",
+    "deck copy written",
+    "model hash recorded",
+    "snapshot usable as an audit baseline"
+   ]
+  },
+  {
+   "id": "errors",
+   "description": "invalid inputs produce structured, non-crashing failures",
+   "fixtures": [
+    "clean-deck.pptx",
+    "corrupt.pptx"
+   ],
+   "asserts": [
+    "unknown engine exits 2",
+    "unknown scope exits 2",
+    "corrupt deck exits 3",
+    "missing audit file exits 2",
+    "unknown command exits 2",
+    "unknown profile exits 2"
+   ]
+  },
+  {
+   "id": "edge",
+   "description": "edge-case deck (empty slide, zero size, rotation, CJK/RTL) audits without crashing",
+   "fixtures": [
+    "edge-deck.pptx"
+   ],
+   "asserts": [
+    "no runtime error",
+    "empty slide, zero-size, rotation, RTL and CJK detected",
+    "4:3 canvas recognised"
+   ]
+  },
+  {
+   "id": "units",
+   "description": "unit conversion round-trips correctly",
+   "fixtures": [],
+   "asserts": [
+    "72pt = 1in = 914400 EMU",
+    "540pt = 7.5in",
+    "non-numeric input exits 3"
+   ]
+  },
+  {
+   "id": "batch",
+   "description": "batch processes many decks and isolates failures",
+   "fixtures": [
+    "fixtures/*.pptx",
+    "corrupt.pptx"
+   ],
+   "asserts": [
+    "exit 1 when one deck fails",
+    "at least 3 decks processed",
+    "one failure recorded with a reason",
+    "each success carries a score"
+   ]
+  },
+  {
+   "id": "extract",
+   "description": "text extraction preserves slide/object context and notes",
+   "fixtures": [
+    "defect-deck.pptx"
+   ],
+   "asserts": [
+    "items returned with slide/object context",
+    "real text extracted",
+    "markdown carries slide context",
+    "notes included when requested"
+   ]
+  },
+  {
+   "id": "rescale",
+   "description": "rescale reflows the canvas and needs approval",
+   "fixtures": [
+    "clean-deck.pptx"
+   ],
+   "asserts": [
+    "apply without --approve exits 2",
+    "rescaled deck is 4:3 at 720pt",
+    "out-of-range canvas exits 2"
+   ]
+  },
+  {
+   "id": "plan",
+   "description": "plan produces an ordered, runnable remediation sequence",
+   "fixtures": [
+    "defect-deck.pptx"
+   ],
+   "asserts": [
+    "steps returned in order",
+    "commands are suite-relative",
+    "snapshot is first"
+   ]
+  },
+  {
+   "id": "a11y-profile",
+   "description": "the active profile changes the findings, as it must",
+   "fixtures": [
+    "clean-deck.pptx",
+    "strict-config.json"
+   ],
+   "asserts": [
+    "a stricter profile reports at least as many violations",
+    "the large-stage profile flags fixture body text"
+   ]
+  }
+ ]
+}

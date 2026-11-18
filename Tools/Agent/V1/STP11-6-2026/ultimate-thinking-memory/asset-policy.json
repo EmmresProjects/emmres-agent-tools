@@ -1,0 +1,688 @@
+{
+  "policy_version": "1.0.0",
+  "limits": {
+    "max_input_bytes": 5242880,
+    "max_scan_file_bytes": 1048576,
+    "max_items": 5000,
+    "max_near_duplicate_lines": 1000,
+    "max_record_bytes": 65536,
+    "max_ledger_records": 100000,
+    "max_expression_chars": 500,
+    "max_power_exponent": 1000,
+    "max_montecarlo_samples": 200000,
+    "max_grid_points": 100000,
+    "max_combinations": 5000,
+    "max_checkpoint_files": 2000,
+    "max_checkpoint_bytes": 52428800,
+    "max_report_rows": 200,
+    "max_scan_files": 500,
+    "timeout_default_seconds": 60,
+    "timeout_max_seconds": 600,
+    "write_retries": 3,
+    "retry_backoff_seconds": 0.2
+  },
+  "defaults": {
+    "state_dir": "thinking-state",
+    "output_dir": "thinking-output",
+    "budget_tokens": 2000,
+    "token_factor": 1.3,
+    "source_max_age_days": 365,
+    "volatile_max_age_days": 90,
+    "coverage_covered": 0.8,
+    "coverage_partial": 0.5,
+    "ground_supported": 0.6,
+    "ground_partial": 0.4,
+    "dedupe_jaccard": 0.85,
+    "drift_recall_min": 0.5,
+    "saturation_new_share": 0.1,
+    "dominant_share": 0.6,
+    "critical_below": 0.6,
+    "pass_threshold": 0.8,
+    "weak_threshold": 0.5,
+    "risk_high_score": 120,
+    "risk_medium_score": 60,
+    "max_safe_risk": 5,
+    "wip_limit": 2,
+    "portfolio_max_share": 60,
+    "long_sentence_words": 30,
+    "min_free_disk_mb": 100,
+    "python_min": "3.9",
+    "nominal_coverage": 0.8,
+    "fragility_delta": 0.2,
+    "risk_aversion": 0.5,
+    "consensus_min": 0.8,
+    "confidence_z": 1.96
+  },
+  "approval_tiers": [
+    "high",
+    "critical"
+  ],
+  "memory_durability": {
+    "permanent": 1.0,
+    "review": 0.7,
+    "ttl": 0.5
+  },
+  "source_tiers": {
+    "primary-data": 1,
+    "measured": 1,
+    "original-research": 1,
+    "firsthand": 1,
+    "official": 2,
+    "peer-reviewed": 2,
+    "authoritative": 2,
+    "standard": 2,
+    "secondary": 3,
+    "industry-report": 3,
+    "news": 4,
+    "blog": 4,
+    "opinion": 4,
+    "forum": 5,
+    "unsupported": 5
+  },
+  "requirement_cues": [
+    "must",
+    "shall",
+    "should",
+    "need",
+    "needs",
+    "require",
+    "requires",
+    "required",
+    "include",
+    "includes",
+    "only",
+    "never",
+    "at least",
+    "at most",
+    "no more than",
+    "cannot",
+    "must not",
+    "avoid",
+    "ensure",
+    "support",
+    "prefer",
+    "ideally",
+    "optional"
+  ],
+  "hard_cues": [
+    "must",
+    "shall",
+    "never",
+    "only",
+    "cannot",
+    "must not",
+    "at most",
+    "no more than",
+    "required",
+    "require",
+    "requires",
+    "at least"
+  ],
+  "preference_cues": [
+    "prefer",
+    "ideally",
+    "optional",
+    "if possible",
+    "nice to have",
+    "would like",
+    "should"
+  ],
+  "absolute_terms": [
+    "always",
+    "never",
+    "guaranteed",
+    "guarantee",
+    "proven",
+    "proves",
+    "definitely",
+    "certainly",
+    "undeniable",
+    "obviously",
+    "no doubt",
+    "100%",
+    "impossible",
+    "perfect",
+    "perfectly",
+    "everyone",
+    "nobody",
+    "no one"
+  ],
+  "source_markers": [
+    "http",
+    "https",
+    "[",
+    "source",
+    "according to",
+    "ref",
+    "cite",
+    "citation",
+    "(20",
+    "doi",
+    "measured",
+    "retrieved"
+  ],
+  "vague_terms": [
+    "some",
+    "many",
+    "several",
+    "few",
+    "soon",
+    "various",
+    "etc",
+    "a lot",
+    "often",
+    "recently",
+    "large",
+    "small",
+    "significant",
+    "fast",
+    "quickly",
+    "appropriate",
+    "good",
+    "bad",
+    "as needed",
+    "roughly",
+    "about",
+    "around",
+    "various",
+    "things",
+    "stuff",
+    "handle",
+    "manage",
+    "improve"
+  ],
+  "allowed_acronyms": [
+    "API",
+    "CSV",
+    "JSON",
+    "PDF",
+    "DOCX",
+    "XLSX",
+    "URL",
+    "HTML",
+    "CSS",
+    "ID",
+    "IDs",
+    "UTC",
+    "ZIP",
+    "SVG",
+    "PNG",
+    "JPG",
+    "SHA",
+    "SQL",
+    "CLI",
+    "MD",
+    "TXT",
+    "AI",
+    "OK",
+    "USD",
+    "PHP",
+    "TIN",
+    "ETA",
+    "RPN",
+    "PERT",
+    "MAE",
+    "RMSE",
+    "MAPE",
+    "FMEA",
+    "SKILL",
+    "PH",
+    "NCR"
+  ],
+  "causal_terms": [
+    "causes",
+    "caused",
+    "leads to",
+    "results in",
+    "drives",
+    "due to",
+    "proves",
+    "increases",
+    "reduces",
+    "improves",
+    "lowers",
+    "raises",
+    "effect of",
+    "impact of"
+  ],
+  "bias_cues": [
+    "obviously",
+    "clearly",
+    "as expected",
+    "we already",
+    "already invested",
+    "sunk",
+    "everyone agrees",
+    "i knew",
+    "always been",
+    "we have always",
+    "as i said",
+    "of course",
+    "no-brainer",
+    "trust me"
+  ],
+  "leading_cues": [
+    "don't you think",
+    "do you not",
+    "isn't it",
+    "wouldn't you agree",
+    "wouldn't it be",
+    "isn't that",
+    "surely",
+    "everyone knows",
+    "right?"
+  ],
+  "fallacy_patterns": [
+    {
+      "name": "false-dilemma",
+      "pattern": "\\b(either .{1,60} or|only two (options|choices|ways))\\b",
+      "severity": "medium"
+    },
+    {
+      "name": "appeal-to-popularity",
+      "pattern": "\\b(everyone|most people|everybody|nobody) (knows|agrees|says|thinks|uses)\\b",
+      "severity": "medium"
+    },
+    {
+      "name": "appeal-to-authority-without-source",
+      "pattern": "\\b(experts say|scientists say|studies show|research shows)\\b(?!.*(http|\\[|source|according))",
+      "severity": "medium"
+    },
+    {
+      "name": "slippery-slope",
+      "pattern": "\\b(if we (allow|let|do|start)|once we)\\b.{0,80}\\b(then|will (soon )?lead|eventually)\\b",
+      "severity": "medium"
+    },
+    {
+      "name": "correlation-as-causation",
+      "pattern": "\\b(because|since|therefore|so)\\b.{0,60}\\b(correlat|associated with|linked to)\\b|\\b(correlat\\w*)\\b.{0,60}\\b(therefore|so|proves|means)\\b",
+      "severity": "high"
+    },
+    {
+      "name": "circular-reasoning",
+      "pattern": "\\bbecause (it|that|this) is (true|right|correct|valid)\\b",
+      "severity": "high"
+    },
+    {
+      "name": "non-sequitur-conclusion",
+      "pattern": "\\b(so|therefore|thus|hence) (it )?(must|has to|should) be (true|right|correct|best)\\b",
+      "severity": "medium"
+    },
+    {
+      "name": "appeal-to-tradition",
+      "pattern": "\\b(we have always|it has always been|that's how it has always)\\b",
+      "severity": "low"
+    },
+    {
+      "name": "ad-hominem-or-motive",
+      "pattern": "\\b(only (someone|a person|people) who (is|are) (stupid|lazy|biased)|they just want)\\b",
+      "severity": "medium"
+    }
+  ],
+  "pii_patterns": [
+    {
+      "name": "email-address",
+      "pattern": "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+      "severity": "high"
+    },
+    {
+      "name": "phone-number",
+      "pattern": "(?<!\\d)(\\+?\\d{1,3}[ -]?)?(\\(?\\d{2,4}\\)?[ -]?)\\d{3,4}[ -]?\\d{3,4}(?!\\d)",
+      "severity": "high"
+    },
+    {
+      "name": "ipv4-address",
+      "pattern": "(?<!\\d)(?:\\d{1,3}\\.){3}\\d{1,3}(?!\\d)",
+      "severity": "medium"
+    },
+    {
+      "name": "national-id-like",
+      "pattern": "(?<!\\d)\\d{3}-\\d{2}-\\d{4}(?!\\d)|(?<!\\d)\\d{3}-\\d{3}-\\d{3}-\\d{3}(?!\\d)",
+      "severity": "high"
+    },
+    {
+      "name": "card-number-like",
+      "pattern": "(?<!\\d)(?:\\d[ -]?){13,19}(?!\\d)",
+      "severity": "high",
+      "luhn": true
+    },
+    {
+      "name": "secret-assignment",
+      "pattern": "(?i)\\b(password|passwd|secret|token|api[_ -]?key|private[_ -]?key)\\b\\s*[:=]\\s*\\S+",
+      "severity": "high"
+    }
+  ],
+  "feedback_classes": {
+    "defect": [
+      "bug",
+      "error",
+      "broken",
+      "wrong",
+      "fails",
+      "failed",
+      "doesn't work",
+      "does not work",
+      "crash",
+      "incorrect",
+      "missing"
+    ],
+    "misunderstanding": [
+      "i meant",
+      "not what i",
+      "misread",
+      "confused",
+      "misunderstood",
+      "that's not",
+      "did not mean"
+    ],
+    "new_requirement": [
+      "also add",
+      "we also need",
+      "please add",
+      "new requirement",
+      "additionally",
+      "also include",
+      "now needs"
+    ],
+    "preference": [
+      "prefer",
+      "i would like",
+      "nicer",
+      "rather",
+      "i like",
+      "style",
+      "tone"
+    ]
+  },
+  "priority_cues": [
+    "must",
+    "decision",
+    "risk",
+    "error",
+    "blocker",
+    "deadline",
+    "owner",
+    "required",
+    "never",
+    "only",
+    "security",
+    "privacy",
+    "cost",
+    "approval",
+    "rollback",
+    "verify",
+    "test",
+    "pass",
+    "fail"
+  ],
+  "filler_phrases": [
+    "as mentioned",
+    "basically",
+    "in order to",
+    "it is worth noting that",
+    "needless to say",
+    "at the end of the day",
+    "to be honest",
+    "kind of",
+    "sort of",
+    "just to be clear"
+  ],
+  "stopwords": [
+    "about",
+    "above",
+    "after",
+    "again",
+    "against",
+    "also",
+    "because",
+    "been",
+    "before",
+    "being",
+    "below",
+    "between",
+    "both",
+    "could",
+    "does",
+    "doing",
+    "down",
+    "during",
+    "each",
+    "from",
+    "further",
+    "have",
+    "having",
+    "here",
+    "into",
+    "itself",
+    "just",
+    "more",
+    "most",
+    "other",
+    "over",
+    "same",
+    "should",
+    "some",
+    "such",
+    "than",
+    "that",
+    "their",
+    "them",
+    "then",
+    "there",
+    "these",
+    "they",
+    "this",
+    "those",
+    "through",
+    "under",
+    "until",
+    "very",
+    "were",
+    "what",
+    "when",
+    "where",
+    "which",
+    "while",
+    "will",
+    "with",
+    "would",
+    "your",
+    "yours",
+    "into",
+    "only",
+    "than",
+    "also",
+    "each",
+    "very"
+  ],
+  "governance_keywords": {
+    "destructive": [
+      "delete",
+      "remove",
+      "purge",
+      "wipe",
+      "drop",
+      "overwrite",
+      "truncate",
+      "erase",
+      "rm -",
+      "replace all"
+    ],
+    "irreversible": [
+      "publish",
+      "send",
+      "submit",
+      "release",
+      "deploy",
+      "transfer",
+      "pay",
+      "purchase",
+      "charge",
+      "post",
+      "broadcast",
+      "email",
+      "sign",
+      "terminate",
+      "cancel"
+    ],
+    "privileged": [
+      "sudo",
+      "admin*",
+      "root",
+      "chmod",
+      "grant",
+      "permission*",
+      "escalat*",
+      "install",
+      "shell",
+      "exec*",
+      "run command"
+    ],
+    "credential": [
+      "password*",
+      "token*",
+      "secret*",
+      "api key",
+      "credential*",
+      "private key"
+    ],
+    "financial": [
+      "payment",
+      "purchase",
+      "invoice",
+      "charge",
+      "transfer",
+      "money",
+      "refund",
+      "bank",
+      "budget",
+      "$",
+      "php",
+      "usd"
+    ],
+    "privacy": [
+      "personal data",
+      "personal information",
+      "home address",
+      "phone number",
+      "email address",
+      "id number",
+      "medical",
+      "health record",
+      "salary",
+      "birthdate",
+      "date of birth"
+    ],
+    "identity_legal": [
+      "identity",
+      "legal",
+      "contract",
+      "terms of service",
+      "consent",
+      "lawyer",
+      "court",
+      "tax filing",
+      "notar*",
+      "signature"
+    ],
+    "physical": [
+      "door",
+      "vehicle",
+      "drone",
+      "medication",
+      "machine",
+      "physical",
+      "hardware",
+      "lock",
+      "equipment"
+    ],
+    "external": [
+      "send",
+      "post",
+      "email",
+      "upload",
+      "share",
+      "publish",
+      "external",
+      "third-party",
+      "public",
+      "submit"
+    ],
+    "modify": [
+      "write",
+      "update",
+      "edit",
+      "change",
+      "modify",
+      "rename",
+      "move",
+      "create",
+      "append",
+      "replace",
+      "overwrite"
+    ]
+  },
+  "unit_dimensions": {
+    "dimensionless": {},
+    "1": {},
+    "%": {},
+    "m": {
+      "L": 1
+    },
+    "km": {
+      "L": 1
+    },
+    "cm": {
+      "L": 1
+    },
+    "kg": {
+      "M": 1
+    },
+    "g": {
+      "M": 1
+    },
+    "s": {
+      "T": 1
+    },
+    "min": {
+      "T": 1
+    },
+    "h": {
+      "T": 1
+    },
+    "K": {
+      "Th": 1
+    },
+    "N": {
+      "M": 1,
+      "L": 1,
+      "T": -2
+    },
+    "J": {
+      "M": 1,
+      "L": 2,
+      "T": -2
+    },
+    "W": {
+      "M": 1,
+      "L": 2,
+      "T": -3
+    },
+    "Pa": {
+      "M": 1,
+      "L": -1,
+      "T": -2
+    },
+    "Hz": {
+      "T": -1
+    },
+    "USD": {
+      "C": 1
+    },
+    "PHP": {
+      "C": 1
+    }
+  },
+  "visual_rules_note": "Recommendation rules are coded in tools-quant.py and are listed in asset-policy.json only as a reference name list.",
+  "fixture_note": "Example assets prefixed asset-example- are used by the self-test and by the examples in knowledge-readme.md."
+}

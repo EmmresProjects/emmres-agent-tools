@@ -1,0 +1,23 @@
+[
+  {
+    "id": "seg-1",
+    "src_lang": "en",
+    "tgt_lang": "fil",
+    "source": "Nine of 412 articles were retracted, and five of those nine retractions cited image duplication.",
+    "target": "Siyam sa 421 artikulo ang binawi, at lima sa siyam na pagbawi ay nagtukoy ng pagdoble ng larawan."
+  },
+  {
+    "id": "seg-2",
+    "src_lang": "en",
+    "tgt_lang": "fil",
+    "source": "The journal did not publish the correction within 90 days.",
+    "target": "Inilathala ng journal ang pagwawasto sa loob ng 90 araw."
+  },
+  {
+    "id": "seg-3",
+    "src_lang": "en",
+    "tgt_lang": "fil",
+    "source": "Retractions must state the reason and the effective date {date}.",
+    "target": "Dapat sabihin ng pagbawi ang dahilan at ang petsang may bisa."
+  }
+]

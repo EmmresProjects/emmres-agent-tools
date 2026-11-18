@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "policy_version": "1.0.0",
+  "purpose": "Caption and transcript output rules for accessibility. Cues are derived proportionally from word counts; a human reviews timing before release.",
+  "formats": {
+    "srt": {
+      "extension": ".srt",
+      "timestamp": "HH:MM:SS,mmm",
+      "max_chars_per_cue": 84,
+      "max_lines": 2
+    },
+    "vtt": {
+      "extension": ".vtt",
+      "header": "WEBVTT",
+      "timestamp": "HH:MM:SS.mmm",
+      "max_chars_per_cue": 84,
+      "max_lines": 2
+    },
+    "txt": {
+      "extension": ".txt",
+      "description": "plain transcript, one sentence per line"
+    }
+  },
+  "rules": [
+    "one sentence per cue whenever the sentence fits the character budget",
+    "never split a cue inside a word",
+    "keep spoken punctuation so screen readers pause correctly",
+    "label degraded-engine audio in the first cue",
+    "record caption file checksums in the manifest"
+  ],
+  "degraded_label": "[DEGRADED ENGINE OUTPUT - NOT INTELLIGIBLE SPEECH]"
+}

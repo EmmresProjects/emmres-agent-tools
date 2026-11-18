@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0.0",
+  "notes": "Ordered operation chains for the dsp module. Every op is validated before the first sample is touched, and nothing is written unless the whole chain succeeds.",
+  "recipes": {
+    "streaming-safe-normalize": {
+      "label": "Streaming music level and peak safety",
+      "preset": "streaming-music",
+      "purpose": "Reach the streaming loudness target while guaranteeing the true-peak ceiling.",
+      "ops": [
+        {"op": "dc-block"},
+        {"op": "normalize", "target_lufs": -14.0},
+        {"op": "limit", "ceiling_dbtp": -1.0, "lookahead_ms": 5, "release_ms": 80}
+      ]
+    },
+    "club-loud-normalize": {
+      "label": "Club level and peak safety",
+      "preset": "club-playback",
+      "purpose": "Loud club delivery with a tight ceiling and no clipped runs.",
+      "ops": [
+        {"op": "dc-block"},
+        {"op": "normalize", "target_lufs": -9.0},
+        {"op": "limit", "ceiling_dbtp": -0.5, "lookahead_ms": 3, "release_ms": 60}
+      ]
+    },
+    "podcast-speech-master": {
+      "label": "Podcast and narration speech master",
+      "preset": "podcast-speech",
+      "purpose": "Mono speech master: silence trim, rumble filter, level target, peak ceiling, 48 kHz.",
+      "ops": [
+        {"op": "channels", "mode": "mono"},
+        {"op": "trim-silence", "threshold_db": -50, "pad_sec": 0.15},
+        {"op": "highpass", "hz": 80, "q": 0.707, "order": 2},
+        {"op": "normalize", "target_lufs": -16.0},
+        {"op": "limit", "ceiling_dbtp": -1.5, "lookahead_ms": 5, "release_ms": 120},
+        {"op": "fade", "in_sec": 0.02, "out_sec": 0.08},
+        {"op": "resample", "rate": 48000, "quality": "medium"}
+      ]
+    },
+    "broadcast-headroom-transfer": {
+      "label": "Broadcast R128 headroom transfer",
+      "preset": "broadcast-r128",
+      "purpose": "Programme level at -23 LUFS with a -1 dBTP ceiling at 48 kHz.",
+      "ops": [
+        {"op": "dc-block"},
+        {"op": "normalize", "target_lufs": -23.0},
+        {"op": "limit", "ceiling_dbtp": -1.0, "lookahead_ms": 5, "release_ms": 150},
+        {"op": "resample", "rate": 48000, "quality": "medium"}
+      ]
+    },
+    "cinema-headroom-transfer": {
+      "label": "Cinema print headroom transfer",
+      "preset": "cinema-feature",
+      "purpose": "Leave theatrical headroom: no loudness lift, peak ceiling at -3 dBTP.",
+      "ops": [
+        {"op": "dc-block"},
+        {"op": "limit", "ceiling_dbtp": -3.0, "lookahead_ms": 8, "release_ms": 200},
+        {"op": "resample", "rate": 48000, "quality": "medium"}
+      ]
+    },
+    "film-stem-headroom": {
+      "label": "Score stem headroom",
+      "preset": "film-score-stems",
+      "purpose": "Keep stems quiet enough for mix stage work: ceiling -6 dBTP, no level lift.",
+      "ops": [
+        {"op": "dc-block"},
+        {"op": "limit", "ceiling_dbtp": -6.0, "lookahead_ms": 8, "release_ms": 200}
+      ]
+    },
+    "sfx-cleanup": {
+      "label": "Sound effect library cleanup",
+      "preset": "sfx-library",
+      "purpose": "Tighten edges, remove DC and rumble, normalise peak to -3 dBFS for editorial use.",
+      "ops": [
+        {"op": "trim-silence", "threshold_db": -55, "pad_sec": 0.02},
+        {"op": "dc-block"},
+        {"op": "highpass", "hz": 30, "q": 0.707, "order": 2},
+        {"op": "fade", "in_sec": 0.002, "out_sec": 0.02},
+        {"op": "normalize", "target_dbtp": -3.0}
+      ]
+    },
+    "game-asset-normalize": {
+      "label": "Game asset normalisation",
+      "preset": "game-interactive",
+      "purpose": "Consistent in-engine asset level with loopable, click-free edges.",
+      "ops": [
+        {"op": "trim-silence", "threshold_db": -55, "pad_sec": 0.05},
+        {"op": "dc-block"},
+        {"op": "normalize", "target_lufs": -18.0},
+        {"op": "limit", "ceiling_dbtp": -1.0, "lookahead_ms": 4, "release_ms": 90},
+        {"op": "resample", "rate": 48000, "quality": "medium"}
+      ]
+    },
+    "archive-transfer": {
+      "label": "Archival transfer (measure-first, minimal processing)",
+      "preset": "archival-master",
+      "purpose": "Preservation-safe: removes DC offset only. Sample-rate change is left as an explicit, separate step because resampling an archive master is a rights and provenance decision.",
+      "ops": [
+        {"op": "dc-block"}
+      ]
+    },
+    "dialogue-cleanup": {
+      "label": "Dialogue cleanup for editorial",
+      "preset": "broadcast-r128",
+      "purpose": "De-rumble and level dialogue without changing timing or tone decisions reserved for the mixer.",
+      "ops": [
+        {"op": "highpass", "hz": 90, "q": 0.707, "order": 2},
+        {"op": "dc-block"},
+        {"op": "normalize", "target_lufs": -23.0},
+        {"op": "limit", "ceiling_dbtp": -3.0, "lookahead_ms": 6, "release_ms": 150}
+      ]
+    }
+  }
+}

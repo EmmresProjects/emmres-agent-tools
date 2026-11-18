@@ -1,0 +1,32 @@
+{
+  "description": "Default weighted criteria and 1-5 scores for the target-platform decision matrix (catalog 1.1). Higher is better everywhere (dependency_weight is scored as 'leaner is better'). Override weights and/or scores with `matrix --criteria my-criteria.json`; the override file may set any subset of {\"criteria\": [...], \"scores\": {...}}. These are defensible defaults, not a verdict: the defaults exist to be tuned to the product's constraints before the ADR is written.",
+  "criteria": [
+    {"id": "smallest_maintainable", "label": "Smallest maintainable solution", "weight": 20, "guidance": "Fewest moving parts that still meet hard constraints; penalize dual-toolchain and abstraction-layer sprawl"},
+    {"id": "dependency_weight", "label": "Dependency weight (leaner is better)", "weight": 15, "guidance": "Toolchain + transitive dependency footprint, licensing friction, and mirror complexity"},
+    {"id": "performance", "label": "Performance", "weight": 15, "guidance": "Startup, frame rate/UI latency, memory ceiling, binary size; native-class scores 5"},
+    {"id": "accessibility", "label": "Accessibility capability", "weight": 10, "guidance": "Quality of the platform a11y bridge (UIA, NSAccessibility, AT-SPI, TalkBack, VoiceOver)"},
+    {"id": "distribution_constraints", "label": "Distribution feasibility", "weight": 15, "guidance": "Store policy friction, signing/notarization burden, update channel, enterprise vs consumer route"},
+    {"id": "offline_fit", "label": "Offline / air-gap fit", "weight": 15, "guidance": "Everything restorable from a local bundle; no hidden first-run downloads; license acceptance recordable offline"},
+    {"id": "platform_reach", "label": "Platform reach per codebase", "weight": 10, "guidance": "Number of distinct target families served by one codebase without forks"}
+  ],
+  "scores": {
+    "windows":            {"smallest_maintainable": 3, "dependency_weight": 3, "performance": 5, "accessibility": 5, "distribution_constraints": 4, "offline_fit": 5, "platform_reach": 2},
+    "macos":              {"smallest_maintainable": 3, "dependency_weight": 3, "performance": 5, "accessibility": 5, "distribution_constraints": 3, "offline_fit": 4, "platform_reach": 2},
+    "linux":              {"smallest_maintainable": 3, "dependency_weight": 4, "performance": 5, "accessibility": 3, "distribution_constraints": 4, "offline_fit": 5, "platform_reach": 2},
+    "android":            {"smallest_maintainable": 3, "dependency_weight": 2, "performance": 5, "accessibility": 5, "distribution_constraints": 4, "offline_fit": 4, "platform_reach": 2},
+    "ios":                {"smallest_maintainable": 4, "dependency_weight": 2, "performance": 5, "accessibility": 5, "distribution_constraints": 3, "offline_fit": 3, "platform_reach": 2},
+    "swiftui":            {"smallest_maintainable": 4, "dependency_weight": 3, "performance": 5, "accessibility": 5, "distribution_constraints": 3, "offline_fit": 3, "platform_reach": 1},
+    "jetpack-compose":    {"smallest_maintainable": 4, "dependency_weight": 3, "performance": 5, "accessibility": 5, "distribution_constraints": 4, "offline_fit": 4, "platform_reach": 1},
+    "flutter":            {"smallest_maintainable": 4, "dependency_weight": 2, "performance": 4, "accessibility": 4, "distribution_constraints": 4, "offline_fit": 4, "platform_reach": 5},
+    "react-native":       {"smallest_maintainable": 3, "dependency_weight": 1, "performance": 3, "accessibility": 4, "distribution_constraints": 4, "offline_fit": 3, "platform_reach": 4},
+    "dotnet-maui":        {"smallest_maintainable": 4, "dependency_weight": 2, "performance": 4, "accessibility": 3, "distribution_constraints": 4, "offline_fit": 4, "platform_reach": 4},
+    "qt":                 {"smallest_maintainable": 3, "dependency_weight": 2, "performance": 5, "accessibility": 3, "distribution_constraints": 3, "offline_fit": 5, "platform_reach": 4},
+    "tauri":              {"smallest_maintainable": 5, "dependency_weight": 4, "performance": 4, "accessibility": 3, "distribution_constraints": 4, "offline_fit": 4, "platform_reach": 3},
+    "electron":           {"smallest_maintainable": 2, "dependency_weight": 1, "performance": 2, "accessibility": 4, "distribution_constraints": 4, "offline_fit": 3, "platform_reach": 3},
+    "avalonia":           {"smallest_maintainable": 4, "dependency_weight": 3, "performance": 4, "accessibility": 2, "distribution_constraints": 4, "offline_fit": 5, "platform_reach": 3},
+    "kotlin-multiplatform":{"smallest_maintainable": 2, "dependency_weight": 1, "performance": 4, "accessibility": 5, "distribution_constraints": 4, "offline_fit": 2, "platform_reach": 3},
+    "uno-platform":       {"smallest_maintainable": 3, "dependency_weight": 2, "performance": 3, "accessibility": 2, "distribution_constraints": 4, "offline_fit": 3, "platform_reach": 4}
+  },
+  "score_scale": "1 (poor) to 5 (excellent); weighted total = sum(weight * score) / sum(weight), reported on a 0-5 scale",
+  "decision_note": "The top rank is the smallest maintainable candidate under the chosen weights, not an automatic decision. Record the final choice, rejected alternatives, compatibility, dependency weight, performance, accessibility, distribution constraints, and escape paths as an ADR via the `adr` command."
+}

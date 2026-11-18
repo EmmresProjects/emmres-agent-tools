@@ -1,0 +1,82 @@
+{
+  "type": "FeatureCollection",
+  "name": "sample-transit-and-service-zones",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "hub-north",
+      "properties": {
+        "name": "North Transit Hub",
+        "category": "transit_station",
+        "hours": "05:00-23:30",
+        "rating": 4.7,
+        "wheelchair_accessible": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [120.9842, 14.5995]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hub-south",
+      "properties": {
+        "name": "South Logistics Center",
+        "category": "logistics_hub",
+        "hours": "06:00-22:00",
+        "rating": 4.4,
+        "wheelchair_accessible": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [120.9936, 14.4445]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "route-track-01",
+      "properties": {
+        "name": "Shuttle Verification Track",
+        "mode": "shuttle_bus",
+        "timestamps": [
+          "2026-10-15T06:00:00Z",
+          "2026-10-15T06:15:00Z",
+          "2026-10-15T06:30:00Z",
+          "2026-10-15T06:50:00Z"
+        ],
+        "elevations_m": [12.0, 18.5, 21.0, 15.0]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [120.9842, 14.5995],
+          [120.9880, 14.5520],
+          [120.9910, 14.5010],
+          [120.9936, 14.4445]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "zone-corridor",
+      "properties": {
+        "name": "Authorized Delivery Corridor",
+        "category": "service_zone"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [120.9700, 14.4300],
+          [121.0100, 14.4300],
+          [121.0100, 14.6100],
+          [120.9700, 14.6100],
+          [120.9700, 14.4300]
+        ]]
+      }
+    }
+  ]
+}

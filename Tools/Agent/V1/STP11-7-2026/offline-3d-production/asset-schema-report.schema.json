@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "o3d/schema-report.schema.json",
+  "title": "offline-3d-production structured result",
+  "description": "JSON Schema (draft-07) describing the shape of every result document this Skill Tool writes. Reports add fields; they never remove these.",
+  "type": "object",
+  "required": ["tool", "status"],
+  "properties": {
+    "tool": {
+      "type": "object",
+      "required": ["name", "version", "utc", "network_used"],
+      "properties": {
+        "name": {"const": "offline-3d-production"},
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "utc": {"type": "string", "format": "date-time"},
+        "network_used": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "command": {"type": "string"},
+    "operation": {"type": "string"},
+    "status": {"type": "string", "enum": ["ok", "error", "fail", "degraded", "dry-run", "dependency_unavailable"]},
+    "gate": {"type": "string", "enum": ["pass", "fail"]},
+    "fail_on": {"type": "string", "enum": ["info", "warning", "error", "critical"]},
+    "blocking": {"type": "integer", "minimum": 0},
+    "blocking_codes": {"type": "array", "items": {"type": "string"}},
+    "worst": {"type": "string", "enum": ["info", "warning", "error", "critical"]},
+    "counts": {
+      "type": "object",
+      "properties": {
+        "critical": {"type": "integer", "minimum": 0},
+        "error": {"type": "integer", "minimum": 0},
+        "warning": {"type": "integer", "minimum": 0},
+        "info": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "code", "message"],
+        "properties": {
+          "severity": {"type": "string", "enum": ["info", "warning", "error", "critical"]},
+          "code": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "message": {"type": "string", "minLength": 1},
+          "hint": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "output": {"type": "string"},
+    "recommendation": {"type": "string"},
+    "error": {
+      "type": "object",
+      "required": ["code", "message"],
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": ["invalid_input", "approval_required", "limit_exceeded", "runtime_error",
+                   "missing_dependency", "encode_failed", "cancelled"]
+        },
+        "message": {"type": "string", "minLength": 1},
+        "hint": {"type": "string"},
+        "details": {"type": "object"}
+      },
+      "additionalProperties": true
+    },
+    "dry_run": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

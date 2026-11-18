@@ -1,0 +1,1171 @@
+{
+  "$schema": "pec.catalog-coverage/1",
+  "source": "Powerful Extractor / Compressor Skill Catalog v1.0 (18 categories, 144 proposed skills)",
+  "note": "status=implemented covers rows with a reachable command; scope=partial rows are implemented with the stated reduction. status=out-of-scope rows are intentionally not implemented, with the reason recorded.",
+  "skills": [
+    {
+      "category": "Core Archive Extraction",
+      "skill": "Universal Archive Extractor",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Detect and extract ZIP, ZIP64, 7z, RAR, TAR, GZIP, BZIP2, XZ, Zstandard, LZ4, CAB,"
+    },
+    {
+      "category": "Core Archive Extraction",
+      "skill": "Format Signature Detector",
+      "status": "implemented",
+      "command": "detect",
+      "note": "",
+      "catalog_description": "Identify the real archive or container type from magic bytes and structure, even when"
+    },
+    {
+      "category": "Core Archive Extraction",
+      "skill": "Single-Item Precision Extractor",
+      "status": "implemented",
+      "command": "list",
+      "note": "",
+      "catalog_description": "List archive contents and extract one selected file or folder without unpacking unrelated"
+    },
+    {
+      "category": "Core Archive Extraction",
+      "skill": "Selective Pattern Extractor",
+      "status": "implemented",
+      "command": "list",
+      "note": "",
+      "catalog_description": "Extract entries by name, extension, path, size, date, regular expression, include list, or"
+    },
+    {
+      "category": "Core Archive Extraction",
+      "skill": "Full-Fidelity Extractor",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Extract every valid entry while retaining timestamps, permissions, symbolic links,"
+    },
+    {
+      "category": "Core Archive Extraction",
+      "skill": "Nested Archive Unwrapper",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Recursively discover and unpack archives inside archives with configurable depth, cycle"
+    },
+    {
+      "category": "Core Archive Extraction",
+      "skill": "Split-Volume Archive Assembler",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Recognize and assemble multipart sets such as .001, .z01, split 7z, and multipart RAR"
+    },
+    {
+      "category": "Core Archive Extraction",
+      "skill": "Self-Extracting Archive Handler",
+      "status": "implemented",
+      "command": "extract",
+      "note": "inspects and reports the embedded payload; never runs it",
+      "catalog_description": "Inspect common self-extracting executable containers and recover embedded payloads",
+      "scope": "partial"
+    },
+    {
+      "category": "Large-Scale and Incremental Extraction",
+      "skill": "Chunked Extraction Engine",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Process very large archives in bounded chunks so disk, memory, and temporary-space"
+    },
+    {
+      "category": "Large-Scale and Incremental Extraction",
+      "skill": "Streaming Extractor",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Extract sequential formats as a stream without staging the whole archive, using"
+    },
+    {
+      "category": "Large-Scale and Incremental Extraction",
+      "skill": "Entry-by-Entry Extractor",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Extract, verify, record, and release resources after each entry, enabling progress"
+    },
+    {
+      "category": "Large-Scale and Incremental Extraction",
+      "skill": "Range and Portion Extractor",
+      "status": "implemented",
+      "command": "list",
+      "note": "",
+      "catalog_description": "Extract a defined entry range, byte range where the format permits, shard, volume, date"
+    },
+    {
+      "category": "Large-Scale and Incremental Extraction",
+      "skill": "Checkpointed Extraction Runner",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Write durable checkpoints after verified units of work and resume from the last safe point"
+    },
+    {
+      "category": "Large-Scale and Incremental Extraction",
+      "skill": "Low-Disk-Space Extractor",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Estimate peak space, extract in waves, purge verified temporary data, and stop safely"
+    },
+    {
+      "category": "Large-Scale and Incremental Extraction",
+      "skill": "Sparse and Huge-File Handler",
+      "status": "implemented",
+      "command": "extract",
+      "note": "large-file-safe streaming; sparse extents are not created",
+      "catalog_description": "Preserve sparse files when possible and use large-file-safe I/O, offsets, and counters for",
+      "scope": "partial"
+    },
+    {
+      "category": "Large-Scale and Incremental Extraction",
+      "skill": "Adaptive Resource Governor",
+      "status": "implemented",
+      "command": "config",
+      "note": "",
+      "catalog_description": "Continuously tune concurrency, buffers, I/O priority, CPU use, and temporary storage"
+    },
+    {
+      "category": "Batch and Parallel Operations",
+      "skill": "Multi-Archive Batch Extractor",
+      "status": "implemented",
+      "command": "batch",
+      "note": "",
+      "catalog_description": "Queue and extract many archives with per-job output folders, isolated logs, progress,"
+    },
+    {
+      "category": "Batch and Parallel Operations",
+      "skill": "Parallel Extraction Scheduler",
+      "status": "implemented",
+      "command": "batch",
+      "note": "",
+      "catalog_description": "Run independent extraction jobs concurrently while preventing disk thrashing, memory"
+    },
+    {
+      "category": "Batch and Parallel Operations",
+      "skill": "Power Extraction Orchestrator",
+      "status": "implemented",
+      "command": "batch",
+      "note": "",
+      "catalog_description": "Coordinate staged discovery, extraction, validation, organization, and cleanup across"
+    },
+    {
+      "category": "Batch and Parallel Operations",
+      "skill": "Folder-Watch Auto Extractor",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Requires a long-running directory watcher; out of scope for a single-shot CLI. Use `batch` from cron/systemd instead.",
+      "catalog_description": "Monitor approved directories for stable, completed uploads and automatically launch"
+    },
+    {
+      "category": "Batch and Parallel Operations",
+      "skill": "Priority Queue Manager",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No persistent priority queue; `batch` runs a bounded pool with `--fail-fast`.",
+      "catalog_description": "Assign urgent, normal, background, and dependency-aware priorities with pause,"
+    },
+    {
+      "category": "Batch and Parallel Operations",
+      "skill": "Dependency-Aware Batch Runner",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Numeric volume sets are assembled automatically, but there is no general prerequisite graph.",
+      "catalog_description": "Delay nested, multipart, encrypted, or prerequisite-dependent jobs until all required"
+    },
+    {
+      "category": "Batch and Parallel Operations",
+      "skill": "Distributed Extraction Coordinator",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Single-host only: no worker leases, heartbeats or remote dispatch.",
+      "catalog_description": "Shard independent jobs across multiple workers, track leases and heartbeats, and safely"
+    },
+    {
+      "category": "Batch and Parallel Operations",
+      "skill": "Duplicate-Work Preventer",
+      "status": "implemented",
+      "command": "batch",
+      "note": "",
+      "catalog_description": "Fingerprint sources and job parameters so repeated requests can reuse validated outputs"
+    },
+    {
+      "category": "Organization and Output Structuring",
+      "skill": "Archive-to-Folder Organizer",
+      "status": "implemented",
+      "command": "organize",
+      "note": "",
+      "catalog_description": "Create predictable source-named folders and place extracted content beneath collision-"
+    },
+    {
+      "category": "Organization and Output Structuring",
+      "skill": "Batch Folder Planner",
+      "status": "implemented",
+      "command": "batch",
+      "note": "",
+      "catalog_description": "Group outputs by job, date, source, project, owner, format, size class, or custom rules."
+    },
+    {
+      "category": "Organization and Output Structuring",
+      "skill": "Content-Type Sorter",
+      "status": "implemented",
+      "command": "organize",
+      "note": "",
+      "catalog_description": "Classify extracted files into documents, images, audio, video, code, data, executables,"
+    },
+    {
+      "category": "Organization and Output Structuring",
+      "skill": "Path Normalizer",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Normalize separators, Unicode forms, reserved names, excessive depth, and invalid"
+    },
+    {
+      "category": "Organization and Output Structuring",
+      "skill": "Collision-Safe Renamer",
+      "status": "implemented",
+      "command": "organize",
+      "note": "",
+      "catalog_description": "Resolve duplicate names using deterministic suffixes, hashes, source labels, or policy-"
+    },
+    {
+      "category": "Organization and Output Structuring",
+      "skill": "Archive Lineage Mapper",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Record which source archive, nested container, volume, and entry path produced every"
+    },
+    {
+      "category": "Organization and Output Structuring",
+      "skill": "Manifest and Inventory Builder",
+      "status": "implemented",
+      "command": "organize",
+      "note": "",
+      "catalog_description": "Generate machine-readable and human-readable inventories containing paths, sizes,"
+    },
+    {
+      "category": "Organization and Output Structuring",
+      "skill": "Folder Structure Rebuilder",
+      "status": "implemented",
+      "command": "organize",
+      "note": "",
+      "catalog_description": "Reconstruct expected directory trees from manifests or flat extracts and identify missing,"
+    },
+    {
+      "category": "Compression and Archive Creation",
+      "skill": "Universal Archive Builder",
+      "status": "implemented",
+      "command": "create",
+      "note": "",
+      "catalog_description": "Create ZIP, ZIP64, 7z, TAR and compressed TAR variants with validated options and"
+    },
+    {
+      "category": "Compression and Archive Creation",
+      "skill": "Single-Bundle Compressor",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Compress an entire approved input set into one archive with a clear root layout and"
+    },
+    {
+      "category": "Compression and Archive Creation",
+      "skill": "Separate-Zip Compressor",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Create one archive per file, folder, category, customer, batch, or source according to"
+    },
+    {
+      "category": "Compression and Archive Creation",
+      "skill": "Multi-Volume Compressor",
+      "status": "implemented",
+      "command": "create",
+      "note": "",
+      "catalog_description": "Split output into size-bounded volumes for upload, storage, transport, or filesystem limits,"
+    },
+    {
+      "category": "Compression and Archive Creation",
+      "skill": "Parallel Compression Engine",
+      "status": "implemented",
+      "command": "create",
+      "note": "per-archive parallelism via `batch`, single archive is serial",
+      "catalog_description": "Compress independent groups concurrently while balancing CPU, memory, storage",
+      "scope": "partial"
+    },
+    {
+      "category": "Compression and Archive Creation",
+      "skill": "Streaming Archive Creator",
+      "status": "implemented",
+      "command": "create",
+      "note": "",
+      "catalog_description": "Build stream-friendly archives for pipelines and object storage without requiring a fully"
+    },
+    {
+      "category": "Compression and Archive Creation",
+      "skill": "Incremental Backup Compressor",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Archive only new or changed content according to snapshots, hashes, timestamps, or an"
+    },
+    {
+      "category": "Compression and Archive Creation",
+      "skill": "Deterministic Archive Builder",
+      "status": "implemented",
+      "command": "create",
+      "note": "",
+      "catalog_description": "Produce reproducible archives by normalizing order, timestamps, ownership,"
+    },
+    {
+      "category": "Compression Optimization",
+      "skill": "Codec Selection Advisor",
+      "status": "implemented",
+      "command": "create",
+      "note": "Format/level selection per archive with stored-media heuristics and reported ratios.",
+      "catalog_description": "Choose Deflate, LZMA2, Zstandard, Gzip, Bzip2, XZ, LZ4, or store mode based on",
+      "scope": "partial"
+    },
+    {
+      "category": "Compression Optimization",
+      "skill": "Compression Profile Manager",
+      "status": "implemented",
+      "command": "create",
+      "note": "",
+      "catalog_description": "Apply named profiles such as fastest, balanced, maximum ratio, low memory, archival,"
+    },
+    {
+      "category": "Compression Optimization",
+      "skill": "Content-Aware Compressor",
+      "status": "implemented",
+      "command": "create",
+      "note": "extension-driven store/compress decision, no content sniffing",
+      "catalog_description": "Sample and classify inputs, avoid recompressing already-compressed media, and select",
+      "scope": "partial"
+    },
+    {
+      "category": "Compression Optimization",
+      "skill": "Dictionary Training Compressor",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No zstd dictionary training; `zstandard` presets only via --level.",
+      "catalog_description": "Train and apply Zstandard dictionaries for repeated small files or domain-specific data,"
+    },
+    {
+      "category": "Compression Optimization",
+      "skill": "Solid Archive Optimizer",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "7z solid-block tuning is not exposed; py7zr defaults are used.",
+      "catalog_description": "Group similar files for solid compression while preserving practical random access,"
+    },
+    {
+      "category": "Compression Optimization",
+      "skill": "Size-Targeted Compressor",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Sizes are reported, not solved for; use --volume-size to bound output instead.",
+      "catalog_description": "Iteratively adjust codec, level, grouping, and volume size to meet a defined delivery"
+    },
+    {
+      "category": "Compression Optimization",
+      "skill": "Speed-Budget Compressor",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No automatic level search; `--deadline` bounds runtime instead.",
+      "catalog_description": "Select settings that finish within a time or compute budget while reporting expected ratio"
+    },
+    {
+      "category": "Compression Optimization",
+      "skill": "Compression Benchmark Runner",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No built-in codec benchmark harness; `create` reports ratio and throughput per run.",
+      "catalog_description": "Benchmark representative samples across codecs and levels, then recommend a profile"
+    },
+    {
+      "category": "Integrity, Validation, and Verification",
+      "skill": "Preflight Archive Inspector",
+      "status": "implemented",
+      "command": "inspect",
+      "note": "",
+      "catalog_description": "Inspect headers, central directories, volumes, encryption flags, entry counts, paths, and"
+    },
+    {
+      "category": "Integrity, Validation, and Verification",
+      "skill": "Checksum Verification Engine",
+      "status": "implemented",
+      "command": "verify",
+      "note": "",
+      "catalog_description": "Calculate and verify SHA-256, SHA-512, BLAKE2, BLAKE3 when available, MD5 or"
+    },
+    {
+      "category": "Integrity, Validation, and Verification",
+      "skill": "Archive Test Runner",
+      "status": "implemented",
+      "command": "verify",
+      "note": "",
+      "catalog_description": "Use format-native test operations to validate compressed data before or after extraction"
+    },
+    {
+      "category": "Integrity, Validation, and Verification",
+      "skill": "Extraction Completeness Auditor",
+      "status": "implemented",
+      "command": "verify",
+      "note": "",
+      "catalog_description": "Compare source listings, extracted inventories, byte counts, hashes, and error records to"
+    },
+    {
+      "category": "Integrity, Validation, and Verification",
+      "skill": "Round-Trip Compression Verifier",
+      "status": "implemented",
+      "command": "verify",
+      "note": "",
+      "catalog_description": "Extract newly created archives into an isolated location and compare content hashes and"
+    },
+    {
+      "category": "Integrity, Validation, and Verification",
+      "skill": "Corruption Locator",
+      "status": "implemented",
+      "command": "verify",
+      "note": "",
+      "catalog_description": "Identify damaged entries, blocks, volumes, offsets, or archive regions and produce a"
+    },
+    {
+      "category": "Integrity, Validation, and Verification",
+      "skill": "Partial Success Reporter",
+      "status": "implemented",
+      "command": "verify",
+      "note": "",
+      "catalog_description": "Separate verified successes, skipped items, warnings, recoverable failures, and fatal"
+    },
+    {
+      "category": "Integrity, Validation, and Verification",
+      "skill": "Chain-of-Custody Recorder",
+      "status": "implemented",
+      "command": "verify",
+      "note": "",
+      "catalog_description": "Create append-only job records linking source fingerprints, actions, tools, outputs,"
+    },
+    {
+      "category": "Recovery and Fault Tolerance",
+      "skill": "Resumable Job Controller",
+      "status": "implemented",
+      "command": "jobs",
+      "note": "",
+      "catalog_description": "Resume interrupted extraction or compression from durable state without repeating"
+    },
+    {
+      "category": "Recovery and Fault Tolerance",
+      "skill": "Retry Policy Engine",
+      "status": "implemented",
+      "command": "jobs",
+      "note": "",
+      "catalog_description": "Retry transient I/O, locking, network, or worker failures with bounded exponential"
+    },
+    {
+      "category": "Recovery and Fault Tolerance",
+      "skill": "Damaged Archive Recovery Assistant",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Attempt safe reconstruction or salvage using redundant records, alternate readers, intact"
+    },
+    {
+      "category": "Recovery and Fault Tolerance",
+      "skill": "Partial Archive Salvager",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Recover independently readable entries from incomplete or truncated archives while"
+    },
+    {
+      "category": "Recovery and Fault Tolerance",
+      "skill": "Missing Volume Diagnoser",
+      "status": "implemented",
+      "command": "inspect",
+      "note": "",
+      "catalog_description": "Determine exactly which multipart pieces are absent, duplicated, misnamed, or"
+    },
+    {
+      "category": "Recovery and Fault Tolerance",
+      "skill": "Temporary-State Recovery Manager",
+      "status": "implemented",
+      "command": "jobs",
+      "note": "",
+      "catalog_description": "Discover abandoned temporary files and checkpoints, then resume, quarantine, or clean"
+    },
+    {
+      "category": "Recovery and Fault Tolerance",
+      "skill": "Transactional Output Publisher",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Write to isolated staging, validate, then atomically publish completed outputs so"
+    },
+    {
+      "category": "Recovery and Fault Tolerance",
+      "skill": "Failure Reproduction Packager",
+      "status": "implemented",
+      "command": "batch",
+      "note": "",
+      "catalog_description": "Capture minimal non-sensitive diagnostics, parameters, versions, and affected entry"
+    },
+    {
+      "category": "Security and Safe Handling",
+      "skill": "Zip-Slip Defense Guard",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Block absolute paths, parent traversal, drive escapes, unsafe links, and path"
+    },
+    {
+      "category": "Security and Safe Handling",
+      "skill": "Decompression Bomb Detector",
+      "status": "implemented",
+      "command": "inspect",
+      "note": "",
+      "catalog_description": "Enforce limits on expanded bytes, ratios, entry counts, nesting, recursion, CPU time, and"
+    },
+    {
+      "category": "Security and Safe Handling",
+      "skill": "Symlink and Hardlink Safety Guard",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Prevent links from escaping the extraction root or overwriting protected destinations."
+    },
+    {
+      "category": "Security and Safe Handling",
+      "skill": "Quarantine Extraction Runner",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Extract untrusted content into an isolated, non-executable, least-privilege workspace"
+    },
+    {
+      "category": "Security and Safe Handling",
+      "skill": "Malware Scan Orchestrator",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No antivirus engine or signatures are bundled; `scan` covers secrets, PII and disguised types only.",
+      "catalog_description": "Route archives and extracted files through approved scanners, quarantine findings, and"
+    },
+    {
+      "category": "Security and Safe Handling",
+      "skill": "File-Type Mismatch Detector",
+      "status": "implemented",
+      "command": "scan",
+      "note": "",
+      "catalog_description": "Compare extensions, MIME guesses, signatures, and container structure to surface"
+    },
+    {
+      "category": "Security and Safe Handling",
+      "skill": "Secret and Sensitive-Data Scanner",
+      "status": "implemented",
+      "command": "scan",
+      "note": "",
+      "catalog_description": "Detect credentials, tokens, keys, personal data patterns, and classified labels before"
+    },
+    {
+      "category": "Security and Safe Handling",
+      "skill": "Secure Deletion Coordinator",
+      "status": "implemented",
+      "command": "jobs",
+      "note": "",
+      "catalog_description": "Remove temporary cleartext and failed outputs according to storage capabilities and"
+    },
+    {
+      "category": "Encryption and Access Control",
+      "skill": "Encrypted Archive Detector",
+      "status": "implemented",
+      "command": "inspect",
+      "note": "",
+      "catalog_description": "Identify encrypted headers, filenames, entries, algorithms, and unsupported encryption"
+    },
+    {
+      "category": "Encryption and Access Control",
+      "skill": "Credential Broker for Archives",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Request passwords through approved secret channels, avoid logs, scope access to one"
+    },
+    {
+      "category": "Encryption and Access Control",
+      "skill": "Encrypted Archive Creator",
+      "status": "implemented",
+      "command": "create",
+      "note": "",
+      "catalog_description": "Create password-protected archives using supported modern encryption, compatibility"
+    },
+    {
+      "category": "Encryption and Access Control",
+      "skill": "Multi-Password Batch Resolver",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "One password per job by design; password sets would enable guessing.",
+      "catalog_description": "Try an authorized password set against many archives with rate limits, audit records, and"
+    },
+    {
+      "category": "Encryption and Access Control",
+      "skill": "Key and Certificate Packaging Assistant",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Certificates are classified and can be excluded; no key/cert packaging logic.",
+      "catalog_description": "Package approved keys or certificates with strict allowlists, permissions, metadata, and"
+    },
+    {
+      "category": "Encryption and Access Control",
+      "skill": "Least-Privilege Output Controller",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Apply destination permissions, inheritance rules, ownership, and access labels"
+    },
+    {
+      "category": "Encryption and Access Control",
+      "skill": "Redacted Sharing Packager",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Exclude sensitive paths or replace them with notices while preserving an auditable"
+    },
+    {
+      "category": "Encryption and Access Control",
+      "skill": "Access-Policy Enforcement Gate",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Block extraction, compression, or publishing when destination, classification, requester,"
+    },
+    {
+      "category": "Metadata, Naming, and Unicode",
+      "skill": "Filename Encoding Resolver",
+      "status": "implemented",
+      "command": "extract",
+      "note": "NFC normalization and invalid-character repair; no legacy code-page recovery",
+      "catalog_description": "Detect and repair common filename encoding problems while retaining both original",
+      "scope": "partial"
+    },
+    {
+      "category": "Metadata, Naming, and Unicode",
+      "skill": "Unicode Normalization Manager",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Normalize filenames consistently across NFC and NFD environments and detect visually"
+    },
+    {
+      "category": "Metadata, Naming, and Unicode",
+      "skill": "Timestamp Preservation Manager",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Preserve or normalize creation, modification, and access times according to target"
+    },
+    {
+      "category": "Metadata, Naming, and Unicode",
+      "skill": "Permission and Ownership Mapper",
+      "status": "implemented",
+      "command": "extract",
+      "note": "Unix modes preserved; ownership/ACL mapping not performed",
+      "catalog_description": "Map Unix modes, ACLs, Windows attributes, ownership, and executable bits safely across",
+      "scope": "partial"
+    },
+    {
+      "category": "Metadata, Naming, and Unicode",
+      "skill": "Extended Metadata Preserver",
+      "status": "implemented",
+      "command": "extract",
+      "note": "times/modes only; xattrs, ADS and resource forks are not carried",
+      "catalog_description": "Retain supported extended attributes, resource forks, alternate data streams, labels, and",
+      "scope": "partial"
+    },
+    {
+      "category": "Metadata, Naming, and Unicode",
+      "skill": "Long-Path Compatibility Handler",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Safely handle deeply nested and long paths using staging, shortening maps, or platform-"
+    },
+    {
+      "category": "Metadata, Naming, and Unicode",
+      "skill": "Reserved-Name Resolver",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Translate Windows device names, trailing characters, and other invalid names into"
+    },
+    {
+      "category": "Metadata, Naming, and Unicode",
+      "skill": "Metadata Sanitizer",
+      "status": "implemented",
+      "command": "scan",
+      "note": "",
+      "catalog_description": "Remove author, location, source, comments, hidden metadata, or platform artifacts when"
+    },
+    {
+      "category": "Platform, Filesystem, and Storage Integration",
+      "skill": "Cross-Platform Archive Operator",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Use compatible behavior across Windows, Linux, and macOS and disclose metadata or"
+    },
+    {
+      "category": "Platform, Filesystem, and Storage Integration",
+      "skill": "Network Share Extraction Manager",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No SMB/NFS client; stage files locally first.",
+      "catalog_description": "Handle SMB or NFS latency, disconnects, locks, and partial writes with local staging and"
+    },
+    {
+      "category": "Platform, Filesystem, and Storage Integration",
+      "skill": "Object Storage Archive Gateway",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No cloud/object-store client; the tool never opens a socket.",
+      "catalog_description": "Read from and write to approved object stores using multipart transfer, checksums,"
+    },
+    {
+      "category": "Platform, Filesystem, and Storage Integration",
+      "skill": "Cloud Drive Packaging Coordinator",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No cloud-drive integration; produce size-bounded archives with --volume-size.",
+      "catalog_description": "Prepare size-bounded, compatibility-focused archives for managed cloud-drive upload"
+    },
+    {
+      "category": "Platform, Filesystem, and Storage Integration",
+      "skill": "Removable Media Splitter",
+      "status": "implemented",
+      "command": "create",
+      "note": "",
+      "catalog_description": "Create volume sets sized for target media or filesystem limits and verify every part after"
+    },
+    {
+      "category": "Platform, Filesystem, and Storage Integration",
+      "skill": "Filesystem Capability Profiler",
+      "status": "implemented",
+      "command": "config",
+      "note": "",
+      "catalog_description": "Detect case sensitivity, maximum path and file sizes, sparse support, permissions, free"
+    },
+    {
+      "category": "Platform, Filesystem, and Storage Integration",
+      "skill": "Deduplicated Storage Publisher",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Outputs are not content-addressed on disk; duplicate *jobs* are skipped in batch.",
+      "catalog_description": "Use content hashes to avoid storing duplicate outputs while retaining logical manifests"
+    },
+    {
+      "category": "Platform, Filesystem, and Storage Integration",
+      "skill": "Cold Archive Migration Packager",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Bundle creation is available, but no parity files or verification schedules.",
+      "catalog_description": "Prepare long-term bundles with durable formats, checksums, manifests, parity options,"
+    },
+    {
+      "category": "Data and Content Extraction",
+      "skill": "Document Content Harvester",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No document text/table extraction; extract files then use a document parser.",
+      "catalog_description": "After archive extraction, route supported documents for text, metadata, image, table, and"
+    },
+    {
+      "category": "Data and Content Extraction",
+      "skill": "Media Asset Extractor",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Collect images, audio, video, subtitles, thumbnails, and metadata from archive trees into"
+    },
+    {
+      "category": "Data and Content Extraction",
+      "skill": "Source Code Package Analyzer",
+      "status": "implemented",
+      "command": "package",
+      "note": "source-release recipe classifies generated/binary/license files by path and extension without executing code.",
+      "catalog_description": "Identify repositories, languages, dependency files, generated content, binaries, and",
+      "scope": "partial"
+    },
+    {
+      "category": "Data and Content Extraction",
+      "skill": "Dataset Bundle Extractor",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Parquet/DB content is copied, not parsed; partitions are preserved as files.",
+      "catalog_description": "Extract CSV, JSON, Parquet, XML, database dumps, and schema files while preserving"
+    },
+    {
+      "category": "Data and Content Extraction",
+      "skill": "Email Container Extractor",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No MBOX/PST parser; mailbox exports are extracted as archives only.",
+      "catalog_description": "Process approved mailbox exports and message containers into messages, attachments,"
+    },
+    {
+      "category": "Data and Content Extraction",
+      "skill": "Disk Image Content Extractor",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No read-only mounting of ISO/DMG/WIM; images are detected and reported.",
+      "catalog_description": "Mount or inspect supported images read-only and recover selected files with partition"
+    },
+    {
+      "category": "Data and Content Extraction",
+      "skill": "Installer Payload Extractor",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No MSI/PKG/DEB payload logic beyond `ar`/`deb` detection and extraction.",
+      "catalog_description": "Inspect supported installer packages and extract embedded resources without installing"
+    },
+    {
+      "category": "Data and Content Extraction",
+      "skill": "Embedded Object Finder",
+      "status": "implemented",
+      "command": "extract",
+      "note": "finds nested archives only, not arbitrary embedded objects",
+      "catalog_description": "Scan extracted files for embedded archives, attachments, or container objects and route",
+      "scope": "partial"
+    },
+    {
+      "category": "Automation, APIs, and Workflow Integration",
+      "skill": "Extraction API Service",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No HTTP server; the CLI plus JSON envelopes is the integration surface.",
+      "catalog_description": "Expose validated job submission, status, listing, selection, download, cancellation, and"
+    },
+    {
+      "category": "Automation, APIs, and Workflow Integration",
+      "skill": "Compression API Service",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Same: CLI + JSON, no listening service.",
+      "catalog_description": "Expose archive creation, grouping, profiles, encryption, volume sizing, delivery, and"
+    },
+    {
+      "category": "Automation, APIs, and Workflow Integration",
+      "skill": "Event-Driven Archive Processor",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No queue/webhook trigger; wire the CLI to your own event source.",
+      "catalog_description": "Start workflows from approved upload, queue, webhook, message-bus, or storage events"
+    },
+    {
+      "category": "Automation, APIs, and Workflow Integration",
+      "skill": "Command-Line Batch Interface",
+      "status": "implemented",
+      "command": "caps",
+      "note": "The whole tool is a scriptable CLI: config files, --dry-run, JSON output and meaningful exit codes.",
+      "catalog_description": "Provide scriptable commands, configuration files, dry runs, machine-readable output, and",
+      "scope": "partial"
+    },
+    {
+      "category": "Automation, APIs, and Workflow Integration",
+      "skill": "Job Template Manager",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Save reusable extraction and compression recipes with versioning, ownership, validation,"
+    },
+    {
+      "category": "Automation, APIs, and Workflow Integration",
+      "skill": "Webhook Notification Dispatcher",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No outbound network calls are made by this tool.",
+      "catalog_description": "Send signed completion, warning, and failure events with job IDs and links rather than"
+    },
+    {
+      "category": "Automation, APIs, and Workflow Integration",
+      "skill": "Pipeline Stage Adapter",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "CLI exits codes and JSON output are CI-friendly, but no adapter plugins ship.",
+      "catalog_description": "Integrate archive operations into CI/CD, ETL, backup, eDiscovery, media, and document-"
+    },
+    {
+      "category": "Automation, APIs, and Workflow Integration",
+      "skill": "Human Approval Gate",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Pause high-risk publishing, decryption, overwriting, or sensitive-data release until an"
+    },
+    {
+      "category": "Observability, Reporting, and Operations",
+      "skill": "Live Progress Reporter",
+      "status": "implemented",
+      "command": "extract",
+      "note": "",
+      "catalog_description": "Report current entry, completed items, bytes processed, throughput, ratio, elapsed time,"
+    },
+    {
+      "category": "Observability, Reporting, and Operations",
+      "skill": "Structured Logging Manager",
+      "status": "implemented",
+      "command": "jobs",
+      "note": "JSON-lines logs correlated by job_id, with event names and error kinds.",
+      "catalog_description": "Emit correlated, machine-readable logs with job, archive, worker, stage, entry, severity,",
+      "scope": "partial"
+    },
+    {
+      "category": "Observability, Reporting, and Operations",
+      "skill": "Metrics and Capacity Monitor",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Per-job metrics and `config fs` exist; there is no ongoing metrics daemon.",
+      "catalog_description": "Track throughput, queue time, CPU, memory, disk, temporary space, failure rates, and"
+    },
+    {
+      "category": "Observability, Reporting, and Operations",
+      "skill": "Job Summary Report Generator",
+      "status": "implemented",
+      "command": "jobs",
+      "note": "",
+      "catalog_description": "Produce concise reports of inputs, outputs, policies, duration, counts, sizes, ratios,"
+    },
+    {
+      "category": "Observability, Reporting, and Operations",
+      "skill": "Exception and Alert Router",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Errors are classified by exit code and `errors[].kind`; routing is up to the caller.",
+      "catalog_description": "Classify operational, security, integrity, capacity, and credential failures and route them"
+    },
+    {
+      "category": "Observability, Reporting, and Operations",
+      "skill": "SLA and Deadline Manager",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "--deadline enforces a budget, but there is no SLA prediction or fairness policy.",
+      "catalog_description": "Estimate work, prioritize jobs, warn about likely misses, and preserve fairness under"
+    },
+    {
+      "category": "Observability, Reporting, and Operations",
+      "skill": "Cost and Resource Estimator",
+      "status": "implemented",
+      "command": "inspect",
+      "note": "",
+      "catalog_description": "Estimate compute time, storage, transfer, and temporary-space needs before large jobs"
+    },
+    {
+      "category": "Observability, Reporting, and Operations",
+      "skill": "Audit Dashboard Data Publisher",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Job records and manifests are written locally; no dashboard publisher.",
+      "catalog_description": "Publish privacy-safe operational and compliance records for dashboards, review, and"
+    },
+    {
+      "category": "Governance, Retention, and Lifecycle",
+      "skill": "Retention Policy Packager",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Apply retention periods and labels to source archives, extracted data, temporary files,"
+    },
+    {
+      "category": "Governance, Retention, and Lifecycle",
+      "skill": "Legal Hold Preservation Handler",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "`retention-labels` can mark files, but holds are not enforced by the filesystem.",
+      "catalog_description": "Prevent deletion or alteration of held archives and outputs while maintaining verifiable"
+    },
+    {
+      "category": "Governance, Retention, and Lifecycle",
+      "skill": "Data Residency Routing Guard",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Single local destination per run; use policy.allowed_output_roots for destination control.",
+      "catalog_description": "Choose approved processing and storage locations according to classification, residency,"
+    },
+    {
+      "category": "Governance, Retention, and Lifecycle",
+      "skill": "Archive Disposal Workflow",
+      "status": "implemented",
+      "command": "jobs",
+      "note": "",
+      "catalog_description": "Verify authorization and dependencies before deleting expired sources, outputs, caches,"
+    },
+    {
+      "category": "Governance, Retention, and Lifecycle",
+      "skill": "License and Notice Collector",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Collect license, copyright, attribution, and notice files from packaged software or content"
+    },
+    {
+      "category": "Governance, Retention, and Lifecycle",
+      "skill": "Policy-Aware Include Exclude Engine",
+      "status": "implemented",
+      "command": "scan",
+      "note": "",
+      "catalog_description": "Apply centrally governed allowlists, denylists, size limits, extensions, paths, and"
+    },
+    {
+      "category": "Governance, Retention, and Lifecycle",
+      "skill": "Provenance and Version Registry",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Version and fingerprints are recorded per job/manifest; no central registry.",
+      "catalog_description": "Register catalog, recipe, tool, codec, policy, and output versions so results remain"
+    },
+    {
+      "category": "Governance, Retention, and Lifecycle",
+      "skill": "Compliance Evidence Packager",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Bundle approved manifests, checksums, scan results, policy decisions, and job summaries"
+    },
+    {
+      "category": "Specialized Packaging Scenarios",
+      "skill": "Email Attachment Zip Builder",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "No email parsing; use `separate-zip`/`single-bundle` on exported attachments.",
+      "catalog_description": "Package selected attachments by sender, date, case, or conversation with sanitized"
+    },
+    {
+      "category": "Specialized Packaging Scenarios",
+      "skill": "Project Handoff Packager",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Create a clean project bundle containing required source, documentation, assets,"
+    },
+    {
+      "category": "Specialized Packaging Scenarios",
+      "skill": "Source Release Packager",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Build deterministic source archives with generated files and secrets excluded, licenses"
+    },
+    {
+      "category": "Specialized Packaging Scenarios",
+      "skill": "Dataset Delivery Packager",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Partition large datasets into documented volumes with schemas, checksums, sample"
+    },
+    {
+      "category": "Specialized Packaging Scenarios",
+      "skill": "Media Delivery Packager",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Group masters, proxies, captions, artwork, and metadata by title or deliverable while"
+    },
+    {
+      "category": "Specialized Packaging Scenarios",
+      "skill": "Evidence Collection Packager",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Create read-only, hash-verified collections with source paths, timestamps, collection"
+    },
+    {
+      "category": "Specialized Packaging Scenarios",
+      "skill": "Portable Offline Bundle Builder",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Bundles can be built, but no platform launcher generation.",
+      "catalog_description": "Package tools, dependencies, indexes, and content for disconnected use with integrity"
+    },
+    {
+      "category": "Specialized Packaging Scenarios",
+      "skill": "Update Patch Packager",
+      "status": "implemented",
+      "command": "package",
+      "note": "",
+      "catalog_description": "Bundle only changed files plus manifests, prerequisites, rollback information, and"
+    },
+    {
+      "category": "Quality, Testing, and Maintainability",
+      "skill": "Archive Compatibility Test Matrix",
+      "status": "out-of-scope",
+      "command": "",
+      "note": "Selftest covers format round-trips on this platform only; no multi-reader matrix.",
+      "catalog_description": "Test created archives against selected readers, operating systems, filename edge cases,"
+    },
+    {
+      "category": "Quality, Testing, and Maintainability",
+      "skill": "Boundary and Stress Test Runner",
+      "status": "implemented",
+      "command": "selftest",
+      "note": "",
+      "catalog_description": "Exercise empty archives, huge entries, millions of small files, deep nesting, long paths,"
+    },
+    {
+      "category": "Quality, Testing, and Maintainability",
+      "skill": "Security Regression Test Suite",
+      "status": "implemented",
+      "command": "selftest",
+      "note": "",
+      "catalog_description": "Continuously test traversal, link escapes, decompression bombs, malformed headers,"
+    },
+    {
+      "category": "Quality, Testing, and Maintainability",
+      "skill": "Golden Manifest Regression Checker",
+      "status": "implemented",
+      "command": "selftest",
+      "note": "",
+      "catalog_description": "Compare current inventories and hashes with approved expected results after tool or"
+    },
+    {
+      "category": "Quality, Testing, and Maintainability",
+      "skill": "Performance Regression Benchmark",
+      "status": "implemented",
+      "command": "selftest",
+      "note": "",
+      "catalog_description": "Track extraction and compression throughput, memory, CPU, temporary space, and ratio"
+    },
+    {
+      "category": "Quality, Testing, and Maintainability",
+      "skill": "Tool Capability Router",
+      "status": "implemented",
+      "command": "config",
+      "note": "",
+      "catalog_description": "Select an approved backend according to format and feature support, and fall back only"
+    },
+    {
+      "category": "Quality, Testing, and Maintainability",
+      "skill": "Configuration Validator",
+      "status": "implemented",
+      "command": "config",
+      "note": "",
+      "catalog_description": "Validate job recipes, paths, profiles, credentials references, limits, and incompatible"
+    },
+    {
+      "category": "Quality, Testing, and Maintainability",
+      "skill": "Clean-State Reproducibility Tester",
+      "status": "implemented",
+      "command": "selftest",
+      "note": "",
+      "catalog_description": "Run representative jobs in a fresh environment to confirm no hidden cache, manual"
+    }
+  ]
+}

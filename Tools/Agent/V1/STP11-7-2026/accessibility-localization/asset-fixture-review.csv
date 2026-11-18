@@ -1,0 +1,5 @@
+segment_id,source,target,error_type,severity,suggestion,reviewer,notes
+1,Sign in,Mag-sign in,register,moderate,Mag-log in,Reviewer A,Check audience preference
+2,Save changes,I-save ang mga pagbabago,style,minor,I-save ang mga pagbabago,Reviewer A,
+3,Your session will expire in 5 minutes,Matatapos na ang session mo sa 5 minuto,meaning,critical,Correct the meaning,Reviewer B,Time is wrong
+4,Search for results,Maghanap ng resulta,terminology,serious,Hanapin ang mga resulta,Reviewer B,

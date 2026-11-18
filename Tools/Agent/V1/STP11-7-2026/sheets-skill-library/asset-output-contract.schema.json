@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "asset-output-contract.schema.json",
+  "title": "sheets-skill-library output contract",
+  "description": "Structure of every JSON artefact emitted by tools-spreadsheet-skill-library.py. Text output follows the same fields; errors use the envelope in $defs.errorEnvelope.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/successEnvelope"
+    },
+    {
+      "$ref": "#/$defs/errorEnvelope"
+    }
+  ],
+  "$defs": {
+    "successEnvelope": {
+      "type": "object",
+      "required": [
+        "ok",
+        "tool",
+        "version",
+        "command",
+        "data"
+      ],
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "tool": {
+          "const": "sheets-skill-library"
+        },
+        "version": {
+          "type": "string"
+        },
+        "command": {
+          "enum": [
+            "catalog",
+            "extract",
+            "plan",
+            "build",
+            "approve",
+            "audit",
+            "formulas",
+            "validate-workbook",
+            "check",
+            "capabilities",
+            "self-test"
+          ]
+        },
+        "data": {
+          "type": "object"
+        }
+      }
+    },
+    "errorEnvelope": {
+      "type": "object",
+      "required": [
+        "ok",
+        "tool",
+        "version",
+        "error"
+      ],
+      "properties": {
+        "ok": {
+          "const": false
+        },
+        "tool": {
+          "const": "sheets-skill-library"
+        },
+        "version": {
+          "type": "string"
+        },
+        "error": {
+          "type": "object",
+          "required": [
+            "code",
+            "message",
+            "hint",
+            "exit_code"
+          ],
+          "properties": {
+            "code": {
+              "enum": [
+                "FILE_NOT_FOUND",
+                "NOT_A_FILE",
+                "INPUT_TOO_LARGE",
+                "INPUT_EMPTY",
+                "JSON_INVALID",
+                "JSON_SHAPE",
+                "CONFIG_NOT_FOUND",
+                "CONFIG_INVALID",
+                "CATALOG_INVALID",
+                "CATALOG_EMPTY",
+                "SELECTION_INVALID",
+                "SELECTION_EMPTY",
+                "SELECTION_TOO_LARGE",
+                "CATEGORY_NOT_FOUND",
+                "SKILL_NOT_FOUND",
+                "BUILD_LIMIT_EXCEEDED",
+                "CAPABILITY_DOC_INVALID",
+                "CAPABILITY_DOC_MISSING_ENTRY",
+                "EXTRACT_EMPTY",
+                "EXTRACT_TOO_LARGE",
+                "EXTRACT_INVALID",
+                "OUTPUT_NOT_DIR",
+                "OUTPUT_NOT_WRITABLE",
+                "OUTPUT_EXISTS",
+                "WORKBOOK_ROW_CAP",
+                "WORKBOOK_WRITE_FAILED",
+                "WRITE_FAILED",
+                "OPENPYXL_MISSING",
+                "NOT_A_WORKBOOK",
+                "PLAN_MISSING",
+                "CAPABILITY_NOT_IN_PLAN",
+                "APPROVAL_CONFIRMATION_REQUIRED",
+                "APPROVAL_PENDING",
+                "AUDIT_BLOCKING",
+                "FORMULA_PATTERN_UNKNOWN",
+                "FORMULA_ARG_UNKNOWN",
+                "FORMULA_ARG_EMPTY",
+                "FORMULA_ARG_MISSING",
+                "FORMULA_ARG_INVALID",
+                "FORMULA_TEMPLATE_BROKEN",
+                "MISSING_INPUT",
+                "CANCELLED",
+                "INTERNAL",
+                "FORMULA_PATTERN_INVALID"
+              ]
+            },
+            "message": {
+              "type": "string"
+            },
+            "hint": {
+              "type": "string"
+            },
+            "exit_code": {
+              "enum": [
+                2,
+                3,
+                4,
+                130
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

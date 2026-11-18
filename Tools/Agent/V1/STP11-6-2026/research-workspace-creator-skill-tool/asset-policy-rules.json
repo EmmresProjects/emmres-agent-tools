@@ -1,0 +1,214 @@
+{
+  "policy_version": "1.0.0",
+  "approval_gated_actions": {
+    "destructive_delete": "Removing workspace snapshots, caches, or non-empty target folders.",
+    "overwrite_protected": "Overwriting existing protected deliverables or non-empty archives.",
+    "code_or_subprocess_execution": "Executing Python analysis scripts or approved external CLI tools.",
+    "package_or_repo_acquisition": "Cloning remote repositories or fetching external packages.",
+    "sql_write_if_non_select": "Executing DDL or DML SQL statements beyond read-only SELECT/WITH/EXPLAIN.",
+    "external_publish_or_overwrite_archive": "Creating distribution archives intended for external sharing or overwriting archives.",
+    "credential_or_policy_override": "Bypassing default path-jail or redaction guards."
+  },
+  "secret_patterns": [
+    {
+      "id": "aws_access_key",
+      "label": "AWS Access Key ID",
+      "regex": "\\b(?:AKIA|ASIA)[0-9A-Z]{16}\\b",
+      "severity": "critical"
+    },
+    {
+      "id": "github_token",
+      "label": "GitHub Personal or Fine-Grained Token",
+      "regex": "\\b(?:ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,})\\b",
+      "severity": "critical"
+    },
+    {
+      "id": "slack_token",
+      "label": "Slack API Token",
+      "regex": "\\bxox[baprs]-[0-9A-Za-z-]{16,}\\b",
+      "severity": "critical"
+    },
+    {
+      "id": "private_key_block",
+      "label": "PEM Private Key Header",
+      "regex": "-----BEGIN (?:RSA |EC |DSA |OPENSSH |PGP )?PRIVATE KEY-----",
+      "severity": "critical"
+    },
+    {
+      "id": "generic_api_secret",
+      "label": "Generic API Key or Secret Assignment",
+      "regex": "(?i)\\b(?:api[_-]?key|client[_-]?secret|access[_-]?token|auth[_-]?token|secret[_-]?key)\\s*[:=]\\s*['\"][A-Za-z0-9_\\-/.+=]{16,}['\"]",
+      "severity": "high"
+    },
+    {
+      "id": "bearer_jwt",
+      "label": "JSON Web Token",
+      "regex": "\\beyJ[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]{10,}\\b",
+      "severity": "high"
+    }
+  ],
+  "pii_patterns": [
+    {
+      "id": "email_address",
+      "label": "Email Address",
+      "regex": "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b"
+    },
+    {
+      "id": "us_ssn_format",
+      "label": "SSN-Formatted Identifier",
+      "regex": "\\b(?!000|666|9\\d{2})\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}\\b"
+    },
+    {
+      "id": "phone_number",
+      "label": "Telephone Number",
+      "regex": "\\b(?:\\+?1[-.\\s]?)?(?:\\(\\d{3}\\)|\\d{3})[-.\\s]\\d{3}[-.\\s]\\d{4}\\b"
+    }
+  ],
+  "ssrf_blocked_hosts": [
+    "localhost",
+    "localhost.localdomain",
+    "0.0.0.0",
+    "127.0.0.1",
+    "::1",
+    "169.254.169.254",
+    "metadata.google.internal"
+  ],
+  "ssrf_blocked_cidrs": [
+    "127.0.0.0/8",
+    "10.0.0.0/8",
+    "172.16.0.0/12",
+    "192.168.0.0/16",
+    "169.254.0.0/16",
+    "::1/128",
+    "fc00::/7",
+    "fe80::/10"
+  ],
+  "sql_guard": {
+    "allowed_readonly_prefixes": [
+      "SELECT",
+      "WITH",
+      "EXPLAIN"
+    ],
+    "allowed_pragmas": [
+      "table_info",
+      "index_list",
+      "foreign_key_list",
+      "database_list"
+    ],
+    "blocked_write_keywords": [
+      "INSERT",
+      "UPDATE",
+      "DELETE",
+      "DROP",
+      "ALTER",
+      "CREATE",
+      "REPLACE",
+      "TRUNCATE",
+      "ATTACH",
+      "DETACH",
+      "VACUUM",
+      "REINDEX"
+    ]
+  },
+  "allowed_subprocess_binaries": [
+    "python3",
+    "git",
+    "sqlite3"
+  ],
+  "spdx_licenses": {
+    "MIT": {
+      "category": "permissive",
+      "commercial_ok": true,
+      "attribution_required": true,
+      "share_alike": false,
+      "markers": ["MIT License", "Permission is hereby granted, free of charge"]
+    },
+    "Apache-2.0": {
+      "category": "permissive",
+      "commercial_ok": true,
+      "attribution_required": true,
+      "share_alike": false,
+      "markers": ["Apache License", "Version 2.0"]
+    },
+    "BSD-3-Clause": {
+      "category": "permissive",
+      "commercial_ok": true,
+      "attribution_required": true,
+      "share_alike": false,
+      "markers": ["Redistribution and use in source and binary forms", "neither the name of"]
+    },
+    "MPL-2.0": {
+      "category": "weak-copyleft",
+      "commercial_ok": true,
+      "attribution_required": true,
+      "share_alike": true,
+      "markers": ["Mozilla Public License", "Version 2.0"]
+    },
+    "GPL-3.0": {
+      "category": "strong-copyleft",
+      "commercial_ok": true,
+      "attribution_required": true,
+      "share_alike": true,
+      "markers": ["GNU GENERAL PUBLIC LICENSE", "Version 3"]
+    },
+    "CC-BY-4.0": {
+      "category": "creative-commons-permissive",
+      "commercial_ok": true,
+      "attribution_required": true,
+      "share_alike": false,
+      "markers": ["Creative Commons Attribution 4.0", "CC BY 4.0", "CC-BY-4.0"]
+    },
+    "CC-BY-NC-4.0": {
+      "category": "non-commercial",
+      "commercial_ok": false,
+      "attribution_required": true,
+      "share_alike": false,
+      "markers": ["NonCommercial", "CC BY-NC", "CC-BY-NC"]
+    },
+    "Proprietary-or-Unspecified": {
+      "category": "restricted",
+      "commercial_ok": false,
+      "attribution_required": true,
+      "share_alike": false,
+      "markers": ["All rights reserved", "Confidential"]
+    }
+  },
+  "domain_workbenches": {
+    "software-engineering": {
+      "title": "Software Engineering & Architecture Workbench",
+      "focus_categories": [4, 8, 23, 25, 27, 28, 31, 32],
+      "required_checks": ["dependency_lock_check", "secret_scan", "spdx_license_check", "reproducibility_digest"],
+      "key_entities": ["version", "package", "api_endpoint", "cve", "benchmark"]
+    },
+    "scientific-literature": {
+      "title": "Scholarly & Empirical Science Workbench",
+      "focus_categories": [1, 5, 9, 19, 20, 21, 28, 34],
+      "required_checks": ["doi_citation_verification", "methodology_extraction", "numerical_consistency_check"],
+      "key_entities": ["doi", "sample_size", "p_value", "confidence_interval", "dataset"]
+    },
+    "market-competitive": {
+      "title": "Market & Competitive Intelligence Workbench",
+      "focus_categories": [2, 3, 6, 17, 20, 21, 34, 36],
+      "required_checks": ["recency_window_check", "multi_source_corroboration", "metric_unit_normalization"],
+      "key_entities": ["company", "pricing", "market_share", "release_date", "growth_rate"]
+    },
+    "policy-regulatory": {
+      "title": "Policy, Legal & Regulatory Compliance Workbench",
+      "focus_categories": [6, 9, 19, 20, 31, 32, 34, 38],
+      "required_checks": ["exact_section_citation", "effective_date_verification", "jurisdiction_tagging"],
+      "key_entities": ["statute", "jurisdiction", "effective_date", "obligation", "exception"]
+    },
+    "security-threat": {
+      "title": "Security & Threat Research Workbench",
+      "focus_categories": [3, 8, 16, 18, 30, 31, 37, 38],
+      "required_checks": ["ioc_extraction", "ssrf_isolation", "secret_redaction", "sandbox_containment"],
+      "key_entities": ["cve", "sha256", "domain", "ip_address", "mitigation"]
+    },
+    "data-journalism": {
+      "title": "Public Records & Data Journalism Workbench",
+      "focus_categories": [6, 9, 10, 16, 17, 19, 20, 34],
+      "required_checks": ["outlier_audit", "primary_record_provenance", "pii_review", "reproducible_query_log"],
+      "key_entities": ["agency", "filing_date", "amount", "entity_name", "record_id"]
+    }
+  }
+}

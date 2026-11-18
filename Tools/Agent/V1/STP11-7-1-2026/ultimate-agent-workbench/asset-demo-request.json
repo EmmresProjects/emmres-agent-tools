@@ -1,0 +1,9 @@
+{
+  "goal": "Inspect and review a text source, then create an editable, escaped HTML document.",
+  "requirements": ["source-readable", "text-reviewed", "html-produced"],
+  "tasks": [
+    {"id": "inspect", "capability": "universal-file-intake", "operation": "file-inspect", "params": {"files": ["ultimate-agent-workbench/asset-demo-text.txt"]}, "files": ["ultimate-agent-workbench/asset-demo-text.txt"], "requirements": ["source-readable"], "acceptance": "The source can be read and fingerprinted."},
+    {"id": "review", "capability": "reading-level-adapter", "operation": "text-review", "depends": ["inspect"], "params": {"input": "ultimate-agent-workbench/asset-demo-text.txt"}, "requirements": ["text-reviewed"], "acceptance": "Mechanical readability statistics are computed, without claiming a rewrite."},
+    {"id": "produce", "capability": "final-assembly-orchestrator", "operation": "document-html", "depends": ["review"], "params": {"input": "ultimate-agent-workbench/asset-demo-text.txt", "title": "Team handoff"}, "output": "team-handoff.html", "requirements": ["html-produced"], "acceptance": "A UTF-8 HTML artifact with escaped content is created and fingerprinted."}
+  ]
+}

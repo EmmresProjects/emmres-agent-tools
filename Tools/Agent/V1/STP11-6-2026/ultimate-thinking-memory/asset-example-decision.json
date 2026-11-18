@@ -1,0 +1,114 @@
+{
+  "criteria": {
+    "cost": 0.3,
+    "quality": 0.4,
+    "speed": 0.3
+  },
+  "alternatives": {
+    "vendor-a": {
+      "cost": 3,
+      "quality": 4,
+      "speed": 5
+    },
+    "vendor-b": {
+      "cost": 4,
+      "quality": 3,
+      "speed": 3
+    },
+    "build-in-house": {
+      "cost": 2,
+      "quality": 5,
+      "speed": 1
+    }
+  },
+  "dimensions": [
+    {
+      "name": "clarity",
+      "score": 4,
+      "min": 0,
+      "max": 5,
+      "weight": 2,
+      "critical": true
+    },
+    {
+      "name": "evidence",
+      "score": 2.5,
+      "min": 0,
+      "max": 5,
+      "weight": 3
+    },
+    {
+      "name": "risk-control",
+      "score": 3,
+      "min": 0,
+      "max": 5,
+      "weight": 1
+    }
+  ],
+  "checks": [
+    {
+      "name": "budget approved",
+      "result": "pass",
+      "critical": true
+    },
+    {
+      "name": "legal review",
+      "result": "pass",
+      "critical": false
+    },
+    {
+      "name": "security sign-off",
+      "result": "fail",
+      "critical": true
+    }
+  ],
+  "risks": [
+    {
+      "id": "R1",
+      "name": "vendor delay",
+      "likelihood": 5,
+      "impact": 8,
+      "detectability": 4,
+      "owner": "ops",
+      "mitigation": "qualify a second source",
+      "trigger": "milestone 2 slips"
+    },
+    {
+      "id": "R2",
+      "name": "data leak",
+      "likelihood": 2,
+      "impact": 9,
+      "detectability": 7,
+      "owner": "security",
+      "mitigation": "encrypt at rest and restrict access",
+      "trigger": "audit finding"
+    },
+    {
+      "id": "R3",
+      "name": "scope creep",
+      "likelihood": 8,
+      "impact": 2,
+      "detectability": 2,
+      "owner": "pm",
+      "mitigation": "change control",
+      "trigger": "new request"
+    }
+  ],
+  "items": {
+    "vendor-a": {
+      "reviewer-1": "agree",
+      "reviewer-2": "agree",
+      "reviewer-3": "disagree"
+    },
+    "vendor-b": {
+      "reviewer-1": "disagree",
+      "reviewer-2": "disagree",
+      "reviewer-3": "abstain"
+    }
+  },
+  "allocations": {
+    "vendor-a": 50,
+    "vendor-b": 30,
+    "in-house": 20
+  }
+}

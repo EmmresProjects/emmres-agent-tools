@@ -1,0 +1,385 @@
+{
+  "version": "1.0.0",
+  "entries": [
+    {
+      "id": "src-0001",
+      "title": "Project Gutenberg",
+      "url": "https://www.gutenberg.org/",
+      "category": "general",
+      "tags": [
+        "books",
+        "public-domain",
+        "text"
+      ],
+      "source-type": "archive",
+      "authority": "institutional",
+      "added-by": "seed",
+      "date-added": "2025-02-11",
+      "last-checked": "2026-09-30",
+      "status": "active",
+      "archive-url": "https://web.archive.org/web/*/gutenberg.org",
+      "license": "Public domain texts; site terms apply",
+      "annotation": "Starting point for public-domain books and full texts that can be quoted directly.",
+      "related": []
+    },
+    {
+      "id": "src-0002",
+      "title": "Library of Congress Digital Collections",
+      "url": "https://www.loc.gov/collections/",
+      "category": "general",
+      "tags": [
+        "archive",
+        "primary",
+        "images"
+      ],
+      "source-type": "archive",
+      "authority": "official",
+      "added-by": "seed",
+      "date-added": "2025-02-11",
+      "last-checked": "2025-01-04",
+      "status": "active",
+      "archive-url": "https://web.archive.org/web/*/loc.gov/collections",
+      "license": "Mixed; check item-level rights statements",
+      "annotation": "Primary-source collections and rights statements for US public records and media.",
+      "related": []
+    },
+    {
+      "id": "src-0003",
+      "title": "Godot Engine documentation",
+      "url": "https://docs.godotengine.org/",
+      "category": "games",
+      "tags": [
+        "engine",
+        "open-source",
+        "gamedev"
+      ],
+      "source-type": "official",
+      "authority": "official",
+      "added-by": "seed",
+      "date-added": "2025-03-02",
+      "last-checked": "2026-08-18",
+      "status": "active",
+      "archive-url": "",
+      "license": "Docs under CC BY 4.0",
+      "annotation": "Engine reference for physics, scenes and export; versioned docs matter, so pin the version.",
+      "related": []
+    },
+    {
+      "id": "src-0004",
+      "title": "GDC Vault",
+      "url": "https://www.gdcvault.com/",
+      "category": "games",
+      "tags": [
+        "talks",
+        "postmortem",
+        "design"
+      ],
+      "source-type": "reference",
+      "authority": "community",
+      "added-by": "seed",
+      "date-added": "2025-03-02",
+      "last-checked": "2025-11-20",
+      "status": "active",
+      "archive-url": "",
+      "license": "Free and member-only talks",
+      "annotation": "Production postmortems and design talks; useful for pacing and scope evidence.",
+      "related": []
+    },
+    {
+      "id": "src-0005",
+      "title": "MDN Web Docs",
+      "url": "https://developer.mozilla.org/en-US/docs/Web",
+      "category": "technology",
+      "tags": [
+        "web",
+        "html",
+        "api"
+      ],
+      "source-type": "official",
+      "authority": "institutional",
+      "added-by": "seed",
+      "date-added": "2025-01-15",
+      "last-checked": "2026-10-12",
+      "status": "active",
+      "archive-url": "",
+      "license": "CC BY-SA 2.5 for content",
+      "annotation": "Default web-platform reference; check browser-compat tables before promising support.",
+      "related": []
+    },
+    {
+      "id": "src-0006",
+      "title": "RFC Editor",
+      "url": "https://www.rfc-editor.org/",
+      "category": "technology",
+      "tags": [
+        "standards",
+        "protocols",
+        "ietf"
+      ],
+      "source-type": "official",
+      "authority": "official",
+      "added-by": "seed",
+      "date-added": "2025-01-15",
+      "last-checked": "2026-06-01",
+      "status": "active",
+      "archive-url": "",
+      "license": "Public documents; see BCP 78",
+      "annotation": "Authoritative protocol text for HTTP, TLS, DNS and email behaviour.",
+      "related": []
+    },
+    {
+      "id": "src-0007",
+      "title": "MIT OpenCourseWare",
+      "url": "https://ocw.mit.edu/",
+      "category": "studies",
+      "tags": [
+        "courses",
+        "syllabus",
+        "exercises"
+      ],
+      "source-type": "institutional",
+      "authority": "institutional",
+      "added-by": "seed",
+      "date-added": "2025-04-19",
+      "last-checked": "2026-05-22",
+      "status": "active",
+      "archive-url": "",
+      "license": "CC BY-NC-SA 4.0",
+      "annotation": "Course structure, problem sets and prerequisites for study planning.",
+      "related": []
+    },
+    {
+      "id": "src-0008",
+      "title": "arXiv",
+      "url": "https://arxiv.org/",
+      "category": "research",
+      "tags": [
+        "preprints",
+        "papers",
+        "physics",
+        "cs"
+      ],
+      "source-type": "primary",
+      "authority": "institutional",
+      "added-by": "seed",
+      "date-added": "2025-01-05",
+      "last-checked": "2026-10-28",
+      "status": "active",
+      "archive-url": "",
+      "license": "Per-paper licenses vary; many allow reuse with attribution",
+      "annotation": "Preprints are unreviewed: label them as such and look for the published version.",
+      "related": []
+    },
+    {
+      "id": "src-0009",
+      "title": "Crossref DOI resolver",
+      "url": "https://doi.org/",
+      "category": "research",
+      "tags": [
+        "doi",
+        "citations",
+        "metadata"
+      ],
+      "source-type": "official",
+      "authority": "institutional",
+      "added-by": "seed",
+      "date-added": "2025-01-05",
+      "last-checked": "2026-10-28",
+      "status": "active",
+      "archive-url": "",
+      "license": "Metadata is openly available",
+      "annotation": "Resolve a DOI to publisher metadata; use it to confirm a citation exists before quoting.",
+      "related": []
+    },
+    {
+      "id": "src-0010",
+      "title": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/",
+      "category": "research",
+      "tags": [
+        "search",
+        "citations",
+        "abstracts"
+      ],
+      "source-type": "reference",
+      "authority": "institutional",
+      "added-by": "seed",
+      "date-added": "2025-01-05",
+      "last-checked": "2025-07-14",
+      "status": "active",
+      "archive-url": "",
+      "license": "Free access; API has rate limits",
+      "annotation": "Citation graph exploration and open abstracts; verify claims against the paper itself.",
+      "related": []
+    },
+    {
+      "id": "src-0011",
+      "title": "NIST Publications",
+      "url": "https://www.nist.gov/publications",
+      "category": "science",
+      "tags": [
+        "metrology",
+        "standards",
+        "security"
+      ],
+      "source-type": "official",
+      "authority": "official",
+      "added-by": "seed",
+      "date-added": "2025-02-01",
+      "last-checked": "2026-09-09",
+      "status": "active",
+      "archive-url": "",
+      "license": "Mostly public domain (US government work)",
+      "annotation": "Measurement standards and the SP 800 security series used in control mapping.",
+      "related": []
+    },
+    {
+      "id": "src-0012",
+      "title": "PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "category": "health-safety",
+      "tags": [
+        "clinical",
+        "medicine",
+        "abstracts"
+      ],
+      "source-type": "primary",
+      "authority": "official",
+      "added-by": "seed",
+      "date-added": "2025-02-01",
+      "last-checked": "2026-10-02",
+      "status": "active",
+      "archive-url": "",
+      "license": "Abstracts open; full text often paywalled",
+      "annotation": "High-stakes source: cite the study type and population, never the abstract alone for clinical advice.",
+      "related": []
+    },
+    {
+      "id": "src-0013",
+      "title": "WHO fact sheets",
+      "url": "https://www.who.int/news-room/fact-sheets",
+      "category": "health-safety",
+      "tags": [
+        "public-health",
+        "guidance",
+        "global"
+      ],
+      "source-type": "official",
+      "authority": "official",
+      "added-by": "seed",
+      "date-added": "2025-02-01",
+      "last-checked": "2026-10-02",
+      "status": "active",
+      "archive-url": "https://web.archive.org/web/*/who.int/news-room/fact-sheets",
+      "license": "CC BY-NC-SA 3.0 IGO",
+      "annotation": "Global public-health baselines with stated update dates; check freshness before quoting rates.",
+      "related": []
+    },
+    {
+      "id": "src-0014",
+      "title": "SEC EDGAR full-text search",
+      "url": "https://efts.sec.gov/LATEST/search-index?q=",
+      "category": "business",
+      "tags": [
+        "filings",
+        "company",
+        "disclosure"
+      ],
+      "source-type": "primary",
+      "authority": "official",
+      "added-by": "seed",
+      "date-added": "2025-05-06",
+      "last-checked": "2026-04-11",
+      "status": "active",
+      "archive-url": "",
+      "license": "Public filings; usage limits apply",
+      "annotation": "Primary company disclosure for financial and competitive claims; read the filing, not a summary.",
+      "related": []
+    },
+    {
+      "id": "src-0015",
+      "title": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/",
+      "category": "legal-policy",
+      "tags": [
+        "eu",
+        "legislation",
+        "regulation"
+      ],
+      "source-type": "official",
+      "authority": "official",
+      "added-by": "seed",
+      "date-added": "2025-05-06",
+      "last-checked": "2026-10-20",
+      "status": "active",
+      "archive-url": "",
+      "license": "Reuse allowed with conditions; see legal notice",
+      "annotation": "Official EU law with consolidated versions; always record the version date you read.",
+      "related": []
+    },
+    {
+      "id": "src-0016",
+      "title": "WCAG 2.2 quick reference",
+      "url": "https://www.w3.org/WAI/WCAG22/quickref/",
+      "category": "creative-media",
+      "tags": [
+        "accessibility",
+        "wcag",
+        "standards"
+      ],
+      "source-type": "official",
+      "authority": "official",
+      "added-by": "seed",
+      "date-added": "2025-06-14",
+      "last-checked": "2026-10-20",
+      "status": "active",
+      "archive-url": "",
+      "license": "W3C document license",
+      "annotation": "Checklist for captions, contrast and reading order when packaging media deliverables.",
+      "related": []
+    },
+    {
+      "id": "src-0017",
+      "title": "Creative Commons licenses",
+      "url": "https://creativecommons.org/share-your-work/cclicenses/",
+      "category": "creative-media",
+      "tags": [
+        "licensing",
+        "reuse",
+        "attribution"
+      ],
+      "source-type": "official",
+      "authority": "institutional",
+      "added-by": "seed",
+      "date-added": "2025-06-14",
+      "last-checked": "2026-03-08",
+      "status": "active",
+      "archive-url": "",
+      "license": "Site content CC BY 4.0",
+      "annotation": "Definitive wording for attribution and share-alike obligations on reused media.",
+      "related": []
+    },
+    {
+      "id": "src-0018",
+      "title": "Gamasutra archive (superseded)",
+      "url": "https://www.gamasutra.com/",
+      "category": "games",
+      "tags": [
+        "archive",
+        "articles"
+      ],
+      "source-type": "archive",
+      "authority": "community",
+      "added-by": "seed",
+      "date-added": "2024-11-02",
+      "last-checked": "2025-02-15",
+      "status": "moved",
+      "archive-url": "https://web.archive.org/web/*/gamasutra.com",
+      "license": "Content moved to gamedeveloper.com",
+      "annotation": "Historic domain now redirects; use the successor site and keep this record for old citations.",
+      "related": [
+        "https://www.gamedeveloper.com/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "profiles_version": "1.0.0",
+  "purpose": "Worker profiles used by `route` to pick the least-privilege execution target. The first profile whose hard requirements are satisfied by the requested capabilities wins, scanning in ascending privilege order.",
+  "selection_order": [
+    "linux-local",
+    "network-enabled-worker",
+    "virtualized-worker",
+    "arm64-worker",
+    "gpu-worker",
+    "windows-host"
+  ],
+  "profiles": {
+    "linux-local": {
+      "description": "The current Linux host. Read-only local inspection, builds and packaging that need no Windows, GPU, ARM64, virtualization or network.",
+      "privilege_rank": 0,
+      "requires": {},
+      "limits": ["no Windows binaries can execute", "no GPU capture", "no hardware-accelerated VM"],
+      "notes": "Default target. Any change still needs an approval record when privileged."
+    },
+    "network-enabled-worker": {
+      "description": "The local host with approved outbound network access for downloads, package registries or vulnerability databases.",
+      "privilege_rank": 1,
+      "requires": {"network": true},
+      "limits": ["endpoint allowlist required", "no credential forwarding", "bounded timeouts"],
+      "notes": "Never use for production data exfiltration; record every endpoint contacted."
+    },
+    "virtualized-worker": {
+      "description": "A VM or sandbox with working KVM/WHPX acceleration for clean-state reproduction, snapshots and untrusted execution.",
+      "privilege_rank": 2,
+      "requires": {"virtualization": true},
+      "limits": ["snapshot before execution", "no shared host folders unless required", "rollback verified"],
+      "notes": "Preferred place to reproduce failures so the host stays clean."
+    },
+    "arm64-worker": {
+      "description": "An ARM64 host or emulated worker for ARM64 and ARM64EC build/test work.",
+      "privilege_rank": 3,
+      "requires": {"arch": "arm64"},
+      "limits": ["native x86 plugins may be unavailable", "slower than native builds"],
+      "notes": "Use only when a capability explicitly requires ARM64."
+    },
+    "gpu-worker": {
+      "description": "A worker with a physical GPU for graphics capture, rendering and compute diagnostics.",
+      "privilege_rank": 4,
+      "requires": {"gpu": true},
+      "limits": ["vendor driver suite required", "capture tools may be licence-gated"],
+      "notes": "Batch GPU work to limit driver restarts."
+    },
+    "windows-host": {
+      "description": "A licensed Windows worker with the Windows SDK, WDK and signing tooling.",
+      "privilege_rank": 5,
+      "requires": {"os": "windows"},
+      "limits": ["licence required", "snapshot or restore point before changes", "no licence or activation bypass"],
+      "notes": "Highest privilege target; dispose of or reimage workers after sensitive jobs."
+    }
+  }
+}

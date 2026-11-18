@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Authorization, approval, routing and licence policy for the iOS/iPadOS Agent Skill Tool. Pass an overlay with --policy to extend it; the built-in defaults are identical to this file.",
+  "authorization": {
+    "required_attestation": "I own or am authorized to inspect, build, test, sign or distribute these assets",
+    "denied_requests": [
+      {
+        "id": "bypass-activation-lock",
+        "patterns": ["activation lock", "icloud lock", "find my iphone off"],
+        "reason": "Activation Lock and ownership controls must never be bypassed"
+      },
+      {
+        "id": "bypass-passcode",
+        "patterns": ["bypass passcode", "crack passcode", "brute force passcode", "unlock without password"],
+        "reason": "Passcode, biometric and Secure Enclave protections must never be bypassed"
+      },
+      {
+        "id": "bypass-drm",
+        "patterns": ["remove drm", "bypass drm", "crack fairplay", "decrypt ipa", "dump decrypted", "circumvent receipt"],
+        "reason": "DRM, purchase and receipt protections must never be bypassed"
+      },
+      {
+        "id": "bypass-store",
+        "patterns": ["bypass in-app purchase", "free purchases", "fake receipt", "jailbreak detection bypass to install", "sideload someone else"],
+        "reason": "App Store purchase and delivery controls must never be bypassed"
+      },
+      {
+        "id": "credential-theft",
+        "patterns": ["steal certificate", "extract private key from", "harvest apple id", "phish apple id", "keychain dump of another"],
+        "reason": "Credential and certificate theft is refused"
+      },
+      {
+        "id": "identity-spoof",
+        "patterns": ["spoof another developer", "impersonate team", "forged certificate"],
+        "reason": "Identity and team impersonation is refused"
+      }
+    ],
+    "approval_required": [
+      {
+        "id": "destructive-device",
+        "patterns": ["erase", "delete device", "uninstall", "restart", "shutdown", "reset", "wipe", "remove profile"],
+        "reason": "destructive or disruptive device action"
+      },
+      {
+        "id": "signing",
+        "patterns": ["codesign", "sign ", "keychain", "provisioning profile install"],
+        "reason": "signing with protected identities"
+      },
+      {
+        "id": "publishing",
+        "patterns": ["upload", "testflight", "app store submit", "transporter", "distribute", "release to", "phased release"],
+        "reason": "publishing or distributing an artifact"
+      },
+      {
+        "id": "data-extraction",
+        "patterns": ["backup", "extract user data", "dump container", "photos", "contacts"],
+        "reason": "extracting user data"
+      },
+      {
+        "id": "dynamic-analysis",
+        "patterns": ["frida", "objection", "inject", "attach to running", "instrument"],
+        "reason": "instrumenting a running application"
+      },
+      {
+        "id": "network-capture",
+        "patterns": ["mitmproxy", "charles", "proxyman", "wireshark", "tshark", "certificate pinning disable"],
+        "reason": "intercepting network traffic"
+      },
+      {
+        "id": "spend",
+        "patterns": ["billing", "paid lane", "device farm purchase", "increase quota"],
+        "reason": "financial commitment"
+      }
+    ]
+  },
+  "licenses": {
+    "commercial_tools": ["hopper", "ida", "jtool2", "pvrtool", "charles", "proxyman", "macstadium", "browserstack", "sauce labs", "aws device farm", "unity", "unreal", "cocos2d", "mobsf cloud"],
+    "apple_components": ["xcode", "iphoneos sdk", "iphonesimulator sdk", "simulator runtime", "apple sdk", "dyld shared cache"],
+    "rule": "Apple-licensed components must never be copied into a Linux image or redistributed"
+  },
+  "routing": {
+    "macos_required_keywords": ["xcodebuild", "xcrun", "simctl", "codesign", "xcarchive", "archive", "export ipa", "dtrace", "instruments", "xcodebuild test", "ios simulator", "simulator", "actool", "ibtool", "metal", "metallib", "atos", "dsymutil", "lldb attach", "security find-identity", "otool", "plutil"],
+    "device_required_keywords": ["device", "udid", "usb", "pair", "idevice", "iproxy", "ifuse", "syslog", "physical iphone", "physical ipad", "developer mode"],
+    "account_required_keywords": ["app store connect", "testflight", "team id", "issuer id", "api key", "certificate", "provisioning profile", "app store submission"],
+    "network_required_keywords": ["upload", "download", "api", "http", "https", "push", "apns", "icloud", "cloudkit", "storekit sandbox", "device farm"],
+    "license_required_keywords": ["hopper", "ida pro", "jtool2", "pvrtool", "charles", "proxyman", "macstadium", "browserstack", "sauce labs", "device farm"],
+    "linux_capable": ["inspect", "parse", "report", "hash", "zip", "plist", "macho", "xmach", "ipa", "provisioning", "crash report", "dwarf", "artifact", "privacy manifest", "secrets", "string", "metadata", "diff", "audit", "plan"]
+  },
+  "self_test": {
+    "required_tools": ["idevice_id", "ideviceinfo", "ideviceinstaller", "idevicesyslog", "iproxy", "ifuse", "plistutil", "sqlite3", "ffmpeg", "xcodebuild", "xcrun", "swift", "clang", "codesign", "lldb", "pod", "carthage", "fastlane", "ios-deploy", "git", "zip", "python3"],
+    "host_status_when_absent": {
+      "idevice_id": "PHYSICAL DEVICE REQUIRED",
+      "ideviceinfo": "PHYSICAL DEVICE REQUIRED",
+      "ideviceinstaller": "PHYSICAL DEVICE REQUIRED",
+      "idevicesyslog": "PHYSICAL DEVICE REQUIRED",
+      "iproxy": "PHYSICAL DEVICE REQUIRED",
+      "ifuse": "PHYSICAL DEVICE REQUIRED",
+      "ios-deploy": "PHYSICAL DEVICE REQUIRED",
+      "xcodebuild": "MACOS HOST REQUIRED",
+      "xcrun": "MACOS HOST REQUIRED",
+      "codesign": "MACOS HOST REQUIRED",
+      "lldb": "MACOS HOST REQUIRED",
+      "pod": "MACOS HOST REQUIRED",
+      "carthage": "MACOS HOST REQUIRED",
+      "fastlane": "MACOS HOST REQUIRED",
+      "swift": "MACOS HOST REQUIRED",
+      "clang": "MACOS HOST REQUIRED"
+    }
+  },
+  "exit_codes": {
+    "OK": 0,
+    "WARN": 0,
+    "FAIL": 1,
+    "usage": 2,
+    "invalid-input": 3,
+    "limit": 4,
+    "policy": 5,
+    "approval": 5,
+    "internal": 70
+  },
+  "extension_howto": [
+    "Copy this file, edit only the keys you need, and pass it with --policy my-policy.json.",
+    "Adding a denied_request pattern blocks matching actions immediately and is never overridable by --approve.",
+    "Adding an approval_required gate makes matching actions require --approve <id>.",
+    "Adding a routing keyword changes the host classification reported by 'route'.",
+    "Never add unreviewed binaries to the command allow-list; the allow-list lives in tools-iosh_core.py."
+  ]
+}

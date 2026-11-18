@@ -1,0 +1,1628 @@
+{
+  "catalog_version": "1.0",
+  "title": "Cloud, Server, and Production Deployment Skill Catalog",
+  "category_count": 18,
+  "capability_count": 249,
+  "categories": [
+    {
+      "id": "cloud-strategy-accounts-and-organization",
+      "name": "Cloud Strategy, Accounts, and Organization",
+      "catalog_number": 1,
+      "capabilities": [
+        {
+          "id": "cloud-account-provisioning",
+          "name": "Cloud Account Provisioning",
+          "description": "Create and validate cloud accounts, subscriptions, projects, tenants, billing ownership, support plans, and break-glass access across AWS, Microsoft Azure, Google Cloud, Oracle Cloud, or another approved provider.",
+          "catalog_number": 1
+        },
+        {
+          "id": "multi-account-cloud-organization-design",
+          "name": "Multi-Account Cloud Organization Design",
+          "description": "Design landing-zone hierarchies, management groups, folders, organizational units, account vending, guardrails, and workload separation for development, staging, production, security, and shared services.",
+          "catalog_number": 2
+        },
+        {
+          "id": "cloud-landing-zone-bootstrap",
+          "name": "Cloud Landing Zone Bootstrap",
+          "description": "Deploy a secure landing zone with centralized identity, logging, policy, networking, security services, and account baselines using Azure Landing Zones, AWS Control Tower, or Google Cloud enterprise foundations.",
+          "catalog_number": 3
+        },
+        {
+          "id": "cloud-provider-selection",
+          "name": "Cloud Provider Selection",
+          "description": "Compare providers against region availability, service maturity, regulatory needs, latency, operational skills, portability, support, and total cost of ownership.",
+          "catalog_number": 4
+        },
+        {
+          "id": "hybrid-cloud-architecture",
+          "name": "Hybrid Cloud Architecture",
+          "description": "Connect on-premises systems and cloud environments through private links, VPNs, dedicated circuits, identity federation, routing, DNS, observability, and shared governance.",
+          "catalog_number": 5
+        },
+        {
+          "id": "multi-cloud-architecture",
+          "name": "Multi-Cloud Architecture",
+          "description": "Define which workloads belong on each provider, prevent accidental complexity, standardize identity and telemetry, and establish exit, portability, and failure-isolation strategies.",
+          "catalog_number": 6
+        },
+        {
+          "id": "region-and-availability-zone-selection",
+          "name": "Region and Availability-Zone Selection",
+          "description": "Select regions and zones using latency, residency, service availability, cost, carbon, disaster-risk, and recovery requirements.",
+          "catalog_number": 7
+        },
+        {
+          "id": "cloud-service-quota-management",
+          "name": "Cloud Service Quota Management",
+          "description": "Inventory quotas and limits, forecast demand, request increases, and alert before deployments fail from exhausted capacity.",
+          "catalog_number": 8
+        },
+        {
+          "id": "cloud-support-plan-management",
+          "name": "Cloud Support Plan Management",
+          "description": "Choose and operate support plans, severity paths, escalation contacts, technical account management, and incident case procedures.",
+          "catalog_number": 9
+        },
+        {
+          "id": "cloud-resource-naming-and-tagging",
+          "name": "Cloud Resource Naming and Tagging",
+          "description": "Enforce consistent names, ownership, environment, cost center, data classification, lifecycle, and compliance tags.",
+          "catalog_number": 10
+        },
+        {
+          "id": "cloud-resource-inventory",
+          "name": "Cloud Resource Inventory",
+          "description": "Continuously discover, classify, and reconcile resources, owners, configurations, dependencies, and unsupported assets.",
+          "catalog_number": 11
+        },
+        {
+          "id": "cloud-architecture-decision-records",
+          "name": "Cloud Architecture Decision Records",
+          "description": "Create concise ADRs recording context, options, decision, trade-offs, security impact, cost impact, and rollback conditions.",
+          "catalog_number": 12
+        }
+      ]
+    },
+    {
+      "id": "billing-finops-and-capacity-economics",
+      "name": "Billing, FinOps, and Capacity Economics",
+      "catalog_number": 2,
+      "capabilities": [
+        {
+          "id": "billing-configuration",
+          "name": "Billing Configuration",
+          "description": "Configure payment profiles, invoices, tax settings, billing accounts, cost centers, budgets, permissions, and finance contacts.",
+          "catalog_number": 1
+        },
+        {
+          "id": "cloud-budget-guardrails",
+          "name": "Cloud Budget Guardrails",
+          "description": "Create monthly and annual budgets with forecast alerts, anomaly thresholds, approval gates, and escalation routes.",
+          "catalog_number": 2
+        },
+        {
+          "id": "cost-allocation-and-chargeback",
+          "name": "Cost Allocation and Chargeback",
+          "description": "Map spend to teams, products, tenants, environments, and customers using tags, labels, accounts, and allocation rules.",
+          "catalog_number": 3
+        },
+        {
+          "id": "cloud-cost-anomaly-detection",
+          "name": "Cloud Cost Anomaly Detection",
+          "description": "Detect unusual spend by service, account, region, SKU, or tag and route actionable alerts with likely causes.",
+          "catalog_number": 4
+        },
+        {
+          "id": "rightsizing-advisor",
+          "name": "Rightsizing Advisor",
+          "description": "Evaluate CPU, memory, storage, network, and request patterns to recommend safer instance, database, and container sizes.",
+          "catalog_number": 5
+        },
+        {
+          "id": "reserved-capacity-and-savings-plans",
+          "name": "Reserved Capacity and Savings Plans",
+          "description": "Model commitment options, utilization risk, break-even points, coverage targets, and purchase timing.",
+          "catalog_number": 6
+        },
+        {
+          "id": "autoscaling-cost-optimization",
+          "name": "Autoscaling Cost Optimization",
+          "description": "Tune scaling signals, cooldowns, minimums, maximums, spot capacity, and schedules without weakening reliability.",
+          "catalog_number": 7
+        },
+        {
+          "id": "storage-lifecycle-cost-optimization",
+          "name": "Storage Lifecycle Cost Optimization",
+          "description": "Move data among hot, cool, archive, and deletion tiers based on access patterns, retention, restore time, and retrieval charges.",
+          "catalog_number": 8
+        },
+        {
+          "id": "data-transfer-cost-control",
+          "name": "Data Transfer Cost Control",
+          "description": "Map egress paths, cross-zone traffic, NAT usage, CDN opportunities, replication costs, and private connectivity charges.",
+          "catalog_number": 9
+        },
+        {
+          "id": "unit-economics-dashboard",
+          "name": "Unit Economics Dashboard",
+          "description": "Calculate cost per request, active user, tenant, transaction, deployment, model inference, or business outcome.",
+          "catalog_number": 10
+        },
+        {
+          "id": "capacity-forecasting",
+          "name": "Capacity Forecasting",
+          "description": "Forecast compute, database, network, queue, and storage demand using growth, seasonality, launches, and failure headroom.",
+          "catalog_number": 11
+        },
+        {
+          "id": "finops-policy-enforcement",
+          "name": "FinOps Policy Enforcement",
+          "description": "Evaluate resources against budgets, approved SKUs, idle-resource rules, ownership requirements, and disposal schedules.",
+          "catalog_number": 12
+        }
+      ]
+    },
+    {
+      "id": "identity-access-and-privileged-operations",
+      "name": "Identity, Access, and Privileged Operations",
+      "catalog_number": 3,
+      "capabilities": [
+        {
+          "id": "identity-and-access-management",
+          "name": "Identity and Access Management",
+          "description": "Design users, groups, roles, service principals, workload identities, federation, conditional access, and least-privilege policies.",
+          "catalog_number": 1
+        },
+        {
+          "id": "single-sign-on-integration",
+          "name": "Single Sign-On Integration",
+          "description": "Integrate cloud consoles and production tools with Microsoft Entra ID, Okta, Google Workspace, SAML, or OIDC.",
+          "catalog_number": 2
+        },
+        {
+          "id": "role-based-access-control-design",
+          "name": "Role-Based Access Control Design",
+          "description": "Create role models aligned to job duties, environments, data classes, approvals, and separation of duties.",
+          "catalog_number": 3
+        },
+        {
+          "id": "policy-as-code-for-access",
+          "name": "Policy-as-Code for Access",
+          "description": "Define and test access policies using validated templates, version control, review, simulation, and automated deployment.",
+          "catalog_number": 4
+        },
+        {
+          "id": "privileged-access-management",
+          "name": "Privileged Access Management",
+          "description": "Implement just-in-time elevation, approval, session recording, time limits, credential isolation, and emergency access.",
+          "catalog_number": 5
+        },
+        {
+          "id": "break-glass-access-management",
+          "name": "Break-Glass Access Management",
+          "description": "Create protected emergency identities, offline recovery instructions, monitoring, periodic tests, and post-use review.",
+          "catalog_number": 6
+        },
+        {
+          "id": "workload-identity-federation",
+          "name": "Workload Identity Federation",
+          "description": "Replace static cloud keys with short-lived identities for CI/CD, Kubernetes, GitHub Actions, and external workloads.",
+          "catalog_number": 7
+        },
+        {
+          "id": "service-account-lifecycle",
+          "name": "Service Account Lifecycle",
+          "description": "Create, scope, rotate, monitor, and retire machine identities while preventing shared credentials and orphaned access.",
+          "catalog_number": 8
+        },
+        {
+          "id": "access-review-automation",
+          "name": "Access Review Automation",
+          "description": "Run periodic owner attestations, detect stale privileges, remove departed-user access, and preserve audit evidence.",
+          "catalog_number": 9
+        },
+        {
+          "id": "authentication-hardening",
+          "name": "Authentication Hardening",
+          "description": "Require phishing-resistant MFA, device or location conditions, secure recovery, session limits, and risk-based controls.",
+          "catalog_number": 10
+        },
+        {
+          "id": "authorization-testing",
+          "name": "Authorization Testing",
+          "description": "Test allow and deny paths, tenant isolation, privilege escalation, confused-deputy risks, and policy regressions.",
+          "catalog_number": 11
+        },
+        {
+          "id": "deployment-credentials-management",
+          "name": "Deployment Credentials Management",
+          "description": "Issue short-lived deployment credentials, bind them to environments, restrict actions, rotate safely, and audit every use.",
+          "catalog_number": 12
+        },
+        {
+          "id": "code-signing-credentials-management",
+          "name": "Code-Signing Credentials Management",
+          "description": "Protect signing keys through HSM or managed key services, approval workflows, timestamping, rotation, and revocation.",
+          "catalog_number": 13
+        }
+      ]
+    },
+    {
+      "id": "domains-dns-certificates-and-edge-routing",
+      "name": "Domains, DNS, Certificates, and Edge Routing",
+      "catalog_number": 4,
+      "capabilities": [
+        {
+          "id": "domain-name-registration",
+          "name": "Domain Name Registration",
+          "description": "Select, register, renew, lock, and document domains with ownership, recovery contacts, and transfer protections.",
+          "catalog_number": 1
+        },
+        {
+          "id": "dns-management",
+          "name": "DNS Management",
+          "description": "Create authoritative zones and records, manage TTLs, validate changes, protect DNSSEC, and maintain rollback plans.",
+          "catalog_number": 2
+        },
+        {
+          "id": "dns-migration",
+          "name": "DNS Migration",
+          "description": "Migrate zones between providers with inventory, low-TTL preparation, parallel validation, cutover, and rollback.",
+          "catalog_number": 3
+        },
+        {
+          "id": "split-horizon-dns",
+          "name": "Split-Horizon DNS",
+          "description": "Design internal and external DNS views without leaking private records or creating inconsistent resolution.",
+          "catalog_number": 4
+        },
+        {
+          "id": "dns-failover-routing",
+          "name": "DNS Failover Routing",
+          "description": "Configure health-based, weighted, latency, geolocation, and disaster-recovery routing with tested failure behavior.",
+          "catalog_number": 5
+        },
+        {
+          "id": "tls-certificate-lifecycle",
+          "name": "TLS Certificate Lifecycle",
+          "description": "Request, validate, deploy, renew, inventory, rotate, and revoke TLS certificates using ACME or managed certificate services.",
+          "catalog_number": 6
+        },
+        {
+          "id": "private-certificate-authority",
+          "name": "Private Certificate Authority",
+          "description": "Operate internal PKI, trust chains, issuance profiles, revocation, renewal, key custody, and certificate policy.",
+          "catalog_number": 7
+        },
+        {
+          "id": "mutual-tls-deployment",
+          "name": "Mutual TLS Deployment",
+          "description": "Implement client and service certificates, trust distribution, certificate rotation, and failed-authentication diagnostics.",
+          "catalog_number": 8
+        },
+        {
+          "id": "content-delivery-network",
+          "name": "Content Delivery Network",
+          "description": "Configure cache policies, origins, compression, purge, signed access, geo-controls, TLS, and observability for a CDN.",
+          "catalog_number": 9
+        },
+        {
+          "id": "global-traffic-management",
+          "name": "Global Traffic Management",
+          "description": "Route users across regions using health, latency, sovereignty, capacity, and controlled failover policies.",
+          "catalog_number": 10
+        },
+        {
+          "id": "reverse-proxy-configuration",
+          "name": "Reverse Proxy Configuration",
+          "description": "Configure NGINX, Envoy, HAProxy, Apache, or managed proxies for routing, headers, timeouts, buffering, and TLS.",
+          "catalog_number": 11
+        },
+        {
+          "id": "edge-redirect-and-header-policy",
+          "name": "Edge Redirect and Header Policy",
+          "description": "Enforce canonical hosts, HTTPS, HSTS, CSP, cache headers, security headers, and safe redirect behavior.",
+          "catalog_number": 12
+        }
+      ]
+    },
+    {
+      "id": "network-architecture-and-connectivity",
+      "name": "Network Architecture and Connectivity",
+      "catalog_number": 5,
+      "capabilities": [
+        {
+          "id": "virtual-network-design",
+          "name": "Virtual Network Design",
+          "description": "Design CIDR plans, subnets, route tables, network segmentation, private endpoints, gateways, and growth headroom.",
+          "catalog_number": 1
+        },
+        {
+          "id": "ip-address-management",
+          "name": "IP Address Management",
+          "description": "Allocate, document, detect conflicts, reserve, reclaim, and report private and public address space.",
+          "catalog_number": 2
+        },
+        {
+          "id": "security-group-and-firewall-rules",
+          "name": "Security Group and Firewall Rules",
+          "description": "Implement least-privilege ingress and egress rules, ownership, expiration, review, and automated drift checks.",
+          "catalog_number": 3
+        },
+        {
+          "id": "private-service-connectivity",
+          "name": "Private Service Connectivity",
+          "description": "Connect workloads to managed services without public exposure using private endpoints and service networking.",
+          "catalog_number": 4
+        },
+        {
+          "id": "site-to-site-vpn",
+          "name": "Site-to-Site VPN",
+          "description": "Deploy redundant tunnels, routing, encryption, monitoring, failover, and documented troubleshooting.",
+          "catalog_number": 5
+        },
+        {
+          "id": "dedicated-cloud-interconnect",
+          "name": "Dedicated Cloud Interconnect",
+          "description": "Plan and operate ExpressRoute, Direct Connect, Cloud Interconnect, or equivalent circuits with resilient routing.",
+          "catalog_number": 6
+        },
+        {
+          "id": "transit-network-architecture",
+          "name": "Transit Network Architecture",
+          "description": "Centralize routing, inspection, shared services, and cross-account connectivity while limiting blast radius.",
+          "catalog_number": 7
+        },
+        {
+          "id": "network-address-translation",
+          "name": "Network Address Translation",
+          "description": "Size and monitor NAT gateways or instances, control egress, avoid port exhaustion, and reduce excess cost.",
+          "catalog_number": 8
+        },
+        {
+          "id": "egress-control",
+          "name": "Egress Control",
+          "description": "Restrict outbound destinations through proxies, firewalls, DNS policy, allowlists, inspection, and exception workflows.",
+          "catalog_number": 9
+        },
+        {
+          "id": "load-balancer",
+          "name": "Load Balancer",
+          "description": "Configure Layer 4 or Layer 7 load balancing, listeners, certificates, health probes, algorithms, draining, and access logs.",
+          "catalog_number": 10
+        },
+        {
+          "id": "service-mesh-networking",
+          "name": "Service Mesh Networking",
+          "description": "Operate service discovery, mTLS, retries, timeouts, circuit breaking, telemetry, and traffic policy with Istio, Linkerd, or equivalent.",
+          "catalog_number": 11
+        },
+        {
+          "id": "network-performance-testing",
+          "name": "Network Performance Testing",
+          "description": "Measure latency, throughput, loss, DNS time, connection reuse, TLS overhead, and cross-zone behavior.",
+          "catalog_number": 12
+        },
+        {
+          "id": "ipv6-enablement",
+          "name": "IPv6 Enablement",
+          "description": "Plan dual-stack addressing, routing, security, DNS, telemetry, and application compatibility.",
+          "catalog_number": 13
+        }
+      ]
+    },
+    {
+      "id": "compute-hosting-containers-and-orchestration",
+      "name": "Compute, Hosting, Containers, and Orchestration",
+      "catalog_number": 6,
+      "capabilities": [
+        {
+          "id": "production-server-or-hosting",
+          "name": "Production Server or Hosting",
+          "description": "Provision and harden production virtual machines, platform hosting, serverless runtimes, or managed application services.",
+          "catalog_number": 1
+        },
+        {
+          "id": "linux-server-hardening",
+          "name": "Linux Server Hardening",
+          "description": "Apply secure baselines, patching, SSH controls, host firewall, auditing, time sync, file permissions, and minimal packages.",
+          "catalog_number": 2
+        },
+        {
+          "id": "windows-server-hardening",
+          "name": "Windows Server Hardening",
+          "description": "Apply Microsoft security baselines, patching, Defender controls, PowerShell logging, RDP restrictions, and service hardening.",
+          "catalog_number": 3
+        },
+        {
+          "id": "golden-image-pipeline",
+          "name": "Golden Image Pipeline",
+          "description": "Build, scan, version, test, sign, and retire machine images using Packer or provider image builders.",
+          "catalog_number": 4
+        },
+        {
+          "id": "container-image-build",
+          "name": "Container Image Build",
+          "description": "Create reproducible, minimal, multi-stage images with pinned dependencies, non-root users, metadata, and health checks.",
+          "catalog_number": 5
+        },
+        {
+          "id": "container-registry",
+          "name": "Container Registry",
+          "description": "Operate ECR, ACR, Artifact Registry, GHCR, or another registry with access controls, retention, replication, and scanning.",
+          "catalog_number": 6
+        },
+        {
+          "id": "container-image-signing",
+          "name": "Container Image Signing",
+          "description": "Sign and verify images and attestations using Cosign, Notary, or a managed signing service.",
+          "catalog_number": 7
+        },
+        {
+          "id": "kubernetes-cluster-provisioning",
+          "name": "Kubernetes Cluster Provisioning",
+          "description": "Create secure managed or self-managed clusters with node pools, networking, identity, upgrades, and audit logging.",
+          "catalog_number": 8
+        },
+        {
+          "id": "kubernetes-workload-deployment",
+          "name": "Kubernetes Workload Deployment",
+          "description": "Deploy validated manifests, Helm charts, or operators with requests, limits, probes, policies, and rollout safety.",
+          "catalog_number": 9
+        },
+        {
+          "id": "kubernetes-admission-control",
+          "name": "Kubernetes Admission Control",
+          "description": "Enforce image, privilege, network, resource, label, and provenance policies using Gatekeeper, Kyverno, or native controls.",
+          "catalog_number": 10
+        },
+        {
+          "id": "kubernetes-upgrade-management",
+          "name": "Kubernetes Upgrade Management",
+          "description": "Assess deprecations, test add-ons, drain nodes, sequence control-plane and worker upgrades, and validate rollback.",
+          "catalog_number": 11
+        },
+        {
+          "id": "serverless-production-deployment",
+          "name": "Serverless Production Deployment",
+          "description": "Configure functions or containers with concurrency, cold-start controls, permissions, networking, retries, and observability.",
+          "catalog_number": 12
+        },
+        {
+          "id": "platform-as-a-service-deployment",
+          "name": "Platform-as-a-Service Deployment",
+          "description": "Operate Azure App Service, Google Cloud Run, AWS App Runner, Render, Fly.io, or equivalent with production safeguards.",
+          "catalog_number": 13
+        },
+        {
+          "id": "gpu-workload-hosting",
+          "name": "GPU Workload Hosting",
+          "description": "Provision drivers, orchestration, scheduling, model storage, observability, quotas, and cost controls for GPU workloads.",
+          "catalog_number": 14
+        },
+        {
+          "id": "job-and-batch-compute",
+          "name": "Job and Batch Compute",
+          "description": "Run scheduled or large-scale jobs with queues, idempotency, retries, checkpoints, priorities, and cost-aware capacity.",
+          "catalog_number": 15
+        }
+      ]
+    },
+    {
+      "id": "ci-cd-release-engineering-and-supply-chain",
+      "name": "CI/CD, Release Engineering, and Supply Chain",
+      "catalog_number": 7,
+      "capabilities": [
+        {
+          "id": "ci-cd-service",
+          "name": "CI/CD Service",
+          "description": "Configure GitHub Actions, Azure Pipelines, GitLab CI/CD, Jenkins, CircleCI, or another service with secure runners and approvals.",
+          "catalog_number": 1
+        },
+        {
+          "id": "pipeline-architecture",
+          "name": "Pipeline Architecture",
+          "description": "Design reusable stages for build, lint, unit test, security scan, package, deploy, verify, promote, and rollback.",
+          "catalog_number": 2
+        },
+        {
+          "id": "self-hosted-runner-operations",
+          "name": "Self-Hosted Runner Operations",
+          "description": "Isolate, autoscale, patch, monitor, and replace build runners while preventing secret and workspace leakage.",
+          "catalog_number": 3
+        },
+        {
+          "id": "artifact-repository-management",
+          "name": "Artifact Repository Management",
+          "description": "Store, checksum, sign, replicate, retain, quarantine, and promote immutable build artifacts.",
+          "catalog_number": 4
+        },
+        {
+          "id": "dependency-locking-and-reproducible-builds",
+          "name": "Dependency Locking and Reproducible Builds",
+          "description": "Pin dependencies and toolchains, verify checksums, use hermetic builds, and detect non-reproducible outputs.",
+          "catalog_number": 5
+        },
+        {
+          "id": "software-bill-of-materials",
+          "name": "Software Bill of Materials",
+          "description": "Generate and publish CycloneDX or SPDX SBOMs, associate them with releases, and query exposure during incidents.",
+          "catalog_number": 6
+        },
+        {
+          "id": "slsa-provenance",
+          "name": "SLSA Provenance",
+          "description": "Produce verifiable build provenance and progressively strengthen source, build, and dependency integrity.",
+          "catalog_number": 7
+        },
+        {
+          "id": "environment-promotion",
+          "name": "Environment Promotion",
+          "description": "Promote the same tested artifact through development, staging, canary, and production with explicit controls.",
+          "catalog_number": 8
+        },
+        {
+          "id": "blue-green-deployment",
+          "name": "Blue-Green Deployment",
+          "description": "Operate parallel production environments, validate the inactive environment, switch traffic, and preserve fast rollback.",
+          "catalog_number": 9
+        },
+        {
+          "id": "canary-release",
+          "name": "Canary Release",
+          "description": "Shift a measured traffic percentage, compare service levels and errors, pause automatically, then expand or roll back.",
+          "catalog_number": 10
+        },
+        {
+          "id": "feature-flag-operations",
+          "name": "Feature Flag Operations",
+          "description": "Release code separately from features, define owners, safe defaults, targeting, audit, expiry, and kill switches.",
+          "catalog_number": 11
+        },
+        {
+          "id": "database-migration-pipeline",
+          "name": "Database Migration Pipeline",
+          "description": "Apply backward-compatible schema changes, expand-and-contract patterns, locks checks, backups, and rollback procedures.",
+          "catalog_number": 12
+        },
+        {
+          "id": "release-orchestration",
+          "name": "Release Orchestration",
+          "description": "Coordinate application, infrastructure, database, configuration, documentation, support, and stakeholder readiness.",
+          "catalog_number": 13
+        },
+        {
+          "id": "release-notes-automation",
+          "name": "Release Notes Automation",
+          "description": "Generate customer and operator release notes from approved changes while excluding secrets and internal-only details.",
+          "catalog_number": 14
+        },
+        {
+          "id": "rollback-automation",
+          "name": "Rollback Automation",
+          "description": "Restore the last known good application, configuration, infrastructure, and database state with verification gates.",
+          "catalog_number": 15
+        },
+        {
+          "id": "deployment-freeze-management",
+          "name": "Deployment Freeze Management",
+          "description": "Enforce risk-based freeze windows, exceptions, approvals, emergency changes, and resumption checks.",
+          "catalog_number": 16
+        }
+      ]
+    },
+    {
+      "id": "databases-caches-messaging-and-data-services",
+      "name": "Databases, Caches, Messaging, and Data Services",
+      "catalog_number": 8,
+      "capabilities": [
+        {
+          "id": "production-database",
+          "name": "Production Database",
+          "description": "Provision a resilient managed or self-hosted database with encryption, private networking, backups, monitoring, and access controls.",
+          "catalog_number": 1
+        },
+        {
+          "id": "database-engine-selection",
+          "name": "Database Engine Selection",
+          "description": "Choose PostgreSQL, MySQL, SQL Server, Oracle, MongoDB, DynamoDB, Cosmos DB, or alternatives based on workload and operations.",
+          "catalog_number": 2
+        },
+        {
+          "id": "database-high-availability",
+          "name": "Database High Availability",
+          "description": "Configure replication, failover, quorum, fencing, connection behavior, and recovery verification.",
+          "catalog_number": 3
+        },
+        {
+          "id": "database-performance-tuning",
+          "name": "Database Performance Tuning",
+          "description": "Analyze slow queries, indexes, statistics, locks, buffers, connection pools, vacuuming, and resource constraints.",
+          "catalog_number": 4
+        },
+        {
+          "id": "database-connection-pooling",
+          "name": "Database Connection Pooling",
+          "description": "Configure PgBouncer, application pools, limits, timeouts, health checks, and leak detection.",
+          "catalog_number": 5
+        },
+        {
+          "id": "database-access-governance",
+          "name": "Database Access Governance",
+          "description": "Separate application, migration, reporting, admin, and break-glass identities with audited privileges.",
+          "catalog_number": 6
+        },
+        {
+          "id": "database-encryption-and-key-rotation",
+          "name": "Database Encryption and Key Rotation",
+          "description": "Encrypt storage and connections, manage customer keys where required, and rehearse rotation.",
+          "catalog_number": 7
+        },
+        {
+          "id": "database-backup-and-point-in-time-recovery",
+          "name": "Database Backup and Point-in-Time Recovery",
+          "description": "Configure snapshots, logs, retention, cross-region copies, restore points, and restore verification.",
+          "catalog_number": 8
+        },
+        {
+          "id": "read-replica-operations",
+          "name": "Read Replica Operations",
+          "description": "Create and monitor replicas, lag, routing, promotion, consistency expectations, and failure behavior.",
+          "catalog_number": 9
+        },
+        {
+          "id": "cache-architecture",
+          "name": "Cache Architecture",
+          "description": "Deploy Redis, Memcached, or managed caches with eviction, persistence, clustering, TLS, and stampede protection.",
+          "catalog_number": 10
+        },
+        {
+          "id": "message-queue-operations",
+          "name": "Message Queue Operations",
+          "description": "Operate SQS, Service Bus, Pub/Sub, RabbitMQ, or equivalent with dead-letter handling, retries, ordering, and idempotency.",
+          "catalog_number": 11
+        },
+        {
+          "id": "event-streaming-platform",
+          "name": "Event Streaming Platform",
+          "description": "Operate Kafka, Event Hubs, Kinesis, or Pub/Sub streams with partitions, schemas, retention, replay, and consumer lag controls.",
+          "catalog_number": 12
+        },
+        {
+          "id": "schema-registry-governance",
+          "name": "Schema Registry Governance",
+          "description": "Version and validate event schemas, compatibility rules, ownership, evolution, and deprecation.",
+          "catalog_number": 13
+        },
+        {
+          "id": "search-cluster-operations",
+          "name": "Search Cluster Operations",
+          "description": "Operate Elasticsearch, OpenSearch, or managed search with mappings, shards, snapshots, security, and query monitoring.",
+          "catalog_number": 14
+        },
+        {
+          "id": "vector-database-operations",
+          "name": "Vector Database Operations",
+          "description": "Operate vector indexes with embedding-version tracking, metadata filters, recall testing, backup, privacy, and cost controls.",
+          "catalog_number": 15
+        }
+      ]
+    },
+    {
+      "id": "storage-backup-retention-and-recovery",
+      "name": "Storage, Backup, Retention, and Recovery",
+      "catalog_number": 9,
+      "capabilities": [
+        {
+          "id": "object-storage",
+          "name": "Object Storage",
+          "description": "Configure buckets or containers with encryption, access policy, versioning, lifecycle, replication, logging, and public-access blocks.",
+          "catalog_number": 1
+        },
+        {
+          "id": "block-storage-operations",
+          "name": "Block Storage Operations",
+          "description": "Select volume classes, provision IOPS and throughput, snapshot, resize, encrypt, and monitor attached storage.",
+          "catalog_number": 2
+        },
+        {
+          "id": "file-storage-operations",
+          "name": "File Storage Operations",
+          "description": "Deploy NFS, SMB, or managed file systems with permissions, performance tiers, backup, and mount resilience.",
+          "catalog_number": 3
+        },
+        {
+          "id": "backup-storage",
+          "name": "Backup Storage",
+          "description": "Create isolated, encrypted, immutable, and access-controlled backup repositories separate from production credentials.",
+          "catalog_number": 4
+        },
+        {
+          "id": "backup-policy-design",
+          "name": "Backup Policy Design",
+          "description": "Define scope, frequency, retention, immutability, geographic copies, ownership, monitoring, and exceptions.",
+          "catalog_number": 5
+        },
+        {
+          "id": "data-retention-policy",
+          "name": "Data-Retention Policy",
+          "description": "Translate legal, privacy, contractual, and operational requirements into system- specific retention and deletion rules.",
+          "catalog_number": 6
+        },
+        {
+          "id": "legal-hold-support",
+          "name": "Legal Hold Support",
+          "description": "Suspend deletion for selected identities or records, preserve chain of custody, and audit release of holds.",
+          "catalog_number": 7
+        },
+        {
+          "id": "immutable-backup-protection",
+          "name": "Immutable Backup Protection",
+          "description": "Use object lock, vault lock, WORM, separate accounts, MFA deletion, and ransomware-resistant controls.",
+          "catalog_number": 8
+        },
+        {
+          "id": "backup-restoration-tests",
+          "name": "Backup Restoration Tests",
+          "description": "Run scheduled restores to isolated environments, verify integrity and usability, measure RTO/RPO, and record evidence.",
+          "catalog_number": 9
+        },
+        {
+          "id": "disaster-recovery-plan",
+          "name": "Disaster-Recovery Plan",
+          "description": "Document scenarios, dependencies, roles, communication, recovery order, data loss limits, alternate access, and return to normal.",
+          "catalog_number": 10
+        },
+        {
+          "id": "disaster-recovery-exercise",
+          "name": "Disaster-Recovery Exercise",
+          "description": "Run tabletop, partial, and full failover exercises with injects, timed checkpoints, observers, and corrective actions.",
+          "catalog_number": 11
+        },
+        {
+          "id": "cross-region-recovery",
+          "name": "Cross-Region Recovery",
+          "description": "Replicate services and data, manage DNS or traffic failover, protect consistency, and validate regional independence.",
+          "catalog_number": 12
+        },
+        {
+          "id": "ransomware-recovery",
+          "name": "Ransomware Recovery",
+          "description": "Detect destructive activity, isolate access, preserve evidence, recover clean data, rotate credentials, and validate trust.",
+          "catalog_number": 13
+        },
+        {
+          "id": "data-deletion-verification",
+          "name": "Data Deletion Verification",
+          "description": "Prove deletion from primary, replica, cache, search, analytics, export, and backup paths according to policy.",
+          "catalog_number": 14
+        },
+        {
+          "id": "archive-retrieval-operations",
+          "name": "Archive Retrieval Operations",
+          "description": "Catalog archives, estimate retrieval time and charges, restore safely, validate content, and reapply retention.",
+          "catalog_number": 15
+        }
+      ]
+    },
+    {
+      "id": "secrets-keys-configuration-and-trust",
+      "name": "Secrets, Keys, Configuration, and Trust",
+      "catalog_number": 10,
+      "capabilities": [
+        {
+          "id": "secrets-manager",
+          "name": "Secrets Manager",
+          "description": "Store, retrieve, scope, audit, rotate, and revoke application secrets using Key Vault, Secrets Manager, Secret Manager, Vault, or equivalent.",
+          "catalog_number": 1
+        },
+        {
+          "id": "secret-rotation-automation",
+          "name": "Secret Rotation Automation",
+          "description": "Rotate database, API, certificate, and service credentials without downtime using staged or dual credentials.",
+          "catalog_number": 2
+        },
+        {
+          "id": "encryption-key-management",
+          "name": "Encryption Key Management",
+          "description": "Create, authorize, rotate, disable, schedule deletion, and audit keys in KMS, Key Vault, Cloud KMS, or HSMs.",
+          "catalog_number": 3
+        },
+        {
+          "id": "hardware-security-module-operations",
+          "name": "Hardware Security Module Operations",
+          "description": "Provision and operate HSM partitions, ceremonies, quorum, backup, firmware, audit, and disaster recovery.",
+          "catalog_number": 4
+        },
+        {
+          "id": "configuration-management",
+          "name": "Configuration Management",
+          "description": "Version environment configuration, validate schema, separate secrets, audit changes, and support safe rollback.",
+          "catalog_number": 5
+        },
+        {
+          "id": "dynamic-configuration-delivery",
+          "name": "Dynamic Configuration Delivery",
+          "description": "Distribute runtime configuration with caching, consistency, staged rollout, validation, and failure-safe defaults.",
+          "catalog_number": 6
+        },
+        {
+          "id": "public-key-infrastructure-inventory",
+          "name": "Public Key Infrastructure Inventory",
+          "description": "Discover certificates and keys, owners, use, trust chains, algorithms, expiration, and rotation status.",
+          "catalog_number": 7
+        },
+        {
+          "id": "certificate-pinning-governance",
+          "name": "Certificate Pinning Governance",
+          "description": "Assess pinning risk, design backup pins or alternatives, rotate safely, and prevent client lockout.",
+          "catalog_number": 8
+        },
+        {
+          "id": "token-signing-key-rotation",
+          "name": "Token Signing Key Rotation",
+          "description": "Rotate JWT or session signing keys with overlapping verification, key IDs, revocation, and cache control.",
+          "catalog_number": 9
+        },
+        {
+          "id": "time-synchronization",
+          "name": "Time Synchronization",
+          "description": "Operate NTP or cloud time services, monitor drift, secure sources, and prevent authentication and logging failures.",
+          "catalog_number": 10
+        }
+      ]
+    },
+    {
+      "id": "observability-monitoring-logging-and-alerts",
+      "name": "Observability, Monitoring, Logging, and Alerts",
+      "catalog_number": 11,
+      "capabilities": [
+        {
+          "id": "monitoring-system",
+          "name": "Monitoring System",
+          "description": "Implement infrastructure, platform, application, dependency, and business telemetry with ownership and actionable thresholds.",
+          "catalog_number": 1
+        },
+        {
+          "id": "logging-system",
+          "name": "Logging System",
+          "description": "Centralize structured logs using OpenTelemetry, Azure Monitor, Cloud Logging, CloudWatch, Elastic, Splunk, or equivalent.",
+          "catalog_number": 2
+        },
+        {
+          "id": "alerting-system",
+          "name": "Alerting System",
+          "description": "Create symptom-based alerts with severity, routing, deduplication, inhibition, runbooks, escalation, and maintenance windows.",
+          "catalog_number": 3
+        },
+        {
+          "id": "error-tracking",
+          "name": "Error Tracking",
+          "description": "Capture exceptions, stack traces, release context, users affected, breadcrumbs, ownership, and regression signals using Sentry or equivalent.",
+          "catalog_number": 4
+        },
+        {
+          "id": "uptime-monitoring",
+          "name": "Uptime Monitoring",
+          "description": "Run external HTTP, DNS, TLS, TCP, and API checks from multiple regions with clear availability objectives.",
+          "catalog_number": 5
+        },
+        {
+          "id": "distributed-tracing",
+          "name": "Distributed Tracing",
+          "description": "Instrument services with trace context, sampling, baggage controls, dependency spans, and latency analysis.",
+          "catalog_number": 6
+        },
+        {
+          "id": "opentelemetry-instrumentation",
+          "name": "OpenTelemetry Instrumentation",
+          "description": "Standardize traces, metrics, and logs using SDKs, collectors, semantic conventions, processors, and exporters.",
+          "catalog_number": 7
+        },
+        {
+          "id": "metrics-platform-operations",
+          "name": "Metrics Platform Operations",
+          "description": "Operate Prometheus, Grafana, managed metrics, or equivalent with cardinality controls, retention, recording rules, and federation.",
+          "catalog_number": 8
+        },
+        {
+          "id": "log-pipeline-engineering",
+          "name": "Log Pipeline Engineering",
+          "description": "Parse, enrich, redact, buffer, route, index, retain, and archive logs while controlling loss and cost.",
+          "catalog_number": 9
+        },
+        {
+          "id": "sensitive-data-log-redaction",
+          "name": "Sensitive Data Log Redaction",
+          "description": "Detect and remove secrets, tokens, personal data, payment data, and regulated identifiers before storage.",
+          "catalog_number": 10
+        },
+        {
+          "id": "service-level-objectives",
+          "name": "Service-Level Objectives",
+          "description": "Define SLIs, SLOs, error budgets, windows, burn-rate alerts, exceptions, and decision rules.",
+          "catalog_number": 11
+        },
+        {
+          "id": "synthetic-transaction-monitoring",
+          "name": "Synthetic Transaction Monitoring",
+          "description": "Exercise critical user journeys such as sign-in, checkout, upload, API calls, and recovery from outside production.",
+          "catalog_number": 12
+        },
+        {
+          "id": "real-user-monitoring",
+          "name": "Real User Monitoring",
+          "description": "Measure browser and mobile performance, errors, geography, device experience, and release regressions.",
+          "catalog_number": 13
+        },
+        {
+          "id": "observability-dashboard-design",
+          "name": "Observability Dashboard Design",
+          "description": "Build role-specific dashboards for service health, capacity, dependencies, releases, incidents, and business impact.",
+          "catalog_number": 14
+        },
+        {
+          "id": "telemetry-cost-governance",
+          "name": "Telemetry Cost Governance",
+          "description": "Control ingestion, labels, sampling, retention, indexes, and duplicate signals without hiding important failures.",
+          "catalog_number": 15
+        }
+      ]
+    },
+    {
+      "id": "security-engineering-and-protection",
+      "name": "Security Engineering and Protection",
+      "catalog_number": 12,
+      "capabilities": [
+        {
+          "id": "vulnerability-scanning",
+          "name": "Vulnerability Scanning",
+          "description": "Scan source, dependencies, images, hosts, cloud configuration, APIs, and running workloads; prioritize exploitable risk and verify remediation.",
+          "catalog_number": 1
+        },
+        {
+          "id": "web-application-firewall",
+          "name": "Web Application Firewall",
+          "description": "Configure managed and custom WAF rules, exclusions, bot controls, logging, staged enforcement, and false-positive review.",
+          "catalog_number": 2
+        },
+        {
+          "id": "ddos-protection",
+          "name": "DDoS Protection",
+          "description": "Enable network and application DDoS protections, capacity baselines, scrubbing escalation, runbooks, and attack simulations.",
+          "catalog_number": 3
+        },
+        {
+          "id": "rate-limiting",
+          "name": "Rate Limiting",
+          "description": "Implement per-user, tenant, IP, token, route, and cost-based limits with burst handling and clear client responses.",
+          "catalog_number": 4
+        },
+        {
+          "id": "cloud-security-posture-management",
+          "name": "Cloud Security Posture Management",
+          "description": "Continuously assess cloud configuration against CIS Benchmarks, provider baselines, custom policy, and risk ownership.",
+          "catalog_number": 5
+        },
+        {
+          "id": "container-runtime-security",
+          "name": "Container Runtime Security",
+          "description": "Detect suspicious processes, file changes, privilege use, network behavior, and escape attempts in containers.",
+          "catalog_number": 6
+        },
+        {
+          "id": "endpoint-detection-and-response",
+          "name": "Endpoint Detection and Response",
+          "description": "Deploy EDR to production hosts, protect agents, tune detections, isolate systems, and validate telemetry.",
+          "catalog_number": 7
+        },
+        {
+          "id": "intrusion-detection",
+          "name": "Intrusion Detection",
+          "description": "Monitor network and host events, enrich detections, reduce noise, and connect response playbooks.",
+          "catalog_number": 8
+        },
+        {
+          "id": "security-information-and-event-management",
+          "name": "Security Information and Event Management",
+          "description": "Normalize and correlate security events in Microsoft Sentinel, Splunk, Chronicle, or equivalent with tested detections.",
+          "catalog_number": 9
+        },
+        {
+          "id": "api-security-testing",
+          "name": "API Security Testing",
+          "description": "Test authentication, authorization, object access, input handling, mass assignment, abuse limits, and schema conformance.",
+          "catalog_number": 10
+        },
+        {
+          "id": "penetration-test-coordination",
+          "name": "Penetration Test Coordination",
+          "description": "Define scope and rules, prepare safe access, monitor activity, triage findings, and verify fixes.",
+          "catalog_number": 11
+        },
+        {
+          "id": "threat-modeling",
+          "name": "Threat Modeling",
+          "description": "Model assets, trust boundaries, attackers, abuse cases, mitigations, residual risk, and security requirements.",
+          "catalog_number": 12
+        },
+        {
+          "id": "secure-baseline-compliance",
+          "name": "Secure Baseline Compliance",
+          "description": "Assess operating systems, Kubernetes, databases, networks, and cloud services against hardened baselines.",
+          "catalog_number": 13
+        },
+        {
+          "id": "malware-scanning-for-uploads",
+          "name": "Malware Scanning for Uploads",
+          "description": "Quarantine and scan uploads, enforce type and size controls, prevent execution, and manage detection outcomes.",
+          "catalog_number": 14
+        },
+        {
+          "id": "security-patch-management",
+          "name": "Security Patch Management",
+          "description": "Inventory exposure, prioritize critical fixes, test compatibility, deploy by risk window, and verify closure.",
+          "catalog_number": 15
+        },
+        {
+          "id": "attack-surface-discovery",
+          "name": "Attack Surface Discovery",
+          "description": "Find public hosts, domains, certificates, storage, APIs, shadow services, and expired assets.",
+          "catalog_number": 16
+        },
+        {
+          "id": "zero-trust-architecture",
+          "name": "Zero Trust Architecture",
+          "description": "Apply explicit verification, least privilege, device and workload identity, segmentation, continuous evaluation, and assumed breach.",
+          "catalog_number": 17
+        }
+      ]
+    },
+    {
+      "id": "infrastructure-as-code-and-configuration-automation",
+      "name": "Infrastructure as Code and Configuration Automation",
+      "catalog_number": 13,
+      "capabilities": [
+        {
+          "id": "infrastructure-as-code-state-storage",
+          "name": "Infrastructure-as-Code State Storage",
+          "description": "Store Terraform or OpenTofu state in encrypted, versioned, access-controlled backends with locking, backup, and recovery.",
+          "catalog_number": 1
+        },
+        {
+          "id": "terraform-module-engineering",
+          "name": "Terraform Module Engineering",
+          "description": "Create versioned, composable modules with validated inputs, outputs, examples, tests, and upgrade guidance.",
+          "catalog_number": 2
+        },
+        {
+          "id": "opentofu-deployment",
+          "name": "OpenTofu Deployment",
+          "description": "Operate OpenTofu plans and applies with remote state, provider controls, policy, review, and drift handling.",
+          "catalog_number": 3
+        },
+        {
+          "id": "bicep-and-arm-deployment",
+          "name": "Bicep and ARM Deployment",
+          "description": "Author and validate Azure infrastructure with reusable modules, what-if review, deployment stacks, and safe parameters.",
+          "catalog_number": 4
+        },
+        {
+          "id": "cloudformation-engineering",
+          "name": "CloudFormation Engineering",
+          "description": "Build AWS stacks and StackSets with change sets, drift detection, rollback controls, and policy validation.",
+          "catalog_number": 5
+        },
+        {
+          "id": "pulumi-infrastructure-automation",
+          "name": "Pulumi Infrastructure Automation",
+          "description": "Create typed infrastructure programs with protected secrets, previews, testing, and stack governance.",
+          "catalog_number": 6
+        },
+        {
+          "id": "configuration-management-automation",
+          "name": "Configuration Management Automation",
+          "description": "Use Ansible, Chef, Puppet, Salt, or cloud-native tools for convergent, idempotent, audited configuration.",
+          "catalog_number": 7
+        },
+        {
+          "id": "infrastructure-policy-as-code",
+          "name": "Infrastructure Policy as Code",
+          "description": "Enforce organizational rules with OPA, Conftest, Sentinel, Azure Policy, SCPs, or organization policies.",
+          "catalog_number": 8
+        },
+        {
+          "id": "infrastructure-plan-review",
+          "name": "Infrastructure Plan Review",
+          "description": "Summarize additions, changes, replacements, deletions, cost, security impact, dependencies, and rollback risk.",
+          "catalog_number": 9
+        },
+        {
+          "id": "infrastructure-drift-detection",
+          "name": "Infrastructure Drift Detection",
+          "description": "Compare desired and actual state, classify drift, identify ownership, and remediate safely.",
+          "catalog_number": 10
+        },
+        {
+          "id": "ephemeral-environment-provisioning",
+          "name": "Ephemeral Environment Provisioning",
+          "description": "Create short-lived preview or test environments with isolation, seeded data, budgets, TTLs, and automatic cleanup.",
+          "catalog_number": 11
+        },
+        {
+          "id": "resource-import-and-adoption",
+          "name": "Resource Import and Adoption",
+          "description": "Bring existing resources under IaC without unintended replacement, downtime, or loss of configuration.",
+          "catalog_number": 12
+        },
+        {
+          "id": "iac-testing",
+          "name": "IaC Testing",
+          "description": "Run formatting, linting, static analysis, policy tests, unit tests, integration tests, and deployment smoke tests.",
+          "catalog_number": 13
+        }
+      ]
+    },
+    {
+      "id": "reliability-incidents-and-production-operations",
+      "name": "Reliability, Incidents, and Production Operations",
+      "catalog_number": 14,
+      "capabilities": [
+        {
+          "id": "incident-response-coordination",
+          "name": "Incident Response Coordination",
+          "description": "Declare incidents, set roles, establish communication, stabilize service, track actions, and close with verified recovery.",
+          "catalog_number": 1
+        },
+        {
+          "id": "on-call-program-design",
+          "name": "On-Call Program Design",
+          "description": "Define rotations, escalation, access, compensation guidance, training, handoffs, health checks, and sustainable load.",
+          "catalog_number": 2
+        },
+        {
+          "id": "runbook-authoring",
+          "name": "Runbook Authoring",
+          "description": "Create executable runbooks with symptoms, prerequisites, safeguards, commands, decision points, rollback, and verification.",
+          "catalog_number": 3
+        },
+        {
+          "id": "automated-incident-remediation",
+          "name": "Automated Incident Remediation",
+          "description": "Automate bounded, reversible responses such as restart, failover, scale-out, queue pause, or certificate renewal.",
+          "catalog_number": 4
+        },
+        {
+          "id": "post-incident-review",
+          "name": "Post-Incident Review",
+          "description": "Produce blameless timelines, contributing factors, detection and response gaps, corrective actions, owners, and due dates.",
+          "catalog_number": 5
+        },
+        {
+          "id": "problem-management",
+          "name": "Problem Management",
+          "description": "Identify recurring patterns, maintain known errors, prioritize permanent fixes, and verify recurrence reduction.",
+          "catalog_number": 6
+        },
+        {
+          "id": "chaos-engineering",
+          "name": "Chaos Engineering",
+          "description": "Run controlled failure experiments with hypotheses, blast-radius limits, abort conditions, telemetry, and learning capture.",
+          "catalog_number": 7
+        },
+        {
+          "id": "game-day-facilitation",
+          "name": "Game Day Facilitation",
+          "description": "Exercise teams and systems against realistic outages, degraded dependencies, security events, and communication failures.",
+          "catalog_number": 8
+        },
+        {
+          "id": "capacity-incident-prevention",
+          "name": "Capacity Incident Prevention",
+          "description": "Detect saturation, forecast exhaustion, reserve headroom, test scaling, and eliminate hard limits before demand peaks.",
+          "catalog_number": 9
+        },
+        {
+          "id": "dependency-resilience",
+          "name": "Dependency Resilience",
+          "description": "Apply timeouts, bounded retries, jitter, circuit breakers, bulkheads, fallbacks, and graceful degradation.",
+          "catalog_number": 10
+        },
+        {
+          "id": "production-readiness-review",
+          "name": "Production Readiness Review",
+          "description": "Evaluate architecture, security, observability, capacity, support, deployment, rollback, recovery, and ownership before launch.",
+          "catalog_number": 11
+        },
+        {
+          "id": "operational-maturity-assessment",
+          "name": "Operational Maturity Assessment",
+          "description": "Score services across ownership, reliability, automation, security, documentation, testing, recovery, and cost.",
+          "catalog_number": 12
+        },
+        {
+          "id": "maintenance-window-operations",
+          "name": "Maintenance Window Operations",
+          "description": "Plan notifications, backups, access, sequencing, verification, rollback, and completion reporting.",
+          "catalog_number": 13
+        },
+        {
+          "id": "service-decommissioning",
+          "name": "Service Decommissioning",
+          "description": "Drain traffic, archive or delete data, revoke access, remove infrastructure, update dependencies, and verify cost cessation.",
+          "catalog_number": 14
+        }
+      ]
+    },
+    {
+      "id": "testing-validation-and-production-acceptance",
+      "name": "Testing, Validation, and Production Acceptance",
+      "catalog_number": 15,
+      "capabilities": [
+        {
+          "id": "production-acceptance-tests",
+          "name": "Production Acceptance Tests",
+          "description": "Run go-live checks covering critical journeys, authentication, authorization, data integrity, performance, monitoring, backups, rollback, and support readiness.",
+          "catalog_number": 1
+        },
+        {
+          "id": "deployment-smoke-testing",
+          "name": "Deployment Smoke Testing",
+          "description": "Verify health endpoints, key APIs, dependent services, queues, databases, static assets, and telemetry immediately after deployment.",
+          "catalog_number": 2
+        },
+        {
+          "id": "integration-testing-environment",
+          "name": "Integration Testing Environment",
+          "description": "Provision representative dependencies, identities, data, network policies, and observability for repeatable integration tests.",
+          "catalog_number": 3
+        },
+        {
+          "id": "end-to-end-test-automation",
+          "name": "End-to-End Test Automation",
+          "description": "Automate critical user and operator journeys with stable selectors, seeded data, retries limited to infrastructure noise, and captured evidence.",
+          "catalog_number": 4
+        },
+        {
+          "id": "load-testing",
+          "name": "Load Testing",
+          "description": "Measure throughput, latency percentiles, saturation, errors, autoscaling, and recovery using realistic traffic models.",
+          "catalog_number": 5
+        },
+        {
+          "id": "stress-testing",
+          "name": "Stress Testing",
+          "description": "Increase load beyond expected peaks to identify breaking points, failure modes, and safe operating limits.",
+          "catalog_number": 6
+        },
+        {
+          "id": "soak-testing",
+          "name": "Soak Testing",
+          "description": "Run sustained workloads long enough to reveal leaks, fragmentation, queue growth, cache drift, and resource exhaustion.",
+          "catalog_number": 7
+        },
+        {
+          "id": "failover-testing",
+          "name": "Failover Testing",
+          "description": "Trigger component, zone, region, database, route, and dependency failures and verify recovery behavior and data consistency.",
+          "catalog_number": 8
+        },
+        {
+          "id": "backup-restore-validation",
+          "name": "Backup Restore Validation",
+          "description": "Restore selected and full datasets, run application checks, compare integrity, and document achieved recovery times.",
+          "catalog_number": 9
+        },
+        {
+          "id": "security-regression-testing",
+          "name": "Security Regression Testing",
+          "description": "Retest fixed vulnerabilities, authentication, authorization, headers, secrets exposure, and policy controls on every release.",
+          "catalog_number": 10
+        },
+        {
+          "id": "infrastructure-acceptance-testing",
+          "name": "Infrastructure Acceptance Testing",
+          "description": "Validate resources, policies, routes, encryption, logging, backups, tags, and ownership after provisioning.",
+          "catalog_number": 11
+        },
+        {
+          "id": "contract-testing",
+          "name": "Contract Testing",
+          "description": "Verify provider and consumer API or event contracts, compatibility, versioning, and failure responses.",
+          "catalog_number": 12
+        },
+        {
+          "id": "synthetic-data-test-management",
+          "name": "Synthetic Data Test Management",
+          "description": "Generate privacy-safe, representative, edge-case data and prevent production data leakage into lower environments.",
+          "catalog_number": 13
+        },
+        {
+          "id": "release-verification-and-observation",
+          "name": "Release Verification and Observation",
+          "description": "Observe service and business metrics after release against baselines, error budgets, and automatic rollback thresholds.",
+          "catalog_number": 14
+        },
+        {
+          "id": "resilience-test-suite",
+          "name": "Resilience Test Suite",
+          "description": "Continuously test timeout, retry, failover, degraded dependency, quota exhaustion, and partial outage behavior.",
+          "catalog_number": 15
+        }
+      ]
+    },
+    {
+      "id": "privacy-compliance-governance-and-documentation",
+      "name": "Privacy, Compliance, Governance, and Documentation",
+      "catalog_number": 16,
+      "capabilities": [
+        {
+          "id": "privacy-and-security-documentation",
+          "name": "Privacy and Security Documentation",
+          "description": "Maintain system descriptions, data flows, controls, policies, risks, recovery procedures, evidence, and accountable owners.",
+          "catalog_number": 1
+        },
+        {
+          "id": "data-classification",
+          "name": "Data Classification",
+          "description": "Classify public, internal, confidential, personal, regulated, and secret data and map handling controls.",
+          "catalog_number": 2
+        },
+        {
+          "id": "data-inventory-and-flow-mapping",
+          "name": "Data Inventory and Flow Mapping",
+          "description": "Document data sources, purposes, fields, processors, transfers, storage, retention, and deletion paths.",
+          "catalog_number": 3
+        },
+        {
+          "id": "privacy-impact-assessment",
+          "name": "Privacy Impact Assessment",
+          "description": "Assess necessity, proportionality, risks, safeguards, retention, rights handling, vendors, and residual risk.",
+          "catalog_number": 4
+        },
+        {
+          "id": "compliance-control-mapping",
+          "name": "Compliance Control Mapping",
+          "description": "Map technical and operational controls to ISO 27001, SOC 2, NIST CSF, PCI DSS, HIPAA, GDPR, or applicable frameworks.",
+          "catalog_number": 5
+        },
+        {
+          "id": "evidence-collection-automation",
+          "name": "Evidence Collection Automation",
+          "description": "Collect versioned, time-bounded evidence from cloud, identity, CI/CD, tickets, scans, backups, and monitoring.",
+          "catalog_number": 6
+        },
+        {
+          "id": "policy-exception-management",
+          "name": "Policy Exception Management",
+          "description": "Record scope, risk, compensating controls, approver, expiry, owner, and review status for exceptions.",
+          "catalog_number": 7
+        },
+        {
+          "id": "change-management",
+          "name": "Change Management",
+          "description": "Classify changes, assess impact, obtain approvals, schedule work, record evidence, and conduct post-change review.",
+          "catalog_number": 8
+        },
+        {
+          "id": "asset-ownership-governance",
+          "name": "Asset Ownership Governance",
+          "description": "Assign accountable business and technical owners and detect orphaned services, data, credentials, and domains.",
+          "catalog_number": 9
+        },
+        {
+          "id": "third-party-risk-review",
+          "name": "Third-Party Risk Review",
+          "description": "Assess vendor security, privacy, resilience, data access, subprocessors, contractual controls, and exit strategy.",
+          "catalog_number": 10
+        },
+        {
+          "id": "data-processing-agreement-tracking",
+          "name": "Data Processing Agreement Tracking",
+          "description": "Track contractual privacy obligations, approved purposes, geographies, subprocessors, breach notice, and deletion.",
+          "catalog_number": 11
+        },
+        {
+          "id": "audit-trail-integrity",
+          "name": "Audit Trail Integrity",
+          "description": "Protect, retain, time-synchronize, restrict, and verify audit logs against alteration and unauthorized access.",
+          "catalog_number": 12
+        },
+        {
+          "id": "records-of-processing-activities",
+          "name": "Records of Processing Activities",
+          "description": "Maintain processing purposes, categories, recipients, transfers, retention, safeguards, and responsible parties.",
+          "catalog_number": 13
+        },
+        {
+          "id": "data-subject-request-operations",
+          "name": "Data Subject Request Operations",
+          "description": "Discover, export, correct, restrict, or delete personal data across systems with identity verification and audit.",
+          "catalog_number": 14
+        },
+        {
+          "id": "security-architecture-documentation",
+          "name": "Security Architecture Documentation",
+          "description": "Maintain trust boundaries, data flows, identities, controls, dependencies, assumptions, and approved deviations.",
+          "catalog_number": 15
+        },
+        {
+          "id": "operational-handover-documentation",
+          "name": "Operational Handover Documentation",
+          "description": "Deliver ownership, architecture, dependencies, credentials process, dashboards, alerts, runbooks, recovery, and support contacts.",
+          "catalog_number": 16
+        }
+      ]
+    },
+    {
+      "id": "application-platform-and-runtime-engineering",
+      "name": "Application Platform and Runtime Engineering",
+      "catalog_number": 17,
+      "capabilities": [
+        {
+          "id": "production-environment-configuration",
+          "name": "Production Environment Configuration",
+          "description": "Create environment-specific settings with validation, safe defaults, feature controls, endpoint mapping, and rollback.",
+          "catalog_number": 1
+        },
+        {
+          "id": "application-health-endpoint-design",
+          "name": "Application Health Endpoint Design",
+          "description": "Expose startup, liveness, readiness, dependency, and diagnostic signals without leaking sensitive data.",
+          "catalog_number": 2
+        },
+        {
+          "id": "graceful-shutdown",
+          "name": "Graceful Shutdown",
+          "description": "Stop accepting work, drain connections, finish or checkpoint jobs, release locks, and exit within platform deadlines.",
+          "catalog_number": 3
+        },
+        {
+          "id": "session-management",
+          "name": "Session Management",
+          "description": "Secure cookies and tokens, rotate identifiers, set expiry, revoke sessions, prevent fixation, and scale session storage.",
+          "catalog_number": 4
+        },
+        {
+          "id": "background-worker-operations",
+          "name": "Background Worker Operations",
+          "description": "Run workers with concurrency controls, idempotency, visibility timeouts, retries, dead letters, and safe shutdown.",
+          "catalog_number": 5
+        },
+        {
+          "id": "scheduled-task-operations",
+          "name": "Scheduled Task Operations",
+          "description": "Operate cron or managed schedulers with locking, missed-run policy, observability, retries, and time-zone clarity.",
+          "catalog_number": 6
+        },
+        {
+          "id": "file-upload-pipeline",
+          "name": "File Upload Pipeline",
+          "description": "Validate size and type, quarantine, scan, store privately, transform safely, and issue time-limited access.",
+          "catalog_number": 7
+        },
+        {
+          "id": "outbound-email-production",
+          "name": "Outbound Email Production",
+          "description": "Configure verified domains, SPF, DKIM, DMARC, provider credentials, bounce handling, suppression, and deliverability monitoring.",
+          "catalog_number": 8
+        },
+        {
+          "id": "webhook-delivery-platform",
+          "name": "Webhook Delivery Platform",
+          "description": "Sign payloads, retry safely, preserve ordering expectations, deduplicate, expose delivery logs, and rotate secrets.",
+          "catalog_number": 9
+        },
+        {
+          "id": "api-gateway-operations",
+          "name": "API Gateway Operations",
+          "description": "Configure routing, authentication, quotas, transformation, caching, versioning, logging, and staged deployment.",
+          "catalog_number": 10
+        },
+        {
+          "id": "api-versioning-and-deprecation",
+          "name": "API Versioning and Deprecation",
+          "description": "Manage compatibility, sunset notices, usage tracking, migration guides, and controlled retirement.",
+          "catalog_number": 11
+        },
+        {
+          "id": "tenant-isolation",
+          "name": "Tenant Isolation",
+          "description": "Enforce identity, data, cache, queue, storage, encryption, and observability boundaries between tenants.",
+          "catalog_number": 12
+        },
+        {
+          "id": "runtime-upgrade-management",
+          "name": "Runtime Upgrade Management",
+          "description": "Upgrade language runtimes and frameworks with compatibility tests, dependency audits, canaries, and rollback.",
+          "catalog_number": 13
+        },
+        {
+          "id": "static-asset-delivery",
+          "name": "Static Asset Delivery",
+          "description": "Fingerprint, compress, cache, invalidate, secure, and monitor JavaScript, CSS, fonts, and media assets.",
+          "catalog_number": 14
+        }
+      ]
+    },
+    {
+      "id": "business-continuity-communications-and-service-management",
+      "name": "Business Continuity, Communications, and Service Management",
+      "catalog_number": 18,
+      "capabilities": [
+        {
+          "id": "business-impact-analysis",
+          "name": "Business Impact Analysis",
+          "description": "Identify critical services, dependencies, maximum tolerable downtime, recovery priorities, data loss limits, and business consequences.",
+          "catalog_number": 1
+        },
+        {
+          "id": "service-catalog-management",
+          "name": "Service Catalog Management",
+          "description": "Maintain service owners, purpose, tier, dependencies, SLAs, SLOs, support path, data class, and lifecycle.",
+          "catalog_number": 2
+        },
+        {
+          "id": "status-page-operations",
+          "name": "Status Page Operations",
+          "description": "Publish accurate component status, incident updates, maintenance notices, subscriptions, and resolution summaries.",
+          "catalog_number": 3
+        },
+        {
+          "id": "incident-communication",
+          "name": "Incident Communication",
+          "description": "Prepare audience-specific updates with impact, scope, workaround, next update time, and confirmed facts.",
+          "catalog_number": 4
+        },
+        {
+          "id": "stakeholder-escalation",
+          "name": "Stakeholder Escalation",
+          "description": "Route operational, security, privacy, financial, legal, and executive escalations using defined triggers and contacts.",
+          "catalog_number": 5
+        },
+        {
+          "id": "customer-support-readiness",
+          "name": "Customer Support Readiness",
+          "description": "Provide support teams with release notes, known issues, diagnostics, workarounds, escalation, and incident linkage.",
+          "catalog_number": 6
+        },
+        {
+          "id": "sla-and-ola-management",
+          "name": "SLA and OLA Management",
+          "description": "Define measurable commitments, exclusions, dependencies, reporting, breach handling, and internal operating agreements.",
+          "catalog_number": 7
+        },
+        {
+          "id": "vendor-outage-management",
+          "name": "Vendor Outage Management",
+          "description": "Detect vendor failures, open priority cases, activate workarounds, communicate impact, and track service credits.",
+          "catalog_number": 8
+        },
+        {
+          "id": "operational-training",
+          "name": "Operational Training",
+          "description": "Train operators through labs, shadow rotations, simulated incidents, access checks, and competency verification.",
+          "catalog_number": 9
+        },
+        {
+          "id": "knowledge-base-maintenance",
+          "name": "Knowledge Base Maintenance",
+          "description": "Keep troubleshooting, architecture, ownership, recovery, and common-failure guidance current and searchable.",
+          "catalog_number": 10
+        },
+        {
+          "id": "continuity-contact-tree",
+          "name": "Continuity Contact Tree",
+          "description": "Maintain primary and alternate contacts, secure offline copies, test notifications, and update departure changes.",
+          "catalog_number": 11
+        },
+        {
+          "id": "production-launch-command-center",
+          "name": "Production Launch Command Center",
+          "description": "Coordinate go-live owners, checklists, telemetry, support, decisions, rollback authority, and timed status reviews.",
+          "catalog_number": 12
+        }
+      ]
+    }
+  ]
+}

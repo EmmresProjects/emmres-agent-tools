@@ -1,0 +1,75 @@
+{
+  "name": "corporate-blue",
+  "description": "Navy and steel-blue executive palette for board, finance, and business decks. Neutral white canvas, strong hierarchy, restrained accents.",
+  "fonts": {
+    "heading": "Arial",
+    "body": "Arial",
+    "mono": "Courier New"
+  },
+  "colors": {
+    "background": "#FFFFFF",
+    "surface": "#F2F5F9",
+    "primary": "#0B2545",
+    "secondary": "#13315C",
+    "accent": "#2E6DB4",
+    "accent_soft": "#8DA9C4",
+    "text": "#13202E",
+    "text_inverse": "#FFFFFF",
+    "muted": "#5A6B7B",
+    "border": "#C9D4E0",
+    "success": "#2E7D5B",
+    "warning": "#B7791F",
+    "danger": "#A62B2B"
+  },
+  "typography": {
+    "title_pt": 32,
+    "subtitle_pt": 18,
+    "section_pt": 40,
+    "heading_pt": 20,
+    "body_pt": 16,
+    "small_pt": 11,
+    "kpi_pt": 40,
+    "quote_pt": 26,
+    "line_spacing": 1.15,
+    "bullet_indent_in": 0.28
+  },
+  "grid": {
+    "margin_x_in": 0.62,
+    "margin_y_in": 0.45,
+    "title_top_in": 0.45,
+    "content_top_in": 1.5,
+    "footer_y_in": 6.95,
+    "gap_in": 0.3
+  },
+  "art": {
+    "title_band": true,
+    "accent_bar": true,
+    "corner_radius_in": 0.12
+  },
+  "table": {
+    "header_fill": "primary",
+    "header_text": "text_inverse",
+    "row_fill": "background",
+    "alt_row_fill": "surface",
+    "border": "border",
+    "body_pt": 12,
+    "header_pt": 12
+  },
+  "chart": {
+    "palette": [
+      "accent",
+      "secondary",
+      "accent_soft",
+      "success",
+      "warning",
+      "danger"
+    ],
+    "gridline": "border",
+    "font_pt": 11
+  },
+  "footer": {
+    "show_slide_number": true,
+    "show_footer": true,
+    "show_date": false
+  }
+}

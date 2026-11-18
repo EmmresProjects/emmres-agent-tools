@@ -1,0 +1,2681 @@
+{
+  "registry_version": "1.0",
+  "source": "Emmre's Full Offline Research, Writing, and Translation Skill Catalog (24 categories, 288 skills)",
+  "tool": "offline-research-workbench",
+  "entry_point": "tools-offline-research.py",
+  "notes": [
+    "Each skill maps to one operation of this Skill Tool.",
+    "Run a skill with: python3 tools-offline-research.py apply --skill <id> [--input path] [--set key=value]",
+    "Operations that depend on a local model adapter fail with exit code 4 when no adapter is configured."
+  ],
+  "categories": [
+    {
+      "number": 1,
+      "slug": "offline-scholarly-and-academic-collections",
+      "name": "Offline Scholarly and Academic Collections",
+      "skills": [
+        {
+          "id": "offline-scholarly-database",
+          "number": 1,
+          "name": "Offline Scholarly Database",
+          "description": "Maintains a local searchable collection of journal articles, conference papers, books, theses, preprints, abstracts, metadata, and corrections.",
+          "op": "corpus ingest",
+          "defaults": {
+            "doctype": "journal-article"
+          }
+        },
+        {
+          "id": "offline-reference-corpus",
+          "number": 2,
+          "name": "Offline Reference Corpus",
+          "description": "Curates authoritative encyclopedias, handbooks, dictionaries, textbooks, manuals, and institutional reference works for disconnected research.",
+          "op": "corpus ingest",
+          "defaults": {
+            "doctype": "reference-work"
+          }
+        },
+        {
+          "id": "institutional-repository-harvester",
+          "number": 3,
+          "name": "Institutional Repository Harvester",
+          "description": "Imports approved exports from university and research repositories while preserving metadata, files, rights, and collection boundaries.",
+          "op": "corpus ingest",
+          "defaults": {
+            "doctype": "repository-export"
+          }
+        },
+        {
+          "id": "preprint-and-version-tracker",
+          "number": 4,
+          "name": "Preprint and Version Tracker",
+          "description": "Links submitted, revised, accepted, and published versions and prevents a preprint from being mistaken for the final record.",
+          "op": "corpus version-link",
+          "defaults": {},
+          "note": "links submitted/revised/accepted/published versions"
+        },
+        {
+          "id": "thesis-and-dissertation-indexer",
+          "number": 5,
+          "name": "Thesis and Dissertation Indexer",
+          "description": "Indexes full text, abstracts, advisors, institutions, departments, dates, and cited works from local",
+          "op": "corpus ingest",
+          "defaults": {
+            "doctype": "thesis"
+          }
+        },
+        {
+          "id": "conference-proceedings-curator",
+          "number": 6,
+          "name": "Conference Proceedings Curator",
+          "description": "Organizes proceedings by event, year, track, paper, poster, workshop, and later publication",
+          "op": "corpus ingest",
+          "defaults": {
+            "doctype": "conference-paper"
+          }
+        },
+        {
+          "id": "open-access-corpus-builder",
+          "number": 7,
+          "name": "Open-Access Corpus Builder",
+          "description": "Builds a rights-cleared local corpus from approved open-access sources with license and attribution metadata.",
+          "op": "corpus ingest",
+          "defaults": {
+            "doctype": "journal-article",
+            "license": "cc-by-4.0"
+          }
+        },
+        {
+          "id": "retraction-and-correction-registry",
+          "number": 8,
+          "name": "Retraction and Correction Registry",
+          "description": "Tracks retractions, expressions of concern, errata, corrigenda, and replacement notices and propagates warnings to search results.",
+          "op": "corpus update",
+          "defaults": {},
+          "note": "apply a correction/retraction manifest with replacement status"
+        },
+        {
+          "id": "peer-review-status-classifier",
+          "number": 9,
+          "name": "Peer-Review Status Classifier",
+          "description": "Labels sources as peer reviewed, editorially reviewed, preprint, working paper, thesis, report, commentary, or unknown.",
+          "op": "verify authority",
+          "defaults": {},
+          "note": "peer-review status is scored and reported as a source factor"
+        },
+        {
+          "id": "research-dataset-catalog",
+          "number": 10,
+          "name": "Research Dataset Catalog",
+          "description": "Indexes local datasets, codebooks, methods, variables, licenses, versions, checksums, and related publications.",
+          "op": "registry add",
+          "defaults": {
+            "kind": "corpora"
+          },
+          "note": "dataset entries are registered as corpus records"
+        },
+        {
+          "id": "systematic-review-corpus-manager",
+          "number": 11,
+          "name": "Systematic Review Corpus Manager",
+          "description": "Maintains screened records, inclusion decisions, exclusion reasons, extracted evidence, and",
+          "op": "synthesis screen",
+          "defaults": {},
+          "note": "screening decisions, reasons and duplicates for the review corpus"
+        },
+        {
+          "id": "scholarly-corpus-coverage-auditor",
+          "number": 12,
+          "name": "Scholarly Corpus Coverage Auditor",
+          "description": "Measures coverage by discipline, publisher, year, language, document type, and access status and identifies material gaps.",
+          "op": "corpus coverage",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "slug": "offline-news-legal-policy-and-standards-libraries",
+      "name": "Offline News, Legal, Policy, and Standards Libraries",
+      "skills": [
+        {
+          "id": "offline-news-archive",
+          "number": 1,
+          "name": "Offline News Archive",
+          "description": "Stores dated news articles, corrections, editions, transcripts, images, source metadata, and publication snapshots for local search.",
+          "op": "corpus ingest",
+          "defaults": {
+            "doctype": "news"
+          }
+        },
+        {
+          "id": "news-event-timeline-builder",
+          "number": 2,
+          "name": "News Event Timeline Builder",
+          "description": "Clusters reporting about the same event and orders claims, updates, corrections, and official responses by publication time.",
+          "op": "extract events",
+          "defaults": {}
+        },
+        {
+          "id": "news-source-diversity-auditor",
+          "number": 3,
+          "name": "News Source Diversity Auditor",
+          "description": "Measures geographic, political, ownership, format, and language diversity without treating balance as proof of truth.",
+          "op": "corpus coverage",
+          "defaults": {},
+          "note": "diversity dimensions are reported as coverage facets"
+        },
+        {
+          "id": "offline-legal-and-policy-corpus",
+          "number": 4,
+          "name": "Offline Legal and Policy Corpus",
+          "description": "Maintains statutes, regulations, cases, ordinances, treaties, guidance, policy papers, and official notices with jurisdiction metadata.",
+          "op": "corpus ingest",
+          "defaults": {
+            "doctype": "statute"
+          }
+        },
+        {
+          "id": "jurisdiction-and-authority-classifier",
+          "number": 5,
+          "name": "Jurisdiction and Authority Classifier",
+          "description": "Identifies the issuing body, geographic scope, legal level, binding status, effective date, and",
+          "op": "verify authority",
+          "defaults": {},
+          "note": "issuing body, scope and status are scored from metadata"
+        },
+        {
+          "id": "legal-version-and-amendment-tracker",
+          "number": 6,
+          "name": "Legal Version and Amendment Tracker",
+          "description": "Links original enactments, amendments, repeals, implementing rules, court treatment, and current consolidated text.",
+          "op": "corpus version-link",
+          "defaults": {}
+        },
+        {
+          "id": "case-law-citation-network",
+          "number": 7,
+          "name": "Case Law Citation Network",
+          "description": "Builds local links among cases, cited authorities, later treatment, courts, dates, and legal",
+          "op": "citation graph",
+          "defaults": {}
+        },
+        {
+          "id": "offline-standards-library",
+          "number": 8,
+          "name": "Offline Standards Library",
+          "description": "Stores authorized copies and metadata for technical, safety, quality, accessibility, and industry",
+          "op": "corpus ingest",
+          "defaults": {
+            "doctype": "standard"
+          }
+        },
+        {
+          "id": "standards-requirement-extractor",
+          "number": 9,
+          "name": "Standards Requirement Extractor",
+          "description": "Extracts shall, should, may, exception, definition, verification, and conformance statements with exact clause references.",
+          "op": "extract claims",
+          "defaults": {},
+          "note": "shall/should/may statements are classified as normative claims"
+        },
+        {
+          "id": "policy-comparison-matrix-builder",
+          "number": 10,
+          "name": "Policy Comparison Matrix Builder",
+          "description": "Compares obligations, definitions, exceptions, effective dates, enforcement, and evidence requirements across policies.",
+          "op": "synthesis evidence-table",
+          "defaults": {}
+        },
+        {
+          "id": "official-gazette-importer",
+          "number": 11,
+          "name": "Official Gazette Importer",
+          "description": "Imports signed or verified official publications and preserves issue, page, date, and document",
+          "op": "corpus ingest",
+          "defaults": {
+            "doctype": "official-gazette"
+          }
+        },
+        {
+          "id": "legal-and-standards-rights-guard",
+          "number": 12,
+          "name": "Legal and Standards Rights Guard",
+          "description": "Enforces access, quotation, redistribution, and seat restrictions for licensed legal and standards",
+          "op": "guard license-check",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "slug": "citation-indexes-bibliographies-and-identifier-resolution",
+      "name": "Citation Indexes, Bibliographies, and Identifier Resolution",
+      "skills": [
+        {
+          "id": "offline-citation-index",
+          "number": 1,
+          "name": "Offline Citation Index",
+          "description": "Builds local cited-by and references-to relationships among scholarly, legal, policy, and technical",
+          "op": "citation extract",
+          "defaults": {
+            "store": true
+          }
+        },
+        {
+          "id": "citation-extraction-tool",
+          "number": 2,
+          "name": "Citation Extraction Tool",
+          "description": "Detects inline citations, footnotes, endnotes, reference lists, legal citations, standards clauses,",
+          "op": "citation extract",
+          "defaults": {}
+        },
+        {
+          "id": "doi-and-bibliography-resolver-cache",
+          "number": 3,
+          "name": "DOI and Bibliography Resolver Cache",
+          "description": "Resolves previously imported DOI, ISBN, ISSN, PMID, arXiv, report, patent, and local identifiers without internet access.",
+          "op": "citation cache",
+          "defaults": {
+            "action": "get"
+          },
+          "note": "local cache only; no network resolution"
+        },
+        {
+          "id": "bibliographic-metadata-normalizer",
+          "number": 4,
+          "name": "Bibliographic Metadata Normalizer",
+          "description": "Normalizes titles, authors, affiliations, venues, dates, pages, editions, identifiers, and publication",
+          "op": "citation normalize",
+          "defaults": {}
+        },
+        {
+          "id": "reference-style-formatter",
+          "number": 5,
+          "name": "Reference Style Formatter",
+          "description": "Formats and validates APA, MLA, Chicago, IEEE, Vancouver, Harvard, OSCOLA, Bluebook-like, and custom institutional styles.",
+          "op": "citation format",
+          "defaults": {}
+        },
+        {
+          "id": "citation-context-extractor",
+          "number": 6,
+          "name": "Citation Context Extractor",
+          "description": "Captures the sentence and surrounding passage in which a source is cited and classifies support, contrast, method, or background use.",
+          "op": "citation extract",
+          "defaults": {},
+          "note": "citations are returned with their surrounding sentence and role"
+        },
+        {
+          "id": "broken-reference-detector",
+          "number": 7,
+          "name": "Broken Reference Detector",
+          "description": "Finds incomplete, malformed, unresolved, duplicated, or internally inconsistent bibliography",
+          "op": "citation validate",
+          "defaults": {}
+        },
+        {
+          "id": "author-identity-disambiguator",
+          "number": 8,
+          "name": "Author Identity Disambiguator",
+          "description": "Separates people with similar names and merges variants using ORCID where available, affiliation, coauthors, topics, and dates.",
+          "op": "citation disambiguate",
+          "defaults": {
+            "kind": "author"
+          }
+        },
+        {
+          "id": "venue-identity-resolver",
+          "number": 9,
+          "name": "Venue Identity Resolver",
+          "description": "Normalizes journal, conference, publisher, court, agency, and standards-body names and",
+          "op": "citation disambiguate",
+          "defaults": {
+            "kind": "venue"
+          }
+        },
+        {
+          "id": "citation-graph-analyzer",
+          "number": 10,
+          "name": "Citation Graph Analyzer",
+          "description": "Finds seminal, bridging, recent, isolated, heavily cited, and potentially circular citation patterns.",
+          "op": "citation graph",
+          "defaults": {}
+        },
+        {
+          "id": "self-citation-and-citation-ring-detector",
+          "number": 11,
+          "name": "Self-Citation and Citation-Ring Detector",
+          "description": "Flags unusually concentrated author, institution, journal, or group citation behavior for human",
+          "op": "citation selfcitation",
+          "defaults": {}
+        },
+        {
+          "id": "bibliography-completeness-checker",
+          "number": 12,
+          "name": "Bibliography Completeness Checker",
+          "description": "Verifies every in-text citation has a reference and every listed reference is cited or intentionally",
+          "op": "citation validate",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "slug": "corpus-ingestion-cleaning-and-installation",
+      "name": "Corpus Ingestion, Cleaning, and Installation",
+      "skills": [
+        {
+          "id": "clean-offline-corpus-installer",
+          "number": 1,
+          "name": "Clean Offline Corpus Installer",
+          "description": "Installs signed, checksummed, licensed corpus bundles into a clean disconnected environment with reproducible configuration.",
+          "op": "corpus install",
+          "defaults": {}
+        },
+        {
+          "id": "corpus-package-builder",
+          "number": 2,
+          "name": "Corpus Package Builder",
+          "description": "Packages documents, metadata, indexes, embeddings, rights, manifests, tests, and update instructions for offline distribution.",
+          "op": "corpus package",
+          "defaults": {}
+        },
+        {
+          "id": "corpus-license-and-redistribution-manager",
+          "number": 3,
+          "name": "Corpus License and Redistribution Manager",
+          "description": "Records licenses, territories, users, expiry, modification rights, quotation limits, and redistribution permissions.",
+          "op": "corpus license",
+          "defaults": {}
+        },
+        {
+          "id": "air-gapped-corpus-import-gate",
+          "number": 4,
+          "name": "Air-Gapped Corpus Import Gate",
+          "description": "Scans, verifies, stages, and approves new corpus media before it enters the research",
+          "op": "guard docscan",
+          "defaults": {}
+        },
+        {
+          "id": "format-extraction-router",
+          "number": 5,
+          "name": "Format Extraction Router",
+          "description": "Selects safe local parsers for PDF, Office, EPUB, HTML, XML, email, images, audio, video, and",
+          "op": "adapters extract-text",
+          "defaults": {}
+        },
+        {
+          "id": "document-structure-preserver",
+          "number": 6,
+          "name": "Document Structure Preserver",
+          "description": "Retains sections, page numbers, footnotes, tables, figures, captions, columns, and source coordinates during extraction.",
+          "op": "corpus structure",
+          "defaults": {}
+        },
+        {
+          "id": "source-deduplication-tool",
+          "number": 7,
+          "name": "Source Deduplication Tool",
+          "description": "Finds exact copies, near duplicates, syndicated news, repository mirrors, author manuscripts, and revised versions.",
+          "op": "corpus dedupe",
+          "defaults": {}
+        },
+        {
+          "id": "boilerplate-and-navigation-remover",
+          "number": 8,
+          "name": "Boilerplate and Navigation Remover",
+          "description": "Separates articles from menus, ads, repeated headers, legal notices, and unrelated page",
+          "op": "corpus strip-boilerplate",
+          "defaults": {}
+        },
+        {
+          "id": "encoding-and-unicode-repairer",
+          "number": 9,
+          "name": "Encoding and Unicode Repairer",
+          "description": "Detects mojibake, normalization errors, broken ligatures, unsupported glyphs, and script-loss",
+          "op": "corpus repair-encoding",
+          "defaults": {}
+        },
+        {
+          "id": "corpus-integrity-auditor",
+          "number": 10,
+          "name": "Corpus Integrity Auditor",
+          "description": "Checks missing files, orphan metadata, hash mismatch, corrupt archives, invalid text, and inconsistent index records.",
+          "op": "corpus integrity",
+          "defaults": {}
+        },
+        {
+          "id": "incremental-corpus-updater",
+          "number": 11,
+          "name": "Incremental Corpus Updater",
+          "description": "Applies signed additions, corrections, replacements, and deletions without rebuilding unaffected",
+          "op": "corpus update",
+          "defaults": {}
+        },
+        {
+          "id": "corpus-rollback-manager",
+          "number": 12,
+          "name": "Corpus Rollback Manager",
+          "description": "Restores a previous reliable corpus snapshot after a bad import, license change, or indexing",
+          "op": "corpus rollback",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "slug": "ocr-speech-and-document-recovery",
+      "name": "OCR, Speech, and Document Recovery",
+      "skills": [
+        {
+          "id": "offline-ocr-model",
+          "number": 1,
+          "name": "Offline OCR Model",
+          "description": "Extracts text locally from scans and photographs with language, layout, orientation, and",
+          "op": "adapters run",
+          "defaults": {
+            "kind": "ocr"
+          },
+          "note": "requires a configured local OCR adapter"
+        },
+        {
+          "id": "scholarly-pdf-ocr-workflow",
+          "number": 2,
+          "name": "Scholarly PDF OCR Workflow",
+          "description": "Processes multi-column articles, formulas, tables, footnotes, headers, and references while preserving page coordinates.",
+          "op": "adapters run",
+          "defaults": {
+            "kind": "ocr"
+          },
+          "note": "requires a configured local OCR adapter; then corpus structure"
+        },
+        {
+          "id": "historical-document-ocr",
+          "number": 3,
+          "name": "Historical Document OCR",
+          "description": "Handles degraded paper, unusual fonts, bleed-through, skew, marginalia, and older spelling with",
+          "op": "adapters run",
+          "defaults": {
+            "kind": "ocr"
+          },
+          "note": "requires a configured local OCR adapter"
+        },
+        {
+          "id": "handwriting-recognition-workflow",
+          "number": 4,
+          "name": "Handwriting Recognition Workflow",
+          "description": "Transcribes supported handwriting and routes uncertain regions to human review.",
+          "op": "adapters run",
+          "defaults": {
+            "kind": "ocr"
+          },
+          "note": "requires a configured local OCR adapter; uncertain regions go to workflow queue"
+        },
+        {
+          "id": "table-recognition-engine",
+          "number": 5,
+          "name": "Table Recognition Engine",
+          "description": "Reconstructs rows, columns, merged cells, headers, notes, and units from scanned tables.",
+          "op": "extract tables",
+          "defaults": {},
+          "note": "text tables are parsed directly; scanned tables need the OCR adapter first"
+        },
+        {
+          "id": "formula-and-math-recognition",
+          "number": 6,
+          "name": "Formula and Math Recognition",
+          "description": "Converts printed equations to semantic math formats and verifies symbols, subscripts, superscripts, and numbering.",
+          "op": "adapters run",
+          "defaults": {
+            "kind": "ocr"
+          },
+          "note": "requires a configured local OCR adapter"
+        },
+        {
+          "id": "offline-speech-to-text-model",
+          "number": 7,
+          "name": "Offline Speech-to-Text Model",
+          "description": "Transcribes interviews, lectures, hearings, broadcasts, and meetings locally with timestamps",
+          "op": "adapters run",
+          "defaults": {
+            "kind": "asr"
+          },
+          "note": "requires a configured local speech adapter"
+        },
+        {
+          "id": "speaker-diarization-engine",
+          "number": 8,
+          "name": "Speaker Diarization Engine",
+          "description": "Separates speakers and maintains stable anonymous or approved identity labels across a",
+          "op": "extract transcript",
+          "defaults": {},
+          "note": "speaker labels are parsed and stabilised from the transcript"
+        },
+        {
+          "id": "interview-transcript-cleaner",
+          "number": 9,
+          "name": "Interview Transcript Cleaner",
+          "description": "Removes recognition artifacts while preserving meaning, hesitations when relevant, timestamps, and audit links to audio.",
+          "op": "extract transcript",
+          "defaults": {}
+        },
+        {
+          "id": "audio-citation-timecode-builder",
+          "number": 10,
+          "name": "Audio Citation Timecode Builder",
+          "description": "Creates quotable transcript segments linked to exact start and end times in the local recording.",
+          "op": "extract timecode-cite",
+          "defaults": {}
+        },
+        {
+          "id": "ocr-quality-evaluator",
+          "number": 11,
+          "name": "OCR Quality Evaluator",
+          "description": "Measures character and word error rates by language, source type, layout, and degradation",
+          "op": "extract ocr-eval",
+          "defaults": {}
+        },
+        {
+          "id": "human-transcription-review-queue",
+          "number": 12,
+          "name": "Human Transcription Review Queue",
+          "description": "Routes low-confidence text, proper names, numbers, quotations, and critical passages to",
+          "op": "workflow queue",
+          "defaults": {
+            "action": "add",
+            "kind": "transcription-review"
+          }
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "slug": "local-search-embeddings-reranking-and-retrieval",
+      "name": "Local Search, Embeddings, Reranking, and Retrieval",
+      "skills": [
+        {
+          "id": "local-full-text-search-engine",
+          "number": 1,
+          "name": "Local Full-Text Search Engine",
+          "description": "Indexes and searches local corpora with fields, phrases, proximity, stemming, filters, facets, and",
+          "op": "search query",
+          "defaults": {}
+        },
+        {
+          "id": "local-document-embedding-model",
+          "number": 2,
+          "name": "Local Document Embedding Model",
+          "description": "Creates private local embeddings for passages, documents, citations, tables, images, and multilingual sources.",
+          "op": "search embed",
+          "defaults": {},
+          "note": "uses the embed adapter when configured, else the deterministic baseline"
+        },
+        {
+          "id": "local-reranking-model",
+          "number": 3,
+          "name": "Local Reranking Model",
+          "description": "Reranks candidate evidence using a local cross-encoder or late-interaction model for stronger",
+          "op": "search rerank",
+          "defaults": {},
+          "note": "uses the rerank adapter when configured, else the lexical/dense fallback"
+        },
+        {
+          "id": "local-question-answering-model",
+          "number": 4,
+          "name": "Local Question-Answering Model",
+          "description": "Answers from approved local evidence and returns source-linked passages, uncertainty, and abstention when evidence is insufficient.",
+          "op": "search hybrid",
+          "defaults": {},
+          "note": "returns source-linked passages; answer text is assembled only from them"
+        },
+        {
+          "id": "hybrid-retrieval-orchestrator",
+          "number": 5,
+          "name": "Hybrid Retrieval Orchestrator",
+          "description": "Combines lexical search, embeddings, citation graphs, metadata filters, authority, recency, and",
+          "op": "search hybrid",
+          "defaults": {}
+        },
+        {
+          "id": "research-query-decomposer",
+          "number": 6,
+          "name": "Research Query Decomposer",
+          "description": "Breaks complex questions into concepts, populations, interventions, outcomes, jurisdictions, periods, and source types.",
+          "op": "search decompose",
+          "defaults": {}
+        },
+        {
+          "id": "boolean-search-builder",
+          "number": 7,
+          "name": "Boolean Search Builder",
+          "description": "Creates reproducible AND, OR, NOT, phrase, wildcard, adjacency, field, and date strategies for",
+          "op": "search boolean",
+          "defaults": {}
+        },
+        {
+          "id": "multilingual-search-expander",
+          "number": 8,
+          "name": "Multilingual Search Expander",
+          "description": "Adds approved translations, transliterations, synonyms, spelling variants, acronyms, and inflections by language.",
+          "op": "search expand",
+          "defaults": {}
+        },
+        {
+          "id": "evidence-passage-retriever",
+          "number": 9,
+          "name": "Evidence Passage Retriever",
+          "description": "Returns concise passages with page, section, timecode, table, figure, and source identifiers.",
+          "op": "search query",
+          "defaults": {}
+        },
+        {
+          "id": "search-result-diversity-controller",
+          "number": 10,
+          "name": "Search Result Diversity Controller",
+          "description": "Reduces duplicate versions and ensures useful variation across source, date, geography, method, and viewpoint.",
+          "op": "search hybrid",
+          "defaults": {}
+        },
+        {
+          "id": "retrieval-recall-benchmark",
+          "number": 11,
+          "name": "Retrieval Recall Benchmark",
+          "description": "Tests whether known relevant sources are found before optimizing ranking precision.",
+          "op": "search recall",
+          "defaults": {}
+        },
+        {
+          "id": "search-explainability-reporter",
+          "number": 12,
+          "name": "Search Explainability Reporter",
+          "description": "Shows why a result matched, which filters applied, what version was searched, and why higher- ranked sources prevailed.",
+          "op": "search explain",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "slug": "entity-claim-event-and-relationship-extraction",
+      "name": "Entity, Claim, Event, and Relationship Extraction",
+      "skills": [
+        {
+          "id": "named-entity-recognition-model",
+          "number": 1,
+          "name": "Named-Entity Recognition Model",
+          "description": "Extracts people, organizations, places, dates, laws, standards, products, methods, diseases, chemicals, and domain entities locally.",
+          "op": "extract entities",
+          "defaults": {}
+        },
+        {
+          "id": "entity-linking-resolver",
+          "number": 2,
+          "name": "Entity Linking Resolver",
+          "description": "Links mentions to stable local identities while preserving ambiguity and alternative candidates.",
+          "op": "extract link",
+          "defaults": {}
+        },
+        {
+          "id": "relation-extraction-model",
+          "number": 3,
+          "name": "Relation Extraction Model",
+          "description": "Identifies authorship, affiliation, funding, ownership, causation, comparison, citation, amendment, and other typed relationships.",
+          "op": "extract relations",
+          "defaults": {}
+        },
+        {
+          "id": "claim-extraction-tool",
+          "number": 4,
+          "name": "Claim Extraction Tool",
+          "description": "Finds factual, causal, predictive, interpretive, normative, and quantitative claims with source",
+          "op": "extract claims",
+          "defaults": {}
+        },
+        {
+          "id": "evidence-claim-linker",
+          "number": 5,
+          "name": "Evidence-Claim Linker",
+          "description": "Connects claims to supporting, opposing, contextual, or insufficient evidence and records the",
+          "op": "extract evidence-link",
+          "defaults": {}
+        },
+        {
+          "id": "event-extraction-model",
+          "number": 6,
+          "name": "Event Extraction Model",
+          "description": "Extracts event type, actors, location, time, sequence, source, and reported consequences.",
+          "op": "extract events",
+          "defaults": {}
+        },
+        {
+          "id": "temporal-expression-normalizer",
+          "number": 7,
+          "name": "Temporal Expression Normalizer",
+          "description": "Converts relative, partial, historical, and locale-specific dates into explicit ranges while retaining",
+          "op": "extract dates",
+          "defaults": {}
+        },
+        {
+          "id": "quantity-and-unit-extractor",
+          "number": 8,
+          "name": "Quantity and Unit Extractor",
+          "description": "Captures values, ranges, units, denominators, uncertainty, sample sizes, and comparison",
+          "op": "extract quantities",
+          "defaults": {}
+        },
+        {
+          "id": "methodology-extractor",
+          "number": 9,
+          "name": "Methodology Extractor",
+          "description": "Identifies design, participants, sampling, instruments, interventions, outcomes, analysis, limitations, and preregistration.",
+          "op": "extract methodology",
+          "defaults": {}
+        },
+        {
+          "id": "funding-and-conflict-extractor",
+          "number": 10,
+          "name": "Funding and Conflict Extractor",
+          "description": "Finds funders, grants, author disclosures, institutional ties, and declared conflicts of interest.",
+          "op": "extract funding",
+          "defaults": {}
+        },
+        {
+          "id": "definition-and-term-extractor",
+          "number": 11,
+          "name": "Definition and Term Extractor",
+          "description": "Collects explicit definitions and domain usage with version, jurisdiction, and source context.",
+          "op": "extract definitions",
+          "defaults": {}
+        },
+        {
+          "id": "entity-and-claim-review-console",
+          "number": 12,
+          "name": "Entity and Claim Review Console",
+          "description": "Lets reviewers merge, split, correct, approve, or reject extracted records with provenance.",
+          "op": "extract review",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "slug": "source-evaluation-provenance-and-freshness",
+      "name": "Source Evaluation, Provenance, and Freshness",
+      "skills": [
+        {
+          "id": "source-provenance-manifest",
+          "number": 1,
+          "name": "Source Provenance Manifest",
+          "description": "Records origin, creator, publisher, acquisition route, date, version, license, checksum, transformations, and custody.",
+          "op": "verify provenance",
+          "defaults": {}
+        },
+        {
+          "id": "date-and-version-freshness-controls",
+          "number": 2,
+          "name": "Date and Version Freshness Controls",
+          "description": "Marks publication, update, retrieval, effective, access, and supersession dates and prevents stale sources from silently appearing current.",
+          "op": "verify freshness",
+          "defaults": {}
+        },
+        {
+          "id": "source-authority-assessor",
+          "number": 3,
+          "name": "Source Authority Assessor",
+          "description": "Evaluates primary versus secondary status, issuing body, peer review, transparency, expertise, and relevance to the question.",
+          "op": "verify authority",
+          "defaults": {}
+        },
+        {
+          "id": "primary-source-prioritizer",
+          "number": 4,
+          "name": "Primary Source Prioritizer",
+          "description": "Finds original studies, statutes, standards, datasets, filings, transcripts, and official records behind secondary reporting.",
+          "op": "verify authority",
+          "defaults": {},
+          "note": "primary/secondary status is part of the authority score"
+        },
+        {
+          "id": "source-independence-analyzer",
+          "number": 5,
+          "name": "Source Independence Analyzer",
+          "description": "Detects common press releases, syndicated text, shared datasets, same research group, common funding, and circular sourcing.",
+          "op": "verify corroborate",
+          "defaults": {}
+        },
+        {
+          "id": "publication-version-comparator",
+          "number": 6,
+          "name": "Publication Version Comparator",
+          "description": "Compares preprint, accepted manuscript, published article, correction, and retraction versions",
+          "op": "corpus version-link",
+          "defaults": {}
+        },
+        {
+          "id": "staleness-risk-scorer",
+          "number": 7,
+          "name": "Staleness Risk Scorer",
+          "description": "Scores facts by change rate, source age, domain, jurisdiction, and supersession evidence.",
+          "op": "verify freshness",
+          "defaults": {}
+        },
+        {
+          "id": "unavailable-source-disclosure",
+          "number": 8,
+          "name": "Unavailable Source Disclosure",
+          "description": "Marks sources known only through citations, abstracts, snippets, or other secondary",
+          "op": "verify provenance",
+          "defaults": {},
+          "note": "gaps include sources known only through secondary description"
+        },
+        {
+          "id": "evidence-chain-validator",
+          "number": 9,
+          "name": "Evidence Chain Validator",
+          "description": "Checks every transformation from original file to extracted passage, summary, claim, and final",
+          "op": "verify chain",
+          "defaults": {}
+        },
+        {
+          "id": "provenance-gap-detector",
+          "number": 10,
+          "name": "Provenance Gap Detector",
+          "description": "Finds records missing origin, license, version, checksum, dates, or transformation history.",
+          "op": "verify provenance",
+          "defaults": {}
+        },
+        {
+          "id": "corpus-snapshot-identifier",
+          "number": 11,
+          "name": "Corpus Snapshot Identifier",
+          "description": "Assigns point-in-time identifiers to the exact local corpus used for a research output.",
+          "op": "corpus snapshot",
+          "defaults": {}
+        },
+        {
+          "id": "freshness-review-scheduler",
+          "number": 12,
+          "name": "Freshness Review Scheduler",
+          "description": "Queues volatile topics, laws, policies, statistics, and news collections for controlled offline",
+          "op": "jobs add",
+          "defaults": {
+            "kind": "freshness-report"
+          }
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "slug": "fact-checking-verification-and-quantitative-accuracy",
+      "name": "Fact Checking, Verification, and Quantitative Accuracy",
+      "skills": [
+        {
+          "id": "fact-checking-dataset-manager",
+          "number": 1,
+          "name": "Fact-Checking Dataset Manager",
+          "description": "Maintains verified claims, evidence, verdicts, dates, jurisdictions, and correction history for local",
+          "op": "eval benchmark",
+          "defaults": {
+            "name": "factcheck"
+          },
+          "note": "claims, evidence and verdicts live in the benchmark suite file"
+        },
+        {
+          "id": "claim-verification-agent",
+          "number": 2,
+          "name": "Claim Verification Agent",
+          "description": "Searches approved local evidence for support, contradiction, qualification, or insufficient",
+          "op": "verify claim",
+          "defaults": {}
+        },
+        {
+          "id": "cross-source-corroboration-checker",
+          "number": 3,
+          "name": "Cross-Source Corroboration Checker",
+          "description": "Requires independent evidence for high-impact claims and distinguishes repetition from",
+          "op": "verify corroborate",
+          "defaults": {}
+        },
+        {
+          "id": "quotation-verifier",
+          "number": 4,
+          "name": "Quotation Verifier",
+          "description": "Confirms wording, speaker, source, context, page or timecode, omissions, and alterations for",
+          "op": "verify quote",
+          "defaults": {}
+        },
+        {
+          "id": "number-and-unit-rechecker",
+          "number": 5,
+          "name": "Number and Unit Rechecker",
+          "description": "Recomputes percentages, rates, totals, currency, units, conversions, and denominators from",
+          "op": "verify numbers",
+          "defaults": {}
+        },
+        {
+          "id": "statistical-claim-auditor",
+          "number": 6,
+          "name": "Statistical Claim Auditor",
+          "description": "Checks sample, effect size, uncertainty, significance, multiple testing, correlation, causation, and",
+          "op": "verify claim",
+          "defaults": {},
+          "note": "reports the evidence base; combine with 'verify numbers' for arithmetic"
+        },
+        {
+          "id": "chart-to-text-consistency-checker",
+          "number": 7,
+          "name": "Chart-to-Text Consistency Checker",
+          "description": "Verifies that prose accurately represents axes, units, values, uncertainty, and trends in figures.",
+          "op": "extract figure-alt",
+          "defaults": {},
+          "note": "compare prose against a structured figure spec"
+        },
+        {
+          "id": "chronology-consistency-checker",
+          "number": 8,
+          "name": "Chronology Consistency Checker",
+          "description": "Finds impossible sequences, date conflicts, anachronisms, and confusion between event and",
+          "op": "verify chronology",
+          "defaults": {}
+        },
+        {
+          "id": "identity-and-attribution-checker",
+          "number": 9,
+          "name": "Identity and Attribution Checker",
+          "description": "Confirms names, roles, affiliations, titles, and whether a statement is directly or indirectly",
+          "op": "guard attribution",
+          "defaults": {}
+        },
+        {
+          "id": "contradiction-mapper",
+          "number": 10,
+          "name": "Contradiction Mapper",
+          "description": "Presents incompatible claims with source quality, scope, date, method, and possible",
+          "op": "verify contradiction",
+          "defaults": {}
+        },
+        {
+          "id": "uncertainty-and-abstention-controller",
+          "number": 11,
+          "name": "Uncertainty and Abstention Controller",
+          "description": "Requires calibrated language or refusal when the offline corpus cannot support a reliable",
+          "op": "verify abstain",
+          "defaults": {}
+        },
+        {
+          "id": "fact-check-regression-suite",
+          "number": 12,
+          "name": "Fact-Check Regression Suite",
+          "description": "Retests known true, false, mixed, outdated, and unresolvable claims after model or corpus",
+          "op": "eval regression",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "slug": "literature-reviews-and-evidence-synthesis",
+      "name": "Literature Reviews and Evidence Synthesis",
+      "skills": [
+        {
+          "id": "literature-review-planner",
+          "number": 1,
+          "name": "Literature Review Planner",
+          "description": "Defines question, scope, databases, dates, languages, source types, screening rules, and",
+          "op": "synthesis plan",
+          "defaults": {}
+        },
+        {
+          "id": "systematic-search-strategy-builder",
+          "number": 2,
+          "name": "Systematic Search Strategy Builder",
+          "description": "Creates auditable search strings, fields, limits, and translation variants for each local database.",
+          "op": "synthesis strategy",
+          "defaults": {}
+        },
+        {
+          "id": "screening-and-eligibility-manager",
+          "number": 3,
+          "name": "Screening and Eligibility Manager",
+          "description": "Supports title, abstract, and full-text screening with reasons, conflicts, blinding, and",
+          "op": "synthesis screen",
+          "defaults": {}
+        },
+        {
+          "id": "prisma-flow-data-builder",
+          "number": 4,
+          "name": "PRISMA Flow Data Builder",
+          "description": "Tracks identified, deduplicated, screened, excluded, assessed, and included records for review",
+          "op": "synthesis prisma",
+          "defaults": {}
+        },
+        {
+          "id": "evidence-extraction-form",
+          "number": 5,
+          "name": "Evidence Extraction Form",
+          "description": "Captures study design, population, intervention, comparator, outcomes, results, limitations, and",
+          "op": "synthesis evidence-table",
+          "defaults": {}
+        },
+        {
+          "id": "risk-of-bias-workflow",
+          "number": 6,
+          "name": "Risk-of-Bias Workflow",
+          "description": "Applies domain-appropriate assessment criteria and stores judgments, rationale, evidence, and",
+          "op": "synthesis risk-of-bias",
+          "defaults": {}
+        },
+        {
+          "id": "narrative-synthesis-agent",
+          "number": 7,
+          "name": "Narrative Synthesis Agent",
+          "description": "Groups compatible evidence, explains patterns and differences, and avoids unsupported vote",
+          "op": "synthesis narrative",
+          "defaults": {}
+        },
+        {
+          "id": "meta-analysis-data-preparer",
+          "number": 8,
+          "name": "Meta-Analysis Data Preparer",
+          "description": "Extracts effect measures, variances, sample sizes, subgroups, and dependencies for statistical",
+          "op": "synthesis meta",
+          "defaults": {}
+        },
+        {
+          "id": "evidence-table-builder",
+          "number": 9,
+          "name": "Evidence Table Builder",
+          "description": "Creates traceable study, policy, legal, or standards comparison tables with exact source links.",
+          "op": "synthesis evidence-table",
+          "defaults": {}
+        },
+        {
+          "id": "research-gap-mapper",
+          "number": 10,
+          "name": "Research Gap Mapper",
+          "description": "Identifies absent populations, methods, geographies, languages, time periods, outcomes, and",
+          "op": "synthesis gaps",
+          "defaults": {}
+        },
+        {
+          "id": "living-review-update-manager",
+          "number": 11,
+          "name": "Living Review Update Manager",
+          "description": "Screens controlled corpus updates and identifies findings that could change conclusions.",
+          "op": "synthesis update-check",
+          "defaults": {}
+        },
+        {
+          "id": "synthesis-robustness-reviewer",
+          "number": 12,
+          "name": "Synthesis Robustness Reviewer",
+          "description": "Tests sensitivity to source quality, duplicate data, assumptions, exclusions, and conflicting",
+          "op": "synthesis robustness",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "slug": "research-design-study-analysis-and-data-interpretation",
+      "name": "Research Design, Study Analysis, and Data Interpretation",
+      "skills": [
+        {
+          "id": "research-question-refiner",
+          "number": 1,
+          "name": "Research Question Refiner",
+          "description": "Converts broad topics into answerable descriptive, comparative, causal, interpretive, legal, or",
+          "op": "search decompose",
+          "defaults": {}
+        },
+        {
+          "id": "study-design-advisor",
+          "number": 2,
+          "name": "Study Design Advisor",
+          "description": "Matches questions to experiments, observational studies, surveys, interviews, case studies, archival research, or mixed methods.",
+          "op": "synthesis plan",
+          "defaults": {},
+          "note": "design options are mapped onto the review/study plan fields"
+        },
+        {
+          "id": "sampling-plan-reviewer",
+          "number": 3,
+          "name": "Sampling Plan Reviewer",
+          "description": "Checks population, frame, inclusion, recruitment, size, representativeness, clustering, attrition,",
+          "op": "extract methodology",
+          "defaults": {}
+        },
+        {
+          "id": "measurement-validity-reviewer",
+          "number": 4,
+          "name": "Measurement Validity Reviewer",
+          "description": "Evaluates construct definition, instrument validity, reliability, sensitivity, specificity, and cultural",
+          "op": "extract methodology",
+          "defaults": {}
+        },
+        {
+          "id": "qualitative-coding-assistant",
+          "number": 5,
+          "name": "Qualitative Coding Assistant",
+          "description": "Supports local codebooks, excerpt coding, memos, disagreements, themes, and negative cases without replacing human interpretation.",
+          "op": "extract claims",
+          "defaults": {},
+          "note": "code candidate excerpts as claims, then review each in the review console"
+        },
+        {
+          "id": "survey-instrument-reviewer",
+          "number": 6,
+          "name": "Survey Instrument Reviewer",
+          "description": "Checks wording, ordering, response options, skip logic, accessibility, translation, and respondent",
+          "op": "writing style",
+          "defaults": {
+            "profile": "plain"
+          },
+          "note": "wording and burden cues are reported as style findings"
+        },
+        {
+          "id": "experimental-protocol-auditor",
+          "number": 7,
+          "name": "Experimental Protocol Auditor",
+          "description": "Checks randomization, blinding, controls, intervention fidelity, outcome timing, stopping rules,",
+          "op": "extract methodology",
+          "defaults": {}
+        },
+        {
+          "id": "causal-inference-assumption-reviewer",
+          "number": 8,
+          "name": "Causal Inference Assumption Reviewer",
+          "description": "Surfaces confounding, selection, measurement, interference, positivity, and model assumptions.",
+          "op": "extract methodology",
+          "defaults": {},
+          "note": "design and identification cues surface confounding assumptions"
+        },
+        {
+          "id": "data-visualization-reviewer",
+          "number": 9,
+          "name": "Data Visualization Reviewer",
+          "description": "Checks chart type, scales, labels, uncertainty, accessibility, and whether visuals overstate",
+          "op": "workflow accessible",
+          "defaults": {}
+        },
+        {
+          "id": "reproducible-analysis-packager",
+          "number": 10,
+          "name": "Reproducible Analysis Packager",
+          "description": "Bundles data, code, environment, outputs, checks, and documentation for offline reruns.",
+          "op": "workflow run-manifest",
+          "defaults": {}
+        },
+        {
+          "id": "research-ethics-checklist",
+          "number": 11,
+          "name": "Research Ethics Checklist",
+          "description": "Checks consent, privacy, vulnerable groups, data minimization, risks, compensation, and review",
+          "op": "guard classify",
+          "defaults": {}
+        },
+        {
+          "id": "limitations-and-transferability-writer",
+          "number": 12,
+          "name": "Limitations and Transferability Writer",
+          "description": "States design limits, uncertainty, context, excluded groups, and where findings may not transfer.",
+          "op": "writing boundary",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "slug": "academic-technical-legal-and-policy-writing",
+      "name": "Academic, Technical, Legal, and Policy Writing",
+      "skills": [
+        {
+          "id": "research-writing-architect",
+          "number": 1,
+          "name": "Research Writing Architect",
+          "description": "Builds a defensible outline linking question, evidence, method, analysis, limitations, and",
+          "op": "writing outline",
+          "defaults": {}
+        },
+        {
+          "id": "academic-manuscript-drafter",
+          "number": 2,
+          "name": "Academic Manuscript Drafter",
+          "description": "Drafts structured scholarly prose with source-linked claims, cautious interpretation, and discipline-appropriate sections.",
+          "op": "writing draft",
+          "defaults": {
+            "section": "Introduction"
+          }
+        },
+        {
+          "id": "technical-report-writer",
+          "number": 3,
+          "name": "Technical Report Writer",
+          "description": "Creates clear methods, findings, requirements, risks, recommendations, appendices, and",
+          "op": "writing draft",
+          "defaults": {
+            "section": "Findings"
+          }
+        },
+        {
+          "id": "policy-brief-writer",
+          "number": 4,
+          "name": "Policy Brief Writer",
+          "description": "Produces concise problem, evidence, options, trade-offs, implementation, and monitoring sections for decision makers.",
+          "op": "writing draft",
+          "defaults": {
+            "section": "Executive summary"
+          }
+        },
+        {
+          "id": "legal-research-memorandum-writer",
+          "number": 5,
+          "name": "Legal Research Memorandum Writer",
+          "description": "Structures issue, governing authority, analysis, counterarguments, uncertainty, and conclusion without inventing legal support.",
+          "op": "writing draft",
+          "defaults": {
+            "section": "Analysis"
+          }
+        },
+        {
+          "id": "standards-compliance-writer",
+          "number": 6,
+          "name": "Standards Compliance Writer",
+          "description": "Maps requirements to evidence, gaps, exceptions, tests, and remediation actions with clause-",
+          "op": "synthesis evidence-table",
+          "defaults": {}
+        },
+        {
+          "id": "executive-summary-writer",
+          "number": 7,
+          "name": "Executive Summary Writer",
+          "description": "Condenses purpose, material findings, implications, risks, and recommended actions without adding unsupported claims.",
+          "op": "writing summary",
+          "defaults": {
+            "words": 120
+          }
+        },
+        {
+          "id": "abstract-and-synopsis-writer",
+          "number": 8,
+          "name": "Abstract and Synopsis Writer",
+          "description": "Creates accurate structured or unstructured abstracts that match the final work and declared",
+          "op": "writing summary",
+          "defaults": {
+            "words": 200
+          }
+        },
+        {
+          "id": "methods-section-writer",
+          "number": 9,
+          "name": "Methods Section Writer",
+          "description": "Documents corpus, search, sampling, tools, models, procedures, exclusions, analysis, and reproducibility details.",
+          "op": "writing draft",
+          "defaults": {
+            "section": "Methods"
+          }
+        },
+        {
+          "id": "findings-and-results-writer",
+          "number": 10,
+          "name": "Findings and Results Writer",
+          "description": "Separates observed results from interpretation and reports values, uncertainty, exceptions, and",
+          "op": "writing draft",
+          "defaults": {
+            "section": "Results"
+          }
+        },
+        {
+          "id": "discussion-and-implications-writer",
+          "number": 11,
+          "name": "Discussion and Implications Writer",
+          "description": "Interprets findings against prior evidence, alternatives, limitations, applications, and unanswered questions.",
+          "op": "writing draft",
+          "defaults": {
+            "section": "Discussion"
+          }
+        },
+        {
+          "id": "conclusion-boundary-checker",
+          "number": 12,
+          "name": "Conclusion Boundary Checker",
+          "description": "Prevents conclusions and recommendations from exceeding the evidence, scope, population, period, or jurisdiction.",
+          "op": "writing boundary",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "slug": "editing-revision-style-and-readability",
+      "name": "Editing, Revision, Style, and Readability",
+      "skills": [
+        {
+          "id": "developmental-editor",
+          "number": 1,
+          "name": "Developmental Editor",
+          "description": "Improves argument, structure, scope, evidence flow, audience fit, and missing sections before",
+          "op": "writing outline",
+          "defaults": {}
+        },
+        {
+          "id": "substantive-evidence-editor",
+          "number": 2,
+          "name": "Substantive Evidence Editor",
+          "description": "Checks whether each important claim has the right kind and strength of source support.",
+          "op": "writing flow",
+          "defaults": {}
+        },
+        {
+          "id": "line-editor",
+          "number": 3,
+          "name": "Line Editor",
+          "description": "Improves clarity, precision, rhythm, transitions, concision, and terminology while preserving",
+          "op": "writing style",
+          "defaults": {}
+        },
+        {
+          "id": "copy-editor",
+          "number": 4,
+          "name": "Copy Editor",
+          "description": "Corrects grammar, usage, punctuation, capitalization, numbers, references, and house style.",
+          "op": "writing proofread",
+          "defaults": {}
+        },
+        {
+          "id": "technical-consistency-checker",
+          "number": 5,
+          "name": "Technical Consistency Checker",
+          "description": "Checks terminology, abbreviations, symbols, units, variable names, headings, tables, and figure",
+          "op": "writing consistency",
+          "defaults": {}
+        },
+        {
+          "id": "plain-language-rewriter",
+          "number": 6,
+          "name": "Plain-Language Rewriter",
+          "description": "Makes findings understandable with direct structure and familiar words while preserving",
+          "op": "writing readability",
+          "defaults": {}
+        },
+        {
+          "id": "audience-adaptation-editor",
+          "number": 7,
+          "name": "Audience Adaptation Editor",
+          "description": "Creates expert, executive, public, student, or operational versions from the same approved",
+          "op": "writing tone",
+          "defaults": {}
+        },
+        {
+          "id": "tone-and-register-controller",
+          "number": 8,
+          "name": "Tone and Register Controller",
+          "description": "Maintains formal, neutral, cautious, persuasive, instructional, or conversational register as",
+          "op": "writing tone",
+          "defaults": {}
+        },
+        {
+          "id": "redundancy-and-repetition-detector",
+          "number": 9,
+          "name": "Redundancy and Repetition Detector",
+          "description": "Finds repeated points, duplicated evidence, circular passages, and unnecessary restatement.",
+          "op": "writing redundancy",
+          "defaults": {}
+        },
+        {
+          "id": "logical-flow-auditor",
+          "number": 10,
+          "name": "Logical Flow Auditor",
+          "description": "Checks premises, evidence, transitions, counterarguments, causal language, and conclusion",
+          "op": "writing flow",
+          "defaults": {}
+        },
+        {
+          "id": "tracked-revision-explainer",
+          "number": 11,
+          "name": "Tracked Revision Explainer",
+          "description": "Produces reviewable edits with reasons grouped by accuracy, structure, clarity, style, and",
+          "op": "writing revise",
+          "defaults": {}
+        },
+        {
+          "id": "final-proofreading-pass",
+          "number": 12,
+          "name": "Final Proofreading Pass",
+          "description": "Checks the final rendered document for residual text, reference, layout, numbering, and cross-",
+          "op": "writing proofread",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "slug": "copyright-quotation-plagiarism-and-ethical-use",
+      "name": "Copyright, Quotation, Plagiarism, and Ethical Use",
+      "skills": [
+        {
+          "id": "copyright-and-quotation-controls",
+          "number": 1,
+          "name": "Copyright and Quotation Controls",
+          "description": "Applies source-specific quotation, excerpt, copying, display, and redistribution rules before",
+          "op": "guard quote-guard",
+          "defaults": {}
+        },
+        {
+          "id": "plagiarism-checking-corpus",
+          "number": 2,
+          "name": "Plagiarism-Checking Corpus",
+          "description": "Maintains an authorized local comparison corpus with licenses, source boundaries, and update",
+          "op": "corpus ingest",
+          "defaults": {
+            "doctype": "comparison-corpus"
+          }
+        },
+        {
+          "id": "similarity-detection-engine",
+          "number": 3,
+          "name": "Similarity Detection Engine",
+          "description": "Finds exact, lightly edited, translated, structurally similar, and common-phrase overlap for human interpretation.",
+          "op": "guard similarity",
+          "defaults": {}
+        },
+        {
+          "id": "patchwriting-detector",
+          "number": 4,
+          "name": "Patchwriting Detector",
+          "description": "Flags paraphrases that remain too close in wording or structure to the source.",
+          "op": "guard patchwriting",
+          "defaults": {}
+        },
+        {
+          "id": "attribution-completeness-checker",
+          "number": 5,
+          "name": "Attribution Completeness Checker",
+          "description": "Checks quotations, paraphrases, data, images, tables, translations, and ideas for required",
+          "op": "guard attribution",
+          "defaults": {}
+        },
+        {
+          "id": "fair-use-review-packet",
+          "number": 6,
+          "name": "Fair-Use Review Packet",
+          "description": "Summarizes purpose, nature, amount, market effect, alternatives, and jurisdictional uncertainty",
+          "op": "guard fair-use",
+          "defaults": {}
+        },
+        {
+          "id": "licensed-content-usage-meter",
+          "number": 7,
+          "name": "Licensed Content Usage Meter",
+          "description": "Tracks pages, words, users, outputs, storage, and expiry against collection license terms.",
+          "op": "corpus usage",
+          "defaults": {}
+        },
+        {
+          "id": "public-domain-status-recorder",
+          "number": 8,
+          "name": "Public-Domain Status Recorder",
+          "description": "Records the basis, jurisdiction, date, edition, and remaining rights rather than assuming age",
+          "op": "guard pd-status",
+          "defaults": {}
+        },
+        {
+          "id": "open-license-compliance-checker",
+          "number": 9,
+          "name": "Open-License Compliance Checker",
+          "description": "Applies attribution, share-alike, noncommercial, no-derivatives, notice, and source requirements.",
+          "op": "guard license-check",
+          "defaults": {}
+        },
+        {
+          "id": "quotation-length-and-context-guard",
+          "number": 10,
+          "name": "Quotation Length and Context Guard",
+          "description": "Prevents excessive extraction and preserves enough context to avoid misleading quotation.",
+          "op": "guard quote-guard",
+          "defaults": {}
+        },
+        {
+          "id": "authorship-and-contribution-recorder",
+          "number": 11,
+          "name": "Authorship and Contribution Recorder",
+          "description": "Captures human and agent contributions, review roles, approvals, and disclosure requirements.",
+          "op": "workflow decision",
+          "defaults": {
+            "kind": "authorship"
+          }
+        },
+        {
+          "id": "research-integrity-escalation",
+          "number": 12,
+          "name": "Research Integrity Escalation",
+          "description": "Routes suspected fabrication, falsification, plagiarism, citation manipulation, or undisclosed conflicts to authorized reviewers.",
+          "op": "guard incident",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "slug": "terminology-translation-memory-and-linguistic-assets",
+      "name": "Terminology, Translation Memory, and Linguistic Assets",
+      "skills": [
+        {
+          "id": "terminology-database",
+          "number": 1,
+          "name": "Terminology Database",
+          "description": "Stores approved terms, definitions, forbidden variants, domains, grammar, examples, owners, and multilingual equivalents.",
+          "op": "translate terms",
+          "defaults": {}
+        },
+        {
+          "id": "translation-memory",
+          "number": 2,
+          "name": "Translation Memory",
+          "description": "Stores aligned source and target segments with provenance, quality, domain, project, version, and approval metadata.",
+          "op": "translate tm",
+          "defaults": {}
+        },
+        {
+          "id": "term-extraction-engine",
+          "number": 3,
+          "name": "Term Extraction Engine",
+          "description": "Finds recurring scholarly, legal, policy, technical, product, and cultural terms for expert",
+          "op": "translate term-extract",
+          "defaults": {}
+        },
+        {
+          "id": "bilingual-corpus-aligner",
+          "number": 4,
+          "name": "Bilingual Corpus Aligner",
+          "description": "Aligns documents, paragraphs, sentences, tables, captions, and footnotes across language",
+          "op": "translate align",
+          "defaults": {}
+        },
+        {
+          "id": "terminology-consistency-checker",
+          "number": 5,
+          "name": "Terminology Consistency Checker",
+          "description": "Finds unauthorized variants, false friends, inconsistent names, and term drift within and across",
+          "op": "translate term-check",
+          "defaults": {}
+        },
+        {
+          "id": "translation-memory-cleaner",
+          "number": 6,
+          "name": "Translation Memory Cleaner",
+          "description": "Removes duplicates, misalignments, corrupted characters, obsolete terms, wrong language, and low-quality segments.",
+          "op": "translate tm",
+          "defaults": {
+            "action": "clean"
+          },
+          "note": "find duplicates, misalignment, wrong language and forbidden terms; --apply is gated"
+        },
+        {
+          "id": "term-inflection-generator",
+          "number": 7,
+          "name": "Term Inflection Generator",
+          "description": "Generates approved grammatical forms by language while preserving term identity.",
+          "op": "search expand",
+          "defaults": {}
+        },
+        {
+          "id": "acronym-and-abbreviation-manager",
+          "number": 8,
+          "name": "Acronym and Abbreviation Manager",
+          "description": "Maintains expanded forms, local variants, first-use rules, ambiguity, and do-not-translate",
+          "op": "translate terms",
+          "defaults": {},
+          "note": "acronym entries are stored as terms with approved equivalents"
+        },
+        {
+          "id": "named-entity-translation-policy",
+          "number": 9,
+          "name": "Named-Entity Translation Policy",
+          "description": "Specifies translation, transliteration, retention, localization, and official-name handling for",
+          "op": "translate terms",
+          "defaults": {},
+          "note": "named-entity policy entries are stored as terminology records"
+        },
+        {
+          "id": "definition-consistency-auditor",
+          "number": 10,
+          "name": "Definition Consistency Auditor",
+          "description": "Checks that defined terms retain the same meaning across sections, versions, languages, and",
+          "op": "extract definitions",
+          "defaults": {}
+        },
+        {
+          "id": "subject-matter-glossary-builder",
+          "number": 11,
+          "name": "Subject-Matter Glossary Builder",
+          "description": "Creates domain glossaries from approved corpora with citations and reviewer ownership.",
+          "op": "translate term-extract",
+          "defaults": {}
+        },
+        {
+          "id": "language-asset-version-registry",
+          "number": 12,
+          "name": "Language Asset Version Registry",
+          "description": "Versions terminology, memories, style guides, dictionaries, models, and evaluation sets together.",
+          "op": "registry add",
+          "defaults": {
+            "kind": "language-assets"
+          }
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "slug": "offline-machine-translation-and-multilingual-models",
+      "name": "Offline Machine Translation and Multilingual Models",
+      "skills": [
+        {
+          "id": "offline-translation-models",
+          "number": 1,
+          "name": "Offline Translation Models",
+          "description": "Runs local neural machine translation for approved language pairs without sending text outside",
+          "op": "translate mt",
+          "defaults": {},
+          "note": "requires a configured local MT adapter; --tm-only produces a TM prefill"
+        },
+        {
+          "id": "offline-multilingual-language-models",
+          "number": 2,
+          "name": "Offline Multilingual Language Models",
+          "description": "Uses local multilingual models for drafting, rewriting, classification, explanation, and translation",
+          "op": "translate mt",
+          "defaults": {},
+          "note": "drafting support runs through the same local adapter contract"
+        },
+        {
+          "id": "language-identification-model",
+          "number": 3,
+          "name": "Language Identification Model",
+          "description": "Detects document, paragraph, sentence, and mixed-language spans with confidence and script",
+          "op": "translate langid",
+          "defaults": {}
+        },
+        {
+          "id": "translation-model-router",
+          "number": 4,
+          "name": "Translation Model Router",
+          "description": "Selects the best approved local model by language pair, domain, content type, risk, and resource",
+          "op": "adapters check",
+          "defaults": {},
+          "note": "routing is decided by available local adapters and language pairs"
+        },
+        {
+          "id": "document-level-translation-engine",
+          "number": 5,
+          "name": "Document-Level Translation Engine",
+          "description": "Preserves context, terminology, references, numbering, tables, captions, notes, and cross-",
+          "op": "translate mt",
+          "defaults": {},
+          "note": "document-level chunking preserves segment order and terminology"
+        },
+        {
+          "id": "low-resource-language-workflow",
+          "number": 6,
+          "name": "Low-Resource Language Workflow",
+          "description": "Combines glossaries, translation memory, related-language models, human translation, and explicit uncertainty.",
+          "op": "translate plan",
+          "defaults": {
+            "risk": "high"
+          }
+        },
+        {
+          "id": "domain-adaptation-packager",
+          "number": 7,
+          "name": "Domain Adaptation Packager",
+          "description": "Applies approved terminology, parallel data, adapters, prompts, and tests for scientific, legal, medical, or technical translation.",
+          "op": "translate tm",
+          "defaults": {},
+          "note": "domain packs are terminology and memory assets"
+        },
+        {
+          "id": "pivot-translation-guard",
+          "number": 8,
+          "name": "Pivot Translation Guard",
+          "description": "Detects when pivot translation is used and requires additional validation for compound meaning",
+          "op": "translate backtranslate",
+          "defaults": {}
+        },
+        {
+          "id": "transliteration-engine",
+          "number": 9,
+          "name": "Transliteration Engine",
+          "description": "Applies approved romanization or script-conversion standards while retaining original text and reversibility where possible.",
+          "op": "translate transliterate",
+          "defaults": {},
+          "note": "Cyrillic and Greek only; other scripts need an approved standard"
+        },
+        {
+          "id": "multilingual-summarization-model",
+          "number": 10,
+          "name": "Multilingual Summarization Model",
+          "description": "Creates source-grounded summaries across languages and distinguishes translation from",
+          "op": "writing summary",
+          "defaults": {},
+          "note": "summaries are extractive and source-linked, in any language the text is in"
+        },
+        {
+          "id": "offline-dictionary-and-morphology-service",
+          "number": 11,
+          "name": "Offline Dictionary and Morphology Service",
+          "description": "Provides local definitions, inflections, lemmas, compounds, spelling, and usage guidance.",
+          "op": "search expand",
+          "defaults": {},
+          "note": "morphological variants derive from the local terminology base"
+        },
+        {
+          "id": "translation-model-drift-monitor",
+          "number": 12,
+          "name": "Translation Model Drift Monitor",
+          "description": "Retests language-pair quality after model, tokenizer, terminology, or runtime changes.",
+          "op": "eval regression",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "slug": "translation-production-and-human-review",
+      "name": "Translation Production and Human Review",
+      "skills": [
+        {
+          "id": "translation-project-planner",
+          "number": 1,
+          "name": "Translation Project Planner",
+          "description": "Defines languages, variants, domains, files, volume, risks, assets, roles, schedule, and",
+          "op": "translate plan",
+          "defaults": {}
+        },
+        {
+          "id": "pre-translation-source-editor",
+          "number": 2,
+          "name": "Pre-Translation Source Editor",
+          "description": "Removes ambiguity, fixes source errors, externalizes text, protects variables, and prepares",
+          "op": "translate pretranslate",
+          "defaults": {}
+        },
+        {
+          "id": "human-review-workflow",
+          "number": 3,
+          "name": "Human-Review Workflow",
+          "description": "Routes translation, bilingual editing, subject review, proofreading, functional QA, and final approval with clear responsibility.",
+          "op": "workflow queue",
+          "defaults": {
+            "action": "add",
+            "kind": "translation-review"
+          }
+        },
+        {
+          "id": "bilingual-accuracy-reviewer",
+          "number": 4,
+          "name": "Bilingual Accuracy Reviewer",
+          "description": "Checks omissions, additions, meaning shifts, terminology, numbers, negation, modality, and references against the source.",
+          "op": "translate qa",
+          "defaults": {}
+        },
+        {
+          "id": "target-language-proofreader",
+          "number": 5,
+          "name": "Target-Language Proofreader",
+          "description": "Reviews grammar, fluency, punctuation, spelling, register, style, and naturalness without losing",
+          "op": "writing proofread",
+          "defaults": {},
+          "note": "run on the target-language file"
+        },
+        {
+          "id": "subject-matter-translation-reviewer",
+          "number": 6,
+          "name": "Subject-Matter Translation Reviewer",
+          "description": "Validates specialized concepts, calculations, legal effect, clinical meaning, standards language,",
+          "op": "translate term-check",
+          "defaults": {},
+          "note": "subject-matter terms are validated against the terminology base"
+        },
+        {
+          "id": "translation-query-manager",
+          "number": 7,
+          "name": "Translation Query Manager",
+          "description": "Records translator questions, context, decisions, owners, response dates, and reusable",
+          "op": "translate query",
+          "defaults": {}
+        },
+        {
+          "id": "translation-error-taxonomy",
+          "number": 8,
+          "name": "Translation Error Taxonomy",
+          "description": "Classifies accuracy, terminology, locale, grammar, style, formatting, functional, and critical-risk",
+          "op": "translate qa",
+          "defaults": {},
+          "note": "findings are tagged with the error category and severity"
+        },
+        {
+          "id": "severity-weighted-language-score",
+          "number": 9,
+          "name": "Severity-Weighted Language Score",
+          "description": "Scores language quality using defined critical, major, and minor error weights and acceptance",
+          "op": "translate score",
+          "defaults": {}
+        },
+        {
+          "id": "back-translation-risk-check",
+          "number": 10,
+          "name": "Back-Translation Risk Check",
+          "description": "Uses selective back translation for high-risk passages while avoiding false confidence from mechanical equivalence.",
+          "op": "translate backtranslate",
+          "defaults": {}
+        },
+        {
+          "id": "independent-review-adjudicator",
+          "number": 11,
+          "name": "Independent Review Adjudicator",
+          "description": "Resolves reviewer disagreements using source evidence, terminology, style guide, domain expertise, and user impact.",
+          "op": "workflow queue",
+          "defaults": {
+            "action": "decide"
+          }
+        },
+        {
+          "id": "post-delivery-language-feedback-loop",
+          "number": 12,
+          "name": "Post-Delivery Language Feedback Loop",
+          "description": "Converts accepted corrections into updated memories, terms, tests, and model-routing rules",
+          "op": "workflow feedback",
+          "defaults": {},
+          "note": "accepted corrections feed memory, terms and routing updates"
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "slug": "language-specific-accuracy-and-localization-qa",
+      "name": "Language-Specific Accuracy and Localization QA",
+      "skills": [
+        {
+          "id": "accuracy-benchmarks-by-language",
+          "number": 1,
+          "name": "Accuracy Benchmarks by Language",
+          "description": "Maintains representative evaluation sets and thresholds for each language, dialect, script,",
+          "op": "eval benchmark",
+          "defaults": {
+            "name": "language-accuracy"
+          }
+        },
+        {
+          "id": "locale-and-language-variant-controller",
+          "number": 2,
+          "name": "Locale and Language Variant Controller",
+          "description": "Distinguishes regional spelling, grammar, vocabulary, formats, legal terminology, and audience",
+          "op": "translate locale",
+          "defaults": {}
+        },
+        {
+          "id": "filipino-and-english-research-reviewer",
+          "number": 3,
+          "name": "Filipino and English Research Reviewer",
+          "description": "Checks Filipino and Philippine English research writing, translation, terminology, register, and",
+          "op": "translate term-check",
+          "defaults": {
+            "src_lang": "en",
+            "tgt_lang": "fil"
+          }
+        },
+        {
+          "id": "code-switching-quality-reviewer",
+          "number": 4,
+          "name": "Code-Switching Quality Reviewer",
+          "description": "Evaluates mixed-language content, borrowed terms, speaker intent, accessibility, and",
+          "op": "translate langid",
+          "defaults": {},
+          "note": "mixed-language spans are reported per sentence"
+        },
+        {
+          "id": "right-to-left-document-tester",
+          "number": 5,
+          "name": "Right-to-Left Document Tester",
+          "description": "Checks direction, punctuation, numbers, citations, footnotes, tables, formulas, and mixed-script",
+          "op": "translate script-check",
+          "defaults": {
+            "lang": "ar"
+          }
+        },
+        {
+          "id": "cjk-research-typography-reviewer",
+          "number": 6,
+          "name": "CJK Research Typography Reviewer",
+          "description": "Validates line breaking, punctuation, names, ruby text, references, fonts, spacing, and vertical text when applicable.",
+          "op": "translate script-check",
+          "defaults": {
+            "lang": "ja"
+          }
+        },
+        {
+          "id": "complex-script-font-coverage-tester",
+          "number": 7,
+          "name": "Complex-Script Font Coverage Tester",
+          "description": "Checks shaping, combining marks, reordering, fallback, search, selection, copy, and export",
+          "op": "translate script-check",
+          "defaults": {},
+          "note": "glyph coverage needs rendering; combining marks are checked"
+        },
+        {
+          "id": "multilingual-citation-style-tester",
+          "number": 8,
+          "name": "Multilingual Citation Style Tester",
+          "description": "Validates author order, transliteration, translated titles, original scripts, punctuation, and",
+          "op": "citation format",
+          "defaults": {},
+          "note": "styles are validated for author order and title form"
+        },
+        {
+          "id": "locale-specific-number-and-date-reviewer",
+          "number": 9,
+          "name": "Locale-Specific Number and Date Reviewer",
+          "description": "Checks dates, calendars, decimal separators, currency, units, ranges, and ambiguity by locale.",
+          "op": "translate locale",
+          "defaults": {
+            "locale": "en-PH"
+          }
+        },
+        {
+          "id": "language-register-and-politeness-reviewer",
+          "number": 10,
+          "name": "Language Register and Politeness Reviewer",
+          "description": "Maintains appropriate formality, honorifics, stance, and institutional voice by language and",
+          "op": "writing tone",
+          "defaults": {}
+        },
+        {
+          "id": "dialect-and-inclusive-language-reviewer",
+          "number": 11,
+          "name": "Dialect and Inclusive-Language Reviewer",
+          "description": "Checks regional comprehension, respectful terminology, gender, disability, ethnicity, and community preferences.",
+          "op": "guard classify",
+          "defaults": {},
+          "note": "inclusive-language and sensitivity flags are reported as style/PR review items"
+        },
+        {
+          "id": "language-acceptance-test-runner",
+          "number": 12,
+          "name": "Language Acceptance Test Runner",
+          "description": "Runs fixed translation, summarization, QA, terminology, and formatting tests before release.",
+          "op": "eval benchmark",
+          "defaults": {
+            "name": "language-acceptance"
+          }
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "slug": "tables-figures-images-and-multimodal-research",
+      "name": "Tables, Figures, Images, and Multimodal Research",
+      "skills": [
+        {
+          "id": "figure-and-table-extractor",
+          "number": 1,
+          "name": "Figure and Table Extractor",
+          "description": "Extracts captions, labels, notes, axes, legends, values, and source links from local documents.",
+          "op": "extract tables",
+          "defaults": {}
+        },
+        {
+          "id": "chart-data-recovery-tool",
+          "number": 2,
+          "name": "Chart Data Recovery Tool",
+          "description": "Recovers approximate or exact chart values where technically possible and records uncertainty.",
+          "op": "extract tables",
+          "defaults": {},
+          "note": "recovered values carry explicit uncertainty"
+        },
+        {
+          "id": "image-provenance-tracker",
+          "number": 3,
+          "name": "Image Provenance Tracker",
+          "description": "Records creator, source, date, license, edits, caption, and use rights for research images.",
+          "op": "workflow decision",
+          "defaults": {
+            "kind": "image-provenance"
+          },
+          "note": "records creator, licence, edits and use rights"
+        },
+        {
+          "id": "diagram-interpretation-agent",
+          "number": 4,
+          "name": "Diagram Interpretation Agent",
+          "description": "Explains systems, processes, relationships, and labels while linking observations to image",
+          "op": "extract figure-alt",
+          "defaults": {}
+        },
+        {
+          "id": "map-evidence-extractor",
+          "number": 5,
+          "name": "Map Evidence Extractor",
+          "description": "Extracts legend, scale, date, projection, boundaries, labels, and mapped claims with caution about interpretation.",
+          "op": "extract figure-alt",
+          "defaults": {},
+          "note": "legend, scale and date are recorded in the figure spec"
+        },
+        {
+          "id": "visual-claim-verifier",
+          "number": 6,
+          "name": "Visual Claim Verifier",
+          "description": "Checks whether captions and prose accurately describe the visible evidence and source context.",
+          "op": "verify quote",
+          "defaults": {},
+          "note": "compare the caption/prose claim against the visible text evidence"
+        },
+        {
+          "id": "screenshot-evidence-packager",
+          "number": 7,
+          "name": "Screenshot Evidence Packager",
+          "description": "Captures reproducible local screenshots with application, file, version, timestamp, region, and",
+          "op": "guard redact",
+          "defaults": {},
+          "note": "capture then redact identifying regions before export"
+        },
+        {
+          "id": "accessible-figure-description-writer",
+          "number": 8,
+          "name": "Accessible Figure Description Writer",
+          "description": "Creates concise alt text and detailed descriptions for charts, maps, diagrams, and scientific",
+          "op": "extract figure-alt",
+          "defaults": {}
+        },
+        {
+          "id": "multimodal-citation-builder",
+          "number": 9,
+          "name": "Multimodal Citation Builder",
+          "description": "Cites images, audio, video, tables, figures, and archival objects with exact local locators.",
+          "op": "citation format",
+          "defaults": {},
+          "note": "locators for non-text objects are recorded in the reference fields"
+        },
+        {
+          "id": "video-research-segmenter",
+          "number": 10,
+          "name": "Video Research Segmenter",
+          "description": "Indexes scenes, speakers, captions, topics, on-screen text, and timecodes for local analysis.",
+          "op": "extract transcript",
+          "defaults": {}
+        },
+        {
+          "id": "audio-evidence-reviewer",
+          "number": 11,
+          "name": "Audio Evidence Reviewer",
+          "description": "Checks speaker, wording, context, overlap, recognition confidence, and edit boundaries before",
+          "op": "extract timecode-cite",
+          "defaults": {}
+        },
+        {
+          "id": "multimodal-hallucination-test",
+          "number": 12,
+          "name": "Multimodal Hallucination Test",
+          "description": "Benchmarks whether local models invent visual, audio, chart, or document details not present in",
+          "op": "eval benchmark",
+          "defaults": {
+            "name": "multimodal"
+          }
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "slug": "research-project-review-and-approval-workflows",
+      "name": "Research Project, Review, and Approval Workflows",
+      "skills": [
+        {
+          "id": "research-project-workspace",
+          "number": 1,
+          "name": "Research Project Workspace",
+          "description": "Organizes questions, sources, notes, claims, drafts, translations, reviews, decisions, and final",
+          "op": "workflow project",
+          "defaults": {}
+        },
+        {
+          "id": "human-research-approval-gate",
+          "number": 2,
+          "name": "Human Research Approval Gate",
+          "description": "Requires expert approval for high-impact conclusions, publication, legal interpretations, and sensitive translations.",
+          "op": "workflow approve",
+          "defaults": {}
+        },
+        {
+          "id": "source-review-queue",
+          "number": 3,
+          "name": "Source Review Queue",
+          "description": "Routes uncertain, low-quality, restricted, contradictory, or high-impact sources to designated",
+          "op": "workflow queue",
+          "defaults": {
+            "action": "add",
+            "kind": "source-review"
+          }
+        },
+        {
+          "id": "claim-review-queue",
+          "number": 4,
+          "name": "Claim Review Queue",
+          "description": "Presents each material claim with supporting passages, opposing evidence, source quality, and",
+          "op": "workflow queue",
+          "defaults": {
+            "action": "add",
+            "kind": "claim-review"
+          }
+        },
+        {
+          "id": "draft-review-workflow",
+          "number": 5,
+          "name": "Draft Review Workflow",
+          "description": "Coordinates author, editor, fact checker, translator, domain expert, legal, and final approver",
+          "op": "workflow queue",
+          "defaults": {
+            "action": "add",
+            "kind": "draft-review"
+          }
+        },
+        {
+          "id": "conflict-of-interest-disclosure-workflow",
+          "number": 6,
+          "name": "Conflict-of-Interest Disclosure Workflow",
+          "description": "Collects contributor, reviewer, funding, affiliation, and source-ownership disclosures.",
+          "op": "extract funding",
+          "defaults": {}
+        },
+        {
+          "id": "decision-and-rationale-log",
+          "number": 7,
+          "name": "Decision and Rationale Log",
+          "description": "Records material scope, source, methodology, terminology, interpretation, and publication",
+          "op": "workflow decision",
+          "defaults": {}
+        },
+        {
+          "id": "research-change-control",
+          "number": 8,
+          "name": "Research Change Control",
+          "description": "Requires review of corpus, model, method, source, or conclusion changes after an approved",
+          "op": "workflow change",
+          "defaults": {}
+        },
+        {
+          "id": "parallel-reviewer-reconciliation",
+          "number": 9,
+          "name": "Parallel Reviewer Reconciliation",
+          "description": "Compares independent reviews, identifies disagreements, and records adjudicated outcomes.",
+          "op": "workflow queue",
+          "defaults": {
+            "action": "decide"
+          }
+        },
+        {
+          "id": "publication-readiness-gate",
+          "number": 10,
+          "name": "Publication Readiness Gate",
+          "description": "Checks claims, citations, permissions, language, accessibility, layout, files, and approval before",
+          "op": "workflow ready",
+          "defaults": {}
+        },
+        {
+          "id": "embargo-and-confidentiality-controller",
+          "number": 11,
+          "name": "Embargo and Confidentiality Controller",
+          "description": "Restricts access, display, export, and timing for unpublished, licensed, personal, or sensitive",
+          "op": "workflow embargo",
+          "defaults": {}
+        },
+        {
+          "id": "research-handoff-packager",
+          "number": 12,
+          "name": "Research Handoff Packager",
+          "description": "Delivers editable sources, bibliography, evidence tables, datasets, translation assets, decisions, and continuation state.",
+          "op": "workflow handoff",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "slug": "privacy-security-and-sensitive-research",
+      "name": "Privacy, Security, and Sensitive Research",
+      "skills": [
+        {
+          "id": "sensitive-corpus-classifier",
+          "number": 1,
+          "name": "Sensitive Corpus Classifier",
+          "description": "Labels personal, health, legal, financial, confidential, export-controlled, and restricted research",
+          "op": "guard classify",
+          "defaults": {}
+        },
+        {
+          "id": "research-data-access-controller",
+          "number": 2,
+          "name": "Research Data Access Controller",
+          "description": "Applies least privilege to corpora, notes, transcripts, identities, models, exports, and reviewer",
+          "op": "guard access",
+          "defaults": {}
+        },
+        {
+          "id": "secret-and-identifier-redactor",
+          "number": 3,
+          "name": "Secret and Identifier Redactor",
+          "description": "Finds and irreversibly removes defined identifiers from documents, datasets, transcripts, and",
+          "op": "guard redact",
+          "defaults": {}
+        },
+        {
+          "id": "de-identification-risk-reviewer",
+          "number": 4,
+          "name": "De-Identification Risk Reviewer",
+          "description": "Tests whether combinations, quotations, rare events, or metadata could re-identify people.",
+          "op": "guard deid-risk",
+          "defaults": {}
+        },
+        {
+          "id": "secure-research-enclave",
+          "number": 5,
+          "name": "Secure Research Enclave",
+          "description": "Provides isolated local analysis with controlled import, export, clipboard, printing, and device",
+          "op": "guard access",
+          "defaults": {},
+          "note": "least privilege plus export gates implement the isolated scope"
+        },
+        {
+          "id": "prompt-injection-defense-for-research",
+          "number": 6,
+          "name": "Prompt Injection Defense for Research",
+          "description": "Treats source text as untrusted evidence and blocks embedded instructions from controlling",
+          "op": "guard injection-scan",
+          "defaults": {}
+        },
+        {
+          "id": "malicious-document-scanner",
+          "number": 7,
+          "name": "Malicious Document Scanner",
+          "description": "Screens documents, archives, macros, scripts, embedded files, and malformed parsers before",
+          "op": "guard docscan",
+          "defaults": {}
+        },
+        {
+          "id": "sensitive-quotation-reviewer",
+          "number": 8,
+          "name": "Sensitive Quotation Reviewer",
+          "description": "Checks whether a quotation exposes identity, trauma, confidential facts, or prohibited content and whether paraphrase is safer.",
+          "op": "guard deid-risk",
+          "defaults": {},
+          "note": "assess whether a quotation could identify a person"
+        },
+        {
+          "id": "data-retention-and-deletion-manager",
+          "number": 9,
+          "name": "Data Retention and Deletion Manager",
+          "description": "Applies project, consent, legal, license, and institutional retention rules to all derived assets.",
+          "op": "guard retention",
+          "defaults": {}
+        },
+        {
+          "id": "controlled-research-export-gate",
+          "number": 10,
+          "name": "Controlled Research Export Gate",
+          "description": "Scans, redacts, licenses, signs, and approves files leaving the offline environment.",
+          "op": "guard export-gate",
+          "defaults": {}
+        },
+        {
+          "id": "tamper-evident-research-audit",
+          "number": 11,
+          "name": "Tamper-Evident Research Audit",
+          "description": "Records access, edits, model runs, source decisions, approvals, exports, and deletions in",
+          "op": "guard audit",
+          "defaults": {}
+        },
+        {
+          "id": "incident-response-for-research-data",
+          "number": 12,
+          "name": "Incident Response for Research Data",
+          "description": "Contains suspected exposure, preserves evidence, assesses affected records, and coordinates",
+          "op": "guard incident",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "slug": "evaluation-benchmarks-and-clean-state-validation",
+      "name": "Evaluation, Benchmarks, and Clean-State Validation",
+      "skills": [
+        {
+          "id": "offline-research-agent-benchmark",
+          "number": 1,
+          "name": "Offline Research Agent Benchmark",
+          "description": "Tests question framing, retrieval, source evaluation, synthesis, citation, uncertainty, and artifact",
+          "op": "eval benchmark",
+          "defaults": {
+            "name": "research-agent"
+          }
+        },
+        {
+          "id": "writing-quality-benchmark",
+          "number": 2,
+          "name": "Writing Quality Benchmark",
+          "description": "Scores structure, claim support, clarity, precision, audience fit, revision quality, and reference",
+          "op": "eval benchmark",
+          "defaults": {
+            "name": "writing-quality"
+          }
+        },
+        {
+          "id": "translation-quality-benchmark",
+          "number": 3,
+          "name": "Translation Quality Benchmark",
+          "description": "Tests adequacy, fluency, terminology, register, formatting, critical meaning, and functional behavior by language.",
+          "op": "eval benchmark",
+          "defaults": {
+            "name": "translation-quality"
+          }
+        },
+        {
+          "id": "citation-accuracy-benchmark",
+          "number": 4,
+          "name": "Citation Accuracy Benchmark",
+          "description": "Measures reference resolution, locator accuracy, source-claim fit, quotation fidelity, and fabricated citation rate.",
+          "op": "eval benchmark",
+          "defaults": {
+            "name": "citation-accuracy"
+          }
+        },
+        {
+          "id": "fact-checking-benchmark",
+          "number": 5,
+          "name": "Fact-Checking Benchmark",
+          "description": "Tests true, false, mixed, outdated, jurisdictional, numerical, and unresolvable claims against",
+          "op": "eval benchmark",
+          "defaults": {
+            "name": "factcheck"
+          }
+        },
+        {
+          "id": "ocr-and-speech-accuracy-benchmark",
+          "number": 6,
+          "name": "OCR and Speech Accuracy Benchmark",
+          "description": "Measures character, word, timestamp, speaker, name, number, and punctuation accuracy by",
+          "op": "eval benchmark",
+          "defaults": {
+            "name": "ocr-speech"
+          }
+        },
+        {
+          "id": "retrieval-benchmark-suite",
+          "number": 7,
+          "name": "Retrieval Benchmark Suite",
+          "description": "Measures recall, precision, ranking, diversity, duplicate control, multilingual retrieval, and",
+          "op": "eval benchmark",
+          "defaults": {
+            "name": "retrieval"
+          }
+        },
+        {
+          "id": "clean-offline-research-tests",
+          "number": 8,
+          "name": "Clean Offline Research Tests",
+          "description": "Rebuilds the full workflow from a clean disconnected host using declared packages, models, corpora, and configuration.",
+          "op": "eval cleanstate",
+          "defaults": {}
+        },
+        {
+          "id": "failure-recovery-research-tests",
+          "number": 9,
+          "name": "Failure-Recovery Research Tests",
+          "description": "Injects missing files, corrupt indexes, bad OCR, unavailable models, stale sources, and interrupted reviews, then verifies recovery.",
+          "op": "eval cleanstate",
+          "defaults": {},
+          "note": "inject failures and re-run recovery paths; record results in the suite"
+        },
+        {
+          "id": "corpus-leakage-test",
+          "number": 10,
+          "name": "Corpus Leakage Test",
+          "description": "Checks whether restricted, held-out, personal, or unlicensed content appears in unauthorized",
+          "op": "eval leakage",
+          "defaults": {}
+        },
+        {
+          "id": "human-acceptance-evaluation",
+          "number": 11,
+          "name": "Human Acceptance Evaluation",
+          "description": "Uses researchers, editors, translators, and subject experts to judge real task completion and",
+          "op": "eval acceptance",
+          "defaults": {}
+        },
+        {
+          "id": "regression-release-gate",
+          "number": 12,
+          "name": "Regression Release Gate",
+          "description": "Blocks model, corpus, prompt, tool, or workflow releases that materially reduce quality or safety.",
+          "op": "eval regression",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "slug": "offline-infrastructure-registries-and-reproducibility",
+      "name": "Offline Infrastructure, Registries, and Reproducibility",
+      "skills": [
+        {
+          "id": "research-model-registry",
+          "number": 1,
+          "name": "Research Model Registry",
+          "description": "Tracks local QA, OCR, speech, embedding, reranking, translation, and multilingual models with versions and licenses.",
+          "op": "registry add",
+          "defaults": {
+            "kind": "models"
+          }
+        },
+        {
+          "id": "corpus-registry",
+          "number": 2,
+          "name": "Corpus Registry",
+          "description": "Inventories collections, snapshots, licenses, checksums, coverage, owners, access, and update",
+          "op": "registry add",
+          "defaults": {
+            "kind": "corpora"
+          }
+        },
+        {
+          "id": "prompt-and-method-registry",
+          "number": 3,
+          "name": "Prompt and Method Registry",
+          "description": "Versions research prompts, extraction rules, review rubrics, writing templates, and translation",
+          "op": "registry add",
+          "defaults": {
+            "kind": "prompts"
+          }
+        },
+        {
+          "id": "tool-schema-registry",
+          "number": 4,
+          "name": "Tool Schema Registry",
+          "description": "Stores contracts, inputs, outputs, permissions, side effects, versions, and tests for local research",
+          "op": "registry add",
+          "defaults": {
+            "kind": "tools"
+          }
+        },
+        {
+          "id": "research-workflow-engine",
+          "number": 5,
+          "name": "Research Workflow Engine",
+          "description": "Runs ingestion, search, screening, extraction, synthesis, drafting, translation, review, and",
+          "op": "jobs run-due",
+          "defaults": {},
+          "note": "scheduled bounded steps execute with retry and failure isolation"
+        },
+        {
+          "id": "research-job-scheduler",
+          "number": 6,
+          "name": "Research Job Scheduler",
+          "description": "Schedules indexing, OCR, speech transcription, evaluation, backups, freshness review, and",
+          "op": "jobs add",
+          "defaults": {}
+        },
+        {
+          "id": "durable-research-state",
+          "number": 7,
+          "name": "Durable Research State",
+          "description": "Checkpoints searches, screening, notes, claims, drafts, translations, reviews, and pending",
+          "op": "state save",
+          "defaults": {}
+        },
+        {
+          "id": "research-provenance-database",
+          "number": 8,
+          "name": "Research Provenance Database",
+          "description": "Stores source-to-claim-to-draft-to-translation lineage and every approved transformation.",
+          "op": "verify chain",
+          "defaults": {}
+        },
+        {
+          "id": "reproducible-run-manifest",
+          "number": 9,
+          "name": "Reproducible Run Manifest",
+          "description": "Records exact corpus snapshot, models, prompts, tools, settings, hardware, reviewers, and",
+          "op": "workflow run-manifest",
+          "defaults": {}
+        },
+        {
+          "id": "offline-dependency-mirror",
+          "number": 10,
+          "name": "Offline Dependency Mirror",
+          "description": "Maintains signed local packages, runtimes, models, dictionaries, fonts, and parser dependencies.",
+          "op": "backup mirror",
+          "defaults": {}
+        },
+        {
+          "id": "backup-and-restore-verifier",
+          "number": 11,
+          "name": "Backup and Restore Verifier",
+          "description": "Performs test restores of corpora, indexes, registries, projects, translation assets, and audit",
+          "op": "backup restore-verify",
+          "defaults": {}
+        },
+        {
+          "id": "research-environment-health-check",
+          "number": 12,
+          "name": "Research Environment Health Check",
+          "description": "Checks disk, indexes, database integrity, model load, search, OCR, translation, permissions, and",
+          "op": "eval health",
+          "defaults": {}
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "slug": "deliverables-publishing-accessibility-and-archiving",
+      "name": "Deliverables, Publishing, Accessibility, and Archiving",
+      "skills": [
+        {
+          "id": "research-report-packager",
+          "number": 1,
+          "name": "Research Report Packager",
+          "description": "Produces editable documents, PDF, bibliography, evidence tables, appendices, and source-linked",
+          "op": "workflow package",
+          "defaults": {}
+        },
+        {
+          "id": "multilingual-publication-packager",
+          "number": 2,
+          "name": "Multilingual Publication Packager",
+          "description": "Packages approved source and language versions with consistent metadata, identifiers, navigation, and rights.",
+          "op": "workflow multilingual",
+          "defaults": {}
+        },
+        {
+          "id": "accessible-research-document-builder",
+          "number": 3,
+          "name": "Accessible Research Document Builder",
+          "description": "Creates documents with headings, reading order, tables, alt text, language metadata, contrast,",
+          "op": "workflow accessible",
+          "defaults": {}
+        },
+        {
+          "id": "citation-and-link-integrity-checker",
+          "number": 4,
+          "name": "Citation and Link Integrity Checker",
+          "description": "Validates internal references, bibliography links, page locators, figure references, and offline",
+          "op": "workflow links",
+          "defaults": {}
+        },
+        {
+          "id": "pdf-publication-preflight",
+          "number": 5,
+          "name": "PDF Publication Preflight",
+          "description": "Checks fonts, pages, tags, metadata, links, bookmarks, rendering, permissions, and archival",
+          "op": "workflow preflight",
+          "defaults": {}
+        },
+        {
+          "id": "dataset-and-code-release-packager",
+          "number": 6,
+          "name": "Dataset and Code Release Packager",
+          "description": "Bundles approved data, code, documentation, environment, checksums, licenses, and reproducibility instructions.",
+          "op": "workflow package",
+          "defaults": {},
+          "note": "data, code, checksums and licences travel in the package manifest"
+        },
+        {
+          "id": "research-archive-builder",
+          "number": 7,
+          "name": "Research Archive Builder",
+          "description": "Creates preservable packages with files, metadata, manifests, checksums, rights, provenance, and format information.",
+          "op": "workflow archive",
+          "defaults": {}
+        },
+        {
+          "id": "long-term-format-migration-planner",
+          "number": 8,
+          "name": "Long-Term Format Migration Planner",
+          "description": "Identifies at-risk formats and validates migration while preserving content, structure, metadata,",
+          "op": "workflow archive",
+          "defaults": {},
+          "note": "at-risk formats and the migration plan are recorded in the archive manifest"
+        },
+        {
+          "id": "versioned-publication-manager",
+          "number": 9,
+          "name": "Versioned Publication Manager",
+          "description": "Assigns versions, dates, change notes, supersession, corrections, withdrawal, and stable local",
+          "op": "workflow versions",
+          "defaults": {}
+        },
+        {
+          "id": "translation-publication-consistency-checker",
+          "number": 10,
+          "name": "Translation Publication Consistency Checker",
+          "description": "Confirms all language editions reflect the same approved source version and declared",
+          "op": "translate publish-check",
+          "defaults": {}
+        },
+        {
+          "id": "reader-feedback-and-correction-intake",
+          "number": 11,
+          "name": "Reader Feedback and Correction Intake",
+          "description": "Captures correction requests, evidence, affected versions, decisions, and propagated updates.",
+          "op": "workflow feedback",
+          "defaults": {}
+        },
+        {
+          "id": "final-artifact-reopen-test",
+          "number": 12,
+          "name": "Final Artifact Reopen Test",
+          "description": "Reopens every delivered file on clean local tools and verifies content, layout, search, accessibility, and package structure. Appendix: Recommended Executable Skill Contract When a catalog entry becomes an executable skill, define a stable offline contract so it can be evaluated, repaired, governed, and combined with other capabilities. Purpose Exact research, writing, or translation outcome and Triggers Requests, files, corpus updates, schedules, reviews, or publication states. Inputs Formats, languages, domains, classifications, versions, and required context. Outputs Artifacts, structured records, citations, state changes, and uncertainty. Local Dependencies Models, corpora, indexes, language assets, runtimes, Permissions and Rights Access scope, licenses, quotation limits, redistribution, privacy, and export controls. Procedure Ordered steps, checkpoints, approvals, retries, and Validation Source, claim, citation, language, structure, accessibility, and rendering checks. Human Review Reviewer roles, escalation criteria, adjudication, and Evidence and Provenance Source coordinates, versions, models, transformations, decisions, and approvals. Failure and Recovery Checkpoint, rollback, corpus repair, reprocessing, Benchmarks Normal, boundary, multilingual, adversarial, freshness, and clean-state tests. Versioning Compatibility, migrations, deprecation, corrections,",
+          "op": "workflow preflight",
+          "defaults": {}
+        }
+      ]
+    }
+  ]
+}

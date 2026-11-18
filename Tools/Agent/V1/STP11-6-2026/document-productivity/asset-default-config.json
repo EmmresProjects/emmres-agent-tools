@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "tool_name": "document-productivity",
+  "catalog_path": "/asset-capability-catalog.json",
+  "source_catalog_path": "/asset-source-catalog.txt",
+  "policy_path": "/asset-safety-policy.json",
+  "provider_presets_path": "/asset-provider-presets.json",
+  "prompt_set_path": "/asset-prompt-set.json",
+  "schemas_path": "/asset-json-schemas.json",
+  "document_template_path": "/asset-document-template.html",
+  "sample_data_path": "/asset-sample-data.csv",
+  "default_format": null,
+  "output_root": "./out",
+  "limits": {
+    "max_input_bytes": 52428800,
+    "max_output_bytes": 104857600,
+    "max_files": 1000,
+    "max_capabilities_per_batch": 1000,
+    "max_text_chars": 2000000,
+    "max_formula_chars": 500,
+    "max_ast_nodes": 120,
+    "timeout_seconds": 60,
+    "retry_count": 2,
+    "retry_delay_ms": 100,
+    "max_path_depth": 3,
+    "max_package_files": 500
+  },
+  "providers": {
+    "default": "local",
+    "network_enabled": false,
+    "allow_remote_calls": false,
+    "request_timeout_seconds": 0
+  },
+  "models": {
+    "default": "local-template",
+    "remote": null,
+    "temperature": null
+  },
+  "prompts": {
+    "default_set": "grounded-document-v1",
+    "require_grounded_input": true,
+    "require_human_approval": true
+  },
+  "policies": {
+    "require_approval_for_sensitive": true,
+    "dry_run_skips_writes": true,
+    "atomic_writes": true
+  },
+  "storage": {
+    "root": "./out",
+    "atomic": true,
+    "backup": true,
+    "backup_suffix": ".bak",
+    "temp_dir": null,
+    "cleanup_temp": true
+  },
+  "approval": {
+    "token_env": "DOCUMENT_PRODUCTIVITY_APPROVAL_TOKEN",
+    "reason_required": true
+  },
+  "network": {
+    "enabled": false,
+    "allowed_hosts": []
+  }
+}

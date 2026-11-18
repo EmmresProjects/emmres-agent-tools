@@ -1,0 +1,41 @@
+{
+  "schema": "o3d/offline-install-manifest/1",
+  "description": "Template for an air-gapped workstation bundle. Copy this file, fill in the real file names, versions and SHA-256 digests on the connected staging machine, then verify on the isolated machine with: python tools-o3d.py install verify --manifest <file> --base-dir <bundle>",
+  "generated_utc": "REPLACE-WITH-STAGING-DATE",
+  "bundle_dir": "REPLACE-WITH-BUNDLE-FOLDER-NAME",
+  "fail_on": "error",
+  "notes": [
+    "Every entry needs file, version, platform, sha256 and license before the bundle is released.",
+    "Digests must be produced on the staging machine, not typed by hand: python tools-o3d.py hash --file <each file>.",
+    "Never add a network install step to an air-gapped machine; stage silently-installable artifacts instead."
+  ],
+  "files": [
+    {
+      "file": "blender-4.2.0-linux-x64.tar.xz",
+      "version": "4.2.0",
+      "platform": "linux-x64",
+      "sha256": "REPLACE-WITH-64-HEX-DIGEST",
+      "bytes": 0,
+      "install": "tar -xf blender-4.2.0-linux-x64.tar.xz -C /opt && ln -s /opt/blender-4.2.0-linux-x64/blender /usr/local/bin/blender",
+      "license": "gpl-3.0"
+    },
+    {
+      "file": "python-wheels-3.11-linux-x64.tar",
+      "version": "2026.10",
+      "platform": "linux-x64",
+      "sha256": "REPLACE-WITH-64-HEX-DIGEST",
+      "bytes": 0,
+      "install": "python3 -m pip install --no-index --find-links ./wheels numpy pillow",
+      "license": "mixed-per-wheel"
+    },
+    {
+      "file": "ocofonts-and-hdri-cc0.tar",
+      "version": "2026.03",
+      "platform": "any",
+      "sha256": "REPLACE-WITH-64-HEX-DIGEST",
+      "bytes": 0,
+      "install": "untar into the DCC asset library path recorded in project-config.json",
+      "license": "cc0-1.0"
+    }
+  ]
+}

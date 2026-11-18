@@ -1,0 +1,185 @@
+{
+  "roles_version": "1.0",
+  "layouts": {
+    "title": "Full-bleed opening with deck title, subtitle, and organisation line.",
+    "section": "Section divider with a large section number and title.",
+    "bullets": "Title plus one to seven short statements.",
+    "two-column": "Title plus two balanced statement groups for contrasts and objection handling.",
+    "metrics": "Title plus two to four metric cards with label, value, and note.",
+    "quote": "Oversized statement with attribution for message or voice-of-customer slides.",
+    "process": "Title plus three to six ordered steps with numbers.",
+    "timeline": "Title plus horizontal phase blocks with dates.",
+    "table": "Title plus a readable table limited to six rows and four columns.",
+    "closing": "Title plus decision statement, owner, and date."
+  },
+  "roles": [
+    {
+      "id": "title",
+      "name": "Title",
+      "purpose": "Name the promise of the session.",
+      "layout": "title",
+      "max_bullets": 1,
+      "max_words_per_bullet": 18,
+      "default_pacing_seconds": 20,
+      "requires_title": true,
+      "guidance": "One claim, the audience, and the date. No agenda text, no logos crowd."
+    },
+    {
+      "id": "agenda",
+      "name": "Agenda",
+      "purpose": "Set the route and the time budget.",
+      "layout": "process",
+      "max_bullets": 6,
+      "max_words_per_bullet": 12,
+      "default_pacing_seconds": 45,
+      "requires_title": true,
+      "guidance": "Use the section names that actually appear later; add minutes when the meeting is time-boxed."
+    },
+    {
+      "id": "section",
+      "name": "Section divider",
+      "purpose": "Reset attention between movements.",
+      "layout": "section",
+      "max_bullets": 1,
+      "max_words_per_bullet": 10,
+      "default_pacing_seconds": 12,
+      "requires_title": true,
+      "guidance": "Number the section and restate the question it answers."
+    },
+    {
+      "id": "concept",
+      "name": "Concept",
+      "purpose": "Explain one idea the audience must carry forward.",
+      "layout": "bullets",
+      "max_bullets": 5,
+      "max_words_per_bullet": 16,
+      "default_pacing_seconds": 75,
+      "requires_title": true,
+      "guidance": "Writing the title as a full sentence forces the slide to make a claim."
+    },
+    {
+      "id": "evidence",
+      "name": "Evidence",
+      "purpose": "Prove a claim with data, citation, or a demonstration.",
+      "layout": "bullets",
+      "max_bullets": 4,
+      "max_words_per_bullet": 18,
+      "default_pacing_seconds": 85,
+      "requires_title": true,
+      "requires_source": true,
+      "guidance": "Every evidence slide carries at least one source entry; put the reading aid next to the data."
+    },
+    {
+      "id": "comparison",
+      "name": "Comparison",
+      "purpose": "Contrast options, risks, or alternatives.",
+      "layout": "two-column",
+      "max_bullets": 4,
+      "max_words_per_bullet": 14,
+      "default_pacing_seconds": 80,
+      "requires_title": true,
+      "guidance": "Keep both columns at the same level of detail; state the recommendation in the title."
+    },
+    {
+      "id": "process",
+      "name": "Process",
+      "purpose": "Show an ordered method or workflow.",
+      "layout": "process",
+      "max_bullets": 6,
+      "max_words_per_bullet": 12,
+      "default_pacing_seconds": 75,
+      "requires_title": true,
+      "guidance": "Start each step with a verb; cap at six steps or group them."
+    },
+    {
+      "id": "timeline",
+      "name": "Timeline",
+      "purpose": "Show phases, dates, and dependencies.",
+      "layout": "timeline",
+      "max_bullets": 6,
+      "max_words_per_bullet": 10,
+      "default_pacing_seconds": 70,
+      "requires_title": true,
+      "guidance": "Dates or quarters only; no soft language such as soon."
+    },
+    {
+      "id": "table",
+      "name": "Data table",
+      "purpose": "Compare structured values the audience must read precisely.",
+      "layout": "table",
+      "max_bullets": 6,
+      "max_words_per_bullet": 14,
+      "default_pacing_seconds": 80,
+      "requires_title": true,
+      "guidance": "Six by four is the practical limit; move the rest to the appendix or a handout."
+    },
+    {
+      "id": "metrics",
+      "name": "Metrics",
+      "purpose": "Anchor the argument in two to four numbers.",
+      "layout": "metrics",
+      "max_bullets": 4,
+      "max_words_per_bullet": 10,
+      "default_pacing_seconds": 70,
+      "requires_title": true,
+      "requires_source": true,
+      "guidance": "Every number needs a unit, a comparison, and a source line."
+    },
+    {
+      "id": "quote",
+      "name": "Quote",
+      "purpose": "Let a customer, expert, or brief carry the message.",
+      "layout": "quote",
+      "max_bullets": 1,
+      "max_words_per_bullet": 30,
+      "default_pacing_seconds": 35,
+      "requires_title": true,
+      "guidance": "Attribute with name, role, and permission status."
+    },
+    {
+      "id": "demonstration",
+      "name": "Demonstration",
+      "purpose": "Show the product or process actually working.",
+      "layout": "bullets",
+      "max_bullets": 3,
+      "max_words_per_bullet": 12,
+      "default_pacing_seconds": 110,
+      "requires_title": true,
+      "guidance": "Have a recorded fallback; never depend on live network for the only copy of the proof."
+    },
+    {
+      "id": "decision",
+      "name": "Decision",
+      "purpose": "Ask for a specific commitment.",
+      "layout": "closing",
+      "max_bullets": 3,
+      "max_words_per_bullet": 16,
+      "default_pacing_seconds": 90,
+      "requires_title": true,
+      "guidance": "Decision, owner, date, and the cost of not deciding."
+    },
+    {
+      "id": "summary",
+      "name": "Summary",
+      "purpose": "Restate the argument and hand over the action.",
+      "layout": "bullets",
+      "max_bullets": 4,
+      "max_words_per_bullet": 14,
+      "default_pacing_seconds": 55,
+      "requires_title": true,
+      "guidance": "Mirror the opening promise; end with the action, not a thank-you."
+    },
+    {
+      "id": "appendix",
+      "name": "Appendix",
+      "purpose": "Hold backup detail that answers anticipated questions.",
+      "layout": "bullets",
+      "max_bullets": 7,
+      "max_words_per_bullet": 20,
+      "default_pacing_seconds": 0,
+      "requires_title": true,
+      "hidden": true,
+      "guidance": "Appendix slides are hidden by default and are not counted in pacing."
+    }
+  ]
+}

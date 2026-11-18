@@ -1,0 +1,7 @@
+{
+  "Doe 2024": {"quality": "high", "rob": "low", "duplicate": false},
+  "Santos 2021": {"quality": "moderate", "rob": "some-concerns", "duplicate": false},
+  "Reyes 2020": {"quality": "low", "rob": "high", "duplicate": false},
+  "Lim 2023": {"quality": "moderate", "rob": "some-concerns", "duplicate": true},
+  "Tan 2019": {"quality": "high", "rob": "low", "duplicate": false}
+}

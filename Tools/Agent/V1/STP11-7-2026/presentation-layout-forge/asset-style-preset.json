@@ -1,0 +1,24 @@
+{
+  "name": "clear-academic-technical",
+  "slide_width_in": 10,
+  "slide_height_in": 5.625,
+  "style": {
+    "font": "Arial",
+    "title_font_pt": 24,
+    "body_font_pt": 9,
+    "line_width_pt": 1.0,
+    "table_header_fill": "000000",
+    "table_header_text": "FFFFFF",
+    "table_alt_fill": "D9D9D9",
+    "background": "FFFFFF"
+  },
+  "layout_rules": {
+    "outer_margin_in": 0.4,
+    "title_top_in": 0.45,
+    "content_top_in": 1.3,
+    "minimum_shape_gap_in": 0.18,
+    "connector_policy": "orthogonal-first",
+    "shared_bus_for_implementations": true,
+    "no_connector_through_shape": true
+  }
+}

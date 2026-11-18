@@ -1,0 +1,73 @@
+{
+  "name": "{{ELECTRON_NAME}}",
+  "productName": "{{APP_NAME}}",
+  "version": "{{APP_VERSION}}",
+  "description": "{{APP_TITLE}} - {{TAGLINE}}",
+  "author": {
+    "name": "{{AUTHOR}}",
+    "email": "{{AUTHOR_EMAIL}}"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "sync": "node scripts/sync-www.js",
+    "start": "npm run sync && electron .",
+    "dev": "npm run sync && cross-env {{BRAND_UPPER}}_DEV=1 electron .",
+    "pack": "npm run sync && electron-builder --dir",
+    "build": "npm run sync && electron-builder --win --x64",
+    "build:portable": "npm run sync && electron-builder --win portable --x64",
+    "build:all": "npm run sync && electron-builder --win nsis portable --x64"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "{{ANDROID_APP_ID}}",
+    "productName": "{{APP_NAME}}",
+    "copyright": "Copyright (c) {{YEAR}} {{AUTHOR}}",
+    "directories": {
+      "output": "../dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "www/**/*",
+      "!www/js/seed.js.mock.json"
+    ],
+    "extraMetadata": {
+      "main": "main.js"
+    },
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "icon": "build/icon.png",
+      "artifactName": "{{ARTIFACT_SLUG}}-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "{{APP_NAME}}",
+      "installerIcon": "build/icon.png",
+      "uninstallerIcon": "build/icon.png",
+      "deleteAppDataOnUninstall": false,
+      "license": "build/LICENSE.txt"
+    },
+    "portable": {
+      "artifactName": "{{ARTIFACT_SLUG}}-Portable-${version}.${ext}"
+    },
+    "linux": {
+      "target": ["AppImage"],
+      "category": "Office",
+      "icon": "build/icon.png"
+    }
+  }
+}

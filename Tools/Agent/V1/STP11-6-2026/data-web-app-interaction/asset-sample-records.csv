@@ -1,0 +1,13 @@
+record_id,user_id,cohort_month,timestamp_utc,region,tier,funnel_stage,latency_ms,amount_usd,units,satisfaction_score,contact_email,notes
+R001,U101,2026-08,2026-10-01T08:00:00Z,APAC,Standard,visit,118.4,49.00,1,5,alice@example.org,Completed onboarding smoothly
+R002,U101,2026-08,2026-10-01T08:04:12Z,APAC,Standard,signup,132.1,49.00,1,5,alice@example.org,Verified workspace settings
+R003,U101,2026-08,2026-10-01T08:11:45Z,APAC,Standard,activated,141.0,49.00,1,5,alice@example.org,Exported first report
+R004,U102,2026-08,2026-10-01T09:15:00Z,EMEA,Starter,visit,145.2,0.00,1,4,bob@example.org,Checked documentation
+R005,U102,2026-08,2026-10-01T09:19:30Z,EMEA,Starter,signup,159.8,0.00,1,4,bob@example.org,Completed form validation
+R006,U103,2026-09,2026-10-02T10:00:00Z,AMER,Enterprise,visit,112.0,199.00,3,5,carol@example.org,Reviewed security baseline
+R007,U103,2026-09,2026-10-02T10:06:00Z,AMER,Enterprise,signup,124.5,199.00,3,5,carol@example.org,Provisioned sandbox tenant
+R008,U103,2026-09,2026-10-02T10:18:20Z,AMER,Enterprise,activated,128.9,199.00,3,5,carol@example.org,Ran API contract suite
+R009,U104,2026-09,2026-10-03T11:30:00Z,APAC,Standard,visit,890.5,49.00,1,2,dan@example.org,Slow network spike observed
+R010,U104,2026-09,2026-10-03T11:30:00Z,APAC,Standard,visit,890.5,49.00,1,2,dan@example.org,Slow network spike observed
+R011,U105,2026-10,2026-10-04T14:20:00Z,EMEA,Starter,visit,134.7,,1,,erin@example.org,Missing amount and score entry
+R012,U106,2026-10,2026-10-05T16:45:00Z,AMER,Standard,signup,148.3,49.00,2,4,frank@example.org,Standard workflow check

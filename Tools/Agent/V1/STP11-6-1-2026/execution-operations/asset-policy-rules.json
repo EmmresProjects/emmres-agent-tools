@@ -1,0 +1,65 @@
+{
+  "version": "1.0.0",
+  "description": "Risk, approval, scope, and secret-handling rules consumed by the risk, exec, run-plan and contract operations.",
+  "risk_levels": {
+    "none": {"rank": 0, "approval_required": false, "note": "No meaningful side effect detected."},
+    "low": {"rank": 1, "approval_required": false, "note": "Read-only or trivially reversible."},
+    "medium": {"rank": 2, "approval_required": false, "note": "Writes inside the work root or installs dependencies; reversible with care."},
+    "high": {"rank": 3, "approval_required": true, "note": "Broad deletion, history rewrite, privileged change, or external side effect."},
+    "critical": {"rank": 4, "approval_required": true, "note": "Destructive, irreversible, production, or security-sensitive action."}
+  },
+  "rules": [
+    {"id": "rm-root", "level": "critical", "category": "destructive", "pattern": "\\brm\\s+(-[A-Za-z]*\\s+)*-[A-Za-z]*[rR][A-Za-z]*\\s+(/|~|\\$HOME|/\\*)(\\s|$)", "reason": "Recursive delete of a root, home, or wildcard path", "safer": "Target an explicit subdirectory and verify the resolved path first."},
+    {"id": "rm-recursive", "level": "high", "category": "destructive", "pattern": "\\brm\\s+(-[A-Za-z]*\\s+)*-[A-Za-z]*[rR]", "reason": "Recursive deletion", "safer": "List the exact targets, dry-run with a listing command, and delete only verified paths."},
+    {"id": "rm-force", "level": "medium", "category": "destructive", "pattern": "\\brm\\s+(-[A-Za-z]*\\s+)*-[A-Za-z]*f", "reason": "Forced deletion without confirmation", "safer": "Drop -f so missing-path errors surface."},
+    {"id": "windows-recursive-delete", "level": "high", "category": "destructive", "pattern": "\\b(rmdir|rd)\\s+/s|\\bdel\\s+/[fsq]|Remove-Item[^\\n]*-Recurse", "reason": "Recursive or forced delete on Windows or PowerShell", "safer": "Resolve the target path and confirm it is inside the intended scope."},
+    {"id": "mkfs", "level": "critical", "category": "destructive", "pattern": "\\bmkfs(\\.\\w+)?\\b|\\bdiskpart\\b|\\bformat\\s+[A-Z]:|\\bwipefs\\b", "reason": "Filesystem creation or disk formatting", "safer": "Do not run without an explicit change record and a verified backup."},
+    {"id": "dd-device", "level": "critical", "category": "destructive", "pattern": "\\bdd\\b[^\\n]*of=/dev/", "reason": "Direct block-device write", "safer": "Write to a file, verify, then apply through a controlled change."},
+    {"id": "fork-bomb", "level": "critical", "category": "destructive", "pattern": ":\\(\\)\\s*\\{\\s*:\\|:&\\s*\\}\\s*;:", "reason": "Fork bomb", "safer": "Never run; use a bounded load generator instead."},
+    {"id": "privilege-escalation", "level": "high", "category": "privilege", "pattern": "\\b(sudo|doas|runas|Start-Process[^\\n]*-Verb\\s+RunAs|su\\s+-?)\\b", "reason": "Privilege escalation", "safer": "Use least privilege; escalate only for the single protected command."},
+    {"id": "chmod-world", "level": "high", "category": "security", "pattern": "chmod\\s+(-[A-Za-z]+\\s+)*(0?777|a\\+rwx)|icacls[^\\n]*Everyone", "reason": "World-writable permissions", "safer": "Grant the narrowest permission to the specific principal."},
+    {"id": "chown-recursive", "level": "high", "category": "security", "pattern": "\\bchown\\s+(-[A-Za-z]+\\s+)*-R", "reason": "Recursive ownership change", "safer": "Change ownership on the specific subtree after listing it."},
+    {"id": "history-rewrite", "level": "high", "category": "vcs", "pattern": "git\\s+(reset\\s+--hard|clean\\s+-[A-Za-z]*[fdx]|push[^\\n]*--force|push\\s+-f\\b|filter-branch|rebase\\s+-i)", "reason": "Destructive or history-rewriting git operation", "safer": "Use a branch, stash, or revert commit; confirm the remote branch name explicitly."},
+    {"id": "power-off", "level": "critical", "category": "destructive", "pattern": "\\b(shutdown|reboot|halt|poweroff|init\\s+0)\\b", "reason": "Host shutdown or restart", "safer": "Requires explicit change approval and a maintenance window."},
+    {"id": "curl-pipe-shell", "level": "high", "category": "supply-chain", "pattern": "(curl|wget)[^\\n|]*\\|[^\\n]*(sh|bash|zsh|python|node)\\b", "reason": "Remote script piped into an interpreter", "safer": "Download, inspect, pin a checksum, then execute the verified file."},
+    {"id": "sql-destructive", "level": "critical", "category": "database", "pattern": "\\b(DROP\\s+(DATABASE|SCHEMA|TABLE)|TRUNCATE\\s+TABLE|ALTER\\s+TABLE[^;]*DROP\\s+COLUMN)\\b", "reason": "Destructive schema or data statement", "safer": "Take a backup and require approval; prefer additive migrations."},
+    {"id": "sql-update-no-where", "level": "high", "category": "database", "pattern": "\\b(DELETE\\s+FROM|UPDATE)\\b(?![^;]*\\bWHERE\\b)", "reason": "Unbounded row mutation without a WHERE clause", "safer": "Add a WHERE clause and run a SELECT count first."},
+    {"id": "cloud-destroy", "level": "critical", "category": "infrastructure", "pattern": "\\b(terraform\\s+(destroy|apply\\s+-auto-approve)|kubectl\\s+(delete|drain|cordon)|aws\\s+\\w+\\s+(delete|terminate|purge)|gcloud\\s+\\w+\\s+(delete|destroy)|az\\s+\\w+\\s+(delete|purge))\\b", "reason": "Infrastructure or cloud resource destruction", "safer": "Produce a plan/diff, obtain approval, and record a rollback path."},
+    {"id": "container-prune", "level": "high", "category": "infrastructure", "pattern": "docker\\s+(system\\s+prune|rm\\s+-f|volume\\s+rm|image\\s+prune)", "reason": "Container or image removal", "safer": "List candidates, confirm the exact identifiers, then remove."},
+    {"id": "package-publish", "level": "high", "category": "publishing", "pattern": "\\b(npm\\s+publish|twine\\s+upload|pip\\s+.*--upload|cargo\\s+publish|gem\\s+push|docker\\s+push|gh\\s+release\\s+create)", "reason": "Publishing to a public registry", "safer": "Publish to a staging registry first; require approval for the release."},
+    {"id": "credential-change", "level": "critical", "category": "security", "pattern": "\\b(passwd|chpasswd|userdel|groupdel|net\\s+user[^\\n]*/delete|ssh-keygen[^\\n]*-f[^\\n]*authorized_keys|htpasswd)\\b", "reason": "Identity or credential mutation", "safer": "Requires explicit approval and an audit record."},
+    {"id": "firewall-flush", "level": "critical", "category": "security", "pattern": "(iptables\\s+-F|nft\\s+flush|ufw\\s+disable|Set-NetFirewallProfile[^\\n]*Disable)", "reason": "Firewall or security control removal", "safer": "Change individual rules and verify connectivity after each change."},
+    {"id": "env-secret-exposure", "level": "medium", "category": "secrets", "pattern": "(echo|printf|printenv|env)\\b[^\\n]*(PASSWORD|SECRET|TOKEN|API_KEY|PRIVATE_KEY)", "reason": "Potential secret printed to stdout or logs", "safer": "Print only a length or fingerprint, never the value."},
+    {"id": "external-mutation", "level": "medium", "category": "network", "pattern": "curl[^\\n]*(-X\\s*(POST|PUT|PATCH|DELETE)|--data|--upload-file)|Invoke-RestMethod[^\\n]*-Method\\s+(Post|Put|Delete)", "reason": "Mutating HTTP request to an external service", "safer": "Send to a test endpoint first and confirm the target host."},
+    {"id": "ssh-remote", "level": "medium", "category": "remote", "pattern": "\\b(ssh|scp|rsync\\s+[^\\n]*-e\\s+ssh|Invoke-Command\\s+-ComputerName)\\b", "reason": "Remote execution or transfer", "safer": "Confirm the target host is inside the declared scope."},
+    {"id": "rsync-delete", "level": "high", "category": "remote", "pattern": "rsync[^\\n]*--delete", "reason": "Mirror that deletes destination-only files", "safer": "Run with --dry-run and inspect the deletion list first."},
+    {"id": "in-place-edit", "level": "medium", "category": "filesystem", "pattern": "\\bsed\\s+(-[A-Za-z]+\\s+)*-i|Set-Content[^\\n]*|\\btruncate\\s+-s", "reason": "In-place file rewrite", "safer": "Write to a new file and swap atomically after verification."},
+    {"id": "service-control", "level": "medium", "category": "system", "pattern": "\\b(systemctl\\s+(restart|stop|disable|mask)|service\\s+\\w+\\s+(restart|stop)|net\\s+stop|Stop-Service)\\b", "reason": "Service state change", "safer": "Confirm the service name and the blast radius; plan a restart window."},
+    {"id": "process-kill", "level": "medium", "category": "process", "pattern": "\\b(kill\\s+-9|pkill|killall|taskkill[^\\n]*/F|Stop-Process[^\\n]*-Force)\\b", "reason": "Forced process termination", "safer": "Send a graceful signal first and confirm the PID/PGID matches your job."},
+    {"id": "cron-edit", "level": "medium", "category": "scheduling", "pattern": "\\b(crontab\\s+-[re]|at\\s+now|schtasks\\s+/create)\\b", "reason": "Scheduled task creation or removal", "safer": "Record the previous schedule and state the timezone and overlap policy."},
+    {"id": "dependency-install", "level": "medium", "category": "supply-chain", "pattern": "\\b(pip|pip3|npm|yarn|pnpm|apt|apt-get|brew|choco|winget|gem|cargo|go)\\s+(install|add|get|i)\\b|\\bnpm\\s+ci\\b", "reason": "Dependency installation from a remote registry", "safer": "Pin versions and verify checksums; prefer a lock file."},
+    {"id": "read-only-inspection", "level": "low", "category": "read", "pattern": "^\\s*(ls|dir|cat|type|head|tail|grep|find|rg|git\\s+(status|log|diff|show)|python3?\\s+-V|node\\s+-v|wc|file|stat|du|df|ps|tasklist)\\b", "reason": "Read-only inspection", "safer": "None required."}
+  ],
+  "secret_patterns": [
+    {"id": "aws-access-key", "pattern": "\\b(AKIA|ASIA)[0-9A-Z]{16}\\b", "replacement": "[REDACTED:aws-access-key]"},
+    {"id": "github-token", "pattern": "\\b(gh[pousr]_[A-Za-z0-9]{16,}|github_pat_[A-Za-z0-9_]{20,})\\b", "replacement": "[REDACTED:github-token]"},
+    {"id": "slack-token", "pattern": "\\bxox[abprs]-[A-Za-z0-9-]{10,}\\b", "replacement": "[REDACTED:slack-token]"},
+    {"id": "openai-style-key", "pattern": "\\bsk-[A-Za-z0-9]{20,}\\b", "replacement": "[REDACTED:api-key]"},
+    {"id": "private-key-block", "pattern": "-----BEGIN (RSA |EC |OPENSSH |PGP )?PRIVATE KEY-----[\\s\\S]{0,4000}?-----END (RSA |EC |OPENSSH |PGP )?PRIVATE KEY-----", "replacement": "[REDACTED:private-key]"},
+    {"id": "jwt", "pattern": "\\beyJ[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]{5,}\\b", "replacement": "[REDACTED:jwt]"},
+    {"id": "connection-string", "pattern": "\\b[a-z][a-z0-9+.-]*://[^\\s:/@]+:[^\\s@/]+@[^\\s]+", "replacement": "[REDACTED:connection-string]"},
+    {"id": "assignment-secret", "pattern": "(?i)\\b(password|passwd|pwd|secret|token|api[_-]?key|access[_-]?key|client[_-]?secret)\\s*[:=]\\s*[\"']?([^\\s\"',;]{6,})", "replacement": "[REDACTED:credential]"},
+    {"id": "bearer-header", "pattern": "(?i)authorization\\s*:\\s*bearer\\s+\\S+", "replacement": "Authorization: Bearer [REDACTED]"}
+  ],
+  "scope_rules": {
+    "require_explicit_target": true,
+    "ambiguous_globs": ["*", "**", "/*", "../*", "~/*", "C:\\\\*"],
+    "reason": "Ambiguous or very broad targets must be narrowed to explicit paths, hosts, branches, or datasets."
+  },
+  "approval": {
+    "accepted_flags": ["--approve"],
+    "reference_flag": "--approval-ref",
+    "reason": "Approval is a deliberate human gate: pass --approve together with --approval-ref describing who approved and why. Every approval is written to the run audit log.",
+    "note": "No cryptographic attestation is implemented; the gate guarantees an explicit, logged decision rather than silent execution of a risky action."
+  }
+}

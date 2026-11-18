@@ -1,0 +1,76 @@
+{
+  "$schema": "pec.content-types/1",
+  "description": "Extension to category mapping used by organize --mode by-content-type, the media recipe, and content-type audits. Extend freely; unknown extensions fall back to 'unknown'.",
+  "fallback": "unknown",
+  "categories": {
+    "documents": {
+      "extensions": [".pdf", ".doc", ".docx", ".odt", ".rtf", ".txt", ".md", ".markdown", ".tex",
+                     ".pages", ".epub", ".mobi", ".log", ".rst", ".xls", ".xlsx", ".ods", ".csv",
+                     ".tsv", ".ppt", ".pptx", ".odp", ".key"],
+      "notes": "Text, office and reading formats, including flat data tables."
+    },
+    "images": {
+      "extensions": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tif", ".tiff", ".webp", ".svg",
+                     ".heic", ".heif", ".avif", ".ico", ".raw", ".cr2", ".nef", ".dng", ".psd"],
+      "notes": "Raster, vector and raw camera images."
+    },
+    "audio": {
+      "extensions": [".mp3", ".wav", ".flac", ".aac", ".m4a", ".ogg", ".oga", ".opus", ".wma",
+                     ".aiff", ".alac", ".mid", ".midi"],
+      "notes": "Lossy and lossless audio."
+    },
+    "video": {
+      "extensions": [".mp4", ".m4v", ".mkv", ".avi", ".mov", ".wmv", ".webm", ".flv", ".mpg",
+                     ".mpeg", ".3gp", ".ts", ".mts", ".m2ts"],
+      "notes": "Container formats, masters and proxies."
+    },
+    "subtitles": {
+      "extensions": [".srt", ".vtt", ".ass", ".ssa", ".sub", ".sbv"],
+      "notes": "Caption and subtitle sidecars."
+    },
+    "code": {
+      "extensions": [".py", ".pyi", ".js", ".mjs", ".cjs", ".ts", ".tsx", ".jsx", ".java", ".kt",
+                     ".go", ".rs", ".rb", ".php", ".c", ".h", ".cc", ".cpp", ".hpp", ".cs", ".swift",
+                     ".m", ".mm", ".scala", ".sh", ".bash", ".zsh", ".fish", ".ps1", ".bat", ".cmd",
+                     ".pl", ".lua", ".r", ".jl", ".dart", ".ex", ".exs", ".erl", ".hs", ".clj",
+                     ".vue", ".svelte", ".html", ".htm", ".css", ".scss", ".sass", ".less", ".sql"],
+      "notes": "Source code and markup. Never executed by this tool."
+    },
+    "data": {
+      "extensions": [".json", ".jsonl", ".ndjson", ".yaml", ".yml", ".toml", ".ini", ".cfg",
+                     ".conf", ".xml", ".parquet", ".avro", ".orc", ".feather", ".arrow", ".db",
+                     ".sqlite", ".sqlite3", ".mdb", ".accdb", ".dbf", ".pkl", ".npy", ".npz", ".h5",
+                     ".hdf5", ".sav", ".dta"],
+      "notes": "Structured, serialized and database files."
+    },
+    "executables": {
+      "extensions": [".exe", ".dll", ".so", ".dylib", ".bin", ".msi", ".deb", ".rpm", ".apk",
+                     ".app", ".appimage", ".jar", ".scr", ".com", ".elf", ".dmg", ".pkg"],
+      "notes": "Relevant for audit and mismatch detection; extraction never executes them."
+    },
+    "fonts": {
+      "extensions": [".ttf", ".otf", ".woff", ".woff2", ".eot", ".ttc", ".fon"],
+      "notes": "Fonts and font collections."
+    },
+    "archives": {
+      "extensions": [".zip", ".zipx", ".7z", ".rar", ".tar", ".gz", ".tgz", ".bz2", ".tbz2",
+                     ".xz", ".txz", ".lz", ".lzma", ".zst", ".tzst", ".lz4", ".cab", ".iso",
+                     ".wim", ".ar", ".z", ".001", ".z01"],
+      "notes": "Nested containers, discovered by the nesting engine."
+    },
+    "certificates": {
+      "extensions": [".pem", ".crt", ".cer", ".der", ".p12", ".pfx", ".jks", ".keystore",
+                     ".gpg", ".asc", ".sig"],
+      "notes": "Treated as sensitive; excluded by the redacted recipe by default."
+    },
+    "licenses": {
+      "extensions": [".license", ".notice", ".copying", ".eula"],
+      "notes": "Extensionless files named LICENSE, COPYING or NOTICE are captured by filename."
+    }
+  },
+  "licenses": {
+    "extensions": [".license", ".notice", ".copying", ".eula"],
+    "filenames": ["LICENSE", "LICENSE.md", "LICENSE.txt", "COPYING", "NOTICE", "NOTICE.md",
+                  "NOTICE.txt", "AUTHORS", "CONTRIBUTORS", "THIRD-PARTY-NOTICES.md"]
+  }
+}

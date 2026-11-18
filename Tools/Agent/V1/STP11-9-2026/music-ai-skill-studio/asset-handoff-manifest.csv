@@ -1,0 +1,9 @@
+case_id,kind,file,role,status,owner,notes
+salt-harbor-mix-20261109T020000Z,category,salt-harbor-mix-20261109T020000Z-plan.json,structured case plan,generated,producer,source of truth for the plan
+salt-harbor-mix-20261109T020000Z,category,salt-harbor-mix-20261109T020000Z-brief.md,editable production brief,generated,producer,fill the decision log in section 7
+salt-harbor-mix-20261109T020000Z,category,salt-harbor-mix-20261109T020000Z-checklist.csv,delivery + validation checklist,generated,mix engineer,one row per deliverable and check
+salt-harbor-mix-20261109T020000Z,category,salt-harbor-mix-20261109T020000Z-handoff.csv,handoff manifest,generated,producer,recipient signs off before release
+salt-harbor-mix-20261109T020000Z,category,master-24-48.wav,final master,externally-produced,mix engineer,checked with qc-audio before packaging
+salt-harbor-mix-20261109T020000Z,category,stems/8-stem-set.zip,stem set,externally-produced,mix engineer,verify loop/start alignment
+salt-harbor-mix-20261109T020000Z,category,session-v14.zip,archived session,externally-produced,producer,restore test completed
+salt-harbor-mix-20261109T020000Z,category,rights-clearance.pdf,rights evidence,externally-produced,manager,every asset row accounted for

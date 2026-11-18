@@ -1,0 +1,2995 @@
+{
+ "title": "Pixel Art, Sprite, Voxel, Animation, and Pixel Media Skill Catalog",
+ "source": "Pixel-Art-Media-Skill-Catalog.pdf (29 categories, 318 skills)",
+ "modes": {
+  "command": "direct automated operation",
+  "assist": "tool produces measurements/artifacts; artistic judgment stays with the operator",
+  "guide": "structured production guidance via the guide command",
+  "built-in": "safety behavior built into every command (overwrite guard, dry-run)"
+ },
+ "categories": [
+  {
+   "id": 1,
+   "name": "Creative Direction and Requirement Design",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Pixel Art Brief Interpreter",
+     "description": "Turns an idea, reference, theme, genre, audience, platform, size, palette, and animation need into a precise production brief.",
+     "mode": "command",
+     "ops": [
+      "brief"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Pixel Style Director",
+     "description": "Defines pixel density, silhouette language, cluster shapes, line treatment, texture, lighting, and visual consistency for a project.",
+     "mode": "command",
+     "ops": [
+      "art-bible"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Reference Board Synthesizer",
+     "description": "Organizes supplied visual references into actionable notes without copying protected characters, logos, or distinctive compositions.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 4,
+     "name": "Theme and Genre Ideator",
+     "description": "Develops original pixel concepts for fantasy, science fiction, horror, cozy, cyberpunk, historical, educational, abstract, and hybrid themes.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 5,
+     "name": "Visual Constraint Planner",
+     "description": "Chooses canvas, tile grid, frame budget, color limit, transparency, file size, and target hardware constraints.",
+     "mode": "command",
+     "ops": [
+      "constraints"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Asset Scope Estimator",
+     "description": "Breaks a scene or game into characters, props, tiles, interfaces, effects, animations, variants, and priorities.",
+     "mode": "command",
+     "ops": [
+      "scope"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Pixel Art Art-Bible Author",
+     "description": "Documents reusable rules for palettes, outlines, shading, proportions, animation timing, export, and naming.",
+     "mode": "command",
+     "ops": [
+      "art-bible"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Originality and IP Safety Reviewer",
+     "description": "Checks concepts for excessive similarity and redirects designs toward original, licensable, and clearly differentiated results.",
+     "mode": "assist",
+     "ops": [
+      "brief",
+      "guide"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Audience and Readability Planner",
+     "description": "Adapts visual complexity, contrast, icon clarity, and motion for children, general audiences, accessibility, or expert users.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 10,
+     "name": "Multi-Asset Consistency Supervisor",
+     "description": "Maintains scale, perspective, palette, lighting, line weight, and naming across large asset collections.",
+     "mode": "assist",
+     "ops": [
+      "audit",
+      "validate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Pixel Drawing Foundations",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Pixel Cluster Sculptor",
+     "description": "Builds intentional pixel clusters with clean contours, controlled stair steps, readable negative space, and minimal noise.",
+     "mode": "assist",
+     "ops": [
+      "convert"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Silhouette Designer",
+     "description": "Creates instantly readable silhouettes for characters, objects, creatures, architecture, vehicles, and effects.",
+     "mode": "command",
+     "ops": [
+      "silhouette"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Pixel Linework Specialist",
+     "description": "Produces crisp straight, curved, diagonal, tapered, broken, and anti-aliased pixel lines suited to the chosen resolution.",
+     "mode": "command",
+     "ops": [
+      "outline"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Jagged Edge and Jaggies Repairer",
+     "description": "Finds uneven contour rhythm, accidental bumps, tangencies, and banding and repairs them without blurring.",
+     "mode": "command",
+     "ops": [
+      "cleanup"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Selective Anti-Aliasing Artist",
+     "description": "Applies palette-aware internal or external anti-aliasing while preserving the deliberate pixel aesthetic.",
+     "mode": "guide",
+     "ops": [
+      "palette-apply"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Dithering Pattern Designer",
+     "description": "Uses ordered, checker, noise, texture, and custom dithering for gradients, materials, transparency, and retro display effects.",
+     "mode": "command",
+     "ops": [
+      "dither"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Pixel Texture Painter",
+     "description": "Creates controlled textures for stone, wood, metal, fabric, skin, foliage, water, glass, soil, clouds, and synthetic surfaces.",
+     "mode": "command",
+     "ops": [
+      "pattern-generate"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Highlight and Edge Accent Artist",
+     "description": "Places speculars, rim light, reflected light, and material accents at pixel scale.",
+     "mode": "guide",
+     "ops": [
+      "outline",
+      "recolor"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Pixel Cleanup and Polish Artist",
+     "description": "Removes orphan pixels, accidental doubles, inconsistent clusters, color noise, and unclear overlaps.",
+     "mode": "command",
+     "ops": [
+      "cleanup"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Resolution-Aware Detail Editor",
+     "description": "Adds or removes details according to sprite size, viewing distance, display scaling, and gameplay readability.",
+     "mode": "assist",
+     "ops": [
+      "convert",
+      "critique"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Palette and Color Engineering",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Limited Palette Designer",
+     "description": "Builds compact color ramps with intentional hue shifting, value separation, saturation control, and reuse.",
+     "mode": "command",
+     "ops": [
+      "palette-generate"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Palette Extraction Analyst",
+     "description": "Extracts representative colors from user-owned references and normalizes them into editable swatches and ramps.",
+     "mode": "command",
+     "ops": [
+      "palette-extract"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Palette Reduction Specialist",
+     "description": "Reduces full-color artwork to 2, 4, 8, 16, 32, 64, or other controlled color counts with minimal visual loss.",
+     "mode": "command",
+     "ops": [
+      "palette-apply"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Retro Hardware Palette Specialist",
+     "description": "Adapts art to documented palette and color-cell constraints inspired by systems such as Game Boy, NES, SNES, Genesis, and Commodore 64.",
+     "mode": "command",
+     "ops": [
+      "engine-export"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Hue Shifting Colorist",
+     "description": "Creates coherent warm-light, cool-shadow, atmospheric, magical, neon, and material-aware color ramps.",
+     "mode": "command",
+     "ops": [
+      "palette-generate"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Day Night Palette Variant Artist",
+     "description": "Produces morning, noon, sunset, night, storm, underwater, winter, and alternate-world palette variants.",
+     "mode": "command",
+     "ops": [
+      "recolor"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Color Accessibility Reviewer",
+     "description": "Checks value contrast, color-blind distinguishability, flashing risk, and information redundancy.",
+     "mode": "command",
+     "ops": [
+      "palette-analyze"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Indexed Color Manager",
+     "description": "Creates and preserves indexed palettes, transparent indexes, palette order, and palette-swap compatibility.",
+     "mode": "command",
+     "ops": [
+      "palette-apply"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Palette Swap System Designer",
+     "description": "Plans recolors for teams, costumes, rarity, enemies, seasons, states, and localization without redrawing assets.",
+     "mode": "command",
+     "ops": [
+      "palette-swap"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Color Banding and Ramp Repairer",
+     "description": "Finds banding, muddy ramps, duplicate colors, weak value steps, and inconsistent material colors.",
+     "mode": "command",
+     "ops": [
+      "palette-analyze"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "name": "Characters, Creatures, and Avatars",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Pixel Character Concept Artist",
+     "description": "Designs original humanoid, robotic, alien, fantasy, historical, modern, and stylized characters at pixel scale.",
+     "mode": "assist",
+     "ops": [
+      "sprite-generate"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Chibi Pixel Character Designer",
+     "description": "Creates compact large-head characters with readable attire, expressions, accessories, and animation-ready proportions.",
+     "mode": "assist",
+     "ops": [
+      "sprite-generate"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Realistic Proportion Sprite Artist",
+     "description": "Builds taller proportioned sprites with anatomy, equipment, overlapping forms, and readable poses.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 4,
+     "name": "Creature and Monster Designer",
+     "description": "Creates animals, beasts, monsters, cryptids, bosses, companions, and biological variants with distinct silhouettes.",
+     "mode": "assist",
+     "ops": [
+      "sprite-generate"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Robot and Mech Sprite Designer",
+     "description": "Designs robots, androids, powered suits, machinery, hard-surface joints, panels, and damage states.",
+     "mode": "assist",
+     "ops": [
+      "sprite-generate"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Character Turnaround Artist",
+     "description": "Produces front, side, back, three-quarter, isometric, and directional views with consistent proportions.",
+     "mode": "assist",
+     "ops": [
+      "transform",
+      "voxel-turntable"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Character Customization Kit Designer",
+     "description": "Creates modular hair, faces, bodies, clothing, armor, accessories, colors, and equipment layers.",
+     "mode": "assist",
+     "ops": [
+      "split-layers",
+      "composite"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Facial Expression Sprite Artist",
+     "description": "Builds readable emotions and mouth or eye states at tiny resolutions using controlled feature changes.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 9,
+     "name": "Portrait and Bust Pixel Artist",
+     "description": "Creates dialogue portraits, profile icons, busts, closeups, and animated face sets.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 10,
+     "name": "Character Damage and State Variant Artist",
+     "description": "Produces healthy, hurt, frozen, poisoned, powered, wet, dirty, armored, transformed, and defeated states.",
+     "mode": "assist",
+     "ops": [
+      "palette-swap",
+      "recolor"
+     ]
+    },
+    {
+     "n": 11,
+     "name": "Crowd and NPC Variation Designer",
+     "description": "Generates coherent non-player character families with reusable bases and meaningful visual variety.",
+     "mode": "command",
+     "ops": [
+      "sprite-generate"
+     ]
+    },
+    {
+     "n": 12,
+     "name": "Character Readability QA Specialist",
+     "description": "Checks silhouette, pose, team color, equipment, facing, hit state, and background separation at play size.",
+     "mode": "command",
+     "ops": [
+      "critique"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Objects, Props, Items, and Icons",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Pixel Prop Designer",
+     "description": "Creates furniture, containers, tools, decorations, appliances, machines, and environmental storytelling props.",
+     "mode": "assist",
+     "ops": [
+      "icon-generate"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Weapon and Equipment Sprite Artist",
+     "description": "Designs original melee, ranged, magical, improvised, futuristic, and utility equipment with readable profiles.",
+     "mode": "assist",
+     "ops": [
+      "icon-generate"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Inventory Item Icon Artist",
+     "description": "Creates compact item icons with consistent framing, lighting, rarity cues, and transparent margins.",
+     "mode": "command",
+     "ops": [
+      "icon-generate"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Food and Consumable Pixel Artist",
+     "description": "Designs ingredients, meals, potions, medicine, drinks, and collectible consumables.",
+     "mode": "assist",
+     "ops": [
+      "icon-generate"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Treasure and Collectible Designer",
+     "description": "Creates coins, gems, relics, trophies, cards, tokens, keys, and reward variants.",
+     "mode": "command",
+     "ops": [
+      "icon-generate"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Vehicle and Mount Sprite Artist",
+     "description": "Designs cars, ships, aircraft, spacecraft, trains, bicycles, mounts, and modular vehicle parts.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 7,
+     "name": "Technology and Device Pixel Artist",
+     "description": "Creates computers, interfaces, laboratory equipment, sensors, weapons systems, and speculative devices.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 8,
+     "name": "Destructible Prop State Artist",
+     "description": "Produces intact, damaged, breaking, burnt, opened, emptied, and debris states.",
+     "mode": "assist",
+     "ops": [
+      "motion-generate"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Crafting Item Family Designer",
+     "description": "Creates material tiers and recipes with common visual grammar and distinguishable progression.",
+     "mode": "command",
+     "ops": [
+      "icon-generate"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Micro-Icon Legibility Specialist",
+     "description": "Optimizes 8x8, 12x12, 16x16, and similarly tiny icons for instant recognition.",
+     "mode": "assist",
+     "ops": [
+      "critique",
+      "platform-export"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "name": "Environments, Backgrounds, and Scenes",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Pixel Environment Concept Artist",
+     "description": "Designs complete original environments with composition, depth, focal points, lighting, and storytelling.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 2,
+     "name": "Interior Scene Pixel Artist",
+     "description": "Creates rooms, shops, homes, laboratories, dungeons, stations, and modular interior layouts.",
+     "mode": "assist",
+     "ops": [
+      "tileset-generate"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Landscape and Biome Artist",
+     "description": "Builds forests, deserts, snowfields, swamps, coasts, mountains, caves, alien worlds, and blended biomes.",
+     "mode": "assist",
+     "ops": [
+      "pattern-generate"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "City and Architecture Pixel Artist",
+     "description": "Designs streets, buildings, skylines, ruins, villages, industrial zones, and architectural sets.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 5,
+     "name": "Pixel Background Painter",
+     "description": "Creates static or layered backgrounds for games, illustrations, visual novels, videos, and interfaces.",
+     "mode": "assist",
+     "ops": [
+      "composite"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Parallax Scene Designer",
+     "description": "Separates foreground, midground, deep background, sky, weather, and overlays for convincing scrolling depth.",
+     "mode": "assist",
+     "ops": [
+      "composite",
+      "split-layers"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Lighting Scenario Artist",
+     "description": "Produces daylight, moonlight, firelight, neon, indoor, underwater, fog, storm, and dramatic lighting variants.",
+     "mode": "command",
+     "ops": [
+      "recolor"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Environmental Storytelling Artist",
+     "description": "Uses damage, arrangement, signage, traces, clutter, and landmarks to imply events and history.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 9,
+     "name": "Seamless Panorama Artist",
+     "description": "Creates horizontally or vertically looping vistas and panoramic levels without visible seams.",
+     "mode": "command",
+     "ops": [
+      "seam-check"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Scene Composition Repairer",
+     "description": "Improves focal hierarchy, perspective, scale, tangencies, depth, value grouping, and visual flow.",
+     "mode": "assist",
+     "ops": [
+      "critique"
+     ]
+    },
+    {
+     "n": 11,
+     "name": "Pixel Matte Painting Artist",
+     "description": "Builds large-scale cinematic pixel environments, establishing shots, and layered scenic plates.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 12,
+     "name": "Weather and Atmosphere Scene Artist",
+     "description": "Adds rain, snow, wind, fog, haze, dust, lightning, heat, and ambient particles at pixel scale.",
+     "mode": "command",
+     "ops": [
+      "effect-generate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "name": "Tilesets, Maps, and Level Art",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Grid-Based Tileset Designer",
+     "description": "Creates reusable floor, wall, terrain, border, corner, transition, and detail tiles for a defined grid.",
+     "mode": "command",
+     "ops": [
+      "tileset-generate"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Autotile Rule Designer",
+     "description": "Builds bitmask, Wang tile, blob, terrain, and neighbor-rule sets for automatic map painting.",
+     "mode": "command",
+     "ops": [
+      "tileset-generate"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Top-Down Map Tile Artist",
+     "description": "Produces readable terrain, structures, paths, water, cliffs, and decorations for top-down games.",
+     "mode": "command",
+     "ops": [
+      "tileset-generate"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Side-Scrolling Platform Tile Artist",
+     "description": "Creates ground, ledges, slopes, one-way platforms, hazards, backgrounds, and decorative tile families.",
+     "mode": "assist",
+     "ops": [
+      "tileset-generate"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Isometric Tileset Artist",
+     "description": "Builds diamond-grid floors, walls, elevations, stairs, props, and transitions with consistent projection.",
+     "mode": "assist",
+     "ops": [
+      "iso-primitive",
+      "voxel-render"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Hex Tile and Strategy Map Artist",
+     "description": "Creates hex terrain, borders, overlays, resources, roads, rivers, fog states, and map markers.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 7,
+     "name": "Tile Seam and Repetition Fixer",
+     "description": "Detects visible seams, repetitive motifs, corner errors, and texture tiling patterns and corrects them.",
+     "mode": "command",
+     "ops": [
+      "seam-check"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Terrain Transition Artist",
+     "description": "Creates grass-to-dirt, sand-to-water, snow-to-rock, biome, elevation, and material transitions.",
+     "mode": "assist",
+     "ops": [
+      "tileset-generate"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Tile Collision Visualization Designer",
+     "description": "Provides collision, navigation, trigger, slope, and gameplay overlay assets aligned to the art grid.",
+     "mode": "assist",
+     "ops": [
+      "tilemap-export"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "World Map Pixel Artist",
+     "description": "Creates regional, continental, dungeon, transit, tactical, and stylized maps with symbols and legends.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 11,
+     "name": "Procedural Tile Variant Designer",
+     "description": "Builds weighted variants, edge decorations, noise tiles, and placement rules for less repetitive generation.",
+     "mode": "command",
+     "ops": [
+      "tileset-generate"
+     ]
+    },
+    {
+     "n": 12,
+     "name": "Tile Atlas Packager",
+     "description": "Assembles tiles into documented atlases with padding, spacing, IDs, metadata, and engine- ready layouts.",
+     "mode": "command",
+     "ops": [
+      "sheet-pack",
+      "tilemap-export"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "name": "Perspective and Dimensional Styles",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Top-Down Pixel Artist",
+     "description": "Creates overhead characters, objects, maps, vehicles, effects, and directional animations.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 2,
+     "name": "Side-View Pixel Artist",
+     "description": "Builds profile characters, environments, combat assets, platforming scenes, and layered backgrounds.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 3,
+     "name": "Front-View Pixel Artist",
+     "description": "Creates first-person interfaces, enemies, portraits, rooms, and frontal object presentations.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 4,
+     "name": "Isometric Pixel Artist",
+     "description": "Designs consistent 2:1 or specified isometric forms, architecture, characters, props, and animation.",
+     "mode": "command",
+     "ops": [
+      "iso-primitive"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Oblique and Dimetric Pixel Artist",
+     "description": "Works with cabinet, dimetric, trimetric, and custom projections while preserving grid consistency.",
+     "mode": "assist",
+     "ops": [
+      "iso-primitive"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Pseudo-3D Pixel Artist",
+     "description": "Creates depth through scaling, rotation steps, parallax, perspective floors, billboards, and sprite layering.",
+     "mode": "assist",
+     "ops": [
+      "voxel-stack"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Voxel Art Designer",
+     "description": "Creates block-based 3D objects, characters, environments, and scenes intended for voxel editors or rendering pipelines.",
+     "mode": "command",
+     "ops": [
+      "voxel-build",
+      "voxel-render"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "2.5D Pixel Scene Designer",
+     "description": "Combines 2D pixel assets with depth, cameras, lights, planes, and 3D geometry while retaining crisp sampling.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 9,
+     "name": "Pixelated 3D Texture Artist",
+     "description": "Creates low-resolution albedo, normal, emission, roughness, masks, and stylized texture sheets for 3D models.",
+     "mode": "command",
+     "ops": [
+      "normal-map"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Projection Consistency Auditor",
+     "description": "Checks vanishing logic, isometric angles, object scale, verticals, depth ordering, and camera consistency.",
+     "mode": "assist",
+     "ops": [
+      "validate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Sprite Animation Fundamentals",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Idle Animation Artist",
+     "description": "Creates breathing, blinking, swaying, hovering, mechanical, and ambient idle loops with controlled motion.",
+     "mode": "command",
+     "ops": [
+      "motion-generate"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Walk Cycle Animator",
+     "description": "Builds readable multi-directional walk cycles with foot contact, weight shift, overlap, and loop continuity.",
+     "mode": "assist",
+     "ops": [
+      "motion-generate"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Run and Sprint Animator",
+     "description": "Creates energetic locomotion with strong keys, anticipation, airborne phases, and readable speed.",
+     "mode": "assist",
+     "ops": [
+      "motion-generate"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Jump and Fall Animator",
+     "description": "Produces takeoff, ascent, apex, fall, landing, and recovery states suitable for game control.",
+     "mode": "command",
+     "ops": [
+      "motion-generate"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Attack Animation Artist",
+     "description": "Creates melee, ranged, magic, combo, charge, recoil, and recovery sequences with clear anticipation and impact.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 6,
+     "name": "Hit Reaction and Defeat Animator",
+     "description": "Builds damage, knockback, stun, collapse, dissolve, break, and defeat animations.",
+     "mode": "assist",
+     "ops": [
+      "motion-generate"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Interaction Animation Artist",
+     "description": "Animates pickup, use, open, push, pull, climb, swim, sit, craft, talk, and object interactions.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 8,
+     "name": "Secondary Motion Animator",
+     "description": "Adds hair, cloth, capes, tails, antennae, accessories, particles, and follow-through.",
+     "mode": "assist",
+     "ops": [
+      "motion-generate"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Loop Continuity Specialist",
+     "description": "Repairs popping, drifting, inconsistent spacing, palette flicker, and endpoint mismatch in loops.",
+     "mode": "command",
+     "ops": [
+      "validate"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Pixel Timing and Spacing Editor",
+     "description": "Adjusts frame holds, ease, arcs, smears, overshoot, impact frames, and motion cadence.",
+     "mode": "command",
+     "ops": [
+      "anim-encode"
+     ]
+    },
+    {
+     "n": 11,
+     "name": "Subpixel Motion Planner",
+     "description": "Simulates motion finer than one pixel through timing, shape change, dithering, and controlled anti-aliasing.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 12,
+     "name": "Directional Animation Set Builder",
+     "description": "Creates coherent 4-way, 8-way, 16-way, or custom-direction animation families.",
+     "mode": "assist",
+     "ops": [
+      "transform",
+      "tags"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "name": "Advanced Animation and Effects",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Pixel Effects Animator",
+     "description": "Creates fire, smoke, explosions, sparks, electricity, magic, poison, healing, shields, and energy effects.",
+     "mode": "command",
+     "ops": [
+      "effect-generate"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Water and Fluid Animator",
+     "description": "Animates waves, waterfalls, rain, splashes, ripples, bubbles, lava, slime, and flowing liquids.",
+     "mode": "command",
+     "ops": [
+      "effect-generate"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Weather Animation Designer",
+     "description": "Creates looping rain, snow, fog, wind, storms, lightning, dust, leaves, and atmospheric overlays.",
+     "mode": "command",
+     "ops": [
+      "effect-generate"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Transformation Sequence Animator",
+     "description": "Builds morphs, power-ups, costume changes, growth, corruption, assembly, and magical transformations.",
+     "mode": "assist",
+     "ops": [
+      "motion-generate"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Cinematic Pixel Animator",
+     "description": "Creates acting, camera-aware staging, dramatic timing, transitions, and narrative shots for pixel cinematics.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 6,
+     "name": "Cutout Pixel Rig Animator",
+     "description": "Builds layered limbs and parts for rig-based animation while preserving pixel alignment and nearest-neighbor rendering.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 7,
+     "name": "Pixel Particle System Designer",
+     "description": "Designs particle sprites, emitters, lifetimes, velocity, blending, sorting, and performance budgets.",
+     "mode": "assist",
+     "ops": [
+      "effect-generate"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Screen Transition Animator",
+     "description": "Creates wipes, dissolves, iris effects, glitches, shutters, mosaic transitions, and scene changes.",
+     "mode": "assist",
+     "ops": [
+      "motion-generate",
+      "glitch"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Impact and Juice Animator",
+     "description": "Adds hit sparks, squash, stretch, shake cues, flashes, trails, debris, and responsive feedback.",
+     "mode": "command",
+     "ops": [
+      "motion-generate"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Animated Environmental Prop Artist",
+     "description": "Animates doors, signs, machinery, lights, foliage, screens, traps, and ambient world objects.",
+     "mode": "assist",
+     "ops": [
+      "motion-generate"
+     ]
+    },
+    {
+     "n": 11,
+     "name": "Palette Cycling Animator",
+     "description": "Creates water, fire, energy, signage, machinery, and ambient animation through indexed palette changes.",
+     "mode": "command",
+     "ops": [
+      "palette-cycle"
+     ]
+    },
+    {
+     "n": 12,
+     "name": "Animation Artifact Repairer",
+     "description": "Fixes inconsistent volumes, stray pixels, boiling outlines, foot sliding, timing errors, and color flicker.",
+     "mode": "command",
+     "ops": [
+      "validate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Sprite Sheets, Atlases, and Animation Data",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Sprite Sheet Layout Designer",
+     "description": "Arranges frames into rows, columns, strips, grids, or packed sheets with predictable spacing and origins.",
+     "mode": "command",
+     "ops": [
+      "sheet-pack"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Texture Atlas Builder",
+     "description": "Packs many pixel assets with transparent padding, extrusion, rotation rules, power-of-two options, and metadata.",
+     "mode": "command",
+     "ops": [
+      "sheet-pack"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Frame Extraction Specialist",
+     "description": "Separates frames from sprite sheets, GIFs, APNGs, videos, or image sequences without resampling damage.",
+     "mode": "command",
+     "ops": [
+      "anim-decode",
+      "sheet-slice"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Sprite Sheet Slicer",
+     "description": "Detects grids, bounds, separators, connected components, and transparent regions to slice assets reproducibly.",
+     "mode": "command",
+     "ops": [
+      "sheet-slice"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Pivot and Anchor Point Planner",
+     "description": "Defines consistent feet, centers, weapon grips, attachment points, hit origins, and transform pivots.",
+     "mode": "command",
+     "ops": [
+      "tags"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Animation Tag and State Organizer",
+     "description": "Groups frame ranges into named states, directions, variants, events, and transition rules.",
+     "mode": "command",
+     "ops": [
+      "tags"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Trim and Padding Manager",
+     "description": "Trims transparent bounds while preserving offsets, collision alignment, extrusion, and engine consistency.",
+     "mode": "command",
+     "ops": [
+      "trim"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Atlas Metadata Exporter",
+     "description": "Produces JSON, XML, CSV, plist, Godot, Unity, Phaser, PixiJS, or custom metadata layouts.",
+     "mode": "command",
+     "ops": [
+      "atlas-meta"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Sprite Sheet Consistency Auditor",
+     "description": "Checks frame dimensions, order, missing frames, offsets, names, alpha, color mode, and duplicate content.",
+     "mode": "command",
+     "ops": [
+      "validate"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Animation Event Marker Designer",
+     "description": "Places footstep, hit, sound, spawn, camera, and gameplay event markers at exact frames.",
+     "mode": "command",
+     "ops": [
+      "tags"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "name": "Pixel Art Editing and Transformation",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Pixel Art Inpainter",
+     "description": "Repairs missing or unwanted regions while matching nearby clusters, palette, outline, texture, and lighting.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 2,
+     "name": "Pixel Object Removal Editor",
+     "description": "Removes objects and reconstructs the background with seamless tile, perspective, and palette continuity.",
+     "mode": "assist",
+     "ops": [
+      "remove-bg"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Pixel Asset Recolorist",
+     "description": "Recolors selected regions or entire assets while preserving indexes, ramps, contrast, and transparency.",
+     "mode": "command",
+     "ops": [
+      "palette-swap",
+      "recolor"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Pixel Pose Editor",
+     "description": "Changes limb positions, facing, gesture, expression, or action while preserving character identity and proportions.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 5,
+     "name": "Pixel Costume and Equipment Editor",
+     "description": "Adds, removes, or swaps clothing, armor, tools, weapons, accessories, and layered parts.",
+     "mode": "assist",
+     "ops": [
+      "split-layers",
+      "composite"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Pixel Background Replacement Editor",
+     "description": "Separates subjects and replaces, extends, or redesigns backgrounds with matching pixel density.",
+     "mode": "command",
+     "ops": [
+      "remove-bg",
+      "composite"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Pixel Lighting Relighter",
+     "description": "Changes light direction, intensity, color, material response, shadows, and emissive areas.",
+     "mode": "command",
+     "ops": [
+      "recolor"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Pixel Perspective Transformer",
+     "description": "Converts or redraws assets between side, top-down, front, isometric, and pseudo-3D views.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 9,
+     "name": "Pixel Scale and Proportion Editor",
+     "description": "Resizes or reshapes assets with deliberate redrawing rather than uncontrolled interpolation.",
+     "mode": "command",
+     "ops": [
+      "scale"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Pixel Damage Restoration Artist",
+     "description": "Restores corrupted, compressed, incomplete, or poorly scaled pixel art using evidence from surviving regions.",
+     "mode": "command",
+     "ops": [
+      "restore"
+     ]
+    },
+    {
+     "n": 11,
+     "name": "Multi-Image Style Harmonizer",
+     "description": "Makes a collection share palette, scale, outlines, lighting, perspective, and detail density.",
+     "mode": "command",
+     "ops": [
+      "palette-apply"
+     ]
+    },
+    {
+     "n": 12,
+     "name": "Layer Separation Specialist",
+     "description": "Splits flattened pixel art into editable character, prop, background, shadow, effect, and interface layers.",
+     "mode": "command",
+     "ops": [
+      "split-layers"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Conversion into Pixel Art",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Image-to-Pixel Art Converter",
+     "description": "Converts user-provided images into deliberate pixel art using controlled resolution, palette, edges, clusters, and cleanup.",
+     "mode": "command",
+     "ops": [
+      "convert"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Illustration-to-Sprite Designer",
+     "description": "Interprets a full illustration as an animation-ready sprite with simplified silhouette and readable details.",
+     "mode": "assist",
+     "ops": [
+      "convert"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Photo-to-Pixel Portrait Artist",
+     "description": "Creates stylized pixel portraits from authorized photos while preserving recognizable non- sensitive visual features.",
+     "mode": "assist",
+     "ops": [
+      "convert"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "3D Render-to-Pixel Art Converter",
+     "description": "Transforms rendered frames into coherent pixel assets with stable edges, palette, lighting, and frame-to-frame consistency.",
+     "mode": "command",
+     "ops": [
+      "convert"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Video-to-Pixel Animation Converter",
+     "description": "Converts authorized video into a cleaned pixel animation, reducing jitter, palette flicker, and excessive frames.",
+     "mode": "assist",
+     "ops": [
+      "anim-decode",
+      "convert"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Vector-to-Pixel Asset Converter",
+     "description": "Rasterizes and hand-corrects vector artwork for crisp pixel-grid alignment at target sizes.",
+     "mode": "assist",
+     "ops": [
+      "convert"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Sketch-to-Pixel Art Finisher",
+     "description": "Turns rough sketches into polished pixel silhouettes, linework, colors, shading, and export- ready assets.",
+     "mode": "assist",
+     "ops": [
+      "convert"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Logo-to-Pixel Mark Converter",
+     "description": "Adapts authorized marks to tiny pixel sizes with optical correction and multiple resolution variants.",
+     "mode": "assist",
+     "ops": [
+      "convert"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Font-to-Pixel Lettering Converter",
+     "description": "Adapts letterforms into grid-consistent bitmap lettering with spacing and readability checks.",
+     "mode": "command",
+     "ops": [
+      "text-render",
+      "font-sheet"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Low-Resolution Style Translator",
+     "description": "Reinterprets artwork at a new pixel density or hardware-inspired constraint without simple downsampling.",
+     "mode": "command",
+     "ops": [
+      "convert"
+     ]
+    },
+    {
+     "n": 11,
+     "name": "Depth Map to Layered Pixel Scene Builder",
+     "description": "Uses supplied depth information to produce separated pixel planes and parallax-ready scenes.",
+     "mode": "assist",
+     "ops": [
+      "voxel-build"
+     ]
+    },
+    {
+     "n": 12,
+     "name": "Motion Capture Reference to Pixel Animation Artist",
+     "description": "Uses authorized movement reference to create stylized hand-tuned pixel animation rather than raw tracing.",
+     "mode": "guide",
+     "ops": []
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "name": "3D Pixel, Voxel, and Hybrid Media",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Voxel Character Modeler",
+     "description": "Builds editable voxel characters with anatomy, costume, color, rig-friendly segmentation, and turnarounds.",
+     "mode": "assist",
+     "ops": [
+      "voxel-build"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Voxel Prop and Environment Modeler",
+     "description": "Creates modular voxel objects, architecture, terrain, interiors, and set dressing.",
+     "mode": "command",
+     "ops": [
+      "voxel-build"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Voxel Scene Lighting Artist",
+     "description": "Designs lighting, shadows, emission, atmosphere, and render settings that retain block clarity.",
+     "mode": "command",
+     "ops": [
+      "voxel-render"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Voxel Animation Planner",
+     "description": "Creates keyframes, rigs, transformations, or frame-by-frame voxel sequences for characters and objects.",
+     "mode": "assist",
+     "ops": [
+      "voxel-turntable"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Sprite Stack Designer",
+     "description": "Builds layered sprite stacks for rotatable pseudo-3D objects, vehicles, terrain, and characters.",
+     "mode": "command",
+     "ops": [
+      "voxel-stack"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Billboard Sprite 3D Integrator",
+     "description": "Prepares camera-facing pixel sprites for 3D engines with crisp filtering, depth, and sorting settings.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 7,
+     "name": "Low-Poly to Pixel Texture Artist",
+     "description": "Creates pixel-perfect textures, UV-aware details, palette control, and texel-density consistency.",
+     "mode": "assist",
+     "ops": [
+      "normal-map"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Pixel Diorama Designer",
+     "description": "Composes miniature block, voxel, or isometric scenes with lighting and display-ready framing.",
+     "mode": "command",
+     "ops": [
+      "voxel-render"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "3D Turntable to Directional Sprite Renderer",
+     "description": "Plans render angles, cameras, lighting, frame counts, and cleanup for multi-direction sprite generation.",
+     "mode": "command",
+     "ops": [
+      "voxel-turntable"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Hybrid 2D-3D Pixel Pipeline Designer",
+     "description": "Combines models, sprites, shaders, cameras, and postprocessing into a consistent pixel-art production workflow.",
+     "mode": "guide",
+     "ops": []
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "name": "Pixel Video, Film, and Motion Graphics",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Pixel Short Film Designer",
+     "description": "Plans and creates original pixel narratives with shots, staging, backgrounds, characters, effects, sound cues, and final delivery.",
+     "mode": "command",
+     "ops": [
+      "storyboard-generate"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Pixel Storyboard Artist",
+     "description": "Produces shot-by-shot pixel boards with framing, action, camera notes, timing, and transitions.",
+     "mode": "command",
+     "ops": [
+      "storyboard-generate"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Pixel Animatic Editor",
+     "description": "Assembles boards, temporary motion, timing, dialogue, and sound cues into a reviewable sequence.",
+     "mode": "command",
+     "ops": [
+      "storyboard-generate"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Pixel Video Editor",
+     "description": "Cuts, sequences, retimes, crops, layers, captions, and exports pixel footage without damaging crisp sampling.",
+     "mode": "assist",
+     "ops": [
+      "script-author"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Pixel Motion Graphics Designer",
+     "description": "Creates titles, lower thirds, logos, transitions, diagrams, overlays, and promotional sequences in pixel style.",
+     "mode": "command",
+     "ops": [
+      "text-render"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Pixel Music Video Artist",
+     "description": "Designs beat-synchronized scenes, loops, typography, effects, and visual motifs for authorized audio.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 7,
+     "name": "Pixel Trailer and Teaser Editor",
+     "description": "Builds compact promotional edits with hooks, gameplay or story beats, titles, transitions, and platform variants.",
+     "mode": "assist",
+     "ops": [
+      "storyboard-generate"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Pixel Loop Video Maker",
+     "description": "Creates seamless ambient, social, wallpaper, signage, and background loops with exact frame closure.",
+     "mode": "command",
+     "ops": [
+      "anim-encode"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Pixel Camera Movement Designer",
+     "description": "Creates pans, tracks, zoom simulations, shakes, parallax moves, and cuts while preserving integer alignment.",
+     "mode": "assist",
+     "ops": [
+      "motion-generate"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Pixel Compositing Artist",
+     "description": "Combines characters, scenes, effects, masks, shadows, color grading, and depth layers into final shots.",
+     "mode": "command",
+     "ops": [
+      "composite"
+     ]
+    },
+    {
+     "n": 11,
+     "name": "Pixel Video Upscale and Delivery Specialist",
+     "description": "Exports nearest-neighbor or integer-scaled masters with correct frame rate, aspect, codec, and platform dimensions.",
+     "mode": "command",
+     "ops": [
+      "script-author"
+     ]
+    },
+    {
+     "n": 12,
+     "name": "Pixel Subtitle and Caption Designer",
+     "description": "Creates readable pixel captions, speaker labels, timing, safe areas, and accessibility variants.",
+     "mode": "command",
+     "ops": [
+      "caption-render"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Game Interface and User Experience",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Pixel UI Art Director",
+     "description": "Defines interface palette, borders, panels, typography, icons, spacing, states, and platform scaling.",
+     "mode": "assist",
+     "ops": [
+      "ui-generate",
+      "art-bible"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Pixel HUD Designer",
+     "description": "Creates health, stamina, inventory, minimap, objective, score, status, and gameplay feedback interfaces.",
+     "mode": "command",
+     "ops": [
+      "ui-generate"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Pixel Menu and Screen Designer",
+     "description": "Builds title, pause, options, save, load, character, shop, crafting, map, and results screens.",
+     "mode": "command",
+     "ops": [
+      "ui-generate"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Pixel Button and Control State Artist",
+     "description": "Creates normal, hover, pressed, disabled, focus, selected, and controller-navigation states.",
+     "mode": "command",
+     "ops": [
+      "ui-generate"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Pixel Cursor and Pointer Designer",
+     "description": "Creates mouse cursors, selection markers, target reticles, drag states, and interaction indicators.",
+     "mode": "command",
+     "ops": [
+      "ui-generate"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Pixel Progress and Meter Designer",
+     "description": "Builds bars, gauges, radial meters, segmented counters, clocks, cooldowns, and animated indicators.",
+     "mode": "command",
+     "ops": [
+      "ui-generate"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Pixel Dialogue Interface Designer",
+     "description": "Creates dialogue boxes, nameplates, portraits, choices, type indicators, and text-flow states.",
+     "mode": "command",
+     "ops": [
+      "ui-generate"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Pixel Inventory Grid Designer",
+     "description": "Defines slots, stack counts, rarity, drag-and-drop, selection, equipment, comparison, and empty states.",
+     "mode": "command",
+     "ops": [
+      "ui-generate"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Pixel UI Accessibility Specialist",
+     "description": "Checks scale, contrast, focus, motion, color dependence, readability, input alternatives, and localization space.",
+     "mode": "assist",
+     "ops": [
+      "palette-analyze",
+      "validate"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Responsive Pixel UI Integrator",
+     "description": "Adapts pixel interfaces across aspect ratios, DPI, safe areas, mobile, desktop, console, and web displays.",
+     "mode": "command",
+     "ops": [
+      "platform-export"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "name": "Pixel Typography and Symbols",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Bitmap Font Designer",
+     "description": "Creates original bitmap alphabets, numerals, punctuation, accents, and symbols at defined grid sizes.",
+     "mode": "command",
+     "ops": [
+      "text-render",
+      "font-sheet"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Pixel Font Family Designer",
+     "description": "Builds regular, bold, narrow, wide, outline, shadow, display, and UI variants with shared metrics.",
+     "mode": "assist",
+     "ops": [
+      "text-render"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Bitmap Font Kerning Specialist",
+     "description": "Adjusts advance widths, bearings, kerning pairs, baselines, line gaps, and optical spacing.",
+     "mode": "assist",
+     "ops": [
+      "text-render"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Multilingual Pixel Font Designer",
+     "description": "Plans glyph coverage for Latin extensions and other scripts with legibility, shaping, and fallback requirements.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 5,
+     "name": "Pixel Lettering Artist",
+     "description": "Creates hand-lettered titles, signs, logos, emblems, posters, labels, and decorative words.",
+     "mode": "assist",
+     "ops": [
+      "text-render"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Pixel Symbol and Pictogram Designer",
+     "description": "Creates compact universal symbols for controls, status, navigation, warnings, and accessibility.",
+     "mode": "assist",
+     "ops": [
+      "text-render"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Icon Font and Bitmap Glyph Packager",
+     "description": "Packages symbol sets into sprite sheets, bitmap fonts, mappings, and documented code points.",
+     "mode": "command",
+     "ops": [
+      "font-sheet"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Pixel Text Effect Animator",
+     "description": "Animates typing, shimmer, bounce, wave, glitch, burn, dissolve, rainbow, outline, and reveal effects.",
+     "mode": "command",
+     "ops": [
+      "text-render"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Small-Text Readability Auditor",
+     "description": "Tests glyph ambiguity, spacing, contrast, scaling, localization, and common letter or digit confusion.",
+     "mode": "assist",
+     "ops": [
+      "palette-analyze"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Pixel Text Localization Layout Designer",
+     "description": "Handles expansion, wrapping, line breaks, variable-width glyphs, right-to-left needs, and fallback boxes.",
+     "mode": "guide",
+     "ops": []
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "name": "Engine and Platform Integration",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Unity Pixel Asset Integrator",
+     "description": "Configures sprites, pixels per unit, import filtering, atlases, pivots, animation clips, tilemaps, and camera alignment.",
+     "mode": "command",
+     "ops": [
+      "engine-export"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Godot Pixel Asset Integrator",
+     "description": "Configures texture filtering, sprite frames, animation players, tile sets, regions, pivots, and viewport scaling.",
+     "mode": "command",
+     "ops": [
+      "engine-export"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Unreal Pixel Asset Integrator",
+     "description": "Prepares Paper 2D sprites, flipbooks, textures, materials, cameras, and nearest-neighbor presentation.",
+     "mode": "command",
+     "ops": [
+      "engine-export"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "GameMaker Pixel Asset Integrator",
+     "description": "Organizes sprites, origins, image speeds, tilesets, fonts, rooms, and texture groups.",
+     "mode": "command",
+     "ops": [
+      "engine-export"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "RPG Maker Asset Packager",
+     "description": "Formats characters, faces, battles, tiles, animations, windows, and naming layouts for the intended RPG Maker version.",
+     "mode": "command",
+     "ops": [
+      "engine-export"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Web Pixel Art Integrator",
+     "description": "Prepares Canvas, WebGL, CSS image-rendering, sprite sheets, responsive scaling, and browser-safe exports.",
+     "mode": "command",
+     "ops": [
+      "engine-export"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Mobile Pixel Asset Optimizer",
+     "description": "Balances atlas size, memory, texture compression, screen density, safe areas, battery, and touch readability.",
+     "mode": "assist",
+     "ops": [
+      "platform-export"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Retro Console Constraint Adapter",
+     "description": "Plans assets around documented color, sprite, tile, memory, scanline, and bank constraints for homebrew or simulation.",
+     "mode": "command",
+     "ops": [
+      "engine-export"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Virtual Tabletop Pixel Asset Packager",
+     "description": "Creates tokens, portraits, maps, tiles, effects, grids, and transparent exports for tabletop platforms.",
+     "mode": "command",
+     "ops": [
+      "engine-export"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Streaming and Overlay Pixel Designer",
+     "description": "Builds alerts, panels, chat frames, emotes, badges, transitions, and looped overlays for streaming software.",
+     "mode": "assist",
+     "ops": [
+      "platform-export",
+      "anim-encode"
+     ]
+    },
+    {
+     "n": 11,
+     "name": "Wallpaper and Display Pixel Packager",
+     "description": "Exports desktop, mobile, ultrawide, LED matrix, signage, watch face, and ambient display variants.",
+     "mode": "command",
+     "ops": [
+      "platform-export"
+     ]
+    },
+    {
+     "n": 12,
+     "name": "Cross-Engine Asset Handoff Specialist",
+     "description": "Creates neutral source files, atlases, metadata, naming, and conversion notes portable across engines.",
+     "mode": "assist",
+     "ops": [
+      "atlas-meta",
+      "audit"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "name": "File Formats and Editor Portability",
+   "skills": [
+    {
+     "n": 1,
+     "name": "PNG Pixel Export Specialist",
+     "description": "Exports lossless RGBA, indexed, grayscale, and palette PNGs with correct transparency and metadata choices.",
+     "mode": "command",
+     "ops": [
+      "palette-apply"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "GIF Animation Export Specialist",
+     "description": "Optimizes frame timing, disposal, transparency, palette, looping, and file size for animated GIF.",
+     "mode": "command",
+     "ops": [
+      "anim-encode"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "APNG Export Specialist",
+     "description": "Produces full-alpha animated PNGs with correct frame areas, blend, dispose, timing, and loop settings.",
+     "mode": "command",
+     "ops": [
+      "anim-encode"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "WebP Animation Export Specialist",
+     "description": "Creates lossless or controlled-loss animated WebP while checking alpha, timing, and decoder compatibility.",
+     "mode": "command",
+     "ops": [
+      "anim-encode"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Image Sequence Exporter",
+     "description": "Exports numbered PNG, TIFF, BMP, TGA, or other frame sequences with consistent dimensions and naming.",
+     "mode": "command",
+     "ops": [
+      "sequence-export"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Aseprite File Workflow Designer",
+     "description": "Organizes layers, frames, tags, slices, cels, palettes, linked cels, and exports for Aseprite- compatible workflows.",
+     "mode": "command",
+     "ops": [
+      "aseprite-export"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Photoshop Pixel Workflow Designer",
+     "description": "Prepares PSD layers, groups, timelines, masks, and nearest-neighbor transformations for pixel editing.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 8,
+     "name": "Krita Pixel Workflow Designer",
+     "description": "Prepares layered documents, pixel brushes, animation frames, palettes, and exports for Krita.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 9,
+     "name": "GIMP Pixel Workflow Designer",
+     "description": "Organizes layers, indexed color, palettes, frame naming, animation timing, and exports for GIMP.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 10,
+     "name": "LibreSprite and Pixel Editor Handoff Designer",
+     "description": "Creates portable spritesheets, palettes, guides, layer conventions, and metadata for common pixel editors.",
+     "mode": "assist",
+     "ops": [
+      "aseprite-export"
+     ]
+    },
+    {
+     "n": 11,
+     "name": "SVG Pixel Grid Exporter",
+     "description": "Creates deliberately grid-aligned vector representations when scalable pixel blocks or tooling interoperability is required.",
+     "mode": "command",
+     "ops": [
+      "svg-export"
+     ]
+    },
+    {
+     "n": 12,
+     "name": "Tilemap Data Export Specialist",
+     "description": "Exports TMX, TSX, JSON, CSV, LDtk, engine-native, or custom tile and object data with validated references.",
+     "mode": "command",
+     "ops": [
+      "tilemap-export"
+     ]
+    },
+    {
+     "n": 13,
+     "name": "Palette File Converter",
+     "description": "Converts and validates GPL, PAL, ASE, ACT, hex lists, indexed PNG palettes, and editor- specific swatches.",
+     "mode": "command",
+     "ops": [
+      "palette-convert"
+     ]
+    },
+    {
+     "n": 14,
+     "name": "Master and Derivative File Packager",
+     "description": "Preserves editable masters plus documented delivery copies, previews, atlases, metadata, and licenses.",
+     "mode": "command",
+     "ops": [
+      "audit"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "name": "Image Scaling, Display, and Compression",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Nearest-Neighbor Scaling Specialist",
+     "description": "Scales pixel art by integer factors without smoothing, ringing, color contamination, or half- pixel placement.",
+     "mode": "command",
+     "ops": [
+      "scale"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Non-Integer Scaling Repairer",
+     "description": "Uses controlled resampling, redraw, or viewport strategies when the target size is not an integer multiple.",
+     "mode": "command",
+     "ops": [
+      "scale"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Pixel-Perfect Camera Specialist",
+     "description": "Configures world units, viewport, aspect handling, snapping, letterboxing, and camera movement for stable pixels.",
+     "mode": "assist",
+     "ops": [
+      "engine-export"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Texture Filtering Auditor",
+     "description": "Finds bilinear filtering, mipmaps, compression artifacts, subpixel sampling, color bleeding, and atlas edge contamination.",
+     "mode": "command",
+     "ops": [
+      "validate"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Lossless Compression Optimizer",
+     "description": "Reduces PNG, GIF, APNG, or WebP size while preserving exact pixels, alpha, animation timing, and color values.",
+     "mode": "assist",
+     "ops": [
+      "anim-encode"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Atlas Bleed Prevention Specialist",
+     "description": "Adds edge extrusion, padding, safe mip behavior, UV margins, and sampling settings around packed sprites.",
+     "mode": "command",
+     "ops": [
+      "sheet-pack"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Display Simulation Analyst",
+     "description": "Previews CRT, LCD, handheld, LED matrix, low-resolution, monochrome, and color-limited display behavior.",
+     "mode": "command",
+     "ops": [
+      "display-sim"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "High-DPI Pixel Presentation Designer",
+     "description": "Maintains crispness and intended apparent size across operating-system scaling and high- density screens.",
+     "mode": "assist",
+     "ops": [
+      "engine-export"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Platform Thumbnail Optimizer",
+     "description": "Creates readable pixel thumbnails, app icons, store assets, social previews, and small promotional crops.",
+     "mode": "command",
+     "ops": [
+      "platform-export"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "File Size Budget Analyst",
+     "description": "Balances dimensions, colors, frames, transparency, compression, and playback needs against delivery limits.",
+     "mode": "command",
+     "ops": [
+      "validate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Procedural and Generative Pixel Systems",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Procedural Sprite Generator Designer",
+     "description": "Defines modular parts, constraints, palettes, seeds, rarity, and validation for repeatable sprite generation.",
+     "mode": "command",
+     "ops": [
+      "sprite-generate"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Procedural Character Assembly Designer",
+     "description": "Builds compatible bodies, heads, clothing, accessories, equipment, and animation layers.",
+     "mode": "assist",
+     "ops": [
+      "sprite-generate"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Procedural Tileset Generator Designer",
+     "description": "Creates rules for terrain, transitions, variations, decorations, adjacency, and biome blending.",
+     "mode": "command",
+     "ops": [
+      "tileset-generate"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Procedural Dungeon Pixel Artist",
+     "description": "Designs room, corridor, wall, door, hazard, treasure, and decoration tiles for generated layouts.",
+     "mode": "assist",
+     "ops": [
+      "tileset-generate"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Procedural Pattern and Texture Maker",
+     "description": "Generates seamless pixel patterns for materials, fabrics, terrain, backgrounds, and effects.",
+     "mode": "command",
+     "ops": [
+      "pattern-generate"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Rule-Based Palette Generator",
+     "description": "Creates constrained color ramps from target moods, values, materials, and accessibility requirements.",
+     "mode": "command",
+     "ops": [
+      "palette-generate"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Seeded Variation and Reproducibility Manager",
+     "description": "Records seeds, parameters, component versions, and deterministic output checks.",
+     "mode": "command",
+     "ops": [
+      "batch"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Generative Output Curator",
+     "description": "Filters generated assets for anatomy, readability, seams, duplicates, palette errors, and style consistency.",
+     "mode": "assist",
+     "ops": [
+      "critique",
+      "validate"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Pixel Asset Batch Variant Generator",
+     "description": "Creates controlled size, color, state, damage, team, season, and language variants from approved masters.",
+     "mode": "command",
+     "ops": [
+      "batch",
+      "palette-swap"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Procedural Animation Synthesizer",
+     "description": "Generates parameterized loops, particles, timing variants, and motion families with visual QA gates.",
+     "mode": "command",
+     "ops": [
+      "effect-generate",
+      "motion-generate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Automation, Scripting, and Pipeline Tools",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Aseprite Automation Script Author",
+     "description": "Creates safe Lua automation for exports, tags, palettes, layers, slices, batch processing, and validation.",
+     "mode": "command",
+     "ops": [
+      "script-author"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Python Pixel Pipeline Developer",
+     "description": "Builds scripts for slicing, packing, palette conversion, indexing, scaling, compositing, metadata, and tests.",
+     "mode": "command",
+     "ops": [
+      "batch"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "ImageMagick Pixel Workflow Author",
+     "description": "Creates reproducible command pipelines with nearest-neighbor rules, alpha safety, palettes, and frame handling.",
+     "mode": "command",
+     "ops": [
+      "script-author"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "FFmpeg Pixel Video Pipeline Author",
+     "description": "Builds commands for image sequences, frame rates, palettes, scaling, codecs, alpha, loops, and audiovisual assembly.",
+     "mode": "command",
+     "ops": [
+      "script-author"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Texture Packer Automation Engineer",
+     "description": "Automates deterministic atlas layouts, metadata exports, padding, variants, and rebuild checks.",
+     "mode": "command",
+     "ops": [
+      "sheet-pack",
+      "batch"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Batch Export Orchestrator",
+     "description": "Exports many assets, resolutions, platforms, languages, palettes, and formats from a single source set.",
+     "mode": "command",
+     "ops": [
+      "batch"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Asset Naming and Versioning Enforcer",
+     "description": "Applies documented names, states, directions, frame numbers, variants, semantic versions, and deprecation rules.",
+     "mode": "command",
+     "ops": [
+      "audit"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Pixel Asset Build System Designer",
+     "description": "Creates incremental builds with source dependencies, cached outputs, clean builds, logs, and reproducible packages.",
+     "mode": "command",
+     "ops": [
+      "batch"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Pixel Pipeline CI Validator",
+     "description": "Runs automated checks for dimensions, colors, alpha, frame counts, naming, metadata, file size, and duplicate assets.",
+     "mode": "command",
+     "ops": [
+      "validate"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Editor Plugin and Extension Designer",
+     "description": "Specifies or implements productivity tools for brushes, palettes, animation, export, validation, and asset browsing.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 11,
+     "name": "Metadata Schema Designer",
+     "description": "Defines machine-readable asset records for dimensions, pivots, tags, timing, collisions, licenses, sources, and variants.",
+     "mode": "assist",
+     "ops": [
+      "audit"
+     ]
+    },
+    {
+     "n": 12,
+     "name": "Pipeline Failure Diagnostician",
+     "description": "Finds broken paths, missing frames, stale caches, color-mode changes, nondeterministic packing, and incompatible exports.",
+     "mode": "command",
+     "ops": [
+      "reopen-test"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "name": "Quality Assurance and Validation",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Pixel Grid Integrity Auditor",
+     "description": "Detects off-grid marks, unintended smoothing, fractional transforms, inconsistent pixel scale, and resampling damage.",
+     "mode": "command",
+     "ops": [
+      "validate"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Palette Compliance Auditor",
+     "description": "Checks allowed colors, transparent index, duplicate colors, ramp membership, and unauthorized color drift.",
+     "mode": "command",
+     "ops": [
+      "validate"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Sprite Readability Tester",
+     "description": "Evaluates silhouettes, poses, item recognition, state readability, and background separation at actual display size.",
+     "mode": "command",
+     "ops": [
+      "critique"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Animation Playback QA Specialist",
+     "description": "Checks timing, loops, jitter, volume, foot sliding, flicker, frame order, alpha, and event synchronization.",
+     "mode": "command",
+     "ops": [
+      "validate"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Tileset Seam QA Specialist",
+     "description": "Tests edge combinations, corners, transitions, rotations, variants, and repeated placement for seams or rule gaps.",
+     "mode": "command",
+     "ops": [
+      "seam-check"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Atlas and Metadata Validator",
+     "description": "Checks coordinates, bounds, pivots, tags, source sizes, rotations, trims, hashes, and engine import behavior.",
+     "mode": "command",
+     "ops": [
+      "validate"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Cross-Editor Compatibility Tester",
+     "description": "Opens and round-trips assets through intended editors while checking layers, palettes, timing, alpha, and metadata.",
+     "mode": "command",
+     "ops": [
+      "reopen-test"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Cross-Engine Rendering Tester",
+     "description": "Compares pixel presentation in target engines and platforms for filtering, alignment, color, scale, and performance.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 9,
+     "name": "Visual Regression Tester",
+     "description": "Compares rendered outputs against approved references and highlights changed pixels, frames, colors, and bounds.",
+     "mode": "command",
+     "ops": [
+      "compare"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Accessibility and Flashing QA Specialist",
+     "description": "Reviews contrast, distinguishability, motion intensity, flash frequency, captions, and alternate cues.",
+     "mode": "command",
+     "ops": [
+      "validate"
+     ]
+    },
+    {
+     "n": 11,
+     "name": "Asset Completeness Auditor",
+     "description": "Checks required directions, states, resolutions, formats, variants, metadata, previews, and source files.",
+     "mode": "command",
+     "ops": [
+      "audit"
+     ]
+    },
+    {
+     "n": 12,
+     "name": "Final Delivery Reopen Tester",
+     "description": "Reopens, plays, imports, extracts, and verifies every final artifact from a clean environment.",
+     "mode": "command",
+     "ops": [
+      "reopen-test"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "name": "Restoration, Preservation, and Migration",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Legacy Sprite Extraction Specialist",
+     "description": "Extracts sprites, tiles, palettes, fonts, and animations from authorized legacy resources while preserving originals.",
+     "mode": "assist",
+     "ops": [
+      "sheet-slice",
+      "anim-decode"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Pixel Art Restoration Artist",
+     "description": "Repairs damaged, incomplete, color-shifted, or badly converted pixel assets with documented changes.",
+     "mode": "command",
+     "ops": [
+      "restore"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Sprite Sheet Reconstruction Specialist",
+     "description": "Rebuilds missing grids, frame order, bounds, origins, directions, and animation names from surviving evidence.",
+     "mode": "assist",
+     "ops": [
+      "sheet-slice"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Palette Recovery Analyst",
+     "description": "Recovers likely indexed palettes from screenshots, binary resources, related assets, or documented hardware constraints.",
+     "mode": "command",
+     "ops": [
+      "palette-extract"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Animation Timing Recovery Analyst",
+     "description": "Infers frame timing, loops, holds, events, and transitions from captures, code, or related builds.",
+     "mode": "assist",
+     "ops": [
+      "anim-decode"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Format Migration Specialist",
+     "description": "Moves pixel projects between editors, engines, formats, and metadata schemas with explicit loss reports.",
+     "mode": "assist",
+     "ops": [
+      "atlas-meta",
+      "palette-convert"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Retro Asset Authenticity Analyst",
+     "description": "Distinguishes genuine constraints from modern imitation and documents palette, resolution, tile, sprite, and display evidence.",
+     "mode": "assist",
+     "ops": [
+      "validate"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Digital Pixel Art Archivist",
+     "description": "Packages masters, derivatives, palettes, fonts, metadata, licenses, documentation, previews, and checksums for long-term access.",
+     "mode": "command",
+     "ops": [
+      "audit"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Obsolete Editor Project Recovery Specialist",
+     "description": "Recovers layers, frames, palettes, and assets from old or proprietary project files when lawful and technically possible.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 10,
+     "name": "Preservation Emulator Presentation Designer",
+     "description": "Configures scaling, aspect, borders, shaders, and capture settings for faithful presentation of preserved pixel media.",
+     "mode": "assist",
+     "ops": [
+      "display-sim"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "name": "Publishing, Marketing, and Product Assets",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Pixel Brand Identity Designer",
+     "description": "Creates original pixel logos, marks, patterns, colors, mascots, and usage rules for a cohesive identity.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 2,
+     "name": "Pixel Poster and Key Art Designer",
+     "description": "Creates promotional compositions, titles, characters, scenes, and platform-ready crops.",
+     "mode": "assist",
+     "ops": [
+      "platform-export",
+      "text-render"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Pixel Store Page Asset Designer",
+     "description": "Produces capsules, banners, screenshots, icons, feature panels, and animated previews for distribution platforms.",
+     "mode": "command",
+     "ops": [
+      "platform-export"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Pixel Social Media Asset Designer",
+     "description": "Creates profile images, headers, posts, stories, stickers, reaction graphics, and looped promotions.",
+     "mode": "command",
+     "ops": [
+      "platform-export"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Pixel Emote and Badge Artist",
+     "description": "Designs readable small emotes, subscriber badges, achievement badges, and platform-safe variants.",
+     "mode": "command",
+     "ops": [
+      "platform-export",
+      "icon-generate"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Pixel Sticker Pack Designer",
+     "description": "Creates cohesive transparent sticker sets with outlines, expressions, states, and export dimensions.",
+     "mode": "command",
+     "ops": [
+      "platform-export"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Pixel Merchandise Artwork Designer",
+     "description": "Prepares designs for shirts, embroidery-style grids, pins, patches, prints, mugs, and physical products.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 8,
+     "name": "Pixel App Icon Designer",
+     "description": "Creates recognizable multi-size icons with safe margins, adaptive variants, and store-ready exports.",
+     "mode": "command",
+     "ops": [
+      "platform-export"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Pixel Presentation and Infographic Artist",
+     "description": "Creates pixel diagrams, timelines, charts, maps, callouts, and educational visuals with legible hierarchy.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 10,
+     "name": "Pixel Asset Preview and Contact Sheet Designer",
+     "description": "Builds labeled previews, turnarounds, sheets, GIF samples, and catalog images for review or sale.",
+     "mode": "command",
+     "ops": [
+      "contact-sheet"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Education, Documentation, and Collaboration",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Pixel Art Tutorial Author",
+     "description": "Creates step-by-step lessons on clusters, palettes, shading, animation, tiles, export, and troubleshooting.",
+     "mode": "command",
+     "ops": [
+      "guide"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Pixel Art Critique Specialist",
+     "description": "Provides concrete, respectful critique tied to silhouette, clusters, palette, lighting, anatomy, motion, and intent.",
+     "mode": "command",
+     "ops": [
+      "critique"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Pixel Art Practice Generator",
+     "description": "Creates focused exercises, constraints, prompts, study sheets, and measurable improvement goals.",
+     "mode": "command",
+     "ops": [
+      "practice"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Pixel Production Documentation Author",
+     "description": "Writes art bibles, naming guides, export guides, editor setup, pipeline instructions, and handoff checklists.",
+     "mode": "command",
+     "ops": [
+      "art-bible",
+      "guide"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Pixel Asset Review Coordinator",
+     "description": "Structures review rounds, annotations, approvals, revision priorities, and version comparisons.",
+     "mode": "command",
+     "ops": [
+      "rubric",
+      "guide"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Team Style Onboarding Designer",
+     "description": "Creates examples, do-and-don\u2019t sheets, templates, palettes, brushes, and test tasks for new contributors.",
+     "mode": "command",
+     "ops": [
+      "guide"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Pixel Art Rubric Designer",
+     "description": "Builds scoring criteria for readability, craft, consistency, animation, technical validity, originality, and delivery quality.",
+     "mode": "command",
+     "ops": [
+      "rubric"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Asset License and Attribution Recorder",
+     "description": "Tracks creators, source references, usage rights, licenses, modifications, restrictions, and attribution text.",
+     "mode": "command",
+     "ops": [
+      "license-record"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Client Handoff Package Author",
+     "description": "Packages editable sources, exports, metadata, previews, fonts, palettes, instructions, and known limitations.",
+     "mode": "command",
+     "ops": [
+      "audit",
+      "guide"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Pixel Art Localization Coordinator",
+     "description": "Plans culturally appropriate symbols, text space, reading direction, colors, icons, and region- specific variants.",
+     "mode": "command",
+     "ops": [
+      "guide"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "name": "Specialized Themes and Applied Domains",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Scientific Pixel Illustration Artist",
+     "description": "Creates accurate pixel diagrams of organisms, anatomy, instruments, processes, maps, and data-driven subjects.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 2,
+     "name": "Educational Pixel Media Designer",
+     "description": "Creates age-appropriate lessons, simulations, flashcards, diagrams, and interactive learning assets.",
+     "mode": "assist",
+     "ops": [
+      "guide",
+      "practice"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Medical and Safety Pixel Symbol Designer",
+     "description": "Creates clear non-diagnostic health, emergency, hazard, and instruction symbols with accessibility review.",
+     "mode": "assist",
+     "ops": [
+      "text-render",
+      "palette-analyze"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Architectural Pixel Visualization Artist",
+     "description": "Creates plans, elevations, isometric rooms, city blocks, construction stages, and wayfinding visuals.",
+     "mode": "assist",
+     "ops": [
+      "iso-primitive",
+      "tileset-generate"
+     ]
+    },
+    {
+     "n": 5,
+     "name": "Historical Pixel Scene Research Artist",
+     "description": "Builds original historically informed scenes, attire, tools, architecture, and props with source notes.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 6,
+     "name": "Map and Transit Pixel Designer",
+     "description": "Creates transit maps, route icons, station diagrams, navigation maps, and location markers.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 7,
+     "name": "Data Visualization Pixel Artist",
+     "description": "Creates pixel charts, heatmaps, timelines, counters, dashboards, and animated data stories without distorting values.",
+     "mode": "assist",
+     "ops": [
+      "ui-generate"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Puzzle and Board Game Pixel Artist",
+     "description": "Designs boards, pieces, cards, tiles, tokens, clues, states, and readable interaction feedback.",
+     "mode": "assist",
+     "ops": [
+      "tileset-generate",
+      "icon-generate"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Virtual Pet and Companion Artist",
+     "description": "Creates growth stages, needs, actions, accessories, habitats, reactions, and looped behaviors.",
+     "mode": "assist",
+     "ops": [
+      "sprite-generate",
+      "motion-generate"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Pixel Fashion and Pattern Designer",
+     "description": "Creates garments, textiles, repeating patterns, colorways, avatar wearables, and outfit collections.",
+     "mode": "command",
+     "ops": [
+      "pattern-generate"
+     ]
+    },
+    {
+     "n": 11,
+     "name": "Pixel Music and Rhythm Visual Artist",
+     "description": "Creates beat markers, note lanes, reactive scenes, instruments, equalizers, and timing- sensitive effects.",
+     "mode": "assist",
+     "ops": [
+      "text-render",
+      "effect-generate"
+     ]
+    },
+    {
+     "n": 12,
+     "name": "Pixel Horror Atmosphere Artist",
+     "description": "Creates original unsettling environments, creatures, lighting, distortion, and suspense while respecting content limits.",
+     "mode": "assist",
+     "ops": [
+      "recolor",
+      "effect-generate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "name": "Advanced Rendering and Style Systems",
+   "skills": [
+    {
+     "n": 1,
+     "name": "CRT Pixel Presentation Artist",
+     "description": "Designs scanlines, phosphor masks, bloom, curvature, color bleed, and motion response as optional presentation layers.",
+     "mode": "command",
+     "ops": [
+      "display-sim"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Monochrome Pixel Artist",
+     "description": "Creates one-bit, grayscale, duotone, handheld-style, and limited-value art with strong shape design.",
+     "mode": "command",
+     "ops": [
+      "display-sim"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "High-Color Pixel Painter",
+     "description": "Creates detailed pixel illustrations with rich palettes while preserving cluster discipline and hard edges.",
+     "mode": "assist",
+     "ops": [
+      "palette-apply"
+     ]
+    },
+    {
+     "n": 4,
+     "name": "Painterly Pixel Hybrid Artist",
+     "description": "Combines intentional pixel structure with controlled soft atmosphere, texture, or high- resolution finishing.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 5,
+     "name": "Glitch Pixel Artist",
+     "description": "Creates controlled datamosh-inspired, scan, displacement, corruption, chromatic, and signal effects without accidental file damage.",
+     "mode": "command",
+     "ops": [
+      "glitch"
+     ]
+    },
+    {
+     "n": 6,
+     "name": "Neon and Emissive Pixel Artist",
+     "description": "Designs glow, signage, energy, holograms, reflections, and dark-environment readability.",
+     "mode": "command",
+     "ops": [
+      "effect-generate",
+      "recolor"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Material Rendering Specialist",
+     "description": "Develops consistent pixel rendering for metal, glass, water, cloth, skin, stone, wood, plastic, crystal, and energy.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 8,
+     "name": "Dynamic Shadow Sprite Artist",
+     "description": "Creates blob, projected, contact, directional, soft-step, and animated shadow assets.",
+     "mode": "command",
+     "ops": [
+      "shadow"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Normal Map Pixel Artist",
+     "description": "Creates pixel-aware normal maps and tests lighting without introducing noisy or inverted surface cues.",
+     "mode": "command",
+     "ops": [
+      "normal-map"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Pixel Shader Look Designer",
+     "description": "Specifies outline, palette swap, dissolve, water, heat, lighting, CRT, and postprocess effects that preserve crisp art.",
+     "mode": "guide",
+     "ops": []
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "name": "Agent Safety, Reliability, and Governance",
+   "skills": [
+    {
+     "n": 1,
+     "name": "Pixel Asset Source Provenance Manager",
+     "description": "Records prompts, references, supplied assets, transformations, creators, licenses, and approval status.",
+     "mode": "command",
+     "ops": [
+      "audit"
+     ]
+    },
+    {
+     "n": 2,
+     "name": "Copyright-Safe Pixel Concept Designer",
+     "description": "Creates original alternatives when a request would imitate protected characters, brands, or living artists too closely.",
+     "mode": "assist",
+     "ops": [
+      "brief",
+      "guide"
+     ]
+    },
+    {
+     "n": 3,
+     "name": "Sensitive Content Pixel Art Gatekeeper",
+     "description": "Applies age, platform, workplace, privacy, and safety constraints before production or publication.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 4,
+     "name": "Portrait Consent and Privacy Reviewer",
+     "description": "Checks authorization, avoids sensitive inference, and limits identifying detail in pixel portraits of real people.",
+     "mode": "guide",
+     "ops": []
+    },
+    {
+     "n": 5,
+     "name": "Destructive Edit Prevention Guardian",
+     "description": "Uses copies, versioning, reversible operations, dry runs, and explicit overwrite controls.",
+     "mode": "built-in",
+     "ops": []
+    },
+    {
+     "n": 6,
+     "name": "Automated Output Claim Validator",
+     "description": "Verifies dimensions, colors, frames, formats, playback, imports, and package contents before claiming completion.",
+     "mode": "command",
+     "ops": [
+      "validate",
+      "reopen-test"
+     ]
+    },
+    {
+     "n": 7,
+     "name": "Tool Capability and Limitation Reporter",
+     "description": "States which editors, codecs, formats, metadata, or effects were actually tested and documents unsupported claims.",
+     "mode": "command",
+     "ops": [
+      "capabilities"
+     ]
+    },
+    {
+     "n": 8,
+     "name": "Content Accessibility Governance Planner",
+     "description": "Builds required contrast, captions, motion alternatives, control states, and readability checks into production.",
+     "mode": "command",
+     "ops": [
+      "guide",
+      "validate"
+     ]
+    },
+    {
+     "n": 9,
+     "name": "Asset Security and Secret Scanner",
+     "description": "Checks source packages and automation files for credentials, private data, unsafe paths, or unintended embedded content.",
+     "mode": "command",
+     "ops": [
+      "audit"
+     ]
+    },
+    {
+     "n": 10,
+     "name": "Pixel Production Recovery Coordinator",
+     "description": "Preserves passing work, isolates failures, repairs the smallest responsible layer, and reruns affected checks from clean state.",
+     "mode": "command",
+     "ops": [
+      "batch"
+     ]
+    }
+   ]
+  }
+ ]
+}

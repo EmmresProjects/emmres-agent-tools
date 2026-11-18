@@ -1,0 +1,124 @@
+{
+  "version": "1.0.0",
+  "comment": "Reusable language presets for the planning tools (brief, prompt, variants, direction, style guide). Descriptive style language only: no named living artists, no proprietary studios.",
+  "lenses": {
+    "ultra-wide": {"mm": "14-18mm", "text": "ultra-wide 16mm lens, pronounced perspective, deep foreground", "use": "environment, architecture, dramatic scale"},
+    "wide": {"mm": "24-28mm", "text": "24mm wide lens, generous environmental context", "use": "editorial, lifestyle, interiors"},
+    "normal": {"mm": "35-50mm", "text": "50mm lens, neutral human-scale perspective", "use": "documentary, portrait-context, product in situ"},
+    "portrait": {"mm": "85mm", "text": "85mm portrait lens, gentle compression, subject isolated", "use": "portraits, product hero"},
+    "telephoto": {"mm": "135-200mm", "text": "135mm telephoto, compressed layers, shallow plane of focus", "use": "wildlife, crowds, compression"},
+    "macro": {"mm": "100mm macro", "text": "100mm macro lens, 1:1 magnification, razor-thin depth of field", "use": "texture, product detail, botanical"},
+    "tilt-shift": {"mm": "45-90mm TS", "text": "tilt-shift lens with parallel verticals", "use": "architecture, miniature look"},
+    "aerial": {"mm": "24-50mm drone", "text": "drone perspective, top-down and oblique, wide dynamic range", "use": "terrain, campus, logistics"}
+  },
+  "camera_heights": {
+    "eye-level": "camera at subject eye level, natural horizon",
+    "low-angle": "camera low, hero angle, subject towers over viewer",
+    "high-angle": "camera high, looking down, subject compressed and grounded",
+    "overhead": "plan view directly overhead, flat geometric read",
+    "ground-level": "camera at ground level, foreground texture dominant"
+  },
+  "lighting": {
+    "natural-daylight": {"text": "soft natural daylight, open sky as key, gentle falloff", "temp_k": 5600, "contrast": "medium"},
+    "golden-hour": {"text": "low golden-hour sun, warm rim light, long soft shadows", "temp_k": 3200, "contrast": "medium-high"},
+    "overcast": {"text": "flat overcast sky, even diffuse light, no hard shadows", "temp_k": 6500, "contrast": "low"},
+    "studio-soft": {"text": "large softbox key at 45 degrees, subtle fill card, controlled falloff", "temp_k": 5500, "contrast": "low-medium"},
+    "studio-high-key": {"text": "high-key seamless white, twin softboxes, minimal shadow", "temp_k": 5600, "contrast": "low"},
+    "studio-low-key": {"text": "low-key black sweep, single hard key, deep shadow, specular accents", "temp_k": 5000, "contrast": "high"},
+    "dramatic-side": {"text": "hard side light, chiaroscuro split, deep shadow terminator", "temp_k": 4800, "contrast": "high"},
+    "backlit-rim": {"text": "backlit subject, luminous rim, atmospheric haze, lens bloom", "temp_k": 4200, "contrast": "medium"},
+    "neon-night": {"text": "mixed neon practicals, saturated colour spill, wet reflections", "temp_k": 7400, "contrast": "high"},
+    "clinical-flat": {"text": "even shadowless light for technical clarity", "temp_k": 6500, "contrast": "low"}
+  },
+  "palettes": {
+    "warm-neutral": {"colors": ["#f4ede4", "#d9b382", "#a9744f", "#5c4433", "#1f1a17"], "mood": "warm, hospitable, tactile"},
+    "cool-corporate": {"colors": ["#f2f5f9", "#9fb6cd", "#3a6ea5", "#1f3d5c", "#0d1b2a"], "mood": "trustworthy, calm, precise"},
+    "vivid-editorial": {"colors": ["#fef6e4", "#ff5c5c", "#0f3d3e", "#f2a154", "#1b1b1b"], "mood": "graphic, opinionated, high recall"},
+    "earthy-organic": {"colors": ["#f0efe2", "#c8c09a", "#7f8f5f", "#4a5b3c", "#22281d"], "mood": "natural, sustainable, grounded"},
+    "pastel-playful": {"colors": ["#fff7f2", "#ffc8dd", "#bde0fe", "#a2d2ff", "#5e548e"], "mood": "friendly, young, light"},
+    "nocturne": {"colors": ["#0b1020", "#1d2b53", "#4b6bfb", "#c0d0ff", "#f6f7fb"], "mood": "technical, nocturnal, luminous"},
+    "monochrome": {"colors": ["#ffffff", "#c9c9c9", "#8a8a8a", "#3d3d3d", "#0a0a0a"], "mood": "restrained, archival, formal"},
+    "botanical": {"colors": ["#f2f7ef", "#cfe3c6", "#8fbf88", "#4f7a4a", "#243524"], "mood": "herbal, scientific, fresh"},
+    "desert-dusk": {"colors": ["#f8e5d0", "#e0a878", "#b5643f", "#5c2e2a", "#22131a"], "mood": "arid, cinematic, nostalgic"},
+    "fantasy-jewel": {"colors": ["#10131f", "#2b3f6b", "#6f8fd6", "#c9a34f", "#efe3c0"], "mood": "mythic, ornate, aged"}
+  },
+  "media": {
+    "photographic": "photographic rendering, accurate materials, believable optics",
+    "editorial-illustration": "flat editorial illustration, limited palette, confident shapes, subtle grain",
+    "watercolour": "watercolour wash, visible paper tooth, soft blooms, uneven pigment edges",
+    "gouache": "opaque gouache, matte layers, graphic edges, visible brush structure",
+    "ink-line": "confident ink linework, variable stroke weight, sparse hatching, high contrast",
+    "charcoal": "charcoal on textured paper, smudged tonal masses, lifted highlights",
+    "concept-art": "production concept art, painterly blocked values, atmospheric depth, design-readable silhouette",
+    "storybook": "storybook illustration, gentle rounded shapes, warm light, readable at small size",
+    "risograph": "risograph print, two-ink overprint, visible dot texture, slight misregistration",
+    "woodcut": "woodcut print, carved gouge texture, bold reduction, hard edges",
+    "halftone": "halftone screen, dot-modulated tones, print-native texture",
+    "3d-render": "physically based 3D render, accurate microsurface, soft global illumination",
+    "technical-vector": "technical vector diagram, uniform strokes, labelled callouts, no textural noise",
+    "collage": "paper collage, torn edges, layered shadows, mixed print clippings",
+    "pixel-art": "pixel art, restricted palette, hard pixel edges, deliberate dithering",
+    "line-art": "clean uniform outline art, no fill, closed shapes, colouring-book ready"
+  },
+  "eras": {
+    "contemporary": "present-day visual language, clean modern detailing",
+    "mid-century": "mid-century modern, 1950s-60s geometry, muted saturated palette",
+    "victorian": "Victorian era detailing, ornate engraving density, sepia tonality",
+    "art-deco": "art deco geometry, symmetrical fans, gold and deep green",
+    "1980s": "1980s commercial styling, chrome, gradient washes, airbrush gloss",
+    "near-future": "near-future design, restrained technological integration, matte composites",
+    "far-future": "far-future speculature, unfamiliar but coherent materials and scale",
+    "pre-industrial": "pre-industrial craft materials, hand-made imperfection, natural dyes"
+  },
+  "composition_devices": {
+    "rule-of-thirds": "focal subject on the upper-left third intersection, horizon on the lower third",
+    "centred": "symmetrical centred composition, subject locked to optical centre",
+    "golden-ratio": "subject mass aligned to golden-ratio spiral, layered depth",
+    "diagonal": "strong diagonal energy from lower-left to upper-right",
+    "negative-space": "large deliberate negative space on the right for headline placement",
+    "framing-in-frame": "foreground elements frame the subject",
+    "layered-depth": "clear foreground, midground and background separation with atmospheric falloff",
+    "flat-lay": "planar arrangement, even spacing, graphic shadows",
+    "leading-lines": "environmental lines converge on the subject",
+    "isolation": "subject isolated on plain studio field with generous margin"
+  },
+  "negatives": {
+    "general": "no warped or duplicate text, no extra fingers or limbs, no melted geometry, no watermark, no signature, no unintended logos, no jpeg artefacts in flat areas, no clipped highlights",
+    "portrait": "no asymmetrical eyes, no teeth artefacts, no unnatural neck-to-shoulder transition, no plastic skin",
+    "product": "no wrong label spelling, no impossible reflections, no floating contact shadow, no wrong material response",
+    "architecture": "no converging verticals unless intended, no impossible cantilevers, no repeated windows with identical reflection",
+    "diagram": "no illegible labels, no overlapping callouts, no inconsistent arrowheads, no decorative noise",
+    "character": "no inconsistent costume details across views, no changing proportion system, no inconsistent accessory placement"
+  },
+  "purposes": {
+    "awareness": "campaign awareness asset: emotional hit first, brand second",
+    "conversion": "commerce asset: product clarity, benefit legibility, trust cues",
+    "editorial": "editorial asset: point of view, restrained styling, publication fit",
+    "education": "instructional asset: accuracy, legibility, annotation clarity",
+    "documentation": "documentation asset: completeness and reproducibility over polish",
+    "identity": "identity asset: scalability, distinctiveness, systematic reuse",
+    "entertainment": "entertainment asset: narrative hook, character appeal, mood",
+    "technical": "technical asset: measurement fidelity and unambiguous labelling"
+  },
+  "output_uses": {
+    "web-hero": {"sizes": ["1920x1080", "1440x810", "1024x576"], "aspect": "16:9", "format": "webp", "dpi": 72, "note": "crop-safe centre band"},
+    "web-thumb": {"sizes": ["640x360", "320x180"], "aspect": "16:9", "format": "webp", "dpi": 72, "note": "legible at 160px wide"},
+    "social-square": {"sizes": ["1080x1080"], "aspect": "1:1", "format": "jpg", "dpi": 72, "note": "8 percent safe margin"},
+    "social-story": {"sizes": ["1080x1920"], "aspect": "9:16", "format": "jpg", "dpi": 72, "note": "keep text inside centre 60 percent"},
+    "social-landscape": {"sizes": ["1200x628", "1600x900"], "aspect": "1.91:1", "format": "jpg", "dpi": 72, "note": "link preview crop"},
+    "poster-a3": {"sizes": ["2480x3508"], "aspect": "1:1.41", "format": "pdf", "dpi": 300, "note": "3mm bleed"},
+    "print-a4": {"sizes": ["2480x3508"], "aspect": "1:1.41", "format": "tiff", "dpi": 300, "note": "CMYK proof required"},
+    "packaging": {"sizes": ["3000x3000"], "aspect": "1:1", "format": "tiff", "dpi": 300, "note": "dieline overlay"},
+    "app-icon": {"sizes": ["1024x1024", "180x180", "120x120", "48x48"], "aspect": "1:1", "format": "png", "dpi": 72, "note": "no transparency on iOS master"},
+    "product-listing": {"sizes": ["2000x2000"], "aspect": "1:1", "format": "jpg", "dpi": 72, "note": "white field, product fills 85 percent"},
+    "presentation": {"sizes": ["1920x1080"], "aspect": "16:9", "format": "png", "dpi": 96, "note": "readable on projector"},
+    "archive-master": {"sizes": ["4096x4096"], "aspect": "1:1", "format": "tiff", "dpi": 300, "note": "unsharpened master"}
+  },
+  "accessibility": {
+    "min_contrast_text": 4.5,
+    "min_contrast_large_text": 3.0,
+    "min_contrast_ui": 3.0,
+    "max_colours_for_labels": 6,
+    "note": "Do not encode meaning in colour alone; pair with shape, label or pattern."
+  }
+}

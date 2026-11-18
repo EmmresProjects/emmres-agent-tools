@@ -1,0 +1,3181 @@
+{
+ "schema": "foic.capability-catalog/1",
+ "source": "Full Offline Image Capabilities | Skill Catalog (edition November 2026)",
+ "skill_tool": "full-offline-image-capabilities",
+ "category_count": 32,
+ "skill_count": 480,
+ "modes": {
+  "offline-executable": "Realized by a command in this Skill Tool; runs with no network access.",
+  "requires-local-weights": "Emitted as a reproducible, validated job spec (and optional runner script). Execution needs local model weights plus a diffusion runtime; the tool reports BLOCKED instead of downloading."
+ },
+ "categories": [
+  {
+   "id": 1,
+   "category": "Offline Installation, Dependencies, and Environment Readiness",
+   "primary_capability": "doctor",
+   "mode": "offline-executable",
+   "note": "Environment readiness, offline install and lockfile auditing",
+   "skills": [
+    {
+     "name": "Air-Gapped Image Stack Installer",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    },
+    {
+     "name": "Clean Offline Dependency Bundle Builder",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    },
+    {
+     "name": "Linux Wheelhouse Builder",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    },
+    {
+     "name": "Locked Requirements Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "No-Download Runtime Configurator",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Python Environment Provisioner",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "GPU Driver Compatibility Auditor",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Model Runtime Dependency Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Environment Diagnostic Script Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: script builder|cli|command-line|tool contract|configuration file"
+    },
+    {
+     "name": "Clean-Sandbox Installation Tester",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    },
+    {
+     "name": "Offline-Only Acceptance Tester",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Multi-OS Deployment Planner",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Environment Baseline Recorder",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Update Staging and Rollback Manager",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Image Environment Health Monitor",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "category": "Neural Image Runtime and Pipeline Serving",
+   "primary_capability": "doctor",
+   "mode": "offline-executable",
+   "note": "Runtime and serving component detection (torch/diffusers/onnx/PIL/numpy)",
+   "skills": [
+    {
+     "name": "Offline Neural Image Engine Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "PyTorch Image Pipeline Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "ONNX Runtime Image Pipeline Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Diffusers Runtime Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Transformers Runtime Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Safetensors Runtime Manager",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    },
+    {
+     "name": "Accelerate Runtime Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "OpenCV Runtime Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Pillow Runtime Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "NumPy Runtime Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Model Serving Gateway",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Pipeline Component Registry",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Pipeline Warmup Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Inference Session Pool Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Runtime Regression Tester",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "category": "Foundation Model Weight Management",
+   "primary_capability": "manifest",
+   "mode": "requires-local-weights",
+   "note": "Weight registry, pinning and checksum manifest for local model files",
+   "skills": [
+    {
+     "name": "Stable Diffusion XL Weight Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "FLUX Weight Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Stable Diffusion 3 Weight Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Stable Diffusion 1.5 Weight Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Stable Diffusion 2.x Weight Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "ControlNet Weight Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Real-ESRGAN Weight Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "GFPGAN Weight Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "CodeFormer Weight Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Segment Anything Weight Manager",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "CLIP Encoder Weight Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: script builder|cli|command-line|tool contract|configuration file"
+    },
+    {
+     "name": "VAE Weight Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "LoRA File Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Model Compatibility Matrix Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Foundation Model Acceptance Gate",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "category": "Model Files, Configuration, and Integrity",
+   "primary_capability": "manifest",
+   "mode": "offline-executable",
+   "note": "Model file integrity, checksums, shards, config/tokenizer manifests",
+   "skills": [
+    {
+     "name": "Model Checkpoint Registry",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "ONNX Model File Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "SafeTensors Model File Manager",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    },
+    {
+     "name": "Tokenizer File Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Text Encoder File Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "VAE File Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Scheduler Configuration Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Model Configuration Manager",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Safety Checker File Manager",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Model Checksum Verifier",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    },
+    {
+     "name": "Model Version Manifest Builder",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    },
+    {
+     "name": "Model License Manifest Builder",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Redistribution Permission Auditor",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Model Shard Completeness Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Model Integrity Acceptance Gate",
+     "capability": "manifest",
+     "mode": "offline-executable",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "category": "Text-to-Image Generation",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Text-to-image job spec, seed/sampler/step/guidance control",
+   "skills": [
+    {
+     "name": "Offline Text-to-Image Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Prompt-to-Image Pipeline Builder",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Prompt Parser",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Negative Prompt Manager",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Seed Control Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Resolution Control Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Aspect Ratio Control Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Batch Generation Controller",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Guidance Scale Calibrator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Sampler and Scheduler Router",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Step Count Optimizer",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Prompt Weighting Manager",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "High-Resolution Generation Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Text-to-Image Variant Generator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Text-to-Image Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "category": "Image-to-Image and Guided Transformation",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Image-to-image and guided transformation job spec",
+   "skills": [
+    {
+     "name": "Offline Image-to-Image Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Denoising Strength Calibrator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Composition Preservation Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Structure-Aware Restyling Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Color-Preserving Transformation Operator",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "Lighting Transformation Operator",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "Material Transformation Operator",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "Sketch-to-Image Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Photo-to-Illustration Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Illustration-to-Photo Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Reference Composition Adapter",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Multi-Pass Image Refinement Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Image-to-Image Artifact Repairer",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Image-to-Image Regression Tester",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Guided Transformation Acceptance Gate",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "category": "Inpainting, Outpainting, and Canvas Expansion",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Inpaint/outpaint/canvas expansion job spec and mask planning",
+   "skills": [
+    {
+     "name": "Offline Inpainting Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Offline Outpainting Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Mask Preparation Manager",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Soft Mask and Feather Manager",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Context-Aware Fill Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Object Removal Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Object Replacement Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Missing Region Reconstruction Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Edge Continuation Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Background Extension Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Panorama Expansion Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Perspective-Aware Outpainting Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Multi-Pass Seam Repairer",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Inpaint and Outpaint Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Canvas Expansion Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "category": "ControlNet and Structural Conditioning",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "ControlNet and structural conditioning job spec",
+   "skills": [
+    {
+     "name": "ControlNet Runtime Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Canny Edge Conditioning Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Soft Edge Conditioning Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Depth Conditioning Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Normal Map Conditioning Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "OpenPose Conditioning Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Line Art Conditioning Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Scribble Conditioning Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Segmentation Conditioning Operator",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Tile Conditioning Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Inpainting ControlNet Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Multi-ControlNet Composer",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Control Weight Scheduler",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Control Map Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "ControlNet Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "category": "Segmentation, Masks, and Background Removal",
+   "primary_capability": "mask",
+   "mode": "requires-local-weights",
+   "note": "Segmentation/mask/background-removal job spec plus offline mask repair",
+   "skills": [
+    {
+     "name": "Segment Anything Runtime Manager",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Automatic Foreground Segmenter",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Interactive Point-Prompt Segmenter",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Bounding-Box Segmenter",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Semantic Segmentation Operator",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Instance Segmentation Operator",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Offline Background Removal Operator",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Alpha Matting Operator",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Hair and Fur Matting Specialist",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Transparent Edge Decontaminator",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Shadow Preservation Operator",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Mask Hole and Island Repairer",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Batch Mask Generator",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Segmentation Quality Validator",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Background Removal Acceptance Gate",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "category": "Upscaling, Super-Resolution, and Detail Recovery",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Upscale/super-resolution pipeline spec and tiling plan",
+   "skills": [
+    {
+     "name": "Offline Image Upscaling Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    },
+    {
+     "name": "Real-ESRGAN Upscaling Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    },
+    {
+     "name": "Anime and Line-Art Upscaler",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    },
+    {
+     "name": "Photographic Upscaler",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    },
+    {
+     "name": "Tiled Upscaling Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    },
+    {
+     "name": "Face-Aware Upscaling Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    },
+    {
+     "name": "Texture-Preserving Upscaler",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    },
+    {
+     "name": "Compression Artifact Repairer",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Denoise Before Upscale Planner",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    },
+    {
+     "name": "Multi-Stage Upscale Pipeline",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    },
+    {
+     "name": "Downsample and Sharpen Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    },
+    {
+     "name": "Upscale Tile Seam Repairer",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Scaling Kernel Router",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Upscaling Regression Tester",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    },
+    {
+     "name": "Super-Resolution Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "category": "Face Restoration and Portrait Repair",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Face restoration and portrait repair pipeline spec",
+   "skills": [
+    {
+     "name": "Offline Face Restoration Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "GFPGAN Face Restoration Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "CodeFormer Face Restoration Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Face Detection and Alignment Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Face Fidelity Calibrator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Eye Detail Repairer",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Mouth and Teeth Repairer",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Skin Texture Preservation Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Portrait Deblur Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Old Photo Face Repairer",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Multi-Face Restoration Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Face Identity Drift Detector",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Over-Restoration Detector",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Face Restoration Regression Tester",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Portrait Repair Acceptance Gate",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "category": "Style Transfer, LoRA, and Visual Presets",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Style, LoRA and visual preset job spec",
+   "skills": [
+    {
+     "name": "Offline Style Transfer Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "LoRA Runtime Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "LoRA Application Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Multiple LoRA Composer",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "LoRA Strength Calibrator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "LoRA Trigger Token Manager",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Style Preset Registry",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Reusable Visual Style Preset Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Style Reference Adapter",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Color Palette Style Adapter",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Medium and Texture Style Adapter",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Style Consistency Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "LoRA Compatibility Auditor",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Style Regression Tester",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Style and LoRA Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "category": "Character, Face, Clothing, and Identity Consistency",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Identity/character consistency workflow spec",
+   "skills": [
+    {
+     "name": "Character Reference System",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Face Identity Consistency Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Clothing Consistency Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Hair and Accessory Consistency Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Body Proportion Consistency Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Character Color Palette Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Expression Consistency Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Age and Feature Stability Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Reference Image Conditioning Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Identity Embedding Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Character LoRA Workflow Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Multi-View Character Consistency Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Character Drift Detector",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Character Consistency Regression Tester",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Identity Consistency Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "category": "Pose, Depth, Edge, and Reference Conditioning",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Pose/depth/edge/reference conditioning spec",
+   "skills": [
+    {
+     "name": "Pose Conditioning Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "OpenPose Extraction Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Hand Pose Conditioning Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Face Landmark Conditioning Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Depth Map Extraction Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Depth Scale and Range Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Edge Map Extraction Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Line Art Extraction Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Reference Image Adapter",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Image Prompt Conditioning Operator",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Composition Reference Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Camera View Conditioning Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Multi-Condition Fusion Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Conditioning Conflict Detector",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Conditioning Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "category": "Character Sheets and Multi-Image Workflows",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Character sheet and multi-image workflow spec",
+   "skills": [
+    {
+     "name": "Multi-Image Character Sheet Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Front View Generator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Side View Generator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Rear View Generator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Three-Quarter View Generator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Expression Sheet Generator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Pose Sheet Generator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Costume Variant Sheet Generator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Prop and Accessory Sheet Generator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Scale and Proportion Sheet Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Turnaround Alignment Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Multi-Panel Layout Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Cross-Panel Identity Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Character Sheet Exporter",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "Character Sheet Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "category": "Text Rendering, Typography, and Graphic Design",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Typography/graphic design generation spec",
+   "skills": [
+    {
+     "name": "Reliable Text Rendering Workflow",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Typography Correction Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "OCR-Guided Text Repairer",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Spelling and Grammar Image Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Layout-Aware Generation Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Poster Layout Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Signage and Label Generator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Logo Consistency Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Brand-Color Preset Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Font Matching Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Text Baseline and Kerning Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Multi-Language Text Rendering Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Right-to-Left Image Typography Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Text Rendering Regression Tester",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Graphic Design Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "category": "Transparent Backgrounds, Alpha, and Compositing",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Alpha, transparency and compositing spec",
+   "skills": [
+    {
+     "name": "Transparent Background Generator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Accurate Alpha Output Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Straight Alpha Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Premultiplied Alpha Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Matte Color Decontaminator",
+     "capability": "mask",
+     "mode": "offline-executable",
+     "basis": "keyword override: mask|matting|segment|background removal|hole and island|decontaminat"
+    },
+    {
+     "name": "Semi-Transparent Edge Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Transparent Object Specialist",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Glass and Smoke Alpha Planner",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Shadow-on-Transparency Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Layered Composite Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Foreground and Background Harmonizer",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Color Spill Remover",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Alpha Channel Regression Tester",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Transparent PNG and WebP Exporter",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "Transparency Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "category": "Layout, Composition, Camera, and Perspective",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Layout, composition, camera and perspective spec",
+   "skills": [
+    {
+     "name": "Layout-Aware Generation Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Rule-of-Thirds Composition Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Centered Product Composition Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Editorial Composition Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Multi-Subject Layout Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Perspective Conditioning Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Vanishing Point Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Horizon and Camera Height Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Lens and Field-of-View Planner",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Depth Layer Composition Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Negative Space Controller",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Safe Area and Crop Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Composition Balance Analyzer",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Perspective Artifact Detector",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Composition Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "category": "Color, Lighting, Materials, and Appearance",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Color, lighting, material and appearance spec",
+   "skills": [
+    {
+     "name": "Color Palette Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Brand Color Preset Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Lighting Direction Controller",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Time-of-Day Lighting Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Studio Lighting Generator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Cinematic Lighting Generator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Material Appearance Controller",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Skin Tone Consistency Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "White Balance Corrector",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Exposure and Contrast Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "HDR Appearance Planner",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Color Harmony Analyzer",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Gamut and Clipping Detector",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Color Profile Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Color and Lighting Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "category": "Editing, Retouching, and Content-Aware Repair",
+   "primary_capability": "plan",
+   "mode": "requires-local-weights",
+   "note": "Editing, retouching and content-aware repair spec",
+   "skills": [
+    {
+     "name": "Offline Image Edit Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Object Addition Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Object Removal Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Object Relocation Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Content-Aware Resize Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Perspective Correction Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Lens Distortion Corrector",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Color Replacement Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Local Retouching Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Skin Retouching Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Product Retouching Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Dust and Scratch Removal Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Reflection and Glare Repairer",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Edit Difference Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Image Editing Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "category": "Batch Generation, Queues, and Job Control",
+   "primary_capability": "batch",
+   "mode": "offline-executable",
+   "note": "Batch matrix, queue, retry, timeout, resume and provenance",
+   "skills": [
+    {
+     "name": "Offline Batch Generate Operator",
+     "capability": "batch",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Batch Prompt Manifest Builder",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Batch Seed Matrix Manager",
+     "capability": "batch",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Batch Resolution Matrix Manager",
+     "capability": "batch",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Batch Model Router",
+     "capability": "batch",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Batch LoRA Matrix Manager",
+     "capability": "batch",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Batch ControlNet Manager",
+     "capability": "batch",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "GPU Job Queue Manager",
+     "capability": "batch",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Priority and Deadline Scheduler",
+     "capability": "batch",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Retry and Recovery Manager",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Timeout Handling Manager",
+     "capability": "batch",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Failure Resume Manager",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Partial Result Preserver",
+     "capability": "batch",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Batch Provenance Recorder",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Batch Generation Acceptance Gate",
+     "capability": "batch",
+     "mode": "offline-executable",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "category": "Hardware, VRAM, RAM, and Performance",
+   "primary_capability": "doctor",
+   "mode": "offline-executable",
+   "note": "Hardware/VRAM/RAM/performance audit and memory-fallback planning",
+   "skills": [
+    {
+     "name": "GPU Capability Auditor",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "NVIDIA CUDA Runtime Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "VRAM Capacity Planner",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "System RAM Capacity Planner",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Temporary Disk Capacity Planner",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "CPU Fallback Mode Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Memory-Efficient Attention Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Model Quantization Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Tiled Generation Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Tiled Upscaling Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    },
+    {
+     "name": "Model Offload Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Attention Slicing Manager",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Performance Benchmark Runner",
+     "capability": "compare",
+     "mode": "offline-executable",
+     "basis": "keyword override: benchmark|evaluator|scorecard|promotion gate"
+    },
+    {
+     "name": "Thermal Stability Tester",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Hardware Readiness Acceptance Gate",
+     "capability": "doctor",
+     "mode": "offline-executable",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "category": "Memory Cleanup and Long-Running Stability",
+   "primary_capability": "plan",
+   "mode": "offline-executable",
+   "note": "Long-running stability policy: cleanup, checkpointing, cancellation, quotas",
+   "skills": [
+    {
+     "name": "GPU Memory Cleanup Manager",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Model Unload Operator",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "VAE and Encoder Cache Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Temporary File Cleanup Operator",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Inference Memory Leak Detector",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Fragmentation Monitor",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Worker Restart Manager",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Out-of-Memory Recovery Operator",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Graceful Degradation Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Long-Running Batch Stability Tester",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Checkpoint and Resume Manager",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Job Cancellation Manager",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Resource Quota Enforcer",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Runtime Health Monitor",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Stability Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "category": "Image File Formats, Metadata, and Color Profiles",
+   "primary_capability": "convert",
+   "mode": "offline-executable",
+   "note": "Format export, metadata/EXIF/ICC handling, bit depth, round-trip",
+   "skills": [
+    {
+     "name": "PNG Export Operator",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "JPEG Export Operator",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "WebP Export Operator",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "TIFF Export Operator",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "OpenEXR Export Operator",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "AVIF Export Operator",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "Image Metadata Manager",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "EXIF Privacy Scrubber",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "ICC Profile Manager",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "sRGB Conversion Operator",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "Display P3 Conversion Operator",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "CMYK Conversion Planner",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "Bit Depth and Channel Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Format Round-Trip Tester",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "Image Format Acceptance Gate",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "category": "Quality Validation and Automated Inspection",
+   "primary_capability": "validate",
+   "mode": "offline-executable",
+   "note": "Automated QC inspection and report building",
+   "skills": [
+    {
+     "name": "Image Decode Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Empty Image Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Resolution Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Aspect Ratio Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Transparency Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Artifact Detector",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Face Quality Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Hand Quality Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Text Spelling Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Character Consistency Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Color Profile Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "File Size Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Duplicate Image Detector",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Visual Regression Comparator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Automated Image QC Report Builder",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "category": "Safety, Rights, Licensing, and Provenance",
+   "primary_capability": "license-audit",
+   "mode": "offline-executable",
+   "note": "Rights, licensing, provenance and release-gate auditing",
+   "skills": [
+    {
+     "name": "Image Model License Auditor",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Model Redistribution Permission Auditor",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Training and Reference Data Provenance Recorder",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Generated Image Provenance Recorder",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Prompt and Seed Recorder",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "LoRA License Auditor",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Reference Image Rights Classifier",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Face and Likeness Consent Gate",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Brand and Logo Rights Checker",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Stock Asset License Auditor",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Attribution and Notices Generator",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Sensitive Metadata Sanitizer",
+     "capability": "convert",
+     "mode": "offline-executable",
+     "basis": "keyword override: export|metadata|icc|srgb|p3|cmyk|bit depth|round-trip|format"
+    },
+    {
+     "name": "Third-Party Asset Quarantine",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Release Rights Gate",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Rights Evidence Packager",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "category": "Security, Sandboxing, and Unsafe Model Screening",
+   "primary_capability": "screen",
+   "mode": "offline-executable",
+   "note": "Model/asset security screening, quarantine, no-download policy",
+   "skills": [
+    {
+     "name": "Model File Security Scanner",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    },
+    {
+     "name": "Unsafe Pickle Blocker",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    },
+    {
+     "name": "SafeTensors Enforcement Manager",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    },
+    {
+     "name": "Generated Script Sandbox",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    },
+    {
+     "name": "Dependency Vulnerability Scanner",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    },
+    {
+     "name": "Malware Scanner",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    },
+    {
+     "name": "Archive Bomb Detector",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Path Traversal Guard",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    },
+    {
+     "name": "Network Isolation Controller",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "No-Download Policy Tester",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Executable Allowlist Manager",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    },
+    {
+     "name": "Secret and Credential Scanner",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    },
+    {
+     "name": "Quarantine Workflow Manager",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Security Regression Suite",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    },
+    {
+     "name": "Image Stack Security Acceptance Gate",
+     "capability": "screen",
+     "mode": "offline-executable",
+     "basis": "keyword override: security|scanner|pickle|safetensors|sandbox|malware|bomb|traversal|secret|credential|allowlist"
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "category": "Prompt Systems and Reusable Generation Recipes",
+   "primary_capability": "prompt",
+   "mode": "offline-executable",
+   "note": "Prompt registry, templates, weighting, token budget, injection filter",
+   "skills": [
+    {
+     "name": "Prompt Registry",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Prompt Template Compiler",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Negative Prompt Library Manager",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Prompt Variable Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Prompt Weighting Recipe Builder",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Prompt Style Preset Manager",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Prompt Localization Manager",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Prompt Token Budget Analyzer",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Prompt Injection Filter",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Prompt Version Manager",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Prompt A-B Evaluation Runner",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Prompt Regression Gate",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Prompt Provenance Recorder",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Prompt Recipe Packager",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Prompt System Acceptance Gate",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "category": "Model Evaluation, Benchmarking, and Selection",
+   "primary_capability": "compare",
+   "mode": "offline-executable",
+   "note": "Benchmarking, evaluation scorecards and regression comparison",
+   "skills": [
+    {
+     "name": "Image Model Benchmark Suite",
+     "capability": "compare",
+     "mode": "offline-executable",
+     "basis": "keyword override: benchmark|evaluator|scorecard|promotion gate"
+    },
+    {
+     "name": "Prompt Compliance Evaluator",
+     "capability": "prompt",
+     "mode": "offline-executable",
+     "basis": "keyword override: prompt|negative prompt|token budget|trigger token|injection"
+    },
+    {
+     "name": "Text-to-Image Quality Evaluator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Image-to-Image Fidelity Evaluator",
+     "capability": "compare",
+     "mode": "offline-executable",
+     "basis": "keyword override: benchmark|evaluator|scorecard|promotion gate"
+    },
+    {
+     "name": "Inpainting Quality Evaluator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Outpainting Continuity Evaluator",
+     "capability": "compare",
+     "mode": "offline-executable",
+     "basis": "keyword override: benchmark|evaluator|scorecard|promotion gate"
+    },
+    {
+     "name": "Upscaling Quality Evaluator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Face Restoration Quality Evaluator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "ControlNet Accuracy Evaluator",
+     "capability": "compare",
+     "mode": "offline-executable",
+     "basis": "keyword override: benchmark|evaluator|scorecard|promotion gate"
+    },
+    {
+     "name": "Character Consistency Evaluator",
+     "capability": "compare",
+     "mode": "offline-executable",
+     "basis": "keyword override: benchmark|evaluator|scorecard|promotion gate"
+    },
+    {
+     "name": "Typography Accuracy Evaluator",
+     "capability": "compare",
+     "mode": "offline-executable",
+     "basis": "keyword override: benchmark|evaluator|scorecard|promotion gate"
+    },
+    {
+     "name": "Performance and Resource Evaluator",
+     "capability": "compare",
+     "mode": "offline-executable",
+     "basis": "keyword override: benchmark|evaluator|scorecard|promotion gate"
+    },
+    {
+     "name": "Human Review Scorecard Builder",
+     "capability": "compare",
+     "mode": "offline-executable",
+     "basis": "keyword override: benchmark|evaluator|scorecard|promotion gate"
+    },
+    {
+     "name": "Model Promotion Gate",
+     "capability": "compare",
+     "mode": "offline-executable",
+     "basis": "keyword override: benchmark|evaluator|scorecard|promotion gate"
+    },
+    {
+     "name": "Evaluation Reproducibility Packager",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "category": "Python Tools and Command-Line Interfaces",
+   "primary_capability": "plan",
+   "mode": "offline-executable",
+   "note": "Offline CLI/script contract generation and contract tests",
+   "skills": [
+    {
+     "name": "Offline generate.py Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Offline edit.py Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Offline inpaint.py Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Offline outpaint.py Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Offline remove_background.py Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Offline upscale.py Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: upscal|super-resolution|detail recovery|sharpen"
+    },
+    {
+     "name": "Offline restore_face.py Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Offline apply_controlnet.py Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Offline apply_lora.py Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Offline batch_generate.py Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Model Loader Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "category default"
+    },
+    {
+     "name": "Command-Line Argument Validator",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Configuration File Manager",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: script builder|cli|command-line|tool contract|configuration file"
+    },
+    {
+     "name": "Tool Contract Test Runner",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: script builder|cli|command-line|tool contract|configuration file"
+    },
+    {
+     "name": "Image CLI Acceptance Gate",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: script builder|cli|command-line|tool contract|configuration file"
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "category": "Packaging, Installation, Self-Test, and Handoff",
+   "primary_capability": "package",
+   "mode": "offline-executable",
+   "note": "Offline packaging, checksum manifests, install/self-test scripts",
+   "skills": [
+    {
+     "name": "Complete Offline Image Model ZIP Builder",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Local Model Folder Packager",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    },
+    {
+     "name": "Local Wheel Folder Packager",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    },
+    {
+     "name": "Local Configuration Folder Packager",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    },
+    {
+     "name": "Local Preset Folder Packager",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    },
+    {
+     "name": "Installation Script Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: script builder|cli|command-line|tool contract|configuration file"
+    },
+    {
+     "name": "Environment Diagnostic Script Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: script builder|cli|command-line|tool contract|configuration file"
+    },
+    {
+     "name": "Model Integrity Checker",
+     "capability": "validate",
+     "mode": "offline-executable",
+     "basis": "keyword override: checker|validator|detector|inspection|report builder|quality|regression comparator|duplicate"
+    },
+    {
+     "name": "Self-Test Script Builder",
+     "capability": "plan",
+     "mode": "requires-local-weights",
+     "basis": "keyword override: script builder|cli|command-line|tool contract|configuration file"
+    },
+    {
+     "name": "License Manifest Builder",
+     "capability": "license-audit",
+     "mode": "offline-executable",
+     "basis": "keyword override: license|rights|consent|attribution|notices|provenance|quarantine|release rights"
+    },
+    {
+     "name": "Version Manifest Builder",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    },
+    {
+     "name": "Checksum Manifest Builder",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    },
+    {
+     "name": "Clean-Room Reinstallation Tester",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Recipient Handoff Guide Writer",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    },
+    {
+     "name": "Offline Package Acceptance Gate",
+     "capability": "package",
+     "mode": "offline-executable",
+     "basis": "keyword override: packag|installer|wheelhouse|bundle|handoff|manifest builder|checksum"
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "category": "Skill Integration, Documentation, Recovery, and Governance",
+   "primary_capability": "recover",
+   "mode": "offline-executable",
+   "note": "Recovery, governance, documentation and skill integration assets",
+   "skills": [
+    {
+     "name": "Image Generation Skill Integrator",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: commit|documentation|handbook|procedure|competency|governance|integrator|quick start"
+    },
+    {
+     "name": "Image Editing Skill Integrator",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: commit|documentation|handbook|procedure|competency|governance|integrator|quick start"
+    },
+    {
+     "name": "Skill Tool Schema Builder",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Skill Permission and Resource Policy Manager",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Offline Image Production Handbook Builder",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: commit|documentation|handbook|procedure|competency|governance|integrator|quick start"
+    },
+    {
+     "name": "Role-Based Quick Start Author",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: commit|documentation|handbook|procedure|competency|governance|integrator|quick start"
+    },
+    {
+     "name": "Standard Operating Procedure Generator",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: commit|documentation|handbook|procedure|competency|governance|integrator|quick start"
+    },
+    {
+     "name": "Troubleshooting Decision Tree Builder",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Known-Issue Register Manager",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Reference Image Project Maintainer",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Disaster Recovery Drill Runner",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: troubleshooting|known-issue|recovery|disaster|repair|rollback|resume|cancellation|cleanup|restart"
+    },
+    {
+     "name": "Operator Competency Checklist Builder",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: commit|documentation|handbook|procedure|competency|governance|integrator|quick start"
+    },
+    {
+     "name": "Skill Interface Standard Author",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Skill Dependency Graph Manager",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "category default"
+    },
+    {
+     "name": "Skill Catalog Governance Manager",
+     "capability": "recover",
+     "mode": "offline-executable",
+     "basis": "keyword override: commit|documentation|handbook|procedure|competency|governance|integrator|quick start"
+    }
+   ]
+  }
+ ]
+}

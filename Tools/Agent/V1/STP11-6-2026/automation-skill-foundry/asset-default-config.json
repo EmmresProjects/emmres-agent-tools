@@ -1,0 +1,35 @@
+{
+  "config_id": "autoforge-default-config",
+  "version": "1.0.0",
+  "description": "Packaged defaults for the Automation Skill Foundry. Copy this file, edit the DEFAULTS block, and pass it with --config PATH. Values here override the built-in fallbacks in tools_common.py.",
+  "DEFAULTS": {
+    "format": "json",
+    "out_dir": null,
+    "catalog_file": "asset-skill-catalog.json",
+    "max_items": 12,
+    "max_output_bytes": 4000000,
+    "ask_skill_limit": 7,
+    "secret_scan": true,
+    "require_approval": true,
+    "scheduler_name": "foundry-automation",
+    "scheduler_owner": "automation-owner",
+    "workspace_dir": "automation-workspace",
+    "python_executable": "python3",
+    "allowed_risk_levels": ["low", "medium", "high"],
+    "deny_risk_levels": []
+  },
+  "notes": {
+    "max_items": "Upper bound on skills in one bundle; extra skills are trimmed with the safety-stage rule and listed in limits.trimmed_skills.",
+    "ask_skill_limit": "Default number of candidates the router takes from search when no recipe matches.",
+    "deny_risk_levels": "Add \"critical\" (or \"high\") to refuse routing/planning at that risk level outright.",
+    "workspace_dir": "Default project directory used by tools_scaffold.py and schedule launchers.",
+    "python_executable": "Interpreter written into exported launchers.",
+    "out_dir": "Reserved for callers that batch several runs; the tools always honour --out."
+  },
+  "example_tightened_config": {
+    "max_items": 6,
+    "deny_risk_levels": ["critical"],
+    "scheduler_owner": "ops-lead",
+    "format": "text"
+  }
+}

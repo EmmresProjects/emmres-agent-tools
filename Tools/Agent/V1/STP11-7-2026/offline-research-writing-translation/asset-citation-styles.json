@@ -1,0 +1,61 @@
+{
+  "asset": "citation-styles",
+  "version": "1.0.0",
+  "purpose": "Style definitions for the local citation formatter. Each style entry documents the family; rendering is implemented in tools-rwt-citation.py. No network lookup is performed.",
+  "styles": {
+    "apa": {
+      "family": "author-date",
+      "edition": "APA 7",
+      "in_text": "(Author, Year)",
+      "note": "Social/behavioral sciences default"
+    },
+    "mla": {
+      "family": "author-page",
+      "edition": "MLA 9",
+      "in_text": "(Author, page)",
+      "note": "Humanities default"
+    },
+    "chicago": {
+      "family": "author-date/notes-bibliography",
+      "edition": "Chicago 17",
+      "in_text": "(Author Year, page)",
+      "note": "History/publishing default"
+    },
+    "ieee": {
+      "family": "numeric",
+      "edition": "IEEE",
+      "in_text": "[n]",
+      "note": "Engineering default"
+    },
+    "vancouver": {
+      "family": "numeric",
+      "edition": "Vancouver/ICMJE",
+      "in_text": "superscript",
+      "note": "Biomedical default"
+    },
+    "harvard": {
+      "family": "author-date",
+      "edition": "Harvard (generic)",
+      "in_text": "(Author, Year)",
+      "note": "UK/Australia default"
+    },
+    "oscola": {
+      "family": "note",
+      "edition": "OSCOLA 4",
+      "in_text": "footnote",
+      "note": "UK legal citation"
+    },
+    "bluebook": {
+      "family": "note",
+      "edition": "Bluebook 21",
+      "in_text": "footnote",
+      "note": "US legal citation"
+    },
+    "custom": {
+      "family": "template",
+      "edition": "user template",
+      "template": "{authors} ({year}). {title}. {container} {pages}. {doi}",
+      "note": "Template keys: {authors} {year} {title} {container} {pages} {doi}"
+    }
+  }
+}

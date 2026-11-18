@@ -1,0 +1,37 @@
+{
+  "name": "knight",
+  "size": "64x64",
+  "seed": 1234,
+  "palette": "hero",
+  "harmony": "analogous",
+  "layers": [
+    {"name": "leg_back", "shape": "rect", "box": [22, 40, 6, 18], "color": "@shade_2"},
+    {"name": "leg_front", "shape": "rect", "box": [34, 40, 6, 18], "color": "@shade_1"},
+    {"name": "torso", "shape": "capsule", "box": [20, 24, 24, 20], "color": "@base",
+     "outline": {"width": 1, "color": "@outline", "mode": "outer"}},
+    {"name": "head", "shape": "ellipse", "box": [24, 10, 16, 16], "color": "@light_1",
+     "outline": {"width": 1, "color": "@outline", "mode": "outer"}},
+    {"name": "eyes", "shape": "rect", "box": [27, 16, 10, 2], "color": "#101018"},
+    {"name": "sword", "shape": "polygon", "box": [46, 12, 4, 34],
+     "points": [[2, 0], [4, 0], [4, 34], [2, 34]], "color": "@light_2"}
+  ],
+  "actions": [
+    {"name": "idle", "frames": 4, "duration": 140, "loop": true,
+     "motion": [
+       {"part": "torso", "type": "bob", "amplitude": 1.2},
+       {"part": "head", "type": "bob", "amplitude": 1.2, "delay": 0.05},
+       {"part": "eyes", "type": "blink"}
+     ]},
+    {"name": "walk", "frames": 6, "duration": 110, "loop": true,
+     "motion": [
+       {"part": "leg_back", "type": "sway", "amplitude": 5},
+       {"part": "leg_front", "type": "sway", "amplitude": -5},
+       {"part": "torso", "type": "bob", "amplitude": 0.8}
+     ]},
+    {"name": "attack", "frames": 4, "duration": 90, "loop": false,
+     "motion": [
+       {"part": "sword", "type": "rotate", "amplitude": 18},
+       {"part": "torso", "type": "slide", "amplitude": 2}
+     ]}
+  ]
+}

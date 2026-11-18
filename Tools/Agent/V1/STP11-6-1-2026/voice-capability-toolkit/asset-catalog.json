@@ -1,0 +1,1146 @@
+{
+  "catalog_version": "1.0.0",
+  "source_document": "Ultimate Voice Skill Catalog (200 skills across 20 categories)",
+  "categories": [
+    {
+      "number": 1,
+      "name": "Voice Creation and Identity Design",
+      "slug": "voice-creation-and-identity-design",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Universal Voice Creator",
+          "description": "Creates original synthetic voices from a detailed brief covering age range, vocal weight, pitch, resonance, pace, accent, personality, energy, and intended use."
+        },
+        {
+          "number": 2,
+          "name": "Voice Identity Architect",
+          "description": "Builds a coherent voice identity with a stable timbre, signature cadence, pronunciation profile, emotional range, and recognizable speaking habits."
+        },
+        {
+          "number": 3,
+          "name": "Character Voice Designer",
+          "description": "Designs distinctive voices for fictional characters, mascots, narrators, game roles, animation, and interactive agents while keeping each identity consistent."
+        },
+        {
+          "number": 4,
+          "name": "Persona-to-Voice Mapper",
+          "description": "Translates a written persona, biography, behavioral profile, or brand archetype into measurable vocal characteristics and performance directions."
+        },
+        {
+          "number": 5,
+          "name": "Voice Style Composer",
+          "description": "Combines multiple style attributes such as warm, elegant, playful, mysterious, commanding, youthful, cinematic, or futuristic into one controlled voice design."
+        },
+        {
+          "number": 6,
+          "name": "Gender Presentation Voice Designer",
+          "description": "Creates voices across masculine, feminine, androgynous, neutral, and fluid presentation while preserving naturalness and respectful characterization."
+        },
+        {
+          "number": 7,
+          "name": "Age and Maturity Voice Designer",
+          "description": "Creates age-appropriate vocal qualities ranging from youthful to mature without relying on caricatures or unsafe impersonation."
+        },
+        {
+          "number": 8,
+          "name": "Creature and Fantasy Voice Creator",
+          "description": "Creates intelligible nonhuman voices for robots, aliens, monsters, spirits, animals, and fantasy beings using layered timbre and controlled effects."
+        },
+        {
+          "number": 9,
+          "name": "Voice Variation Generator",
+          "description": "Produces related variants of one approved original voice for alternate moods, roles, languages, ages, or production contexts."
+        },
+        {
+          "number": 10,
+          "name": "Voice Reference Board Builder",
+          "description": "Converts descriptive references into a structured voice board containing target traits, forbidden traits, sample lines, and evaluation criteria."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "name": "Text-to-Speech and Script Performance",
+      "slug": "text-to-speech-and-script-performance",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Expressive Text-to-Speech Performer",
+          "description": "Turns text into natural speech with controllable pacing, emphasis, pauses, intensity, emotion, and conversational flow."
+        },
+        {
+          "number": 2,
+          "name": "Long-Form Narration Engine",
+          "description": "Performs books, reports, lessons, documentaries, and podcasts with chapter-aware pacing, fatigue control, and consistent voice identity."
+        },
+        {
+          "number": 3,
+          "name": "Short-Form Voiceover Generator",
+          "description": "Creates concise voiceovers for advertisements, social posts, trailers, intros, announcements, and product demonstrations."
+        },
+        {
+          "number": 4,
+          "name": "Dialogue Performance Generator",
+          "description": "Renders multi-speaker conversations with clear turn-taking, distinct identities, interruptions, reactions, and realistic timing."
+        },
+        {
+          "number": 5,
+          "name": "Script Interpretation Director",
+          "description": "Analyzes intent, subtext, audience, scene context, and dramatic beats before choosing how each line should be spoken."
+        },
+        {
+          "number": 6,
+          "name": "Markup-Aware Speech Renderer",
+          "description": "Reads SSML or comparable control markup for phonemes, breaks, emphasis, volume, rate, pitch, and voice switching."
+        },
+        {
+          "number": 7,
+          "name": "Prompt-to-Performance Converter",
+          "description": "Transforms a plain request into a performance-ready script and voice direction without requiring technical audio terminology."
+        },
+        {
+          "number": 8,
+          "name": "Dynamic Read-Aloud Assistant",
+          "description": "Reads user-selected content aloud and adapts delivery for study, accessibility, entertainment, review, or presentation rehearsal."
+        },
+        {
+          "number": 9,
+          "name": "Batch Text-to-Speech Producer",
+          "description": "Processes many scripts or records in one run using stable naming, metadata, voice settings, and output validation."
+        },
+        {
+          "number": 10,
+          "name": "Streaming Speech Generator",
+          "description": "Produces low-latency speech in chunks while maintaining continuity, natural prosody, and recovery from interrupted generation."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Emotion, Attitude, and Acting",
+      "slug": "emotion-attitude-and-acting",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Emotion Performance Controller",
+          "description": "Applies emotions such as joy, sadness, anger, fear, relief, wonder, affection, confidence, or concern at adjustable intensity."
+        },
+        {
+          "number": 2,
+          "name": "Attitude and Personality Performer",
+          "description": "Adds attitudes such as sarcastic, sincere, rebellious, authoritative, shy, curious, impatient, compassionate, or professional."
+        },
+        {
+          "number": 3,
+          "name": "Emotional Transition Director",
+          "description": "Creates believable transitions between emotions within a line, scene, or conversation rather than using one fixed mood."
+        },
+        {
+          "number": 4,
+          "name": "Subtext Performance Engine",
+          "description": "Speaks lines according to hidden motives, irony, uncertainty, tension, persuasion, or restrained emotion."
+        },
+        {
+          "number": 5,
+          "name": "Comedic Timing Performer",
+          "description": "Controls setup, pause placement, rhythm, contrast, and punch-line delivery for humorous scripts."
+        },
+        {
+          "number": 6,
+          "name": "Dramatic Scene Performer",
+          "description": "Performs dramatic scenes with escalation, breath, silence, vocal focus, and character objectives."
+        },
+        {
+          "number": 7,
+          "name": "Empathetic Support Voice",
+          "description": "Delivers sensitive or supportive content with calm pacing, nonjudgmental tone, and appropriate emotional restraint."
+        },
+        {
+          "number": 8,
+          "name": "Motivational Voice Performer",
+          "description": "Creates energetic and encouraging delivery for coaching, fitness, education, onboarding, and achievement content."
+        },
+        {
+          "number": 9,
+          "name": "Villain and Antagonist Voice Designer",
+          "description": "Creates fictional intimidating or sinister performances while protecting intelligibility and avoiding real-person impersonation."
+        },
+        {
+          "number": 10,
+          "name": "Emotion Consistency Auditor",
+          "description": "Checks whether intended emotions remain coherent across takes, speakers, scenes, and revisions."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Pronunciation, Language, and Accent",
+      "slug": "pronunciation-language-and-accent",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Pronunciation Dictionary Builder",
+          "description": "Creates reusable custom dictionaries for names, technical terms, brands, places, acronyms, and invented words."
+        },
+        {
+          "number": 2,
+          "name": "Phoneme-Level Pronunciation Editor",
+          "description": "Edits pronunciation using phonetic alphabets, syllable stress, vowel length, consonant strength, and liaison controls."
+        },
+        {
+          "number": 3,
+          "name": "Multilingual Voice Performer",
+          "description": "Speaks multiple languages with language-specific rhythm, pronunciation, and natural sentence melody."
+        },
+        {
+          "number": 4,
+          "name": "Code-Switching Voice Performer",
+          "description": "Moves naturally between languages or dialects within a sentence while preserving identity and meaning."
+        },
+        {
+          "number": 5,
+          "name": "Accent Style Controller",
+          "description": "Applies requested regional or international accent characteristics with adjustable strength and respectful, non-caricatured delivery."
+        },
+        {
+          "number": 6,
+          "name": "Accent Neutralization Assistant",
+          "description": "Reduces strong regional markers when a neutral or globally understandable delivery is requested."
+        },
+        {
+          "number": 7,
+          "name": "Name and Proper-Noun Specialist",
+          "description": "Detects likely pronunciation risks in names and proper nouns, then requests or applies verified pronunciations."
+        },
+        {
+          "number": 8,
+          "name": "Acronym and Number Reader",
+          "description": "Handles dates, phone numbers, currency, measurements, equations, abbreviations, URLs, and alphanumeric codes according to context."
+        },
+        {
+          "number": 9,
+          "name": "Singing-Language Pronunciation Coach",
+          "description": "Adapts lyrics for singable pronunciation, vowel sustain, consonant timing, and language clarity."
+        },
+        {
+          "number": 10,
+          "name": "Pronunciation Quality Auditor",
+          "description": "Flags mispronunciations, inconsistent stress, awkward phrasing, and language mismatches before delivery."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "name": "Voice Conversion and Transformation",
+      "slug": "voice-conversion-and-transformation",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Authorized Voice Converter",
+          "description": "Converts a recorded performance into an approved target voice while preserving timing, emotion, and linguistic content."
+        },
+        {
+          "number": 2,
+          "name": "Timbre Transfer Editor",
+          "description": "Changes vocal color and resonance while preserving the original speaker's rhythm and performance."
+        },
+        {
+          "number": 3,
+          "name": "Age Transformation Editor",
+          "description": "Adjusts perceived vocal age within an authorized recording while preserving clarity and naturalness."
+        },
+        {
+          "number": 4,
+          "name": "Gender Presentation Transformer",
+          "description": "Changes vocal presentation through pitch, formant, resonance, and style controls without reducing intelligibility."
+        },
+        {
+          "number": 5,
+          "name": "Accent Transformation Editor",
+          "description": "Modifies accent characteristics while retaining the speaker's message, emotion, and timing."
+        },
+        {
+          "number": 6,
+          "name": "Performance Preservation Converter",
+          "description": "Transfers voice identity while prioritizing the source performance's breaths, emphasis, pauses, and emotional details."
+        },
+        {
+          "number": 7,
+          "name": "Speech-to-Character Transformer",
+          "description": "Transforms an actor's approved recording into a fictional character, creature, robot, or stylized voice."
+        },
+        {
+          "number": 8,
+          "name": "Real-Time Voice Changer",
+          "description": "Applies low-latency voice transformation for live calls, broadcasts, games, performances, or virtual events."
+        },
+        {
+          "number": 9,
+          "name": "Voice De-Identification Transformer",
+          "description": "Produces a natural but non-identifying voice for privacy-sensitive interviews, research, moderation, or case studies."
+        },
+        {
+          "number": 10,
+          "name": "Conversion Artifact Repairer",
+          "description": "Detects and repairs metallic tone, pitch wobble, phoneme smearing, breath distortion, and identity drift after conversion."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "name": "Voice Editing and Audio Repair",
+      "slug": "voice-editing-and-audio-repair",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Speech Cleanup Editor",
+          "description": "Removes noise, hum, clicks, pops, mouth sounds, unwanted breaths, and room problems while protecting natural speech."
+        },
+        {
+          "number": 2,
+          "name": "Dialogue Isolation Specialist",
+          "description": "Separates speech from music, ambience, effects, or overlapping background content for restoration and editing."
+        },
+        {
+          "number": 3,
+          "name": "De-Reverberation Editor",
+          "description": "Reduces room echo and excessive reverberation while avoiding thin or phase-damaged speech."
+        },
+        {
+          "number": 4,
+          "name": "Voice Equalization Specialist",
+          "description": "Balances tone, warmth, presence, sibilance, and low-frequency buildup for the intended playback system."
+        },
+        {
+          "number": 5,
+          "name": "Dynamics and Loudness Editor",
+          "description": "Controls peaks, compression, gating, and loudness for consistent delivery across clips and platforms."
+        },
+        {
+          "number": 6,
+          "name": "Breath and Mouth-Sound Editor",
+          "description": "Reduces distracting breaths and mouth noises while retaining enough natural respiration for realism."
+        },
+        {
+          "number": 7,
+          "name": "Pacing and Silence Editor",
+          "description": "Shortens or extends pauses, removes dead air, and improves rhythm without creating unnatural cuts."
+        },
+        {
+          "number": 8,
+          "name": "Word and Phrase Replacement Editor",
+          "description": "Replaces selected words or lines with matching voice, room tone, timing, and emotion."
+        },
+        {
+          "number": 9,
+          "name": "Voice Restoration Specialist",
+          "description": "Restores damaged, clipped, muffled, distorted, or low-resolution speech from legacy or difficult recordings."
+        },
+        {
+          "number": 10,
+          "name": "Audio Edit Continuity Auditor",
+          "description": "Detects audible seams, room-tone jumps, mismatched takes, abrupt breaths, and loudness inconsistencies."
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "name": "Timing, Prosody, and Delivery Control",
+      "slug": "timing-prosody-and-delivery-control",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Prosody Designer",
+          "description": "Controls pitch contour, stress, rhythm, phrasing, and melody to make speech sound intentional and expressive."
+        },
+        {
+          "number": 2,
+          "name": "Pacing Controller",
+          "description": "Sets words per minute, pause density, sentence tempo, and section-level speed for comprehension and mood."
+        },
+        {
+          "number": 3,
+          "name": "Emphasis Director",
+          "description": "Places emphasis on keywords, contrasts, corrections, calls to action, and emotional beats without overacting."
+        },
+        {
+          "number": 4,
+          "name": "Pause and Breath Choreographer",
+          "description": "Plans silence, inhalations, hesitations, and breath groups according to meaning and performance."
+        },
+        {
+          "number": 5,
+          "name": "Whisper and Soft-Speech Performer",
+          "description": "Creates controlled whisper, intimate, confidential, or soft delivery while keeping consonants understandable."
+        },
+        {
+          "number": 6,
+          "name": "Shout and High-Energy Performer",
+          "description": "Creates safe-sounding high-intensity delivery with controlled distortion, projection, and intelligibility."
+        },
+        {
+          "number": 7,
+          "name": "Conversational Disfluency Designer",
+          "description": "Adds optional hesitations, fillers, restarts, and thinking sounds for natural dialogue while avoiding excessive clutter."
+        },
+        {
+          "number": 8,
+          "name": "Rhythmic Speech Performer",
+          "description": "Aligns speech to beats, cadence patterns, chants, slogans, or musical timing."
+        },
+        {
+          "number": 9,
+          "name": "Duration-Constrained Voiceover",
+          "description": "Fits a script into an exact target duration by adjusting pacing, pauses, and wording within approved limits."
+        },
+        {
+          "number": 10,
+          "name": "Prosody Consistency Auditor",
+          "description": "Compares takes for unintended changes in stress, tempo, pitch range, or line interpretation."
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "name": "Dubbing, Localization, and Lip Synchronization",
+      "slug": "dubbing-localization-and-lip-synchronization",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Automated Dubbing Director",
+          "description": "Creates localized voice tracks that preserve scene intent, character identity, timing, and production quality."
+        },
+        {
+          "number": 2,
+          "name": "Lip-Sync Dialogue Adapter",
+          "description": "Rewrites and performs translated dialogue to match visible mouth movement and shot duration."
+        },
+        {
+          "number": 3,
+          "name": "Timecode-Aware Voice Producer",
+          "description": "Generates or places lines against timecodes, cue sheets, edit decision lists, and scene markers."
+        },
+        {
+          "number": 4,
+          "name": "Subtitle-to-Voice Converter",
+          "description": "Turns subtitle files such as SRT, VTT, ASS, or TTML into synchronized speech with speaker and timing awareness."
+        },
+        {
+          "number": 5,
+          "name": "Cross-Language Voice Consistency Manager",
+          "description": "Keeps the same character identity and emotional profile across localized languages."
+        },
+        {
+          "number": 6,
+          "name": "Cultural Localization Voice Director",
+          "description": "Adapts idioms, politeness, humor, references, delivery style, and pronunciation for the target audience."
+        },
+        {
+          "number": 7,
+          "name": "Dubbing Cast Builder",
+          "description": "Assigns distinct original voices to characters according to role, age, range, and scene requirements."
+        },
+        {
+          "number": 8,
+          "name": "Dialogue Timing Retimer",
+          "description": "Adjusts line timing around cuts, reactions, interruptions, and visual actions without losing meaning."
+        },
+        {
+          "number": 9,
+          "name": "Localized Pronunciation Manager",
+          "description": "Maintains approved pronunciations for names, brands, fictional terms, and locations across languages."
+        },
+        {
+          "number": 10,
+          "name": "Dubbing Quality Auditor",
+          "description": "Checks synchronization, translation fit, speaker identity, performance continuity, and missing or overlapping cues."
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "name": "Video, Animation, and Avatar Voice",
+      "slug": "video-animation-and-avatar-voice",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Video Voiceover Producer",
+          "description": "Creates finished narration tracks for tutorials, explainers, advertisements, documentaries, and social video."
+        },
+        {
+          "number": 2,
+          "name": "Image-to-Talking-Character Voice Planner",
+          "description": "Selects and directs a fitting original voice for a still image, avatar, illustration, or character design."
+        },
+        {
+          "number": 3,
+          "name": "Avatar Speech Synchronizer",
+          "description": "Connects generated speech to facial animation, visemes, expressions, gaze cues, and body gestures."
+        },
+        {
+          "number": 4,
+          "name": "Talking-Head Audio Replacer",
+          "description": "Replaces or localizes spoken audio while preserving timing, ambience, and visual synchronization."
+        },
+        {
+          "number": 5,
+          "name": "Scene-Aware Voice Director",
+          "description": "Uses visuals, motion, framing, and scene changes to adjust delivery, energy, and timing."
+        },
+        {
+          "number": 6,
+          "name": "Video Dialogue Editor",
+          "description": "Edits spoken content while maintaining picture sync, room tone, and continuity across cuts."
+        },
+        {
+          "number": 7,
+          "name": "Interactive Avatar Voice Engine",
+          "description": "Provides low-latency, interruptible speech for digital humans, assistants, kiosks, and virtual presenters."
+        },
+        {
+          "number": 8,
+          "name": "Animation Voice Cast Manager",
+          "description": "Maintains voice identity, episode continuity, character relationships, and performance notes across an animated production."
+        },
+        {
+          "number": 9,
+          "name": "Viseme and Phoneme Exporter",
+          "description": "Exports timed phonemes or visemes for facial animation systems and lip-sync pipelines."
+        },
+        {
+          "number": 10,
+          "name": "Audiovisual Sync Auditor",
+          "description": "Detects drift, late starts, lip mismatch, clipped lines, missing cues, and inconsistent scene loudness."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "name": "Singing, Chanting, and Musical Voice",
+      "slug": "singing-chanting-and-musical-voice",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Singing Voice Creator",
+          "description": "Creates original singing voices with selectable range, timbre, register behavior, vibrato, articulation, and genre direction."
+        },
+        {
+          "number": 2,
+          "name": "Text-to-Singing Performer",
+          "description": "Transforms lyrics and melody guidance into a sung performance with controlled phrasing and emotion."
+        },
+        {
+          "number": 3,
+          "name": "Vocal Melody Interpreter",
+          "description": "Performs from melody, MIDI, notation, guide vocals, or pitch contours while observing lyrics and rhythm."
+        },
+        {
+          "number": 4,
+          "name": "Harmony and Choir Generator",
+          "description": "Creates layered harmonies, ensembles, choirs, call-and-response, and section parts with distinct vocal placement."
+        },
+        {
+          "number": 5,
+          "name": "Rap and Rhythmic Vocal Performer",
+          "description": "Performs rhythmically precise rap, spoken-word, or chant with flow, diction, attitude, and breath planning."
+        },
+        {
+          "number": 6,
+          "name": "Vocal Style Transformer",
+          "description": "Changes an authorized singing performance's vocal style, register, tone, or genre while preserving musical timing."
+        },
+        {
+          "number": 7,
+          "name": "Pitch and Timing Correction Editor",
+          "description": "Corrects intonation and timing transparently or applies intentional stylized tuning."
+        },
+        {
+          "number": 8,
+          "name": "Vocal Layering and Double-Track Builder",
+          "description": "Creates doubles, stacks, whispers, ad-libs, harmonies, and crowd layers from an approved vocal design."
+        },
+        {
+          "number": 9,
+          "name": "Lyric Intelligibility Optimizer",
+          "description": "Improves consonants, vowel placement, phrasing, and mix position so lyrics remain understandable."
+        },
+        {
+          "number": 10,
+          "name": "Singing Quality Auditor",
+          "description": "Checks pitch, rhythm, range, pronunciation, breath, clipping, artifacts, and harmony alignment."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "name": "Accessibility and Assistive Speech",
+      "slug": "accessibility-and-assistive-speech",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Accessible Read-Aloud Voice",
+          "description": "Reads documents, interfaces, messages, and educational material with clear navigation and adjustable speed."
+        },
+        {
+          "number": 2,
+          "name": "Screen-Reader Content Optimizer",
+          "description": "Rewrites or annotates content so headings, links, tables, symbols, and abbreviations are spoken clearly."
+        },
+        {
+          "number": 3,
+          "name": "Plain-Language Speech Adapter",
+          "description": "Simplifies complex content for spoken comprehension while preserving essential meaning."
+        },
+        {
+          "number": 4,
+          "name": "Dyslexia-Friendly Audio Presenter",
+          "description": "Uses chunking, repetition, pacing, and signposting to support listeners who benefit from structured audio."
+        },
+        {
+          "number": 5,
+          "name": "Low-Vision Audio Description Voice",
+          "description": "Performs concise visual descriptions timed around dialogue and important actions."
+        },
+        {
+          "number": 6,
+          "name": "AAC Voice Personalizer",
+          "description": "Creates a respectful, age-appropriate synthetic voice for augmentative and alternative communication users."
+        },
+        {
+          "number": 7,
+          "name": "Speech Rate Accessibility Controller",
+          "description": "Provides precise, user-adjustable speed without severe pitch change or loss of intelligibility."
+        },
+        {
+          "number": 8,
+          "name": "Pronunciation Learning Assistant",
+          "description": "Models sounds, syllables, stress, and minimal pairs for language learning or speech practice."
+        },
+        {
+          "number": 9,
+          "name": "Caption-and-Audio Alignment Assistant",
+          "description": "Keeps spoken output aligned with captions and highlights for multimodal accessibility."
+        },
+        {
+          "number": 10,
+          "name": "Accessibility Quality Auditor",
+          "description": "Checks intelligibility, navigation cues, pacing, pronunciation, volume consistency, and inclusive language."
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "name": "Conversational Agents and Real-Time Interaction",
+      "slug": "conversational-agents-and-real-time-interaction",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Conversational Voice Agent",
+          "description": "Speaks agent responses naturally with context-aware tone, turn-taking, and conversational memory."
+        },
+        {
+          "number": 2,
+          "name": "Barge-In and Interruption Handler",
+          "description": "Stops or redirects speech gracefully when the user interrupts, then resumes with the correct context."
+        },
+        {
+          "number": 3,
+          "name": "Turn-Taking and Backchannel Manager",
+          "description": "Uses acknowledgments, pauses, and timing cues so conversations feel responsive without talking over users."
+        },
+        {
+          "number": 4,
+          "name": "Adaptive User Voice Experience",
+          "description": "Adjusts speed, formality, energy, language, and verbosity according to user preference and situation."
+        },
+        {
+          "number": 5,
+          "name": "Customer Service Voice",
+          "description": "Delivers clear, patient, policy-aware responses for support, booking, order, account, and service workflows."
+        },
+        {
+          "number": 6,
+          "name": "Tutor and Coach Voice",
+          "description": "Explains, prompts, encourages, corrects, and checks understanding using a supportive teaching style."
+        },
+        {
+          "number": 7,
+          "name": "Game NPC Voice Engine",
+          "description": "Generates context-sensitive lines for non-player characters while preserving lore, identity, mood, and state."
+        },
+        {
+          "number": 8,
+          "name": "Live Event Announcer",
+          "description": "Produces timely announcements, introductions, results, safety messages, and transitions for events or streams."
+        },
+        {
+          "number": 9,
+          "name": "Real-Time Translation Voice",
+          "description": "Speaks translated content with low latency while preserving speaker intent and conversational rhythm."
+        },
+        {
+          "number": 10,
+          "name": "Conversation Experience Auditor",
+          "description": "Measures latency, interruption behavior, repetition, clarity, emotional fit, and turn-level consistency."
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "name": "Content and Production Workflows",
+      "slug": "content-and-production-workflows",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Podcast Voice Producer",
+          "description": "Creates hosts, narrators, segments, promos, intros, and corrections with episode-level voice continuity."
+        },
+        {
+          "number": 2,
+          "name": "Audiobook Production Director",
+          "description": "Manages narration, dialogue, chapters, character continuity, pickups, and mastering for long-form books."
+        },
+        {
+          "number": 3,
+          "name": "Education Voice Producer",
+          "description": "Creates lessons, quizzes, explanations, feedback, and revision audio with learner- appropriate pacing."
+        },
+        {
+          "number": 4,
+          "name": "Advertising Voice Director",
+          "description": "Creates persuasive voiceovers aligned to audience, product, brand, duration, and legal copy requirements."
+        },
+        {
+          "number": 5,
+          "name": "News and Bulletin Reader",
+          "description": "Delivers factual scripts with clear names, numbers, transitions, and controlled neutrality."
+        },
+        {
+          "number": 6,
+          "name": "Corporate Training Voice Producer",
+          "description": "Creates consistent onboarding, compliance, software training, and internal communication audio."
+        },
+        {
+          "number": 7,
+          "name": "Game Dialogue Production Manager",
+          "description": "Organizes large dialogue sets by character, state, mission, emotion, and filename convention."
+        },
+        {
+          "number": 8,
+          "name": "IVR and Telephony Voice Producer",
+          "description": "Creates phone prompts optimized for narrow-band audio, concise options, and consistent menu navigation."
+        },
+        {
+          "number": 9,
+          "name": "Public Announcement Voice Producer",
+          "description": "Creates clear announcements for transport, venues, schools, offices, and emergency information systems."
+        },
+        {
+          "number": 10,
+          "name": "Content Versioning Manager",
+          "description": "Tracks script, voice, language, take, revision, approval, and export versions across production."
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "name": "Audio Formats, Mixing, and Delivery",
+      "slug": "audio-formats-mixing-and-delivery",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Voice Export Specialist",
+          "description": "Exports WAV, MP3, AAC, FLAC, OGG, Opus, or platform-specific formats with appropriate sample rate and bit depth."
+        },
+        {
+          "number": 2,
+          "name": "Broadcast Loudness Mastering",
+          "description": "Masters spoken audio to selected loudness and peak targets suitable for broadcast, podcast, streaming, or video."
+        },
+        {
+          "number": 3,
+          "name": "Telephony Audio Formatter",
+          "description": "Prepares speech for telephone systems using correct codec, channel count, sample rate, and intelligibility checks."
+        },
+        {
+          "number": 4,
+          "name": "Spatial Voice Mixer",
+          "description": "Places voices in stereo, binaural, surround, or immersive scenes with position, distance, and room cues."
+        },
+        {
+          "number": 5,
+          "name": "Voice-and-Music Mixer",
+          "description": "Balances narration, dialogue, music, and effects using ducking, automation, and frequency management."
+        },
+        {
+          "number": 6,
+          "name": "Room Tone and Ambience Matcher",
+          "description": "Matches generated or edited speech to the acoustic character of the surrounding scene."
+        },
+        {
+          "number": 7,
+          "name": "Stem and Track Exporter",
+          "description": "Delivers isolated speech, music, effects, alternate takes, and language tracks with clear naming and alignment."
+        },
+        {
+          "number": 8,
+          "name": "Metadata and Cue Sheet Writer",
+          "description": "Creates embedded metadata, speaker labels, timecodes, cue sheets, pronunciation notes, and licensing fields."
+        },
+        {
+          "number": 9,
+          "name": "Platform Delivery Preset Manager",
+          "description": "Applies repeatable export presets for podcast hosts, video editors, game engines, telephony, and web playback."
+        },
+        {
+          "number": 10,
+          "name": "Delivery Package Validator",
+          "description": "Checks file integrity, duration, channels, sample rate, loudness, clipping, silence, names, and expected deliverables."
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "name": "Quality Assurance and Evaluation",
+      "slug": "quality-assurance-and-evaluation",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Voice Naturalness Evaluator",
+          "description": "Scores realism, smoothness, prosody, breaths, artifacts, and listener fatigue using defined test scripts."
+        },
+        {
+          "number": 2,
+          "name": "Intelligibility Evaluator",
+          "description": "Measures whether words, names, numbers, and critical instructions remain understandable in realistic playback conditions."
+        },
+        {
+          "number": 3,
+          "name": "Speaker Consistency Evaluator",
+          "description": "Checks identity stability across lines, emotions, languages, sessions, and regenerated segments."
+        },
+        {
+          "number": 4,
+          "name": "Emotion Accuracy Evaluator",
+          "description": "Compares requested emotion and intensity with perceived performance and flags mismatches."
+        },
+        {
+          "number": 5,
+          "name": "Pronunciation Regression Tester",
+          "description": "Runs standard phrase lists to detect new pronunciation failures after model, dictionary, or setting changes."
+        },
+        {
+          "number": 6,
+          "name": "Audio Artifact Detector",
+          "description": "Detects clicks, clipping, warble, metallic resonance, phase issues, repeated phonemes, and abrupt spectral changes."
+        },
+        {
+          "number": 7,
+          "name": "A/B Voice Test Designer",
+          "description": "Builds controlled listening tests for alternative voices, takes, settings, or processing chains."
+        },
+        {
+          "number": 8,
+          "name": "Human Review Workflow Manager",
+          "description": "Routes samples to reviewers, captures structured ratings, resolves disagreements, and records approval decisions."
+        },
+        {
+          "number": 9,
+          "name": "Golden Sample Comparator",
+          "description": "Compares new output with approved reference samples for tone, timing, pronunciation, and technical quality."
+        },
+        {
+          "number": 10,
+          "name": "Voice Release Gate",
+          "description": "Blocks delivery when required consent, quality, metadata, file, or synchronization checks have not passed."
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "name": "Consent, Rights, Safety, and Provenance",
+      "slug": "consent-rights-safety-and-provenance",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Voice Consent Verifier",
+          "description": "Records and verifies permission before cloning, converting, or distributing a recognizable person's voice."
+        },
+        {
+          "number": 2,
+          "name": "Authorized Voice Enrollment Manager",
+          "description": "Collects approved recordings, identity evidence, usage scope, expiration, and revocation terms for a voice profile."
+        },
+        {
+          "number": 3,
+          "name": "Usage Rights Policy Enforcer",
+          "description": "Restricts voices by allowed users, projects, territories, platforms, durations, and commercial permissions."
+        },
+        {
+          "number": 4,
+          "name": "Real-Person Impersonation Guard",
+          "description": "Detects requests to imitate a real person without authorization and redirects to original or licensed alternatives."
+        },
+        {
+          "number": 5,
+          "name": "Disclosure and Labeling Generator",
+          "description": "Adds appropriate synthetic-voice notices, credits, metadata, or audible disclosures when required."
+        },
+        {
+          "number": 6,
+          "name": "Voice Provenance Recorder",
+          "description": "Tracks source recordings, model version, edits, prompts, approvals, and export history for each asset."
+        },
+        {
+          "number": 7,
+          "name": "Watermark and Authenticity Marker",
+          "description": "Embeds or preserves machine-readable and production-level markers that help identify synthetic or authorized audio."
+        },
+        {
+          "number": 8,
+          "name": "Revocation and Takedown Manager",
+          "description": "Disables voice profiles, finds affected assets, and supports replacement or removal after consent is withdrawn."
+        },
+        {
+          "number": 9,
+          "name": "Sensitive Scenario Safety Reviewer",
+          "description": "Applies stricter checks to fraud, harassment, sexual content, minors, emergencies, politics, finance, and identity-sensitive uses."
+        },
+        {
+          "number": 10,
+          "name": "Rights and Compliance Audit",
+          "description": "Produces an auditable checklist of consent, ownership, license, disclosure, retention, and distribution conditions."
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "name": "Voice Libraries, Memory, and Reuse",
+      "slug": "voice-libraries-memory-and-reuse",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Voice Profile Library Manager",
+          "description": "Stores approved voice identities, parameters, samples, permissions, tags, and compatibility information."
+        },
+        {
+          "number": 2,
+          "name": "Character Voice Bible Builder",
+          "description": "Creates a durable record of a character's voice, range, pronunciation, emotions, relationships, and forbidden variations."
+        },
+        {
+          "number": 3,
+          "name": "Style Preset Manager",
+          "description": "Saves reusable performance presets such as warm narrator, energetic host, calm tutor, or urgent announcer."
+        },
+        {
+          "number": 4,
+          "name": "Pronunciation Memory Manager",
+          "description": "Remembers approved pronunciations at project, character, brand, language, or organization level."
+        },
+        {
+          "number": 5,
+          "name": "Voice Session Recall",
+          "description": "Restores the settings, takes, notes, and processing chain needed to continue a previous production."
+        },
+        {
+          "number": 6,
+          "name": "Cross-Project Voice Reuse Controller",
+          "description": "Allows controlled reuse of approved voices while respecting project rights and avoiding accidental identity drift."
+        },
+        {
+          "number": 7,
+          "name": "Voice Search and Discovery",
+          "description": "Finds suitable voices by attributes such as language, range, tone, role, emotion, license, and technical compatibility."
+        },
+        {
+          "number": 8,
+          "name": "Voice Similarity Deduplicator",
+          "description": "Detects overly similar catalog voices and helps differentiate or consolidate them."
+        },
+        {
+          "number": 9,
+          "name": "Preset Migration Assistant",
+          "description": "Updates older voice presets to new engines or schemas while preserving intended sound and documenting differences."
+        },
+        {
+          "number": 10,
+          "name": "Voice Asset Archive Manager",
+          "description": "Packages source, output, metadata, approvals, scripts, and dependencies for reliable future reopening."
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "name": "Tooling, Integration, and Automation",
+      "slug": "tooling-integration-and-automation",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Voice API Orchestrator",
+          "description": "Connects speech generation, conversion, editing, storage, review, and delivery services through a stable workflow."
+        },
+        {
+          "number": 2,
+          "name": "Voice Model Router",
+          "description": "Chooses the best available engine for language, latency, emotion, singing, conversion, privacy, cost, and quality requirements."
+        },
+        {
+          "number": 3,
+          "name": "Fallback and Recovery Manager",
+          "description": "Retries failed jobs, switches engines, preserves state, and reports incomplete sections without duplicating finished work."
+        },
+        {
+          "number": 4,
+          "name": "Voice Job Queue Manager",
+          "description": "Schedules large workloads with priorities, concurrency limits, checkpoints, cancellation, and progress reporting."
+        },
+        {
+          "number": 5,
+          "name": "Template-Driven Voice Pipeline",
+          "description": "Generates repeatable projects from schemas containing scripts, speakers, directions, filenames, and export rules."
+        },
+        {
+          "number": 6,
+          "name": "Digital Audio Workstation Connector",
+          "description": "Exchanges clips, tracks, markers, timecodes, takes, and revisions with common editing workflows."
+        },
+        {
+          "number": 7,
+          "name": "Game Engine Voice Connector",
+          "description": "Delivers voice assets, lip-sync data, subtitles, localization keys, and event metadata to game projects."
+        },
+        {
+          "number": 8,
+          "name": "Video Editor Voice Connector",
+          "description": "Places generated or revised speech into timelines using timecodes, track rules, and replacement instructions."
+        },
+        {
+          "number": 9,
+          "name": "Voice Webhook and Event Manager",
+          "description": "Emits status, approval, failure, and completion events for downstream automation."
+        },
+        {
+          "number": 10,
+          "name": "Voice Pipeline Observability Monitor",
+          "description": "Tracks latency, errors, model changes, cost, throughput, quality signals, and failed joins across the pipeline."
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "name": "Analysis, Detection, and Reverse Engineering",
+      "slug": "analysis-detection-and-reverse-engineering",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Voice Attribute Analyzer",
+          "description": "Estimates pitch range, pace, energy, timbre, resonance, articulation, accent markers, and speaking style from audio."
+        },
+        {
+          "number": 2,
+          "name": "Speaker Segmentation and Diarization",
+          "description": "Separates speakers and labels turns in interviews, meetings, shows, and mixed recordings."
+        },
+        {
+          "number": 3,
+          "name": "Speech Transcription Specialist",
+          "description": "Creates accurate transcripts with timestamps, speaker labels, punctuation, confidence, and custom vocabulary."
+        },
+        {
+          "number": 4,
+          "name": "Emotion and Sentiment Analyzer",
+          "description": "Estimates expressed emotion, intensity, and changes over time while distinguishing observation from certainty."
+        },
+        {
+          "number": 5,
+          "name": "Voice Activity Detector",
+          "description": "Finds speech boundaries, silence, crosstalk, breaths, and non-speech vocal sounds."
+        },
+        {
+          "number": 6,
+          "name": "Acoustic Environment Analyzer",
+          "description": "Identifies room tone, echo, noise, microphone traits, clipping, and processing already present in a recording."
+        },
+        {
+          "number": 7,
+          "name": "Voice Match Suitability Analyzer",
+          "description": "Assesses whether source audio is clean, authorized, and sufficient for a requested conversion or voice design workflow."
+        },
+        {
+          "number": 8,
+          "name": "Synthetic Speech Artifact Analyzer",
+          "description": "Flags patterns associated with generated or heavily processed speech without claiming perfect detection."
+        },
+        {
+          "number": 9,
+          "name": "Script-to-Audio Alignment Analyzer",
+          "description": "Aligns transcripts to audio at sentence, word, phoneme, and cue level."
+        },
+        {
+          "number": 10,
+          "name": "Voice Production Diagnostic",
+          "description": "Explains likely causes of quality problems and recommends the smallest repair step for each issue."
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "name": "Creative and Experimental Voice Design",
+      "slug": "creative-and-experimental-voice-design",
+      "skills": [
+        {
+          "number": 1,
+          "name": "Layered Hybrid Voice Designer",
+          "description": "Combines multiple original vocal layers, textures, and processing styles into one coherent fictional voice."
+        },
+        {
+          "number": 2,
+          "name": "Procedural Voice Generator",
+          "description": "Creates controlled variations from rules so crowds, creatures, NPCs, or systems sound related but not identical."
+        },
+        {
+          "number": 3,
+          "name": "Glitch and Cyber Voice Designer",
+          "description": "Creates intentional digital, synthetic, radio, holographic, or corrupted effects while preserving chosen intelligibility."
+        },
+        {
+          "number": 4,
+          "name": "Period and Genre Voice Director",
+          "description": "Designs performance direction inspired by a historical period or creative genre without copying a specific living performer."
+        },
+        {
+          "number": 5,
+          "name": "Environmental Voice Designer",
+          "description": "Makes a voice sound transmitted through helmets, radios, caves, machines, dreams, underwater scenes, or supernatural spaces."
+        },
+        {
+          "number": 6,
+          "name": "Micro-Expression Voice Designer",
+          "description": "Adds subtle smiles, tension, uncertainty, restrained laughter, fatigue, tears, or hesitation to individual words and breaths."
+        },
+        {
+          "number": 7,
+          "name": "Crowd and Group Voice Generator",
+          "description": "Creates crowds, chants, murmurs, reactions, and background conversations using diverse original voices."
+        },
+        {
+          "number": 8,
+          "name": "Nonverbal Vocalization Creator",
+          "description": "Creates safe, context-appropriate laughs, sighs, gasps, hums, efforts, reactions, and creature vocalizations."
+        },
+        {
+          "number": 9,
+          "name": "Interactive Emotional State Voice",
+          "description": "Changes voice behavior continuously from agent or game state such as stress, health, trust, location, or urgency."
+        },
+        {
+          "number": 10,
+          "name": "Experimental Voice Sandbox",
+          "description": "Supports reversible exploration of unusual timbres, prosody, effects, and combinations with saved settings and comparison outputs."
+        }
+      ]
+    }
+  ]
+}

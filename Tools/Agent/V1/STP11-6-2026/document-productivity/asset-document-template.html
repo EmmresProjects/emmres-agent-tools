@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<style>
+:root{--fg:#172033;--muted:#5b667a;--bg:#ffffff;--accent:#2457a6;--line:#d9e0ea;--panel:#f5f8fc;}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 Arial,Helvetica,sans-serif}
+header{padding:2.5rem 2rem;background:var(--panel);border-bottom:4px solid var(--accent)}
+h1{font-size:2rem;margin:0 0 .35rem}h2{font-size:1.25rem;color:var(--accent);margin-top:2rem}
+.subtitle{color:var(--muted);margin:0}main{max-width:960px;margin:0 auto;padding:1.5rem 2rem 4rem}
+table{width:100%;border-collapse:collapse;margin:1rem 0}th,td{border:1px solid var(--line);padding:.55rem;text-align:left}
+th{background:var(--panel)}.meta{color:var(--muted);font-size:.9rem}.check{padding:.5rem .75rem;border-left:4px solid var(--accent);background:var(--panel);margin:.4rem 0}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;padding:1rem 2rem}
+code{background:var(--panel);padding:.1rem .3rem}@media print{header{background:#fff}body{font-size:11pt}}
+</style>
+</head>
+<body>
+<header><h1>{{TITLE}}</h1><p class="subtitle">{{SUBTITLE}}</p></header>
+<main>{{BODY}}</main>
+<footer>{{GENERATED_BY}}<br>{{METADATA}}</footer>
+</body>
+</html>

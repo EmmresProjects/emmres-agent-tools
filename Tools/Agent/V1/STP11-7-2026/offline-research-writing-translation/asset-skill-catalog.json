@@ -1,0 +1,2594 @@
+[
+ {
+  "id": "1.1",
+  "name": "Offline Scholarly Database",
+  "category": 1,
+  "category_name": "Offline Scholarly and Academic Collections",
+  "description": "Maintains a local searchable collection of journal articles, conference papers, books, theses, preprints, abstracts, metadata, and corrections.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "1.2",
+  "name": "Offline Reference Corpus",
+  "category": 1,
+  "category_name": "Offline Scholarly and Academic Collections",
+  "description": "Curates authoritative encyclopedias, handbooks, dictionaries, textbooks, manuals, and institutional reference works for disconnected research.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "1.3",
+  "name": "Institutional Repository Harvester",
+  "category": 1,
+  "category_name": "Offline Scholarly and Academic Collections",
+  "description": "Imports approved exports from university and research repositories while preserving metadata, files, rights, and collection boundaries.",
+  "command": "collections.import",
+  "automation": "deterministic"
+ },
+ {
+  "id": "1.4",
+  "name": "Preprint and Version Tracker",
+  "category": 1,
+  "category_name": "Offline Scholarly and Academic Collections",
+  "description": "Links submitted, revised, accepted, and published versions and prevents a preprint from being mistaken for the final record.",
+  "command": "collections.links",
+  "automation": "deterministic"
+ },
+ {
+  "id": "1.5",
+  "name": "Thesis and Dissertation Indexer",
+  "category": 1,
+  "category_name": "Offline Scholarly and Academic Collections",
+  "description": "Indexes full text, abstracts, advisors, institutions, departments, dates, and cited works from local thesis collections.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "1.6",
+  "name": "Conference Proceedings Curator",
+  "category": 1,
+  "category_name": "Offline Scholarly and Academic Collections",
+  "description": "Organizes proceedings by event, year, track, paper, poster, workshop, and later publication status.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "1.7",
+  "name": "Open-Access Corpus Builder",
+  "category": 1,
+  "category_name": "Offline Scholarly and Academic Collections",
+  "description": "Builds a rights-cleared local corpus from approved open-access sources with license and attribution metadata.",
+  "command": "collections.import",
+  "automation": "deterministic"
+ },
+ {
+  "id": "1.8",
+  "name": "Retraction and Correction Registry",
+  "category": 1,
+  "category_name": "Offline Scholarly and Academic Collections",
+  "description": "Tracks retractions, expressions of concern, errata, corrigenda, and replacement notices and propagates warnings to search results.",
+  "command": "collections.retraction",
+  "automation": "deterministic"
+ },
+ {
+  "id": "1.9",
+  "name": "Peer-Review Status Classifier",
+  "category": 1,
+  "category_name": "Offline Scholarly and Academic Collections",
+  "description": "Labels sources as peer reviewed, editorially reviewed, preprint, working paper, thesis, report, commentary, or unknown.",
+  "command": "collections.classify-review",
+  "automation": "assistive"
+ },
+ {
+  "id": "1.10",
+  "name": "Research Dataset Catalog",
+  "category": 1,
+  "category_name": "Offline Scholarly and Academic Collections",
+  "description": "Indexes local datasets, codebooks, methods, variables, licenses, versions, checksums, and related publications.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "1.11",
+  "name": "Systematic Review Corpus Manager",
+  "category": 1,
+  "category_name": "Offline Scholarly and Academic Collections",
+  "description": "Maintains screened records, inclusion decisions, exclusion reasons, extracted evidence, and duplicate groups.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "1.12",
+  "name": "Scholarly Corpus Coverage Auditor",
+  "category": 1,
+  "category_name": "Offline Scholarly and Academic Collections",
+  "description": "Measures coverage by discipline, publisher, year, language, document type, and access status and identifies material gaps.",
+  "command": "collections.coverage",
+  "automation": "deterministic"
+ },
+ {
+  "id": "2.1",
+  "name": "Offline News Archive",
+  "category": 2,
+  "category_name": "Offline News, Legal, Policy, and Standards Libraries",
+  "description": "Stores dated news articles, corrections, editions, transcripts, images, source metadata, and publication snapshots for local search. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 4",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "2.2",
+  "name": "News Event Timeline Builder",
+  "category": 2,
+  "category_name": "Offline News, Legal, Policy, and Standards Libraries",
+  "description": "Clusters reporting about the same event and orders claims, updates, corrections, and official responses by publication time.",
+  "command": "corpus.timeline",
+  "automation": "deterministic"
+ },
+ {
+  "id": "2.3",
+  "name": "News Source Diversity Auditor",
+  "category": 2,
+  "category_name": "Offline News, Legal, Policy, and Standards Libraries",
+  "description": "Measures geographic, political, ownership, format, and language diversity without treating balance as proof of truth.",
+  "command": "corpus.diversity",
+  "automation": "deterministic"
+ },
+ {
+  "id": "2.4",
+  "name": "Offline Legal and Policy Corpus",
+  "category": 2,
+  "category_name": "Offline News, Legal, Policy, and Standards Libraries",
+  "description": "Maintains statutes, regulations, cases, ordinances, treaties, guidance, policy papers, and official notices with jurisdiction metadata.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "2.5",
+  "name": "Jurisdiction and Authority Classifier",
+  "category": 2,
+  "category_name": "Offline News, Legal, Policy, and Standards Libraries",
+  "description": "Identifies the issuing body, geographic scope, legal level, binding status, effective date, and affected population.",
+  "command": "collections.classify-authority",
+  "automation": "assistive"
+ },
+ {
+  "id": "2.6",
+  "name": "Legal Version and Amendment Tracker",
+  "category": 2,
+  "category_name": "Offline News, Legal, Policy, and Standards Libraries",
+  "description": "Links original enactments, amendments, repeals, implementing rules, court treatment, and current consolidated text.",
+  "command": "collections.links",
+  "automation": "deterministic"
+ },
+ {
+  "id": "2.7",
+  "name": "Case Law Citation Network",
+  "category": 2,
+  "category_name": "Offline News, Legal, Policy, and Standards Libraries",
+  "description": "Builds local links among cases, cited authorities, later treatment, courts, dates, and legal propositions.",
+  "command": "citation.graph",
+  "automation": "deterministic"
+ },
+ {
+  "id": "2.8",
+  "name": "Offline Standards Library",
+  "category": 2,
+  "category_name": "Offline News, Legal, Policy, and Standards Libraries",
+  "description": "Stores authorized copies and metadata for technical, safety, quality, accessibility, and industry standards.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "2.9",
+  "name": "Standards Requirement Extractor",
+  "category": 2,
+  "category_name": "Offline News, Legal, Policy, and Standards Libraries",
+  "description": "Extracts shall, should, may, exception, definition, verification, and conformance statements with exact clause references.",
+  "command": "text.requirements",
+  "automation": "deterministic"
+ },
+ {
+  "id": "2.10",
+  "name": "Policy Comparison Matrix Builder",
+  "category": 2,
+  "category_name": "Offline News, Legal, Policy, and Standards Libraries",
+  "description": "Compares obligations, definitions, exceptions, effective dates, enforcement, and evidence requirements across policies.",
+  "command": "text.matrix",
+  "automation": "assistive"
+ },
+ {
+  "id": "2.11",
+  "name": "Official Gazette Importer",
+  "category": 2,
+  "category_name": "Offline News, Legal, Policy, and Standards Libraries",
+  "description": "Imports signed or verified official publications and preserves issue, page, date, and document identifiers.",
+  "command": "collections.import",
+  "automation": "deterministic"
+ },
+ {
+  "id": "2.12",
+  "name": "Legal and Standards Rights Guard",
+  "category": 2,
+  "category_name": "Offline News, Legal, Policy, and Standards Libraries",
+  "description": "Enforces access, quotation, redistribution, and seat restrictions for licensed legal and standards collections.",
+  "command": "security.rights",
+  "automation": "deterministic"
+ },
+ {
+  "id": "3.1",
+  "name": "Offline Citation Index",
+  "category": 3,
+  "category_name": "Citation Indexes, Bibliographies, and Identifier Resolution",
+  "description": "Builds local cited-by and references-to relationships among scholarly, legal, policy, and technical works.",
+  "command": "citation.graph",
+  "automation": "deterministic"
+ },
+ {
+  "id": "3.2",
+  "name": "Citation Extraction Tool",
+  "category": 3,
+  "category_name": "Citation Indexes, Bibliographies, and Identifier Resolution",
+  "description": "Detects inline citations, footnotes, endnotes, reference lists, legal citations, standards clauses, and source mentions.",
+  "command": "citation.extract",
+  "automation": "deterministic"
+ },
+ {
+  "id": "3.3",
+  "name": "DOI and Bibliography Resolver Cache",
+  "category": 3,
+  "category_name": "Citation Indexes, Bibliographies, and Identifier Resolution",
+  "description": "Resolves previously imported DOI, ISBN, ISSN, PMID, arXiv, report, patent, and local identifiers without internet access. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 5",
+  "command": "citation.resolve",
+  "automation": "deterministic"
+ },
+ {
+  "id": "3.4",
+  "name": "Bibliographic Metadata Normalizer",
+  "category": 3,
+  "category_name": "Citation Indexes, Bibliographies, and Identifier Resolution",
+  "description": "Normalizes titles, authors, affiliations, venues, dates, pages, editions, identifiers, and publication types.",
+  "command": "citation.normalize",
+  "automation": "deterministic"
+ },
+ {
+  "id": "3.5",
+  "name": "Reference Style Formatter",
+  "category": 3,
+  "category_name": "Citation Indexes, Bibliographies, and Identifier Resolution",
+  "description": "Formats and validates APA, MLA, Chicago, IEEE, Vancouver, Harvard, OSCOLA, Bluebook-like, and custom institutional styles.",
+  "command": "citation.format",
+  "automation": "deterministic"
+ },
+ {
+  "id": "3.6",
+  "name": "Citation Context Extractor",
+  "category": 3,
+  "category_name": "Citation Indexes, Bibliographies, and Identifier Resolution",
+  "description": "Captures the sentence and surrounding passage in which a source is cited and classifies support, contrast, method, or background use.",
+  "command": "citation.context",
+  "automation": "assistive"
+ },
+ {
+  "id": "3.7",
+  "name": "Broken Reference Detector",
+  "category": 3,
+  "category_name": "Citation Indexes, Bibliographies, and Identifier Resolution",
+  "description": "Finds incomplete, malformed, unresolved, duplicated, or internally inconsistent bibliography entries.",
+  "command": "citation.check",
+  "automation": "deterministic"
+ },
+ {
+  "id": "3.8",
+  "name": "Author Identity Disambiguator",
+  "category": 3,
+  "category_name": "Citation Indexes, Bibliographies, and Identifier Resolution",
+  "description": "Separates people with similar names and merges variants using ORCID where available, affiliation, coauthors, topics, and dates.",
+  "command": "citation.disambiguate",
+  "automation": "assistive"
+ },
+ {
+  "id": "3.9",
+  "name": "Venue Identity Resolver",
+  "category": 3,
+  "category_name": "Citation Indexes, Bibliographies, and Identifier Resolution",
+  "description": "Normalizes journal, conference, publisher, court, agency, and standards-body names and abbreviations.",
+  "command": "citation.venue",
+  "automation": "deterministic"
+ },
+ {
+  "id": "3.10",
+  "name": "Citation Graph Analyzer",
+  "category": 3,
+  "category_name": "Citation Indexes, Bibliographies, and Identifier Resolution",
+  "description": "Finds seminal, bridging, recent, isolated, heavily cited, and potentially circular citation patterns.",
+  "command": "citation.analyze",
+  "automation": "deterministic"
+ },
+ {
+  "id": "3.11",
+  "name": "Self-Citation and Citation-Ring Detector",
+  "category": 3,
+  "category_name": "Citation Indexes, Bibliographies, and Identifier Resolution",
+  "description": "Flags unusually concentrated author, institution, journal, or group citation behavior for human review.",
+  "command": "citation.selfcite",
+  "automation": "deterministic"
+ },
+ {
+  "id": "3.12",
+  "name": "Bibliography Completeness Checker",
+  "category": 3,
+  "category_name": "Citation Indexes, Bibliographies, and Identifier Resolution",
+  "description": "Verifies every in-text citation has a reference and every listed reference is cited or intentionally retained.",
+  "command": "citation.completeness",
+  "automation": "deterministic"
+ },
+ {
+  "id": "4.1",
+  "name": "Clean Offline Corpus Installer",
+  "category": 4,
+  "category_name": "Corpus Ingestion, Cleaning, and Installation",
+  "description": "Installs signed, checksummed, licensed corpus bundles into a clean disconnected environment with reproducible configuration.",
+  "command": "corpus.install",
+  "automation": "deterministic"
+ },
+ {
+  "id": "4.2",
+  "name": "Corpus Package Builder",
+  "category": 4,
+  "category_name": "Corpus Ingestion, Cleaning, and Installation",
+  "description": "Packages documents, metadata, indexes, embeddings, rights, manifests, tests, and update instructions for offline distribution.",
+  "command": "deliver.archive",
+  "automation": "deterministic"
+ },
+ {
+  "id": "4.3",
+  "name": "Corpus License and Redistribution Manager",
+  "category": 4,
+  "category_name": "Corpus Ingestion, Cleaning, and Installation",
+  "description": "Records licenses, territories, users, expiry, modification rights, quotation limits, and redistribution permissions.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "4.4",
+  "name": "Air-Gapped Corpus Import Gate",
+  "category": 4,
+  "category_name": "Corpus Ingestion, Cleaning, and Installation",
+  "description": "Scans, verifies, stages, and approves new corpus media before it enters the research environment.",
+  "command": "security.import-gate",
+  "automation": "assistive"
+ },
+ {
+  "id": "4.5",
+  "name": "Format Extraction Router",
+  "category": 4,
+  "category_name": "Corpus Ingestion, Cleaning, and Installation",
+  "description": "Selects safe local parsers for PDF, Office, EPUB, HTML, XML, email, images, audio, video, and archives.",
+  "command": "corpus.route",
+  "automation": "deterministic"
+ },
+ {
+  "id": "4.6",
+  "name": "Document Structure Preserver",
+  "category": 4,
+  "category_name": "Corpus Ingestion, Cleaning, and Installation",
+  "description": "Retains sections, page numbers, footnotes, tables, figures, captions, columns, and source coordinates during extraction. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 6",
+  "command": "corpus.ingest",
+  "automation": "deterministic"
+ },
+ {
+  "id": "4.7",
+  "name": "Source Deduplication Tool",
+  "category": 4,
+  "category_name": "Corpus Ingestion, Cleaning, and Installation",
+  "description": "Finds exact copies, near duplicates, syndicated news, repository mirrors, author manuscripts, and revised versions.",
+  "command": "corpus.dedup",
+  "automation": "deterministic"
+ },
+ {
+  "id": "4.8",
+  "name": "Boilerplate and Navigation Remover",
+  "category": 4,
+  "category_name": "Corpus Ingestion, Cleaning, and Installation",
+  "description": "Separates articles from menus, ads, repeated headers, legal notices, and unrelated page furniture.",
+  "command": "corpus.deboilerplate",
+  "automation": "deterministic"
+ },
+ {
+  "id": "4.9",
+  "name": "Encoding and Unicode Repairer",
+  "category": 4,
+  "category_name": "Corpus Ingestion, Cleaning, and Installation",
+  "description": "Detects mojibake, normalization errors, broken ligatures, unsupported glyphs, and script-loss during import.",
+  "command": "corpus.encoding",
+  "automation": "deterministic"
+ },
+ {
+  "id": "4.10",
+  "name": "Corpus Integrity Auditor",
+  "category": 4,
+  "category_name": "Corpus Ingestion, Cleaning, and Installation",
+  "description": "Checks missing files, orphan metadata, hash mismatch, corrupt archives, invalid text, and inconsistent index records.",
+  "command": "corpus.integrity",
+  "automation": "deterministic"
+ },
+ {
+  "id": "4.11",
+  "name": "Incremental Corpus Updater",
+  "category": 4,
+  "category_name": "Corpus Ingestion, Cleaning, and Installation",
+  "description": "Applies signed additions, corrections, replacements, and deletions without rebuilding unaffected material.",
+  "command": "corpus.update",
+  "automation": "deterministic"
+ },
+ {
+  "id": "4.12",
+  "name": "Corpus Rollback Manager",
+  "category": 4,
+  "category_name": "Corpus Ingestion, Cleaning, and Installation",
+  "description": "Restores a previous reliable corpus snapshot after a bad import, license change, or indexing failure.",
+  "command": "corpus.snapshot",
+  "automation": "deterministic"
+ },
+ {
+  "id": "5.1",
+  "name": "Offline OCR Model",
+  "category": 5,
+  "category_name": "OCR, Speech, and Document Recovery",
+  "description": "Extracts text locally from scans and photographs with language, layout, orientation, and confidence handling.",
+  "command": "models.ocr",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "5.2",
+  "name": "Scholarly PDF OCR Workflow",
+  "category": 5,
+  "category_name": "OCR, Speech, and Document Recovery",
+  "description": "Processes multi-column articles, formulas, tables, footnotes, headers, and references while preserving page coordinates.",
+  "command": "models.ocr",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "5.3",
+  "name": "Historical Document OCR",
+  "category": 5,
+  "category_name": "OCR, Speech, and Document Recovery",
+  "description": "Handles degraded paper, unusual fonts, bleed-through, skew, marginalia, and older spelling with uncertainty flags.",
+  "command": "models.ocr",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "5.4",
+  "name": "Handwriting Recognition Workflow",
+  "category": 5,
+  "category_name": "OCR, Speech, and Document Recovery",
+  "description": "Transcribes supported handwriting and routes uncertain regions to human review.",
+  "command": "models.ocr",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "5.5",
+  "name": "Table Recognition Engine",
+  "category": 5,
+  "category_name": "OCR, Speech, and Document Recovery",
+  "description": "Reconstructs rows, columns, merged cells, headers, notes, and units from scanned tables.",
+  "command": "models.ocr",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "5.6",
+  "name": "Formula and Math Recognition",
+  "category": 5,
+  "category_name": "OCR, Speech, and Document Recovery",
+  "description": "Converts printed equations to semantic math formats and verifies symbols, subscripts, superscripts, and numbering.",
+  "command": "models.ocr",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "5.7",
+  "name": "Offline Speech-to-Text Model",
+  "category": 5,
+  "category_name": "OCR, Speech, and Document Recovery",
+  "description": "Transcribes interviews, lectures, hearings, broadcasts, and meetings locally with timestamps and confidence.",
+  "command": "models.stt",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "5.8",
+  "name": "Speaker Diarization Engine",
+  "category": 5,
+  "category_name": "OCR, Speech, and Document Recovery",
+  "description": "Separates speakers and maintains stable anonymous or approved identity labels across a recording.",
+  "command": "models.stt",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "5.9",
+  "name": "Interview Transcript Cleaner",
+  "category": 5,
+  "category_name": "OCR, Speech, and Document Recovery",
+  "description": "Removes recognition artifacts while preserving meaning, hesitations when relevant, timestamps, and audit links to audio. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 7",
+  "command": "media.transcript-clean",
+  "automation": "deterministic"
+ },
+ {
+  "id": "5.10",
+  "name": "Audio Citation Timecode Builder",
+  "category": 5,
+  "category_name": "OCR, Speech, and Document Recovery",
+  "description": "Creates quotable transcript segments linked to exact start and end times in the local recording.",
+  "command": "media.timecodes",
+  "automation": "deterministic"
+ },
+ {
+  "id": "5.11",
+  "name": "OCR Quality Evaluator",
+  "category": 5,
+  "category_name": "OCR, Speech, and Document Recovery",
+  "description": "Measures character and word error rates by language, source type, layout, and degradation level.",
+  "command": "benchmark.cer",
+  "automation": "deterministic"
+ },
+ {
+  "id": "5.12",
+  "name": "Human Transcription Review Queue",
+  "category": 5,
+  "category_name": "OCR, Speech, and Document Recovery",
+  "description": "Routes low-confidence text, proper names, numbers, quotations, and critical passages to reviewers.",
+  "command": "workflow.queue",
+  "automation": "deterministic"
+ },
+ {
+  "id": "6.1",
+  "name": "Local Full-Text Search Engine",
+  "category": 6,
+  "category_name": "Local Search, Embeddings, Reranking, and Retrieval",
+  "description": "Indexes and searches local corpora with fields, phrases, proximity, stemming, filters, facets, and highlighting.",
+  "command": "search.query",
+  "automation": "deterministic"
+ },
+ {
+  "id": "6.2",
+  "name": "Local Document Embedding Model",
+  "category": 6,
+  "category_name": "Local Search, Embeddings, Reranking, and Retrieval",
+  "description": "Creates private local embeddings for passages, documents, citations, tables, images, and multilingual sources.",
+  "command": "models.embed",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "6.3",
+  "name": "Local Reranking Model",
+  "category": 6,
+  "category_name": "Local Search, Embeddings, Reranking, and Retrieval",
+  "description": "Reranks candidate evidence using a local cross-encoder or late-interaction model for stronger relevance.",
+  "command": "models.rerank",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "6.4",
+  "name": "Local Question-Answering Model",
+  "category": 6,
+  "category_name": "Local Search, Embeddings, Reranking, and Retrieval",
+  "description": "Answers from approved local evidence and returns source-linked passages, uncertainty, and abstention when evidence is insufficient.",
+  "command": "search.answer",
+  "automation": "assistive"
+ },
+ {
+  "id": "6.5",
+  "name": "Hybrid Retrieval Orchestrator",
+  "category": 6,
+  "category_name": "Local Search, Embeddings, Reranking, and Retrieval",
+  "description": "Combines lexical search, embeddings, citation graphs, metadata filters, authority, recency, and reranking.",
+  "command": "search.hybrid",
+  "automation": "deterministic"
+ },
+ {
+  "id": "6.6",
+  "name": "Research Query Decomposer",
+  "category": 6,
+  "category_name": "Local Search, Embeddings, Reranking, and Retrieval",
+  "description": "Breaks complex questions into concepts, populations, interventions, outcomes, jurisdictions, periods, and source types.",
+  "command": "search.decompose",
+  "automation": "assistive"
+ },
+ {
+  "id": "6.7",
+  "name": "Boolean Search Builder",
+  "category": 6,
+  "category_name": "Local Search, Embeddings, Reranking, and Retrieval",
+  "description": "Creates reproducible AND, OR, NOT, phrase, wildcard, adjacency, field, and date strategies for local indexes.",
+  "command": "search.build",
+  "automation": "deterministic"
+ },
+ {
+  "id": "6.8",
+  "name": "Multilingual Search Expander",
+  "category": 6,
+  "category_name": "Local Search, Embeddings, Reranking, and Retrieval",
+  "description": "Adds approved translations, transliterations, synonyms, spelling variants, acronyms, and inflections by language.",
+  "command": "search.expand",
+  "automation": "assistive"
+ },
+ {
+  "id": "6.9",
+  "name": "Evidence Passage Retriever",
+  "category": 6,
+  "category_name": "Local Search, Embeddings, Reranking, and Retrieval",
+  "description": "Returns concise passages with page, section, timecode, table, figure, and source identifiers.",
+  "command": "search.passages",
+  "automation": "deterministic"
+ },
+ {
+  "id": "6.10",
+  "name": "Search Result Diversity Controller",
+  "category": 6,
+  "category_name": "Local Search, Embeddings, Reranking, and Retrieval",
+  "description": "Reduces duplicate versions and ensures useful variation across source, date, geography, method, and viewpoint.",
+  "command": "search.diversity",
+  "automation": "deterministic"
+ },
+ {
+  "id": "6.11",
+  "name": "Retrieval Recall Benchmark",
+  "category": 6,
+  "category_name": "Local Search, Embeddings, Reranking, and Retrieval",
+  "description": "Tests whether known relevant sources are found before optimizing ranking precision.",
+  "command": "benchmark.recall",
+  "automation": "deterministic"
+ },
+ {
+  "id": "6.12",
+  "name": "Search Explainability Reporter",
+  "category": 6,
+  "category_name": "Local Search, Embeddings, Reranking, and Retrieval",
+  "description": "Shows why a result matched, which filters applied, what version was searched, and why higher- ranked sources prevailed. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 8",
+  "command": "search.explain",
+  "automation": "deterministic"
+ },
+ {
+  "id": "7.1",
+  "name": "Named-Entity Recognition Model",
+  "category": 7,
+  "category_name": "Entity, Claim, Event, and Relationship Extraction",
+  "description": "Extracts people, organizations, places, dates, laws, standards, products, methods, diseases, chemicals, and domain entities locally.",
+  "command": "extract.entities",
+  "automation": "assistive"
+ },
+ {
+  "id": "7.2",
+  "name": "Entity Linking Resolver",
+  "category": 7,
+  "category_name": "Entity, Claim, Event, and Relationship Extraction",
+  "description": "Links mentions to stable local identities while preserving ambiguity and alternative candidates.",
+  "command": "extract.link-entities",
+  "automation": "assistive"
+ },
+ {
+  "id": "7.3",
+  "name": "Relation Extraction Model",
+  "category": 7,
+  "category_name": "Entity, Claim, Event, and Relationship Extraction",
+  "description": "Identifies authorship, affiliation, funding, ownership, causation, comparison, citation, amendment, and other typed relationships.",
+  "command": "extract.relations",
+  "automation": "assistive"
+ },
+ {
+  "id": "7.4",
+  "name": "Claim Extraction Tool",
+  "category": 7,
+  "category_name": "Entity, Claim, Event, and Relationship Extraction",
+  "description": "Finds factual, causal, predictive, interpretive, normative, and quantitative claims with source coordinates.",
+  "command": "claims.extract",
+  "automation": "assistive"
+ },
+ {
+  "id": "7.5",
+  "name": "Evidence-Claim Linker",
+  "category": 7,
+  "category_name": "Entity, Claim, Event, and Relationship Extraction",
+  "description": "Connects claims to supporting, opposing, contextual, or insufficient evidence and records the relationship type.",
+  "command": "claims.link",
+  "automation": "assistive"
+ },
+ {
+  "id": "7.6",
+  "name": "Event Extraction Model",
+  "category": 7,
+  "category_name": "Entity, Claim, Event, and Relationship Extraction",
+  "description": "Extracts event type, actors, location, time, sequence, source, and reported consequences.",
+  "command": "extract.events",
+  "automation": "assistive"
+ },
+ {
+  "id": "7.7",
+  "name": "Temporal Expression Normalizer",
+  "category": 7,
+  "category_name": "Entity, Claim, Event, and Relationship Extraction",
+  "description": "Converts relative, partial, historical, and locale-specific dates into explicit ranges while retaining uncertainty.",
+  "command": "time.normalize",
+  "automation": "assistive"
+ },
+ {
+  "id": "7.8",
+  "name": "Quantity and Unit Extractor",
+  "category": 7,
+  "category_name": "Entity, Claim, Event, and Relationship Extraction",
+  "description": "Captures values, ranges, units, denominators, uncertainty, sample sizes, and comparison baselines.",
+  "command": "numbers.extract",
+  "automation": "deterministic"
+ },
+ {
+  "id": "7.9",
+  "name": "Methodology Extractor",
+  "category": 7,
+  "category_name": "Entity, Claim, Event, and Relationship Extraction",
+  "description": "Identifies design, participants, sampling, instruments, interventions, outcomes, analysis, limitations, and preregistration.",
+  "command": "extract.methodology",
+  "automation": "assistive"
+ },
+ {
+  "id": "7.10",
+  "name": "Funding and Conflict Extractor",
+  "category": 7,
+  "category_name": "Entity, Claim, Event, and Relationship Extraction",
+  "description": "Finds funders, grants, author disclosures, institutional ties, and declared conflicts of interest.",
+  "command": "extract.funding",
+  "automation": "assistive"
+ },
+ {
+  "id": "7.11",
+  "name": "Definition and Term Extractor",
+  "category": 7,
+  "category_name": "Entity, Claim, Event, and Relationship Extraction",
+  "description": "Collects explicit definitions and domain usage with version, jurisdiction, and source context.",
+  "command": "extract.definitions",
+  "automation": "assistive"
+ },
+ {
+  "id": "7.12",
+  "name": "Entity and Claim Review Console",
+  "category": 7,
+  "category_name": "Entity, Claim, Event, and Relationship Extraction",
+  "description": "Lets reviewers merge, split, correct, approve, or reject extracted records with provenance.",
+  "command": "workflow.queue",
+  "automation": "deterministic"
+ },
+ {
+  "id": "8.1",
+  "name": "Source Provenance Manifest",
+  "category": 8,
+  "category_name": "Source Evaluation, Provenance, and Freshness",
+  "description": "Records origin, creator, publisher, acquisition route, date, version, license, checksum, transformations, and custody.",
+  "command": "provenance.manifest",
+  "automation": "deterministic"
+ },
+ {
+  "id": "8.2",
+  "name": "Date and Version Freshness Controls",
+  "category": 8,
+  "category_name": "Source Evaluation, Provenance, and Freshness",
+  "description": "Marks publication, update, retrieval, effective, access, and supersession dates and prevents stale sources from silently appearing current.",
+  "command": "freshness.check",
+  "automation": "deterministic"
+ },
+ {
+  "id": "8.3",
+  "name": "Source Authority Assessor",
+  "category": 8,
+  "category_name": "Source Evaluation, Provenance, and Freshness",
+  "description": "Evaluates primary versus secondary status, issuing body, peer review, transparency, expertise, and relevance to the question. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 9",
+  "command": "collections.classify-authority",
+  "automation": "assistive"
+ },
+ {
+  "id": "8.4",
+  "name": "Primary Source Prioritizer",
+  "category": 8,
+  "category_name": "Source Evaluation, Provenance, and Freshness",
+  "description": "Finds original studies, statutes, standards, datasets, filings, transcripts, and official records behind secondary reporting.",
+  "command": "collections.prioritize-primary",
+  "automation": "assistive"
+ },
+ {
+  "id": "8.5",
+  "name": "Source Independence Analyzer",
+  "category": 8,
+  "category_name": "Source Evaluation, Provenance, and Freshness",
+  "description": "Detects common press releases, syndicated text, shared datasets, same research group, common funding, and circular sourcing.",
+  "command": "corpus.independence",
+  "automation": "assistive"
+ },
+ {
+  "id": "8.6",
+  "name": "Publication Version Comparator",
+  "category": 8,
+  "category_name": "Source Evaluation, Provenance, and Freshness",
+  "description": "Compares preprint, accepted manuscript, published article, correction, and retraction versions at claim level.",
+  "command": "text.compare-versions",
+  "automation": "assistive"
+ },
+ {
+  "id": "8.7",
+  "name": "Staleness Risk Scorer",
+  "category": 8,
+  "category_name": "Source Evaluation, Provenance, and Freshness",
+  "description": "Scores facts by change rate, source age, domain, jurisdiction, and supersession evidence.",
+  "command": "freshness.score",
+  "automation": "deterministic"
+ },
+ {
+  "id": "8.8",
+  "name": "Unavailable Source Disclosure",
+  "category": 8,
+  "category_name": "Source Evaluation, Provenance, and Freshness",
+  "description": "Marks sources known only through citations, abstracts, snippets, or other secondary descriptions.",
+  "command": "collections.disclose",
+  "automation": "deterministic"
+ },
+ {
+  "id": "8.9",
+  "name": "Evidence Chain Validator",
+  "category": 8,
+  "category_name": "Source Evaluation, Provenance, and Freshness",
+  "description": "Checks every transformation from original file to extracted passage, summary, claim, and final citation.",
+  "command": "provenance.verify-chain",
+  "automation": "deterministic"
+ },
+ {
+  "id": "8.10",
+  "name": "Provenance Gap Detector",
+  "category": 8,
+  "category_name": "Source Evaluation, Provenance, and Freshness",
+  "description": "Finds records missing origin, license, version, checksum, dates, or transformation history.",
+  "command": "provenance.gaps",
+  "automation": "deterministic"
+ },
+ {
+  "id": "8.11",
+  "name": "Corpus Snapshot Identifier",
+  "category": 8,
+  "category_name": "Source Evaluation, Provenance, and Freshness",
+  "description": "Assigns point-in-time identifiers to the exact local corpus used for a research output.",
+  "command": "provenance.snapshot-id",
+  "automation": "deterministic"
+ },
+ {
+  "id": "8.12",
+  "name": "Freshness Review Scheduler",
+  "category": 8,
+  "category_name": "Source Evaluation, Provenance, and Freshness",
+  "description": "Queues volatile topics, laws, policies, statistics, and news collections for controlled offline updating.",
+  "command": "freshness.schedule",
+  "automation": "deterministic"
+ },
+ {
+  "id": "9.1",
+  "name": "Fact-Checking Dataset Manager",
+  "category": 9,
+  "category_name": "Fact Checking, Verification, and Quantitative Accuracy",
+  "description": "Maintains verified claims, evidence, verdicts, dates, jurisdictions, and correction history for local evaluation.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "9.2",
+  "name": "Claim Verification Agent",
+  "category": 9,
+  "category_name": "Fact Checking, Verification, and Quantitative Accuracy",
+  "description": "Searches approved local evidence for support, contradiction, qualification, or insufficient information.",
+  "command": "claims.verify",
+  "automation": "assistive"
+ },
+ {
+  "id": "9.3",
+  "name": "Cross-Source Corroboration Checker",
+  "category": 9,
+  "category_name": "Fact Checking, Verification, and Quantitative Accuracy",
+  "description": "Requires independent evidence for high-impact claims and distinguishes repetition from corroboration.",
+  "command": "claims.corroborate",
+  "automation": "assistive"
+ },
+ {
+  "id": "9.4",
+  "name": "Quotation Verifier",
+  "category": 9,
+  "category_name": "Fact Checking, Verification, and Quantitative Accuracy",
+  "description": "Confirms wording, speaker, source, context, page or timecode, omissions, and alterations for every quotation.",
+  "command": "claims.quote-verify",
+  "automation": "deterministic"
+ },
+ {
+  "id": "9.5",
+  "name": "Number and Unit Rechecker",
+  "category": 9,
+  "category_name": "Fact Checking, Verification, and Quantitative Accuracy",
+  "description": "Recomputes percentages, rates, totals, currency, units, conversions, and denominators from source data.",
+  "command": "numbers.recheck",
+  "automation": "deterministic"
+ },
+ {
+  "id": "9.6",
+  "name": "Statistical Claim Auditor",
+  "category": 9,
+  "category_name": "Fact Checking, Verification, and Quantitative Accuracy",
+  "description": "Checks sample, effect size, uncertainty, significance, multiple testing, correlation, causation, and generalizability. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 10",
+  "command": "numbers.audit-stat",
+  "automation": "assistive"
+ },
+ {
+  "id": "9.7",
+  "name": "Chart-to-Text Consistency Checker",
+  "category": 9,
+  "category_name": "Fact Checking, Verification, and Quantitative Accuracy",
+  "description": "Verifies that prose accurately represents axes, units, values, uncertainty, and trends in figures.",
+  "command": "numbers.chart-text",
+  "automation": "assistive"
+ },
+ {
+  "id": "9.8",
+  "name": "Chronology Consistency Checker",
+  "category": 9,
+  "category_name": "Fact Checking, Verification, and Quantitative Accuracy",
+  "description": "Finds impossible sequences, date conflicts, anachronisms, and confusion between event and reporting dates.",
+  "command": "numbers.chronology",
+  "automation": "assistive"
+ },
+ {
+  "id": "9.9",
+  "name": "Identity and Attribution Checker",
+  "category": 9,
+  "category_name": "Fact Checking, Verification, and Quantitative Accuracy",
+  "description": "Confirms names, roles, affiliations, titles, and whether a statement is directly or indirectly attributed.",
+  "command": "claims.identity",
+  "automation": "assistive"
+ },
+ {
+  "id": "9.10",
+  "name": "Contradiction Mapper",
+  "category": 9,
+  "category_name": "Fact Checking, Verification, and Quantitative Accuracy",
+  "description": "Presents incompatible claims with source quality, scope, date, method, and possible reconciliation.",
+  "command": "claims.contradictions",
+  "automation": "assistive"
+ },
+ {
+  "id": "9.11",
+  "name": "Uncertainty and Abstention Controller",
+  "category": 9,
+  "category_name": "Fact Checking, Verification, and Quantitative Accuracy",
+  "description": "Requires calibrated language or refusal when the offline corpus cannot support a reliable answer.",
+  "command": "text.calibration",
+  "automation": "assistive"
+ },
+ {
+  "id": "9.12",
+  "name": "Fact-Check Regression Suite",
+  "category": 9,
+  "category_name": "Fact Checking, Verification, and Quantitative Accuracy",
+  "description": "Retests known true, false, mixed, outdated, and unresolvable claims after model or corpus changes.",
+  "command": "benchmark.factcheck",
+  "automation": "deterministic"
+ },
+ {
+  "id": "10.1",
+  "name": "Literature Review Planner",
+  "category": 10,
+  "category_name": "Literature Reviews and Evidence Synthesis",
+  "description": "Defines question, scope, databases, dates, languages, source types, screening rules, and synthesis method.",
+  "command": "review.plan",
+  "automation": "assistive"
+ },
+ {
+  "id": "10.2",
+  "name": "Systematic Search Strategy Builder",
+  "category": 10,
+  "category_name": "Literature Reviews and Evidence Synthesis",
+  "description": "Creates auditable search strings, fields, limits, and translation variants for each local database.",
+  "command": "search.build",
+  "automation": "deterministic"
+ },
+ {
+  "id": "10.3",
+  "name": "Screening and Eligibility Manager",
+  "category": 10,
+  "category_name": "Literature Reviews and Evidence Synthesis",
+  "description": "Supports title, abstract, and full-text screening with reasons, conflicts, blinding, and adjudication.",
+  "command": "workflow.queue",
+  "automation": "deterministic"
+ },
+ {
+  "id": "10.4",
+  "name": "PRISMA Flow Data Builder",
+  "category": 10,
+  "category_name": "Literature Reviews and Evidence Synthesis",
+  "description": "Tracks identified, deduplicated, screened, excluded, assessed, and included records for review reporting.",
+  "command": "review.prisma",
+  "automation": "deterministic"
+ },
+ {
+  "id": "10.5",
+  "name": "Evidence Extraction Form",
+  "category": 10,
+  "category_name": "Literature Reviews and Evidence Synthesis",
+  "description": "Captures study design, population, intervention, comparator, outcomes, results, limitations, and reviewer notes.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "10.6",
+  "name": "Risk-of-Bias Workflow",
+  "category": 10,
+  "category_name": "Literature Reviews and Evidence Synthesis",
+  "description": "Applies domain-appropriate assessment criteria and stores judgments, rationale, evidence, and reviewer agreement.",
+  "command": "review.riskofbias",
+  "automation": "assistive"
+ },
+ {
+  "id": "10.7",
+  "name": "Narrative Synthesis Agent",
+  "category": 10,
+  "category_name": "Literature Reviews and Evidence Synthesis",
+  "description": "Groups compatible evidence, explains patterns and differences, and avoids unsupported vote counting.",
+  "command": "review.synthesis",
+  "automation": "assistive"
+ },
+ {
+  "id": "10.8",
+  "name": "Meta-Analysis Data Preparer",
+  "category": 10,
+  "category_name": "Literature Reviews and Evidence Synthesis",
+  "description": "Extracts effect measures, variances, sample sizes, subgroups, and dependencies for statistical analysis.",
+  "command": "numbers.meta-analysis",
+  "automation": "deterministic"
+ },
+ {
+  "id": "10.9",
+  "name": "Evidence Table Builder",
+  "category": 10,
+  "category_name": "Literature Reviews and Evidence Synthesis",
+  "description": "Creates traceable study, policy, legal, or standards comparison tables with exact source links. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 11",
+  "command": "review.evidence-table",
+  "automation": "deterministic"
+ },
+ {
+  "id": "10.10",
+  "name": "Research Gap Mapper",
+  "category": 10,
+  "category_name": "Literature Reviews and Evidence Synthesis",
+  "description": "Identifies absent populations, methods, geographies, languages, time periods, outcomes, and replication.",
+  "command": "collections.coverage",
+  "automation": "deterministic"
+ },
+ {
+  "id": "10.11",
+  "name": "Living Review Update Manager",
+  "category": 10,
+  "category_name": "Literature Reviews and Evidence Synthesis",
+  "description": "Screens controlled corpus updates and identifies findings that could change conclusions.",
+  "command": "review.living-update",
+  "automation": "assistive"
+ },
+ {
+  "id": "10.12",
+  "name": "Synthesis Robustness Reviewer",
+  "category": 10,
+  "category_name": "Literature Reviews and Evidence Synthesis",
+  "description": "Tests sensitivity to source quality, duplicate data, assumptions, exclusions, and conflicting evidence.",
+  "command": "review.robustness",
+  "automation": "assistive"
+ },
+ {
+  "id": "11.1",
+  "name": "Research Question Refiner",
+  "category": 11,
+  "category_name": "Research Design, Study Analysis, and Data Interpretation",
+  "description": "Converts broad topics into answerable descriptive, comparative, causal, interpretive, legal, or policy questions.",
+  "command": "design.question",
+  "automation": "assistive"
+ },
+ {
+  "id": "11.2",
+  "name": "Study Design Advisor",
+  "category": 11,
+  "category_name": "Research Design, Study Analysis, and Data Interpretation",
+  "description": "Matches questions to experiments, observational studies, surveys, interviews, case studies, archival research, or mixed methods.",
+  "command": "design.study-advisor",
+  "automation": "assistive"
+ },
+ {
+  "id": "11.3",
+  "name": "Sampling Plan Reviewer",
+  "category": 11,
+  "category_name": "Research Design, Study Analysis, and Data Interpretation",
+  "description": "Checks population, frame, inclusion, recruitment, size, representativeness, clustering, attrition, and bias.",
+  "command": "design.checklist",
+  "automation": "assistive"
+ },
+ {
+  "id": "11.4",
+  "name": "Measurement Validity Reviewer",
+  "category": 11,
+  "category_name": "Research Design, Study Analysis, and Data Interpretation",
+  "description": "Evaluates construct definition, instrument validity, reliability, sensitivity, specificity, and cultural adaptation.",
+  "command": "design.checklist",
+  "automation": "assistive"
+ },
+ {
+  "id": "11.5",
+  "name": "Qualitative Coding Assistant",
+  "category": 11,
+  "category_name": "Research Design, Study Analysis, and Data Interpretation",
+  "description": "Supports local codebooks, excerpt coding, memos, disagreements, themes, and negative cases without replacing human interpretation.",
+  "command": "design.coding",
+  "automation": "assistive"
+ },
+ {
+  "id": "11.6",
+  "name": "Survey Instrument Reviewer",
+  "category": 11,
+  "category_name": "Research Design, Study Analysis, and Data Interpretation",
+  "description": "Checks wording, ordering, response options, skip logic, accessibility, translation, and respondent burden.",
+  "command": "design.survey",
+  "automation": "assistive"
+ },
+ {
+  "id": "11.7",
+  "name": "Experimental Protocol Auditor",
+  "category": 11,
+  "category_name": "Research Design, Study Analysis, and Data Interpretation",
+  "description": "Checks randomization, blinding, controls, intervention fidelity, outcome timing, stopping rules, and preregistration.",
+  "command": "design.checklist",
+  "automation": "assistive"
+ },
+ {
+  "id": "11.8",
+  "name": "Causal Inference Assumption Reviewer",
+  "category": 11,
+  "category_name": "Research Design, Study Analysis, and Data Interpretation",
+  "description": "Surfaces confounding, selection, measurement, interference, positivity, and model assumptions.",
+  "command": "design.checklist",
+  "automation": "assistive"
+ },
+ {
+  "id": "11.9",
+  "name": "Data Visualization Reviewer",
+  "category": 11,
+  "category_name": "Research Design, Study Analysis, and Data Interpretation",
+  "description": "Checks chart type, scales, labels, uncertainty, accessibility, and whether visuals overstate evidence.",
+  "command": "design.viz",
+  "automation": "assistive"
+ },
+ {
+  "id": "11.10",
+  "name": "Reproducible Analysis Packager",
+  "category": 11,
+  "category_name": "Research Design, Study Analysis, and Data Interpretation",
+  "description": "Bundles data, code, environment, outputs, checks, and documentation for offline reruns.",
+  "command": "deliver.archive",
+  "automation": "deterministic"
+ },
+ {
+  "id": "11.11",
+  "name": "Research Ethics Checklist",
+  "category": 11,
+  "category_name": "Research Design, Study Analysis, and Data Interpretation",
+  "description": "Checks consent, privacy, vulnerable groups, data minimization, risks, compensation, and review requirements.",
+  "command": "design.checklist",
+  "automation": "assistive"
+ },
+ {
+  "id": "11.12",
+  "name": "Limitations and Transferability Writer",
+  "category": 11,
+  "category_name": "Research Design, Study Analysis, and Data Interpretation",
+  "description": "States design limits, uncertainty, context, excluded groups, and where findings may not transfer. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 12",
+  "command": "design.limitations",
+  "automation": "assistive"
+ },
+ {
+  "id": "12.1",
+  "name": "Research Writing Architect",
+  "category": 12,
+  "category_name": "Academic, Technical, Legal, and Policy Writing",
+  "description": "Builds a defensible outline linking question, evidence, method, analysis, limitations, and conclusion.",
+  "command": "writing.outline",
+  "automation": "assistive"
+ },
+ {
+  "id": "12.2",
+  "name": "Academic Manuscript Drafter",
+  "category": 12,
+  "category_name": "Academic, Technical, Legal, and Policy Writing",
+  "description": "Drafts structured scholarly prose with source-linked claims, cautious interpretation, and discipline-appropriate sections.",
+  "command": "writing.draft",
+  "automation": "assistive"
+ },
+ {
+  "id": "12.3",
+  "name": "Technical Report Writer",
+  "category": 12,
+  "category_name": "Academic, Technical, Legal, and Policy Writing",
+  "description": "Creates clear methods, findings, requirements, risks, recommendations, appendices, and traceable evidence.",
+  "command": "writing.draft",
+  "automation": "assistive"
+ },
+ {
+  "id": "12.4",
+  "name": "Policy Brief Writer",
+  "category": 12,
+  "category_name": "Academic, Technical, Legal, and Policy Writing",
+  "description": "Produces concise problem, evidence, options, trade-offs, implementation, and monitoring sections for decision makers.",
+  "command": "writing.draft",
+  "automation": "assistive"
+ },
+ {
+  "id": "12.5",
+  "name": "Legal Research Memorandum Writer",
+  "category": 12,
+  "category_name": "Academic, Technical, Legal, and Policy Writing",
+  "description": "Structures issue, governing authority, analysis, counterarguments, uncertainty, and conclusion without inventing legal support.",
+  "command": "writing.draft",
+  "automation": "assistive"
+ },
+ {
+  "id": "12.6",
+  "name": "Standards Compliance Writer",
+  "category": 12,
+  "category_name": "Academic, Technical, Legal, and Policy Writing",
+  "description": "Maps requirements to evidence, gaps, exceptions, tests, and remediation actions with clause- level references.",
+  "command": "writing.draft",
+  "automation": "assistive"
+ },
+ {
+  "id": "12.7",
+  "name": "Executive Summary Writer",
+  "category": 12,
+  "category_name": "Academic, Technical, Legal, and Policy Writing",
+  "description": "Condenses purpose, material findings, implications, risks, and recommended actions without adding unsupported claims.",
+  "command": "writing.draft",
+  "automation": "assistive"
+ },
+ {
+  "id": "12.8",
+  "name": "Abstract and Synopsis Writer",
+  "category": 12,
+  "category_name": "Academic, Technical, Legal, and Policy Writing",
+  "description": "Creates accurate structured or unstructured abstracts that match the final work and declared limits.",
+  "command": "writing.draft",
+  "automation": "assistive"
+ },
+ {
+  "id": "12.9",
+  "name": "Methods Section Writer",
+  "category": 12,
+  "category_name": "Academic, Technical, Legal, and Policy Writing",
+  "description": "Documents corpus, search, sampling, tools, models, procedures, exclusions, analysis, and reproducibility details.",
+  "command": "writing.methods",
+  "automation": "deterministic"
+ },
+ {
+  "id": "12.10",
+  "name": "Findings and Results Writer",
+  "category": 12,
+  "category_name": "Academic, Technical, Legal, and Policy Writing",
+  "description": "Separates observed results from interpretation and reports values, uncertainty, exceptions, and missing evidence.",
+  "command": "writing.draft",
+  "automation": "assistive"
+ },
+ {
+  "id": "12.11",
+  "name": "Discussion and Implications Writer",
+  "category": 12,
+  "category_name": "Academic, Technical, Legal, and Policy Writing",
+  "description": "Interprets findings against prior evidence, alternatives, limitations, applications, and unanswered questions.",
+  "command": "writing.draft",
+  "automation": "assistive"
+ },
+ {
+  "id": "12.12",
+  "name": "Conclusion Boundary Checker",
+  "category": 12,
+  "category_name": "Academic, Technical, Legal, and Policy Writing",
+  "description": "Prevents conclusions and recommendations from exceeding the evidence, scope, population, period, or jurisdiction.",
+  "command": "text.conclusion-check",
+  "automation": "assistive"
+ },
+ {
+  "id": "13.1",
+  "name": "Developmental Editor",
+  "category": 13,
+  "category_name": "Editing, Revision, Style, and Readability",
+  "description": "Improves argument, structure, scope, evidence flow, audience fit, and missing sections before sentence editing.",
+  "command": "text.dev-edit",
+  "automation": "assistive"
+ },
+ {
+  "id": "13.2",
+  "name": "Substantive Evidence Editor",
+  "category": 13,
+  "category_name": "Editing, Revision, Style, and Readability",
+  "description": "Checks whether each important claim has the right kind and strength of source support. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 13",
+  "command": "claims.coverage",
+  "automation": "assistive"
+ },
+ {
+  "id": "13.3",
+  "name": "Line Editor",
+  "category": 13,
+  "category_name": "Editing, Revision, Style, and Readability",
+  "description": "Improves clarity, precision, rhythm, transitions, concision, and terminology while preserving meaning.",
+  "command": "text.line-edit",
+  "automation": "assistive"
+ },
+ {
+  "id": "13.4",
+  "name": "Copy Editor",
+  "category": 13,
+  "category_name": "Editing, Revision, Style, and Readability",
+  "description": "Corrects grammar, usage, punctuation, capitalization, numbers, references, and house style.",
+  "command": "text.copy-edit",
+  "automation": "assistive"
+ },
+ {
+  "id": "13.5",
+  "name": "Technical Consistency Checker",
+  "category": 13,
+  "category_name": "Editing, Revision, Style, and Readability",
+  "description": "Checks terminology, abbreviations, symbols, units, variable names, headings, tables, and figure references.",
+  "command": "text.tech-consistency",
+  "automation": "deterministic"
+ },
+ {
+  "id": "13.6",
+  "name": "Plain-Language Rewriter",
+  "category": 13,
+  "category_name": "Editing, Revision, Style, and Readability",
+  "description": "Makes findings understandable with direct structure and familiar words while preserving technical accuracy.",
+  "command": "text.plain-language",
+  "automation": "assistive"
+ },
+ {
+  "id": "13.7",
+  "name": "Audience Adaptation Editor",
+  "category": 13,
+  "category_name": "Editing, Revision, Style, and Readability",
+  "description": "Creates expert, executive, public, student, or operational versions from the same approved evidence.",
+  "command": "text.audience",
+  "automation": "assistive"
+ },
+ {
+  "id": "13.8",
+  "name": "Tone and Register Controller",
+  "category": 13,
+  "category_name": "Editing, Revision, Style, and Readability",
+  "description": "Maintains formal, neutral, cautious, persuasive, instructional, or conversational register as specified.",
+  "command": "text.tone",
+  "automation": "assistive"
+ },
+ {
+  "id": "13.9",
+  "name": "Redundancy and Repetition Detector",
+  "category": 13,
+  "category_name": "Editing, Revision, Style, and Readability",
+  "description": "Finds repeated points, duplicated evidence, circular passages, and unnecessary restatement.",
+  "command": "text.redundancy",
+  "automation": "deterministic"
+ },
+ {
+  "id": "13.10",
+  "name": "Logical Flow Auditor",
+  "category": 13,
+  "category_name": "Editing, Revision, Style, and Readability",
+  "description": "Checks premises, evidence, transitions, counterarguments, causal language, and conclusion dependence.",
+  "command": "text.logic-flow",
+  "automation": "assistive"
+ },
+ {
+  "id": "13.11",
+  "name": "Tracked Revision Explainer",
+  "category": 13,
+  "category_name": "Editing, Revision, Style, and Readability",
+  "description": "Produces reviewable edits with reasons grouped by accuracy, structure, clarity, style, and consistency.",
+  "command": "text.tracked-revision",
+  "automation": "assistive"
+ },
+ {
+  "id": "13.12",
+  "name": "Final Proofreading Pass",
+  "category": 13,
+  "category_name": "Editing, Revision, Style, and Readability",
+  "description": "Checks the final rendered document for residual text, reference, layout, numbering, and cross- reference errors.",
+  "command": "text.final-proof",
+  "automation": "deterministic"
+ },
+ {
+  "id": "14.1",
+  "name": "Copyright and Quotation Controls",
+  "category": 14,
+  "category_name": "Copyright, Quotation, Plagiarism, and Ethical Use",
+  "description": "Applies source-specific quotation, excerpt, copying, display, and redistribution rules before output.",
+  "command": "security.rights",
+  "automation": "deterministic"
+ },
+ {
+  "id": "14.2",
+  "name": "Plagiarism-Checking Corpus",
+  "category": 14,
+  "category_name": "Copyright, Quotation, Plagiarism, and Ethical Use",
+  "description": "Maintains an authorized local comparison corpus with licenses, source boundaries, and update history.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "14.3",
+  "name": "Similarity Detection Engine",
+  "category": 14,
+  "category_name": "Copyright, Quotation, Plagiarism, and Ethical Use",
+  "description": "Finds exact, lightly edited, translated, structurally similar, and common-phrase overlap for human interpretation.",
+  "command": "similarity.scan",
+  "automation": "deterministic"
+ },
+ {
+  "id": "14.4",
+  "name": "Patchwriting Detector",
+  "category": 14,
+  "category_name": "Copyright, Quotation, Plagiarism, and Ethical Use",
+  "description": "Flags paraphrases that remain too close in wording or structure to the source.",
+  "command": "similarity.patchwrite",
+  "automation": "assistive"
+ },
+ {
+  "id": "14.5",
+  "name": "Attribution Completeness Checker",
+  "category": 14,
+  "category_name": "Copyright, Quotation, Plagiarism, and Ethical Use",
+  "description": "Checks quotations, paraphrases, data, images, tables, translations, and ideas for required attribution. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 14",
+  "command": "attribution.check",
+  "automation": "assistive"
+ },
+ {
+  "id": "14.6",
+  "name": "Fair-Use Review Packet",
+  "category": 14,
+  "category_name": "Copyright, Quotation, Plagiarism, and Ethical Use",
+  "description": "Summarizes purpose, nature, amount, market effect, alternatives, and jurisdictional uncertainty for human review.",
+  "command": "security.fair-use",
+  "automation": "assistive"
+ },
+ {
+  "id": "14.7",
+  "name": "Licensed Content Usage Meter",
+  "category": 14,
+  "category_name": "Copyright, Quotation, Plagiarism, and Ethical Use",
+  "description": "Tracks pages, words, users, outputs, storage, and expiry against collection license terms.",
+  "command": "security.usage-meter",
+  "automation": "deterministic"
+ },
+ {
+  "id": "14.8",
+  "name": "Public-Domain Status Recorder",
+  "category": 14,
+  "category_name": "Copyright, Quotation, Plagiarism, and Ethical Use",
+  "description": "Records the basis, jurisdiction, date, edition, and remaining rights rather than assuming age alone.",
+  "command": "security.public-domain",
+  "automation": "assistive"
+ },
+ {
+  "id": "14.9",
+  "name": "Open-License Compliance Checker",
+  "category": 14,
+  "category_name": "Copyright, Quotation, Plagiarism, and Ethical Use",
+  "description": "Applies attribution, share-alike, noncommercial, no-derivatives, notice, and source requirements.",
+  "command": "security.open-license",
+  "automation": "deterministic"
+ },
+ {
+  "id": "14.10",
+  "name": "Quotation Length and Context Guard",
+  "category": 14,
+  "category_name": "Copyright, Quotation, Plagiarism, and Ethical Use",
+  "description": "Prevents excessive extraction and preserves enough context to avoid misleading quotation.",
+  "command": "security.quote-guard",
+  "automation": "deterministic"
+ },
+ {
+  "id": "14.11",
+  "name": "Authorship and Contribution Recorder",
+  "category": 14,
+  "category_name": "Copyright, Quotation, Plagiarism, and Ethical Use",
+  "description": "Captures human and agent contributions, review roles, approvals, and disclosure requirements.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "14.12",
+  "name": "Research Integrity Escalation",
+  "category": 14,
+  "category_name": "Copyright, Quotation, Plagiarism, and Ethical Use",
+  "description": "Routes suspected fabrication, falsification, plagiarism, citation manipulation, or undisclosed conflicts to authorized reviewers.",
+  "command": "workflow.queue",
+  "automation": "deterministic"
+ },
+ {
+  "id": "15.1",
+  "name": "Terminology Database",
+  "category": 15,
+  "category_name": "Terminology, Translation Memory, and Linguistic Assets",
+  "description": "Stores approved terms, definitions, forbidden variants, domains, grammar, examples, owners, and multilingual equivalents.",
+  "command": "terms.store",
+  "automation": "deterministic"
+ },
+ {
+  "id": "15.2",
+  "name": "Translation Memory",
+  "category": 15,
+  "category_name": "Terminology, Translation Memory, and Linguistic Assets",
+  "description": "Stores aligned source and target segments with provenance, quality, domain, project, version, and approval metadata.",
+  "command": "tm.store",
+  "automation": "deterministic"
+ },
+ {
+  "id": "15.3",
+  "name": "Term Extraction Engine",
+  "category": 15,
+  "category_name": "Terminology, Translation Memory, and Linguistic Assets",
+  "description": "Finds recurring scholarly, legal, policy, technical, product, and cultural terms for expert validation.",
+  "command": "terms.extract",
+  "automation": "assistive"
+ },
+ {
+  "id": "15.4",
+  "name": "Bilingual Corpus Aligner",
+  "category": 15,
+  "category_name": "Terminology, Translation Memory, and Linguistic Assets",
+  "description": "Aligns documents, paragraphs, sentences, tables, captions, and footnotes across language versions.",
+  "command": "tm.align",
+  "automation": "assistive"
+ },
+ {
+  "id": "15.5",
+  "name": "Terminology Consistency Checker",
+  "category": 15,
+  "category_name": "Terminology, Translation Memory, and Linguistic Assets",
+  "description": "Finds unauthorized variants, false friends, inconsistent names, and term drift within and across documents.",
+  "command": "terms.consistency",
+  "automation": "deterministic"
+ },
+ {
+  "id": "15.6",
+  "name": "Translation Memory Cleaner",
+  "category": 15,
+  "category_name": "Terminology, Translation Memory, and Linguistic Assets",
+  "description": "Removes duplicates, misalignments, corrupted characters, obsolete terms, wrong language, and low-quality segments.",
+  "command": "tm.clean",
+  "automation": "deterministic"
+ },
+ {
+  "id": "15.7",
+  "name": "Term Inflection Generator",
+  "category": 15,
+  "category_name": "Terminology, Translation Memory, and Linguistic Assets",
+  "description": "Generates approved grammatical forms by language while preserving term identity.",
+  "command": "terms.inflect",
+  "automation": "assistive"
+ },
+ {
+  "id": "15.8",
+  "name": "Acronym and Abbreviation Manager",
+  "category": 15,
+  "category_name": "Terminology, Translation Memory, and Linguistic Assets",
+  "description": "Maintains expanded forms, local variants, first-use rules, ambiguity, and do-not-translate instructions.",
+  "command": "terms.acronyms",
+  "automation": "deterministic"
+ },
+ {
+  "id": "15.9",
+  "name": "Named-Entity Translation Policy",
+  "category": 15,
+  "category_name": "Terminology, Translation Memory, and Linguistic Assets",
+  "description": "Specifies translation, transliteration, retention, localization, and official-name handling for entities. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 15",
+  "command": "terms.entity-policy",
+  "automation": "deterministic"
+ },
+ {
+  "id": "15.10",
+  "name": "Definition Consistency Auditor",
+  "category": 15,
+  "category_name": "Terminology, Translation Memory, and Linguistic Assets",
+  "description": "Checks that defined terms retain the same meaning across sections, versions, languages, and jurisdictions.",
+  "command": "terms.definition-audit",
+  "automation": "assistive"
+ },
+ {
+  "id": "15.11",
+  "name": "Subject-Matter Glossary Builder",
+  "category": 15,
+  "category_name": "Terminology, Translation Memory, and Linguistic Assets",
+  "description": "Creates domain glossaries from approved corpora with citations and reviewer ownership.",
+  "command": "terms.glossary-build",
+  "automation": "assistive"
+ },
+ {
+  "id": "15.12",
+  "name": "Language Asset Version Registry",
+  "category": 15,
+  "category_name": "Terminology, Translation Memory, and Linguistic Assets",
+  "description": "Versions terminology, memories, style guides, dictionaries, models, and evaluation sets together.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "16.1",
+  "name": "Offline Translation Models",
+  "category": 16,
+  "category_name": "Offline Machine Translation and Multilingual Models",
+  "description": "Runs local neural machine translation for approved language pairs without sending text outside the environment.",
+  "command": "models.mt",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "16.2",
+  "name": "Offline Multilingual Language Models",
+  "category": 16,
+  "category_name": "Offline Machine Translation and Multilingual Models",
+  "description": "Uses local multilingual models for drafting, rewriting, classification, explanation, and translation support.",
+  "command": "models.llm",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "16.3",
+  "name": "Language Identification Model",
+  "category": 16,
+  "category_name": "Offline Machine Translation and Multilingual Models",
+  "description": "Detects document, paragraph, sentence, and mixed-language spans with confidence and script information.",
+  "command": "langid.detect",
+  "automation": "deterministic"
+ },
+ {
+  "id": "16.4",
+  "name": "Translation Model Router",
+  "category": 16,
+  "category_name": "Offline Machine Translation and Multilingual Models",
+  "description": "Selects the best approved local model by language pair, domain, content type, risk, and resource availability.",
+  "command": "models.route",
+  "automation": "deterministic"
+ },
+ {
+  "id": "16.5",
+  "name": "Document-Level Translation Engine",
+  "category": 16,
+  "category_name": "Offline Machine Translation and Multilingual Models",
+  "description": "Preserves context, terminology, references, numbering, tables, captions, notes, and cross- sentence coherence.",
+  "command": "translate.document",
+  "automation": "assistive"
+ },
+ {
+  "id": "16.6",
+  "name": "Low-Resource Language Workflow",
+  "category": 16,
+  "category_name": "Offline Machine Translation and Multilingual Models",
+  "description": "Combines glossaries, translation memory, related-language models, human translation, and explicit uncertainty.",
+  "command": "translate.low-resource",
+  "automation": "assistive"
+ },
+ {
+  "id": "16.7",
+  "name": "Domain Adaptation Packager",
+  "category": 16,
+  "category_name": "Offline Machine Translation and Multilingual Models",
+  "description": "Applies approved terminology, parallel data, adapters, prompts, and tests for scientific, legal, medical, or technical translation.",
+  "command": "translate.domain-pack",
+  "automation": "deterministic"
+ },
+ {
+  "id": "16.8",
+  "name": "Pivot Translation Guard",
+  "category": 16,
+  "category_name": "Offline Machine Translation and Multilingual Models",
+  "description": "Detects when pivot translation is used and requires additional validation for compound meaning loss.",
+  "command": "translate.pivot-guard",
+  "automation": "assistive"
+ },
+ {
+  "id": "16.9",
+  "name": "Transliteration Engine",
+  "category": 16,
+  "category_name": "Offline Machine Translation and Multilingual Models",
+  "description": "Applies approved romanization or script-conversion standards while retaining original text and reversibility where possible.",
+  "command": "translate.transliterate",
+  "automation": "assistive"
+ },
+ {
+  "id": "16.10",
+  "name": "Multilingual Summarization Model",
+  "category": 16,
+  "category_name": "Offline Machine Translation and Multilingual Models",
+  "description": "Creates source-grounded summaries across languages and distinguishes translation from abstraction.",
+  "command": "translate.summarize",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "16.11",
+  "name": "Offline Dictionary and Morphology Service",
+  "category": 16,
+  "category_name": "Offline Machine Translation and Multilingual Models",
+  "description": "Provides local definitions, inflections, lemmas, compounds, spelling, and usage guidance.",
+  "command": "translate.dictionary",
+  "automation": "deterministic"
+ },
+ {
+  "id": "16.12",
+  "name": "Translation Model Drift Monitor",
+  "category": 16,
+  "category_name": "Offline Machine Translation and Multilingual Models",
+  "description": "Retests language-pair quality after model, tokenizer, terminology, or runtime changes. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 16",
+  "command": "drift.monitor",
+  "automation": "deterministic"
+ },
+ {
+  "id": "17.1",
+  "name": "Translation Project Planner",
+  "category": 17,
+  "category_name": "Translation Production and Human Review",
+  "description": "Defines languages, variants, domains, files, volume, risks, assets, roles, schedule, and acceptance criteria.",
+  "command": "translate.plan",
+  "automation": "assistive"
+ },
+ {
+  "id": "17.2",
+  "name": "Pre-Translation Source Editor",
+  "category": 17,
+  "category_name": "Translation Production and Human Review",
+  "description": "Removes ambiguity, fixes source errors, externalizes text, protects variables, and prepares translator context.",
+  "command": "translate.source-edit",
+  "automation": "deterministic"
+ },
+ {
+  "id": "17.3",
+  "name": "Human-Review Workflow",
+  "category": 17,
+  "category_name": "Translation Production and Human Review",
+  "description": "Routes translation, bilingual editing, subject review, proofreading, functional QA, and final approval with clear responsibility.",
+  "command": "workflow.queue",
+  "automation": "deterministic"
+ },
+ {
+  "id": "17.4",
+  "name": "Bilingual Accuracy Reviewer",
+  "category": 17,
+  "category_name": "Translation Production and Human Review",
+  "description": "Checks omissions, additions, meaning shifts, terminology, numbers, negation, modality, and references against the source.",
+  "command": "translate.bilingual-review",
+  "automation": "assistive"
+ },
+ {
+  "id": "17.5",
+  "name": "Target-Language Proofreader",
+  "category": 17,
+  "category_name": "Translation Production and Human Review",
+  "description": "Reviews grammar, fluency, punctuation, spelling, register, style, and naturalness without losing source meaning.",
+  "command": "translate.proofread",
+  "automation": "assistive"
+ },
+ {
+  "id": "17.6",
+  "name": "Subject-Matter Translation Reviewer",
+  "category": 17,
+  "category_name": "Translation Production and Human Review",
+  "description": "Validates specialized concepts, calculations, legal effect, clinical meaning, standards language, and domain terms.",
+  "command": "translate.domain-review",
+  "automation": "assistive"
+ },
+ {
+  "id": "17.7",
+  "name": "Translation Query Manager",
+  "category": 17,
+  "category_name": "Translation Production and Human Review",
+  "description": "Records translator questions, context, decisions, owners, response dates, and reusable resolutions.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "17.8",
+  "name": "Translation Error Taxonomy",
+  "category": 17,
+  "category_name": "Translation Production and Human Review",
+  "description": "Classifies accuracy, terminology, locale, grammar, style, formatting, functional, and critical-risk errors.",
+  "command": "qa.taxonomy",
+  "automation": "deterministic"
+ },
+ {
+  "id": "17.9",
+  "name": "Severity-Weighted Language Score",
+  "category": 17,
+  "category_name": "Translation Production and Human Review",
+  "description": "Scores language quality using defined critical, major, and minor error weights and acceptance thresholds.",
+  "command": "qa.score",
+  "automation": "deterministic"
+ },
+ {
+  "id": "17.10",
+  "name": "Back-Translation Risk Check",
+  "category": 17,
+  "category_name": "Translation Production and Human Review",
+  "description": "Uses selective back translation for high-risk passages while avoiding false confidence from mechanical equivalence.",
+  "command": "translate.backtranslation",
+  "automation": "assistive"
+ },
+ {
+  "id": "17.11",
+  "name": "Independent Review Adjudicator",
+  "category": 17,
+  "category_name": "Translation Production and Human Review",
+  "description": "Resolves reviewer disagreements using source evidence, terminology, style guide, domain expertise, and user impact.",
+  "command": "workflow.adjudicate",
+  "automation": "assistive"
+ },
+ {
+  "id": "17.12",
+  "name": "Post-Delivery Language Feedback Loop",
+  "category": 17,
+  "category_name": "Translation Production and Human Review",
+  "description": "Converts accepted corrections into updated memories, terms, tests, and model-routing rules after approval.",
+  "command": "translate.feedback-loop",
+  "automation": "deterministic"
+ },
+ {
+  "id": "18.1",
+  "name": "Accuracy Benchmarks by Language",
+  "category": 18,
+  "category_name": "Language-Specific Accuracy and Localization QA",
+  "description": "Maintains representative evaluation sets and thresholds for each language, dialect, script, domain, and task. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 17",
+  "command": "benchmark.sets",
+  "automation": "deterministic"
+ },
+ {
+  "id": "18.2",
+  "name": "Locale and Language Variant Controller",
+  "category": 18,
+  "category_name": "Language-Specific Accuracy and Localization QA",
+  "description": "Distinguishes regional spelling, grammar, vocabulary, formats, legal terminology, and audience expectations.",
+  "command": "locale.variant",
+  "automation": "assistive"
+ },
+ {
+  "id": "18.3",
+  "name": "Filipino and English Research Reviewer",
+  "category": 18,
+  "category_name": "Language-Specific Accuracy and Localization QA",
+  "description": "Checks Filipino and Philippine English research writing, translation, terminology, register, and local context.",
+  "command": "locale.filipino",
+  "automation": "assistive"
+ },
+ {
+  "id": "18.4",
+  "name": "Code-Switching Quality Reviewer",
+  "category": 18,
+  "category_name": "Language-Specific Accuracy and Localization QA",
+  "description": "Evaluates mixed-language content, borrowed terms, speaker intent, accessibility, and consistency.",
+  "command": "locale.codeswitch",
+  "automation": "assistive"
+ },
+ {
+  "id": "18.5",
+  "name": "Right-to-Left Document Tester",
+  "category": 18,
+  "category_name": "Language-Specific Accuracy and Localization QA",
+  "description": "Checks direction, punctuation, numbers, citations, footnotes, tables, formulas, and mixed-script references.",
+  "command": "locale.rtl",
+  "automation": "deterministic"
+ },
+ {
+  "id": "18.6",
+  "name": "CJK Research Typography Reviewer",
+  "category": 18,
+  "category_name": "Language-Specific Accuracy and Localization QA",
+  "description": "Validates line breaking, punctuation, names, ruby text, references, fonts, spacing, and vertical text when applicable.",
+  "command": "locale.cjk",
+  "automation": "deterministic"
+ },
+ {
+  "id": "18.7",
+  "name": "Complex-Script Font Coverage Tester",
+  "category": 18,
+  "category_name": "Language-Specific Accuracy and Localization QA",
+  "description": "Checks shaping, combining marks, reordering, fallback, search, selection, copy, and export behavior.",
+  "command": "locale.font-coverage",
+  "automation": "deterministic"
+ },
+ {
+  "id": "18.8",
+  "name": "Multilingual Citation Style Tester",
+  "category": 18,
+  "category_name": "Language-Specific Accuracy and Localization QA",
+  "description": "Validates author order, transliteration, translated titles, original scripts, punctuation, and sorting.",
+  "command": "citation.format",
+  "automation": "deterministic"
+ },
+ {
+  "id": "18.9",
+  "name": "Locale-Specific Number and Date Reviewer",
+  "category": 18,
+  "category_name": "Language-Specific Accuracy and Localization QA",
+  "description": "Checks dates, calendars, decimal separators, currency, units, ranges, and ambiguity by locale.",
+  "command": "locale.number-date",
+  "automation": "deterministic"
+ },
+ {
+  "id": "18.10",
+  "name": "Language Register and Politeness Reviewer",
+  "category": 18,
+  "category_name": "Language-Specific Accuracy and Localization QA",
+  "description": "Maintains appropriate formality, honorifics, stance, and institutional voice by language and audience.",
+  "command": "locale.register",
+  "automation": "assistive"
+ },
+ {
+  "id": "18.11",
+  "name": "Dialect and Inclusive-Language Reviewer",
+  "category": 18,
+  "category_name": "Language-Specific Accuracy and Localization QA",
+  "description": "Checks regional comprehension, respectful terminology, gender, disability, ethnicity, and community preferences.",
+  "command": "locale.inclusive",
+  "automation": "assistive"
+ },
+ {
+  "id": "18.12",
+  "name": "Language Acceptance Test Runner",
+  "category": 18,
+  "category_name": "Language-Specific Accuracy and Localization QA",
+  "description": "Runs fixed translation, summarization, QA, terminology, and formatting tests before release.",
+  "command": "benchmark.acceptance",
+  "automation": "deterministic"
+ },
+ {
+  "id": "19.1",
+  "name": "Figure and Table Extractor",
+  "category": 19,
+  "category_name": "Tables, Figures, Images, and Multimodal Research",
+  "description": "Extracts captions, labels, notes, axes, legends, values, and source links from local documents.",
+  "command": "media.extract-figures",
+  "automation": "deterministic"
+ },
+ {
+  "id": "19.2",
+  "name": "Chart Data Recovery Tool",
+  "category": 19,
+  "category_name": "Tables, Figures, Images, and Multimodal Research",
+  "description": "Recovers approximate or exact chart values where technically possible and records uncertainty.",
+  "command": "media.chart-recovery",
+  "automation": "assistive"
+ },
+ {
+  "id": "19.3",
+  "name": "Image Provenance Tracker",
+  "category": 19,
+  "category_name": "Tables, Figures, Images, and Multimodal Research",
+  "description": "Records creator, source, date, license, edits, caption, and use rights for research images.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "19.4",
+  "name": "Diagram Interpretation Agent",
+  "category": 19,
+  "category_name": "Tables, Figures, Images, and Multimodal Research",
+  "description": "Explains systems, processes, relationships, and labels while linking observations to image regions.",
+  "command": "models.vlm",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "19.5",
+  "name": "Map Evidence Extractor",
+  "category": 19,
+  "category_name": "Tables, Figures, Images, and Multimodal Research",
+  "description": "Extracts legend, scale, date, projection, boundaries, labels, and mapped claims with caution about interpretation. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 18",
+  "command": "media.map-evidence",
+  "automation": "assistive"
+ },
+ {
+  "id": "19.6",
+  "name": "Visual Claim Verifier",
+  "category": 19,
+  "category_name": "Tables, Figures, Images, and Multimodal Research",
+  "description": "Checks whether captions and prose accurately describe the visible evidence and source context.",
+  "command": "media.visual-claim",
+  "automation": "assistive"
+ },
+ {
+  "id": "19.7",
+  "name": "Screenshot Evidence Packager",
+  "category": 19,
+  "category_name": "Tables, Figures, Images, and Multimodal Research",
+  "description": "Captures reproducible local screenshots with application, file, version, timestamp, region, and annotation.",
+  "command": "media.screenshot-pack",
+  "automation": "deterministic"
+ },
+ {
+  "id": "19.8",
+  "name": "Accessible Figure Description Writer",
+  "category": 19,
+  "category_name": "Tables, Figures, Images, and Multimodal Research",
+  "description": "Creates concise alt text and detailed descriptions for charts, maps, diagrams, and scientific images.",
+  "command": "media.alt-text",
+  "automation": "assistive"
+ },
+ {
+  "id": "19.9",
+  "name": "Multimodal Citation Builder",
+  "category": 19,
+  "category_name": "Tables, Figures, Images, and Multimodal Research",
+  "description": "Cites images, audio, video, tables, figures, and archival objects with exact local locators.",
+  "command": "media.multimodal-citation",
+  "automation": "assistive"
+ },
+ {
+  "id": "19.10",
+  "name": "Video Research Segmenter",
+  "category": 19,
+  "category_name": "Tables, Figures, Images, and Multimodal Research",
+  "description": "Indexes scenes, speakers, captions, topics, on-screen text, and timecodes for local analysis.",
+  "command": "media.video-segment",
+  "automation": "assistive"
+ },
+ {
+  "id": "19.11",
+  "name": "Audio Evidence Reviewer",
+  "category": 19,
+  "category_name": "Tables, Figures, Images, and Multimodal Research",
+  "description": "Checks speaker, wording, context, overlap, recognition confidence, and edit boundaries before quotation.",
+  "command": "media.audio-review",
+  "automation": "assistive"
+ },
+ {
+  "id": "19.12",
+  "name": "Multimodal Hallucination Test",
+  "category": 19,
+  "category_name": "Tables, Figures, Images, and Multimodal Research",
+  "description": "Benchmarks whether local models invent visual, audio, chart, or document details not present in the source.",
+  "command": "benchmark.hallucination",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "20.1",
+  "name": "Research Project Workspace",
+  "category": 20,
+  "category_name": "Research Project, Review, and Approval Workflows",
+  "description": "Organizes questions, sources, notes, claims, drafts, translations, reviews, decisions, and final artifacts offline.",
+  "command": "init",
+  "automation": "deterministic"
+ },
+ {
+  "id": "20.2",
+  "name": "Human Research Approval Gate",
+  "category": 20,
+  "category_name": "Research Project, Review, and Approval Workflows",
+  "description": "Requires expert approval for high-impact conclusions, publication, legal interpretations, and sensitive translations.",
+  "command": "workflow.gate",
+  "automation": "deterministic"
+ },
+ {
+  "id": "20.3",
+  "name": "Source Review Queue",
+  "category": 20,
+  "category_name": "Research Project, Review, and Approval Workflows",
+  "description": "Routes uncertain, low-quality, restricted, contradictory, or high-impact sources to designated reviewers.",
+  "command": "workflow.queue",
+  "automation": "deterministic"
+ },
+ {
+  "id": "20.4",
+  "name": "Claim Review Queue",
+  "category": 20,
+  "category_name": "Research Project, Review, and Approval Workflows",
+  "description": "Presents each material claim with supporting passages, opposing evidence, source quality, and requested decision.",
+  "command": "workflow.queue",
+  "automation": "deterministic"
+ },
+ {
+  "id": "20.5",
+  "name": "Draft Review Workflow",
+  "category": 20,
+  "category_name": "Research Project, Review, and Approval Workflows",
+  "description": "Coordinates author, editor, fact checker, translator, domain expert, legal, and final approver roles.",
+  "command": "workflow.queue",
+  "automation": "deterministic"
+ },
+ {
+  "id": "20.6",
+  "name": "Conflict-of-Interest Disclosure Workflow",
+  "category": 20,
+  "category_name": "Research Project, Review, and Approval Workflows",
+  "description": "Collects contributor, reviewer, funding, affiliation, and source-ownership disclosures.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "20.7",
+  "name": "Decision and Rationale Log",
+  "category": 20,
+  "category_name": "Research Project, Review, and Approval Workflows",
+  "description": "Records material scope, source, methodology, terminology, interpretation, and publication decisions.",
+  "command": "workflow.decisions",
+  "automation": "deterministic"
+ },
+ {
+  "id": "20.8",
+  "name": "Research Change Control",
+  "category": 20,
+  "category_name": "Research Project, Review, and Approval Workflows",
+  "description": "Requires review of corpus, model, method, source, or conclusion changes after an approved baseline.",
+  "command": "workflow.change-control",
+  "automation": "deterministic"
+ },
+ {
+  "id": "20.9",
+  "name": "Parallel Reviewer Reconciliation",
+  "category": 20,
+  "category_name": "Research Project, Review, and Approval Workflows",
+  "description": "Compares independent reviews, identifies disagreements, and records adjudicated outcomes. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 19",
+  "command": "workflow.adjudicate",
+  "automation": "deterministic"
+ },
+ {
+  "id": "20.10",
+  "name": "Publication Readiness Gate",
+  "category": 20,
+  "category_name": "Research Project, Review, and Approval Workflows",
+  "description": "Checks claims, citations, permissions, language, accessibility, layout, files, and approval before release.",
+  "command": "workflow.gate",
+  "automation": "deterministic"
+ },
+ {
+  "id": "20.11",
+  "name": "Embargo and Confidentiality Controller",
+  "category": 20,
+  "category_name": "Research Project, Review, and Approval Workflows",
+  "description": "Restricts access, display, export, and timing for unpublished, licensed, personal, or sensitive research.",
+  "command": "security.embargo",
+  "automation": "deterministic"
+ },
+ {
+  "id": "20.12",
+  "name": "Research Handoff Packager",
+  "category": 20,
+  "category_name": "Research Project, Review, and Approval Workflows",
+  "description": "Delivers editable sources, bibliography, evidence tables, datasets, translation assets, decisions, and continuation state.",
+  "command": "deliver.handoff",
+  "automation": "deterministic"
+ },
+ {
+  "id": "21.1",
+  "name": "Sensitive Corpus Classifier",
+  "category": 21,
+  "category_name": "Privacy, Security, and Sensitive Research",
+  "description": "Labels personal, health, legal, financial, confidential, export-controlled, and restricted research materials.",
+  "command": "security.classify",
+  "automation": "deterministic"
+ },
+ {
+  "id": "21.2",
+  "name": "Research Data Access Controller",
+  "category": 21,
+  "category_name": "Privacy, Security, and Sensitive Research",
+  "description": "Applies least privilege to corpora, notes, transcripts, identities, models, exports, and reviewer roles.",
+  "command": "security.access",
+  "automation": "deterministic"
+ },
+ {
+  "id": "21.3",
+  "name": "Secret and Identifier Redactor",
+  "category": 21,
+  "category_name": "Privacy, Security, and Sensitive Research",
+  "description": "Finds and irreversibly removes defined identifiers from documents, datasets, transcripts, and outputs.",
+  "command": "security.redact",
+  "automation": "deterministic"
+ },
+ {
+  "id": "21.4",
+  "name": "De-Identification Risk Reviewer",
+  "category": 21,
+  "category_name": "Privacy, Security, and Sensitive Research",
+  "description": "Tests whether combinations, quotations, rare events, or metadata could re-identify people.",
+  "command": "security.deid",
+  "automation": "assistive"
+ },
+ {
+  "id": "21.5",
+  "name": "Secure Research Enclave",
+  "category": 21,
+  "category_name": "Privacy, Security, and Sensitive Research",
+  "description": "Provides isolated local analysis with controlled import, export, clipboard, printing, and device access.",
+  "command": "security.enclave",
+  "automation": "assistive"
+ },
+ {
+  "id": "21.6",
+  "name": "Prompt Injection Defense for Research",
+  "category": 21,
+  "category_name": "Privacy, Security, and Sensitive Research",
+  "description": "Treats source text as untrusted evidence and blocks embedded instructions from controlling agents or tools.",
+  "command": "security.injection-scan",
+  "automation": "deterministic"
+ },
+ {
+  "id": "21.7",
+  "name": "Malicious Document Scanner",
+  "category": 21,
+  "category_name": "Privacy, Security, and Sensitive Research",
+  "description": "Screens documents, archives, macros, scripts, embedded files, and malformed parsers before ingestion.",
+  "command": "security.scan-media",
+  "automation": "assistive"
+ },
+ {
+  "id": "21.8",
+  "name": "Sensitive Quotation Reviewer",
+  "category": 21,
+  "category_name": "Privacy, Security, and Sensitive Research",
+  "description": "Checks whether a quotation exposes identity, trauma, confidential facts, or prohibited content and whether paraphrase is safer.",
+  "command": "security.sensitive-quote",
+  "automation": "assistive"
+ },
+ {
+  "id": "21.9",
+  "name": "Data Retention and Deletion Manager",
+  "category": 21,
+  "category_name": "Privacy, Security, and Sensitive Research",
+  "description": "Applies project, consent, legal, license, and institutional retention rules to all derived assets.",
+  "command": "security.retention",
+  "automation": "deterministic"
+ },
+ {
+  "id": "21.10",
+  "name": "Controlled Research Export Gate",
+  "category": 21,
+  "category_name": "Privacy, Security, and Sensitive Research",
+  "description": "Scans, redacts, licenses, signs, and approves files leaving the offline environment.",
+  "command": "security.export-gate",
+  "automation": "deterministic"
+ },
+ {
+  "id": "21.11",
+  "name": "Tamper-Evident Research Audit",
+  "category": 21,
+  "category_name": "Privacy, Security, and Sensitive Research",
+  "description": "Records access, edits, model runs, source decisions, approvals, exports, and deletions in protected logs.",
+  "command": "audit.verify",
+  "automation": "deterministic"
+ },
+ {
+  "id": "21.12",
+  "name": "Incident Response for Research Data",
+  "category": 21,
+  "category_name": "Privacy, Security, and Sensitive Research",
+  "description": "Contains suspected exposure, preserves evidence, assesses affected records, and coordinates authorized response. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 20",
+  "command": "security.incident",
+  "automation": "assistive"
+ },
+ {
+  "id": "22.1",
+  "name": "Offline Research Agent Benchmark",
+  "category": 22,
+  "category_name": "Evaluation, Benchmarks, and Clean-State Validation",
+  "description": "Tests question framing, retrieval, source evaluation, synthesis, citation, uncertainty, and artifact completion.",
+  "command": "benchmark.agent",
+  "automation": "model-adapter"
+ },
+ {
+  "id": "22.2",
+  "name": "Writing Quality Benchmark",
+  "category": 22,
+  "category_name": "Evaluation, Benchmarks, and Clean-State Validation",
+  "description": "Scores structure, claim support, clarity, precision, audience fit, revision quality, and reference accuracy.",
+  "command": "benchmark.writing",
+  "automation": "deterministic"
+ },
+ {
+  "id": "22.3",
+  "name": "Translation Quality Benchmark",
+  "category": 22,
+  "category_name": "Evaluation, Benchmarks, and Clean-State Validation",
+  "description": "Tests adequacy, fluency, terminology, register, formatting, critical meaning, and functional behavior by language.",
+  "command": "benchmark.translation",
+  "automation": "assistive"
+ },
+ {
+  "id": "22.4",
+  "name": "Citation Accuracy Benchmark",
+  "category": 22,
+  "category_name": "Evaluation, Benchmarks, and Clean-State Validation",
+  "description": "Measures reference resolution, locator accuracy, source-claim fit, quotation fidelity, and fabricated citation rate.",
+  "command": "benchmark.citation",
+  "automation": "deterministic"
+ },
+ {
+  "id": "22.5",
+  "name": "Fact-Checking Benchmark",
+  "category": 22,
+  "category_name": "Evaluation, Benchmarks, and Clean-State Validation",
+  "description": "Tests true, false, mixed, outdated, jurisdictional, numerical, and unresolvable claims against fixed evidence.",
+  "command": "benchmark.factcheck",
+  "automation": "deterministic"
+ },
+ {
+  "id": "22.6",
+  "name": "OCR and Speech Accuracy Benchmark",
+  "category": 22,
+  "category_name": "Evaluation, Benchmarks, and Clean-State Validation",
+  "description": "Measures character, word, timestamp, speaker, name, number, and punctuation accuracy by source type.",
+  "command": "benchmark.cer",
+  "automation": "deterministic"
+ },
+ {
+  "id": "22.7",
+  "name": "Retrieval Benchmark Suite",
+  "category": 22,
+  "category_name": "Evaluation, Benchmarks, and Clean-State Validation",
+  "description": "Measures recall, precision, ranking, diversity, duplicate control, multilingual retrieval, and citation graph use.",
+  "command": "benchmark.recall",
+  "automation": "deterministic"
+ },
+ {
+  "id": "22.8",
+  "name": "Clean Offline Research Tests",
+  "category": 22,
+  "category_name": "Evaluation, Benchmarks, and Clean-State Validation",
+  "description": "Rebuilds the full workflow from a clean disconnected host using declared packages, models, corpora, and configuration.",
+  "command": "selftest.clean",
+  "automation": "deterministic"
+ },
+ {
+  "id": "22.9",
+  "name": "Failure-Recovery Research Tests",
+  "category": 22,
+  "category_name": "Evaluation, Benchmarks, and Clean-State Validation",
+  "description": "Injects missing files, corrupt indexes, bad OCR, unavailable models, stale sources, and interrupted reviews, then verifies recovery.",
+  "command": "selftest.failure-recovery",
+  "automation": "deterministic"
+ },
+ {
+  "id": "22.10",
+  "name": "Corpus Leakage Test",
+  "category": 22,
+  "category_name": "Evaluation, Benchmarks, and Clean-State Validation",
+  "description": "Checks whether restricted, held-out, personal, or unlicensed content appears in unauthorized outputs.",
+  "command": "security.leakage-test",
+  "automation": "deterministic"
+ },
+ {
+  "id": "22.11",
+  "name": "Human Acceptance Evaluation",
+  "category": 22,
+  "category_name": "Evaluation, Benchmarks, and Clean-State Validation",
+  "description": "Uses researchers, editors, translators, and subject experts to judge real task completion and repair effort.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "22.12",
+  "name": "Regression Release Gate",
+  "category": 22,
+  "category_name": "Evaluation, Benchmarks, and Clean-State Validation",
+  "description": "Blocks model, corpus, prompt, tool, or workflow releases that materially reduce quality or safety.",
+  "command": "workflow.regression-gate",
+  "automation": "deterministic"
+ },
+ {
+  "id": "23.1",
+  "name": "Research Model Registry",
+  "category": 23,
+  "category_name": "Offline Infrastructure, Registries, and Reproducibility",
+  "description": "Tracks local QA, OCR, speech, embedding, reranking, translation, and multilingual models with versions and licenses.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "23.2",
+  "name": "Corpus Registry",
+  "category": 23,
+  "category_name": "Offline Infrastructure, Registries, and Reproducibility",
+  "description": "Inventories collections, snapshots, licenses, checksums, coverage, owners, access, and update state. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 21",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "23.3",
+  "name": "Prompt and Method Registry",
+  "category": 23,
+  "category_name": "Offline Infrastructure, Registries, and Reproducibility",
+  "description": "Versions research prompts, extraction rules, review rubrics, writing templates, and translation instructions.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "23.4",
+  "name": "Tool Schema Registry",
+  "category": 23,
+  "category_name": "Offline Infrastructure, Registries, and Reproducibility",
+  "description": "Stores contracts, inputs, outputs, permissions, side effects, versions, and tests for local research tools.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "23.5",
+  "name": "Research Workflow Engine",
+  "category": 23,
+  "category_name": "Offline Infrastructure, Registries, and Reproducibility",
+  "description": "Runs ingestion, search, screening, extraction, synthesis, drafting, translation, review, and publication steps.",
+  "command": "workflow.runner",
+  "automation": "deterministic"
+ },
+ {
+  "id": "23.6",
+  "name": "Research Job Scheduler",
+  "category": 23,
+  "category_name": "Offline Infrastructure, Registries, and Reproducibility",
+  "description": "Schedules indexing, OCR, speech transcription, evaluation, backups, freshness review, and report generation.",
+  "command": "workflow.schedule",
+  "automation": "deterministic"
+ },
+ {
+  "id": "23.7",
+  "name": "Durable Research State",
+  "category": 23,
+  "category_name": "Offline Infrastructure, Registries, and Reproducibility",
+  "description": "Checkpoints searches, screening, notes, claims, drafts, translations, reviews, and pending decisions.",
+  "command": "workflow.state",
+  "automation": "deterministic"
+ },
+ {
+  "id": "23.8",
+  "name": "Research Provenance Database",
+  "category": 23,
+  "category_name": "Offline Infrastructure, Registries, and Reproducibility",
+  "description": "Stores source-to-claim-to-draft-to-translation lineage and every approved transformation.",
+  "command": "provenance.lineage",
+  "automation": "deterministic"
+ },
+ {
+  "id": "23.9",
+  "name": "Reproducible Run Manifest",
+  "category": 23,
+  "category_name": "Offline Infrastructure, Registries, and Reproducibility",
+  "description": "Records exact corpus snapshot, models, prompts, tools, settings, hardware, reviewers, and output files.",
+  "command": "provenance.run-manifest",
+  "automation": "deterministic"
+ },
+ {
+  "id": "23.10",
+  "name": "Offline Dependency Mirror",
+  "category": 23,
+  "category_name": "Offline Infrastructure, Registries, and Reproducibility",
+  "description": "Maintains signed local packages, runtimes, models, dictionaries, fonts, and parser dependencies.",
+  "command": "doctor.mirror",
+  "automation": "assistive"
+ },
+ {
+  "id": "23.11",
+  "name": "Backup and Restore Verifier",
+  "category": 23,
+  "category_name": "Offline Infrastructure, Registries, and Reproducibility",
+  "description": "Performs test restores of corpora, indexes, registries, projects, translation assets, and audit records.",
+  "command": "workflow.backup-verify",
+  "automation": "deterministic"
+ },
+ {
+  "id": "23.12",
+  "name": "Research Environment Health Check",
+  "category": 23,
+  "category_name": "Offline Infrastructure, Registries, and Reproducibility",
+  "description": "Checks disk, indexes, database integrity, model load, search, OCR, translation, permissions, and export gates.",
+  "command": "doctor",
+  "automation": "deterministic"
+ },
+ {
+  "id": "24.1",
+  "name": "Research Report Packager",
+  "category": 24,
+  "category_name": "Deliverables, Publishing, Accessibility, and Archiving",
+  "description": "Produces editable documents, PDF, bibliography, evidence tables, appendices, and source-linked review materials.",
+  "command": "deliver.report",
+  "automation": "deterministic"
+ },
+ {
+  "id": "24.2",
+  "name": "Multilingual Publication Packager",
+  "category": 24,
+  "category_name": "Deliverables, Publishing, Accessibility, and Archiving",
+  "description": "Packages approved source and language versions with consistent metadata, identifiers, navigation, and rights.",
+  "command": "deliver.multilingual",
+  "automation": "deterministic"
+ },
+ {
+  "id": "24.3",
+  "name": "Accessible Research Document Builder",
+  "category": 24,
+  "category_name": "Deliverables, Publishing, Accessibility, and Archiving",
+  "description": "Creates documents with headings, reading order, tables, alt text, language metadata, contrast, and navigation.",
+  "command": "deliver.accessible-check",
+  "automation": "deterministic"
+ },
+ {
+  "id": "24.4",
+  "name": "Citation and Link Integrity Checker",
+  "category": 24,
+  "category_name": "Deliverables, Publishing, Accessibility, and Archiving",
+  "description": "Validates internal references, bibliography links, page locators, figure references, and offline identifiers.",
+  "command": "deliver.citation-integrity",
+  "automation": "deterministic"
+ },
+ {
+  "id": "24.5",
+  "name": "PDF Publication Preflight",
+  "category": 24,
+  "category_name": "Deliverables, Publishing, Accessibility, and Archiving",
+  "description": "Checks fonts, pages, tags, metadata, links, bookmarks, rendering, permissions, and archival suitability. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 22",
+  "command": "deliver.pdf-preflight",
+  "automation": "assistive"
+ },
+ {
+  "id": "24.6",
+  "name": "Dataset and Code Release Packager",
+  "category": 24,
+  "category_name": "Deliverables, Publishing, Accessibility, and Archiving",
+  "description": "Bundles approved data, code, documentation, environment, checksums, licenses, and reproducibility instructions.",
+  "command": "deliver.archive",
+  "automation": "deterministic"
+ },
+ {
+  "id": "24.7",
+  "name": "Research Archive Builder",
+  "category": 24,
+  "category_name": "Deliverables, Publishing, Accessibility, and Archiving",
+  "description": "Creates preservable packages with files, metadata, manifests, checksums, rights, provenance, and format information.",
+  "command": "deliver.archive",
+  "automation": "deterministic"
+ },
+ {
+  "id": "24.8",
+  "name": "Long-Term Format Migration Planner",
+  "category": 24,
+  "category_name": "Deliverables, Publishing, Accessibility, and Archiving",
+  "description": "Identifies at-risk formats and validates migration while preserving content, structure, metadata, and citations.",
+  "command": "deliver.migration-plan",
+  "automation": "assistive"
+ },
+ {
+  "id": "24.9",
+  "name": "Versioned Publication Manager",
+  "category": 24,
+  "category_name": "Deliverables, Publishing, Accessibility, and Archiving",
+  "description": "Assigns versions, dates, change notes, supersession, corrections, withdrawal, and stable local identifiers.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "24.10",
+  "name": "Translation Publication Consistency Checker",
+  "category": 24,
+  "category_name": "Deliverables, Publishing, Accessibility, and Archiving",
+  "description": "Confirms all language editions reflect the same approved source version and declared adaptations.",
+  "command": "deliver.multilingual-consistency",
+  "automation": "deterministic"
+ },
+ {
+  "id": "24.11",
+  "name": "Reader Feedback and Correction Intake",
+  "category": 24,
+  "category_name": "Deliverables, Publishing, Accessibility, and Archiving",
+  "description": "Captures correction requests, evidence, affected versions, decisions, and propagated updates.",
+  "command": "collections.records",
+  "automation": "deterministic"
+ },
+ {
+  "id": "24.12",
+  "name": "Final Artifact Reopen Test",
+  "category": 24,
+  "category_name": "Deliverables, Publishing, Accessibility, and Archiving",
+  "description": "Reopens every delivered file on clean local tools and verifies content, layout, search, accessibility, and package structure. Emmre's Full Offline Research, Writing, and Translation Skill Catalog | 23",
+  "command": "deliver.reopen",
+  "automation": "deterministic"
+ }
+]

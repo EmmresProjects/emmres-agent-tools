@@ -1,0 +1,35 @@
+{
+  "title": "Offline Audio Suite batch manifest",
+  "type": "object",
+  "required": ["jobs"],
+  "properties": {
+    "jobs": {
+      "type": "array",
+      "maxItems": 10000,
+      "items": {
+        "type": "object",
+        "required": ["operation", "input", "output"],
+        "properties": {
+          "operation": {"enum": ["normalize", "gain", "trim", "convert"]},
+          "input": {"type": "string", "minLength": 1, "description": "Relative WAV path; must resolve within the manifest folder."},
+          "output": {"type": "string", "minLength": 1, "description": "Relative WAV path; must resolve within the manifest folder and differ from input."},
+          "params": {
+            "type": "object",
+            "properties": {
+              "target_dbfs": {"type": "number", "minimum": -24, "maximum": 0},
+              "gain_db": {"type": "number", "minimum": -60, "maximum": 24},
+              "start_seconds": {"type": "number", "minimum": 0},
+              "end_seconds": {"type": "number", "exclusiveMinimum": 0},
+              "sample_rate_hz": {"type": "integer", "minimum": 8000, "maximum": 384000},
+              "channels": {"type": "integer", "enum": [1, 2]},
+              "bit_depth": {"type": "integer", "enum": [16, 24, 32]}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

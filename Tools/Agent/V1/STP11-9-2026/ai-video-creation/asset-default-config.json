@@ -1,0 +1,94 @@
+{
+  "config_version": "1.0",
+  "umbrella": "ai-video-creation",
+  "resources": {
+    "catalog": "/asset-capability-catalog.json",
+    "brief_schema": "/asset-brief-schema.json",
+    "quality_gates": "/asset-quality-gates.json",
+    "style_presets": "/asset-style-presets.json",
+    "delivery_presets": "/asset-delivery-presets.json",
+    "approval_policy": "/asset-policy-approval.json",
+    "example_brief": "/asset-example-brief.json",
+    "example_captions": "/asset-example-captions.srt",
+    "catalog_fixture_html": "/asset-fixture-catalog.html"
+  },
+  "limits": {
+    "max_input_bytes": 2097152,
+    "max_output_bytes": 8388608,
+    "max_capabilities": 1000,
+    "max_stages": 64,
+    "max_shots": 240,
+    "max_caption_cues": 5000,
+    "max_prompt_variants": 12,
+    "max_route_results": 20,
+    "max_duration_seconds": 3600,
+    "max_text_chars": 200000
+  },
+  "caption_limits": {
+    "max_chars_per_second": 20,
+    "min_cue_seconds": 0.7,
+    "max_lines": 2,
+    "max_line_chars": 42
+  },
+  "timeouts": {
+    "stage_seconds": 30,
+    "job_seconds": 180,
+    "io_seconds": 5
+  },
+  "retries": {
+    "max_attempts": 3,
+    "backoff_seconds": 0.05,
+    "retry_on": ["IO_ERROR", "STAGE_ERROR", "INJECTED_STAGE_ERROR"]
+  },
+  "providers": {
+    "default": "local",
+    "enabled": ["local"],
+    "allow_external": false,
+    "shell": false,
+    "network": false,
+    "adapters": {
+      "local": {
+        "type": "stdlib",
+        "description": "Offline text/metadata operations implemented in this Skill Tool.",
+        "models": [],
+        "network": false,
+        "shell": false
+      }
+    },
+    "model_versions": {
+      "local": "1.0"
+    },
+    "note": "Add provider adapters through a --config override; never place credentials in briefs or config committed to a package."
+  },
+  "workflow": [
+    {"id": "intake", "name": "Intake and routing", "operations": ["plan"], "families": ["planning"], "default_operation": "plan", "depends_on": [], "gates": ["reproducibility", "handoff-readiness"]},
+    {"id": "creative", "name": "Creative briefing and prompt compilation", "operations": ["compile-prompt"], "families": ["prompting"], "default_operation": "compile-prompt", "depends_on": ["intake"], "gates": ["prompt-source-fidelity"]},
+    {"id": "preproduction", "name": "Shot list and storyboard", "operations": ["shotlist"], "families": ["timeline"], "default_operation": "shotlist", "depends_on": ["creative"], "gates": ["temporal-coherence", "technical-validity"]},
+    {"id": "generation", "name": "Generation and transformation envelope", "operations": ["contract"], "families": ["generation", "general"], "default_operation": "contract", "depends_on": ["preproduction"], "gates": ["prompt-source-fidelity", "temporal-coherence"]},
+    {"id": "accessibility", "name": "Captions and accessibility", "operations": ["captions"], "families": ["captioning"], "default_operation": "captions", "depends_on": ["generation"], "gates": ["accessibility"]},
+    {"id": "validation", "name": "Input and contract validation", "operations": ["validate", "gates"], "families": ["assurance"], "default_operation": "validate", "depends_on": ["accessibility"], "gates": ["technical-validity"]},
+    {"id": "assurance", "name": "Quality assurance gates", "operations": ["gates"], "families": ["assurance"], "default_operation": "gates", "depends_on": ["validation"], "gates": ["handoff-readiness"]},
+    {"id": "rights", "name": "Rights, consent, and approval", "operations": ["approval"], "families": ["safety"], "default_operation": "approval", "depends_on": ["assurance"], "gates": ["rights-consent"]},
+    {"id": "delivery", "name": "Delivery manifest", "operations": ["delivery"], "families": ["delivery"], "default_operation": "delivery", "depends_on": ["rights"], "gates": ["handoff-readiness"]}
+  ],
+  "quality_gate_ids": ["temporal-coherence", "prompt-source-fidelity", "technical-validity", "accessibility", "rights-consent", "reproducibility", "handoff-readiness"],
+  "safety_classes": ["standard", "high-impact", "restricted"],
+  "output": {
+    "format": "json",
+    "artifact_dir_name": "artifacts",
+    "checkpoint_name": "checkpoint.json",
+    "report_name": "run-report.json",
+    "cancel_file_name": "CANCEL",
+    "approvals_file": "approvals.json",
+    "partial_suffix": ".partial"
+  },
+  "cost": {
+    "currency": "USD",
+    "local_stage_cost": 0.0,
+    "provider_rate_hint": null
+  },
+  "testing": {
+    "allow_fault_injection": false,
+    "note": "Set true with --test-mode to permit --fail-stage recovery drills."
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "values": [
+    2,
+    4,
+    4,
+    4,
+    5,
+    5,
+    7,
+    9
+  ],
+  "prior": 0.01,
+  "sensitivity": 0.9,
+  "false_positive": 0.05,
+  "outcomes": [
+    {
+      "name": "launch now",
+      "probability": 0.6,
+      "value": 100
+    },
+    {
+      "name": "launch later",
+      "probability": 0.4,
+      "value": -20
+    }
+  ],
+  "expression": "a * b + c",
+  "ranges": {
+    "a": [
+      1,
+      3
+    ],
+    "b": [
+      2,
+      4
+    ],
+    "c": [
+      0,
+      1
+    ]
+  },
+  "items": [
+    {
+      "name": "design",
+      "optimistic": 2,
+      "likely": 3,
+      "pessimistic": 6,
+      "weight": 1,
+      "min": 0,
+      "max": 60
+    },
+    {
+      "name": "build",
+      "optimistic": 4,
+      "likely": 6,
+      "pessimistic": 10,
+      "weight": 3,
+      "min": 0,
+      "max": 80
+    }
+  ],
+  "distributions": {
+    "a": {
+      "type": "uniform",
+      "low": 1,
+      "high": 3
+    },
+    "b": {
+      "type": "triangular",
+      "low": 2,
+      "mode": 3,
+      "high": 4
+    },
+    "c": {
+      "type": "normal",
+      "mean": 0.5,
+      "sd": 0.1
+    }
+  },
+  "n": 5000,
+  "seed": 7,
+  "percentiles": [
+    5,
+    50,
+    95
+  ],
+  "total": 100,
+  "done": 30,
+  "start": "2026-10-01",
+  "gains": [
+    10,
+    6,
+    3,
+    0.2,
+    0.1
+  ],
+  "forecasts": [
+    {
+      "id": "f1",
+      "p": 0.8,
+      "outcome": 1,
+      "point": 10,
+      "low": 8,
+      "high": 12,
+      "actual": 9
+    },
+    {
+      "id": "f2",
+      "p": 0.3,
+      "outcome": 0,
+      "point": 20,
+      "low": 15,
+      "high": 18,
+      "actual": 19
+    },
+    {
+      "id": "f3",
+      "p": 0.6,
+      "outcome": 1,
+      "point": 5,
+      "low": 4,
+      "high": 7,
+      "actual": 6.5
+    }
+  ],
+  "expected": [
+    1,
+    2,
+    3
+  ],
+  "actual": [
+    1.1,
+    1.9,
+    3.2
+  ],
+  "groups": {
+    "arm_a": {
+      "enrolled": 100,
+      "completed": 90
+    },
+    "arm_b": {
+      "enrolled": 100,
+      "completed": 70
+    }
+  },
+  "pvalues": [
+    0.01,
+    0.04,
+    0.2
+  ],
+  "alpha": 0.05,
+  "estimates": {
+    "api": 10,
+    "ui": 20
+  },
+  "default_margin_pct": 20,
+  "margins": {
+    "api": 50
+  },
+  "capacity": 40,
+  "scenarios": [
+    {
+      "name": "base",
+      "probability": 0.7,
+      "outcomes": {
+        "A": 100,
+        "B": 80
+      }
+    },
+    {
+      "name": "downturn",
+      "probability": 0.3,
+      "outcomes": {
+        "A": 20,
+        "B": 60
+      }
+    }
+  ],
+  "shocks": {
+    "a": 1.1,
+    "b": 0.9
+  },
+  "objective": "a * b + c",
+  "sense": "max",
+  "constraints": [
+    "a + b <= 5"
+  ],
+  "tree": {
+    "type": "or",
+    "name": "outage",
+    "children": [
+      {
+        "type": "basic",
+        "name": "power",
+        "p": 0.01
+      },
+      {
+        "type": "and",
+        "name": "backup",
+        "children": [
+          {
+            "type": "basic",
+            "name": "generator",
+            "p": 0.05
+          },
+          {
+            "type": "basic",
+            "name": "ups",
+            "p": 0.1
+          }
+        ]
+      }
+    ]
+  },
+  "units": {
+    "a": "m",
+    "b": "m",
+    "c": "m^2"
+  },
+  "expression_a": "a * b + c",
+  "expression_b": "c + b * a",
+  "tolerance": 1e-09,
+  "base_cost": 1000,
+  "annual_growth_pct": 5,
+  "years": 3,
+  "hourly_rate": 50,
+  "maintenance_hours_per_year": 40,
+  "type": "means",
+  "power": 0.8,
+  "sd": 10,
+  "difference": 5,
+  "dropout_pct": 10,
+  "series": [
+    10,
+    12,
+    13,
+    15,
+    16,
+    18,
+    19,
+    21
+  ],
+  "search": {
+    "a": {
+      "min": 1,
+      "max": 3,
+      "steps": 5
+    },
+    "b": {
+      "min": 2,
+      "max": 4,
+      "steps": 5
+    },
+    "c": {
+      "min": 0,
+      "max": 1,
+      "steps": 2
+    }
+  },
+  "variables": {
+    "a": 2,
+    "b": 3,
+    "c": 1
+  },
+  "base": {
+    "a": 2,
+    "b": 3,
+    "c": 1
+  },
+  "categories": 3,
+  "points": 12,
+  "time_series": true,
+  "comparison": true
+}

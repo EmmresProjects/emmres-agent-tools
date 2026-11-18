@@ -1,0 +1,2889 @@
+{
+ "schema_version": "1.0",
+ "catalog": {
+  "title": "Console Agent Skill Catalog",
+  "subtitle": "Lawful console preservation, development, testing, and archival research",
+  "source_document": "Console_Agent_Skill_Catalog.pdf",
+  "category_count": 36,
+  "skill_count": 491,
+  "note": "Names, descriptions and category structure are transcribed from the source catalog. `implemented_by` marks the skills this Skill Tool actually executes; every other skill is reachable through `guided-workflow` routing and its own category context."
+ },
+ "routing_model": {
+  "workbench-automated": "executed directly by a tools-console-agent.py command",
+  "workbench-assisted": "the workbench produces or validates the artifact, but the observation needs external tools or hardware",
+  "guided-workflow": "the workbench supplies policy, plans, routing and reporting; execution needs external tools",
+  "external-tool": "requires a named third-party tool or SDK on a worker",
+  "hardware-dependent": "requires physical media, a reader, a physical console or a logic analyzer",
+  "hardware-or-emulator-dependent": "requires physical media/hardware, or a lawful emulator plus user-owned media",
+  "official-program": "requires an official partner program, licensed SDK or devkit"
+ },
+ "category_routing": {
+  "1": "workbench-automated",
+  "2": "hardware-or-emulator-dependent",
+  "3": "hardware-or-emulator-dependent",
+  "4": "hardware-or-emulator-dependent",
+  "5": "hardware-or-emulator-dependent",
+  "6": "hardware-or-emulator-dependent",
+  "7": "hardware-or-emulator-dependent",
+  "8": "hardware-or-emulator-dependent",
+  "9": "hardware-or-emulator-dependent",
+  "10": "official-program",
+  "11": "hardware-dependent",
+  "12": "hardware-or-emulator-dependent",
+  "13": "hardware-or-emulator-dependent",
+  "14": "hardware-or-emulator-dependent",
+  "15": "hardware-dependent",
+  "16": "external-tool",
+  "17": "workbench-assisted",
+  "18": "hardware-dependent",
+  "19": "hardware-dependent",
+  "20": "workbench-assisted",
+  "21": "external-tool",
+  "22": "external-tool",
+  "23": "external-tool",
+  "24": "external-tool",
+  "25": "external-tool",
+  "26": "hardware-dependent",
+  "27": "hardware-dependent",
+  "28": "external-tool",
+  "29": "official-program",
+  "30": "official-program",
+  "31": "official-program",
+  "32": "workbench-assisted",
+  "33": "workbench-assisted",
+  "34": "guided-workflow",
+  "35": "guided-workflow",
+  "36": "guided-workflow"
+ },
+ "capability_commands": {
+  "inventory": [
+   "Console Capability Inventory"
+  ],
+  "selftest": [
+   "Console Startup Self-Test Orchestrator",
+   "Capability Gap Recommender"
+  ],
+  "gate": [
+   "Lawful Ownership and Authorization Gate"
+  ],
+  "scan": [
+   "Restricted Material Boundary Enforcer"
+  ],
+  "redact": [
+   "Private SDK Data Redactor"
+  ],
+  "hash": [
+   "Hashing and Checksum Pipeline"
+  ],
+  "inspect": [
+   "Console Artifact Auto-Detector",
+   "Save File Format Analyst",
+   "Memory Card Image Inspector"
+  ],
+  "verify": [
+   "No-Intro DAT Verification Specialist",
+   "Redump Disc Verification Specialist",
+   "Duplicate and Revision Classifier",
+   "Repeated-Read Comparator",
+   "DAT Provenance Manager"
+  ],
+  "provenance": [
+   "Preservation Provenance Recorder"
+  ],
+  "plan": [
+   "Reversible Experiment Planner",
+   "Console Task Decomposer"
+  ],
+  "report": [
+   "Media Verification Report Generator",
+   "Compatibility Test Report Generator",
+   "Technical Handoff Builder",
+   "Artifact Minimization Policy",
+   "Rights and Redistribution Register"
+  ],
+  "retention": [
+   "Evidence Retention Controller"
+  ],
+  "route": [
+   "Official Program Router",
+   "Host and Hardware Requirement Router"
+  ],
+  "catalog": [
+   "Console Knowledge Retrieval Index"
+  ]
+ },
+ "categories": [
+  {
+   "index": 1,
+   "name": "Capability Discovery, Legal Guardrails, and Worker Routing",
+   "skill_count": 14,
+   "routing": "workbench-automated",
+   "skills": [
+    {
+     "name": "Console Capability Inventory",
+     "description": "Detects installed emulators, compilers, media tools, debuggers, FPGA suites, connected hardware, licenses, and worker requirements.",
+     "implemented_by": "inventory",
+     "implementation_scope": "probes local tools and device classes"
+    },
+    {
+     "name": "Console Startup Self-Test Orchestrator",
+     "description": "Runs version and smoke checks and returns explicit capability states with evidence and remediation.",
+     "implemented_by": "selftest",
+     "implementation_scope": "version and smoke checks with evidence files"
+    },
+    {
+     "name": "Lawful Ownership and Authorization Gate",
+     "description": "Requires operator authorization for media, firmware, keys, accounts, certificates, devices, SDKs, and development materials.",
+     "implemented_by": "gate authorize / gate verify",
+     "implementation_scope": "signed operator attestation per material"
+    },
+    {
+     "name": "Restricted Material Boundary Enforcer",
+     "description": "Blocks bundling or disclosure of copyrighted ROMs, BIOS files, firmware, encryption keys, leaked SDKs, signing keys, DRM bypasses, or account bypasses.",
+     "implemented_by": "scan",
+     "implementation_scope": "filename, extension, size and content rules"
+    },
+    {
+     "name": "Official Program Router",
+     "description": "Routes modern PlayStation, Xbox, and Nintendo work to approved partner programs, licensed SDKs, and authorized hardware.",
+     "implemented_by": "route --official",
+     "implementation_scope": "official program routing table"
+    },
+    {
+     "name": "Host and Hardware Requirement Router",
+     "description": "Selects Linux, Windows, macOS, GPU, FPGA, physical-console, testkit, or devkit workers from hard requirements.",
+     "implemented_by": "route --require",
+     "implementation_scope": "worker profile matching"
+    },
+    {
+     "name": "Preservation Provenance Recorder",
+     "description": "Records source ownership, dump method, hardware model, firmware version, timestamps, hashes, region, revision, and operator notes.",
+     "implemented_by": "provenance create / provenance append",
+     "implementation_scope": "schema-validated record plus hash-chained ledger"
+    },
+    {
+     "name": "Reversible Experiment Planner",
+     "description": "Creates read-only baselines, backups, snapshots, stop conditions, and rollback steps before any modification.",
+     "implemented_by": "plan",
+     "implementation_scope": "baseline, stop conditions, rollback steps"
+    },
+    {
+     "name": "Artifact Minimization Policy",
+     "description": "Keeps reports metadata-only unless redistribution rights for content are explicitly established.",
+     "implemented_by": "report --minimal",
+     "implementation_scope": "metadata-only report rendering"
+    },
+    {
+     "name": "Private SDK Data Redactor",
+     "description": "Prevents proprietary paths, identifiers, keys, symbols, and private documentation from leaking into reports.",
+     "implemented_by": "redact",
+     "implementation_scope": "policy-driven string redaction"
+    },
+    {
+     "name": "Clean-State Verification Manager",
+     "description": "Repeats builds and tests on fresh workers or snapshots to expose hidden dependencies.",
+     "implemented_by": null
+    },
+    {
+     "name": "Capability Gap Recommender",
+     "description": "Identifies the smallest required addition, such as one tool, drive, adapter, official account, or device worker.",
+     "implemented_by": "selftest --gaps",
+     "implementation_scope": "smallest addition per missing capability"
+    },
+    {
+     "name": "Console Task Decomposer",
+     "description": "Breaks goals into acquire, preserve, identify, inspect, reproduce, test, compare, package, and handoff stages.",
+     "implemented_by": "plan --decompose",
+     "implementation_scope": "nine-stage decomposition"
+    },
+    {
+     "name": "Evidence Retention Controller",
+     "description": "Applies retention, access, privacy, and deletion rules to dumps, logs, captures, photographs, and crash data.",
+     "implemented_by": "retention evaluate / retention apply / retention restore",
+     "implementation_scope": "policy classes, quarantine, approval-gated deletion"
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "name": "Early Dedicated, Discrete-Logic, and First-Generation Systems",
+   "skill_count": 12,
+   "routing": "hardware-or-emulator-dependent",
+   "skills": [
+    {
+     "name": "Magnavox Odyssey Preservation Specialist",
+     "description": "Documents cards, overlays, controllers, analog behavior, board revisions, and television timing for lawful preservation.",
+     "implemented_by": null
+    },
+    {
+     "name": "Pong Console Hardware Analyst",
+     "description": "Analyzes dedicated Atari and Pong-family logic, control circuits, video timing, and component substitutions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Coleco Telstar Family Archivist",
+     "description": "Catalogs models, cartridges, switches, controllers, schematics, and discrete or integrated game logic.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Color TV-Game Researcher",
+     "description": "Documents model differences, controllers, built-in game variants, boards, and video characteristics.",
+     "implemented_by": null
+    },
+    {
+     "name": "APF TV Fun Preservation Specialist",
+     "description": "Identifies revisions and records chipsets, controls, outputs, power, and game-selection behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Philips Tele-Spiel Archivist",
+     "description": "Preserves cartridge cards, controllers, documentation, board photographs, and regional variants.",
+     "implemented_by": null
+    },
+    {
+     "name": "Binatone TV Master Family Analyst",
+     "description": "Catalogs clone hardware, switchable games, controller circuits, video standards, and branding variants.",
+     "implemented_by": null
+    },
+    {
+     "name": "Analog Video Timing Investigator",
+     "description": "Measures sync, blanking, color, levels, and television compatibility with oscilloscopes and capture hardware.",
+     "implemented_by": null
+    },
+    {
+     "name": "Discrete Logic Reconstruction Engineer",
+     "description": "Reconstructs lawful hardware behavior from schematics, measurements, photographs, and truth tables.",
+     "implemented_by": null
+    },
+    {
+     "name": "Overlay and Physical Accessory Archivist",
+     "description": "Digitizes user-supplied overlays, cards, controllers, packaging geometry, and setup relationships as metadata and images.",
+     "implemented_by": null
+    },
+    {
+     "name": "Early Light-Gun Timing Analyst",
+     "description": "Studies photodiode, raster, trigger, display, and latency behavior without unsafe high- voltage work.",
+     "implemented_by": null
+    },
+    {
+     "name": "Historical Board Documentation Builder",
+     "description": "Produces component maps, net labels, revision notes, photographs, and KiCad reference projects.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "name": "Atari, Fairchild, Mattel, Coleco, Vectrex, and Second-Generation Consoles",
+   "skill_count": 12,
+   "routing": "hardware-or-emulator-dependent",
+   "skills": [
+    {
+     "name": "Atari 2600 Timing Specialist",
+     "description": "Analyzes 6507 code, TIA cycle timing, RIOT behavior, bankswitching, scanline kernels, and controller inputs.",
+     "implemented_by": null
+    },
+    {
+     "name": "Stella Test and Debug Operator",
+     "description": "Runs lawful Atari 2600 images, debugger scripts, traces, frame captures, and cartridge profile tests.",
+     "implemented_by": null
+    },
+    {
+     "name": "Fairchild Channel F Analyst",
+     "description": "Documents F8 CPU behavior, cartridge formats, controllers, video, and system revisions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Bally Astrocade Specialist",
+     "description": "Analyzes Z80 code, custom video, keypad controls, cartridges, and expansion behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Odyssey 2 and Videopac Specialist",
+     "description": "Covers Intel 8048 behavior, keyboard overlays, cartridges, regional video, and title revisions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Intellivision and CP1610 Specialist",
+     "description": "Analyzes CP1610 code, STIC graphics, EXEC dependencies, ECS, keypad overlays, and controllers.",
+     "implemented_by": null
+    },
+    {
+     "name": "ColecoVision Compatibility Specialist",
+     "description": "Covers Z80, TMS9918A, SN76489, BIOS dependencies, expansion modules, and controllers.",
+     "implemented_by": null
+    },
+    {
+     "name": "Atari 5200 and POKEY Specialist",
+     "description": "Analyzes ANTIC, GTIA, POKEY, analog controls, cartridges, BIOS references, and platform variations.",
+     "implemented_by": null
+    },
+    {
+     "name": "Vectrex Vector Display Specialist",
+     "description": "Studies 6809 code, vector timing, analog display behavior, overlays, controllers, and bios references.",
+     "implemented_by": null
+    },
+    {
+     "name": "Arcadia 2001 Family Classifier",
+     "description": "Identifies hardware-compatible variants, cartridge pinouts, regions, branding, and software relationships.",
+     "implemented_by": null
+    },
+    {
+     "name": "RCA Studio II Specialist",
+     "description": "Documents RCA 1802 code, keypad input, monochrome graphics, cartridges, and system variants.",
+     "implemented_by": null
+    },
+    {
+     "name": "Second-Generation Cartridge Audit",
+     "description": "Verifies headers, mapper or board types, repeated dumps, checksums, region, and revision against trusted DATs.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "name": "Nintendo 8-Bit, Famicom Disk System, and Third-Generation Platforms",
+   "skill_count": 12,
+   "routing": "hardware-or-emulator-dependent",
+   "skills": [
+    {
+     "name": "NES and Famicom Mapper Analyst",
+     "description": "Identifies boards, mappers, mirroring, IRQ behavior, PRG and CHR memory, RAM, and enhancement hardware.",
+     "implemented_by": null
+    },
+    {
+     "name": "NES CPU and PPU Timing Specialist",
+     "description": "Tests 2A03 or 2A07 instruction, DMA, sprite, palette, rendering, interrupt, and region timing.",
+     "implemented_by": null
+    },
+    {
+     "name": "Mesen Accuracy Test Operator",
+     "description": "Runs debugger, event viewer, traces, test ROMs, memory tools, and deterministic captures.",
+     "implemented_by": null
+    },
+    {
+     "name": "FCEUX Research Harness",
+     "description": "Uses debugging, Lua automation, movies, traces, memory tools, and comparison captures for lawful images.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nestopia UE and puNES Cross-Validator",
+     "description": "Compares behavior across independent NES implementations and records discrepancies.",
+     "implemented_by": null
+    },
+    {
+     "name": "Famicom Disk System Media Verifier",
+     "description": "Checks sides, blocks, file tables, headers, revisions, writable state, and user-supplied BIOS references.",
+     "implemented_by": null
+    },
+    {
+     "name": "FDS Disk Conversion Specialist",
+     "description": "Converts among supported representations without inventing missing data and records uncertainty.",
+     "implemented_by": null
+    },
+    {
+     "name": "Sega SG-1000 Specialist",
+     "description": "Analyzes Z80 code, TMS9918 graphics, SN76489 audio, cartridges, cards, and regional variants.",
+     "implemented_by": null
+    },
+    {
+     "name": "Master System and Mark III Specialist",
+     "description": "Covers mappers, VDP modes, FM audio, light phaser, cards, regions, and BIOS dependencies.",
+     "implemented_by": null
+    },
+    {
+     "name": "Atari 7800 MARIA Specialist",
+     "description": "Analyzes 6502 timing, MARIA display lists, bankswitching, POKEY additions, and cartridge signatures.",
+     "implemented_by": null
+    },
+    {
+     "name": "GX4000 and CPC Plus Specialist",
+     "description": "Covers Z80 code, ASIC features, cartridges, palettes, sprites, DMA, and shared CPC heritage.",
+     "implemented_by": null
+    },
+    {
+     "name": "Third-Generation Conformance Suite",
+     "description": "Coordinates public CPU, PPU, mapper, controller, audio, and regional timing tests.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "name": "16-Bit Nintendo, Sega, NEC, SNK, CD-i, and Multimedia Systems",
+   "skill_count": 15,
+   "routing": "hardware-or-emulator-dependent",
+   "skills": [
+    {
+     "name": "SNES and Super Famicom Architecture Specialist",
+     "description": "Covers 65C816, S-PPU, SPC700, DMA, timing, regions, cartridges, and enhancement chips.",
+     "implemented_by": null
+    },
+    {
+     "name": "SNES Enhancement Chip Analyst",
+     "description": "Identifies Super FX, SA-1, DSP, Cx4, S-DD1, SPC7110, RTC, and board-specific behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "bsnes Accuracy Harness",
+     "description": "Runs accuracy profiles, traces, manifests, tests, captures, and regression comparisons.",
+     "implemented_by": null
+    },
+    {
+     "name": "Snes9x Compatibility Harness",
+     "description": "Tests performance-oriented SNES behavior, controllers, filters, saves, and cross-version regressions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Genesis and Mega Drive Specialist",
+     "description": "Analyzes 68000 and Z80 interaction, VDP timing, YM2612, PSG, regions, mappers, and peripherals.",
+     "implemented_by": null
+    },
+    {
+     "name": "BlastEm Debug Operator",
+     "description": "Uses debugger, traces, timing controls, captures, and hardware-oriented comparisons.",
+     "implemented_by": null
+    },
+    {
+     "name": "Sega CD Multi-CPU Specialist",
+     "description": "Covers sub-CPU, Word RAM, CD controller, PCM, BIOS references, disc layouts, and region behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Sega 32X Specialist",
+     "description": "Analyzes dual SH-2 behavior, frame buffers, synchronization, cartridge pass-through, and combined audio-video paths.",
+     "implemented_by": null
+    },
+    {
+     "name": "PC Engine and TurboGrafx Specialist",
+     "description": "Covers HuC6280, VDC, PSG, mappers, cards, regions, and system-card dependencies.",
+     "implemented_by": null
+    },
+    {
+     "name": "PC Engine CD and SuperGrafx Specialist",
+     "description": "Analyzes CD layouts, BIOS references, Arcade Card, SuperGrafx VDCs, and compatibility.",
+     "implemented_by": null
+    },
+    {
+     "name": "Neo Geo AES and MVS Specialist",
+     "description": "Covers 68000, Z80, sprites, fixed layer, sound, boards, regions, slots, and cartridge sets.",
+     "implemented_by": null
+    },
+    {
+     "name": "Neo Geo CD Specialist",
+     "description": "Analyzes disc layout, loading, regional BIOS references, saves, and CD-specific assets.",
+     "implemented_by": null
+    },
+    {
+     "name": "Philips CD-i Specialist",
+     "description": "Documents CD-RTOS concepts, CD-i media, Digital Video Cartridge dependencies, controllers, and models.",
+     "implemented_by": null
+    },
+    {
+     "name": "Amiga CDTV and CD32 Specialist",
+     "description": "Uses lawful Amiga tooling for Kickstart references, CD filesystems, Akiko, controllers, and multimedia titles.",
+     "implemented_by": null
+    },
+    {
+     "name": "LaserActive PAC and Media Specialist",
+     "description": "Maps player, PAC module, LaserDisc, Mega LD, LD-ROM2, control, and capture requirements.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "name": "PlayStation, Nintendo 64, Saturn, Jaguar, 3DO, and Fifth Generation",
+   "skill_count": 15,
+   "routing": "hardware-or-emulator-dependent",
+   "skills": [
+    {
+     "name": "PS-X EXE Inspector",
+     "description": "Reports architecture, entry point, sections, load addresses, symbols, imports, strings, and SDK indicators.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation Disc Layout Analyst",
+     "description": "Validates data and audio tracks, pregaps, subchannels, serials, regions, revisions, and raw- sector quality.",
+     "implemented_by": null
+    },
+    {
+     "name": "DuckStation Compatibility Harness",
+     "description": "Runs lawful images with renderer, controller, memory card, timing, and regression matrices.",
+     "implemented_by": null
+    },
+    {
+     "name": "PCSX-Redux Debug Harness",
+     "description": "Uses GDB integration, traces, symbols, scripting, memory, GPU, and test executables for authorized development.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo 64 ROM Format Specialist",
+     "description": "Normalizes byte order, checks headers, CIC references, regions, revisions, save type, and hashes.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo 64 CPU and RCP Analyst",
+     "description": "Covers MIPS, RSP microcode, RDP, memory, interrupts, timing, accessories, and controller packs.",
+     "implemented_by": null
+    },
+    {
+     "name": "Mupen64Plus and simple64 Test Operator",
+     "description": "Compares plugins or integrated paths, logs, renderers, saves, and title behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Sega Saturn Multi-Processor Specialist",
+     "description": "Analyzes dual SH-2, SCU, VDP1, VDP2, SCSP, CD block, synchronization, and regions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Mednafen Saturn and Kronos Cross-Validator",
+     "description": "Runs independent compatibility and capture tests and records implementation-specific defects.",
+     "implemented_by": null
+    },
+    {
+     "name": "Atari Jaguar Specialist",
+     "description": "Covers 68000, Tom, Jerry, GPU, DSP, blitter, object processor, cartridges, and timing.",
+     "implemented_by": null
+    },
+    {
+     "name": "Jaguar CD Media Specialist",
+     "description": "Validates sessions, tracks, audio, boot data, drive behavior, and legally supplied dependencies.",
+     "implemented_by": null
+    },
+    {
+     "name": "3DO Architecture Specialist",
+     "description": "Analyzes ARM, Opera chipset, disc formats, multimedia streams, controllers, and regional variants.",
+     "implemented_by": null
+    },
+    {
+     "name": "PC-FX and FM Towns Marty Specialist",
+     "description": "Documents architecture, optical media, BIOS references, audio-video hardware, and software formats.",
+     "implemented_by": null
+    },
+    {
+     "name": "Pippin and Casio Loopy Archivist",
+     "description": "Catalogs media, hardware revisions, peripherals, printing, system software references, and preservation status.",
+     "implemented_by": null
+    },
+    {
+     "name": "Fifth-Generation Render Comparison",
+     "description": "Compares software and hardware renderers for geometry, blending, dithering, depth, texture, and timing defects.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "name": "Dreamcast, PlayStation 2, GameCube, Xbox, and Sixth Generation",
+   "skill_count": 14,
+   "routing": "hardware-or-emulator-dependent",
+   "skills": [
+    {
+     "name": "Dreamcast SH-4 and PowerVR Specialist",
+     "description": "Analyzes SH-4 code, PVR graphics, AICA audio, GD-ROM, Maple devices, and Windows CE titles.",
+     "implemented_by": null
+    },
+    {
+     "name": "GDI, CDI, and GD-ROM Image Analyst",
+     "description": "Validates track maps, densities, sessions, hashes, conversions, and preservation limits.",
+     "implemented_by": null
+    },
+    {
+     "name": "Flycast Dreamcast and Naomi Harness",
+     "description": "Runs lawful software with renderer, controller, network-isolated, performance, and regression tests.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation 2 ELF Inspector",
+     "description": "Reports MIPS ELF layout, entry points, sections, symbols, libraries, modules, and build indicators.",
+     "implemented_by": null
+    },
+    {
+     "name": "PS2 EE and IOP Architecture Specialist",
+     "description": "Covers Emotion Engine, vector units, IOP, GS, SPU2, DMA, modules, timing, and peripherals.",
+     "implemented_by": null
+    },
+    {
+     "name": "PCSX2 Compatibility Harness",
+     "description": "Automates boot, renderer, patches supplied by user, saves, controllers, performance, and regression evidence.",
+     "implemented_by": null
+    },
+    {
+     "name": "GameCube DOL and REL Inspector",
+     "description": "Parses authorized executables, sections, relocations, symbols, imports, and SDK indicators.",
+     "implemented_by": null
+    },
+    {
+     "name": "GameCube Disc Filesystem Analyst",
+     "description": "Validates partitions, filesystems, apploader, executables, banners, regions, and hashes without redistributing keys.",
+     "implemented_by": null
+    },
+    {
+     "name": "Dolphin GameCube Test Harness",
+     "description": "Automates renderer, DSP, controller, memory card, timing, netplay-safe, and regression tests.",
+     "implemented_by": null
+    },
+    {
+     "name": "Original Xbox XBE Inspector",
+     "description": "Reports headers, sections, imports, libraries, certificates as metadata, title IDs, and build indicators.",
+     "implemented_by": null
+    },
+    {
+     "name": "FATX Filesystem Analyst",
+     "description": "Inspects lawful Xbox disks or images, file names, partitions, saves, timestamps, and integrity.",
+     "implemented_by": null
+    },
+    {
+     "name": "xemu and Cxbx-Reloaded Cross-Validator",
+     "description": "Compares hardware-emulation and high-level approaches across lawful titles and homebrew.",
+     "implemented_by": null
+    },
+    {
+     "name": "iQue Player Preservation Specialist",
+     "description": "Documents hardware, software formats, region, downloadable-title history, and lawful research constraints.",
+     "implemented_by": null
+    },
+    {
+     "name": "Sixth-Generation Peripheral Matrix",
+     "description": "Tests microphones, cameras, dance pads, keyboards, broadband adapters, memory units, and specialty controllers.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 8,
+   "name": "Xbox 360, PlayStation 3, Wii, and Seventh Generation",
+   "skill_count": 13,
+   "routing": "hardware-or-emulator-dependent",
+   "skills": [
+    {
+     "name": "Xbox 360 XEX Metadata Inspector",
+     "description": "Parses authorized metadata, architecture, sections, imports, module indicators, and package relationships without private keys.",
+     "implemented_by": null
+    },
+    {
+     "name": "STFS Package Metadata Analyst",
+     "description": "Inspects lawful container metadata, file tables, title identifiers, content types, and integrity fields.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xenia Compatibility Harness",
+     "description": "Runs lawful software with D3D12 or Vulkan paths, logs, patches from approved sources, captures, and performance tests.",
+     "implemented_by": null
+    },
+    {
+     "name": "PS3 SELF and SPRX Metadata Inspector",
+     "description": "Uses authorized parsers or official tools to report container metadata without exposing decryption materials.",
+     "implemented_by": null
+    },
+    {
+     "name": "PS3 PKG Metadata Analyst",
+     "description": "Inspects authorized package metadata, content identifiers, versions, categories, and dependencies through lawful tools.",
+     "implemented_by": null
+    },
+    {
+     "name": "Cell PPU and SPU Architecture Specialist",
+     "description": "Analyzes PowerPC PPU code, SPU workloads, synchronization, DMA, endian behavior, and performance.",
+     "implemented_by": null
+    },
+    {
+     "name": "RPCS3 Compatibility Harness",
+     "description": "Runs lawful software with firmware supplied by the user, renderer matrices, logs, caches, saves, and regression evidence.",
+     "implemented_by": null
+    },
+    {
+     "name": "Wii DOL and REL Inspector",
+     "description": "Reports PowerPC executable and module structures, sections, relocations, imports, and build indicators.",
+     "implemented_by": null
+    },
+    {
+     "name": "Wii Disc and Partition Analyst",
+     "description": "Validates optical structures, partitions, filesystems, channels, regions, and hashes without redistributing keys.",
+     "implemented_by": null
+    },
+    {
+     "name": "Dolphin Wii Feature Harness",
+     "description": "Tests motion, pointer, extensions, balance board, NAND supplied by user, network-safe behavior, and emulation settings.",
+     "implemented_by": null
+    },
+    {
+     "name": "Wii Mini Variant Specialist",
+     "description": "Documents hardware omissions, firmware relationships, disc behavior, controllers, and regional models.",
+     "implemented_by": null
+    },
+    {
+     "name": "Seventh-Generation Optical Preservation Planner",
+     "description": "Selects lawful DVD or Blu-ray workflows, compatible drives, logs, error strategies, and metadata capture.",
+     "implemented_by": null
+    },
+    {
+     "name": "Suspend, Sign-In, and Save Test Planner",
+     "description": "Defines platform-appropriate test cases for profiles, storage, disconnects, and recovery.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 9,
+   "name": "Wii U, PlayStation 4, Xbox One, Switch, and Eighth Generation",
+   "skill_count": 13,
+   "routing": "hardware-or-emulator-dependent",
+   "skills": [
+    {
+     "name": "Wii U Architecture and Package Specialist",
+     "description": "Covers PowerPC CPU, AMD graphics, GamePad, optical media, package metadata, storage, and authorized dependencies.",
+     "implemented_by": null
+    },
+    {
+     "name": "Cemu Compatibility Harness",
+     "description": "Runs lawful Wii U software with user-supplied dependencies, graphics packs, controllers, logs, and regression captures.",
+     "implemented_by": null
+    },
+    {
+     "name": "PS4 Official Development Router",
+     "description": "Routes builds, packages, symbols, crash data, trophies, services, and certification to PlayStation Partners workers.",
+     "implemented_by": null
+    },
+    {
+     "name": "PS4 Research Environment Boundary",
+     "description": "Allows lawful metadata and open research while refusing proprietary SDK, key, firmware, and bypass workflows.",
+     "implemented_by": null
+    },
+    {
+     "name": "shadPS4 Research Harness",
+     "description": "Tests legally obtained software and firmware in lawful environments with clear compatibility and legal limitations.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox One GDK Worker Router",
+     "description": "Routes authorized builds, deployment, PIX captures, packages, sandboxes, services, and certification to Microsoft GDK workers.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox One Package Lifecycle Specialist",
+     "description": "Documents official install, update, DLC, storage, profile, suspend, entitlement, and uninstall behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Switch Official Development Router",
+     "description": "Routes builds, packages, controllers, saves, performance, and certification to Nintendo Developer Portal workers.",
+     "implemented_by": null
+    },
+    {
+     "name": "Switch Research Environment Boundary",
+     "description": "Permits lawful homebrew and preservation testing while refusing keys, firmware redistribution, DRM bypass, or account bypass.",
+     "implemented_by": null
+    },
+    {
+     "name": "Android Microconsole Build Specialist",
+     "description": "Builds and tests Ouya, Shield TV, Fire TV, and related Android targets with SDK, NDK, controllers, and TV UX.",
+     "implemented_by": null
+    },
+    {
+     "name": "Steam Machine and SteamOS Compatibility Specialist",
+     "description": "Tests Linux graphics, controllers, runtime, Proton, packaging, and couch-oriented behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Microconsole Ecosystem Archivist",
+     "description": "Documents GameStick and other services, hardware, storefront dependencies, media, and server-retirement impacts.",
+     "implemented_by": null
+    },
+    {
+     "name": "Eighth-Generation Network-Loss Test Designer",
+     "description": "Tests authorized applications under sign-out, offline, suspended, bandwidth-limited, and service-interruption conditions.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 10,
+   "name": "PS5, Xbox Series, Switch 2, and Current Official Development",
+   "skill_count": 13,
+   "routing": "official-program",
+   "skills": [
+    {
+     "name": "PS5 and PS5 Pro Partner Worker",
+     "description": "Uses official PlayStation SDKs, devkits or testkits, packages, symbols, performance tools, and certification access.",
+     "implemented_by": null
+    },
+    {
+     "name": "PS5 Package and Entitlement Test Specialist",
+     "description": "Tests authorized install, patch, DLC, license, profile, storage, restore, and offline behaviors.",
+     "implemented_by": null
+    },
+    {
+     "name": "PS5 DualSense Feature Tester",
+     "description": "Validates adaptive triggers, haptics, speaker, microphone, touchpad, light, remapping, and disconnect recovery.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox Series X and S GDK Worker",
+     "description": "Uses official GDK, approved hardware, PIX, sandboxes, package tools, services, and certification suites.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox Smart Delivery Planner",
+     "description": "Designs authorized architecture, content, packaging, update, save, and entitlement behavior across Xbox generations.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox Quick Resume Test Specialist",
+     "description": "Tests state restoration, network recovery, audio, controller, storage, and title lifecycle behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Switch 2 Official Worker Router",
+     "description": "Routes all proprietary SDK, package, device, service, and certification work to approved Nintendo environments.",
+     "implemented_by": null
+    },
+    {
+     "name": "Switch Family Cross-Generation Test Planner",
+     "description": "Tests approved builds across Switch, Lite, OLED, and Switch 2 hardware where supported.",
+     "implemented_by": null
+    },
+    {
+     "name": "Modern Secure-Boot Boundary Enforcer",
+     "description": "Prevents attempts to replace official signing, secure boot, platform services, certification, or proprietary tools.",
+     "implemented_by": null
+    },
+    {
+     "name": "Modern Console Performance Budget Analyst",
+     "description": "Tracks CPU, GPU, memory, storage, frame time, shader compilation, loading, and thermal budgets using official tools.",
+     "implemented_by": null
+    },
+    {
+     "name": "Modern Console Crash and Symbol Pipeline",
+     "description": "Collects authorized crash artifacts, resolves symbols in private workers, redacts proprietary details, and creates actionable reports.",
+     "implemented_by": null
+    },
+    {
+     "name": "Modern Certification Evidence Manager",
+     "description": "Links requirements, tests, builds, devices, defects, retests, waivers, and submission evidence.",
+     "implemented_by": null
+    },
+    {
+     "name": "Modern Console Accessibility Verifier",
+     "description": "Checks remapping, captions, contrast, assist modes, narration, motion, haptics, and platform accessibility requirements.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 11,
+   "name": "Handheld Electronic Games and Dedicated Handhelds",
+   "skill_count": 10,
+   "routing": "hardware-dependent",
+   "skills": [
+    {
+     "name": "LED Handheld Preservation Specialist",
+     "description": "Documents displays, input matrices, sound, timing, batteries, masks, and board revisions for early electronic games.",
+     "implemented_by": null
+    },
+    {
+     "name": "LCD Segment Mapping Analyst",
+     "description": "Maps segment commons, drive waveforms, artwork, animation states, and input behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Game and Watch Preservation Specialist",
+     "description": "Covers Sharp microcontrollers, LCD artwork, sound, controls, clocks, variants, and MAME- style preservation.",
+     "implemented_by": null
+    },
+    {
+     "name": "Microvision Cartridge and Display Analyst",
+     "description": "Documents processor variants, cartridge electronics, LCD behavior, controls, and physical deterioration.",
+     "implemented_by": null
+    },
+    {
+     "name": "Epoch Game Pocket Computer Specialist",
+     "description": "Analyzes cartridges, LCD, CPU, controls, system ROM references, and hardware variants.",
+     "implemented_by": null
+    },
+    {
+     "name": "Dedicated Handheld Photography Workflow",
+     "description": "Captures user-supplied boards, screens, labels, packaging, serials, and accessories with color and scale references.",
+     "implemented_by": null
+    },
+    {
+     "name": "Handheld Battery Safety Planner",
+     "description": "Identifies chemistry, leakage, swelling, corrosion, polarity, and safe storage or replacement procedures.",
+     "implemented_by": null
+    },
+    {
+     "name": "Segment Display Reconstruction Engineer",
+     "description": "Builds lawful visual representations from photographs, measurements, and electrical captures.",
+     "implemented_by": null
+    },
+    {
+     "name": "Handheld Sound Capture Specialist",
+     "description": "Records piezo output, timing, envelopes, noise, and ambient calibration for comparison.",
+     "implemented_by": null
+    },
+    {
+     "name": "MAME Handheld Driver Test Operator",
+     "description": "Runs artwork, inputs, timing, sounds, and state tests for supported electronic games.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 12,
+   "name": "Game Boy, Game Gear, Lynx, Neo Geo Pocket, WonderSwan, and Classic Handhelds",
+   "skill_count": 13,
+   "routing": "hardware-or-emulator-dependent",
+   "skills": [
+    {
+     "name": "Game Boy CPU and PPU Specialist",
+     "description": "Analyzes LR35902 behavior, LCD timing, DMA, interrupts, audio, cartridges, and hardware revisions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Game Boy Cartridge and MBC Analyst",
+     "description": "Identifies MBCs, RTCs, sensors, rumble, cameras, flash, SRAM, battery, and save behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "SameBoy Accuracy Harness",
+     "description": "Runs debugger, traces, tests, model modes, boot ROM references, captures, and regression comparisons.",
+     "implemented_by": null
+    },
+    {
+     "name": "mGBA Cross-Generation Harness",
+     "description": "Tests Game Boy, Color, and Advance software, link, sensors, saves, video, audio, and debugging.",
+     "implemented_by": null
+    },
+    {
+     "name": "BGB Debug Harness",
+     "description": "Uses Windows debugging, traces, breakpoints, symbols, and hardware-oriented comparisons for lawful images.",
+     "implemented_by": null
+    },
+    {
+     "name": "Game Boy Advance Architecture Specialist",
+     "description": "Covers ARM7TDMI, Thumb, DMA, timers, PPU, audio, cartridges, save types, and peripherals.",
+     "implemented_by": null
+    },
+    {
+     "name": "Game Gear and Master System Handheld Specialist",
+     "description": "Analyzes VDP, Z80, PSG, stereo, screen differences, adapters, and captures.",
+     "implemented_by": null
+    },
+    {
+     "name": "Atari Lynx Mikey and Suzy Specialist",
+     "description": "Covers 65SC02, custom chips, sprites, math, rotation, cartridges, ComLynx, and display behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "TurboExpress and PC Engine GT Specialist",
+     "description": "Documents shared PC Engine architecture, display, TV tuner variants, controls, and power issues.",
+     "implemented_by": null
+    },
+    {
+     "name": "Neo Geo Pocket Specialist",
+     "description": "Analyzes TLCS-900H, Z80 audio, graphics, link, cartridges, regions, and save behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "WonderSwan Family Specialist",
+     "description": "Covers V30MZ, monochrome and color graphics, orientation, audio, cartridges, clock, and link features.",
+     "implemented_by": null
+    },
+    {
+     "name": "Pokemon Mini Specialist",
+     "description": "Analyzes S1C88 CPU, LCD, sound, rumble, infrared, cartridges, and homebrew tooling.",
+     "implemented_by": null
+    },
+    {
+     "name": "Classic Handheld Link-Cable Tester",
+     "description": "Validates timing, topology, synchronization, transfers, multiplayer, and cable or adapter variations.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 13,
+   "name": "N-Gage, DS, DSi, PSP, 3DS, Vita, and Modern Handheld Consoles",
+   "skill_count": 13,
+   "routing": "hardware-or-emulator-dependent",
+   "skills": [
+    {
+     "name": "N-Gage Platform Archivist",
+     "description": "Documents Symbian software, MMC media, models, services, controls, audio, and compatibility constraints.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo DS Architecture Specialist",
+     "description": "Covers ARM9 and ARM7, 2D and 3D graphics, dual screens, touch, audio, cartridges, and wireless.",
+     "implemented_by": null
+    },
+    {
+     "name": "melonDS Compatibility Harness",
+     "description": "Tests lawful DS and DSi software with user-supplied dependencies, network-safe settings, captures, and regression evidence.",
+     "implemented_by": null
+    },
+    {
+     "name": "DeSmuME and NooDS Cross-Validator",
+     "description": "Compares DS behavior, debugging, renderers, timing, saves, and homebrew compatibility.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo DSi Specialist",
+     "description": "Documents DSi hardware, cameras, NAND supplied by user, SD storage, titles, regions, and lawful research boundaries.",
+     "implemented_by": null
+    },
+    {
+     "name": "PSP Architecture and PBP Specialist",
+     "description": "Covers MIPS, Media Engine, GU, audio, UMD, PBP or PRX metadata, saves, and models.",
+     "implemented_by": null
+    },
+    {
+     "name": "PPSSPP Compatibility Harness",
+     "description": "Automates renderer, control, networking-isolated, save, performance, and regression tests for lawful software.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo 3DS Architecture Specialist",
+     "description": "Covers ARM11, ARM9 security boundary, PICA200, dual screens, stereoscopy, cameras, saves, and models.",
+     "implemented_by": null
+    },
+    {
+     "name": "Lawful 3DS Research Emulator Harness",
+     "description": "Uses an actively maintained lawful emulator with user-supplied dependencies and no key distribution.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation Vita and TV Specialist",
+     "description": "Covers ARM architecture, GPU, modules, packages, controls, touch, cameras, memory, and official development routes.",
+     "implemented_by": null
+    },
+    {
+     "name": "Vita3K Compatibility Harness",
+     "description": "Tests lawful software with user-supplied firmware or modules as legally permitted, logs, renderers, and saves.",
+     "implemented_by": null
+    },
+    {
+     "name": "Handheld Sleep and Resume Test Specialist",
+     "description": "Tests lid, power button, battery, controller, audio, storage, network, and save recovery.",
+     "implemented_by": null
+    },
+    {
+     "name": "Handheld Battery and Thermal Benchmark",
+     "description": "Measures power, frame pacing, clocks, fan behavior, surface temperature, and throttling under controlled workloads.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 14,
+   "name": "Switch, Switch 2, Steam Deck, Windows Handhelds, Playdate, Evercade, and FPGA Handhelds",
+   "skill_count": 12,
+   "routing": "hardware-or-emulator-dependent",
+   "skills": [
+    {
+     "name": "Switch Family Controller Matrix",
+     "description": "Tests Joy-Con, Pro Controller, handheld mode, tabletop mode, motion, IR, rumble, remapping, and disconnect behavior in approved contexts.",
+     "implemented_by": null
+    },
+    {
+     "name": "Switch Save and Suspend Test Planner",
+     "description": "Defines official tests for saves, user switching, storage, sleep, resume, updates, and network recovery.",
+     "implemented_by": null
+    },
+    {
+     "name": "Switch 2 Official Compatibility Planner",
+     "description": "Plans authorized compatibility, performance, controller, display, storage, and certification tests across approved devices.",
+     "implemented_by": null
+    },
+    {
+     "name": "Steam Deck Verification Specialist",
+     "description": "Runs Steam Deck compatibility checks for input, display, performance, suspend, Proton, launcher, and text readability.",
+     "implemented_by": null
+    },
+    {
+     "name": "SteamOS Runtime Specialist",
+     "description": "Tests Flatpak, container runtime, Gamescope, Vulkan, Mesa, Proton, controller, and update interactions.",
+     "implemented_by": null
+    },
+    {
+     "name": "ROG Ally Compatibility Specialist",
+     "description": "Tests Windows handheld controls, power modes, DirectX or Vulkan, display, suspend, overlays, and vendor software.",
+     "implemented_by": null
+    },
+    {
+     "name": "Lenovo Legion Go Compatibility Specialist",
+     "description": "Tests detachable controllers, display modes, power profiles, Windows input, suspend, and UI scaling.",
+     "implemented_by": null
+    },
+    {
+     "name": "Windows Handheld Common Test Matrix",
+     "description": "Covers controller APIs, keyboard fallback, touch, gyro, variable refresh, power, sleep, updates, and launcher UX.",
+     "implemented_by": null
+    },
+    {
+     "name": "Playdate SDK Build Specialist",
+     "description": "Builds and tests authorized Playdate projects with official SDK, simulator, crank, audio, storage, and packaging.",
+     "implemented_by": null
+    },
+    {
+     "name": "Evercade Cartridge and Library Archivist",
+     "description": "Documents hardware models, cartridges, collections, updates, controls, and lawful metadata.",
+     "implemented_by": null
+    },
+    {
+     "name": "Analogue Pocket OpenFPGA Developer",
+     "description": "Builds and tests licensed OpenFPGA cores, assets, timing, controls, video, and hardware- specific packaging.",
+     "implemented_by": null
+    },
+    {
+     "name": "Cloud Gaming Client Tester",
+     "description": "Measures decode, input latency, network resilience, controller mapping, HDR, audio, and session recovery on streaming devices.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 15,
+   "name": "Arcade Boards, JAMMA, LaserDisc, Rhythm, and Special Cabinets",
+   "skill_count": 15,
+   "routing": "hardware-dependent",
+   "skills": [
+    {
+     "name": "MAME Arcade Driver Analyst",
+     "description": "Uses source, device trees, ROM definitions, inputs, video, audio, timing, and debugger tools for preservation work.",
+     "implemented_by": null
+    },
+    {
+     "name": "FinalBurn Neo Compatibility Specialist",
+     "description": "Tests supported arcade and console sets with documented core version, DAT, inputs, and captures.",
+     "implemented_by": null
+    },
+    {
+     "name": "JAMMA Harness and Signal Specialist",
+     "description": "Documents pinouts, voltages, video, audio, controls, grounds, adapters, and safe bench testing.",
+     "implemented_by": null
+    },
+    {
+     "name": "Capcom CPS Platform Specialist",
+     "description": "Covers CPS-1, CPS-2, CPS-3 CPUs, graphics, audio, boards, regions, revisions, and lawful security research boundaries.",
+     "implemented_by": null
+    },
+    {
+     "name": "Neo Geo MVS Platform Specialist",
+     "description": "Documents slot boards, BIOS references, cartridges, controls, memory cards, regions, and cabinet behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Sega Model Hardware Specialist",
+     "description": "Covers Model 1, 2, and 3 architecture, geometry, textures, audio, I/O boards, and emulator research.",
+     "implemented_by": null
+    },
+    {
+     "name": "Naomi and Atomiswave Specialist",
+     "description": "Covers Dreamcast-derived architecture, cartridges or GD-ROM, I/O, controls, and Flycast testing.",
+     "implemented_by": null
+    },
+    {
+     "name": "Namco System Board Archivist",
+     "description": "Catalogs CPUs, graphics, sound, I/O, media, revisions, peripherals, and MAME support by board family.",
+     "implemented_by": null
+    },
+    {
+     "name": "Konami and Taito Platform Archivist",
+     "description": "Documents board families, custom chips, media, controls, sound, and cabinet-specific behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Taito Type X PC-Based Arcade Specialist",
+     "description": "Analyzes authorized PC-based software, hardware profiles, I/O, displays, and deployment boundaries.",
+     "implemented_by": null
+    },
+    {
+     "name": "LaserDisc Preservation Specialist",
+     "description": "Synchronizes lawful video, audio, control data, captures, frame numbers, and Daphne or Hypseus behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Rhythm Cabinet Timing Analyst",
+     "description": "Measures audio, video, input, sensor, network, and chart timing with approved hardware and content.",
+     "implemented_by": null
+    },
+    {
+     "name": "Motion Cabinet and Sensor Specialist",
+     "description": "Tests accelerometers, cameras, force feedback, position sensors, safety interlocks, calibration, and latency.",
+     "implemented_by": null
+    },
+    {
+     "name": "Arcade PCB Documentation Builder",
+     "description": "Creates board maps, component inventories, ROM labels, jumpers, connectors, revisions, photographs, and fault notes.",
+     "implemented_by": null
+    },
+    {
+     "name": "Arcade Power and Signal Safety Planner",
+     "description": "Defines isolation, current limits, voltage checks, grounding, discharge, and ESD procedures for qualified operators.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 16,
+   "name": "Universal Emulation Frontends, Cores, and FPGA Platforms",
+   "skill_count": 12,
+   "routing": "external-tool",
+   "skills": [
+    {
+     "name": "MAME Preservation Orchestrator",
+     "description": "Coordinates software lists, sets, CHDs, artwork, inputs, debugger, hashes, and versioned reports.",
+     "implemented_by": null
+    },
+    {
+     "name": "Ares Multi-System Accuracy Harness",
+     "description": "Runs supported classic systems with accuracy-focused settings, manifests, captures, and regression cases.",
+     "implemented_by": null
+    },
+    {
+     "name": "Mednafen Multi-System Test Harness",
+     "description": "Automates supported systems, command options, firmware references, saves, logs, and deterministic captures.",
+     "implemented_by": null
+    },
+    {
+     "name": "RetroArch Frontend Integrator",
+     "description": "Configures lawful cores, input, shaders, recording, latency, accessibility, and per-core version documentation.",
+     "implemented_by": null
+    },
+    {
+     "name": "Libretro Core Lifecycle Manager",
+     "description": "Tracks source, license, version, options, BIOS requirements, savestate compatibility, and regression status per core.",
+     "implemented_by": null
+    },
+    {
+     "name": "BizHawk Deterministic Test Operator",
+     "description": "Uses movies, Lua, TAStudio, memory tools, hashes, and multi-system debugging for repeatable tests.",
+     "implemented_by": null
+    },
+    {
+     "name": "MiSTer FPGA Platform Integrator",
+     "description": "Manages cores, hardware modules, inputs, video, storage, updates, and licensed BIOS dependencies.",
+     "implemented_by": null
+    },
+    {
+     "name": "Analogue OpenFPGA Package Specialist",
+     "description": "Builds compliant core packages, metadata, bitstreams, assets, controls, and test instructions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Emulator Configuration Normalizer",
+     "description": "Creates explicit per-version configurations and separates global, core, system, and title settings.",
+     "implemented_by": null
+    },
+    {
+     "name": "Emulator Save-State Compatibility Auditor",
+     "description": "Tests versioned states, corruption checks, warnings, compression, upgrades, and deterministic restoration.",
+     "implemented_by": null
+    },
+    {
+     "name": "Emulator Input Profile Manager",
+     "description": "Builds per-device mappings, dead zones, labels, hotkeys, accessibility alternatives, and conflict checks.",
+     "implemented_by": null
+    },
+    {
+     "name": "Emulator Shader and Display Profile Manager",
+     "description": "Documents scaling, aspect, crop, color, deinterlacing, CRT simulation, HDR, and latency effects.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 17,
+   "name": "ROM, DAT, Hash, Set, and Library Management",
+   "skill_count": 13,
+   "routing": "workbench-assisted",
+   "skills": [
+    {
+     "name": "No-Intro DAT Verification Specialist",
+     "description": "Audits lawful cartridge and digital dumps by title, region, revision, status, and cryptographic hashes.",
+     "implemented_by": "verify --dat",
+     "implementation_scope": "JSON DAT format only; No-Intro XML is not parsed"
+    },
+    {
+     "name": "Redump Disc Verification Specialist",
+     "description": "Matches lawful optical images by tracks, pregaps, sectors, checksums, serials, and dump metadata.",
+     "implemented_by": "verify --dat",
+     "implementation_scope": "hash-level verification only; track/pregap layout is not parsed"
+    },
+    {
+     "name": "TOSEC Collection Metadata Specialist",
+     "description": "Uses TOSEC naming and DAT conventions for historical computers, consoles, media, and variants.",
+     "implemented_by": "verify --dat",
+     "implementation_scope": "hash verification only; TOSEC naming is not parsed"
+    },
+    {
+     "name": "MAME Software List Specialist",
+     "description": "Validates short names, parts, interfaces, hashes, metadata, and device requirements from versioned lists.",
+     "implemented_by": "verify --dat",
+     "implementation_scope": "hash verification only; software-list XML is not parsed"
+    },
+    {
+     "name": "RomVault Audit Operator",
+     "description": "Scans, fixes by copying owned data, rebuilds, reports missing files, and preserves source sets.",
+     "implemented_by": null
+    },
+    {
+     "name": "clrmamepro Set Manager",
+     "description": "Profiles versioned DATs, scans, rebuilds, merges or splits, and documents changes without sourcing content.",
+     "implemented_by": null
+    },
+    {
+     "name": "SabreTools Automation",
+     "description": "Parses DATs, identifies files, transforms set layouts, and emits machine-readable audit results.",
+     "implemented_by": null
+    },
+    {
+     "name": "ROMCenter Library Auditor",
+     "description": "Organizes and verifies lawful libraries against selected DAT versions and naming policies.",
+     "implemented_by": null
+    },
+    {
+     "name": "RomM Metadata Library Integrator",
+     "description": "Indexes lawful libraries, metadata, artwork rights, users, storage, and audit status.",
+     "implemented_by": null
+    },
+    {
+     "name": "Hashing and Checksum Pipeline",
+     "description": "Computes CRC32, MD5 for legacy matching, SHA-1, SHA-256, and BLAKE3 with normalized logs.",
+     "implemented_by": "hash",
+     "implementation_scope": "crc32, md5, sha1, sha256, blake2b in one pass"
+    },
+    {
+     "name": "Header and Copier Format Normalizer",
+     "description": "Detects and safely removes or preserves known headers, byte swaps, padding, and container differences.",
+     "implemented_by": null
+    },
+    {
+     "name": "Duplicate and Revision Classifier",
+     "description": "Separates exact duplicates, overdumps, bad dumps, prototypes, revisions, regions, hacks, translations, and homebrew.",
+     "implemented_by": "verify --crosscheck",
+     "implementation_scope": "exact-duplicate grouping by sha256 only"
+    },
+    {
+     "name": "DAT Provenance Manager",
+     "description": "Records source, version, date, license, schema, update history, and the exact DAT used for every audit.",
+     "implemented_by": "verify --dat",
+     "implementation_scope": "records dat_id, version and path in the result"
+    }
+   ]
+  },
+  {
+   "index": 18,
+   "name": "Cartridge, Save-Memory, and Physical Media Dumping",
+   "skill_count": 13,
+   "routing": "hardware-dependent",
+   "skills": [
+    {
+     "name": "Cartridge Dump Workflow Planner",
+     "description": "Selects a compatible reader, adapter, voltage, software, repeated-read count, and verification route for owned media.",
+     "implemented_by": null
+    },
+    {
+     "name": "INLretro Dump Operator",
+     "description": "Uses supported boards and scripts to read cartridges and saves and records mapper or board configuration.",
+     "implemented_by": null
+    },
+    {
+     "name": "Retrode 2 Dump Operator",
+     "description": "Captures supported cartridge and controller data and verifies repeatable reads and save safety.",
+     "implemented_by": null
+    },
+    {
+     "name": "GBxCart RW Specialist",
+     "description": "Dumps and verifies Game Boy family ROM and save memory and handles supported flash carts lawfully.",
+     "implemented_by": null
+    },
+    {
+     "name": "Joey Jr. Cartridge Specialist",
+     "description": "Reads supported Game Boy media and saves with repeated hashes and adapter documentation.",
+     "implemented_by": null
+    },
+    {
+     "name": "Open Source Cartridge Reader Operator",
+     "description": "Builds or uses supported hardware profiles and verifies voltage, adapter, firmware, and read consistency.",
+     "implemented_by": null
+    },
+    {
+     "name": "Sanni Cart Reader Operator",
+     "description": "Uses supported modules for cartridges and saves and documents reader firmware and settings.",
+     "implemented_by": null
+    },
+    {
+     "name": "Kazzo and Anago NES Dump Specialist",
+     "description": "Identifies supported NES boards, scripts reads, verifies PRG or CHR data, and documents uncertainty.",
+     "implemented_by": null
+    },
+    {
+     "name": "Save-Memory Preservation Specialist",
+     "description": "Backs up SRAM, EEPROM, flash, RTC, memory cards, and controller packs with repeated reads and restore tests.",
+     "implemented_by": null
+    },
+    {
+     "name": "Cartridge Contact and Adapter Care Planner",
+     "description": "Defines non-destructive inspection, cleaning, ESD, insertion, power, and adapter checks.",
+     "implemented_by": null
+    },
+    {
+     "name": "Repeated-Read Comparator",
+     "description": "Compares multiple dumps at byte and block level and distinguishes unstable contact, battery, mapper, or reader issues.",
+     "implemented_by": "verify --crosscheck",
+     "implementation_scope": "block-level comparison of repeated reads"
+    },
+    {
+     "name": "Cartridge Board Photo Correlator",
+     "description": "Links owner-supplied board photographs, chip markings, traces, labels, and dump metadata.",
+     "implemented_by": null
+    },
+    {
+     "name": "Flash Cartridge Boundary Enforcer",
+     "description": "Supports lawful homebrew and backup workflows while refusing circumvention or unauthorized content distribution.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 19,
+   "name": "Optical, Magnetic, Tape, and Damaged-Media Preservation",
+   "skill_count": 15,
+   "routing": "hardware-dependent",
+   "skills": [
+    {
+     "name": "Redumper Optical Workflow",
+     "description": "Captures supported raw sectors, subchannels, sessions, drive data, errors, and hashes from owned discs.",
+     "implemented_by": null
+    },
+    {
+     "name": "DiscImageCreator Workflow",
+     "description": "Uses compatible drives and options to preserve supported CD, DVD, and specialized optical media.",
+     "implemented_by": null
+    },
+    {
+     "name": "Aaru Media Imaging Specialist",
+     "description": "Images supported optical, magnetic, and removable media and records device and format metadata.",
+     "implemented_by": null
+    },
+    {
+     "name": "ddrescue Recovery Planner",
+     "description": "Creates mapfile-driven, read-minimizing recovery passes for damaged lawful media and preserves partial results.",
+     "implemented_by": null
+    },
+    {
+     "name": "chdman Conversion Specialist",
+     "description": "Creates, verifies, extracts, and reports CHD images while preserving source-format metadata and hashes.",
+     "implemented_by": null
+    },
+    {
+     "name": "cdrdao Track Layout Specialist",
+     "description": "Reads or writes supported CD layouts and TOC data for authorized archival workflows.",
+     "implemented_by": null
+    },
+    {
+     "name": "IsoBuster Windows Worker",
+     "description": "Uses licensed Windows tooling to inspect sessions, filesystems, sectors, errors, and recoverable files.",
+     "implemented_by": null
+    },
+    {
+     "name": "ImgBurn Windows Verification Worker",
+     "description": "Uses approved settings to read or verify supported optical media and records drive and log details.",
+     "implemented_by": null
+    },
+    {
+     "name": "CUE and BIN Validator",
+     "description": "Checks file references, track modes, indexes, pregaps, sector sizes, audio lengths, and path portability.",
+     "implemented_by": null
+    },
+    {
+     "name": "CCD, IMG, SUB Analyst",
+     "description": "Validates CloneCD-style image relationships, subchannel size, tracks, and preservation metadata.",
+     "implemented_by": null
+    },
+    {
+     "name": "GDI and CDI Analyst",
+     "description": "Inspects Dreamcast image track layouts, density assumptions, conversions, and data-loss risks.",
+     "implemented_by": null
+    },
+    {
+     "name": "CSO and RVZ Compression Specialist",
+     "description": "Creates and verifies supported compressed images while retaining source hashes and compatibility notes.",
+     "implemented_by": null
+    },
+    {
+     "name": "Flux-Level Floppy Specialist",
+     "description": "Uses KryoFlux, Greaseweazle, FluxEngine, or Applesauce to capture revolutions, timing, weak bits, and drive metadata.",
+     "implemented_by": null
+    },
+    {
+     "name": "Cassette and Audio Software Archivist",
+     "description": "Captures calibrated WAV, records deck and interface, preserves raw audio, and creates derived decoding copies.",
+     "implemented_by": null
+    },
+    {
+     "name": "Damaged Media Confidence Assessor",
+     "description": "Combines error maps, repeated reads, parity, hashes, filesystem checks, and title behavior into a confidence rating.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 20,
+   "name": "Console Executable, Package, Firmware, and Save Inspection",
+   "skill_count": 13,
+   "routing": "workbench-assisted",
+   "skills": [
+    {
+     "name": "Console Artifact Auto-Detector",
+     "description": "Identifies likely platform, format, compression, region, revision, integrity, and lawful dependencies from bytes rather than extension.",
+     "implemented_by": "inspect",
+     "implementation_scope": "iNES/NES2.0, FDS, SNES, Genesis, GB/GBC, GBA, N64, ISO 9660, ZIP, PSX memcard"
+    },
+    {
+     "name": "PSP PBP and PRX Metadata Inspector",
+     "description": "Reports container metadata, executable layout, resources, icons, versions, and module hints without protected content disclosure.",
+     "implemented_by": null
+    },
+    {
+     "name": "Dreamcast ELF and BIN Inspector",
+     "description": "Recognizes SH-4 executables, load forms, scramble indicators, symbols, sections, and build metadata.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo DOL and REL Inspector",
+     "description": "Handles GameCube and Wii executables, relocatable modules, sections, imports, symbols, and entry points.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox XBE Inspector",
+     "description": "Parses original Xbox executable metadata, libraries, sections, titles, and certificate fields as authorized metadata.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox 360 XEX and STFS Inspector",
+     "description": "Parses lawful metadata through authorized documentation or tools without furnishing decryption or bypass material.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation SELF and Package Metadata Router",
+     "description": "Uses official or lawful parsers and keeps proprietary keys, tools, and decrypted content isolated.",
+     "implemented_by": null
+    },
+    {
+     "name": "ELF, PE, Mach-O, and Raw Binary Classifier",
+     "description": "Identifies architecture, endian, entry points, sections, symbols, relocations, imports, and container clues.",
+     "implemented_by": null
+    },
+    {
+     "name": "Firmware Image Structure Analyst",
+     "description": "Uses binwalk, entropy, signatures, filesystems, manifests, and version data on lawfully obtained inputs.",
+     "implemented_by": null
+    },
+    {
+     "name": "Firmware Extraction Provenance Manager",
+     "description": "Records every unpacking step and refuses secure-boot, signature, or encryption bypass.",
+     "implemented_by": null
+    },
+    {
+     "name": "Save File Format Analyst",
+     "description": "Uses structural diffs, checksums, slots, timestamps, endian clues, and user-created fixtures to document lawful save formats.",
+     "implemented_by": "inspect",
+     "implementation_scope": "size-based save-memory identification only"
+    },
+    {
+     "name": "Memory Card Image Inspector",
+     "description": "Validates directories, allocation, icons, titles, checksums, free space, deleted entries, and format variants.",
+     "implemented_by": "inspect",
+     "implementation_scope": "PlayStation memory card frame magic and size"
+    },
+    {
+     "name": "Package Dependency Reporter",
+     "description": "Lists required firmware references, libraries, services, devices, profiles, and entitlement dependencies without distributing them.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 21,
+   "name": "Reverse Engineering, CPU Analysis, Parsing, and Research",
+   "skill_count": 14,
+   "routing": "external-tool",
+   "skills": [
+    {
+     "name": "Ghidra Multi-Architecture Console Analyst",
+     "description": "Analyzes 6502, Z80, 68000, MIPS, ARM, ARM64, PowerPC, SH-2, SH-4, x86, and x64 binaries when supported.",
+     "implemented_by": null
+    },
+    {
+     "name": "Ghidra Loader Plugin Developer",
+     "description": "Builds lawful loaders for documented cartridge, executable, save, and package formats with tests.",
+     "implemented_by": null
+    },
+    {
+     "name": "radare2 Console Binary Analyst",
+     "description": "Uses r2, rabin2, rasm2, scripts, graphs, symbols, and plugins for authorized research.",
+     "implemented_by": null
+    },
+    {
+     "name": "Rizin and Cutter Console Analyst",
+     "description": "Performs scriptable analysis and graphical exploration with versioned projects and evidence.",
+     "implemented_by": null
+    },
+    {
+     "name": "IDA Console Research Worker",
+     "description": "Uses licensed processor modules, loaders, type libraries, and debugging features where permitted.",
+     "implemented_by": null
+    },
+    {
+     "name": "Binary Ninja Plugin Developer",
+     "description": "Creates licensed loaders, architectures, workflows, and intermediate-language analyses for authorized formats.",
+     "implemented_by": null
+    },
+    {
+     "name": "Capstone Disassembly Harness",
+     "description": "Builds multi-architecture instruction decoders, trace viewers, and validation tools.",
+     "implemented_by": null
+    },
+    {
+     "name": "Keystone Assembly Harness",
+     "description": "Assembles supported instructions for tests, homebrew, instrumentation, and lawful patch experiments.",
+     "implemented_by": null
+    },
+    {
+     "name": "Unicorn CPU Emulation Harness",
+     "description": "Creates bounded instruction or function emulation with mapped memory, hooks, interrupts, and fixtures.",
+     "implemented_by": null
+    },
+    {
+     "name": "Kaitai Struct Format Developer",
+     "description": "Defines testable parsers for headers, discs, saves, packages, and metadata with generated readers.",
+     "implemented_by": null
+    },
+    {
+     "name": "LIEF Container Inspector",
+     "description": "Automates supported executable and container inspection and controlled authorized modifications.",
+     "implemented_by": null
+    },
+    {
+     "name": "ImHex Pattern Author",
+     "description": "Creates reusable binary patterns, visual structures, checks, and bookmarks for console formats.",
+     "implemented_by": null
+    },
+    {
+     "name": "010 Editor Template Worker",
+     "description": "Uses licensed binary templates for large or complex formats and documents template provenance.",
+     "implemented_by": null
+    },
+    {
+     "name": "Clean-Room Research Coordinator",
+     "description": "Separates behavioral observation, specification, independent implementation, copyrighted assets, and legal review.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 22,
+   "name": "Emulator CPU, Memory, Scheduler, and Dynamic Recompiler Development",
+   "skill_count": 13,
+   "routing": "external-tool",
+   "skills": [
+    {
+     "name": "CPU Interpreter Framework",
+     "description": "Implements decode, execute, registers, flags, exceptions, interrupts, memory access, and deterministic stepping.",
+     "implemented_by": null
+    },
+    {
+     "name": "Cached Interpreter Framework",
+     "description": "Caches decoded blocks while preserving invalidation, exceptions, timing, and debugging visibility.",
+     "implemented_by": null
+    },
+    {
+     "name": "Dynamic Recompiler Framework",
+     "description": "Translates guest blocks with code-cache safety, invalidation, ABI control, exceptions, and fallback paths.",
+     "implemented_by": null
+    },
+    {
+     "name": "Cycle Accounting Engine",
+     "description": "Models instruction, bus, wait-state, DMA, interrupt, and device timing at the selected accuracy level.",
+     "implemented_by": null
+    },
+    {
+     "name": "Memory Management Unit Emulator",
+     "description": "Implements translation, permissions, TLB behavior, exceptions, caches as needed, and diagnostic traces.",
+     "implemented_by": null
+    },
+    {
+     "name": "Endian and Alignment Layer",
+     "description": "Handles mixed-endian memory, unaligned accesses, byte lanes, bus widths, and host portability.",
+     "implemented_by": null
+    },
+    {
+     "name": "Interrupt and Exception Controller",
+     "description": "Models priorities, masks, vectors, delays, nesting, return behavior, and race diagnostics.",
+     "implemented_by": null
+    },
+    {
+     "name": "Multi-CPU Scheduler",
+     "description": "Coordinates heterogeneous CPUs, clock ratios, events, barriers, shared memory, and deterministic ordering.",
+     "implemented_by": null
+    },
+    {
+     "name": "Event Queue and Scanline Scheduler",
+     "description": "Supports cycle, scanline, frame, and hybrid event modes with reproducible ties.",
+     "implemented_by": null
+    },
+    {
+     "name": "Instruction Trace Engine",
+     "description": "Records PCs, opcodes, registers, memory, cycles, interrupts, and symbols with filtering and compression.",
+     "implemented_by": null
+    },
+    {
+     "name": "JIT Verification Harness",
+     "description": "Compares interpreter and JIT state, memory, exceptions, traces, and self-modifying code cases.",
+     "implemented_by": null
+    },
+    {
+     "name": "Code Cache Safety Auditor",
+     "description": "Tests invalidation, page permissions, aliasing, wraparound, concurrency, host signals, and cache exhaustion.",
+     "implemented_by": null
+    },
+    {
+     "name": "CPU Conformance Test Manager",
+     "description": "Runs public-domain instruction, flag, timing, interrupt, exception, and memory tests per core.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 23,
+   "name": "GPU, PPU, Display, Shader, Audio, and Timing Emulation",
+   "skill_count": 14,
+   "routing": "external-tool",
+   "skills": [
+    {
+     "name": "Software Renderer Reference Path",
+     "description": "Implements deterministic reference rendering for correctness and pixel-level comparison.",
+     "implemented_by": null
+    },
+    {
+     "name": "Hardware Renderer Architecture",
+     "description": "Maps guest graphics to OpenGL, Vulkan, Direct3D, or Metal abstractions with explicit fallbacks.",
+     "implemented_by": null
+    },
+    {
+     "name": "Tile and Sprite PPU Framework",
+     "description": "Models scanlines, layers, sprites, priority, windows, palettes, DMA, and mid-frame register effects.",
+     "implemented_by": null
+    },
+    {
+     "name": "Fixed-Function 3D Pipeline Emulator",
+     "description": "Models transforms, lighting, clipping, rasterization, texture formats, fog, blending, and depth.",
+     "implemented_by": null
+    },
+    {
+     "name": "Shader Translation Pipeline",
+     "description": "Parses guest programs, lowers semantics, generates host shaders, validates output, and caches safely.",
+     "implemented_by": null
+    },
+    {
+     "name": "Texture Cache Manager",
+     "description": "Tracks formats, palettes, swizzles, invalidation, render-to-texture, replacements, and memory pressure.",
+     "implemented_by": null
+    },
+    {
+     "name": "Render Target and Depth Tracker",
+     "description": "Models aliasing, resolves, format reinterpretation, feedback, copies, and synchronization.",
+     "implemented_by": null
+    },
+    {
+     "name": "Frame Capture and Replay Tool",
+     "description": "Captures guest commands, resources, state, timing, and host mappings for repeatable investigation.",
+     "implemented_by": null
+    },
+    {
+     "name": "Pixel Comparison Harness",
+     "description": "Compares reference and accelerated output by exact, masked, and perceptual metrics with diagnostic heatmaps.",
+     "implemented_by": null
+    },
+    {
+     "name": "Audio Chip Synthesis Framework",
+     "description": "Implements registers, oscillators, envelopes, filters, noise, timers, mixing, and deterministic tests.",
+     "implemented_by": null
+    },
+    {
+     "name": "Sample Playback and DSP Framework",
+     "description": "Models decoding, voices, effects, DMA, memory, interrupts, and hardware-specific DSP behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Audio Resampling and Clock Sync Engine",
+     "description": "Handles clock domains, resampling, buffering, drift, latency, underruns, and deterministic modes.",
+     "implemented_by": null
+    },
+    {
+     "name": "Video Standard and Region Timing Model",
+     "description": "Supports NTSC, PAL, SECAM-related behavior, refresh differences, interlace, overscan, and region clocks.",
+     "implemented_by": null
+    },
+    {
+     "name": "Frame Pacing and Latency Controller",
+     "description": "Balances emulation, presentation, audio, input, run-ahead, synchronization, and reproducibility.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 24,
+   "name": "Media, Save State, Controllers, Peripherals, and Netplay Frameworks",
+   "skill_count": 14,
+   "routing": "external-tool",
+   "skills": [
+    {
+     "name": "Cartridge Bus Plugin Framework",
+     "description": "Defines address, data, timing, mapper, coprocessor, RTC, sensor, rumble, and save interfaces.",
+     "implemented_by": null
+    },
+    {
+     "name": "Optical Sector and Subchannel Framework",
+     "description": "Models sectors, tracks, sessions, subchannels, latency, seek, errors, and format adapters.",
+     "implemented_by": null
+    },
+    {
+     "name": "GD-ROM and Proprietary Media Adapter",
+     "description": "Represents platform-specific layouts and drive behavior using lawful specifications and user media.",
+     "implemented_by": null
+    },
+    {
+     "name": "Save RAM and EEPROM Framework",
+     "description": "Models SRAM, EEPROM, flash, wear behavior where relevant, timestamps, RTC, and safe atomic writes.",
+     "implemented_by": null
+    },
+    {
+     "name": "Memory Card Framework",
+     "description": "Implements filesystems, blocks, icons, metadata, checksums, slots, insertion, removal, and corruption tests.",
+     "implemented_by": null
+    },
+    {
+     "name": "Versioned Save-State System",
+     "description": "Provides schema versions, compatibility warnings, checksums, deterministic restore, compression, and fixtures.",
+     "implemented_by": null
+    },
+    {
+     "name": "Controller Hotplug Framework",
+     "description": "Handles connect, disconnect, reconnect, device identity, player assignment, and state transitions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Advanced Controller Feature Layer",
+     "description": "Supports motion, touch, analog triggers, rumble, adaptive triggers through official APIs, microphones, and lights.",
+     "implemented_by": null
+    },
+    {
+     "name": "Light Gun and Pointing Device Layer",
+     "description": "Models raster or sensor methods, calibration, aspect, latency, off-screen reload, and display constraints.",
+     "implemented_by": null
+    },
+    {
+     "name": "Wheel and Arcade Control Layer",
+     "description": "Supports axes, force feedback, pedals, shifters, cabinets, dead zones, and calibration.",
+     "implemented_by": null
+    },
+    {
+     "name": "Accessibility Controller Adapter",
+     "description": "Maps switches, alternative inputs, remapping, hold or toggle modes, macros allowed by platform policy, and profiles.",
+     "implemented_by": null
+    },
+    {
+     "name": "Deterministic Netplay Engine",
+     "description": "Implements lockstep or rollback, state hashes, input delay, resimulation, spectators, encryption, and desync logs.",
+     "implemented_by": null
+    },
+    {
+     "name": "Proprietary Network Boundary",
+     "description": "Prevents impersonation or bypass of platform networks and limits testing to authorized services or independent homebrew.",
+     "implemented_by": null
+    },
+    {
+     "name": "Peripheral Script Harness",
+     "description": "Drives deterministic input sequences, sensor values, media changes, and expected outputs for regression tests.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 25,
+   "name": "Emulator Debugger, Frontend, User Experience, and Accessibility",
+   "skill_count": 13,
+   "routing": "external-tool",
+   "skills": [
+    {
+     "name": "Integrated CPU Debugger",
+     "description": "Provides breakpoints, watchpoints, stepping, registers, disassembly, symbols, memory, call stacks, and expressions.",
+     "implemented_by": null
+    },
+    {
+     "name": "GPU Command Debugger",
+     "description": "Displays guest command streams, draw calls, resources, state changes, render targets, and pixel history where feasible.",
+     "implemented_by": null
+    },
+    {
+     "name": "Audio Register Debugger",
+     "description": "Shows voices, channels, registers, timers, buffers, mix levels, interrupts, and waveforms.",
+     "implemented_by": null
+    },
+    {
+     "name": "Memory and Bus Viewer",
+     "description": "Visualizes maps, mirrors, devices, access counts, break triggers, DMA, and ownership.",
+     "implemented_by": null
+    },
+    {
+     "name": "Trace Query and Scripting API",
+     "description": "Supports filtered traces, event hooks, automation, annotations, export, and repeatable scripts.",
+     "implemented_by": null
+    },
+    {
+     "name": "Title Database Frontend",
+     "description": "Stores platform, serial, region, revision, hashes, compatibility, settings, and user-owned library paths.",
+     "implemented_by": null
+    },
+    {
+     "name": "Authorized Artwork Manager",
+     "description": "Uses artwork only from licensed, public-domain, or user-provided sources and records rights.",
+     "implemented_by": null
+    },
+    {
+     "name": "Per-Game Profile Manager",
+     "description": "Applies explicit renderer, timing, controller, firmware reference, patch, and compatibility settings by hash.",
+     "implemented_by": null
+    },
+    {
+     "name": "Compatibility Report UI",
+     "description": "Collects version, media hash, host, settings, status, defects, logs, captures, and reproduction steps.",
+     "implemented_by": null
+    },
+    {
+     "name": "Localization Framework",
+     "description": "Supports Unicode, pluralization, right-to-left layout, input methods, translated metadata, and fallback fonts.",
+     "implemented_by": null
+    },
+    {
+     "name": "Emulator Accessibility Layer",
+     "description": "Provides remapping, scalable UI, contrast, reduced motion, screen-reader labels, captions, and assist options.",
+     "implemented_by": null
+    },
+    {
+     "name": "Safe Firmware Prompt",
+     "description": "Explains required user-supplied firmware by hash and never provides copyrighted downloads or keys.",
+     "implemented_by": null
+    },
+    {
+     "name": "Crash Recovery and Autosave Manager",
+     "description": "Preserves logs and user state, detects loops, restores cleanly, and protects save files.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 26,
+   "name": "Graphics, Shader, Audio, Capture, and Input Measurement Tools",
+   "skill_count": 15,
+   "routing": "hardware-dependent",
+   "skills": [
+    {
+     "name": "RenderDoc Emulator Frame Analyst",
+     "description": "Captures compatible emulator or source-port frames and inspects resources, shaders, draws, states, and timing.",
+     "implemented_by": null
+    },
+    {
+     "name": "PIX Authorized Console and Windows Analyst",
+     "description": "Profiles DirectX workloads on approved Windows or Xbox development workers.",
+     "implemented_by": null
+    },
+    {
+     "name": "NVIDIA Nsight Graphics Analyst",
+     "description": "Uses supported NVIDIA systems for GPU traces, shader analysis, captures, and performance diagnosis.",
+     "implemented_by": null
+    },
+    {
+     "name": "Radeon GPU Profiler Analyst",
+     "description": "Profiles supported AMD workloads for queues, wavefronts, occupancy, barriers, and timing.",
+     "implemented_by": null
+    },
+    {
+     "name": "Intel Graphics Performance Analyzer",
+     "description": "Analyzes supported Intel graphics frames, metrics, bottlenecks, and driver behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Vulkan Capability Inspector",
+     "description": "Reports devices, extensions, layers, queues, memory, formats, presentation, and validation support.",
+     "implemented_by": null
+    },
+    {
+     "name": "SPIR-V Toolchain Specialist",
+     "description": "Uses spirv-dis, spirv-val, spirv-opt, and SPIRV-Cross to inspect, validate, optimize, and translate shaders.",
+     "implemented_by": null
+    },
+    {
+     "name": "Shader Compiler Specialist",
+     "description": "Uses glslangValidator, DXC, shaderc, and target-specific options with reproducible inputs.",
+     "implemented_by": null
+    },
+    {
+     "name": "OpenGL and EGL Capability Inspector",
+     "description": "Uses glxinfo and eglinfo to detect versions, extensions, renderers, surfaces, and software fallbacks.",
+     "implemented_by": null
+    },
+    {
+     "name": "FFmpeg Capture Comparator",
+     "description": "Captures, normalizes, aligns, and compares video and audio output with declared codecs and timestamps.",
+     "implemented_by": null
+    },
+    {
+     "name": "Audacity Waveform Analyst",
+     "description": "Inspects latency, phase, clipping, noise, envelopes, channels, and synchronization from calibrated captures.",
+     "implemented_by": null
+    },
+    {
+     "name": "ImageMagick Frame Comparator",
+     "description": "Performs pixel, crop, montage, channel, palette, and texture conversions with explicit color handling.",
+     "implemented_by": null
+    },
+    {
+     "name": "Perceptual Image Diff Analyst",
+     "description": "Uses tolerances, masking, SSIM-like measures, heatmaps, and region summaries for rendered output.",
+     "implemented_by": null
+    },
+    {
+     "name": "Controller API Integration Specialist",
+     "description": "Works with SDL2, SDL3, XInput, DirectInput, HIDAPI, GameInput, and Steam Input.",
+     "implemented_by": null
+    },
+    {
+     "name": "Button-to-Photon Latency Lab",
+     "description": "Uses high-speed cameras, photodiodes, logic analyzers, or LDAT-class devices and reports uncertainty.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 27,
+   "name": "FPGA, HDL, PCB, Logic Analysis, and Hardware Documentation",
+   "skill_count": 15,
+   "routing": "hardware-dependent",
+   "skills": [
+    {
+     "name": "Verilator RTL Simulation Engineer",
+     "description": "Compiles Verilog or SystemVerilog models, writes test benches, traces signals, and runs regressions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Icarus Verilog Simulation Engineer",
+     "description": "Runs open-source HDL simulations, fixtures, waveform dumps, and compatibility checks.",
+     "implemented_by": null
+    },
+    {
+     "name": "Yosys Synthesis Engineer",
+     "description": "Synthesizes supported RTL, reports resources, transforms netlists, and validates constraints.",
+     "implemented_by": null
+    },
+    {
+     "name": "nextpnr Place-and-Route Engineer",
+     "description": "Targets supported FPGAs, applies constraints, closes timing, and generates documented outputs.",
+     "implemented_by": null
+    },
+    {
+     "name": "Intel Quartus FPGA Worker",
+     "description": "Builds licensed Intel FPGA projects, timing reports, programming files, and hardware tests.",
+     "implemented_by": null
+    },
+    {
+     "name": "AMD Vivado FPGA Worker",
+     "description": "Builds licensed AMD FPGA projects, IP, constraints, timing, bitstreams, and hardware validation.",
+     "implemented_by": null
+    },
+    {
+     "name": "Lattice FPGA Tool Worker",
+     "description": "Uses Radiant, Diamond, or open flows as supported for synthesis, timing, and programming.",
+     "implemented_by": null
+    },
+    {
+     "name": "FPGA Core Build Pipeline",
+     "description": "Lints, simulates, synthesizes, places, routes, analyzes timing, generates bitstreams, and runs smoke tests.",
+     "implemented_by": null
+    },
+    {
+     "name": "FPGA Reference Capture Comparator",
+     "description": "Compares core video, audio, timing, and input against lawful hardware captures and emulator references.",
+     "implemented_by": null
+    },
+    {
+     "name": "MiSTer Core Packaging Specialist",
+     "description": "Packages releases, metadata, mappings, memory requirements, SDRAM checks, and test instructions.",
+     "implemented_by": null
+    },
+    {
+     "name": "KiCad Console Hardware Documenter",
+     "description": "Creates schematics, PCB references, adapters, pinouts, BOMs, and revision-controlled documentation.",
+     "implemented_by": null
+    },
+    {
+     "name": "sigrok and PulseView Analyst",
+     "description": "Captures buses and protocols, applies decoders, measures timing, and exports annotated evidence.",
+     "implemented_by": null
+    },
+    {
+     "name": "OpenOCD Authorized Debugger",
+     "description": "Uses documented JTAG or SWD on development boards or owned hardware with permitted interfaces.",
+     "implemented_by": null
+    },
+    {
+     "name": "Saleae Logic Worker",
+     "description": "Uses licensed hardware and software for calibrated captures, protocol decoding, timing, and export.",
+     "implemented_by": null
+    },
+    {
+     "name": "Hardware Timing Closure Analyst",
+     "description": "Reviews clocks, generated clocks, false paths, multicycle paths, slack, metastability, and board behavior.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 28,
+   "name": "Homebrew SDKs, Cross-Platform Ports, and Source-Available Revival",
+   "skill_count": 15,
+   "routing": "external-tool",
+   "skills": [
+    {
+     "name": "Homebrew Project Scaffold Designer",
+     "description": "Creates legally clean source, build, asset, test, license, and packaging structures for supported open toolchains.",
+     "implemented_by": null
+    },
+    {
+     "name": "SDL2 and SDL3 Porting Specialist",
+     "description": "Implements windows, input, audio, controllers, files, timing, and platform abstraction.",
+     "implemented_by": null
+    },
+    {
+     "name": "CMake and Ninja Console Build Engineer",
+     "description": "Creates portable presets, toolchains, dependencies, tests, install rules, and cross builds.",
+     "implemented_by": null
+    },
+    {
+     "name": "Meson Console Build Engineer",
+     "description": "Creates modern project definitions, cross files, tests, and reproducible build options.",
+     "implemented_by": null
+    },
+    {
+     "name": "GCC and Clang Cross-Compiler Specialist",
+     "description": "Builds source-owned engines and tools for supported architectures with diagnostics and symbols.",
+     "implemented_by": null
+    },
+    {
+     "name": "Rust Console Utility Developer",
+     "description": "Builds safe parsers, converters, asset tools, test harnesses, and platform support utilities.",
+     "implemented_by": null
+    },
+    {
+     "name": "Zig Cross-Compilation Specialist",
+     "description": "Uses Zig for portable utilities, C integration, reproducible targets, and supported cross builds.",
+     "implemented_by": null
+    },
+    {
+     "name": "Go Preservation Tool Developer",
+     "description": "Creates portable command-line metadata, server, indexing, and verification tools.",
+     "implemented_by": null
+    },
+    {
+     "name": "Graphics Backend Migration Specialist",
+     "description": "Ports among OpenGL, Vulkan, Direct3D, Metal, SDL GPU, bgfx, ANGLE, and MoltenVK where licensed.",
+     "implemented_by": null
+    },
+    {
+     "name": "Legacy Audio Middleware Replacement Specialist",
+     "description": "Migrates source-owned projects to miniaudio, SDL audio, OpenAL Soft, or FAudio when licensing permits.",
+     "implemented_by": null
+    },
+    {
+     "name": "Physics and Middleware Migration Analyst",
+     "description": "Plans lawful PhysX, Bullet, Havok, FMOD, or Wwise transitions and identifies asset or license constraints.",
+     "implemented_by": null
+    },
+    {
+     "name": "Clean-Room Decompilation Project Support",
+     "description": "Separates code from copyrighted assets, documents provenance, and builds reproducible matching outputs where lawful.",
+     "implemented_by": null
+    },
+    {
+     "name": "Reverse-Engineered Engine Reimplementation Support",
+     "description": "Runs user-owned data through independently written engines under each project's licensing rules.",
+     "implemented_by": null
+    },
+    {
+     "name": "Endian and Data-Layout Migration Assistant",
+     "description": "Finds byte order, integer width, alignment, packing, pointer, serialization, and file-format assumptions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Source Port Certification Readiness",
+     "description": "Adapts input, saves, suspend, services, accessibility, localization, privacy, and packaging for official platforms.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 29,
+   "name": "Official PlayStation Development and Certification Knowledge",
+   "skill_count": 12,
+   "routing": "official-program",
+   "skills": [
+    {
+     "name": "PlayStation Partners Onboarding Router",
+     "description": "Directs authorized teams to official registration, contracts, SDKs, documentation, hardware, and support channels.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation Package Validation Specialist",
+     "description": "Uses official tools to validate metadata, content, patches, DLC, dependencies, versions, and installation.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation Trophy Integration Tester",
+     "description": "Tests authorized definitions, unlock behavior, offline queues, localization, privacy, and failure recovery.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation Save Data Specialist",
+     "description": "Tests quotas, users, corruption, migration, cloud interactions, errors, and lifecycle through official APIs.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation Suspend and Resume Specialist",
+     "description": "Tests title state, audio, controllers, network, storage, timers, and recovery on approved hardware.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation Controller Feature Specialist",
+     "description": "Validates platform-supported buttons, touch, motion, haptics, triggers, lights, audio, and accessibility.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation Network Loss Tester",
+     "description": "Tests sign-out, service loss, disconnect, reconnect, timeouts, messaging, and user-safe recovery in official sandboxes.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation Crash Triage Worker",
+     "description": "Collects official crash reports, dumps, logs, symbols, build IDs, reproduction, and redacted summaries.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation Performance Analyst",
+     "description": "Uses official CPU, GPU, memory, storage, frame, and loading tools on approved development hardware.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation Certification Test Manager",
+     "description": "Maps requirements to test cases, devices, builds, regions, evidence, defects, and retests.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation Accessibility Reviewer",
+     "description": "Checks captions, remapping, contrast, readability, motion, assist modes, haptics, and platform guidance.",
+     "implemented_by": null
+    },
+    {
+     "name": "PlayStation Proprietary Material Guard",
+     "description": "Keeps SDKs, firmware, keys, packages, symbols, and private documentation inside authorized workers.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 30,
+   "name": "Official Xbox Development and Certification Knowledge",
+   "skill_count": 12,
+   "routing": "official-program",
+   "skills": [
+    {
+     "name": "Microsoft GDK Worker Router",
+     "description": "Routes authorized development to approved GDK installations, hardware, sandboxes, services, and support.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox Package and Update Specialist",
+     "description": "Builds and tests official packages, updates, DLC, dependencies, storage, installation, and rollback behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox User and Profile Tester",
+     "description": "Tests sign-in, sign-out, controller association, guest, switching, privilege, and user-safe recovery.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox Achievement Integration Tester",
+     "description": "Validates events, progress, unlocks, offline handling, localization, and telemetry through official services.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox Multiplayer Session Tester",
+     "description": "Tests lobby, session, invites, joins, migration, disconnect, reconnect, privacy, and cross- network behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox Save Data Specialist",
+     "description": "Tests connected storage, conflicts, offline data, quotas, corruption, synchronization, and user switching.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox Suspend and Resume Specialist",
+     "description": "Tests lifecycle, Constrained mode where applicable, Quick Resume, network, audio, controllers, and storage.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox PIX Performance Analyst",
+     "description": "Uses PIX and official profiling to diagnose CPU, GPU, memory, frames, loading, and synchronization.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox Certification Sandbox Manager",
+     "description": "Creates approved accounts, sandboxes, service configuration, test data, cleanup, and access controls.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox Requirements Test Manager",
+     "description": "Maps Xbox Requirements to builds, devices, cases, evidence, defects, waivers, and retests.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox Accessibility Guidelines Reviewer",
+     "description": "Applies XAG guidance to input, captions, contrast, audio, assist features, cognition, and setup.",
+     "implemented_by": null
+    },
+    {
+     "name": "Xbox Proprietary Material Guard",
+     "description": "Keeps GDK components, console images, keys, symbols, and private documentation inside authorized environments.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 31,
+   "name": "Official Nintendo Development and Certification Knowledge",
+   "skill_count": 12,
+   "routing": "official-program",
+   "skills": [
+    {
+     "name": "Nintendo Developer Portal Router",
+     "description": "Routes authorized teams to official accounts, agreements, SDKs, documentation, hardware, and support.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Package and Submission Specialist",
+     "description": "Uses official tools for package metadata, versions, updates, DLC, storage, and submission checks.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Controller Mode Tester",
+     "description": "Tests supported handheld, docked, tabletop, single or paired controllers, motion, rumble, and reconnect behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Account Behavior Tester",
+     "description": "Tests users, profile switching, restrictions, sign-in, errors, and safe recovery through official APIs.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Save Data Specialist",
+     "description": "Tests users, quotas, autosave, corruption, storage, cloud behavior where available, and software lifecycle.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Suspend and Resume Specialist",
+     "description": "Tests sleep, wake, audio, controls, network, storage, timing, and state consistency on approved hardware.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Network Disconnect Tester",
+     "description": "Tests offline starts, service interruptions, reconnect, timeouts, messages, and data consistency.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Parental Controls Reviewer",
+     "description": "Tests age restrictions, communication, purchases, online features, accounts, and clear user messaging.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Localization and Region Reviewer",
+     "description": "Checks languages, fonts, layout, region metadata, ratings, store text, and input methods.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Performance Analyst",
+     "description": "Uses official CPU, GPU, memory, loading, power, and frame tools on approved devices.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Certification Test Manager",
+     "description": "Maps platform requirements to devices, builds, cases, defects, evidence, and resubmission status.",
+     "implemented_by": null
+    },
+    {
+     "name": "Nintendo Proprietary Material Guard",
+     "description": "Keeps SDKs, keys, firmware, packages, symbols, and private documentation within authorized workers.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 32,
+   "name": "Testing, Compatibility Databases, Benchmarks, Saves, and Reliability",
+   "skill_count": 15,
+   "routing": "workbench-assisted",
+   "skills": [
+    {
+     "name": "Known-Good Test Program Manager",
+     "description": "Curates public-domain or developer-created CPU, timing, interrupt, graphics, audio, mapper, and peripheral tests.",
+     "implemented_by": null
+    },
+    {
+     "name": "Automated Boot Test Harness",
+     "description": "Checks media recognition, firmware initialization, first frame, menu, controller response, save creation, and clean shutdown.",
+     "implemented_by": null
+    },
+    {
+     "name": "Deterministic Frame Hash Test",
+     "description": "Captures normalized frames at declared checkpoints and compares exact or tolerated hashes.",
+     "implemented_by": null
+    },
+    {
+     "name": "Deterministic Audio Hash Test",
+     "description": "Captures normalized samples, channels, rates, and windows and compares hashes or wave metrics.",
+     "implemented_by": null
+    },
+    {
+     "name": "Memory State Hash Test",
+     "description": "Hashes declared memory regions at deterministic checkpoints and explains exclusions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Instruction Trace Regression Test",
+     "description": "Compares filtered traces, interrupts, memory accesses, and cycle counts around divergences.",
+     "implemented_by": null
+    },
+    {
+     "name": "Compatibility Database Manager",
+     "description": "Stores platform, model, region, firmware reference, serial, revision, media hash, emulator, host, settings, status, and evidence.",
+     "implemented_by": null
+    },
+    {
+     "name": "Compatibility Status Classifier",
+     "description": "Uses does not boot, boots, intro, menu, in-game, playable, complete, regression, and blocked-dependency states.",
+     "implemented_by": null
+    },
+    {
+     "name": "Performance Benchmark Suite",
+     "description": "Measures emulated FPS, frame percentiles, shader stutter, CPU, GPU, memory, underruns, loading, and handheld battery.",
+     "implemented_by": null
+    },
+    {
+     "name": "Input Latency Test Suite",
+     "description": "Measures button-to-emulator, button-to-photon, audio, motion, touch, and rollback behavior with uncertainty.",
+     "implemented_by": null
+    },
+    {
+     "name": "Save Data Test Suite",
+     "description": "Tests create, load, overwrite, slots, region behavior, corruption recovery, migration, and version compatibility.",
+     "implemented_by": null
+    },
+    {
+     "name": "Suspend and Resume Test Suite",
+     "description": "Validates progress, audio, controllers, networking, storage, timers, and repeated cycles.",
+     "implemented_by": null
+    },
+    {
+     "name": "Controller Disconnect Test Suite",
+     "description": "Covers primary, secondary, required, optional, battery loss, reassignment, prompts, and recovery.",
+     "implemented_by": null
+    },
+    {
+     "name": "Long-Run Stability Test",
+     "description": "Runs bounded sessions with telemetry, leak detection, thermal limits, save protection, and automatic evidence.",
+     "implemented_by": null
+    },
+    {
+     "name": "Regression Bisect Coordinator",
+     "description": "Identifies the earliest failing version or commit with fixed media, settings, host, and pass conditions.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 33,
+   "name": "Preservation Reports, Research Databases, Packaging, and Archival Handoff",
+   "skill_count": 14,
+   "routing": "workbench-assisted",
+   "skills": [
+    {
+     "name": "Media Verification Report Generator",
+     "description": "Reports platform, title, serial, region, revision, tracks, hashes, DAT match, read errors, method, device, and confidence.",
+     "implemented_by": "report",
+     "implementation_scope": "composes hashes, DAT match and media identity"
+    },
+    {
+     "name": "Console Executable Inspection Report",
+     "description": "Reports format, architecture, endian, entry point, sections, imports, exports, symbols, SDK indicators, and libraries.",
+     "implemented_by": null
+    },
+    {
+     "name": "Compatibility Test Report Generator",
+     "description": "Combines media identity, emulator version, firmware hash reference, host, settings, status, defects, and evidence.",
+     "implemented_by": "report",
+     "implementation_scope": "composes supplied test evidence only"
+    },
+    {
+     "name": "Preservation Package Generator",
+     "description": "Creates metadata, checksums, dump logs, owner-supplied photographs, tool versions, and notes without unauthorized game content.",
+     "implemented_by": null
+    },
+    {
+     "name": "Hardware Documentation Package",
+     "description": "Bundles schematics, board maps, pinouts, photographs, measurements, firmware references, and revision notes when authorized.",
+     "implemented_by": null
+    },
+    {
+     "name": "Research Bibliography Manager",
+     "description": "Indexes manuals, patents, schematics, standards, interviews, source, issue trackers, and archival references with provenance.",
+     "implemented_by": null
+    },
+    {
+     "name": "Console Model and Revision Database",
+     "description": "Tracks hardware identifiers, boards, chips, regions, outputs, power, controllers, firmware, and known changes.",
+     "implemented_by": null
+    },
+    {
+     "name": "Game Serial and Revision Database",
+     "description": "Maps lawful metadata among titles, regions, serials, discs or cartridges, revisions, hashes, and known reissues.",
+     "implemented_by": null
+    },
+    {
+     "name": "Drive and Reader Compatibility Database",
+     "description": "Tracks model, firmware, offsets, supported media, errors, settings, and verified workflows.",
+     "implemented_by": null
+    },
+    {
+     "name": "Emulator Version Evidence Vault",
+     "description": "Stores source commit, build flags, binaries where redistributable, configuration, logs, and reference cases.",
+     "implemented_by": null
+    },
+    {
+     "name": "Metadata Schema Designer",
+     "description": "Defines stable JSON, CSV, SQLite, XML, DAT, and human-readable interfaces for preservation records.",
+     "implemented_by": null
+    },
+    {
+     "name": "Archive Integrity Auditor",
+     "description": "Re-hashes stored files, checks bit rot, verifies replicas, tests restore, and records media refresh.",
+     "implemented_by": null
+    },
+    {
+     "name": "Technical Handoff Builder",
+     "description": "Packages readable summaries, raw logs, commands, configs, hashes, open issues, rollback, and next steps.",
+     "implemented_by": "report",
+     "implementation_scope": "summary, limitations, next steps, ledger reference"
+    },
+    {
+     "name": "Rights and Redistribution Register",
+     "description": "Records ownership, licenses, permissions, embargoes, attribution, derivative rights, and distribution boundaries.",
+     "implemented_by": "gate authorize + report",
+     "implementation_scope": "rights section in the rendered report"
+    }
+   ]
+  },
+  {
+   "index": 34,
+   "name": "Ratings, Accessibility, Privacy, Child Safety, Localization, and Release Compliance",
+   "skill_count": 15,
+   "routing": "guided-workflow",
+   "skills": [
+    {
+     "name": "ESRB Submission Planner",
+     "description": "Prepares approved content disclosures, descriptors, questionnaires, footage, metadata, and change tracking.",
+     "implemented_by": null
+    },
+    {
+     "name": "PEGI Compliance Planner",
+     "description": "Prepares content declarations, online feature details, labels, storefront metadata, and regional evidence.",
+     "implemented_by": null
+    },
+    {
+     "name": "CERO and Japanese Release Planner",
+     "description": "Coordinates authorized content review, language, regional metadata, age rating, and platform submission needs.",
+     "implemented_by": null
+    },
+    {
+     "name": "USK and German Release Planner",
+     "description": "Coordinates content, youth-protection, storefront, legal, and platform metadata requirements.",
+     "implemented_by": null
+    },
+    {
+     "name": "GRAC and Korean Release Planner",
+     "description": "Coordinates authorized rating materials, localization, service details, and regional submission evidence.",
+     "implemented_by": null
+    },
+    {
+     "name": "IARC Rating Workflow Specialist",
+     "description": "Prepares consistent digital-store questionnaires, territories, certificates, and update reviews.",
+     "implemented_by": null
+    },
+    {
+     "name": "Accessibility Feature Planner",
+     "description": "Designs remapping, subtitles, captions, contrast, text size, motion reduction, assist modes, and difficulty options.",
+     "implemented_by": null
+    },
+    {
+     "name": "Subtitle and Caption QA Specialist",
+     "description": "Checks timing, speaker distinction, effects, readability, size, contrast, line length, and localization.",
+     "implemented_by": null
+    },
+    {
+     "name": "Color and Visual Accessibility Tester",
+     "description": "Tests color dependence, contrast, flashes, motion, UI scaling, safe areas, and display conditions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Motor Accessibility Tester",
+     "description": "Tests remapping, one-handed use, holds, toggles, timing windows, sensitivity, alternative devices, and pause behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Cognitive Accessibility Reviewer",
+     "description": "Checks clarity, consistency, tutorials, memory load, navigation, error recovery, pacing, and assist features.",
+     "implemented_by": null
+    },
+    {
+     "name": "Privacy and Telemetry Minimizer",
+     "description": "Limits collected data, documents purpose, retention, consent, deletion, and user controls.",
+     "implemented_by": null
+    },
+    {
+     "name": "Child Safety and Parental Feature Reviewer",
+     "description": "Checks age-appropriate design, communication, reporting, blocking, purchases, privacy, and parental controls.",
+     "implemented_by": null
+    },
+    {
+     "name": "Voice and Chat Safety Tester",
+     "description": "Tests moderation, mute, block, report, consent, privacy, abuse handling, and service failure behavior.",
+     "implemented_by": null
+    },
+    {
+     "name": "Regional Localization Readiness",
+     "description": "Validates language, fonts, expansion, right-to-left, input, dates, numbers, cultural review, and store metadata.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 35,
+   "name": "Build Toolchains, Quality, Supply Chain, Containers, and Worker Operations",
+   "skill_count": 15,
+   "routing": "guided-workflow",
+   "skills": [
+    {
+     "name": "Console C and C++ Toolchain Manager",
+     "description": "Maintains GCC, Clang, Make, CMake, Ninja, Meson, GDB, LLDB, target files, and symbols.",
+     "implemented_by": null
+    },
+    {
+     "name": "Managed and Scripting Toolchain Manager",
+     "description": "Maintains Python, Rust, Go, Java, .NET, Lua, Ruby, and Node.js with pinned environments.",
+     "implemented_by": null
+    },
+    {
+     "name": "Archive and Data Toolchain Manager",
+     "description": "Maintains 7-Zip, libarchive, zstd, lz4, xz, gzip, bzip2, SQLite, jq, yq, XML, protobuf, and FlatBuffers.",
+     "implemented_by": null
+    },
+    {
+     "name": "Media Toolchain Manager",
+     "description": "Maintains FFmpeg, FFprobe, ImageMagick, Audacity, MediaInfo, and ExifTool with codec and license records.",
+     "implemented_by": null
+    },
+    {
+     "name": "Source Navigation and Quality Gate",
+     "description": "Runs Git, Git LFS, ripgrep, ctags, diffoscope, shellcheck, clang-tidy, cppcheck, tests, and fuzzers.",
+     "implemented_by": null
+    },
+    {
+     "name": "SBOM and Vulnerability Pipeline",
+     "description": "Uses Syft, Grype, Trivy, OSV-Scanner, cosign, and GnuPG for supported source and distributed tools.",
+     "implemented_by": null
+    },
+    {
+     "name": "Emulator Reproducible Build Auditor",
+     "description": "Pins dependencies, toolchains, timestamps, locales, paths, flags, and compares independent builds.",
+     "implemented_by": null
+    },
+    {
+     "name": "Fuzzer Harness Developer",
+     "description": "Builds bounded fuzzers for parsers, media, save states, shaders, network packets, and decoders with crash minimization.",
+     "implemented_by": null
+    },
+    {
+     "name": "Linux GPU Worker Manager",
+     "description": "Maintains drivers, Vulkan, OpenGL, capture tools, permissions, display or headless modes, and clean images.",
+     "implemented_by": null
+    },
+    {
+     "name": "Windows Console Tool Worker Manager",
+     "description": "Maintains licensed debuggers, media tools, official SDKs, GPU tools, secrets, and disposable state.",
+     "implemented_by": null
+    },
+    {
+     "name": "macOS Console Tool Worker Manager",
+     "description": "Maintains Xcode, Metal, notarization, official SDK access, captures, and isolated credentials.",
+     "implemented_by": null
+    },
+    {
+     "name": "Physical Device Laboratory Manager",
+     "description": "Tracks consoles, models, firmware, controllers, cables, capture, power, booking, calibration, and maintenance.",
+     "implemented_by": null
+    },
+    {
+     "name": "Official Devkit and Testkit Worker Manager",
+     "description": "Enforces access, network, SDK, account, key, log, and report boundaries for approved hardware.",
+     "implemented_by": null
+    },
+    {
+     "name": "Containerized Research Environment Builder",
+     "description": "Creates reproducible, non-privileged Linux environments with mounted user data and explicit GPU or device access.",
+     "implemented_by": null
+    },
+    {
+     "name": "Tool License and Redistribution Auditor",
+     "description": "Records each tool, core, firmware dependency, asset, SDK, and output licensing condition.",
+     "implemented_by": null
+    }
+   ]
+  },
+  {
+   "index": 36,
+   "name": "Knowledge Packs and Agent Automation Systems",
+   "skill_count": 21,
+   "routing": "guided-workflow",
+   "skills": [
+    {
+     "name": "Early Analog and Discrete Logic Knowledge Pack",
+     "description": "Covers logic, oscillators, counters, sync, RF or composite output, controls, overlays, and component aging.",
+     "implemented_by": null
+    },
+    {
+     "name": "6502 Family Timing Knowledge Pack",
+     "description": "Covers instruction timing, bus cycles, interrupts, variants, illegal opcodes, decimal behavior, and DMA interactions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Z80 and Interrupt Knowledge Pack",
+     "description": "Covers instructions, prefixes, refresh, interrupt modes, wait states, buses, and derivatives.",
+     "implemented_by": null
+    },
+    {
+     "name": "68000 Family Knowledge Pack",
+     "description": "Covers exceptions, addressing, timing, bus errors, endian behavior, coprocessors, and console integrations.",
+     "implemented_by": null
+    },
+    {
+     "name": "MIPS Console Architecture Knowledge Pack",
+     "description": "Covers R3000 and R4000 families, caches, pipelines, exceptions, coprocessors, endian, and memory maps.",
+     "implemented_by": null
+    },
+    {
+     "name": "ARM Console Architecture Knowledge Pack",
+     "description": "Covers ARM7, ARM9, ARM11, ARMv7, ARM64, Thumb, exceptions, caches, MMUs, and platform use.",
+     "implemented_by": null
+    },
+    {
+     "name": "SH-2 and SH-4 Knowledge Pack",
+     "description": "Covers pipelines, caches, exceptions, DMA, peripherals, endian, and multi-CPU synchronization.",
+     "implemented_by": null
+    },
+    {
+     "name": "PowerPC Console Knowledge Pack",
+     "description": "Covers Gekko, Broadway, Xenon, Cell PPU concepts, endian, VMX, exceptions, caches, and platform differences.",
+     "implemented_by": null
+    },
+    {
+     "name": "x86 and x64 Console Knowledge Pack",
+     "description": "Covers ABIs, memory, SIMD, exceptions, secure platform boundaries, and modern optimization.",
+     "implemented_by": null
+    },
+    {
+     "name": "Console Media Structure Knowledge Pack",
+     "description": "Covers cartridges, mappers, CD, DVD, GD-ROM, Blu-ray, proprietary layouts, ECC, subchannels, and saves.",
+     "implemented_by": null
+    },
+    {
+     "name": "Console Graphics Evolution Knowledge Pack",
+     "description": "Covers tiles, sprites, scanlines, framebuffers, fixed-function 3D, programmable shaders, and synchronization.",
+     "implemented_by": null
+    },
+    {
+     "name": "Console Audio and DSP Knowledge Pack",
+     "description": "Covers PSG, FM, wavetable, PCM, DSPs, resampling, mixing, timing, and latency.",
+     "implemented_by": null
+    },
+    {
+     "name": "Console Controller and Peripheral Knowledge Pack",
+     "description": "Covers electrical protocols, HID abstractions, motion, touch, cameras, microphones, storage, and accessibility.",
+     "implemented_by": null
+    },
+    {
+     "name": "Console Certification and Service Knowledge Pack",
+     "description": "Covers packages, users, entitlements, achievements or trophies, saves, networks, privacy, age ratings, and submissions.",
+     "implemented_by": null
+    },
+    {
+     "name": "Console Knowledge Retrieval Index",
+     "description": "Indexes platform, model, game, serial, revision, hash, media, tool, version, issue, evidence, and rights metadata.",
+     "implemented_by": "catalog --search",
+     "implementation_scope": "search over all 491 catalog skills"
+    },
+    {
+     "name": "Emulator Routing Engine",
+     "description": "Recommends lawful emulator candidates and a test matrix based on platform, accuracy, host, renderer, controls, and preservation goal.",
+     "implemented_by": null
+    },
+    {
+     "name": "Clean-Room Test Harness",
+     "description": "Launches emulators, loads user-owned media, captures logs, frames, audio, scripted input, performance, and reproducible results.",
+     "implemented_by": null
+    },
+    {
+     "name": "Physical Hardware Connector",
+     "description": "Uses official SDKs or documented interfaces to deploy authorized builds and collect logs without exposing proprietary material.",
+     "implemented_by": null
+    },
+    {
+     "name": "FPGA Automation Orchestrator",
+     "description": "Runs lint, simulation, synthesis, place and route, timing, bitstream, hardware smoke, and reference comparison.",
+     "implemented_by": null
+    },
+    {
+     "name": "Source Port Migration Assistant",
+     "description": "Checks endian, widths, intrinsics, assembly, graphics, audio, input, files, threading, timing, networking, saves, localization, and certification.",
+     "implemented_by": null
+    },
+    {
+     "name": "Console Agent Benchmark Suite",
+     "description": "Evaluates identification, preservation, build, emulation, debugging, compatibility, reporting, safety, reproducibility, and repair performance.",
+     "implemented_by": null
+    }
+   ]
+  }
+ ]
+}

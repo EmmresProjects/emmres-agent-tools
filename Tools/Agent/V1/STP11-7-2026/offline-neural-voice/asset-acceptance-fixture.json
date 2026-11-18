@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "case_id": "video-greeting",
+  "description": "Final acceptance scenario from the catalogue: a warm, friendly, conversational greeting for a video, with recorded evidence.",
+  "case": {
+    "name": "acceptance-greeting",
+    "text": "Greetings, friends! Welcome to my video.",
+    "voice": "en-us-joe-medium",
+    "preset": "warm-friendly",
+    "locale": "en-US",
+    "seed": 1337,
+    "min_duration_s": 2.5,
+    "max_duration_s": 4.0,
+    "transcript_check": false,
+    "prosody": {
+      "pause_after": "friends",
+      "emphasis": "welcome"
+    },
+    "delivery": "warm, friendly, expressive, conversational",
+    "integrity_expectation": [
+      "no robotic sound",
+      "no buzzing",
+      "no missing words",
+      "no repeated words",
+      "no cut-off phonemes"
+    ],
+    "formats": {
+      "required": [
+        "pcm-wav"
+      ],
+      "optional": [
+        "mp3"
+      ]
+    },
+    "environment": {
+      "internet": "disabled",
+      "api_key": false,
+      "gpu": false,
+      "first_run_download": false
+    },
+    "duration_target_s": 3.25,
+    "duration_tolerance_s": 0.1
+  },
+  "expected_evidence": [
+    "transcript comparison",
+    "audio metrics",
+    "model and voice versions",
+    "checksums",
+    "preset version",
+    "pass or fail report"
+  ],
+  "tolerance": {
+    "duration_s": 0.15,
+    "loudness_lu": 1.0,
+    "true_peak_db": 0.1
+  }
+}

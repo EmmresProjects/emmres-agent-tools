@@ -1,0 +1,81 @@
+{
+  "source": "AI Image Skill Catalog - sample prompts, regression cases and caption fixtures",
+  "batch_prompts": [
+    {"id": "b001", "prompt": "a weathered brass lighthouse on a basalt headland, cold overcast morning, 35mm reportage lens, muted teal and slate palette, fine spray in the air, documentary photograph", "negative": "text artifacts, watermark, blurry, extra fingers, deformed anatomy", "width": 1024, "height": 1024, "steps": 30, "cfg": 7.0, "tags": ["landscape", "documentary"]},
+    {"id": "b002", "prompt": "studio product photograph of a matte ceramic pour-over coffee set on a pale oak surface, large softbox key light, soft contact shadow, clean warm neutral palette, 85mm lens", "negative": "text artifacts, watermark, distorted logo, floating product, duplicate product", "width": 1024, "height": 1024, "steps": 30, "cfg": 6.5, "tags": ["product", "commerce"]},
+    {"id": "b003", "prompt": "editorial illustration of a night market in the rain, neon signage reflections in puddles, graphic shapes, deep teal and magenta palette, high contrast", "negative": "text artifacts, watermark, blurry, 3d render, photorealistic", "width": 1024, "height": 1280, "steps": 28, "cfg": 8.0, "tags": ["illustration", "editorial"]},
+    {"id": "b004", "prompt": "minimal interior of a small concrete apartment at golden hour, single low sunbeam across a plaster wall, one olive tree, calm empty composition", "negative": "text artifacts, watermark, cluttered background, deformed anatomy, warped perspective", "width": 1280, "height": 832, "steps": 30, "cfg": 7.0, "tags": ["architecture", "interior"]},
+    {"id": "b005", "prompt": "overhead food photograph of a rustic sourdough loaf on linen, flour dust, warm side light, deep crust texture, shallow depth of field", "negative": "text artifacts, watermark, blurry, oversaturated, duplicate bread", "width": 1024, "height": 1024, "steps": 30, "cfg": 6.5, "tags": ["food"]},
+    {"id": "b006", "prompt": "abstract composition of overlapping translucent arcs in cobalt and amber, soft gradients, subtle paper grain, no subject", "negative": "text artifacts, watermark, realistic scene, faces, sharp edges", "width": 1024, "height": 1024, "steps": 25, "cfg": 5.0, "tags": ["abstract"]},
+    {"id": "b007", "prompt": "portrait of a glassblower in a workshop, warm furnace light on one side, cool window light on the other, hands resting on a pipe, 85mm lens, shallow depth of field", "negative": "text artifacts, watermark, malformed hands, extra fingers, plastic skin, deformed face", "width": 896, "height": 1152, "steps": 32, "cfg": 6.5, "tags": ["portrait", "people"]},
+    {"id": "b008", "prompt": "cutaway technical illustration of a mechanical wristwatch movement, exploded view, monochrome line art with numbered callouts, no shading", "negative": "text artifacts, watermark, colour, photorealistic, blurry", "width": 1024, "height": 1024, "steps": 26, "cfg": 6.0, "tags": ["technical"]}
+  ],
+  "prompt_sets": {
+    "product": [
+      "a matte stainless steel insulated bottle, three quarter view, seamless pale background, soft gradient shadow, studio product photograph, 85mm lens",
+      "a minimal leather card wallet on a concrete plinth, top down, single softbox, visible stitching and grain, studio photograph",
+      "a clear glass carafe with water, backlit on a pale gradient, condensation droplets, studio product photograph"
+    ],
+    "landscape": [
+      "a coastal road at dusk, headlights and tail lights, wet asphalt reflections, wide 24mm lens, deep blue and amber palette",
+      "a foggy pine ridge at sunrise, layered depth, muted green and gold, long lens compression, fine mist"
+    ],
+    "architecture": [
+      "a narrow concrete stairwell with a single tall window, shafts of dusty light, brutalist, symmetrical composition",
+      "a timber pavilion on a wetland, raised deck, soft overcast light, reflective water, minimal palette"
+    ]
+  },
+  "regression_cases": [
+    {"id": "r001", "prompt": "a weathered brass lighthouse on a basalt headland, cold overcast morning, 35mm reportage lens", "seed": 101, "width": 1024, "height": 1024, "expected": {"min_width": 1024, "max_clip_high_pct": 2.0, "min_sharpness": 12.0, "max_noise_sigma": 9.0, "max_bytes": 3000000, "contains_subjects": ["lighthouse"]}},
+    {"id": "r002", "prompt": "studio product photograph of a matte ceramic mug on a pale oak surface, softbox key light", "seed": 202, "width": 1024, "height": 1024, "expected": {"min_width": 1024, "max_clip_high_pct": 1.5, "min_sharpness": 15.0, "max_noise_sigma": 7.0, "max_bytes": 2500000, "contains_subjects": ["mug"]}},
+    {"id": "r003", "prompt": "overhead food photograph of a sourdough loaf on linen, warm side light", "seed": 303, "width": 1024, "height": 1024, "expected": {"min_width": 1024, "max_clip_high_pct": 3.0, "min_sharpness": 10.0, "max_noise_sigma": 10.0, "max_bytes": 3000000, "contains_subjects": ["bread"]}}
+  ],
+  "dataset_sample": {
+    "note": "Small caption corpus used to exercise dataset curation, bias auditing and caption design.",
+    "records": [
+      {"file": "img_0001.jpg", "caption": "a portrait of a woman in a red jacket outdoors"},
+      {"file": "img_0002.jpg", "caption": "a portrait of a man in a blue shirt outdoors"},
+      {"file": "img_0003.jpg", "caption": "a portrait of a woman with curly hair smiling"},
+      {"file": "img_0004.jpg", "caption": "a portrait of a man with a beard in a studio"},
+      {"file": "img_0005.jpg", "caption": "a group photo of women and men at a table"},
+      {"file": "img_0006.jpg", "caption": "a photo of a woman cooking in a kitchen"},
+      {"file": "img_0007.jpg", "caption": "a photo of a man cooking in a kitchen"},
+      {"file": "img_0008.jpg", "caption": "a child playing in a park on a sunny day"},
+      {"file": "img_0009.jpg", "caption": "a child riding a bicycle down a street"},
+      {"file": "img_0010.jpg", "caption": "a woman walking a dog in a park"},
+      {"file": "img_0011.jpg", "caption": "a man walking a dog in a park"},
+      {"file": "img_0012.jpg", "caption": "a woman riding a bicycle down a street"},
+      {"file": "img_0013.jpg", "caption": "a portrait of a woman doctor in a white coat"},
+      {"file": "img_0014.jpg", "caption": "a portrait of a man doctor in a white coat"},
+      {"file": "img_0015.jpg", "caption": "a nurse smiling in a hospital corridor"},
+      {"file": "img_0016.jpg", "caption": "a person in a wheelchair in a city park"},
+      {"file": "img_0017.jpg", "caption": "an older woman knitting by a window"},
+      {"file": "img_0018.jpg", "caption": "an older man reading in an armchair"},
+      {"file": "img_0019.jpg", "caption": "a woman engineer in a hard hat on site"},
+      {"file": "img_0020.jpg", "caption": "a man engineer in a hard hat on site"},
+      {"file": "img_0021.jpg", "caption": "a woman running on a track at dawn"},
+      {"file": "img_0022.jpg", "caption": "a man running on a track at dawn"},
+      {"file": "img_0023.jpg", "caption": "a woman presenting at a whiteboard"},
+      {"file": "img_0024.jpg", "caption": "a man presenting at a whiteboard"},
+      {"file": "img_0025.jpg", "caption": "a woman playing a violin on stage"},
+      {"file": "img_0026.jpg", "caption": "a man playing a guitar on stage"},
+      {"file": "img_0027.jpg", "caption": "a woman in a business suit in an office"},
+      {"file": "img_0028.jpg", "caption": "a man in a business suit in an office"},
+      {"file": "img_0029.jpg", "caption": "a woman wearing a hijab at a market"},
+      {"file": "img_0030.jpg", "caption": "a man wearing a turban at a market"}
+    ]
+  },
+  "abstract_palettes": [
+    {"id": "cobalt_amber", "name": "Cobalt and amber", "swatches": ["#0b3d91", "#f5b700", "#f4f1ea", "#1a1a1a"]},
+    {"id": "verdant_sand", "name": "Verdant and sand", "swatches": ["#3f6b35", "#e4d8b7", "#a8c686", "#22301c"]},
+    {"id": "rose_ink", "name": "Rose and ink", "swatches": ["#f4c7c3", "#14100d", "#8a3b46", "#fdf6f2"]},
+    {"id": "arctic_ember", "name": "Arctic and ember", "swatches": ["#e8f1f5", "#ff6b35", "#1b2a41", "#9ad1d4"]}
+  ],
+  "variant_dimensions": {
+    "camera_angle": ["eye level", "low angle looking up", "high angle looking down", "over the shoulder", "top down"],
+    "era": ["1920s", "1970s", "1990s", "contemporary", "near future"],
+    "weather": ["clear", "light rain", "mist", "snow", "storm"],
+    "medium": ["photograph", "editorial illustration", "watercolour", "ink drawing", "3d render"],
+    "colorway": ["muted teal and amber", "cool marine palette", "monochrome", "warm earth palette"]
+  }
+}

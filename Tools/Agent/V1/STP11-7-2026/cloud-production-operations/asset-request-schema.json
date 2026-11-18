@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:cloud-production-operations:request-schema:1.0",
+  "title": "Cloud Production Operations Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "selection",
+    "context"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "maxItems": 249,
+          "uniqueItems": true
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "maxItems": 18,
+          "uniqueItems": true
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 200000,
+          "description": "Plain text, Markdown, or copied HTML containing capability or category names."
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "capabilities"
+          ]
+        },
+        {
+          "required": [
+            "categories"
+          ]
+        },
+        {
+          "required": [
+            "text"
+          ]
+        }
+      ]
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "service",
+        "owner",
+        "provider",
+        "environment"
+      ],
+      "properties": {
+        "service": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "provider": {
+          "enum": [
+            "unspecified",
+            "aws",
+            "azure",
+            "gcp",
+            "oracle",
+            "hybrid",
+            "self-hosted",
+            "other"
+          ]
+        },
+        "environment": {
+          "enum": [
+            "development",
+            "test",
+            "staging",
+            "production"
+          ]
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "maxItems": 50,
+          "uniqueItems": true,
+          "default": []
+        },
+        "change_ticket": {
+          "type": "string",
+          "maxLength": 200,
+          "default": ""
+        },
+        "data_classification": {
+          "enum": [
+            "public",
+            "internal",
+            "confidential",
+            "personal",
+            "regulated",
+            "secret"
+          ],
+          "default": "internal"
+        },
+        "blast_radius": {
+          "type": "string",
+          "maxLength": 1000,
+          "default": ""
+        }
+      }
+    },
+    "change_intent": {
+      "enum": [
+        "preview",
+        "execute"
+      ],
+      "default": "preview"
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "default": {},
+      "properties": {
+        "approved": {
+          "type": "boolean",
+          "default": false
+        },
+        "approver": {
+          "type": "string",
+          "maxLength": 200,
+          "default": ""
+        },
+        "reference": {
+          "type": "string",
+          "maxLength": 200,
+          "default": ""
+        },
+        "approved_at": {
+          "type": "string",
+          "format": "date-time",
+          "default": ""
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time",
+          "default": ""
+        }
+      }
+    },
+    "recovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "default": {},
+      "properties": {
+        "rollback_strategy": {
+          "type": "string",
+          "maxLength": 4000,
+          "default": ""
+        },
+        "backup_reference": {
+          "type": "string",
+          "maxLength": 1000,
+          "default": ""
+        },
+        "rto_minutes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 525600,
+          "default": 0
+        },
+        "rpo_minutes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 525600,
+          "default": 0
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "default": {},
+      "properties": {
+        "success_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "maxItems": 100,
+          "default": []
+        },
+        "monitoring": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "maxItems": 100,
+          "default": []
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "maxItems": 5000,
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "control_id",
+          "status",
+          "source",
+          "observed_at",
+          "summary"
+        ],
+        "properties": {
+          "control_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "status": {
+            "enum": [
+              "passed",
+              "failed",
+              "not-applicable"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000,
+            "description": "Evidence locator or provenance; not fetched by this tool."
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "justification": {
+            "type": "string",
+            "maxLength": 4000,
+            "default": ""
+          }
+        }
+      }
+    }
+  }
+}

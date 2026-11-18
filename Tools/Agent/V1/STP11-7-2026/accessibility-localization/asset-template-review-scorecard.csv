@@ -1,0 +1,4 @@
+segment_id,error_type,severity,weight,notes
+1,terminology,serious,3,Product name
+2,grammar,moderate,2,
+3,style,minor,1,

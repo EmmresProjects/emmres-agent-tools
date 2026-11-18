@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "categories": [
+    "Agent",
+    "Android",
+    "Archive",
+    "Audio",
+    "Code",
+    "Data",
+    "Documents",
+    "Images",
+    "Research",
+    "System",
+    "Video",
+    "Web"
+  ]
+}

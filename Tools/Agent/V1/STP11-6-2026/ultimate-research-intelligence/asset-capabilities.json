@@ -1,0 +1,2102 @@
+[
+  {
+    "id": "1.1",
+    "category": "Search Strategy and Query Architecture",
+    "name": "Research Objective Interpreter",
+    "description": "Transforms a prompt into answerable questions, evidence needs, freshness rules, scope boundaries, and completion criteria."
+  },
+  {
+    "id": "1.2",
+    "category": "Search Strategy and Query Architecture",
+    "name": "Query Decomposition Architect",
+    "description": "Breaks broad topics into nonredundant searches for entities, dates, locations, methods, controversies, and source types."
+  },
+  {
+    "id": "1.3",
+    "category": "Search Strategy and Query Architecture",
+    "name": "Query Expansion Specialist",
+    "description": "Generates synonyms, acronyms, alternate spellings, translations, technical terms, historical names, and related concepts."
+  },
+  {
+    "id": "1.4",
+    "category": "Search Strategy and Query Architecture",
+    "name": "Search Intent Classifier",
+    "description": "Distinguishes factual, navigational, comparative, investigative, exploratory, transactional, and source-seeking intent."
+  },
+  {
+    "id": "1.5",
+    "category": "Search Strategy and Query Architecture",
+    "name": "Boolean Query Engineer",
+    "description": "Builds precise AND, OR, NOT, phrase, wildcard, proximity, and field-limited queries for supported search systems."
+  },
+  {
+    "id": "1.6",
+    "category": "Search Strategy and Query Architecture",
+    "name": "Advanced Search Operator Specialist",
+    "description": "Uses site, filetype, intitle, inurl, date, language, region, author, and domain filters where supported."
+  },
+  {
+    "id": "1.7",
+    "category": "Search Strategy and Query Architecture",
+    "name": "Search Funnel Designer",
+    "description": "Moves from broad discovery to focused verification while preserving useful leads and avoiding premature narrowing."
+  },
+  {
+    "id": "1.8",
+    "category": "Search Strategy and Query Architecture",
+    "name": "Negative Keyword Designer",
+    "description": "Removes recurring noise, ambiguous meanings, duplicate markets, unrelated products, and low-value result types."
+  },
+  {
+    "id": "1.9",
+    "category": "Search Strategy and Query Architecture",
+    "name": "Query Portfolio Manager",
+    "description": "Maintains diverse query families so one wording, language, platform, or ranking system does not control the evidence."
+  },
+  {
+    "id": "1.10",
+    "category": "Search Strategy and Query Architecture",
+    "name": "Search Stop-Condition Designer",
+    "description": "Defines bounded saturation, unresolved contradiction, freshness, coverage, and diminishing- return conditions."
+  },
+  {
+    "id": "2.1",
+    "category": "General Web Discovery",
+    "name": "General Web Search Operator",
+    "description": "Finds relevant public pages, opens results, follows useful links, and records source context and dates."
+  },
+  {
+    "id": "2.2",
+    "category": "General Web Discovery",
+    "name": "Deep Web Research Navigator",
+    "description": "Explores multi-page sites, documentation hubs, archives, catalogs, and less visible but lawfully accessible resources."
+  },
+  {
+    "id": "2.3",
+    "category": "General Web Discovery",
+    "name": "Domain-Restricted Searcher",
+    "description": "Searches within a specified organization, government, university, publisher, repository, or website."
+  },
+  {
+    "id": "2.4",
+    "category": "General Web Discovery",
+    "name": "Exact Phrase and Quote Searcher",
+    "description": "Locates precise wording, quotations, titles, error messages, policy clauses, and distinctive text fragments."
+  },
+  {
+    "id": "2.5",
+    "category": "General Web Discovery",
+    "name": "Entity Disambiguation Searcher",
+    "description": "Separates similarly named people, companies, products, places, projects, and publications before synthesis."
+  },
+  {
+    "id": "2.6",
+    "category": "General Web Discovery",
+    "name": "Related Site and Competitor Finder",
+    "description": "Finds comparable organizations, technologies, services, publications, and communities using evidence-based relationships."
+  },
+  {
+    "id": "2.7",
+    "category": "General Web Discovery",
+    "name": "URL Pattern Explorer",
+    "description": "Uses predictable paths, sitemaps, categories, feeds, and pagination to discover related public content."
+  },
+  {
+    "id": "2.8",
+    "category": "General Web Discovery",
+    "name": "Search Snippet Skeptic",
+    "description": "Treats result snippets as leads and verifies claims in the underlying page before using them."
+  },
+  {
+    "id": "2.9",
+    "category": "General Web Discovery",
+    "name": "Search Result Deduplicator",
+    "description": "Clusters mirrors, syndication, reposts, aliases, tracking URLs, and near-duplicate pages."
+  },
+  {
+    "id": "2.10",
+    "category": "General Web Discovery",
+    "name": "Discovery Gap Detector",
+    "description": "Identifies missing perspectives, dates, regions, source classes, or primary evidence and plans the next search."
+  },
+  {
+    "id": "3.1",
+    "category": "Webpage Reading, Scrolling, and Site Traversal",
+    "name": "Long-Page Scroll Researcher",
+    "description": "Traverses long and infinite-scroll pages with checkpoints, duplicate detection, loading waits, and bounded stopping."
+  },
+  {
+    "id": "3.2",
+    "category": "Webpage Reading, Scrolling, and Site Traversal",
+    "name": "Website Navigation Mapper",
+    "description": "Maps menus, subpages, breadcrumbs, categories, tags, search tools, and internal link relationships."
+  },
+  {
+    "id": "3.3",
+    "category": "Webpage Reading, Scrolling, and Site Traversal",
+    "name": "Article Deep Reader",
+    "description": "Extracts thesis, claims, evidence, methods, examples, caveats, dates, and conclusions from an article."
+  },
+  {
+    "id": "3.4",
+    "category": "Webpage Reading, Scrolling, and Site Traversal",
+    "name": "Documentation Portal Navigator",
+    "description": "Finds version-specific instructions across sidebars, anchors, references, examples, changelogs, and FAQs."
+  },
+  {
+    "id": "3.5",
+    "category": "Webpage Reading, Scrolling, and Site Traversal",
+    "name": "Expandable Content Reader",
+    "description": "Opens tabs, accordions, comments, footnotes, related panels, and lazy-loaded sections needed for context."
+  },
+  {
+    "id": "3.6",
+    "category": "Webpage Reading, Scrolling, and Site Traversal",
+    "name": "Pagination Traversal Specialist",
+    "description": "Moves through bounded result pages while tracking position, filters, duplicates, and missing records."
+  },
+  {
+    "id": "3.7",
+    "category": "Webpage Reading, Scrolling, and Site Traversal",
+    "name": "Reader-Mode Noise Filter",
+    "description": "Separates primary content from menus, advertisements, cookie banners, repeated chrome, and recommendations."
+  },
+  {
+    "id": "3.8",
+    "category": "Webpage Reading, Scrolling, and Site Traversal",
+    "name": "Web Table and List Reader",
+    "description": "Captures headers, units, filters, notes, pagination, and row relationships from visible structured content."
+  },
+  {
+    "id": "3.9",
+    "category": "Webpage Reading, Scrolling, and Site Traversal",
+    "name": "Broken Link Recovery Searcher",
+    "description": "Uses titles, URLs, archives, mirrors, citations, and surrounding references to locate lawful replacements."
+  },
+  {
+    "id": "3.10",
+    "category": "Webpage Reading, Scrolling, and Site Traversal",
+    "name": "Site Coverage Auditor",
+    "description": "Checks whether all relevant sections, result pages, dates, and content types within the declared scope were reviewed."
+  },
+  {
+    "id": "4.1",
+    "category": "Primary and Official Source Research",
+    "name": "Government Source Researcher",
+    "description": "Prioritizes official laws, regulations, notices, statistics, forms, agencies, and public records for jurisdictional claims."
+  },
+  {
+    "id": "4.2",
+    "category": "Primary and Official Source Research",
+    "name": "Company Primary Source Researcher",
+    "description": "Finds official filings, reports, product pages, press releases, documentation, policies, and investor materials."
+  },
+  {
+    "id": "4.3",
+    "category": "Primary and Official Source Research",
+    "name": "Standards and Specifications Researcher",
+    "description": "Locates authoritative standards, RFCs, technical specifications, profiles, and implementation guidance."
+  },
+  {
+    "id": "4.4",
+    "category": "Primary and Official Source Research",
+    "name": "Official Documentation Searcher",
+    "description": "Finds current vendor manuals, support pages, API references, compatibility tables, and release notes."
+  },
+  {
+    "id": "4.5",
+    "category": "Primary and Official Source Research",
+    "name": "Public Filing Researcher",
+    "description": "Searches company registries, securities filings, procurement records, patent databases, and disclosed reports."
+  },
+  {
+    "id": "4.6",
+    "category": "Primary and Official Source Research",
+    "name": "Institutional Repository Searcher",
+    "description": "Finds university, museum, archive, library, laboratory, and research-institute materials."
+  },
+  {
+    "id": "4.7",
+    "category": "Primary and Official Source Research",
+    "name": "Primary Dataset Locator",
+    "description": "Finds original datasets, codebooks, collection methods, licenses, versions, and download formats."
+  },
+  {
+    "id": "4.8",
+    "category": "Primary and Official Source Research",
+    "name": "Direct Statement Verifier",
+    "description": "Finds the original speech, transcript, filing, post, decision, or publication behind a quoted claim."
+  },
+  {
+    "id": "4.9",
+    "category": "Primary and Official Source Research",
+    "name": "Official Source Version Tracker",
+    "description": "Compares current, superseded, archived, and jurisdiction-specific versions of official material."
+  },
+  {
+    "id": "4.10",
+    "category": "Primary and Official Source Research",
+    "name": "Primary Source Sufficiency Auditor",
+    "description": "Checks whether a material claim has direct authoritative support or still relies only on secondary reporting."
+  },
+  {
+    "id": "5.1",
+    "category": "Academic Literature and Study Search",
+    "name": "Scholarly Database Searcher",
+    "description": "Builds database-specific searches for journals, conferences, dissertations, preprints, and technical reports."
+  },
+  {
+    "id": "5.2",
+    "category": "Academic Literature and Study Search",
+    "name": "Systematic Literature Search Designer",
+    "description": "Defines databases, dates, languages, concepts, inclusion criteria, exclusions, and reproducible query strings."
+  },
+  {
+    "id": "5.3",
+    "category": "Academic Literature and Study Search",
+    "name": "Citation Chaining Researcher",
+    "description": "Uses backward references and forward citations to find foundations, replications, critiques, and later developments."
+  },
+  {
+    "id": "5.4",
+    "category": "Academic Literature and Study Search",
+    "name": "Review Article Locator",
+    "description": "Finds systematic reviews, meta-analyses, scoping reviews, and authoritative field overviews."
+  },
+  {
+    "id": "5.5",
+    "category": "Academic Literature and Study Search",
+    "name": "Preprint and Published Version Matcher",
+    "description": "Links preprints to peer-reviewed versions, corrections, retractions, and supplementary material."
+  },
+  {
+    "id": "5.6",
+    "category": "Academic Literature and Study Search",
+    "name": "Study Method Extractor",
+    "description": "Captures design, sample, measures, intervention, comparator, statistics, outcomes, and limitations."
+  },
+  {
+    "id": "5.7",
+    "category": "Academic Literature and Study Search",
+    "name": "Evidence Hierarchy Classifier",
+    "description": "Distinguishes experimental, observational, qualitative, modeling, review, commentary, and expert-opinion evidence."
+  },
+  {
+    "id": "5.8",
+    "category": "Academic Literature and Study Search",
+    "name": "Study Population Fit Analyst",
+    "description": "Checks whether sample, setting, geography, age, and time period match the question."
+  },
+  {
+    "id": "5.9",
+    "category": "Academic Literature and Study Search",
+    "name": "Research Replication Finder",
+    "description": "Searches for direct and conceptual replications, failed replications, registered reports, and robustness checks."
+  },
+  {
+    "id": "5.10",
+    "category": "Academic Literature and Study Search",
+    "name": "Literature Search Reproducibility Auditor",
+    "description": "Records databases, dates, queries, filters, deduplication, screening, and unresolved access limits."
+  },
+  {
+    "id": "6.1",
+    "category": "News, Events, and Current Affairs Research",
+    "name": "Breaking News Source Triangulator",
+    "description": "Compares official statements, direct evidence, local reporting, wire services, and reputable outlets before summarizing."
+  },
+  {
+    "id": "6.2",
+    "category": "News, Events, and Current Affairs Research",
+    "name": "Event Timeline Reconstructor",
+    "description": "Orders dated developments, corrections, statements, actions, and unresolved gaps from multiple sources."
+  },
+  {
+    "id": "6.3",
+    "category": "News, Events, and Current Affairs Research",
+    "name": "Local News Specialist",
+    "description": "Finds credible local-language and regional reporting that broader searches may miss."
+  },
+  {
+    "id": "6.4",
+    "category": "News, Events, and Current Affairs Research",
+    "name": "Press Conference and Transcript Finder",
+    "description": "Locates complete remarks, briefings, interviews, and transcripts behind reported excerpts."
+  },
+  {
+    "id": "6.5",
+    "category": "News, Events, and Current Affairs Research",
+    "name": "Correction and Update Tracker",
+    "description": "Checks live blogs, editor notes, corrections, retractions, and later official updates."
+  },
+  {
+    "id": "6.6",
+    "category": "News, Events, and Current Affairs Research",
+    "name": "Incident Claim Verifier",
+    "description": "Separates confirmed facts, sourced allegations, eyewitness reports, estimates, and unknowns."
+  },
+  {
+    "id": "6.7",
+    "category": "News, Events, and Current Affairs Research",
+    "name": "Media Framing Comparator",
+    "description": "Compares emphasis, terminology, sourcing, omissions, and uncertainty across outlets without equating all sources."
+  },
+  {
+    "id": "6.8",
+    "category": "News, Events, and Current Affairs Research",
+    "name": "News Archive Researcher",
+    "description": "Finds historical coverage to trace how an event, claim, or organization developed over time."
+  },
+  {
+    "id": "6.9",
+    "category": "News, Events, and Current Affairs Research",
+    "name": "Current Status Verifier",
+    "description": "Checks the freshest authoritative status for schedules, closures, releases, disputes, and ongoing events."
+  },
+  {
+    "id": "6.10",
+    "category": "News, Events, and Current Affairs Research",
+    "name": "News Coverage Saturation Auditor",
+    "description": "Confirms major viewpoints and primary updates were covered without endlessly repeating syndicated stories."
+  },
+  {
+    "id": "7.1",
+    "category": "Historical and Archival Search",
+    "name": "Historical Source Searcher",
+    "description": "Finds books, newspapers, records, maps, photographs, catalogs, and institutional collections relevant to a period."
+  },
+  {
+    "id": "7.2",
+    "category": "Historical and Archival Search",
+    "name": "Web Archive Navigator",
+    "description": "Uses lawful snapshots to examine changed, removed, or earlier versions of public webpages."
+  },
+  {
+    "id": "7.3",
+    "category": "Historical and Archival Search",
+    "name": "Newspaper Archive Researcher",
+    "description": "Searches historical reporting by date, location, names, aliases, events, and OCR variants."
+  },
+  {
+    "id": "7.4",
+    "category": "Historical and Archival Search",
+    "name": "Primary Record Finder",
+    "description": "Locates letters, diaries, minutes, registers, government records, oral histories, and period documents."
+  },
+  {
+    "id": "7.5",
+    "category": "Historical and Archival Search",
+    "name": "Historical Name Variant Searcher",
+    "description": "Tracks old spellings, renamed places, former organizations, transliterations, titles, and aliases."
+  },
+  {
+    "id": "7.6",
+    "category": "Historical and Archival Search",
+    "name": "Chronology Consistency Checker",
+    "description": "Tests dates, ages, sequences, contemporaneous knowledge, and claimed causal order."
+  },
+  {
+    "id": "7.7",
+    "category": "Historical and Archival Search",
+    "name": "Archive Catalog Interpreter",
+    "description": "Reads finding aids, collection hierarchies, boxes, folders, series, restrictions, and digitization notes."
+  },
+  {
+    "id": "7.8",
+    "category": "Historical and Archival Search",
+    "name": "Image and Map Provenance Researcher",
+    "description": "Finds creator, date, collection, rights, caption, location, and original context for historical visuals."
+  },
+  {
+    "id": "7.9",
+    "category": "Historical and Archival Search",
+    "name": "OCR Error Recovery Searcher",
+    "description": "Uses spelling variants, partial phrases, date filters, and neighboring terms to overcome poor digitization."
+  },
+  {
+    "id": "7.10",
+    "category": "Historical and Archival Search",
+    "name": "Historical Evidence Context Auditor",
+    "description": "Checks whether later retellings are being confused with contemporary or primary evidence."
+  },
+  {
+    "id": "8.1",
+    "category": "Multilingual and Cross-Regional Search",
+    "name": "Multilingual Query Translator",
+    "description": "Creates meaning-preserving search terms in target languages with local terminology and script variants."
+  },
+  {
+    "id": "8.2",
+    "category": "Multilingual and Cross-Regional Search",
+    "name": "Native Terminology Researcher",
+    "description": "Finds terms actually used by local institutions, communities, professionals, and media."
+  },
+  {
+    "id": "8.3",
+    "category": "Multilingual and Cross-Regional Search",
+    "name": "Transliteration Variant Searcher",
+    "description": "Searches multiple romanization, script, diacritic, spacing, and historical spelling systems."
+  },
+  {
+    "id": "8.4",
+    "category": "Multilingual and Cross-Regional Search",
+    "name": "Regional Search Engine Router",
+    "description": "Uses appropriate country, language, and domain-specific search systems and directories."
+  },
+  {
+    "id": "8.5",
+    "category": "Multilingual and Cross-Regional Search",
+    "name": "Cross-Language Source Comparator",
+    "description": "Checks whether translated summaries preserve the source’s claims, limits, dates, and tone."
+  },
+  {
+    "id": "8.6",
+    "category": "Multilingual and Cross-Regional Search",
+    "name": "Locale-Specific Date and Number Interpreter",
+    "description": "Normalizes dates, decimal separators, currencies, units, calendars, and addresses."
+  },
+  {
+    "id": "8.7",
+    "category": "Multilingual and Cross-Regional Search",
+    "name": "Regional Law and Policy Searcher",
+    "description": "Finds jurisdiction-specific official rules rather than assuming one country’s framework is universal."
+  },
+  {
+    "id": "8.8",
+    "category": "Multilingual and Cross-Regional Search",
+    "name": "Local Academic Source Finder",
+    "description": "Finds regional journals, repositories, theses, proceedings, and institutional publications."
+  },
+  {
+    "id": "8.9",
+    "category": "Multilingual and Cross-Regional Search",
+    "name": "Cultural Context Searcher",
+    "description": "Finds credible context for local concepts, practices, names, symbols, and disputed interpretations."
+  },
+  {
+    "id": "8.10",
+    "category": "Multilingual and Cross-Regional Search",
+    "name": "Cross-Regional Coverage Auditor",
+    "description": "Checks whether evidence overrepresents English-language, high-income, or highly indexed sources."
+  },
+  {
+    "id": "9.1",
+    "category": "People, Organization, and Entity Research",
+    "name": "Public Person Researcher",
+    "description": "Finds authoritative public biographies, roles, publications, statements, and dated affiliations without collecting unnecessary private data."
+  },
+  {
+    "id": "9.2",
+    "category": "People, Organization, and Entity Research",
+    "name": "Organization Profile Researcher",
+    "description": "Finds legal identity, ownership, leadership, products, locations, filings, policies, and major public developments."
+  },
+  {
+    "id": "9.3",
+    "category": "People, Organization, and Entity Research",
+    "name": "Affiliation and Role Verifier",
+    "description": "Confirms titles, dates, employers, memberships, credentials, and changes through suitable primary sources."
+  },
+  {
+    "id": "9.4",
+    "category": "People, Organization, and Entity Research",
+    "name": "Corporate Relationship Mapper",
+    "description": "Finds parent, subsidiary, brand, investor, partner, vendor, and acquisition relationships."
+  },
+  {
+    "id": "9.5",
+    "category": "People, Organization, and Entity Research",
+    "name": "Public Contact Source Finder",
+    "description": "Finds official public contact pages and role-based channels without exposing private personal details."
+  },
+  {
+    "id": "9.6",
+    "category": "People, Organization, and Entity Research",
+    "name": "Author and Researcher Identifier",
+    "description": "Disambiguates authors using affiliation, ORCID, topics, coauthors, dates, and publication history."
+  },
+  {
+    "id": "9.7",
+    "category": "People, Organization, and Entity Research",
+    "name": "Entity Alias and Rename Tracker",
+    "description": "Tracks former names, mergers, reorganizations, acronyms, brands, and legal-name variants."
+  },
+  {
+    "id": "9.8",
+    "category": "People, Organization, and Entity Research",
+    "name": "Public Reputation Evidence Researcher",
+    "description": "Finds documented recognition, criticism, disputes, investigations, and responses with dates and attribution."
+  },
+  {
+    "id": "9.9",
+    "category": "People, Organization, and Entity Research",
+    "name": "Conflict of Interest Researcher",
+    "description": "Searches disclosed funding, employment, board roles, sponsorship, and declared competing interests."
+  },
+  {
+    "id": "9.10",
+    "category": "People, Organization, and Entity Research",
+    "name": "Entity Profile Evidence Auditor",
+    "description": "Checks each profile statement for source, date, potential ambiguity, and unnecessary personal information."
+  },
+  {
+    "id": "10.1",
+    "category": "Products, Services, and Market Search",
+    "name": "Product Specification Researcher",
+    "description": "Finds official model numbers, dimensions, features, compatibility, warranty, manuals, and release status."
+  },
+  {
+    "id": "10.2",
+    "category": "Products, Services, and Market Search",
+    "name": "Price and Availability Researcher",
+    "description": "Compares current prices, sellers, region, stock, variants, taxes, shipping, and effective dates."
+  },
+  {
+    "id": "10.3",
+    "category": "Products, Services, and Market Search",
+    "name": "Compatibility Evidence Searcher",
+    "description": "Finds official compatibility matrices, supported versions, required accessories, and verified limitations."
+  },
+  {
+    "id": "10.4",
+    "category": "Products, Services, and Market Search",
+    "name": "Review Evidence Synthesizer",
+    "description": "Compares professional tests, long-term reviews, user reports, return patterns, and methodology differences."
+  },
+  {
+    "id": "10.5",
+    "category": "Products, Services, and Market Search",
+    "name": "Product Recall and Safety Searcher",
+    "description": "Checks official recalls, safety notices, advisories, defects, and affected serial or model ranges."
+  },
+  {
+    "id": "10.6",
+    "category": "Products, Services, and Market Search",
+    "name": "Service Plan and Pricing Researcher",
+    "description": "Finds current tiers, limits, contracts, trials, billing, cancellation, regional availability, and hidden dependencies."
+  },
+  {
+    "id": "10.7",
+    "category": "Products, Services, and Market Search",
+    "name": "Vendor Comparison Researcher",
+    "description": "Compares features, support, reliability, integration, security, pricing, and switching costs under one rubric."
+  },
+  {
+    "id": "10.8",
+    "category": "Products, Services, and Market Search",
+    "name": "Marketplace Listing Verifier",
+    "description": "Checks seller identity, condition, return terms, shipping, authenticity claims, and listing inconsistencies."
+  },
+  {
+    "id": "10.9",
+    "category": "Products, Services, and Market Search",
+    "name": "Product Lifecycle Tracker",
+    "description": "Finds launch, revisions, discontinuation, support end, replacement models, and resale implications."
+  },
+  {
+    "id": "10.10",
+    "category": "Products, Services, and Market Search",
+    "name": "Commercial Evidence Freshness Auditor",
+    "description": "Checks that price, availability, terms, and specifications are current for the user’s region and date."
+  },
+  {
+    "id": "11.1",
+    "category": "Technical Documentation and Developer Search",
+    "name": "API Documentation Searcher",
+    "description": "Finds current endpoints, authentication, parameters, limits, schemas, errors, SDKs, and examples."
+  },
+  {
+    "id": "11.2",
+    "category": "Technical Documentation and Developer Search",
+    "name": "Version-Specific Documentation Finder",
+    "description": "Matches instructions to exact software, operating system, framework, device, and release version."
+  },
+  {
+    "id": "11.3",
+    "category": "Technical Documentation and Developer Search",
+    "name": "Error Message Search Specialist",
+    "description": "Uses exact strings, stack frames, environment details, and reduced symptoms to find relevant fixes."
+  },
+  {
+    "id": "11.4",
+    "category": "Technical Documentation and Developer Search",
+    "name": "Code Example Researcher",
+    "description": "Finds minimal, licensed, version-compatible examples and checks associated documentation and issues."
+  },
+  {
+    "id": "11.5",
+    "category": "Technical Documentation and Developer Search",
+    "name": "Changelog and Release Note Searcher",
+    "description": "Tracks features, breaking changes, deprecations, migrations, fixes, and known issues."
+  },
+  {
+    "id": "11.6",
+    "category": "Technical Documentation and Developer Search",
+    "name": "Standards and Protocol Researcher",
+    "description": "Finds normative specifications, registries, extensions, errata, and implementation notes."
+  },
+  {
+    "id": "11.7",
+    "category": "Technical Documentation and Developer Search",
+    "name": "Vendor Support Knowledge Searcher",
+    "description": "Searches official support articles, troubleshooting guides, forums, advisories, and compatibility notices."
+  },
+  {
+    "id": "11.8",
+    "category": "Technical Documentation and Developer Search",
+    "name": "Technical Forum Evidence Researcher",
+    "description": "Uses community answers as leads while checking versions, reproducibility, authority, and later corrections."
+  },
+  {
+    "id": "11.9",
+    "category": "Technical Documentation and Developer Search",
+    "name": "Implementation Constraint Finder",
+    "description": "Finds quotas, performance bounds, platform restrictions, license conditions, and unsupported behavior."
+  },
+  {
+    "id": "11.10",
+    "category": "Technical Documentation and Developer Search",
+    "name": "Technical Search Validation Auditor",
+    "description": "Confirms that a proposed solution matches the user’s actual environment and current documentation."
+  },
+  {
+    "id": "12.1",
+    "category": "Open Source, GitHub, and Repository Search",
+    "name": "Repository Discovery Searcher",
+    "description": "Finds relevant public repositories by topic, language, activity, license, stars, forks, and recent maintenance."
+  },
+  {
+    "id": "12.2",
+    "category": "Open Source, GitHub, and Repository Search",
+    "name": "Source Code Searcher",
+    "description": "Searches symbols, strings, patterns, configurations, tests, comments, and usage across authorized repositories."
+  },
+  {
+    "id": "12.3",
+    "category": "Open Source, GitHub, and Repository Search",
+    "name": "Issue and Discussion Researcher",
+    "description": "Finds bug reports, reproductions, maintainer comments, workarounds, milestones, and unresolved cases."
+  },
+  {
+    "id": "12.4",
+    "category": "Open Source, GitHub, and Repository Search",
+    "name": "Pull Request History Researcher",
+    "description": "Finds implementation rationale, review debate, changed files, tests, and related issues."
+  },
+  {
+    "id": "12.5",
+    "category": "Open Source, GitHub, and Repository Search",
+    "name": "Release Asset Searcher",
+    "description": "Finds tags, binaries, source archives, checksums, signatures, and platform-specific packages."
+  },
+  {
+    "id": "12.6",
+    "category": "Open Source, GitHub, and Repository Search",
+    "name": "License and Attribution Researcher",
+    "description": "Finds repository licenses, file-level exceptions, third-party notices, and reuse obligations."
+  },
+  {
+    "id": "12.7",
+    "category": "Open Source, GitHub, and Repository Search",
+    "name": "Fork and Mirror Comparator",
+    "description": "Distinguishes canonical projects, active forks, abandoned mirrors, and incompatible variants."
+  },
+  {
+    "id": "12.8",
+    "category": "Open Source, GitHub, and Repository Search",
+    "name": "Commit History Investigator",
+    "description": "Finds when and why behavior changed through blame, commits, release branches, and migration notes."
+  },
+  {
+    "id": "12.9",
+    "category": "Open Source, GitHub, and Repository Search",
+    "name": "Dependency Source Researcher",
+    "description": "Finds package origin, versions, transitive dependencies, provenance, and supply-chain advisories."
+  },
+  {
+    "id": "12.10",
+    "category": "Open Source, GitHub, and Repository Search",
+    "name": "Repository Evidence Auditor",
+    "description": "Checks branch, tag, commit date, file path, and version before citing code behavior."
+  },
+  {
+    "id": "13.1",
+    "category": "Datasets, Statistics, and Quantitative Sources",
+    "name": "Official Statistics Searcher",
+    "description": "Finds national statistical offices, international organizations, regulators, and administrative datasets."
+  },
+  {
+    "id": "13.2",
+    "category": "Datasets, Statistics, and Quantitative Sources",
+    "name": "Dataset Catalog Navigator",
+    "description": "Searches CKAN, data portals, repositories, registries, and institutional catalogs by field and geography."
+  },
+  {
+    "id": "13.3",
+    "category": "Datasets, Statistics, and Quantitative Sources",
+    "name": "Data Dictionary and Codebook Finder",
+    "description": "Locates field definitions, units, categories, missing-value rules, and identifier documentation."
+  },
+  {
+    "id": "13.4",
+    "category": "Datasets, Statistics, and Quantitative Sources",
+    "name": "Time-Series Source Researcher",
+    "description": "Finds consistent historical series, revision histories, frequency, seasonal adjustment, and methodological breaks."
+  },
+  {
+    "id": "13.5",
+    "category": "Datasets, Statistics, and Quantitative Sources",
+    "name": "Geospatial Dataset Searcher",
+    "description": "Finds boundaries, coordinates, maps, projections, coverage, resolution, and licensing."
+  },
+  {
+    "id": "13.6",
+    "category": "Datasets, Statistics, and Quantitative Sources",
+    "name": "Microdata Access Researcher",
+    "description": "Finds public-use files, restricted access procedures, survey documentation, and confidentiality limits."
+  },
+  {
+    "id": "13.7",
+    "category": "Datasets, Statistics, and Quantitative Sources",
+    "name": "Dataset Version and Update Tracker",
+    "description": "Compares releases, revisions, schema changes, dates, and superseded downloads."
+  },
+  {
+    "id": "13.8",
+    "category": "Datasets, Statistics, and Quantitative Sources",
+    "name": "Quantitative Claim Verifier",
+    "description": "Recomputes or checks cited numbers against source tables, denominators, units, and definitions."
+  },
+  {
+    "id": "13.9",
+    "category": "Datasets, Statistics, and Quantitative Sources",
+    "name": "Data License and Reuse Researcher",
+    "description": "Finds reuse terms, attribution, redistribution limits, and commercial-use conditions."
+  },
+  {
+    "id": "13.10",
+    "category": "Datasets, Statistics, and Quantitative Sources",
+    "name": "Dataset Suitability Auditor",
+    "description": "Checks completeness, representativeness, timeliness, comparability, and fit to the research question."
+  },
+  {
+    "id": "14.1",
+    "category": "Legal, Regulatory, and Policy Search",
+    "name": "Statute and Regulation Searcher",
+    "description": "Finds official laws, regulations, amendments, implementing rules, and effective dates for the correct jurisdiction."
+  },
+  {
+    "id": "14.2",
+    "category": "Legal, Regulatory, and Policy Search",
+    "name": "Case Law Researcher",
+    "description": "Finds decisions, courts, dates, citations, procedural status, and later treatment using authoritative databases."
+  },
+  {
+    "id": "14.3",
+    "category": "Legal, Regulatory, and Policy Search",
+    "name": "Agency Guidance Searcher",
+    "description": "Finds circulars, memoranda, advisories, FAQs, enforcement guidance, and consultation papers."
+  },
+  {
+    "id": "14.4",
+    "category": "Legal, Regulatory, and Policy Search",
+    "name": "Legislative History Researcher",
+    "description": "Finds bills, debates, committee reports, amendments, votes, and explanatory materials."
+  },
+  {
+    "id": "14.5",
+    "category": "Legal, Regulatory, and Policy Search",
+    "name": "Policy Version Comparator",
+    "description": "Compares current and prior policy language, scope, obligations, exemptions, and transition dates."
+  },
+  {
+    "id": "14.6",
+    "category": "Legal, Regulatory, and Policy Search",
+    "name": "Compliance Requirement Extractor",
+    "description": "Maps obligations, responsible parties, deadlines, thresholds, records, penalties, and exceptions."
+  },
+  {
+    "id": "14.7",
+    "category": "Legal, Regulatory, and Policy Search",
+    "name": "Public Consultation Researcher",
+    "description": "Finds proposed rules, stakeholder comments, impact assessments, and final responses."
+  },
+  {
+    "id": "14.8",
+    "category": "Legal, Regulatory, and Policy Search",
+    "name": "Treaty and International Instrument Searcher",
+    "description": "Finds official texts, parties, reservations, ratification status, and implementation material."
+  },
+  {
+    "id": "14.9",
+    "category": "Legal, Regulatory, and Policy Search",
+    "name": "Legal Citation Verifier",
+    "description": "Checks exact title, section, court, date, docket, reporter, and official source."
+  },
+  {
+    "id": "14.10",
+    "category": "Legal, Regulatory, and Policy Search",
+    "name": "Legal Research Limitation Reporter",
+    "description": "Separates located authority from legal interpretation and flags jurisdictional or update uncertainty."
+  },
+  {
+    "id": "15.1",
+    "category": "Medical, Health, and Scientific Evidence Search",
+    "name": "Clinical Guideline Searcher",
+    "description": "Finds current guidelines from recognized professional bodies and official public-health institutions."
+  },
+  {
+    "id": "15.2",
+    "category": "Medical, Health, and Scientific Evidence Search",
+    "name": "Systematic Health Evidence Searcher",
+    "description": "Finds trials, reviews, meta-analyses, safety data, and guideline evidence for a defined population and intervention."
+  },
+  {
+    "id": "15.3",
+    "category": "Medical, Health, and Scientific Evidence Search",
+    "name": "Drug and Device Information Searcher",
+    "description": "Checks regulatory labels, approvals, contraindications, interactions, safety notices, and device instructions."
+  },
+  {
+    "id": "15.4",
+    "category": "Medical, Health, and Scientific Evidence Search",
+    "name": "Public Health Statistics Researcher",
+    "description": "Finds surveillance, prevalence, incidence, mortality, risk factors, and methodology from authoritative sources."
+  },
+  {
+    "id": "15.5",
+    "category": "Medical, Health, and Scientific Evidence Search",
+    "name": "Diagnostic Evidence Researcher",
+    "description": "Finds sensitivity, specificity, predictive values, reference standards, and population limitations."
+  },
+  {
+    "id": "15.6",
+    "category": "Medical, Health, and Scientific Evidence Search",
+    "name": "Treatment Comparison Researcher",
+    "description": "Compares benefits, harms, alternatives, certainty, and applicability without individual diagnosis."
+  },
+  {
+    "id": "15.7",
+    "category": "Medical, Health, and Scientific Evidence Search",
+    "name": "Adverse Event and Recall Searcher",
+    "description": "Finds official safety communications, recalls, warnings, and reporting databases."
+  },
+  {
+    "id": "15.8",
+    "category": "Medical, Health, and Scientific Evidence Search",
+    "name": "Scientific Consensus Mapper",
+    "description": "Compares academy reports, reviews, guidelines, and active scientific disputes."
+  },
+  {
+    "id": "15.9",
+    "category": "Medical, Health, and Scientific Evidence Search",
+    "name": "Health Misinformation Fact Checker",
+    "description": "Traces medical claims to original evidence and identifies misleading extrapolation or missing context."
+  },
+  {
+    "id": "15.10",
+    "category": "Medical, Health, and Scientific Evidence Search",
+    "name": "Health Evidence Applicability Auditor",
+    "description": "Checks population, setting, dosage, duration, outcomes, conflicts, and certainty before summarizing."
+  },
+  {
+    "id": "16.1",
+    "category": "Financial, Economic, and Business Research",
+    "name": "Financial Filing Researcher",
+    "description": "Finds audited statements, annual reports, earnings releases, notes, risk factors, and segment information."
+  },
+  {
+    "id": "16.2",
+    "category": "Financial, Economic, and Business Research",
+    "name": "Market Data Source Searcher",
+    "description": "Finds current and historical prices, indices, rates, volumes, and methodology from suitable providers."
+  },
+  {
+    "id": "16.3",
+    "category": "Financial, Economic, and Business Research",
+    "name": "Economic Indicator Researcher",
+    "description": "Finds inflation, employment, GDP, trade, population, and productivity series with definitions and revisions."
+  },
+  {
+    "id": "16.4",
+    "category": "Financial, Economic, and Business Research",
+    "name": "Company Fundamentals Verifier",
+    "description": "Checks revenue, profit, debt, cash flow, shares, guidance, and dates against primary filings."
+  },
+  {
+    "id": "16.5",
+    "category": "Financial, Economic, and Business Research",
+    "name": "Industry Research Searcher",
+    "description": "Finds market size, structure, competitors, regulation, technology, supply chain, and demand drivers."
+  },
+  {
+    "id": "16.6",
+    "category": "Financial, Economic, and Business Research",
+    "name": "Funding and Investment Researcher",
+    "description": "Finds disclosed funding rounds, investors, valuations, acquisitions, and official transaction announcements."
+  },
+  {
+    "id": "16.7",
+    "category": "Financial, Economic, and Business Research",
+    "name": "Tax and Benefits Source Researcher",
+    "description": "Finds official rules, thresholds, forms, deadlines, and jurisdiction-specific guidance."
+  },
+  {
+    "id": "16.8",
+    "category": "Financial, Economic, and Business Research",
+    "name": "Financial Product Terms Searcher",
+    "description": "Finds fees, rates, risks, eligibility, lockups, insurance, disclosure documents, and current terms."
+  },
+  {
+    "id": "16.9",
+    "category": "Financial, Economic, and Business Research",
+    "name": "Economic Claim Fact Checker",
+    "description": "Verifies denominators, nominal versus real values, seasonality, base years, revisions, and causal overclaims."
+  },
+  {
+    "id": "16.10",
+    "category": "Financial, Economic, and Business Research",
+    "name": "Financial Research Risk Auditor",
+    "description": "Flags stale data, non-GAAP definitions, promotional sources, survivorship bias, and unsuitable individual advice."
+  },
+  {
+    "id": "17.1",
+    "category": "Social Media, Forums, and Community Search",
+    "name": "Public Social Searcher",
+    "description": "Finds public posts, threads, accounts, hashtags, links, and dated discussions within platform rules."
+  },
+  {
+    "id": "17.2",
+    "category": "Social Media, Forums, and Community Search",
+    "name": "Forum Thread Researcher",
+    "description": "Finds solved and unsolved cases, accepted answers, version context, edits, and follow-up outcomes."
+  },
+  {
+    "id": "17.3",
+    "category": "Social Media, Forums, and Community Search",
+    "name": "Community Terminology Miner",
+    "description": "Identifies slang, aliases, recurring issue names, hashtags, and user vocabulary for better searches."
+  },
+  {
+    "id": "17.4",
+    "category": "Social Media, Forums, and Community Search",
+    "name": "User Experience Theme Collector",
+    "description": "Groups publicly expressed experiences while preserving sampling limits and not inferring private traits."
+  },
+  {
+    "id": "17.5",
+    "category": "Social Media, Forums, and Community Search",
+    "name": "Expert Community Identifier",
+    "description": "Finds active moderators, maintainers, professional groups, and knowledgeable contributors through public evidence."
+  },
+  {
+    "id": "17.6",
+    "category": "Social Media, Forums, and Community Search",
+    "name": "Thread Context Reconstructor",
+    "description": "Orders posts, replies, quotes, edits, linked media, and visible deletions to avoid quote isolation."
+  },
+  {
+    "id": "17.7",
+    "category": "Social Media, Forums, and Community Search",
+    "name": "Social Claim Origin Tracer",
+    "description": "Finds the earliest accessible post or source behind a viral claim, image, or quotation."
+  },
+  {
+    "id": "17.8",
+    "category": "Social Media, Forums, and Community Search",
+    "name": "Rumor and Misinformation Tracker",
+    "description": "Compares viral claims with primary evidence, fact checks, corrections, and official updates."
+  },
+  {
+    "id": "17.9",
+    "category": "Social Media, Forums, and Community Search",
+    "name": "Platform Export Searcher",
+    "description": "Interprets user-provided social exports and searches them by date, participant, topic, and attachment."
+  },
+  {
+    "id": "17.10",
+    "category": "Social Media, Forums, and Community Search",
+    "name": "Community Evidence Caution Auditor",
+    "description": "Checks representativeness, coordinated activity, bot risk, deletion bias, and unverifiable anecdotes."
+  },
+  {
+    "id": "18.1",
+    "category": "Images, Video, Audio, and Media Search",
+    "name": "Image Source Researcher",
+    "description": "Finds original or earliest accessible image sources, captions, creators, dates, and context."
+  },
+  {
+    "id": "18.2",
+    "category": "Images, Video, Audio, and Media Search",
+    "name": "Reverse Image Research Planner",
+    "description": "Uses visual similarity, crops, text, metadata, and contextual terms to trace images lawfully."
+  },
+  {
+    "id": "18.3",
+    "category": "Images, Video, Audio, and Media Search",
+    "name": "Video Source Searcher",
+    "description": "Finds official uploads, mirrors, transcripts, chapters, dates, clips, and complete versions."
+  },
+  {
+    "id": "18.4",
+    "category": "Images, Video, Audio, and Media Search",
+    "name": "Audio and Podcast Searcher",
+    "description": "Finds episodes, transcripts, show notes, guests, timestamps, and referenced resources."
+  },
+  {
+    "id": "18.5",
+    "category": "Images, Video, Audio, and Media Search",
+    "name": "Media Transcript Researcher",
+    "description": "Searches captions or transcripts for exact statements, topics, names, and time-coded evidence."
+  },
+  {
+    "id": "18.6",
+    "category": "Images, Video, Audio, and Media Search",
+    "name": "Stock and Licensed Media Finder",
+    "description": "Finds visuals or audio with suitable licenses, releases, attribution, resolution, and usage rights."
+  },
+  {
+    "id": "18.7",
+    "category": "Images, Video, Audio, and Media Search",
+    "name": "Chart and Infographic Source Tracer",
+    "description": "Finds the underlying dataset, methodology, creator, publication date, and original chart context."
+  },
+  {
+    "id": "18.8",
+    "category": "Images, Video, Audio, and Media Search",
+    "name": "Visual Text Searcher",
+    "description": "Uses visible titles, logos, labels, landmarks, and quoted text to identify the source without identifying people."
+  },
+  {
+    "id": "18.9",
+    "category": "Images, Video, Audio, and Media Search",
+    "name": "Media Version Comparator",
+    "description": "Compares edits, durations, captions, framing, audio, missing segments, and publication history."
+  },
+  {
+    "id": "18.10",
+    "category": "Images, Video, Audio, and Media Search",
+    "name": "Media Rights and Provenance Auditor",
+    "description": "Checks ownership, license, attribution, model or property releases, and permitted reuse."
+  },
+  {
+    "id": "19.1",
+    "category": "Patents, Standards, and Technical Prior Art",
+    "name": "Patent Search Strategist",
+    "description": "Searches titles, abstracts, claims, classifications, inventors, assignees, citations, and family members."
+  },
+  {
+    "id": "19.2",
+    "category": "Patents, Standards, and Technical Prior Art",
+    "name": "Patent Family Mapper",
+    "description": "Links priority filings, continuations, international applications, grants, expirations, and jurisdictional status."
+  },
+  {
+    "id": "19.3",
+    "category": "Patents, Standards, and Technical Prior Art",
+    "name": "Prior Art Researcher",
+    "description": "Finds earlier patents, papers, products, manuals, standards, and public demonstrations relevant to a technical feature."
+  },
+  {
+    "id": "19.4",
+    "category": "Patents, Standards, and Technical Prior Art",
+    "name": "Standards Catalog Searcher",
+    "description": "Finds official standard numbers, editions, amendments, corrigenda, profiles, and adoption status."
+  },
+  {
+    "id": "19.5",
+    "category": "Patents, Standards, and Technical Prior Art",
+    "name": "Technical Classification Searcher",
+    "description": "Uses CPC, IPC, industry taxonomies, and controlled vocabularies to improve discovery."
+  },
+  {
+    "id": "19.6",
+    "category": "Patents, Standards, and Technical Prior Art",
+    "name": "Claim Element Researcher",
+    "description": "Breaks a technical claim into searchable elements and finds evidence for each element."
+  },
+  {
+    "id": "19.7",
+    "category": "Patents, Standards, and Technical Prior Art",
+    "name": "Inventor and Assignee Researcher",
+    "description": "Disambiguates names and tracks ownership, assignments, mergers, and portfolio relationships."
+  },
+  {
+    "id": "19.8",
+    "category": "Patents, Standards, and Technical Prior Art",
+    "name": "Patent Citation Network Analyst",
+    "description": "Uses backward and forward citations to find foundational, competing, and later technology."
+  },
+  {
+    "id": "19.9",
+    "category": "Patents, Standards, and Technical Prior Art",
+    "name": "Patent Status Verifier",
+    "description": "Checks official registers for application, grant, lapse, expiration, opposition, and assignment status."
+  },
+  {
+    "id": "19.10",
+    "category": "Patents, Standards, and Technical Prior Art",
+    "name": "Prior Art Limitation Reporter",
+    "description": "Distinguishes discovery from legal conclusions and documents search scope and inaccessible material."
+  },
+  {
+    "id": "20.1",
+    "category": "Libraries, Books, and Reference Works",
+    "name": "Library Catalog Searcher",
+    "description": "Searches titles, authors, subjects, editions, ISBNs, holdings, and formats across public catalogs."
+  },
+  {
+    "id": "20.2",
+    "category": "Libraries, Books, and Reference Works",
+    "name": "Book Edition and Translation Matcher",
+    "description": "Distinguishes editions, revisions, volumes, translations, reprints, and authoritative texts."
+  },
+  {
+    "id": "20.3",
+    "category": "Libraries, Books, and Reference Works",
+    "name": "Reference Work Researcher",
+    "description": "Finds encyclopedias, handbooks, dictionaries, atlases, directories, and specialist reference works."
+  },
+  {
+    "id": "20.4",
+    "category": "Libraries, Books, and Reference Works",
+    "name": "Book Preview and Index Searcher",
+    "description": "Uses lawful previews, tables of contents, indexes, snippets, and citations to locate relevant chapters."
+  },
+  {
+    "id": "20.5",
+    "category": "Libraries, Books, and Reference Works",
+    "name": "Bibliography Miner",
+    "description": "Extracts useful references from books, theses, reports, and review articles for follow-up searches."
+  },
+  {
+    "id": "20.6",
+    "category": "Libraries, Books, and Reference Works",
+    "name": "Rare Book and Special Collection Searcher",
+    "description": "Finds digitized collections, catalog records, provenance, access restrictions, and archival descriptions."
+  },
+  {
+    "id": "20.7",
+    "category": "Libraries, Books, and Reference Works",
+    "name": "Quotation Source Verifier",
+    "description": "Finds the original work, edition, page, speaker context, and reliable transcription for a quotation."
+  },
+  {
+    "id": "20.8",
+    "category": "Libraries, Books, and Reference Works",
+    "name": "Terminology History Researcher",
+    "description": "Uses dictionaries, corpora, and dated publications to trace term meanings and first uses cautiously."
+  },
+  {
+    "id": "20.9",
+    "category": "Libraries, Books, and Reference Works",
+    "name": "Subject Heading Expander",
+    "description": "Uses library subject headings and controlled vocabularies to discover alternate conceptual routes."
+  },
+  {
+    "id": "20.10",
+    "category": "Libraries, Books, and Reference Works",
+    "name": "Book Source Accessibility Auditor",
+    "description": "Checks full text, lending, purchase, archive access, language, edition, and citation completeness."
+  },
+  {
+    "id": "21.1",
+    "category": "Local, Geographic, and Place Search",
+    "name": "Location Search Specialist",
+    "description": "Finds places by category, proximity, hours, services, accessibility, and current status."
+  },
+  {
+    "id": "21.2",
+    "category": "Local, Geographic, and Place Search",
+    "name": "Map and Geospatial Searcher",
+    "description": "Finds maps, boundaries, routes, coordinates, layers, projections, and geographic datasets."
+  },
+  {
+    "id": "21.3",
+    "category": "Local, Geographic, and Place Search",
+    "name": "Local Government Information Searcher",
+    "description": "Finds city, municipal, provincial, and barangay-level rules, notices, services, and records."
+  },
+  {
+    "id": "21.4",
+    "category": "Local, Geographic, and Place Search",
+    "name": "Address and Place Name Disambiguator",
+    "description": "Distinguishes duplicate names, former names, administrative levels, districts, and postal conventions."
+  },
+  {
+    "id": "21.5",
+    "category": "Local, Geographic, and Place Search",
+    "name": "Local Business Verifier",
+    "description": "Checks official pages, listings, hours, contacts, services, reviews, and recent closure indicators."
+  },
+  {
+    "id": "21.6",
+    "category": "Local, Geographic, and Place Search",
+    "name": "Transport and Route Researcher",
+    "description": "Finds schedules, operators, fares, transfers, road rules, accessibility, and disruption notices."
+  },
+  {
+    "id": "21.7",
+    "category": "Local, Geographic, and Place Search",
+    "name": "Event and Venue Searcher",
+    "description": "Finds official dates, tickets, rules, locations, schedules, accessibility, and cancellation updates."
+  },
+  {
+    "id": "21.8",
+    "category": "Local, Geographic, and Place Search",
+    "name": "Environmental and Hazard Source Searcher",
+    "description": "Finds weather, flood, earthquake, air-quality, hazard maps, and official advisories."
+  },
+  {
+    "id": "21.9",
+    "category": "Local, Geographic, and Place Search",
+    "name": "Regional Demographic Researcher",
+    "description": "Finds population, language, economy, education, health, and administrative statistics."
+  },
+  {
+    "id": "21.10",
+    "category": "Local, Geographic, and Place Search",
+    "name": "Location Freshness and Safety Auditor",
+    "description": "Checks timestamps, seasonal changes, closures, jurisdiction, and sensitive-location privacy."
+  },
+  {
+    "id": "22.1",
+    "category": "Education, Courses, and Learning Resource Search",
+    "name": "Course and Curriculum Searcher",
+    "description": "Finds syllabi, course descriptions, prerequisites, learning outcomes, schedules, and official curricula."
+  },
+  {
+    "id": "22.2",
+    "category": "Education, Courses, and Learning Resource Search",
+    "name": "Open Educational Resource Finder",
+    "description": "Finds openly licensed textbooks, modules, lectures, simulations, exercises, and teacher resources."
+  },
+  {
+    "id": "22.3",
+    "category": "Education, Courses, and Learning Resource Search",
+    "name": "Credential and Program Verifier",
+    "description": "Checks official institution, accreditation, curriculum, cost, duration, entry, and recognition."
+  },
+  {
+    "id": "22.4",
+    "category": "Education, Courses, and Learning Resource Search",
+    "name": "Tutorial Quality Researcher",
+    "description": "Finds current, complete, version-compatible tutorials with exercises and community validation."
+  },
+  {
+    "id": "22.5",
+    "category": "Education, Courses, and Learning Resource Search",
+    "name": "Lecture and Seminar Searcher",
+    "description": "Finds recordings, slides, notes, speakers, dates, and supporting readings."
+  },
+  {
+    "id": "22.6",
+    "category": "Education, Courses, and Learning Resource Search",
+    "name": "Practice Dataset and Exercise Finder",
+    "description": "Finds lawful exercises, benchmark datasets, solutions, and difficulty-appropriate practice."
+  },
+  {
+    "id": "22.7",
+    "category": "Education, Courses, and Learning Resource Search",
+    "name": "Learning Path Resource Curator",
+    "description": "Orders resources by prerequisite, depth, format, practice, feedback, and project value."
+  },
+  {
+    "id": "22.8",
+    "category": "Education, Courses, and Learning Resource Search",
+    "name": "Academic Calendar and Deadline Searcher",
+    "description": "Finds official enrollment, examination, scholarship, submission, and application dates."
+  },
+  {
+    "id": "22.9",
+    "category": "Education, Courses, and Learning Resource Search",
+    "name": "Scholarship and Financial Aid Searcher",
+    "description": "Finds official eligibility, benefits, deadlines, obligations, and application procedures."
+  },
+  {
+    "id": "22.10",
+    "category": "Education, Courses, and Learning Resource Search",
+    "name": "Learning Resource Quality Auditor",
+    "description": "Checks authority, currency, accessibility, licensing, prerequisites, and alignment to the learning goal."
+  },
+  {
+    "id": "23.1",
+    "category": "Jobs, Careers, and Professional Search",
+    "name": "Job Market Searcher",
+    "description": "Finds current roles, employers, locations, remote options, requirements, salary disclosures, and application paths."
+  },
+  {
+    "id": "23.2",
+    "category": "Jobs, Careers, and Professional Search",
+    "name": "Occupation Requirements Researcher",
+    "description": "Finds duties, skills, education, licenses, working conditions, and progression from authoritative sources."
+  },
+  {
+    "id": "23.3",
+    "category": "Jobs, Careers, and Professional Search",
+    "name": "Employer Career Page Searcher",
+    "description": "Prioritizes official openings and verifies role status, location, team, and application destination."
+  },
+  {
+    "id": "23.4",
+    "category": "Jobs, Careers, and Professional Search",
+    "name": "Professional Credential Researcher",
+    "description": "Finds issuing bodies, prerequisites, exams, costs, renewal, continuing education, and recognition."
+  },
+  {
+    "id": "23.5",
+    "category": "Jobs, Careers, and Professional Search",
+    "name": "Salary Evidence Researcher",
+    "description": "Compares government statistics, employer disclosures, surveys, role levels, locations, and total-compensation caveats."
+  },
+  {
+    "id": "23.6",
+    "category": "Jobs, Careers, and Professional Search",
+    "name": "Industry Skill Demand Analyst",
+    "description": "Extracts recurring skills, tools, certifications, responsibilities, and experience from current postings."
+  },
+  {
+    "id": "23.7",
+    "category": "Jobs, Careers, and Professional Search",
+    "name": "Internship and Graduate Program Searcher",
+    "description": "Finds official student programs, eligibility, dates, location, requirements, and conversion opportunities."
+  },
+  {
+    "id": "23.8",
+    "category": "Jobs, Careers, and Professional Search",
+    "name": "Professional Association Searcher",
+    "description": "Finds recognized associations, standards, events, directories, and educational resources."
+  },
+  {
+    "id": "23.9",
+    "category": "Jobs, Careers, and Professional Search",
+    "name": "Remote Work Legitimacy Verifier",
+    "description": "Checks official domains, recruiter identity, fee requests, job duplication, and scam warnings."
+  },
+  {
+    "id": "23.10",
+    "category": "Jobs, Careers, and Professional Search",
+    "name": "Career Evidence Freshness Auditor",
+    "description": "Checks role status, posting date, regional applicability, salary period, and source reliability."
+  },
+  {
+    "id": "24.1",
+    "category": "Procurement, Grants, and Opportunities Search",
+    "name": "Tender and Procurement Searcher",
+    "description": "Finds official bidding notices, specifications, eligibility, deadlines, amendments, awards, and contact channels."
+  },
+  {
+    "id": "24.2",
+    "category": "Procurement, Grants, and Opportunities Search",
+    "name": "Grant Opportunity Researcher",
+    "description": "Finds official funding calls, priorities, eligibility, amounts, dates, obligations, and application material."
+  },
+  {
+    "id": "24.3",
+    "category": "Procurement, Grants, and Opportunities Search",
+    "name": "Scholarship Opportunity Researcher",
+    "description": "Finds verified scholarships, coverage, criteria, deadlines, service conditions, and official submission portals."
+  },
+  {
+    "id": "24.4",
+    "category": "Procurement, Grants, and Opportunities Search",
+    "name": "Competition and Award Searcher",
+    "description": "Finds recognized contests, categories, rules, judging, dates, fees, rights, and prior winners."
+  },
+  {
+    "id": "24.5",
+    "category": "Procurement, Grants, and Opportunities Search",
+    "name": "Request for Proposal Analyzer",
+    "description": "Extracts scope, deliverables, criteria, compliance items, schedule, budget signals, and submission method."
+  },
+  {
+    "id": "24.6",
+    "category": "Procurement, Grants, and Opportunities Search",
+    "name": "Procurement Amendment Tracker",
+    "description": "Checks addenda, clarifications, deadline changes, cancellations, and revised documents."
+  },
+  {
+    "id": "24.7",
+    "category": "Procurement, Grants, and Opportunities Search",
+    "name": "Award and Contract Result Researcher",
+    "description": "Finds official awards, values, suppliers, dates, and evaluation notices."
+  },
+  {
+    "id": "24.8",
+    "category": "Procurement, Grants, and Opportunities Search",
+    "name": "Eligibility Evidence Searcher",
+    "description": "Finds exact geographic, organizational, financial, technical, and status requirements."
+  },
+  {
+    "id": "24.9",
+    "category": "Procurement, Grants, and Opportunities Search",
+    "name": "Opportunity Calendar Builder",
+    "description": "Consolidates verified deadlines, lead times, documents, dependencies, and decision dates."
+  },
+  {
+    "id": "24.10",
+    "category": "Procurement, Grants, and Opportunities Search",
+    "name": "Opportunity Legitimacy Auditor",
+    "description": "Checks official issuer, domain, fees, rights, privacy, conflicts, and scam indicators."
+  },
+  {
+    "id": "25.1",
+    "category": "Competitive Intelligence and Landscape Research",
+    "name": "Market Landscape Mapper",
+    "description": "Identifies organizations, offerings, segments, geographies, technologies, and customer groups from public evidence."
+  },
+  {
+    "id": "25.2",
+    "category": "Competitive Intelligence and Landscape Research",
+    "name": "Competitor Product Researcher",
+    "description": "Compares official features, positioning, pricing, integrations, customers, and release direction."
+  },
+  {
+    "id": "25.3",
+    "category": "Competitive Intelligence and Landscape Research",
+    "name": "Strategic Movement Tracker",
+    "description": "Monitors launches, hiring, partnerships, acquisitions, patents, filings, and geographic expansion."
+  },
+  {
+    "id": "25.4",
+    "category": "Competitive Intelligence and Landscape Research",
+    "name": "Customer and Use-Case Researcher",
+    "description": "Finds published case studies, reviews, contracts, testimonials, and implementation evidence."
+  },
+  {
+    "id": "25.5",
+    "category": "Competitive Intelligence and Landscape Research",
+    "name": "Positioning and Messaging Analyzer",
+    "description": "Compares public claims, target audiences, category language, proof points, and differentiation."
+  },
+  {
+    "id": "25.6",
+    "category": "Competitive Intelligence and Landscape Research",
+    "name": "Partnership Network Researcher",
+    "description": "Finds alliances, resellers, platform integrations, suppliers, investors, and ecosystem programs."
+  },
+  {
+    "id": "25.7",
+    "category": "Competitive Intelligence and Landscape Research",
+    "name": "Competitive Hiring Signal Researcher",
+    "description": "Uses public job postings to identify capabilities, regions, tools, and likely priorities cautiously."
+  },
+  {
+    "id": "25.8",
+    "category": "Competitive Intelligence and Landscape Research",
+    "name": "Competitive Technology Stack Researcher",
+    "description": "Finds disclosed frameworks, infrastructure, APIs, security claims, and engineering publications."
+  },
+  {
+    "id": "25.9",
+    "category": "Competitive Intelligence and Landscape Research",
+    "name": "White-Space Evidence Finder",
+    "description": "Identifies underserved needs and missing features from public comparisons and user evidence."
+  },
+  {
+    "id": "25.10",
+    "category": "Competitive Intelligence and Landscape Research",
+    "name": "Competitive Intelligence Ethics Auditor",
+    "description": "Uses lawful public sources, respects access limits, and separates evidence from speculation."
+  },
+  {
+    "id": "26.1",
+    "category": "Fact Checking and Claim Verification",
+    "name": "Claim Decomposition Fact Checker",
+    "description": "Breaks a complex statement into separately verifiable entities, dates, numbers, causes, and quotations."
+  },
+  {
+    "id": "26.2",
+    "category": "Fact Checking and Claim Verification",
+    "name": "Original Source Tracer",
+    "description": "Finds the earliest authoritative source behind a statistic, quote, image, chart, or repeated claim."
+  },
+  {
+    "id": "26.3",
+    "category": "Fact Checking and Claim Verification",
+    "name": "Date and Chronology Verifier",
+    "description": "Checks publication, occurrence, update, access, and effective dates and resolves timeline confusion."
+  },
+  {
+    "id": "26.4",
+    "category": "Fact Checking and Claim Verification",
+    "name": "Number and Denominator Verifier",
+    "description": "Checks units, baselines, population, percentage points, inflation, rounding, and source tables."
+  },
+  {
+    "id": "26.5",
+    "category": "Fact Checking and Claim Verification",
+    "name": "Quotation Context Verifier",
+    "description": "Finds full surrounding text, speaker, date, audience, translation, and whether wording was altered."
+  },
+  {
+    "id": "26.6",
+    "category": "Fact Checking and Claim Verification",
+    "name": "Image and Video Context Verifier",
+    "description": "Checks date, place, source, edit history, caption, and whether media was reused from another event."
+  },
+  {
+    "id": "26.7",
+    "category": "Fact Checking and Claim Verification",
+    "name": "Causal Claim Auditor",
+    "description": "Checks whether evidence supports causation, association, prediction, or only temporal sequence."
+  },
+  {
+    "id": "26.8",
+    "category": "Fact Checking and Claim Verification",
+    "name": "Consensus and Dispute Mapper",
+    "description": "Shows what is established, contested, uncertain, outdated, or unsupported and by whom."
+  },
+  {
+    "id": "26.9",
+    "category": "Fact Checking and Claim Verification",
+    "name": "Correction and Retraction Searcher",
+    "description": "Checks retractions, expressions of concern, official corrections, debunks, and updated datasets."
+  },
+  {
+    "id": "26.10",
+    "category": "Fact Checking and Claim Verification",
+    "name": "Fact-Check Conclusion Calibrator",
+    "description": "Uses supported, unsupported, misleading, outdated, disputed, or unverifiable labels with evidence and dates."
+  },
+  {
+    "id": "27.1",
+    "category": "Source Quality, Bias, and Credibility Assessment",
+    "name": "Source Authority Assessor",
+    "description": "Evaluates authorship, institution, expertise, editorial process, primary access, and accountability."
+  },
+  {
+    "id": "27.2",
+    "category": "Source Quality, Bias, and Credibility Assessment",
+    "name": "Methodology Quality Reviewer",
+    "description": "Checks sampling, measurement, controls, analysis, transparency, preregistration, and limitations."
+  },
+  {
+    "id": "27.3",
+    "category": "Source Quality, Bias, and Credibility Assessment",
+    "name": "Conflict and Funding Reviewer",
+    "description": "Finds disclosed sponsorship, employment, advocacy, commercial interest, and competing interests."
+  },
+  {
+    "id": "27.4",
+    "category": "Source Quality, Bias, and Credibility Assessment",
+    "name": "Publication Integrity Checker",
+    "description": "Checks peer review, corrections, retractions, predatory indicators, and journal or outlet transparency."
+  },
+  {
+    "id": "27.5",
+    "category": "Source Quality, Bias, and Credibility Assessment",
+    "name": "Bias and Framing Analyst",
+    "description": "Examines selection, wording, omitted context, incentives, ideology, and asymmetric skepticism."
+  },
+  {
+    "id": "27.6",
+    "category": "Source Quality, Bias, and Credibility Assessment",
+    "name": "Source Independence Analyzer",
+    "description": "Detects when multiple reports trace back to one press release, dataset, witness, or study."
+  },
+  {
+    "id": "27.7",
+    "category": "Source Quality, Bias, and Credibility Assessment",
+    "name": "Evidence Recency Assessor",
+    "description": "Evaluates whether age matters and whether later versions or changes supersede the source."
+  },
+  {
+    "id": "27.8",
+    "category": "Source Quality, Bias, and Credibility Assessment",
+    "name": "Expertise Relevance Checker",
+    "description": "Checks whether credentials and experience match the specific claim rather than a broad adjacent field."
+  },
+  {
+    "id": "27.9",
+    "category": "Source Quality, Bias, and Credibility Assessment",
+    "name": "Citation Support Auditor",
+    "description": "Checks whether cited material actually supports the sentence and not merely the general topic."
+  },
+  {
+    "id": "27.10",
+    "category": "Source Quality, Bias, and Credibility Assessment",
+    "name": "Credibility Rating Calibrator",
+    "description": "Produces transparent, claim-specific credibility judgments rather than permanent labels for whole sources."
+  },
+  {
+    "id": "28.1",
+    "category": "Information Extraction and Structured Capture",
+    "name": "Web Evidence Extractor",
+    "description": "Captures relevant passages, fields, tables, dates, authors, links, and context from authorized pages."
+  },
+  {
+    "id": "28.2",
+    "category": "Information Extraction and Structured Capture",
+    "name": "Structured Research Schema Designer",
+    "description": "Defines fields, types, identifiers, provenance, null meaning, and validation before collection."
+  },
+  {
+    "id": "28.3",
+    "category": "Information Extraction and Structured Capture",
+    "name": "Entity and Relationship Extractor",
+    "description": "Identifies people, organizations, products, places, events, dates, and supported relationships."
+  },
+  {
+    "id": "28.4",
+    "category": "Information Extraction and Structured Capture",
+    "name": "Timeline Event Extractor",
+    "description": "Captures dated actions, statements, publications, releases, and status changes with sources."
+  },
+  {
+    "id": "28.5",
+    "category": "Information Extraction and Structured Capture",
+    "name": "Table and List Normalizer",
+    "description": "Converts visible structured data into consistent rows while preserving headers, units, notes, and source links."
+  },
+  {
+    "id": "28.6",
+    "category": "Information Extraction and Structured Capture",
+    "name": "Quotation and Passage Collector",
+    "description": "Stores brief relevant quotations with exact source location and surrounding context."
+  },
+  {
+    "id": "28.7",
+    "category": "Information Extraction and Structured Capture",
+    "name": "Metadata Capture Specialist",
+    "description": "Records title, creator, publisher, date, version, language, license, canonical URL, and access date."
+  },
+  {
+    "id": "28.8",
+    "category": "Information Extraction and Structured Capture",
+    "name": "Research Note Deduplicator",
+    "description": "Merges repeated facts while preserving all independent sources and meaningful differences."
+  },
+  {
+    "id": "28.9",
+    "category": "Information Extraction and Structured Capture",
+    "name": "Evidence Tagging Specialist",
+    "description": "Tags evidence by question, claim, source type, date, geography, confidence, and unresolved issue."
+  },
+  {
+    "id": "28.10",
+    "category": "Information Extraction and Structured Capture",
+    "name": "Extraction Quality Auditor",
+    "description": "Checks omissions, truncation, field shifts, encoding, duplicates, and provenance before synthesis."
+  },
+  {
+    "id": "29.1",
+    "category": "Citation, Provenance, and Research Logging",
+    "name": "Citation Record Builder",
+    "description": "Creates consistent source records with title, author, publisher, date, URL, version, and access information."
+  },
+  {
+    "id": "29.2",
+    "category": "Citation, Provenance, and Research Logging",
+    "name": "Claim-Level Citation Mapper",
+    "description": "Attaches sources directly to the statements, numbers, and conclusions they support."
+  },
+  {
+    "id": "29.3",
+    "category": "Citation, Provenance, and Research Logging",
+    "name": "Research Search Log Manager",
+    "description": "Records queries, systems, filters, dates, result decisions, and unresolved searches for reproducibility."
+  },
+  {
+    "id": "29.4",
+    "category": "Citation, Provenance, and Research Logging",
+    "name": "Source Snapshot Planner",
+    "description": "Preserves lawful snapshots or archive references when public pages may change."
+  },
+  {
+    "id": "29.5",
+    "category": "Citation, Provenance, and Research Logging",
+    "name": "Dataset Provenance Recorder",
+    "description": "Tracks dataset creator, release, method, license, download, transformation, and derived outputs."
+  },
+  {
+    "id": "29.6",
+    "category": "Citation, Provenance, and Research Logging",
+    "name": "Media Provenance Recorder",
+    "description": "Tracks creator, original upload, date, caption, license, edits, and reuse permissions."
+  },
+  {
+    "id": "29.7",
+    "category": "Citation, Provenance, and Research Logging",
+    "name": "Citation Style Formatter",
+    "description": "Formats sources in APA, MLA, Chicago, IEEE, legal, or user-specified styles without altering source facts."
+  },
+  {
+    "id": "29.8",
+    "category": "Citation, Provenance, and Research Logging",
+    "name": "Broken Citation Repairer",
+    "description": "Finds corrected URLs, DOIs, archived pages, updated editions, and complete bibliographic details."
+  },
+  {
+    "id": "29.9",
+    "category": "Citation, Provenance, and Research Logging",
+    "name": "Citation Consistency Auditor",
+    "description": "Checks duplicates, missing fields, uncited claims, unused references, and mismatched dates or authors."
+  },
+  {
+    "id": "29.10",
+    "category": "Citation, Provenance, and Research Logging",
+    "name": "Research Provenance Package Curator",
+    "description": "Packages sources, notes, query logs, datasets, and limitations for handoff when requested."
+  },
+  {
+    "id": "30.1",
+    "category": "Coverage, Saturation, and Missing-Information Control",
+    "name": "Coverage Matrix Builder",
+    "description": "Maps research questions against source types, time periods, regions, viewpoints, and evidence status."
+  },
+  {
+    "id": "30.2",
+    "category": "Coverage, Saturation, and Missing-Information Control",
+    "name": "Source Diversity Auditor",
+    "description": "Checks balance across primary, academic, official, local, technical, community, and critical sources."
+  },
+  {
+    "id": "30.3",
+    "category": "Coverage, Saturation, and Missing-Information Control",
+    "name": "Temporal Coverage Auditor",
+    "description": "Checks historical foundations, recent developments, revisions, and future-dated announcements."
+  },
+  {
+    "id": "30.4",
+    "category": "Coverage, Saturation, and Missing-Information Control",
+    "name": "Geographic Coverage Auditor",
+    "description": "Checks local, national, regional, and international evidence according to the question."
+  },
+  {
+    "id": "30.5",
+    "category": "Coverage, Saturation, and Missing-Information Control",
+    "name": "Stakeholder Coverage Auditor",
+    "description": "Checks affected users, experts, institutions, critics, implementers, and decision-makers."
+  },
+  {
+    "id": "30.6",
+    "category": "Coverage, Saturation, and Missing-Information Control",
+    "name": "Missing Primary Evidence Detector",
+    "description": "Finds conclusions supported only by summaries, reposts, or commentary and plans original- source searches."
+  },
+  {
+    "id": "30.7",
+    "category": "Coverage, Saturation, and Missing-Information Control",
+    "name": "Search Saturation Analyst",
+    "description": "Measures whether new searches produce genuinely new evidence or only repeated information."
+  },
+  {
+    "id": "30.8",
+    "category": "Coverage, Saturation, and Missing-Information Control",
+    "name": "Long-Tail Source Finder",
+    "description": "Searches niche repositories, local archives, specialist forums, conference material, and less- indexed sources."
+  },
+  {
+    "id": "30.9",
+    "category": "Coverage, Saturation, and Missing-Information Control",
+    "name": "Known-Unknown Register",
+    "description": "Maintains unresolved questions, inaccessible sources, contradictory evidence, and reasons for stopping."
+  },
+  {
+    "id": "30.10",
+    "category": "Coverage, Saturation, and Missing-Information Control",
+    "name": "Coverage Completion Gatekeeper",
+    "description": "Allows completion only when the declared scope is covered or remaining gaps are explicitly reported."
+  },
+  {
+    "id": "31.1",
+    "category": "Synthesis, Comparison, and Interpretation",
+    "name": "Evidence Synthesis Architect",
+    "description": "Organizes findings by question, claim, chronology, mechanism, theme, or decision rather than by source order."
+  },
+  {
+    "id": "31.2",
+    "category": "Synthesis, Comparison, and Interpretation",
+    "name": "Agreement and Disagreement Synthesizer",
+    "description": "Separates consensus, partial agreement, definitional conflict, method differences, and unresolved dispute."
+  },
+  {
+    "id": "31.3",
+    "category": "Synthesis, Comparison, and Interpretation",
+    "name": "Comparative Research Analyst",
+    "description": "Compares entities under common criteria, aligned dates, equivalent units, and transparent missing data."
+  },
+  {
+    "id": "31.4",
+    "category": "Synthesis, Comparison, and Interpretation",
+    "name": "Research Theme Analyst",
+    "description": "Identifies recurring concepts, relationships, evidence clusters, and meaningful exceptions."
+  },
+  {
+    "id": "31.5",
+    "category": "Synthesis, Comparison, and Interpretation",
+    "name": "Causal Mechanism Synthesizer",
+    "description": "Combines evidence about how and why an outcome occurs while preserving alternative explanations."
+  },
+  {
+    "id": "31.6",
+    "category": "Synthesis, Comparison, and Interpretation",
+    "name": "Quantitative Evidence Integrator",
+    "description": "Combines numbers only when definitions, populations, periods, units, and methods are compatible."
+  },
+  {
+    "id": "31.7",
+    "category": "Synthesis, Comparison, and Interpretation",
+    "name": "Qualitative Evidence Integrator",
+    "description": "Synthesizes interviews, observations, texts, and case studies without erasing context or variation."
+  },
+  {
+    "id": "31.8",
+    "category": "Synthesis, Comparison, and Interpretation",
+    "name": "Source Conflict Explainer",
+    "description": "Explains disagreement through time, definitions, population, method, incentives, access, or error."
+  },
+  {
+    "id": "31.9",
+    "category": "Synthesis, Comparison, and Interpretation",
+    "name": "Research-to-Decision Translator",
+    "description": "Converts evidence into options, implications, risks, and next actions without exceeding what sources support."
+  },
+  {
+    "id": "31.10",
+    "category": "Synthesis, Comparison, and Interpretation",
+    "name": "Synthesis Integrity Auditor",
+    "description": "Checks that summaries preserve source meaning, uncertainty, attribution, and important counterevidence."
+  },
+  {
+    "id": "32.1",
+    "category": "Research Automation, Monitoring, and Alerts",
+    "name": "Scheduled Search Monitor",
+    "description": "Runs bounded recurring searches for updates, releases, policy changes, prices, publications, or incidents."
+  },
+  {
+    "id": "32.2",
+    "category": "Research Automation, Monitoring, and Alerts",
+    "name": "Webpage Change Detector",
+    "description": "Tracks meaningful text, metadata, link, table, policy, or version changes while suppressing layout noise."
+  },
+  {
+    "id": "32.3",
+    "category": "Research Automation, Monitoring, and Alerts",
+    "name": "Feed and Newsletter Monitor",
+    "description": "Collects RSS, Atom, mailing-list, release, and publication updates with deduplication."
+  },
+  {
+    "id": "32.4",
+    "category": "Research Automation, Monitoring, and Alerts",
+    "name": "Repository Release Watcher",
+    "description": "Monitors tags, releases, changelogs, advisories, issues, and documentation updates."
+  },
+  {
+    "id": "32.5",
+    "category": "Research Automation, Monitoring, and Alerts",
+    "name": "Citation Alert Designer",
+    "description": "Tracks new works citing a key paper, patent, standard, or report where supported."
+  },
+  {
+    "id": "32.6",
+    "category": "Research Automation, Monitoring, and Alerts",
+    "name": "Dataset Update Monitor",
+    "description": "Detects new releases, revised values, schema changes, licenses, and methodology updates."
+  },
+  {
+    "id": "32.7",
+    "category": "Research Automation, Monitoring, and Alerts",
+    "name": "News and Event Alert Router",
+    "description": "Routes verified updates by topic, urgency, geography, source authority, and user interest."
+  },
+  {
+    "id": "32.8",
+    "category": "Research Automation, Monitoring, and Alerts",
+    "name": "Monitoring Noise Reducer",
+    "description": "Clusters duplicates, distinguishes substantive changes, and suppresses repeated low-value alerts."
+  },
+  {
+    "id": "32.9",
+    "category": "Research Automation, Monitoring, and Alerts",
+    "name": "Monitor Failure Tester",
+    "description": "Checks credentials, rate limits, missed updates, false positives, schedule drift, and alert delivery."
+  },
+  {
+    "id": "32.10",
+    "category": "Research Automation, Monitoring, and Alerts",
+    "name": "Research Watchlist Manager",
+    "description": "Maintains entities, queries, sources, indicators, review dates, and retirement rules for ongoing research."
+  },
+  {
+    "id": "33.1",
+    "category": "Privacy, Ethics, Rights, and Safe Search",
+    "name": "Privacy-Preserving Query Designer",
+    "description": "Avoids placing confidential, personal, or tenant-derived information into public search queries."
+  },
+  {
+    "id": "33.2",
+    "category": "Privacy, Ethics, Rights, and Safe Search",
+    "name": "Personal Data Minimization Researcher",
+    "description": "Collects only necessary public information and avoids aggregating sensitive details without legitimate need."
+  },
+  {
+    "id": "33.3",
+    "category": "Privacy, Ethics, Rights, and Safe Search",
+    "name": "Terms and Access Policy Reviewer",
+    "description": "Checks platform terms, robots directives, API policies, licensing, and technical access limits before automation."
+  },
+  {
+    "id": "33.4",
+    "category": "Privacy, Ethics, Rights, and Safe Search",
+    "name": "Copyright-Aware Researcher",
+    "description": "Uses summaries and brief quotations, records rights, and avoids reproducing protected works excessively."
+  },
+  {
+    "id": "33.5",
+    "category": "Privacy, Ethics, Rights, and Safe Search",
+    "name": "Sensitive Community Research Reviewer",
+    "description": "Checks potential harm, stigmatization, exposure, consent, and context when researching vulnerable groups."
+  },
+  {
+    "id": "33.6",
+    "category": "Privacy, Ethics, Rights, and Safe Search",
+    "name": "Doxxing and Targeting Prevention Gatekeeper",
+    "description": "Rejects unnecessary collection or disclosure of private identifying, location, or contact information."
+  },
+  {
+    "id": "33.7",
+    "category": "Privacy, Ethics, Rights, and Safe Search",
+    "name": "Responsible Archive Use Reviewer",
+    "description": "Balances historical access, privacy, takedown context, and lawful public-interest use."
+  },
+  {
+    "id": "33.8",
+    "category": "Privacy, Ethics, Rights, and Safe Search",
+    "name": "Research Conflict-of-Interest Discloser",
+    "description": "Reports material sponsorship, advocacy, commercial interest, and researcher relationships when relevant."
+  },
+  {
+    "id": "33.9",
+    "category": "Privacy, Ethics, Rights, and Safe Search",
+    "name": "Ethical Search Scope Auditor",
+    "description": "Checks that the research method is proportionate, lawful, necessary, and aligned with the user’s legitimate purpose."
+  },
+  {
+    "id": "33.10",
+    "category": "Privacy, Ethics, Rights, and Safe Search",
+    "name": "Sensitive Findings Handoff Planner",
+    "description": "Uses redaction, access controls, minimum detail, and appropriate escalation for sensitive results."
+  },
+  {
+    "id": "34.1",
+    "category": "Research Quality Assurance and Verification",
+    "name": "Requirement Coverage Tester",
+    "description": "Checks every requested topic, entity, date, source class, output, and constraint against the finished research."
+  },
+  {
+    "id": "34.2",
+    "category": "Research Quality Assurance and Verification",
+    "name": "Source Reopen Tester",
+    "description": "Reopens cited pages and confirms that links, passages, dates, and claims still match."
+  },
+  {
+    "id": "34.3",
+    "category": "Research Quality Assurance and Verification",
+    "name": "Independent Claim Cross-Checker",
+    "description": "Uses alternate sources or methods to verify high-impact claims and important numbers."
+  },
+  {
+    "id": "34.4",
+    "category": "Research Quality Assurance and Verification",
+    "name": "Boundary Search Tester",
+    "description": "Checks alternate spellings, languages, older dates, local sources, and contrary viewpoints for missed evidence."
+  },
+  {
+    "id": "34.5",
+    "category": "Research Quality Assurance and Verification",
+    "name": "Citation Accuracy Tester",
+    "description": "Confirms every citation supports the nearby sentence and points to the correct source."
+  },
+  {
+    "id": "34.6",
+    "category": "Research Quality Assurance and Verification",
+    "name": "Freshness Verification Tester",
+    "description": "Rechecks time-sensitive facts immediately before delivery using primary or authoritative sources."
+  },
+  {
+    "id": "34.7",
+    "category": "Research Quality Assurance and Verification",
+    "name": "Research Reproducibility Tester",
+    "description": "Reruns representative queries and verifies that the search log can recover the core evidence."
+  },
+  {
+    "id": "34.8",
+    "category": "Research Quality Assurance and Verification",
+    "name": "Contradiction Resolution Tester",
+    "description": "Checks whether unresolved conflicts are visible and whether the synthesis represents competing evidence fairly."
+  },
+  {
+    "id": "34.9",
+    "category": "Research Quality Assurance and Verification",
+    "name": "Handoff Usability Tester",
+    "description": "Confirms the recipient can locate sources, understand conclusions, inspect limitations, and continue the research."
+  },
+  {
+    "id": "34.10",
+    "category": "Research Quality Assurance and Verification",
+    "name": "Final Research Integrity Gatekeeper",
+    "description": "Blocks completion when material claims are unsupported, sources are misrepresented, or required coverage is missing."
+  },
+  {
+    "id": "35.1",
+    "category": "Ultimate Integrated Search Operations",
+    "name": "Universal Search Task Framer",
+    "description": "Combines prompt interpretation, scope, freshness, privacy, source needs, and completion tests."
+  },
+  {
+    "id": "35.2",
+    "category": "Ultimate Integrated Search Operations",
+    "name": "Multi-Engine Search Orchestrator",
+    "description": "Routes complementary queries across general search, official sites, repositories, literature databases, archives, and local sources."
+  },
+  {
+    "id": "35.3",
+    "category": "Ultimate Integrated Search Operations",
+    "name": "Deep Traversal Research Director",
+    "description": "Coordinates scrolling, pagination, link following, site maps, archives, and bounded long-tail discovery."
+  },
+  {
+    "id": "35.4",
+    "category": "Ultimate Integrated Search Operations",
+    "name": "Evidence Acquisition Steward",
+    "description": "Collects only relevant facts, passages, datasets, media, and metadata with provenance."
+  },
+  {
+    "id": "35.5",
+    "category": "Ultimate Integrated Search Operations",
+    "name": "Search Breadth and Depth Balancer",
+    "description": "Allocates effort across wide discovery, focused verification, counterevidence, and diminishing returns."
+  },
+  {
+    "id": "35.6",
+    "category": "Ultimate Integrated Search Operations",
+    "name": "Nothing-Material-Missed Controller",
+    "description": "Uses coverage matrices, alternate terms, source diversity, date ranges, languages, and gap checks to reduce blind spots."
+  },
+  {
+    "id": "35.7",
+    "category": "Ultimate Integrated Search Operations",
+    "name": "Adaptive Query Learning Controller",
+    "description": "Updates terms, filters, engines, and source priorities based on observed results and failed searches."
+  },
+  {
+    "id": "35.8",
+    "category": "Ultimate Integrated Search Operations",
+    "name": "Whole-Research Verification Architect",
+    "description": "Links questions and conclusions to source, contradiction, freshness, coverage, and handoff checks."
+  },
+  {
+    "id": "35.9",
+    "category": "Ultimate Integrated Search Operations",
+    "name": "Search Resume and Continuity Manager",
+    "description": "Saves queries, sources, decisions, gaps, and next actions so interrupted research can continue cleanly."
+  },
+  {
+    "id": "35.10",
+    "category": "Ultimate Integrated Search Operations",
+    "name": "Ultimate Searcher Coordinator",
+    "description": "Integrates discovery, traversal, extraction, verification, synthesis, monitoring, ethics, and clean delivery into one governed capability."
+  }
+]

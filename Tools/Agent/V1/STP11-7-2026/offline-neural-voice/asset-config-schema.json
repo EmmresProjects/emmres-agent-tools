@@ -1,0 +1,470 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "asset-config-schema.json",
+  "title": "Offline Neural Voice configuration",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "skill",
+    "paths",
+    "execution",
+    "inference",
+    "synthesis",
+    "mastering",
+    "qa",
+    "safety",
+    "journal",
+    "packaging",
+    "accessibility"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "skill": {
+      "type": "object",
+      "required": [
+        "name",
+        "title",
+        "config_version"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "config_version": {
+          "type": "string"
+        }
+      }
+    },
+    "paths": {
+      "type": "object",
+      "required": [
+        "state_dir",
+        "models_dir",
+        "output_dir",
+        "work_dir",
+        "journal_path",
+        "evidence_dir",
+        "registry_path",
+        "presets_path",
+        "policies_path",
+        "lexicon_path",
+        "acceptance_fixture_path",
+        "result_schema_path",
+        "config_schema_path",
+        "caption_policy_path",
+        "manifest_out",
+        "allowed_roots"
+      ],
+      "properties": {
+        "state_dir": {
+          "type": "string",
+          "minLength": 1,
+          "description": "directory that may hold runtime state (models, output, journal) outside the flat skill folder; `~` is expanded"
+        },
+        "models_dir": {
+          "type": "string"
+        },
+        "output_dir": {
+          "type": "string"
+        },
+        "work_dir": {
+          "type": "string"
+        },
+        "journal_path": {
+          "type": "string"
+        },
+        "evidence_dir": {
+          "type": "string"
+        },
+        "registry_path": {
+          "type": "string"
+        },
+        "presets_path": {
+          "type": "string"
+        },
+        "policies_path": {
+          "type": "string"
+        },
+        "lexicon_path": {
+          "type": "string"
+        },
+        "acceptance_fixture_path": {
+          "type": "string"
+        },
+        "result_schema_path": {
+          "type": "string"
+        },
+        "config_schema_path": {
+          "type": "string"
+        },
+        "caption_policy_path": {
+          "type": "string"
+        },
+        "manifest_out": {
+          "type": "string"
+        },
+        "allowed_roots": {
+          "type": "array",
+          "items": {}
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "required": [
+        "offline",
+        "allow_network",
+        "timeout_seconds",
+        "run_timeout_seconds",
+        "cancel_poll_seconds",
+        "numpy_threads",
+        "strict_checksum",
+        "allow_fallback_engine",
+        "fail_on_blocked_rights",
+        "max_chars",
+        "max_sentences",
+        "allow_absolute_paths",
+        "overwrite",
+        "script_guard"
+      ],
+      "properties": {
+        "offline": {
+          "type": "boolean"
+        },
+        "allow_network": {
+          "type": "boolean"
+        },
+        "timeout_seconds": {
+          "type": "number"
+        },
+        "run_timeout_seconds": {
+          "type": "number"
+        },
+        "cancel_poll_seconds": {
+          "type": "number"
+        },
+        "numpy_threads": {
+          "type": "integer"
+        },
+        "strict_checksum": {
+          "type": "boolean"
+        },
+        "allow_fallback_engine": {
+          "type": "boolean"
+        },
+        "fail_on_blocked_rights": {
+          "type": "boolean"
+        },
+        "max_chars": {
+          "type": "integer"
+        },
+        "max_sentences": {
+          "type": "integer"
+        },
+        "allow_absolute_paths": {
+          "type": "boolean"
+        },
+        "overwrite": {
+          "type": "boolean"
+        },
+        "script_guard": {
+          "type": "string"
+        }
+      }
+    },
+    "inference": {
+      "type": "object",
+      "required": [
+        "providers",
+        "intra_op_threads",
+        "inter_op_threads",
+        "graph_optimization",
+        "max_memory_bytes"
+      ],
+      "properties": {
+        "providers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "intra_op_threads": {
+          "type": "integer"
+        },
+        "inter_op_threads": {
+          "type": "integer"
+        },
+        "graph_optimization": {
+          "type": "string"
+        },
+        "max_memory_bytes": {
+          "type": "integer"
+        }
+      }
+    },
+    "synthesis": {
+      "type": "object",
+      "required": [
+        "length_scale",
+        "noise_scale",
+        "noise_w",
+        "seed",
+        "volume",
+        "normalize_audio"
+      ],
+      "properties": {
+        "length_scale": {
+          "type": "number"
+        },
+        "noise_scale": {
+          "type": "number"
+        },
+        "noise_w": {
+          "type": "number"
+        },
+        "seed": {
+          "type": "integer"
+        },
+        "volume": {
+          "type": "number"
+        },
+        "normalize_audio": {
+          "type": "boolean"
+        }
+      }
+    },
+    "mastering": {
+      "type": "object",
+      "required": [
+        "target_lufs",
+        "max_true_peak_dbfs",
+        "loudness_tolerance_lu",
+        "limiter_lookahead_ms",
+        "highpass_hz",
+        "resample_hz",
+        "max_gain_db"
+      ],
+      "properties": {
+        "target_lufs": {
+          "type": "number"
+        },
+        "max_true_peak_dbfs": {
+          "type": "number"
+        },
+        "loudness_tolerance_lu": {
+          "type": "number"
+        },
+        "limiter_lookahead_ms": {
+          "type": "number"
+        },
+        "highpass_hz": {
+          "type": "number"
+        },
+        "resample_hz": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "max_gain_db": {
+          "type": "number"
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "required": [
+        "min_duration_s",
+        "max_duration_s",
+        "short_ceiling_ok",
+        "max_silence_ratio",
+        "max_clipped_samples",
+        "max_dc_offset",
+        "min_level_rms_dbfs",
+        "max_level_rms_dbfs",
+        "duplicate_word_repeat_limit",
+        "min_word_accuracy",
+        "asr"
+      ],
+      "properties": {
+        "min_duration_s": {
+          "type": "number"
+        },
+        "max_duration_s": {
+          "type": "number"
+        },
+        "default_min_duration_s": {
+          "type": "number",
+          "minimum": 0,
+          "description": "lower duration bound for a standalone qa run; 0 disables the floor"
+        },
+        "default_max_duration_s": {
+          "type": "number",
+          "minimum": 0,
+          "description": "upper duration bound for a standalone qa run; 0 means no upper limit"
+        },
+        "short_ceiling_ok": {
+          "type": "boolean"
+        },
+        "max_silence_ratio": {
+          "type": "number"
+        },
+        "max_clipped_samples": {
+          "type": "integer"
+        },
+        "max_dc_offset": {
+          "type": "number"
+        },
+        "min_level_rms_dbfs": {
+          "type": "number"
+        },
+        "max_level_rms_dbfs": {
+          "type": "number"
+        },
+        "duplicate_word_repeat_limit": {
+          "type": "integer"
+        },
+        "min_word_accuracy": {
+          "type": "number"
+        },
+        "asr": {
+          "type": "object",
+          "required": [
+            "enabled",
+            "model",
+            "compute_type",
+            "language",
+            "download_root"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "model": {
+              "type": "string"
+            },
+            "compute_type": {
+              "type": "string"
+            },
+            "language": {
+              "type": "string"
+            },
+            "download_root": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": [
+        "require_consent_for_cloning",
+        "require_approval_for_release",
+        "require_approval_for_delete",
+        "require_approval_for_registry_write",
+        "disclose_fallback",
+        "max_copy_seconds"
+      ],
+      "properties": {
+        "require_consent_for_cloning": {
+          "type": "boolean"
+        },
+        "require_approval_for_release": {
+          "type": "boolean"
+        },
+        "require_approval_for_delete": {
+          "type": "boolean"
+        },
+        "require_approval_for_registry_write": {
+          "type": "boolean"
+        },
+        "disclose_fallback": {
+          "type": "boolean"
+        },
+        "max_copy_seconds": {
+          "type": "number"
+        }
+      }
+    },
+    "journal": {
+      "type": "object",
+      "required": [
+        "enabled",
+        "max_bytes",
+        "reset_requires_approval"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "max_bytes": {
+          "type": "integer"
+        },
+        "reset_requires_approval": {
+          "type": "boolean"
+        }
+      }
+    },
+    "packaging": {
+      "type": "object",
+      "required": [
+        "formats",
+        "mp3_bitrate_kbps",
+        "include_evidence",
+        "include_captions",
+        "include_manifest"
+      ],
+      "properties": {
+        "formats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mp3_bitrate_kbps": {
+          "type": "integer"
+        },
+        "include_evidence": {
+          "type": "boolean"
+        },
+        "include_captions": {
+          "type": "boolean"
+        },
+        "include_manifest": {
+          "type": "boolean"
+        }
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "required": [
+        "plain_language",
+        "verbose",
+        "color",
+        "pause_after_sentence_ms"
+      ],
+      "properties": {
+        "plain_language": {
+          "type": "boolean"
+        },
+        "verbose": {
+          "type": "boolean"
+        },
+        "color": {
+          "type": "boolean"
+        },
+        "pause_after_sentence_ms": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

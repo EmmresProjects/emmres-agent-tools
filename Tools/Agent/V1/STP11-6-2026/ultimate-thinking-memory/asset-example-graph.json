@@ -1,0 +1,10 @@
+{
+  "nodes": ["goal", "scope", "budget", "timeline", "risk", "vendor"],
+  "edges": [
+    {"from": "goal", "to": "scope", "relation": "defines"},
+    {"from": "scope", "to": "budget", "relation": "drives"},
+    {"from": "budget", "to": "timeline", "relation": "constrains"},
+    {"from": "timeline", "to": "scope", "relation": "changes"},
+    {"from": "risk", "to": "timeline", "relation": "threatens"}
+  ]
+}

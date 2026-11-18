@@ -1,0 +1,33 @@
+{
+  "description": "Colour palettes for chart and dashboard rendering. Every palette is colour-blind safe for the first four series and remains distinguishable in grayscale for the first two.",
+  "default": "corporate",
+  "palettes": {
+    "corporate": ["#1f4e79", "#2e75b6", "#548235", "#bf8f00", "#c00000", "#7030a0", "#0f7b6c", "#8c4a1f", "#5b6573", "#a6a6a6"],
+    "finance": ["#123f5a", "#2f6690", "#3a7d44", "#b07d2b", "#9c2b2b", "#5c4b8a", "#2b7a78", "#7a5c3e"],
+    "muted": ["#4a5a6a", "#7f8c99", "#a8b3bd", "#c8b9a6", "#9a8f86", "#6f7f72", "#8a7f9c", "#b5b5b5"],
+    "accessible": ["#0072b2", "#e69f00", "#009e73", "#cc79a7", "#56b4e9", "#d55e00", "#f0e442", "#000000"],
+    "grayscale": ["#1a1a1a", "#4d4d4d", "#7f7f7f", "#a6a6a6", "#c9c9c9", "#e6e6e6", "#333333", "#666666"]
+  },
+  "theme": {
+    "ink": "1B1F24",
+    "muted": "5B6573",
+    "accent": "1F4E79",
+    "accent2": "2E75B6",
+    "positive": "1E6B3A",
+    "warning": "B45309",
+    "danger": "B42318",
+    "input_fill": "FFF7DB",
+    "formula_fill": "EEF4FB",
+    "total_fill": "DCE6F1",
+    "note_fill": "F5F5F0",
+    "header_fill": "1F4E79",
+    "card_fill": "F2F6FA"
+  },
+  "rules": [
+    "Bars and columns start at zero; a truncated bar axis is a defect, not a style choice.",
+    "Never encode meaning with colour alone: pair colour with a label, pattern or direct value.",
+    "Cap legends at six entries; group the tail into 'Other'.",
+    "Light backgrounds only for text-bearing fills; keep contrast at or above 4.5:1.",
+    "Grayscale palette exists so printed and photocopied output stays readable."
+  ]
+}

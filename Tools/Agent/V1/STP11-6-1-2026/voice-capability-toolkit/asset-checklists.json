@@ -1,0 +1,69 @@
+{
+  "version": "1.0.0",
+  "description": "Checklists consumed by tools-audio-delivery.py --checklist, tools-audio-analysis.py audit and tools-catalog-builder.py 'test plan' sections. Each check has a stable id, a measurable pass rule, and the command that measures it.",
+  "checklists": {
+    "advertising": {
+      "title": "Advertising voiceover delivery",
+      "checks": [
+        {"id": "adv-duration", "rule": "Final duration is within 2% of the commissioned slot.", "command": "tools-audio-analysis.py metrics --input <file> --ops duration"},
+        {"id": "adv-loudness", "rule": "Integrated loudness is -16 LUFS +/- 0.5 LU (or the platform target).", "command": "tools-audio-analysis.py metrics --input <file> --ops level"},
+        {"id": "adv-peak", "rule": "True peak is at or below -1 dBTP; no clipped samples.", "command": "tools-audio-analysis.py metrics --input <file> --ops clipping"},
+        {"id": "adv-brand-pronunciation", "rule": "Every brand term matches the approved pronunciation dictionary entry.", "command": "tools-voice-profile.py validate-dictionary --input <dict> --brief <brief>"},
+        {"id": "adv-disclosure", "rule": "Synthetic-voice disclosure is present in metadata when policy requires it.", "command": "tools-audio-delivery.py manifest --input <files> --rights <rights.json>"},
+        {"id": "adv-rights", "rule": "A consent or license record covers the use, territory and medium.", "command": "tools-voice-profile.py check-use --input <profile> --request <request.json>"}
+      ]
+    },
+    "audiobook": {
+      "title": "Audiobook chapter delivery",
+      "checks": [
+        {"id": "ab-loudness", "rule": "Integrated loudness is -18 LUFS +/- 1 LU with true peak at or below -3 dBTP.", "command": "tools-audio-analysis.py metrics --input <file> --ops level"},
+        {"id": "ab-noise", "rule": "Residual noise floor is at least 55 dB below speech level.", "command": "tools-audio-analysis.py metrics --input <file> --ops noise"},
+        {"id": "ab-silence", "rule": "No silence longer than 3 s inside a chapter; page-break gaps are intentional and logged.", "command": "tools-audio-analysis.py metrics --input <file> --ops silence"},
+        {"id": "ab-pronunciation", "rule": "Names and invented terms follow the project dictionary; regressions are reported.", "command": "tools-audio-analysis.py alignment --input <file> --text <chapter.txt>"},
+        {"id": "ab-continuity", "rule": "Speaker identity stays inside 0.5 semitones of the chapter baseline.", "command": "tools-audio-analysis.py metrics --input <file> --ops pitch"},
+        {"id": "ab-rights", "rule": "Narration voice has documented rights and provenance for the title.", "command": "tools-audio-delivery.py manifest --input <files> --rights <rights.json>"}
+      ]
+    },
+    "podcast": {
+      "title": "Podcast episode delivery",
+      "checks": [
+        {"id": "pod-loudness", "rule": "Integrated loudness is -16 LUFS +/- 1 LU for stereo, true peak at or below -1 dBTP.", "command": "tools-audio-analysis.py metrics --input <file> --ops level"},
+        {"id": "pod-channel", "rule": "Channel count and sample rate match the host preset.", "command": "tools-audio-delivery.py inspect --input <file> --preset podcast"},
+        {"id": "pod-clipping", "rule": "No clipped samples in the delivered master.", "command": "tools-audio-analysis.py metrics --input <file> --ops clipping"},
+        {"id": "pod-disclosure", "rule": "Episode metadata carries a synthetic-voice disclosure when applicable.", "command": "tools-audio-delivery.py manifest --input <files> --rights <rights.json"},
+        {"id": "pod-naming", "rule": "Episode files follow the agreed naming pattern and contain no spaces.", "command": "tools-audio-delivery.py validate-package --input <dir>"}
+      ]
+    },
+    "game-voiceover": {
+      "title": "Game voice asset delivery",
+      "checks": [
+        {"id": "game-naming", "rule": "Filenames follow the agreed pattern and are lowercase with no spaces.", "command": "tools-audio-delivery.py validate-package --input <dir>"},
+        {"id": "game-loudness", "rule": "Assets are normalised to the engine target (-18 LUFS, -1 dBTP) or left pre-normalised with a note.", "command": "tools-audio-analysis.py metrics --input <file> --ops level"},
+        {"id": "game-format", "rule": "Sample rate is 48 kHz mono PCM for engine import.", "command": "tools-audio-delivery.py inspect --input <file> --preset game-asset"},
+        {"id": "game-silence", "rule": "No unintended leading or trailing silence beyond 80 ms.", "command": "tools-audio-analysis.py metrics --input <file> --ops silence"},
+        {"id": "game-identity", "rule": "Character identity stays consistent within the line set.", "command": "tools-audio-analysis.py metrics --input <file> --ops pitch"},
+        {"id": "game-rights", "rule": "Each asset row in the manifest records licence and disclosure status.", "command": "tools-audio-delivery.py validate-package --input <dir>"}
+      ]
+    },
+    "telephony": {
+      "title": "Telephony / IVR prompt delivery",
+      "checks": [
+        {"id": "tel-band", "rule": "Audio is band-limited to 300-3400 Hz and 8 kHz sample rate.", "command": "tools-audio-delivery.py inspect --input <file> --preset telephony"},
+        {"id": "tel-loudness", "rule": "Integrated loudness is -20 LUFS +/- 1 LU with true peak at or below -3 dBTP.", "command": "tools-audio-analysis.py metrics --input <file> --ops level"},
+        {"id": "tel-length", "rule": "Each prompt is shorter than the menu slot, with 150 ms lead-in and 250 ms tail.", "command": "tools-audio-analysis.py metrics --input <file> --ops silence"},
+        {"id": "tel-intelligibility", "rule": "Numbers, codes and menu keys are spoken in the approved format.", "command": "tools-audio-analysis.py alignment --input <file> --text <prompt.txt>", "required": false},
+        {"id": "tel-format", "rule": "Delivered as u-law or 16-bit PCM WAV as required by the switch.", "command": "tools-audio-delivery.py encode --input <file> --preset telephony"}
+      ]
+    },
+    "accessibility": {
+      "title": "Accessible audio delivery",
+      "checks": [
+        {"id": "acc-rate", "rule": "Playback rate can change from 0.5x to 2.0x without pitch inflation or lost words.", "command": "tools-audio-synthesis.py render-brief --input <brief> --rate-mult 1.0"},
+        {"id": "acc-cues", "rule": "Every heading, link and abbreviation has a spoken form in the script.", "command": "tools-audio-synthesis.py sanitize-text --text '<content>'"},
+        {"id": "acc-plain", "rule": "Long sentences are split so that no spoken sentence exceeds 25 words.", "command": "tools-audio-synthesis.py plan-prosody --text <content>"},
+        {"id": "acc-loudness", "rule": "Integrated loudness is -16 LUFS +/- 1 LU with no sudden jumps between sections.", "command": "tools-audio-analysis.py metrics --input <file> --ops level"},
+        {"id": "acc-silence", "rule": "Navigation gaps are 800-1200 ms and never shorter than 400 ms.", "command": "tools-audio-analysis.py metrics --input <file> --ops silence"}
+      ]
+    }
+  }
+}
