@@ -4,4 +4,5 @@ Generated from the immediate package folders under `Tools/<Category>/`. Do not e
 
 | Tool | Category | Purpose | Status | Version |
 |---|---|---|---|---|
+| V1 | Agent | No description supplied. | Unspecified | Unspecified |
 | offline neural voice system | Audio | CPU-first, air-gapped neural text-to-speech. Bundles a real neural engine (Piper, ONNX), checksum-verified pinned wheels, an SSML-lite direction format, a mastering chain targeting streaming delivery (**−14 LUFS**, **−1 dBFS** peak), | Unspecified | Unspecified |

@@ -25,7 +25,7 @@ A documented collection of reusable tools and capability packages.
 
 ## Inventory
 - **Categories:** 12
-- **Tool packages:** 1
+- **Tool packages:** 2
 
 ## Important
 These pages describe tools. Documentation does not itself give an Agent Builder agent permission or a runtime to execute them.
