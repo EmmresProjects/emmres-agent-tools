@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableExtensions
 cd /d "%~dp0"
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%~dp0Scripts\Update_Index.ps1" || goto :failed
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%~dp0Scripts\Update_Index.ps1" -NoPreview || goto :failed
 git lfs install --local || goto :failed
 git add . || goto :failed
 git diff --cached --quiet
