@@ -1,22 +1,9 @@
 # Emmre's Agent Tools
+Add any folder under `Tools`, `Knowledge`, or `Skills`. It becomes a category automatically. `Skills/General` is included. Nested folders are preserved.
 
-A self-updating public library for reusable tools, knowledge, and skills.
+Run `1. Update Index.cmd`, then `2. Push to GitHub LFS.cmd`.
 
-## Add content
+The updater avoids `py.exe` because stale registrations can point to deleted paths. For a custom Python location, set `EMMRES_PYTHON` to its full path.
 
-- Put tools under `Tools/<Category>/...`
-- Put references and knowledge under `Knowledge/<Category>/...`
-- Put complete reusable skill folders under `Skills/<Category>/<Skill Name>/...`
-
-You can add any new category folder. The index generator discovers it automatically.
-
-## Commands
-
-1. Run `1. Update Index.cmd` to rebuild `docs/index.html`, section pages, downloads, and `docs/catalog.json`.
-2. Run `2. Push to GitHub LFS.cmd` to rebuild, commit, and push everything with Git LFS.
-
-## GitHub Pages
-
-In repository settings, set **Pages > Source** to **GitHub Actions**. The workflow builds the index and deploys `docs`, `Tools`, `Knowledge`, and `Skills` into one Pages artifact, so every indexed link remains on the same public website.
-
-Readable text and code can be searched as knowledge. Binary tools, models, media, and Office files are downloadable assets. Git LFS storage and bandwidth quotas still apply.
+## Open versus Download
+**Open** opens the asset in a new browser tab. **Download** uses JavaScript `fetch()` and a generated Blob URL to trigger the browser's save operation, even for file types such as Markdown, text, images, PDFs, audio, and video that browsers normally preview inline. JavaScript must be enabled on the GitHub Pages site.
