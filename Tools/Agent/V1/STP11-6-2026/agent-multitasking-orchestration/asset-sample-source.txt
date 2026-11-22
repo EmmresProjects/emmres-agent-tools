@@ -1,2 +1,0 @@
-Skill Tool Name: Capability Snapshot
-Description: Captures a reusable capability definition, structured evidence, validation checks, and the next action for a unified orchestration registry.

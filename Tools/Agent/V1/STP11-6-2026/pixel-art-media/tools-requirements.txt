@@ -1,3 +1,0 @@
-# pixel-art-media runtime dependency (Python 3.9+; tested with Python 3.13)
-# Pillow provides PNG/APNG/GIF/WebP/BMP/TIFF/TGA/ICO codecs and quantization.
-Pillow>=10.0,<14

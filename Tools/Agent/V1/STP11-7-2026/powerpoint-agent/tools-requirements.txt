@@ -1,5 +1,0 @@
-# Runtime dependencies for the powerpoint-agent skill tool.
-# Install with: python -m pip install -r tools-requirements.txt
-# Verified with: python-pptx 1.0.2, Pillow 13.0.0, Python 3.13
-python-pptx>=1.0.0,<2
-Pillow>=10.0.0,<15

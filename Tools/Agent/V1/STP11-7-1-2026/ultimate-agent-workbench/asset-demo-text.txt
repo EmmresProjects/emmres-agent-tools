@@ -1,5 +1,0 @@
-Team handoff
-
-Keep the source editable. Review the evidence before approving a release.
-
-If a required file changes, stop and validate its replacement. Preserve completed work, repair the smallest failed step, and continue from a safe checkpoint.

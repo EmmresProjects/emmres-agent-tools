@@ -1,8 +1,0 @@
-{
-  "actions": [
-    {"id": "A1", "description": "Draft the summary note in the team folder", "targets": ["team-folder/summary.md"], "reversible": true},
-    {"id": "A2", "description": "Delete the expired draft files from the shared drive", "targets": ["shared/drafts/*"], "reversible": false, "rollback": "restore from the nightly backup within 30 days", "idempotency_key": "delete-drafts-2026-11"},
-    {"id": "A3", "description": "Send the invoice email to the external client", "targets": ["client@example.com"], "reversible": false, "rollback": "send a written correction", "idempotency_key": "invoice-42"},
-    {"id": "A4", "description": "Rotate the production API key in the secrets manager", "targets": ["secrets-manager"], "reversible": true, "rollback": "re-issue the previous key", "idempotency_key": "rotate-api-key-2026-11"}
-  ]
-}

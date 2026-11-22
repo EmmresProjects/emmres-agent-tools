@@ -1,8 +1,0 @@
-# AI Image Skill Tool - Python dependencies
-#
-# Everything except the image.* operations runs on the Python 3.9+ standard library.
-# Pillow is needed for image.* operations (and for the image-based tests in tools-self-test.py).
-# Install:  python3 -m pip install -r tools-requirements.txt
-# Tested with Pillow 13.0.0 on Python 3.13. The minimum below is the lowest version this was
-# written against; older versions were not tested.
-Pillow>=10.0

@@ -1,8 +1,0 @@
-{
-  "workflow_id": "inspect-and-verify",
-  "steps": [
-    {"id": "inventory", "capability": "workspace-inventory-scanner", "request": {"include_hashes": true}},
-    {"id": "health", "capability": "workspace-health-assessor", "request": {}},
-    {"id": "validate", "capability": "structural-workspace-validator", "request": {"required": ["inputs"]}}
-  ]
-}

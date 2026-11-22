@@ -1,6 +1,0 @@
-id,license,license_version,source,source_date,author_or_vendor,attribution,redistribute,model_training,ai_generated,model_receipt,provenance_sha256,notes
-hero-sculpt-base,proprietary-internal,1,00-admin/sculpt-brief-v001.pdf,2026-09-12,in-house modeling team,false,false,false,false,,REPLACE-DIGEST,Original sculpt; no external geometry
-rock-kit-01,cc0-1.0,1,local-kitbash-library/rocks/,2026-02-04,cc0 donor archive,false,true,false,false,,REPLACE-DIGEST,Public domain; kept for provenance only
-hdri-studio-a,royalty-free-stock,2024-11,00-admin/hdri-receipt.pdf,2024-11-30,stock vendor,true,false,false,false,,REPLACE-DIGEST,Renders only; never ship the source HDRI
-mocap-walk-07,proprietary-internal,1,11-simulation/capture/walk-07.bvh,2026-05-18,performer CONSENT-014,false,false,false,false,,REPLACE-DIGEST,Consent record must confirm current term
-gen-detail-normal,cc-by-4.0,1,08-materials/generated/normal-v003.png,2026-08-01,offline texture model v2,true,true,true,true,REPLACE-RECEIPT,Model receipt records seed and inputs

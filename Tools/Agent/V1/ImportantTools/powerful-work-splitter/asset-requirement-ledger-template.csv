@@ -1,6 +1,0 @@
-id,text,kind,owner_stage,acceptance,status,evidence
-R1,Restate the goal in one sentence the user can confirm,process,S1,Goal statement quoted in the delivery summary,done,goal statement
-R2,Reconcile every reported figure against the source workbook,quality,S2,Zero unreconciled figures,pending,
-R3,Draft a page-by-page storyline with one thesis per page,deliverable,S3,Page count matches the requested length,pending,
-R4,Deliver a final PDF that reopens cleanly,deliverable,S5,PDF opens and page count is correct,pending,
-R5,Inventory every attached and named file,process,S1,Every named file present or explicitly requested,done,file inventory
