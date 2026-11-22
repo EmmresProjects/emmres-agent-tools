@@ -1,0 +1,144 @@
+{
+  "policy_version": "2026.11.1",
+  "default_decision": "deny",
+  "roles": {
+    "viewer": {
+      "allowed_risk_classes": ["read-only"],
+      "allowed_classifications": ["public", "internal"],
+      "can_approve": false,
+      "can_elevate": false
+    },
+    "operator": {
+      "allowed_risk_classes": ["read-only", "reversible", "approval-required"],
+      "allowed_classifications": ["public", "internal", "confidential"],
+      "can_approve": false,
+      "can_elevate": true
+    },
+    "approver": {
+      "allowed_risk_classes": ["read-only", "reversible", "approval-required"],
+      "allowed_classifications": ["public", "internal", "confidential", "restricted"],
+      "can_approve": true,
+      "can_elevate": true
+    },
+    "security-reviewer": {
+      "allowed_risk_classes": ["read-only", "reversible", "approval-required", "dual-control"],
+      "allowed_classifications": ["public", "internal", "confidential", "restricted", "personal", "licensed"],
+      "can_approve": true,
+      "can_elevate": true
+    },
+    "admin": {
+      "allowed_risk_classes": ["read-only", "reversible", "approval-required", "dual-control"],
+      "allowed_classifications": ["public", "internal", "confidential", "restricted", "personal", "licensed"],
+      "can_approve": true,
+      "can_elevate": true
+    }
+  },
+  "data_classifications": {
+    "public": {"encrypt_at_rest": false, "allow_memory": true, "allow_export": true, "redact_in_logs": false},
+    "internal": {"encrypt_at_rest": false, "allow_memory": true, "allow_export": true, "redact_in_logs": false},
+    "confidential": {"encrypt_at_rest": true, "allow_memory": true, "allow_export": false, "redact_in_logs": true},
+    "restricted": {"encrypt_at_rest": true, "allow_memory": false, "allow_export": false, "redact_in_logs": true},
+    "personal": {"encrypt_at_rest": true, "allow_memory": false, "allow_export": false, "redact_in_logs": true},
+    "licensed": {"encrypt_at_rest": false, "allow_memory": true, "allow_export": false, "redact_in_logs": false}
+  },
+  "approval_rules": {
+    "require_single_approval_risk_classes": ["approval-required"],
+    "require_dual_control_risk_classes": ["dual-control"],
+    "separation_of_duties": true,
+    "bind_approval_to_payload_sha256": true,
+    "sensitive_action_keywords": [
+      "delete",
+      "destroy",
+      "decommission",
+      "break-glass",
+      "rotation",
+      "privilege-elevation",
+      "external-action",
+      "network-exception",
+      "export",
+      "rollback"
+    ]
+  },
+  "sandbox_and_code_screening": {
+    "executable_allowlist": ["python3", "python", "sqlite3"],
+    "blocked_python_calls": [
+      "eval",
+      "exec",
+      "compile",
+      "__import__",
+      "os.system",
+      "os.popen",
+      "subprocess.Popen",
+      "pickle.loads",
+      "pickle.load",
+      "marshal.loads",
+      "ctypes.CDLL"
+    ],
+    "blocked_python_imports": [
+      "pickle",
+      "marshal",
+      "ctypes",
+      "pty",
+      "telnetlib",
+      "ftplib",
+      "smtplib",
+      "xmlrpc"
+    ],
+    "archive_bomb_limits": {
+      "max_compression_ratio": 50.0,
+      "max_total_uncompressed_bytes": 104857600,
+      "max_member_count": 2000,
+      "max_nested_archive_depth": 1
+    },
+    "safe_model_extensions": [".safetensors", ".gguf", ".onnx", ".json"],
+    "unsafe_model_extensions": [".pt", ".pth", ".bin", ".pkl", ".pickle", ".joblib"]
+  },
+  "secret_redaction_patterns": [
+    {"name": "pem-private-key", "pattern": "-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----[\\s\\S]*?-----END (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----"},
+    {"name": "aws-access-key", "pattern": "\\bAKIA[0-9A-Z]{16}\\b"},
+    {"name": "bearer-token", "pattern": "(?i)bearer\\s+[a-z0-9_\\-\\.=]{20,}"},
+    {"name": "generic-api-secret", "pattern": "(?i)(?:api[_-]?key|secret[_-]?key|access[_-]?token|password|passwd)\\s*[:=]\\s*['\\\"]?[A-Za-z0-9_\\-+/=]{12,}['\\\"]?"},
+    {"name": "connection-url-creds", "pattern": "[a-zA-Z][a-zA-Z0-9+.-]*://[^:\\s/]+:[^@\\s/]+@[^\\s]+"}
+  ],
+  "prompt_injection_patterns": [
+    "(?i)ignore\\s+(?:all\\s+)?(?:previous|prior|above)\\s+instructions",
+    "(?i)disregard\\s+system\\s+(?:prompt|policy|rules)",
+    "(?i)you\\s+are\\s+now\\s+in\\s+developer\\s+mode",
+    "(?i)exfiltrate\\s+(?:secrets|credentials|keys|tokens)",
+    "(?i)grant\\s+(?:admin|root|elevated)\\s+permissions"
+  ],
+  "offline_vulnerability_advisories": [
+    {
+      "advisory_id": "OFFLINE-ADV-2026-0001",
+      "package": "pyyaml",
+      "affected_below": "5.4",
+      "severity": "critical",
+      "reason": "Arbitrary code execution via unsafe yaml.load loader",
+      "remediation": "Upgrade to pyyaml>=6.0.1 and enforce yaml.safe_load"
+    },
+    {
+      "advisory_id": "OFFLINE-ADV-2026-0002",
+      "package": "urllib3",
+      "affected_below": "2.0.7",
+      "severity": "high",
+      "reason": "Authorization header leakage on cross-origin redirect",
+      "remediation": "Pin urllib3>=2.2.0 in offline wheelhouse"
+    },
+    {
+      "advisory_id": "OFFLINE-ADV-2026-0003",
+      "package": "pillow",
+      "affected_below": "10.3.0",
+      "severity": "high",
+      "reason": "Buffer overflow during malformed image header decoding",
+      "remediation": "Pin pillow>=10.3.0 and validate media headers before decode"
+    },
+    {
+      "advisory_id": "OFFLINE-ADV-2026-0004",
+      "package": "jinja2",
+      "affected_below": "3.1.4",
+      "severity": "medium",
+      "reason": "Attribute injection in untrusted template rendering",
+      "remediation": "Pin jinja2>=3.1.4 and use SandboxedEnvironment"
+    }
+  ]
+}

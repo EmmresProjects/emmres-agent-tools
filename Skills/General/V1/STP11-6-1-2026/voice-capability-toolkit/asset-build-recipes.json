@@ -1,0 +1,259 @@
+{
+  "version": "1.0.0",
+  "description": "Recipe library used by tools-catalog-builder.py. Each recipe turns one catalog capability (or a merged category umbrella) into a concrete, testable deliverable plan: controls, artifacts, runnable commands, acceptance criteria, safety gates and risks. Matching order: name_matches, then keyword_rules, then category_defaults.",
+  "artifact_conventions": {
+    "spec_filename": "asset-{{slug}}-spec.md",
+    "sample_line_prefix": "Eval line {{n}}:",
+    "command_placeholder": "{{tool}}",
+    "entry_points": {
+      "builder": "tools-catalog-builder.py",
+      "profile": "tools-voice-profile.py",
+      "synthesis": "tools-audio-synthesis.py",
+      "delivery": "tools-audio-delivery.py"
+    }
+  },
+  "name_matches": [
+    {"any": ["universal voice creator", "voice identity architect", "character voice designer", "persona-to-voice mapper", "voice style composer", "gender presentation voice designer", "age and maturity voice designer", "creature and fantasy voice creator", "voice variation generator", "voice reference board builder"], "recipe": "voice-profile-spec"},
+    {"any": ["expressive text-to-speech", "long-form narration", "short-form voiceover", "dialogue performance", "script interpretation", "markup-aware speech", "prompt-to-performance", "dynamic read-aloud", "batch text-to-speech", "streaming speech"], "recipe": "tts-performance-plan"},
+    {"any": ["emotion performance controller", "attitude and personality", "emotional transition", "subtext performance", "comedic timing", "dramatic scene", "empathetic support", "motivational voice", "villain and antagonist", "emotion consistency"], "recipe": "emotion-performance-plan"},
+    {"any": ["pronunciation dictionary builder", "phoneme-level pronunciation", "multilingual voice", "code-switching", "accent style controller", "accent neutralization", "name and proper-noun", "acronym and number reader", "singing-language pronunciation", "pronunciation quality auditor"], "recipe": "pronunciation-toolkit"},
+    {"any": ["authorized voice converter", "timbre transfer", "age transformation", "gender presentation transformer", "accent transformation", "performance preservation", "speech-to-character", "real-time voice changer", "de-identification", "conversion artifact repairer"], "recipe": "conversion-plan"},
+    {"any": ["speech cleanup", "dialogue isolation", "de-reverberation", "voice equalization", "dynamics and loudness", "breath and mouth-sound", "pacing and silence", "word and phrase replacement", "voice restoration", "audio edit continuity"], "recipe": "audio-repair-pipeline"},
+    {"any": ["prosody designer", "pacing controller", "emphasis director", "pause and breath", "whisper and soft-speech", "shout and high-energy", "conversational disfluency", "rhythmic speech", "duration-constrained", "prosody consistency"], "recipe": "prosody-direction-sheet"},
+    {"any": ["automated dubbing", "lip-sync dialogue", "timecode-aware", "subtitle-to-voice", "cross-language voice consistency", "cultural localization", "dubbing cast", "dialogue timing retimer", "localized pronunciation", "dubbing quality"], "recipe": "dubbing-localization-plan"},
+    {"any": ["video voiceover producer", "image-to-talking-character", "avatar speech synchronizer", "talking-head audio", "scene-aware voice", "video dialogue editor", "interactive avatar voice", "animation voice cast", "viseme and phoneme", "audiovisual sync"], "recipe": "av-voice-plan"},
+    {"any": ["singing voice creator", "text-to-singing", "vocal melody", "harmony and choir", "rap and rhythmic", "vocal style transformer", "pitch and timing correction", "vocal layering", "lyric intelligibility", "singing quality"], "recipe": "singing-performance-plan"},
+    {"any": ["accessible read-aloud", "screen-reader content", "plain-language speech", "dyslexia-friendly", "low-vision audio description", "aac voice", "speech rate accessibility", "pronunciation learning", "caption-and-audio", "accessibility quality"], "recipe": "accessibility-speech-plan"},
+    {"any": ["conversational voice agent", "barge-in", "turn-taking", "adaptive user voice", "customer service voice", "tutor and coach voice", "game npc voice", "live event announcer", "real-time translation", "conversation experience auditor"], "recipe": "conversational-agent-plan"},
+    {"any": ["podcast voice producer", "audiobook production", "education voice producer", "advertising voice director", "news and bulletin", "corporate training", "game dialogue production", "ivr and telephony", "public announcement", "content versioning"], "recipe": "production-workflow-brief"},
+    {"any": ["voice export specialist", "broadcast loudness", "telephony audio formatter", "spatial voice mixer", "voice-and-music mixer", "room tone", "stem and track exporter", "metadata and cue sheet", "platform delivery preset", "delivery package validator"], "recipe": "delivery-format-preset"},
+    {"any": ["voice naturalness evaluator", "intelligibility evaluator", "speaker consistency evaluator", "emotion accuracy evaluator", "pronunciation regression", "audio artifact detector", "a/b voice test", "human review workflow", "golden sample", "voice release gate"], "recipe": "qa-evaluation-plan"},
+    {"any": ["voice consent verifier", "authorized voice enrollment", "usage rights policy", "real-person impersonation guard", "disclosure and labeling", "voice provenance recorder", "watermark and authenticity", "revocation and takedown", "sensitive scenario safety", "rights and compliance audit"], "recipe": "governance-gate-plan"},
+    {"any": ["voice profile library", "character voice bible", "style preset manager", "pronunciation memory", "voice session recall", "cross-project voice reuse", "voice search and discovery", "voice similarity deduplicator", "preset migration", "voice asset archive"], "recipe": "library-memory-schema"},
+    {"any": ["voice api orchestrator", "voice model router", "fallback and recovery", "voice job queue", "template-driven voice pipeline", "digital audio workstation connector", "game engine voice connector", "video editor voice connector", "voice webhook", "voice pipeline observability"], "recipe": "automation-pipeline-plan"},
+    {"any": ["voice attribute analyzer", "speaker segmentation", "speech transcription", "emotion and sentiment analyzer", "voice activity detector", "acoustic environment analyzer", "voice match suitability", "synthetic speech artifact", "script-to-audio alignment", "voice production diagnostic"], "recipe": "analysis-report-plan"},
+    {"any": ["layered hybrid voice", "procedural voice generator", "glitch and cyber", "period and genre voice", "environmental voice", "micro-expression voice", "crowd and group voice", "nonverbal vocalization", "interactive emotional state", "experimental voice sandbox"], "recipe": "creative-voice-design-plan"}
+  ],
+  "keyword_rules": [
+    {"any": ["consent", "permission", "rights", "license", "provenance", "watermark", "revoke", "takedown", "disclosure"], "recipe": "governance-gate-plan"},
+    {"any": ["sing", "lyric", "melody", "harmony", "choir", "rap", "vibrato"], "recipe": "singing-performance-plan"},
+    {"any": ["loudness", "lufs", "codec", "export", "deliver", "bitrate", "sample rate", "stereo"], "recipe": "delivery-format-preset"},
+    {"any": ["subtitle", "srt", "vtt", "dub", "lip", "localiz", "translat"], "recipe": "dubbing-localization-plan"},
+    {"any": ["viseme", "avatar", "animation", "video", "scene"], "recipe": "av-voice-plan"},
+    {"any": ["noise", "repair", "dereverb", "denois", "cleanup", "equaliz", "restore"], "recipe": "audio-repair-pipeline"},
+    {"any": ["pronunciation", "accent", "phoneme", "dictionary", "multilingual"], "recipe": "pronunciation-toolkit"},
+    {"any": ["evaluat", "score", "quality", "regression", "a/b", "audit result"], "recipe": "qa-evaluation-plan"},
+    {"any": ["stream", "latency", "real-time", "interrupt", "barge", "queue", "webhook"], "recipe": "conversational-agent-plan"}
+  ],
+  "category_defaults": {
+    "voice-creation-and-identity-design": "voice-profile-spec",
+    "text-to-speech-and-script-performance": "tts-performance-plan",
+    "emotion-attitude-and-acting": "emotion-performance-plan",
+    "pronunciation-language-and-accent": "pronunciation-toolkit",
+    "voice-conversion-and-transformation": "conversion-plan",
+    "voice-editing-and-audio-repair": "audio-repair-pipeline",
+    "timing-prosody-and-delivery-control": "prosody-direction-sheet",
+    "dubbing-localization-and-lip-synchronization": "dubbing-localization-plan",
+    "video-animation-and-avatar-voice": "av-voice-plan",
+    "singing-chanting-and-musical-voice": "singing-performance-plan",
+    "accessibility-and-assistive-speech": "accessibility-speech-plan",
+    "conversational-agents-and-real-time-interaction": "conversational-agent-plan",
+    "content-and-production-workflows": "production-workflow-brief",
+    "audio-formats-mixing-and-delivery": "delivery-format-preset",
+    "quality-assurance-and-evaluation": "qa-evaluation-plan",
+    "consent-rights-safety-and-provenance": "governance-gate-plan",
+    "voice-libraries-memory-and-reuse": "library-memory-schema",
+    "tooling-integration-and-automation": "automation-pipeline-plan",
+    "analysis-detection-and-reverse-engineering": "analysis-report-plan",
+    "creative-and-experimental-voice-design": "creative-voice-design-plan"
+  },
+  "recipes": {
+    "voice-profile-spec": {
+      "artifact": "voice-profile-spec",
+      "summary": "A validated voice profile plus a design specification that another engine can realize without re-interpreting prose.",
+      "profile_defaults": {"gender_presentation": "neutral", "age_presentation": "adult", "resonance": "balanced", "pace_wpm": 155, "energy": 0.55, "styles": ["warm", "conversational"]},
+      "document_sections": ["Deliverable", "Voice brief", "Measurable design controls", "Sample evaluation lines", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["pitch.base_hz", "pitch.range_st", "resonance", "pace_wpm", "energy", "accent.strength", "signature_habits"],
+      "acceptance": ["Profile validates against $defs/voice_profile", "Two regenerated renders keep the same base pitch within 0.5 semitones", "Forbidden traits are absent from the rendered sample", "Rights block states origin type and license"],
+      "gates": ["rights-error-if-real-person-without-consent"],
+      "analysis_ops": ["pitch", "energy", "pause"]
+    },
+    "tts-performance-plan": {
+      "artifact": "tts-performance-plan",
+      "summary": "A production-ready script + direction plan that renders reproducible speech through the synthesis entry point.",
+      "profile_defaults": {"pace_wpm": 160, "energy": 0.55},
+      "rendering": {"provider": "builtin-formant", "formats": ["wav"], "sample_lines": 2},
+      "document_sections": ["Deliverable", "Script handling", "Performance direction", "Render commands", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["pace_wpm", "pauses", "emphasis", "emotion.intensity", "markup"],
+      "acceptance": ["Every segment renders to a non-empty audio file", "Measured duration is within 20% of the planned duration", "Peak stays below -1 dBFS", "Disclosure metadata written when required"],
+      "gates": ["disclosure-status-in-manifest"],
+      "analysis_ops": ["pitch", "energy"]
+    },
+    "emotion-performance-plan": {
+      "artifact": "emotion-performance-plan",
+      "summary": "An emotion/attitude arc document with intensity curves and measurable vocal targets per beat.",
+      "profile_defaults": {"energy": 0.6},
+      "emotion_arc": true,
+      "document_sections": ["Deliverable", "Beat sheet", "Emotion and attitude targets", "Transition rules", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["emotion", "intensity", "attitude", "pitch.range_st", "energy", "breathiness"],
+      "acceptance": ["Each beat names one emotion from the preset library", "Intensity changes between beats are <= 0.4 unless marked as a deliberate jump", "A/B comparison render exists for the two most similar beats"],
+      "gates": ["sensitive-content-review"],
+      "analysis_ops": ["energy", "pitch"]
+    },
+    "pronunciation-toolkit": {
+      "artifact": "pronunciation-toolkit",
+      "summary": "A reusable pronunciation dictionary, an application report over real text, and an audit of risky terms.",
+      "document_sections": ["Deliverable", "Dictionary scope", "Risky term audit", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["term", "say", "ipa", "stress", "scope", "case_sensitive"],
+      "acceptance": ["Dictionary validates against $defs/pronunciation_dictionary", "Every risky proper noun has a decision (approved, pending, or waived with reason)", "Applying the dictionary twice is idempotent"],
+      "gates": ["real-person-name-review"],
+      "analysis_ops": ["pitch"]
+    },
+    "conversion-plan": {
+      "artifact": "conversion-plan",
+      "summary": "An authorized conversion plan with source suitability checks, preservation targets, and artifact repair thresholds.",
+      "document_sections": ["Deliverable", "Authorization record", "Source suitability", "Preservation targets", "Artifact repair thresholds", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["pitch", "formant", "breathiness", "identity_strength", "preservation"],
+      "acceptance": ["A consent record with matching id and scope exists before rendering", "Timing drift against the source is under 30 ms", "Artifact report has no unresolved severe findings"],
+      "gates": ["approval-required-conversion"],
+      "requires_consent": true,
+      "analysis_ops": ["pitch", "energy", "clipping", "silence"]
+    },
+    "audio-repair-pipeline": {
+      "artifact": "audio-repair-pipeline",
+      "summary": "An ordered DSP repair chain with per-stage measurable goals and before/after diagnostics.",
+      "document_sections": ["Deliverable", "Repair chain order", "Per-stage settings", "Before/after diagnostics", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["chain", "highpass_hz", "noise_reduction_db", "declick_threshold", "deesser", "target_lufs"],
+      "acceptance": ["Each stage names one measurable goal and one failure signal", "Residual noise floor improves by at least 6 dB", "No stage introduces clipping", "Original file is preserved untouched"],
+      "gates": ["keep-source-unmodified"],
+      "analysis_ops": ["level", "clipping", "silence", "noise"]
+    },
+    "prosody-direction-sheet": {
+      "artifact": "prosody-direction-sheet",
+      "summary": "A line-by-line prosody sheet (pitch contour, stress, pauses, tempo) that a renderer or human actor can follow.",
+      "document_sections": ["Deliverable", "Line table", "Prosody targets", "Breath plan", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["pitch.range_st", "pace_wpm", "pause_ms", "emphasis", "breath_points"],
+      "acceptance": ["Every line has a pitch target and a pause target", "Total planned duration is within 10% of the target duration", "No pause exceeds 1200 ms without a documented beat"],
+      "gates": ["sensitive-content-review"],
+      "analysis_ops": ["pitch", "pause"]
+    },
+    "dubbing-localization-plan": {
+      "artifact": "dubbing-localization-plan",
+      "summary": "A localized cue plan with translation-fit constraints, speaker casting, and a validated subtitle export.",
+      "document_sections": ["Deliverable", "Cue sheet", "Translation fit rules", "Speaker casting", "Lip-sync constraints", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["cue.start", "cue.end", "max_chars_per_second", "speaker", "locale"],
+      "acceptance": ["Every cue fits its slot within the reading-speed limit", "No overlapping cues for one speaker", "Subtitle export parses as valid SRT/VTT", "Localized names match the pronunciation dictionary"],
+      "gates": ["rights-territory-check", "cultural-review"],
+      "analysis_ops": ["silence", "pause"]
+    },
+    "av-voice-plan": {
+      "artifact": "av-voice-plan",
+      "summary": "An audiovisual voice plan with timing anchors, viseme export and a sync audit procedure.",
+      "document_sections": ["Deliverable", "Shot and line map", "Timing anchors", "Viseme export", "Sync audit", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["start", "end", "fps", "viseme_map", "energy"],
+      "acceptance": ["Every line has a picture anchor (shot or timecode)", "Sync drift stays under 80 ms", "Viseme timeline length equals audio duration within one frame"],
+      "gates": ["rights-error-if-real-person-without-consent"],
+      "analysis_ops": ["silence", "pause", "energy"]
+    },
+    "singing-performance-plan": {
+      "artifact": "singing-performance-plan",
+      "summary": "A singing plan covering range, register, breath plan, melody mapping and intelligibility budgets.",
+      "document_sections": ["Deliverable", "Range and register", "Melody map", "Breath plan", "Harmony and doubles", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["range_low", "range_high", "tempo_bpm", "vibrato_hz", "breath_points", "double_layers"],
+      "acceptance": ["Melody notes stay inside the declared range", "Each phrase has a breath point before it exceeds the comfort length", "Lyrics remain intelligible per the checklist in asset-checklists.json"],
+      "gates": ["musical-rights-check", "rights-error-if-real-person-without-consent"],
+      "analysis_ops": ["pitch", "energy"]
+    },
+    "accessibility-speech-plan": {
+      "artifact": "accessibility-speech-plan",
+      "summary": "An accessibility-first speech plan with navigation cues, rate control, and readability rewrites.",
+      "document_sections": ["Deliverable", "Content adaptations", "Navigation cues", "Rate and repetition rules", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["rate_mult", "chunk_size", "cue_style", "plain_language_level"],
+      "acceptance": ["Every heading, link and abbreviation has a spoken form", "Rate can be changed from 0.5x to 2.0x without regenerating", "Plain-language rewrite preserves all numbers and names", "No meaning is lost when the audio alone is heard"],
+      "gates": ["inclusive-language-review"],
+      "analysis_ops": ["pause", "silence"]
+    },
+    "conversational-agent-plan": {
+      "artifact": "conversational-agent-plan",
+      "summary": "A real-time conversational voice plan with latency budgets, barge-in rules and turn-level QA metrics.",
+      "document_sections": ["Deliverable", "Latency budget", "Turn-taking rules", "Barge-in and recovery", "Persona and tone rules", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["latency_ms", "chunk_ms", "backchannel_rate", "pace_wpm", "formality"],
+      "acceptance": ["First-audio latency budget is stated and under the channel limit", "Barge-in stops playback within 200 ms and resumes with context", "No repeated or truncated utterance across 20 test turns"],
+      "gates": ["sensitive-content-review"],
+      "analysis_ops": ["silence", "pause"]
+    },
+    "production-workflow-brief": {
+      "artifact": "production-workflow-brief",
+      "summary": "A production brief with deliverables, naming rules, review stages, and a manifest-checked delivery list.",
+      "document_sections": ["Deliverable", "Deliverables matrix", "Naming and versioning", "Review stages", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["naming_pattern", "formats", "review_stages", "target_lufs", "versions"],
+      "acceptance": ["Every deliverable has a filename pattern and a format", "Manifest validates against $defs/delivery_manifest", "Each review stage has an owner and a pass condition"],
+      "gates": ["release-gate"],
+      "analysis_ops": ["level", "clipping"]
+    },
+    "delivery-format-preset": {
+      "artifact": "delivery-format-preset",
+      "summary": "A validated export preset set with measured loudness, true peak, codec and channel targets.",
+      "document_sections": ["Deliverable", "Preset table", "Loudness targets", "Format and codec matrix", "Validation commands", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["target_lufs", "true_peak_dbtp", "sample_rate", "channels", "format", "subtype"],
+      "acceptance": ["Rendered file hits the target loudness within 0.5 LU", "True peak stays at or below the target", "Header metadata matches the preset exactly", "Unsupported codecs fail with a clear message and a fallback"],
+      "gates": ["rights-territory-check"],
+      "analysis_ops": ["level", "clipping", "silence"]
+    },
+    "qa-evaluation-plan": {
+      "artifact": "qa-evaluation-plan",
+      "summary": "A measurable QA plan with thresholds, test scripts, regression phrases and a release-gate decision.",
+      "document_sections": ["Deliverable", "Metrics and thresholds", "Test scripts", "Regression phrases", "Release gate decision", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["metric", "threshold", "sample_count", "pass_rule"],
+      "acceptance": ["Every metric has a number, a threshold and a measurement command", "At least one negative (must-fail) test exists", "Gate decision is reproducible from the recorded metrics"],
+      "gates": ["release-gate"],
+      "analysis_ops": ["level", "clipping", "noise", "pitch", "energy"]
+    },
+    "governance-gate-plan": {
+      "artifact": "governance-gate-plan",
+      "summary": "A rights, consent and provenance plan with enforceable gates, disclosure rules, and revocation steps.",
+      "document_sections": ["Deliverable", "Origin classification", "Consent and license requirements", "Disclosure rules", "Revocation procedure", "Audit checklist", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["origin.type", "consent_id", "allowed_uses", "territories", "disclosure", "revocation"],
+      "acceptance": ["Real-person voices are blocked without a consent record whose scope covers the requested use", "Every exported asset carries provenance and a disclosure field", "Revocation lists dependent assets and a replacement path", "Audit checklist resolves to a machine-readable JSON report"],
+      "gates": ["consent-required", "approval-required-publish"],
+      "requires_consent": true,
+      "analysis_ops": []
+    },
+    "library-memory-schema": {
+      "artifact": "library-memory-schema",
+      "summary": "A durable library schema with indexes, similarity rules, recall records and archive packaging.",
+      "document_sections": ["Deliverable", "Record schema", "Indexes and queries", "Similarity and dedupe rules", "Session recall and archive", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["library.index_fields", "similarity_threshold", "archive_contents", "session_state"],
+      "acceptance": ["Index queries return stable ordering", "Duplicate detection threshold is documented with a worked example", "An archive restores to a byte-identical manifest hash set"],
+      "gates": ["rights-territory-check"],
+      "analysis_ops": ["pitch", "energy"]
+    },
+    "automation-pipeline-plan": {
+      "artifact": "automation-pipeline-plan",
+      "summary": "A pipeline plan with routing rules, retry/fallback policy, queue limits, checkpoints and observability metrics.",
+      "document_sections": ["Deliverable", "Stages and contract", "Routing rules", "Retry, timeout and fallback", "Checkpoints and resume", "Observability", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["max_workers", "max_retries", "timeout", "checkpoint_dir", "events"],
+      "acceptance": ["Every stage declares input, output and failure mode", "A killed run resumes without duplicating finished items", "Retries are bounded and idempotent", "Metrics are emitted as JSON after each stage"],
+      "gates": ["approval-required-publish"],
+      "analysis_ops": []
+    },
+    "analysis-report-plan": {
+      "artifact": "analysis-report-plan",
+      "summary": "An analysis plan mapping each requested measurement to a real command, unit, confidence statement and report layout.",
+      "document_sections": ["Deliverable", "Measurements and commands", "Report layout", "Confidence and caveats", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["measurement", "unit", "window", "confidence_note"],
+      "acceptance": ["Every claim maps to a listed measurement command", "Confidence language distinguishes measurement from inference", "No detection claim exceeds the documented accuracy limits"],
+      "gates": ["no-identity-claims"],
+      "analysis_ops": ["pitch", "energy", "silence", "clipping", "noise", "level"]
+    },
+    "creative-voice-design-plan": {
+      "artifact": "creative-voice-design-plan",
+      "summary": "An experimental design plan with layered components, bounded effect racks, and an A/B comparison protocol.",
+      "document_sections": ["Deliverable", "Layer stack", "Effect rack", "Intelligibility budget", "Variation rules", "Test plan", "Acceptance criteria", "Safety and rights gates", "Provenance"],
+      "controls_focus": ["layers", "effects", "intelligibility_floor", "variation_seed"],
+      "acceptance": ["Each layer has a role and a level", "Effects are bounded by the rack limits in asset-voice-presets.json", "Intelligibility checklist passes at the chosen effect depth", "Two variants differ only by the documented seed"],
+      "gates": ["rights-error-if-real-person-without-consent", "fictional-identity-statement"],
+      "analysis_ops": ["pitch", "energy", "noise"]
+    }
+  }
+}

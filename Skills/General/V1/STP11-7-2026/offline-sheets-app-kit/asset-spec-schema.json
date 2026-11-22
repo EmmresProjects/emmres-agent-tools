@@ -1,0 +1,236 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "offline-sheets-app-kit/asset-spec-schema.json",
+  "title": "offline-sheets-app-kit specification",
+  "description": "Declarative description of one offline-first, Google-Sheets-backed business app. tools-generate-kit.py reads this file and emits a complete runnable project.",
+  "type": "object",
+  "required": ["app", "accounts", "roles", "branches", "products", "paymentMethods", "nonRevenueTypes", "settings"],
+  "additionalProperties": false,
+  "properties": {
+    "specVersion": { "type": "integer", "enum": [1], "default": 1 },
+
+    "app": {
+      "type": "object",
+      "required": ["name", "title", "slug", "businessName"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "maxLength": 40, "description": "Short product name used for the APK / EXE shortcut." },
+        "title": { "type": "string", "maxLength": 80, "description": "Full page title." },
+        "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "maxLength": 40, "description": "Folder, storage prefix and artifact slug." },
+        "businessName": { "type": "string", "maxLength": 60, "description": "Shown in the header, receipts and the Excel settings." },
+        "tagline": { "type": "string", "maxLength": 120 },
+        "author": { "type": "string", "maxLength": 80 },
+        "authorEmail": { "type": "string", "format": "email" },
+        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$", "default": "1.0.0" },
+        "brandColor": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$", "default": "#ffb02e" },
+        "brandColorAlt": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$", "default": "#ff8a1f" },
+        "brandInk": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$", "default": "#2b1b00" },
+        "themeColor": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$", "default": "#0b0f14" },
+        "initials": { "type": "string", "maxLength": 3 },
+        "androidAppId": { "type": "string", "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9]+)+$", "description": "e.g. ph.acme.laundry. Used by Cordova and Electron." },
+        "orientation": { "type": "string", "enum": ["default", "portrait", "landscape"], "default": "default" },
+        "keystoreAlias": { "type": "string", "pattern": "^[a-zA-Z0-9_-]+$", "default": "release" },
+        "timeZone": { "type": "string", "default": "Asia/Manila" },
+        "spreadsheetId": { "type": "string", "default": "" }
+      }
+    },
+
+    "categories": {
+      "type": "array",
+      "maxItems": 24,
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "icon": { "type": "string", "description": "A single emoji or short text badge." }
+        }
+      }
+    },
+
+    "products": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "price"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[A-Z0-9-]{2,16}$" },
+          "name": { "type": "string", "maxLength": 60 },
+          "category": { "type": "string" },
+          "price": { "type": "number", "minimum": 0 },
+          "volumeLabel": { "type": "string", "maxLength": 24, "description": "What one unit is made of, e.g. 'pieces' or 'loads'." },
+          "volume": {
+            "type": "array",
+            "description": "Per-unit ingredient / component counts. Used by the volume report.",
+            "items": {
+              "type": "object",
+              "required": ["unit", "qty"],
+              "additionalProperties": false,
+              "properties": {
+                "unit": { "type": "string" },
+                "qty": { "type": "number", "minimum": 0 }
+              }
+            }
+          },
+          "contents": { "type": "string", "description": "What is inside a combo or package, shown to staff." },
+          "status": { "type": "string", "enum": ["Active", "Inactive"], "default": "Active" },
+          "sort": { "type": "integer" }
+        }
+      }
+    },
+
+    "paymentMethods": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "description": "Checkout buttons, in order. The first is selected by default.",
+      "items": { "type": "string", "maxLength": 24 }
+    },
+
+    "nonRevenueTypes": {
+      "type": "array",
+      "maxItems": 8,
+      "description": "Reasons to record stock that left the shelf without a sale. Excluded from revenue.",
+      "items": {
+        "type": "object",
+        "required": ["label"],
+        "additionalProperties": false,
+        "properties": {
+          "label": { "type": "string", "maxLength": 32 },
+          "badge": { "type": "string", "enum": ["warn", "info", "bad", "good"], "default": "warn" },
+          "hint": { "type": "string", "maxLength": 120 }
+        }
+      }
+    },
+
+    "branches": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[A-Z]{2,4}-[0-9]{2}$" },
+          "name": { "type": "string", "maxLength": 60 },
+          "address": { "type": "string", "maxLength": 120 },
+          "contact": { "type": "string", "maxLength": 40 },
+          "status": { "type": "string", "enum": ["Active", "Closed"], "default": "Active" },
+          "note": { "type": "string", "maxLength": 120 }
+        }
+      }
+    },
+
+    "roles": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "permissions"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^ROLE-[A-Z0-9-]+$" },
+          "name": { "type": "string", "maxLength": 40 },
+          "description": { "type": "string", "maxLength": 160 },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["pos.use", "kitchen.view", "kitchen.update", "payment.collect",
+                       "order.void.own", "order.void.any", "reports.view", "nonrev.log",
+                       "eod.manage", "products.manage", "export"]
+            }
+          },
+          "isAdmin": { "type": "boolean", "default": false },
+          "canPOS": { "type": "boolean", "default": true },
+          "canKitchen": { "type": "boolean", "default": true },
+          "allBranches": { "type": "boolean", "default": false },
+          "canManage": { "type": "boolean", "default": false },
+          "canExport": { "type": "boolean", "default": false }
+        }
+      }
+    },
+
+    "accounts": {
+      "type": "object",
+      "required": ["ownerUsername", "ownerPassword", "list"],
+      "additionalProperties": false,
+      "properties": {
+        "ownerUsername": { "type": "string", "pattern": "^[a-zA-Z0-9._-]{3,32}$" },
+        "ownerPassword": { "type": "string", "minLength": 8 },
+        "list": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "required": ["accountId", "username", "displayName", "roleId", "branchId", "password"],
+            "additionalProperties": false,
+            "properties": {
+              "accountId": { "type": "string", "pattern": "^ACC-[A-Z0-9-]+$" },
+              "username": { "type": "string", "pattern": "^[a-zA-Z0-9._-]{3,32}$" },
+              "displayName": { "type": "string", "maxLength": 60 },
+              "roleId": { "type": "string" },
+              "branchId": { "type": "string" },
+              "password": { "type": "string", "minLength": 8 },
+              "pin": { "type": "string", "pattern": "^[0-9]{4,8}$" },
+              "passwordSalt": { "type": "string", "description": "Filled in by the generator." },
+              "passwordHash": { "type": "string", "description": "Filled in by the generator." },
+              "pinHash": { "type": "string", "description": "Filled in by the generator." },
+              "status": { "type": "string", "enum": ["Active", "Disabled"], "default": "Active" }
+            }
+          }
+        }
+      }
+    },
+
+    "features": {
+      "type": "object",
+      "description": "Switches whole modules on or off. Always overridable later from the Settings sheet.",
+      "additionalProperties": false,
+      "properties": {
+        "kitchen": { "type": "boolean", "default": true },
+        "queueCards": { "type": "boolean", "default": true },
+        "discounts": { "type": "boolean", "default": true },
+        "productVolume": { "type": "boolean", "default": true },
+        "multiBranch": { "type": "boolean", "default": true },
+        "unpaidOrders": { "type": "boolean", "default": true }
+      }
+    },
+
+    "queue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "min": { "type": "integer", "minimum": 1, "maximum": 999, "default": 1 },
+        "max": { "type": "integer", "minimum": 2, "maximum": 999, "default": 18 }
+      }
+    },
+
+    "settings": {
+      "type": "object",
+      "description": "Extra Settings rows. The generator adds the required keys (BusinessName, Currency, feature flags) automatically.",
+      "additionalProperties": { "type": ["string", "number", "boolean"] }
+    },
+
+    "settingNotes": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+
+    "token": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "default": { "type": "string", "description": "Leave empty to have the generator emit CHANGE-ME-<random>, which the backend refuses until edited." }
+      }
+    }
+  }
+}

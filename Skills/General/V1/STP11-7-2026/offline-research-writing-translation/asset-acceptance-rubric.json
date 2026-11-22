@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "name": "Offline deterministic acceptance rubric",
+  "note": "These are bundled, reproducible smoke and regression fixtures, not claims about external corpus-wide accuracy. Replace or extend them with licensed local benchmark sets.",
+  "overall": {
+    "min_pass_rate": 0.75,
+    "max_unresolved_conflicts": 0,
+    "max_unapproved_sensitive_actions": 0,
+    "require_human_review_for": ["export", "publish", "purge", "secure-dispose", "rights-exception"]
+  },
+  "languages": {
+    "en": {"min_retrieval_recall_at_5": 0.5, "min_grounded_claim_rate": 0.8, "min_glossary_term_rate": 0.8, "min_placeholder_preservation": 1.0},
+    "es": {"min_retrieval_recall_at_5": 0.4, "min_grounded_claim_rate": 0.75, "min_glossary_term_rate": 0.75, "min_placeholder_preservation": 1.0},
+    "fil": {"min_retrieval_recall_at_5": 0.4, "min_grounded_claim_rate": 0.7, "min_glossary_term_rate": 0.7, "min_placeholder_preservation": 1.0},
+    "default": {"min_retrieval_recall_at_5": 0.35, "min_grounded_claim_rate": 0.65, "min_glossary_term_rate": 0.65, "min_placeholder_preservation": 1.0}
+  },
+  "fixtures": [
+    {
+      "id": "retrieval-001",
+      "operation": "retrieval",
+      "language": "en",
+      "params": {"query": "checksum manifest", "limit": 5},
+      "expected_source_ids": ["src-001", "src-007"],
+      "metric": "recall_at_5"
+    },
+    {
+      "id": "semantic-001",
+      "operation": "semantic-retrieval",
+      "language": "en",
+      "params": {"query": "pinned corpus snapshot", "limit": 3},
+      "expected_source_ids": ["src-001"],
+      "metric": "recall_at_3"
+    },
+    {
+      "id": "translation-001",
+      "operation": "translation",
+      "language": "es",
+      "params": {
+        "text": "Offline research requires a pinned corpus snapshot and a checksum manifest.",
+        "source_language": "en",
+        "target_language": "es"
+      },
+      "expected_terms": ["investigación sin conexión", "manifiesto de sumas de comprobación"],
+      "metric": "expected_terms_present"
+    },
+    {
+      "id": "terminology-001",
+      "operation": "terminology",
+      "language": "es",
+      "params": {
+        "text": "Keep {NAME} and checksum manifest unchanged.",
+        "target_language": "es"
+      },
+      "expected_do_not_translate": ["{NAME}"],
+      "expected_terms": ["manifiesto de sumas de comprobación"],
+      "metric": "terms_and_placeholders"
+    },
+    {
+      "id": "fact-001",
+      "operation": "fact-check",
+      "language": "en",
+      "params": {
+        "claim": "The corrected 2025 survey covered 14 transects in Las Piñas."
+      },
+      "expected_status": "supported",
+      "expected_source_ids": ["src-003"]
+    },
+    {
+      "id": "audio-001",
+      "operation": "audio-transcripts",
+      "language": "en",
+      "params": {},
+      "expected_speakers": ["A", "B"],
+      "expected_min_segments": 2
+    },
+    {
+      "id": "rights-001",
+      "operation": "rights",
+      "language": "en",
+      "params": {
+        "quote": "Offline research requires a pinned corpus snapshot and a checksum manifest.",
+        "source_id": "src-001"
+      },
+      "expected_allowed": true
+    },
+    {
+      "id": "citations-001",
+      "operation": "citations",
+      "language": "en",
+      "params": {
+        "draft": "Offline research requires a checksum manifest [src-001]."
+      },
+      "expected_source_ids": ["src-001"],
+      "expected_broken_citations": 0
+    }
+  ]
+}

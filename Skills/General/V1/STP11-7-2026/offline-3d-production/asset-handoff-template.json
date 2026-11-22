@@ -1,0 +1,49 @@
+{
+  "schema": "o3d/delivery-handoff/1",
+  "description": "Fill-in template for a production handoff. Copy it next to the delivered files and complete every field; replace placeholder text, do not leave values blank.",
+  "project": "REPLACE-project-code",
+  "shot_or_asset": "hero_model_body_v001",
+  "department_from": "modeling",
+  "department_to": "rigging",
+  "source_version": "hero_model_body_v001",
+  "date_delivered": "REPLACE-YYYY-MM-DD",
+  "scene": {
+    "units": "m",
+    "up_axis": "Z",
+    "forward_axis": "Y",
+    "handedness": "right",
+    "rotation_order": "XYZ",
+    "fps": 24,
+    "frame_range": [1, 120],
+    "handles": 8,
+    "color_space": "ACEScg",
+    "display_space": "sRGB"
+  },
+  "contents": [
+    {"path": "15-delivery/hero_model_body_v001.obj", "role": "production mesh", "sha256": "REPLACE-digest"},
+    {"path": "15-delivery/hero_tex_body_v001-basecolor.png", "role": "texture", "sha256": "REPLACE-digest"}
+  ],
+  "dependencies": [
+    {"path": "07-textures/hero_tex_body_v001.udim1001.png", "required": true, "notes": "linked, not embedded"}
+  ],
+  "polygon_budget": {"target_triangles": 120000, "delivered_triangles": 0},
+  "known_limitations": [
+    "List every deviation from the brief; write 'none' explicitly if there are none."
+  ],
+  "approvals": {
+    "asset_supervisor": "REPLACE-name",
+    "approval_date": "REPLACE-YYYY-MM-DD",
+    "status": "pending"
+  },
+  "license": {
+    "license_id": "proprietary-internal",
+    "attribution_required": false,
+    "redistribution_allowed": false,
+    "ai_training_permitted": false
+  },
+  "verification": [
+    "Run: python tools-o3d.py validate package --dir 15-delivery",
+    "Run: python tools-o3d.py hash --file <each deliverable>",
+    "Attach the package-gate JSON to the handoff record."
+  ]
+}

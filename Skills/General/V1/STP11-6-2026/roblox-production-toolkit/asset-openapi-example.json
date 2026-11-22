@@ -1,0 +1,180 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Example Open Cloud-style operations (synthetic)",
+    "version": "1.0.0",
+    "description": "Synthetic example spec for the optional cloud adapter. It mirrors the shape of an operator-supplied OpenAPI description; replace it with the reviewed official specification before any live use. Contains no endpoints that are verified against the live service."
+  },
+  "servers": [
+    {
+      "url": "https://apis.roblox.com"
+    }
+  ],
+  "paths": {
+    "/example/status": {
+      "get": {
+        "operationId": "getExampleStatus",
+        "summary": "Read status for the example resource (read-only).",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status object"
+          }
+        }
+      }
+    },
+    "/example/places/versions": {
+      "post": {
+        "operationId": "publishExamplePlace",
+        "summary": "Create a place version. Live use requires approval; versionType Published is never sent without human review.",
+        "parameters": [
+          {
+            "name": "placeId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "versionType"
+                ],
+                "properties": {
+                  "versionType": {
+                    "type": "string",
+                    "enum": [
+                      "Saved",
+                      "Published"
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/example/messages": {
+      "post": {
+        "operationId": "publishExampleMessage",
+        "summary": "Publish a message to a live-server topic (idempotency id required).",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "message"
+                ],
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1024
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/example/assets/{assetId}": {
+      "get": {
+        "operationId": "getExampleAsset",
+        "summary": "Read example asset metadata (synthetic).",
+        "parameters": [
+          {
+            "name": "assetId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/example/datastores/{datastoreName}/entries/{entryKey}": {
+      "get": {
+        "operationId": "getExampleDataEntry",
+        "summary": "Read a synthetic data-store entry.",
+        "parameters": [
+          {
+            "name": "datastoreName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          {
+            "name": "entryKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/example/universes/{universeId}": {
+      "get": {
+        "operationId": "getExampleUniverse",
+        "summary": "Read synthetic universe metadata.",
+        "parameters": [
+          {
+            "name": "universeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

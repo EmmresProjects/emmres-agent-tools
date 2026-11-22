@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "title": "google-slides-agent-catalog execution plan",
+  "description": "Local validation schema for plan documents produced by tools-gslides-catalog.py plan. The validator in tools-plan-engine.py implements the subset of JSON Schema used below: type, required, properties, additionalProperties, items, enum, minimum, maximum, minItems and pattern. It is not a full JSON Schema implementation.",
+  "supported_keywords": [
+    "type", "required", "properties", "additionalProperties", "items", "enum",
+    "minimum", "maximum", "minItems", "maxItems", "pattern", "description", "title"
+  ],
+  "type": "object",
+  "required": ["plan_version", "generated_by", "request", "catalog", "matches", "phases", "approvals", "gates", "validation"],
+  "additionalProperties": true,
+  "properties": {
+    "plan_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+$"
+    },
+    "generated_by": {
+      "type": "object",
+      "required": ["tool", "version"],
+      "properties": {
+        "tool": {"type": "string"},
+        "version": {"type": "string"}
+      }
+    },
+    "request": {
+      "type": "object",
+      "required": ["text", "max_matches"],
+      "properties": {
+        "text": {"type": "string"},
+        "category_filter": {"type": ["string", "null"]},
+        "max_matches": {"type": "integer", "minimum": 1, "maximum": 500},
+        "mode": {"type": "string", "enum": ["request", "category", "skill"]}
+      }
+    },
+    "catalog": {
+      "type": "object",
+      "required": ["source", "categories", "skills"],
+      "properties": {
+        "source": {"type": "string"},
+        "categories": {"type": "integer", "minimum": 1},
+        "skills": {"type": "integer", "minimum": 1}
+      }
+    },
+    "matches": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": ["rank", "skill_id", "skill_name", "category_id", "phase", "score", "matched_terms", "risk"],
+        "properties": {
+          "rank": {"type": "integer", "minimum": 1},
+          "skill_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "skill_name": {"type": "string"},
+          "category_id": {"type": "string"},
+          "phase": {"type": "string"},
+          "score": {"type": "number", "minimum": 0},
+          "matched_terms": {"type": "array", "items": {"type": "string"}},
+          "risk": {
+            "type": "object",
+            "required": ["tier", "rank", "approval_required"],
+            "properties": {
+              "tier": {"type": "string"},
+              "rank": {"type": "integer", "minimum": 0, "maximum": 10},
+              "approval_required": {"type": "boolean"},
+              "matched_terms": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        }
+      }
+    },
+    "phases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "steps", "checkpoint"],
+        "properties": {
+          "id": {"type": "string"},
+          "label": {"type": "string"},
+          "purpose": {"type": "string"},
+          "checkpoint": {"type": "string"},
+          "steps": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["order", "skill_id", "skill_name", "risk_tier", "approval_required"],
+              "properties": {
+                "order": {"type": "integer", "minimum": 1},
+                "skill_id": {"type": "string"},
+                "skill_name": {"type": "string"},
+                "risk_tier": {"type": "string"},
+                "approval_required": {"type": "boolean"},
+                "surfaces": {"type": "array", "items": {"type": "string"}}
+              }
+            }
+          }
+        }
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["skill_id", "skill_name", "tier", "required_before"],
+        "properties": {
+          "skill_id": {"type": "string"},
+          "skill_name": {"type": "string"},
+          "tier": {"type": "string"},
+          "required_before": {"type": "string"},
+          "reasons": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "requirement"],
+        "properties": {
+          "id": {"type": "string"},
+          "requirement": {"type": "string"},
+          "categories": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": ["status", "issues"],
+      "properties": {
+        "status": {"type": "string", "enum": ["ok", "warning", "error"]},
+        "issues": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "notes": {"type": "array", "items": {"type": "string"}}
+  }
+}

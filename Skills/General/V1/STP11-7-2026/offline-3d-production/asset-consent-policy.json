@@ -1,0 +1,29 @@
+{
+  "schema": "o3d/consent-policy/1",
+  "policy_name": "offline-3d-production default performer consent policy",
+  "description": "Field names and blocking rules for motion/facial/voice capture consent. Data only; adapt to the jurisdiction your legal team approved.",
+  "fail_on": "error",
+  "required_fields": [
+    "performer_id",
+    "consent_date",
+    "usage_scope",
+    "territory",
+    "term_start",
+    "term_end",
+    "retention_policy"
+  ],
+  "scopes": {
+    "body-mocap": "Body performance capture and retargeting",
+    "facial-mocap": "Facial capture, blendshape solving and likeness use",
+    "voice": "Voice recording, lip-sync analysis and synthetic speech",
+    "scan": "Photogrammetric or structured-light body/face scanning",
+    "reference-photo": "Likeness reference photography for sculpting"
+  },
+  "rules": [
+    "Model training is a separate opt-in (training_permitted); absence of a flag means not permitted.",
+    "Territory 'none' blocks release; territory must name countries or 'worldwide'.",
+    "Expired consent (expires before today) blocks any new output.",
+    "Retention policy must state the destruction date or review cadence for raw capture data.",
+    "Store signed consent forms beside the capture in 00-admin, never only in email."
+  ]
+}

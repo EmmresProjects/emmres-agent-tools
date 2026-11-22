@@ -1,0 +1,99 @@
+{
+  "policy_version": "1.0",
+  "description": "Sample least-privilege policy for the offline-agents-automation Skill Tool. Pass with --config to override the baseline policy block; merge is per-key, so include only the sections you want to change.",
+  "policy": {
+    "default_deny": true,
+    "default_roles": ["operator"],
+    "token_ttl_seconds": 600,
+    "allowed_actions": [
+      "index.build",
+      "index.query",
+      "index.audit",
+      "index.snapshot",
+      "index.rebuild",
+      "memory.put",
+      "memory.get",
+      "memory.search",
+      "memory.resolve",
+      "memory.compact",
+      "memory.export",
+      "guard.check",
+      "guard.cite",
+      "guard.schema",
+      "guard.injection",
+      "guard.redact",
+      "guard.calc",
+      "policy.check",
+      "policy.token.verify",
+      "plan.quantization",
+      "plan.hardware",
+      "plan.context",
+      "plan.capacity",
+      "eval.run",
+      "eval.compare",
+      "audit.append",
+      "audit.verify",
+      "audit.timeline",
+      "airgap.check",
+      "registry.add",
+      "registry.list",
+      "registry.license",
+      "provider.infer",
+      "artifact.write",
+      "artifact.read",
+      "fs.read",
+      "fs.write"
+    ],
+    "denied_actions": [
+      "shell.exec",
+      "network.export",
+      "secret.read",
+      "model.install",
+      "package.install",
+      "fs.delete"
+    ],
+    "require_approval": [
+      "fs.delete",
+      "db.write",
+      "artifact.publish",
+      "network.export",
+      "workflow.cancel"
+    ],
+    "roles": {
+      "operator": [
+        "read.*",
+        "index.*",
+        "guard.*",
+        "plan.*",
+        "eval.*",
+        "memory.*",
+        "workflow.run",
+        "workflow.resume",
+        "provider.infer",
+        "artifact.write",
+        "fs.read",
+        "fs.write"
+      ],
+      "approver": ["read.*", "approval.*", "audit.*", "policy.check",
+                   "policy.token.issue", "workflow.cancel"],
+      "auditor": ["read.*", "audit.*", "index.audit", "eval.compare", "registry.list"],
+      "restricted-agent": ["read.*", "index.query", "guard.check", "guard.cite"]
+    }
+  },
+  "escalation": {
+    "high_risk_actions": ["fs.delete", "db.write", "network.export", "workflow.cancel"],
+    "approver_role": "approver",
+    "quorum": 1,
+    "timeout_seconds": 900,
+    "on_timeout": "deny",
+    "segregation_of_duties": true
+  },
+  "data_classes": {
+    "public": {"handling": "no restriction", "export_allowed": true},
+    "internal": {"handling": "workspace only", "export_allowed": true},
+    "confidential": {"handling": "workspace only, redact on export", "export_allowed": false},
+    "personal": {"handling": "minimize, redact before logs", "export_allowed": false},
+    "regulated": {"handling": "audit every access, never export", "export_allowed": false},
+    "secret": {"handling": "reference only, never store or log", "export_allowed": false}
+  }
+}

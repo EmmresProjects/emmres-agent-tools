@@ -1,0 +1,181 @@
+{
+  "description": "Category blueprints used by plan.blueprint. Each entry follows the recommended blueprint from the AI Image Skill Catalog: trigger, inputs, outputs, tool routing, workflow, evaluation, governance, recovery. Keys are category numbers.",
+  "default": {
+    "evaluation": [
+      "Normal case: a typical request produces the expected output and passes the category checks.",
+      "Boundary case: extreme sizes, counts or very long text are rejected or flagged with a clear message.",
+      "Failure case: missing or invalid inputs return a structured error and no partial output."
+    ],
+    "governance": [
+      "Record rights, consent, privacy and retention for every source image or reference.",
+      "Keep AI-generation or edit disclosure with any published output.",
+      "Require human approval before publishing, sharing externally or handling identifiable people."
+    ],
+    "recovery": [
+      "Preserve the last passing output and its exact settings.",
+      "Isolate the failing stage and change one variable at a time.",
+      "Rerun the affected checks and record the result before continuing."
+    ]
+  },
+  "1": {
+    "name": "Foundations of Generative Imaging",
+    "inputs": ["Concept or question to explain", "Target audience level", "Optional numeric parameters such as width, height, channels, steps"],
+    "outputs": ["Plain-language explanation or specification", "Structured numeric results where relevant", "Glossary or diagram notes"],
+    "routing": ["Deterministic numeric helpers for tensors, schedules and latents", "Heuristic checks for prompts and tokens"],
+    "workflow": ["Confirm the concept and audience", "Run the numeric helper with explicit parameters", "Explain results with stated assumptions", "Flag any claim that depends on a specific model"]
+  },
+  "2": {
+    "name": "Prompt Design and Creative Direction",
+    "inputs": ["Visual goal or brief", "Subject, setting and style intent", "Known failures from earlier runs"],
+    "outputs": ["Positive and negative prompt text", "Single-variable revision or variant list", "Reproducibility record"],
+    "routing": ["Prompt slot builder with presets", "Weight and token checks", "Library store for reusable prompts"],
+    "workflow": ["Capture the goal in slots", "Build the prompt with one preset", "Run prompt checks", "Generate a small test set with fixed seeds", "Change one variable and record results"]
+  },
+  "3": {
+    "name": "Stable Diffusion Core Operations",
+    "inputs": ["Target model family and hardware", "Desired resolution and aspect ratio", "Sampler, step and guidance candidates"],
+    "outputs": ["Validated resolution list", "Comparison grid configuration", "Setup or workflow JSON for the chosen interface"],
+    "routing": ["Resolution bucket calculator", "Sweep grid generator", "Environment probe", "Engine job or ComfyUI graph builder"],
+    "workflow": ["Probe the environment", "Choose the model family and resolution", "Build a small sweep with a fixed seed", "Review results against the rubric", "Save the settings that passed"]
+  },
+  "4": {
+    "name": "Diffusion Control and Conditioning",
+    "inputs": ["Control maps or reference images", "Control type and intended effect", "Strength and step window"],
+    "outputs": ["Control specification JSON", "Conflict report and recommended weights", "Region layout for regional prompting"],
+    "routing": ["Control plan validator", "Conflict resolver", "Region layout checker", "Edge map helper"],
+    "workflow": ["Validate every control input", "Set strengths and start-end windows", "Check for conflicting weights or overlapping regions", "Test with one control first, then add others"]
+  },
+  "5": {
+    "name": "Text-to-Image Creation",
+    "inputs": ["Creative brief", "Medium, lens, lighting and palette", "Exclusions and format"],
+    "outputs": ["Prompt and negative prompt", "Engine-ready job specification", "Iteration sheet notes"],
+    "routing": ["Prompt builder with category preset", "Engine job builder when an engine is configured"],
+    "workflow": ["Build the prompt from the preset", "Check token length and weights", "Generate a small batch", "Review and iterate one variable at a time"]
+  },
+  "6": {
+    "name": "Single-Image Editing",
+    "inputs": ["Source image", "Mask or region to edit", "Edit instruction"],
+    "outputs": ["Edited image or prepared edit job", "Mask and canvas files", "Before-and-after comparison"],
+    "routing": ["Mask builder", "Outpaint canvas preparation", "Compositor", "Engine job for generative edits"],
+    "workflow": ["Check source dimensions and format", "Build or verify the mask", "Run the generative edit or deterministic composite", "Compare before and after", "Check edge blending"]
+  },
+  "7": {
+    "name": "Multi-Image Editing and Composition",
+    "inputs": ["Several source images with roles", "Layout or composition intent", "Consistency targets"],
+    "outputs": ["Composite image", "Contact sheet of variations", "Consistency report"],
+    "routing": ["Compositor with blend modes", "Contact sheet builder", "Consistency statistics", "Before-and-after builder"],
+    "workflow": ["Assign a role to each reference", "Check consistency statistics", "Composite layers in order", "Review contact sheet", "Record which reference controlled which attribute"]
+  },
+  "8": {
+    "name": "Masking, Selections and Compositing",
+    "inputs": ["Source image with subject", "Mask rules or label colours", "Background or layer files"],
+    "outputs": ["Mask PNG", "Layered composite PNG", "Shadow or reflection layers"],
+    "routing": ["Mask builder", "Compositor", "Shadow and reflection composer", "Occlusion order planner"],
+    "workflow": ["Build the mask", "Refine feathering and edges", "Decontaminate edges", "Composite with shadows", "Inspect at 100 percent"]
+  },
+  "9": {
+    "name": "Upscaling, Enhancement and Restoration",
+    "inputs": ["Source image and quality notes", "Target output size and print purpose", "Tile size and overlap for large images"],
+    "outputs": ["Upscaled or restored image", "Tile plan", "Print resolution report"],
+    "routing": ["Classical upscale", "Denoise and grain", "Sharpening", "Engine job for generative restoration"],
+    "workflow": ["Measure the source", "Plan the target size", "Denoise conservatively", "Upscale and sharpen lightly", "Compare with the source and reject invented detail"]
+  },
+  "10": {
+    "name": "Color, Lighting and Finishing",
+    "inputs": ["Source image", "Reference palette or mood", "Target colour space"],
+    "outputs": ["Graded image", "Colour-converted export", "Consistency report"],
+    "routing": ["Colour adjustment presets", "Palette transfer", "Colour conversion", "Consistency statistics"],
+    "workflow": ["Measure the source statistics", "Apply one grading step", "Protect brand and skin-critical colours", "Convert colour space last", "Compare before and after"]
+  },
+  "11": {
+    "name": "Typography, Logos and Graphic Design",
+    "inputs": ["Copy text and hierarchy", "Brand colours, fonts and safe zones", "Format and size list"],
+    "outputs": ["Layout composition PNG", "Text overlay PNG", "Engine job for logo or icon concepts"],
+    "routing": ["Layout composer with presets", "Text overlay", "Engine job for non-text graphics"],
+    "workflow": ["Define the hierarchy and safe zones", "Compose layout from the preset", "Add final text deterministically", "Check contrast and crop safety", "Export every required size"]
+  },
+  "12": {
+    "name": "Characters, Faces and People",
+    "inputs": ["Character or person brief", "Consent and usage status", "Reference sheet or identity references"],
+    "outputs": ["Prompt set or edit job", "Consent and likeness review", "Repair mask for anatomy fixes"],
+    "routing": ["Prompt builder for people presets", "Engine job for identity-sensitive edits", "Ethics ruleset screen"],
+    "workflow": ["Confirm consent and purpose", "Run the people-safety screen", "Build the prompt or edit job", "Review anatomy and identity", "Record disclosure requirements"]
+  },
+  "13": {
+    "name": "Products, Commerce and Advertising",
+    "inputs": ["Product photos and dimensions", "Marketplace or channel rules", "Campaign brief"],
+    "outputs": ["Standardised product image", "Delivery audit report", "Variant prompt or edit list"],
+    "routing": ["Product layout preset", "Delivery audit", "Compositor for lifestyle placement", "Variant generator"],
+    "workflow": ["Check source dimensions and background", "Standardise canvas and crop", "Audit delivery specification", "Create one variant per hypothesis", "Record claims that need legal review"]
+  },
+  "14": {
+    "name": "Architecture, Interiors and Spatial Design",
+    "inputs": ["Plan drawings or dimensions", "Materials and lighting intent", "Concept-level assumptions"],
+    "outputs": ["Perspective prompt set", "Material variant plan", "Spatial consistency checklist"],
+    "routing": ["Architecture prompt presets", "Engine job for material variants", "Colour adjustment for listing edits"],
+    "workflow": ["List assumptions and dimensions", "Build the view prompt", "Generate a small set", "Check perspective and scale against the plan", "Label concept-level assumptions"]
+  },
+  "15": {
+    "name": "Scientific, Medical and Technical Imaging",
+    "inputs": ["Verified source data or specification", "Labelling requirements", "Audience and non-diagnostic statement"],
+    "outputs": ["Labelled visual plan", "Monochrome line drawing", "Safety and accuracy review"],
+    "routing": ["Medical ruleset screen", "Line drawing helper", "Denoise with transformation log", "Delivery audit against a reference spec"],
+    "workflow": ["Confirm the source facts", "Plan labels and evidence separation", "Apply only recorded transformations", "Run the safety screen", "Compare against the specification"]
+  },
+  "16": {
+    "name": "Training, Fine-Tuning and Personalization",
+    "inputs": ["Dataset folder with rights information", "Target training method", "Validation prompt suite"],
+    "outputs": ["Dataset manifest", "Caption files", "Training plan", "Evaluation prompt suite", "Near-duplicate report"],
+    "routing": ["Dataset curation", "Caption builder", "Training plan calculator", "Evaluation suite builder", "Near-duplicate check"],
+    "workflow": ["Document rights and consent", "Curate and deduplicate the dataset", "Caption with a fixed dropout seed", "Plan the training run", "Evaluate with a fixed prompt suite and check for memorisation"]
+  },
+  "17": {
+    "name": "Data Governance, Rights and Provenance",
+    "inputs": ["Dataset manifest or request text", "Licence and consent records", "Output files and intended use"],
+    "outputs": ["Rights and consent findings", "Provenance sidecar", "Disclosure text"],
+    "routing": ["Manifest checker", "Policy rulesets", "Metadata sidecar writer", "Redaction scanner"],
+    "workflow": ["Check every source record", "Screen requests against rights rules", "Write the provenance sidecar", "Choose the disclosure text", "Escalate open items to a human reviewer"]
+  },
+  "18": {
+    "name": "Safety, Authenticity and Misuse Prevention",
+    "inputs": ["Request text and output images", "Distribution context", "Platform or policy rules"],
+    "outputs": ["Decision (allow, review or block) with findings", "Authenticity indicators", "Release gate status"],
+    "routing": ["Policy rulesets", "Authenticity heuristics", "Release gate", "Disclosure text label"],
+    "workflow": ["Screen the request text", "Inspect output metadata and error-level signals", "Apply the policy ruleset", "Route any review or block decision to a human", "Record the decision with its reasons"]
+  },
+  "19": {
+    "name": "Quality Assurance and Evaluation",
+    "inputs": ["Candidate images", "Reference or baseline images", "Requirement list and observations"],
+    "outputs": ["Objective metric report", "Artifact scan report", "Comparison heatmaps", "Blind test pairs"],
+    "routing": ["Quality metrics", "Artifact scan", "Image comparison and regression", "Delivery audit", "Blind pair generator"],
+    "workflow": ["Run objective metrics on each image", "Scan for seams, tiling and blank regions", "Compare against the baseline", "Run blind human review", "Set the acceptance threshold in the config"]
+  },
+  "20": {
+    "name": "Automation, APIs and Batch Pipelines",
+    "inputs": ["Prompt set or sweep axes", "Provider endpoint configuration", "Naming template and output folder"],
+    "outputs": ["Batch manifest with per-item status", "Asset names", "Queue schedule", "QA report"],
+    "routing": ["Batch runner with resume", "Provider adapter with retries", "GPU queue planner", "Cost estimator", "QA pipeline"],
+    "workflow": ["Validate the configuration with a dry run", "Expand the sweep and check the item limit", "Execute only with approval", "Resume from the manifest after failures", "Run the QA pipeline before release"]
+  },
+  "21": {
+    "name": "Performance and Hardware Optimisation",
+    "inputs": ["GPU VRAM and driver information", "Resolution, batch and precision", "Benchmark timings"],
+    "outputs": ["VRAM estimate", "Throughput and cost estimate", "Environment lock", "Model storage inventory"],
+    "routing": ["VRAM estimator", "Throughput calculator", "System probe", "Model storage scanner", "Environment lock"],
+    "workflow": ["Probe the system", "Estimate memory with the chosen precision", "Apply low-memory options if needed", "Benchmark and compute throughput", "Record the environment"]
+  },
+  "22": {
+    "name": "Specialised Media and Asset Production",
+    "inputs": ["Asset brief and size list", "Source image or material reference", "Palette and grid constraints"],
+    "outputs": ["Tiling check and preview", "Pixel-art output", "Icon sizes", "Responsive crops", "Storyboard or book plan"],
+    "routing": ["Tiling checker", "Pixel-art quantiser", "Multi-size export", "Responsive crop planner", "Engine job for game concept art"],
+    "workflow": ["Define sizes and grid", "Generate or import the source", "Check tiling or grid alignment", "Export every size", "Review at target display size"]
+  },
+  "23": {
+    "name": "Accessibility, Localisation and Delivery",
+    "inputs": ["Image purpose and surrounding text", "Foreground and background colours", "Target locales and formats"],
+    "outputs": ["Alt text", "Contrast report", "Cultural review findings", "Export set", "Handoff package"],
+    "routing": ["Alt text writer", "Contrast calculator", "Cultural ruleset", "Multi-format export", "Responsive crop planner", "Handoff packager"],
+    "workflow": ["Write alt text for the purpose", "Check colour contrast for every text pair", "Run the cultural review", "Export required formats and sizes", "Package the handoff with README and checksums"]
+  }
+}

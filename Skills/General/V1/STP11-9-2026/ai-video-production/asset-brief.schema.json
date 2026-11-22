@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "asset-brief.schema.json",
+  "title": "AI Video Production Brief",
+  "type": "object",
+  "required": ["project_title", "prompt"],
+  "additionalProperties": false,
+  "properties": {
+    "project_title": {"type": "string", "minLength": 1, "maxLength": 200},
+    "prompt": {"type": "string", "minLength": 1, "maxLength": 50000},
+    "objective": {"type": "string", "maxLength": 5000},
+    "audience": {"type": "string", "maxLength": 1000},
+    "duration_seconds": {"type": "number", "exclusiveMinimum": 0, "maximum": 3600},
+    "aspect_ratio": {"type": "string", "pattern": "^[0-9]+:[0-9]+$"},
+    "resolution": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 16, "maximum": 16384}, {"type": "integer", "minimum": 16, "maximum": 16384}], "minItems": 2, "maxItems": 2},
+    "fps": {"type": "number", "exclusiveMinimum": 0, "maximum": 120},
+    "language": {"type": "string", "minLength": 2, "maxLength": 35},
+    "seed": {"type": "integer", "minimum": 0},
+    "categories": {"type": "array", "items": {"type": "string"}, "maxItems": 47, "uniqueItems": true},
+    "capabilities": {"type": "array", "items": {"type": "string"}, "maxItems": 564, "uniqueItems": true},
+    "shots": {"type": "array", "maxItems": 500, "items": {"type": "object", "required": ["title", "visual"], "additionalProperties": false, "properties": {
+      "id": {"type": "string"}, "title": {"type": "string", "minLength": 1, "maxLength": 200}, "visual": {"type": "string", "minLength": 1, "maxLength": 10000}, "caption": {"type": "string", "maxLength": 10000}, "duration_seconds": {"type": "number", "exclusiveMinimum": 0, "maximum": 3600}, "source": {"type": "string", "maxLength": 4096}, "camera": {"type": "string", "maxLength": 1000}, "motion": {"type": "string", "maxLength": 1000}
+    }}},
+    "assets": {"type": "array", "maxItems": 1000, "items": {"type": "object", "required": ["path", "kind"], "additionalProperties": false, "properties": {
+      "path": {"type": "string", "minLength": 1, "maxLength": 4096}, "kind": {"enum": ["image", "video", "audio", "font", "data", "other"]}, "license": {"type": "string", "maxLength": 2000}, "consent": {"type": "boolean"}, "source_uri": {"type": "string", "maxLength": 4096}
+    }}},
+    "safety": {"type": "object", "additionalProperties": false, "properties": {
+      "contains_real_person": {"type": "boolean"}, "voice_cloning": {"type": "boolean"}, "sensitive_content": {"type": "boolean"}, "factual_reconstruction": {"type": "boolean"}, "political_content": {"type": "boolean"}
+    }},
+    "delivery": {"type": "object", "additionalProperties": false, "properties": {
+      "container": {"enum": ["mp4", "webm", "mov"]}, "codec": {"type": "string", "maxLength": 100}, "audio": {"type": "boolean"}, "captions": {"type": "boolean"}, "disclosure": {"type": "string", "maxLength": 2000}
+    }},
+    "provider": {"type": "object", "additionalProperties": false, "properties": {
+      "name": {"type": "string", "maxLength": 200}, "model": {"type": "string", "maxLength": 200}, "credential_environment_variable": {"type": "string", "maxLength": 200}
+    }}
+  }
+}

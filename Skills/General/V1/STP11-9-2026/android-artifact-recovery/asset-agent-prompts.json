@@ -1,0 +1,116 @@
+{
+  "schema": "android-agent-prompts/1",
+  "description": "Reusable operating procedures for a host agent that drives android-artifact-recovery. Each prompt names the command sequence, the evidence to collect, and the stop conditions. All prompts assume the operator owns or is authorized to inspect the artifact.",
+  "global_rules": [
+    "Never claim a result you did not observe. Quote the command and its exit code.",
+    "Preserve the original artifact before any decode, patch or sign step.",
+    "Static findings are risks, not proof of runtime behaviour. Say which claims are untested.",
+    "Do not attempt authentication, licensing, DRM, purchase or integrity bypasses.",
+    "Ask for explicit confirmation before sign, rebuild or preserve (all three require --confirm)."
+  ],
+  "prompts": [
+    {
+      "id": "first-contact",
+      "title": "First contact with an unknown artifact",
+      "use_when": "A file with an Android-ish name arrives and its true format is unknown.",
+      "steps": [
+        "tools-android-artifact-recovery.py identify <file>",
+        "If kind is apk: badging, zip-health, compat-scan",
+        "If kind is aab: aab-inspect",
+        "If kind is malformed-zip: stop and report the ZIP diagnosis; do not extract",
+        "Report the detected kind, package identity, SDK levels and finding severities"
+      ],
+      "stop_conditions": [
+        "kind is malformed-zip or unknown-binary",
+        "path traversal entries are present"
+      ]
+    },
+    {
+      "id": "compatibility-modernize",
+      "title": "Assess whether an old APK can still run",
+      "use_when": "A preserved build must be checked against current Android versions.",
+      "steps": [
+        "badging <apk> --format text",
+        "compat-scan <apk> --out findings.json",
+        "exported-audit <apk>",
+        "abi-matrix <apk>",
+        "page16k <apk>",
+        "report <apk> --outdir evidence"
+      ],
+      "stop_conditions": [
+        "targetSdk below 31 with intent-filtered components lacking android:exported (installation blocker)",
+        "no 64-bit native library present"
+      ],
+      "reporting": "List blockers separately from warnings, and state that no device run was performed."
+    },
+    {
+      "id": "native-page-size",
+      "title": "16 KB page-size readiness",
+      "use_when": "Preparing for Android 15+ 16 KB devices or a store 16 KB requirement.",
+      "steps": [
+        "page16k <apk>",
+        "elf <apk> --strings",
+        "If failures: rebuild from source with an NDK that links 16 KB-aligned libraries, then zipalign -P 16 -f 4 and re-sign"
+      ],
+      "stop_conditions": ["any library fails ELF alignment or ZIP alignment"],
+      "reporting": "Report per-library alignment values; never state '16 KB ready' from a build log alone."
+    },
+    {
+      "id": "authorized-patch",
+      "title": "Authorized decode, patch and rebuild",
+      "use_when": "You own the app or have written permission to modify it.",
+      "steps": [
+        "preserve <apk> --outdir originals --authorization '<who approved>' --confirm",
+        "apktool decode <apk> --outdir work/decoded",
+        "Make the smallest change; keep a unified diff in work/change.patch",
+        "rebuild <apk> --patch work/change.patch --keystore <debug.p12> --intent '<why>' --authorization '<who>' --confirm",
+        "verify <signed.apk>",
+        "Record: original sha256, patch sha256, output sha256, signing identity"
+      ],
+      "stop_conditions": [
+        "the change touches signed or licensed code paths you are not authorized to modify",
+        "the output fails apksigner verification"
+      ]
+    },
+    {
+      "id": "signing-identity",
+      "title": "Explain why an update will not install",
+      "use_when": "INSTALL_FAILED_UPDATE_INCOMPATIBLE or signature mismatch reports.",
+      "steps": [
+        "certificate <installed-or-new.apk>",
+        "certificate <other.apk>",
+        "Compare SHA-256 digests, not common names",
+        "Explain that Android requires the same signing key (or an authorized rotation) for an in-place update"
+      ],
+      "stop_conditions": ["digests differ"],
+      "reporting": "Never suggest disabling verification; the correct options are uninstall/reinstall or signing with the original key."
+    },
+    {
+      "id": "batch-portfolio",
+      "title": "Batch inventory of an archive of builds",
+      "use_when": "A folder of APKs/AABs needs a fleet-level summary.",
+      "steps": [
+        "batch <folder> --outdir evidence/batch",
+        "triage each status=error row individually with identify and zip-health",
+        "Summarize by targetSdk bucket and ABI coverage"
+      ],
+      "stop_conditions": ["more than the configured max_artifacts_per_batch artifacts"],
+      "reporting": "Quote the capped count when the limit applies."
+    },
+    {
+      "id": "evidence-gate",
+      "title": "Decide whether the task is actually complete",
+      "use_when": "Before telling a user that recovery or repair succeeded.",
+      "steps": [
+        "Confirm each requested deliverable exists on disk (artifacts[] in the report)",
+        "Confirm verify returned exit code 0 for any produced APK",
+        "Confirm the report lists untested claims under limitations",
+        "State explicitly which runtime checks were NOT performed"
+      ],
+      "stop_conditions": [
+        "any produced APK was not verified",
+        "the request implied a device test that was never run"
+      ]
+    }
+  ]
+}

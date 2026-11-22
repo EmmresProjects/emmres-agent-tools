@@ -1,0 +1,943 @@
+1. Orchestration, Planning, and Work Splitting
+1. Powerful Work Splitter
+Evaluates every request before execution and decides whether one response is sufficient or staged
+work is safer. It scores scope, file volume, dependencies, tool calls, uncertainty, and verification
+burden; recommends a prompt count; asks the user to accept or override that count; labels each stage
+X of Y; pauses at checkpoints; accepts Continue or equivalent; and permits the user to expand or
+reduce Y midstream. It checks stage completion, remaining dependencies, uploaded-file availability,
+and whether the final stage includes assembly and polish. It returns an approved stage plan, checkpoint
+state, continuation instruction, and a verified final package.
+2. Single-Prompt Feasibility Assessor
+Determines whether a task can be completed well in one response. It compares required artifacts,
+context size, tool limits, risk, and validation steps against a single-turn budget. It checks all requested
+outputs can be created and checked without deferring essential work. It returns a one-turn decision
+with reasons and a fallback staged plan.
+3. Adaptive Prompt Count Estimator
+Recommends the number of execution stages. It converts work packages, review gates, file groups, and
+integration steps into a practical count and recalculates it when scope changes. It checks the count is
+neither artificially inflated nor too small for safe verification. It returns recommended, minimum, and
+user-selected stage counts.
+4. User-Controlled Stage Negotiator
+Lets the user choose a different stage count from the recommendation. It rebalances workload and
+quality gates across the chosen count without dropping requirements. It checks every requirement still
+has an owner stage and final verification. It returns a revised stage map and explicit trade-offs.
+5. Checkpoint and Continue Controller
+Stops at safe boundaries and resumes only after the user signals continuation. It recognizes Continue,
+proceed, go on, next, and equivalent intent while rejecting ambiguous scope-changing replies. It checks
+saved state identifies completed work, current files, next actions, and blockers. It returns a concise
+checkpoint receipt and the next completed stage.
+6. Dynamic Stage Expansion Manager
+Extends an active plan when the user requests more stages or new complexity appears. It preserves
+completed stages, renumbers future stages, redistributes remaining work, and adds new validation
+gates. It checks prior output remains compatible with the expanded plan. It returns an updated X of Y
+plan with no lost work.
+7. Dynamic Stage Compression Manager
+Compresses an active plan when the user wants fewer stages. It merges compatible work packages
+while protecting critical checks and final assembly. It checks no safety, accuracy, or deliverable
+requirement is silently removed. It returns a compressed plan and disclosed quality trade-offs.
+8. Dependency-Aware Task Decomposer
+Breaks a goal into atomic, ordered work packages. It maps prerequisites, parallel branches, shared
+inputs, and integration points. It checks each package has clear inputs, outputs, pass conditions, and
+successor links. It returns a dependency graph and executable sequence.
+9. Parallel Workstream Coordinator
+Identifies independent branches that can run in parallel. It separates research, drafting, coding, media,
+and validation streams and defines merge contracts. It checks parallel outputs use compatible names,
+schemas, and versions. It returns a parallel execution map and merge plan.
+10. Critical Path Scheduler
+Prioritizes tasks that control total completion time. It estimates duration, uncertainty, blockers, and
+downstream impact. It checks critical dependencies are completed before optional polish. It returns a
+critical path, buffer plan, and escalation triggers.
+11. Milestone Gatekeeper
+Prevents later work from starting before required evidence exists. It applies entry and exit criteria to
+discovery, build, test, and release stages. It checks gate evidence is concrete and reproducible. It
+returns pass, repair, or blocked status with next action.
+12. Final Assembly Orchestrator
+Combines outputs from all stages into one coherent result. It resolves duplication, naming conflicts,
+formatting drift, broken references, and missing sections. It checks the assembled artifact opens
+correctly and satisfies the original request. It returns a polished final package and completion
+summary.
+2. Intake, Scope, and Requirement Control
+1. Intent Resolver
+Finds the user's real desired outcome from incomplete or informal instructions. It translates goals,
+constraints, examples, and exclusions into testable requirements. It checks assumptions are minimal,
+explicit, and reversible. It returns an outcome statement and requirement set.
+2. Requirement Ledger
+Maintains a living list of every explicit and implied requirement. It assigns identifiers, owners, status,
+evidence, and acceptance tests. It checks nothing is lost during revisions or multi-stage work. It returns
+a traceable requirement-to-output matrix.
+3. Constraint Extractor
+Detects limits on format, length, tools, tone, jurisdiction, time, and audience. It separates hard
+constraints from preferences and examples. It checks conflicts and impossible combinations are
+surfaced early. It returns a prioritized constraint register.
+4. Ambiguity Triage
+Decides which uncertainties can be safely assumed and which require a question. It measures impact,
+reversibility, and risk before interrupting the user. It checks questions are asked only when answers
+materially change the result. It returns a resolved assumption list or one focused clarification.
+5. Success Criteria Designer
+Converts broad quality goals into observable pass conditions. It defines correctness, completeness,
+usability, presentation, and handoff checks. It checks criteria can actually fail and are not vague praise.
+It returns an acceptance checklist.
+6. Scope Boundary Guard
+Prevents accidental expansion or omission. It tracks in-scope, out-of-scope, deferred, and newly
+requested work. It checks changes are reflected in schedule and stage count. It returns an updated
+scope baseline.
+7. Change Request Integrator
+Processes mid-project additions, removals, and substitutions. It assesses impact on files, dependencies,
+tests, and completed work. It checks the change does not silently invalidate prior stages. It returns a
+revised plan and affected-item list.
+8. Assumption Register
+Records provisional decisions made under missing information. It links each assumption to impact,
+evidence, and a trigger for rechecking. It checks temporary guesses are not treated as facts. It returns
+a reviewable assumption log.
+9. Acceptance Test Author
+Writes practical tests for each deliverable. It covers normal, boundary, failure, recovery, accessibility,
+and clean-state use. It checks tests map directly to requirements. It returns an executable or
+inspectable test plan.
+10. Definition-of-Done Enforcer
+Blocks completion claims until all required artifacts and checks pass. It verifies content, structure,
+packaging, naming, and reopenability. It checks partial work is labeled accurately. It returns a
+completion decision with remaining defects if any.
+3. File Intake, Recovery, and Asset Management
+1. Universal File Intake
+Inventories all attached and generated files before work begins. It records name, type, size, readability,
+duplication, and intended use. It checks every referenced file is present and accessible. It returns a file
+inventory and processing plan.
+2. Missing File Detector
+Finds files mentioned by the user but unavailable to the agent. It compares instructions, links,
+manifests, and attachment inventory. It checks work does not proceed on fabricated content. It returns
+a precise re-upload request naming each missing file.
+3. Corrupt File Triage
+Diagnoses unreadable or damaged files without overwriting originals. It checks signatures, containers,
+embedded relationships, encoding, and recoverable content. It checks recovery preserves the source
+and documents limitations. It returns a repaired copy or actionable recovery report.
+4. Re-Upload Recovery Coordinator
+Restores interrupted work after a file is uploaded again. It matches the replacement to prior state,
+revalidates dependencies, and reruns affected checks. It checks stale results from the missing version
+are not reused. It returns a resumed plan from the exact safe checkpoint.
+5. Archive and Package Extractor
+Safely inspects ZIP, TAR, and nested packages. It prevents path traversal, inventories contents, and
+preserves directory structure. It checks expected files exist and suspicious entries are isolated. It
+returns an extraction directory and manifest.
+6. File Format Identifier
+Identifies actual format rather than trusting the extension. It uses magic bytes, container structure, and
+parse tests. It checks mislabeled or unsupported files are flagged. It returns a verified format map.
+7. Duplicate and Version Resolver
+Detects duplicate, near-duplicate, and conflicting versions. It compares hashes, metadata, content, and
+modification history. It checks the selected source of truth is explicit. It returns a deduplicated set and
+version decision.
+8. Asset Naming Normalizer
+Applies consistent, portable file and folder names. It removes unsafe characters, resolves collisions, and
+preserves extensions. It checks links and scripts still resolve after renaming. It returns a normalized
+asset tree and rename map.
+9. Cross-File Reference Validator
+Checks links among documents, sheets, slides, code, and media. It finds broken paths, missing
+relationships, and stale references. It checks all internal dependencies resolve in the final package. It
+returns a reference repair report.
+10. Clean-State Package Tester
+Copies the deliverable into a clean location and opens or runs it there. It detects hidden dependencies
+on temporary paths, caches, or local settings. It checks the recipient can use the package
+independently. It returns a clean-state pass result.
+4. Research, Search, and Evidence
+1. Research Question Builder
+Turns a broad topic into answerable subquestions. It defines evidence needs, date range, geography,
+source hierarchy, and exclusions. It checks subquestions collectively cover the decision. It returns a
+scoped research plan.
+2. Authoritative Source Finder
+Prioritizes primary and official sources. It locates standards, laws, product documentation, datasets,
+and original studies. It checks sources are current enough and directly support claims. It returns a
+source set with relevance notes.
+3. Multi-Source Evidence Synthesizer
+Combines findings without flattening disagreements. It compares definitions, methods, dates,
+populations, and confidence. It checks conflicts and gaps remain visible. It returns a balanced synthesis
+with claim-level support.
+4. Claim Verification Auditor
+Tests each important factual claim against evidence. It checks names, dates, numbers, quotations, and
+causal wording. It checks unsupported claims are removed or clearly qualified. It returns a verified
+claim ledger.
+5. Source Freshness Monitor
+Detects when time-sensitive evidence may be stale. It checks publication date, update date, version,
+and superseding notices. It checks current claims use current sources. It returns a freshness status and
+refresh list.
+6. Citation Integrity Checker
+Ensures citations point to the correct supporting material. It checks source identity, locator, quotation
+fidelity, and claim scope. It checks citations are neither decorative nor misplaced. It returns a corrected
+citation set.
+7. Conflicting Evidence Resolver
+Analyzes credible disagreement rather than choosing silently. It identifies methodological,
+jurisdictional, temporal, and definitional causes. It checks the final conclusion reflects uncertainty
+honestly. It returns a conflict matrix and bounded conclusion.
+8. Dataset Provenance Tracker
+Records where data came from and how it changed. It captures source, license, retrieval date, filters,
+transformations, and joins. It checks results can be reproduced. It returns a provenance record and
+transformation chain.
+9. Literature Gap Mapper
+Finds unanswered areas and weak evidence. It classifies missing populations, methods, variables,
+replications, and time periods. It checks gaps are distinguished from search failure. It returns a
+prioritized gap map.
+10. Research Brief Producer
+Converts evidence into a decision-ready brief. It summarizes findings, confidence, trade-offs,
+implications, and next steps. It checks every major recommendation traces to evidence. It returns a
+concise research brief.
+5. Knowledge, Context, and Memory
+1. Context Window Curator
+Selects the most relevant material for the current stage. It compresses prior work while preserving
+requirements, decisions, interfaces, and blockers. It checks critical details survive summarization. It
+returns a stage-ready context packet.
+2. Long-Project State Keeper
+Maintains continuation state across pauses. It stores completed stages, open issues, file versions,
+decisions, and next commands. It checks resumption does not repeat or contradict prior work. It
+returns a durable project snapshot.
+3. Decision Memory Manager
+Stores decisions with the conditions that made them valid. It records alternatives, rationale, evidence,
+owner, date, and reversal triggers. It checks outdated decisions are rechecked when conditions change.
+It returns a decision register.
+4. Preference Learner
+Applies stable user preferences without overgeneralizing. It separates durable preferences from one-
+time requests. It checks current instructions always override remembered defaults. It returns a
+personalized but controllable output profile.
+5. Knowledge Deduplicator
+Merges repeated notes and overlapping facts. It preserves exceptions, provenance, and the strongest
+wording. It checks important nuance is not erased. It returns a compact canonical knowledge base.
+6. Contradiction Detector
+Finds incompatible statements across instructions and files. It classifies direct conflict, scope
+difference, version difference, and apparent conflict. It checks material conflicts are resolved before
+execution. It returns a contradiction report and chosen rule.
+7. Terminology Controller
+Maintains consistent names, acronyms, and definitions. It creates a glossary and checks every artifact
+for drift. It checks domain terms remain accurate and audience-appropriate. It returns a controlled
+vocabulary.
+8. Context Drift Monitor
+Detects when later work diverges from the original goal. It compares stage outputs to the requirement
+ledger and success criteria. It checks drift is repaired before final assembly. It returns a drift alert and
+correction plan.
+9. Handoff Context Packager
+Prepares all information another agent or person needs to continue. It includes state, files, commands,
+decisions, risks, and next tests. It checks the recipient can continue without rediscovery. It returns a
+concise continuation packet.
+10. Memory Privacy Filter
+Prevents sensitive or temporary information from becoming durable memory. It classifies data by
+sensitivity, purpose, retention, and user intent. It checks only appropriate information persists. It
+returns a sanitized memory update.
+6. Writing, Editing, and Communication
+1. Audience-Aware Writer
+Adapts content to the reader's knowledge, role, and decision needs. It controls terminology, depth,
+examples, tone, and call to action. It checks the message is understandable without losing accuracy. It
+returns a reader-fit draft.
+2. Structural Editor
+Improves organization before sentence-level polishing. It repairs hierarchy, sequence, transitions,
+duplication, and missing sections. It checks each section has a clear purpose. It returns a coherent
+revised document.
+3. Line Editor
+Improves clarity and precision sentence by sentence. It removes ambiguity, clutter, repetition, weak
+verbs, and inconsistent terms. It checks meaning and voice are preserved. It returns a polished draft.
+4. Plain-Language Rewriter
+Makes complex material easier to understand. It shortens sentences, defines terms, and replaces
+unnecessary jargon. It checks legal or technical precision is retained. It returns an accessible plain-
+language version.
+5. Tone and Neutrality Controller
+Aligns voice with context while avoiding manipulation or disrespect. It checks confidence, empathy,
+bias, formality, and emotional temperature. It checks sensitive topics remain balanced and humane. It
+returns a tone-calibrated draft.
+6. Executive Summary Builder
+Condenses long material for decision-makers. It extracts the decision, evidence, risks, options, and
+recommendation. It checks the summary stands alone and matches the source. It returns a one-page or
+brief executive summary.
+7. Email and Message Composer
+Creates concise workplace communications. It optimizes subject, opening, request, context, deadline,
+and close. It checks the recipient knows exactly what to do. It returns multiple tone-distinct drafts.
+8. Argument Mapper
+Makes reasoning explicit and testable. It separates claims, evidence, warrants, objections, and
+rebuttals. It checks logical gaps and overclaims are visible. It returns an argument map and
+strengthened narrative.
+9. Consistency Proofreader
+Finds grammar, spelling, punctuation, capitalization, numbering, and style drift. It uses a defined style
+sheet and checks headings, lists, captions, and references. It checks corrections do not change
+intended meaning. It returns a publication-ready copy.
+10. Localization Writer
+Adapts meaning for a target language and culture. It handles locale, idioms, dates, units, politeness,
+and domain terminology. It checks the result reads naturally and preserves intent. It returns a localized
+version and terminology notes.
+7. Document and PDF Production
+1. Word Document Architect
+Creates editable DOCX documents with professional structure. It uses styles, headings, tables, headers,
+footers, sections, navigation, and accessibility settings. It checks the document renders without
+clipping or broken layout. It returns a polished editable DOCX.
+2. PDF Publication Builder
+Produces a stable PDF from an authoritative source document. It controls page size, fonts, bookmarks,
+links, metadata, and export settings. It checks the PDF renders consistently and text remains selectable
+where appropriate. It returns a distribution-ready PDF.
+3. Document Template Engineer
+Builds reusable templates. It defines styles, placeholders, content controls, instructions, and protected
+regions. It checks new documents remain consistent without manual formatting. It returns an editable
+template and usage guide.
+4. Multi-Document Merger
+Combines multiple documents while preserving structure. It normalizes styles, sections, numbering,
+references, and page setup. It checks the merged file has no duplicate controls or broken fields. It
+returns one coherent master document.
+5. Document Accessibility Auditor
+Checks headings, reading order, alt text, tables, links, contrast, and language. It applies safe fixes and
+flags judgment-dependent issues. It checks the artifact supports assistive technology. It returns an
+accessible document and audit report.
+6. Tracked-Change Finalizer
+Processes revisions safely. It accepts or rejects changes by policy, verifies remaining markup, and
+preserves a review copy. It checks the final version contains no unintended redlines or comments. It
+returns a clean final and optional marked copy.
+7. Document Metadata Scrubber
+Removes hidden personal and revision data. It cleans authors, comments, custom properties, paths, and
+editing history where supported. It checks visible content and functionality remain intact. It returns a
+privacy-scrubbed copy.
+8. Form and Content-Control Builder
+Creates fillable document fields. It defines labels, types, validation, defaults, and protection. It checks
+fields are keyboard-accessible and survive saving. It returns a usable fillable document.
+9. Table and Figure Manager
+Standardizes tables, figures, captions, and cross-references. It controls widths, repeats headers, adds
+alt text, and updates references. It checks objects do not overflow pages or lose numbering. It returns a
+visually stable illustrated document.
+10. Render and Layout Inspector
+Renders every page and checks the actual pixels. It detects clipping, overlap, blank pages, broken
+glyphs, and header or footer drift. It checks all pages pass at readable zoom. It returns a verified
+publication artifact.
+8. Spreadsheet, Data, and Analytics
+1. Data Intake Profiler
+Profiles tabular data before analysis. It measures types, missingness, uniqueness, ranges, duplicates,
+and suspicious values. It checks issues are quantified rather than guessed. It returns a data-quality
+profile.
+2. Schema and Type Validator
+Checks data against a declared schema. It validates required fields, types, formats, enums, keys, and
+relationships. It checks invalid rows are isolated with reasons. It returns a validated dataset and error
+table.
+3. Data Cleaning Planner
+Designs safe, reproducible cleaning operations. It separates correction, imputation, exclusion,
+normalization, and enrichment. It checks raw data remains preserved. It returns a transformation plan
+and cleaned copy.
+4. Spreadsheet Formula Engineer
+Builds maintainable formulas and models. It uses clear references, named ranges, error handling, and
+documented assumptions. It checks formulas recalculate without circular errors. It returns an auditable
+workbook.
+5. Pivot and Summary Builder
+Creates decision-ready summaries from detailed records. It selects dimensions, measures, filters, totals,
+and drill paths. It checks aggregations reconcile to source data. It returns a compact summary
+workbook.
+6. Statistical Analysis Runner
+Applies appropriate descriptive or inferential methods. It checks assumptions, sample size, uncertainty,
+effect size, and multiple comparisons. It checks results are interpreted within design limits. It returns
+an analysis with reproducible calculations.
+7. Data Visualization Designer
+Chooses charts that match the question and data. It controls scale, labels, units, ordering, annotations,
+and accessibility. It checks visuals do not distort comparisons. It returns clear charts with plain-
+language insights.
+8. Forecasting and Scenario Modeler
+Builds bounded projections. It separates historical fit, assumptions, scenarios, uncertainty, and
+sensitivity. It checks forecasts are not presented as certainty. It returns a scenario model with ranges.
+9. Reconciliation Auditor
+Compares totals across sources and transformations. It traces discrepancies through filters, joins,
+currency, dates, and rounding. It checks differences are explained or corrected. It returns a
+reconciliation statement.
+10. Workbook QA Inspector
+Checks formulas, formats, filters, hidden content, print areas, and error cells. It tests representative
+inputs and boundary cases. It checks the workbook opens and behaves correctly. It returns a verified
+spreadsheet package.
+9. Coding and Software Engineering
+1. Repository Mapper
+Builds a structural map of an unfamiliar codebase. It identifies entry points, modules, dependencies,
+tests, configs, and generated files. It checks important runtime paths are traced. It returns an
+architecture map.
+2. Implementation Planner
+Turns a feature request into code changes. It defines interfaces, files, migrations, tests, rollout, and
+rollback. It checks the plan fits existing conventions. It returns a change plan with acceptance tests.
+3. Code Generator
+Produces maintainable code from an explicit contract. It follows language idioms, project style, typing,
+errors, logging, and security requirements. It checks generated code compiles or parses and integrates
+with existing interfaces. It returns working source files.
+4. Bug Reproducer
+Reduces a failure to the smallest repeatable case. It captures environment, inputs, expected behavior,
+observed behavior, and earliest bad state. It checks the reproduction fails for the right reason. It
+returns a minimal failing test.
+5. Root Cause Debugger
+Finds the smallest responsible cause. It separates input, state, logic, dependency, environment, build,
+and interface layers. It checks probes distinguish competing hypotheses. It returns a targeted repair.
+6. Regression Test Author
+Locks repaired behavior into automated tests. It covers the original failure, normal use, boundaries,
+and nearby joins. It checks the test fails before the fix and passes after it. It returns a focused
+regression suite.
+7. Code Review Auditor
+Reviews changes for correctness and maintainability. It checks logic, APIs, tests, security, performance,
+readability, and migration risk. It checks findings are prioritized and actionable. It returns a severity-
+ranked review.
+8. Dependency Upgrade Manager
+Updates libraries without uncontrolled breakage. It checks release notes, API changes, lockfiles,
+transitive risk, and compatibility tests. It checks the build and critical workflows pass after upgrade. It
+returns an upgrade patch and rollback note.
+9. Refactoring Safeguard
+Improves structure while preserving behavior. It establishes tests, performs small transformations, and
+rechecks affected paths. It checks public contracts remain stable unless intentionally changed. It
+returns cleaner code with regression evidence.
+10. Release Build Verifier
+Tests production configuration rather than development only. It builds from clean state and checks
+artifacts, environment variables, packaging, and startup. It checks the release artifact runs through the
+real user path. It returns a releasable build.
+10. Web Application Engineering
+1. Web Architecture Designer
+Defines a practical frontend and backend architecture. It selects rendering, routing, state, API, auth,
+persistence, and deployment patterns. It checks choices fit scale, team, accessibility, and maintenance
+needs. It returns an architecture specification.
+2. Responsive Interface Builder
+Creates interfaces that adapt across viewport sizes. It uses semantic HTML, mobile-first layout,
+resilient components, and touch-safe controls. It checks key flows work on phone, tablet, and desktop.
+It returns a responsive UI.
+3. Design System Implementer
+Builds reusable tokens and components. It defines color, typography, spacing, states, variants, and
+documentation. It checks components remain consistent and accessible. It returns a reusable
+component library.
+4. API Integration Engineer
+Connects the interface to services reliably. It handles schemas, authentication, retries, loading, errors,
+caching, and pagination. It checks failure states are visible and recoverable. It returns a tested
+integration layer.
+5. Authentication Flow Builder
+Implements secure sign-in and session behavior. It covers registration, recovery, verification, roles,
+expiry, logout, and protected routes. It checks secrets and tokens are handled safely. It returns a
+complete authentication flow.
+6. Web Accessibility Tester
+Evaluates keyboard, focus, semantics, contrast, labels, and screen-reader behavior. It tests critical
+journeys against WCAG-aligned checks. It checks blocking barriers are repaired. It returns an
+accessible web experience.
+7. Performance Optimizer
+Improves loading and interaction speed. It measures bundle size, render cost, images, fonts, caching,
+network waterfalls, and Core Web Vitals. It checks optimizations do not break functionality. It returns a
+faster verified build.
+8. Cross-Browser Validator
+Tests supported browsers and device classes. It checks layout, APIs, input methods, storage, and media
+behavior. It checks known differences have fallbacks. It returns a compatibility report and fixes.
+9. SEO and Metadata Engineer
+Improves discoverability and sharing. It configures titles, descriptions, canonical URLs, structured
+data, robots, sitemap, and social cards. It checks metadata matches visible content. It returns an
+indexable site build.
+10. Production Deployment Verifier
+Deploys or validates the production route. It checks domains, HTTPS, headers, environment,
+migrations, logs, rollback, and smoke tests. It checks the public path behaves like the tested build. It
+returns a verified release.
+11. APIs, Databases, and Backend Systems
+1. API Contract Designer
+Defines stable service interfaces. It specifies resources, methods, schemas, errors, pagination,
+idempotency, and versioning. It checks clients can implement without hidden assumptions. It returns
+an API specification.
+2. Database Schema Designer
+Models data with integrity and evolution in mind. It defines keys, constraints, indexes, relationships,
+retention, and migration paths. It checks common queries are supported efficiently. It returns a schema
+and migration plan.
+3. Query Optimizer
+Improves slow database access. It uses execution plans, indexes, cardinality, batching, and query
+rewrites. It checks performance gains are measured and correctness preserved. It returns an optimized
+query set.
+4. Migration Safety Manager
+Plans and validates schema or data migrations. It supports backfill, dual-read or dual-write, verification,
+rollback, and downtime limits. It checks production data remains consistent. It returns a reversible
+migration runbook.
+5. Background Job Orchestrator
+Designs reliable asynchronous work. It handles queues, retries, idempotency, ordering, timeouts, dead
+letters, and observability. It checks duplicate execution is safe. It returns a resilient job workflow.
+6. Cache Strategy Engineer
+Adds caching without stale-data surprises. It defines keys, TTLs, invalidation, consistency, and fallback
+behavior. It checks cache failures do not corrupt results. It returns a measured caching plan.
+7. Webhook Reliability Handler
+Processes external events safely. It verifies signatures, deduplicates events, preserves order where
+needed, and retries failures. It checks replays are safe and observable. It returns a robust webhook
+consumer.
+8. Data Backup and Restore Tester
+Validates recovery rather than only backup creation. It checks schedules, encryption, retention, restore
+time, and restored integrity. It checks a restore succeeds in a clean environment. It returns a recovery-
+tested backup system.
+9. Service Observability Builder
+Adds actionable metrics, logs, traces, and alerts. It links requests across components and defines
+service-level indicators. It checks alerts correspond to user impact. It returns an observable backend.
+10. Rate Limit and Abuse Guard
+Protects services from overload and misuse. It applies quotas, burst control, identity, backoff, and clear
+errors. It checks legitimate clients remain usable. It returns a tested traffic policy.
+12. Security, Privacy, and Safety
+1. Threat Modeler
+Identifies realistic threats before implementation. It maps assets, trust boundaries, actors, attack paths,
+controls, and residual risk. It checks high-impact paths have mitigations and tests. It returns a
+prioritized threat model.
+2. Secret Exposure Scanner
+Finds credentials and sensitive tokens in files and repositories. It checks source, history, configs, logs,
+archives, and generated artifacts. It checks exposed secrets are revoked rather than merely deleted. It
+returns a remediation list.
+3. Input Validation Engineer
+Designs validation at trust boundaries. It defines allowlists, schemas, size limits, encoding,
+normalization, and safe errors. It checks malformed input cannot reach dangerous operations. It
+returns a validated input layer.
+4. Authorization Auditor
+Checks who can do what to which resource. It tests roles, ownership, tenant isolation, indirect
+references, and privilege changes. It checks denials occur server-side and by default. It returns an
+access-control report.
+5. Privacy Data Mapper
+Maps personal and sensitive data through the system. It records purpose, source, fields, storage,
+sharing, retention, and deletion. It checks data collection is minimized. It returns a privacy inventory.
+6. Redaction Verifier
+Confirms sensitive content is actually removed. It checks visible layers, underlying text, metadata,
+attachments, OCR, and revision history. It checks redacted information cannot be recovered through
+ordinary extraction. It returns a verified sanitized artifact.
+7. Secure Configuration Auditor
+Reviews production settings for unsafe defaults. It checks TLS, headers, permissions, debug modes,
+storage, network exposure, and logging. It checks critical settings are explicit and tested. It returns a
+hardened configuration.
+8. Dependency Vulnerability Triage
+Evaluates reported package weaknesses. It checks exploitability, reachable code, fixed versions,
+breaking changes, and compensating controls. It checks responses are prioritized by real risk. It
+returns a remediation plan.
+9. Safety Boundary Enforcer
+Detects requests or actions that could cause meaningful harm. It separates benign, dual-use, restricted,
+and disallowed components. It checks safe portions remain useful. It returns a bounded safe response.
+10. Incident Response Coordinator
+Structures containment and recovery after a security event. It preserves evidence, limits spread,
+rotates access, restores service, and records lessons. It checks actions are timed and owned. It returns
+an incident runbook and recovery state.
+13. Testing, Verification, and Quality Assurance
+1. Requirement Coverage Auditor
+Checks every requirement against an artifact and test. It finds missing, partial, conflicting, and
+unverified items. It checks coverage claims have evidence. It returns a coverage matrix.
+2. Boundary Case Generator
+Creates cases at limits and transitions. It covers empty, missing, repeated, extreme, malformed, and
+unusual inputs. It checks cases target real failure modes. It returns a boundary test set.
+3. Integration Join Tester
+Tests where modules, files, tools, or stages meet. It validates schemas, names, units, ordering, versions,
+and error contracts. It checks interfaces work end to end. It returns an integration test report.
+4. Visual Regression Inspector
+Compares rendered outputs at the pixel or layout level. It detects overlap, clipping, unexpected
+movement, color changes, and missing elements. It checks intentional changes are distinguished from
+defects. It returns a visual diff review.
+5. Accessibility QA Runner
+Tests usable access beyond visual correctness. It checks keyboard operation, screen readers, captions,
+language, focus, and alternatives. It checks critical user journeys remain available. It returns an
+accessibility pass report.
+6. Performance Benchmark Runner
+Measures latency, throughput, memory, size, and stability. It uses repeatable workloads, warmup,
+percentiles, and baselines. It checks comparisons use the same environment and limits. It returns a
+benchmark report.
+7. Fuzz and Robustness Tester
+Explores unexpected inputs systematically. It generates malformed structures, random values, and
+adversarial sequences within safe bounds. It checks crashes and unsafe states are reproducible. It
+returns a minimized failure corpus.
+8. Clean-Room Reproduction Tester
+Verifies setup from an empty environment. It follows only documented dependencies and commands. It
+checks hidden local state is eliminated. It returns a clean-install result.
+9. Release Gate Evaluator
+Combines required checks into a go or no-go decision. It enforces severity thresholds, waivers, owners,
+and expiration dates. It checks critical failures cannot be averaged away. It returns a release decision.
+10. Post-Delivery Validator
+Reopens and uses the exact final artifacts. It checks links, archives, permissions, installation, and
+recipient workflow. It checks the delivered copy matches the tested copy. It returns a final handoff
+pass.
+14. Automation, Tools, and Operations
+1. Tool Capability Profiler
+Learns what a tool can and cannot do before using it. It records inputs, outputs, side effects,
+dependencies, limits, costs, and failure signals. It checks the selected tool matches the requirement. It
+returns a capability profile.
+2. Minimal Toolchain Selector
+Chooses the smallest set of tools that can complete the job. It compares fidelity, compatibility,
+editability, repeatability, and repair cost. It checks unnecessary dependencies are avoided. It returns a
+justified toolchain.
+3. Workflow Automation Builder
+Turns repeatable manual steps into automation. It defines triggers, inputs, state, idempotency, errors,
+retries, approvals, and logs. It checks the workflow can recover from interruption. It returns an
+automated pipeline.
+4. Command Safety Wrapper
+Makes shell or operational commands safer. It adds dry-run, quoting, path checks, backups, timeouts,
+and clear exit handling. It checks destructive actions require explicit boundaries. It returns a guarded
+command flow.
+5. Environment Bootstrapper
+Creates a reproducible working environment. It pins dependencies, checks versions, initializes config,
+and verifies prerequisites. It checks setup works from clean state. It returns a bootstrap script and
+setup guide.
+6. Batch Job Manager
+Processes many files or records predictably. It supports manifests, concurrency, checkpoints, retries,
+skip rules, and summaries. It checks partial failures do not erase successful work. It returns a
+resumable batch run.
+7. Scheduled Task Designer
+Creates reliable recurring work. It handles timezone, overlap, missed runs, holidays, credentials, and
+alerting. It checks duplicate or delayed runs remain safe. It returns a schedule and operational policy.
+8. Log Analyzer
+Extracts useful signals from operational logs. It parses structure, correlates events, detects patterns,
+and links symptoms to components. It checks sensitive fields are protected. It returns an incident-
+focused analysis.
+9. Rollback Planner
+Defines how to reverse a change safely. It captures backups, compatibility, data migration limits,
+triggers, and validation. It checks rollback is tested where feasible. It returns a timed rollback runbook.
+10. Operational Runbook Writer
+Documents real procedures for operators. It includes prerequisites, commands, expected output, failure
+branches, escalation, and recovery. It checks a new operator can execute it safely. It returns a
+production runbook.
+15. Image and Visual Design
+1. Visual Brief Interpreter
+Converts a goal into an actionable image brief. It defines subject, style, composition, lighting, color,
+aspect ratio, usage, and exclusions. It checks the brief avoids contradictory directions. It returns a
+production-ready visual specification.
+2. Text-to-Image Art Director
+Guides image generation toward a coherent result. It controls scene, perspective, materials,
+atmosphere, realism, and negative constraints. It checks generated visuals match purpose and do not
+invent factual details. It returns a curated image set.
+3. Single-Image Editor
+Applies targeted changes to one image. It handles object removal, replacement, recoloring, relighting,
+cleanup, crop, and background work. It checks unchanged regions remain stable. It returns an edited
+high-quality image.
+4. Multi-Image Consistency Editor
+Coordinates edits across an image set. It matches identity, palette, lighting, scale, camera, and export
+settings. It checks the set feels intentionally unified. It returns a consistent asset family.
+5. Image Restoration Specialist
+Repairs damaged or low-quality images. It reduces noise, scratches, compression, blur, and color fading
+while preserving identity. It checks restoration does not fabricate critical detail. It returns a restored
+image and limitation note.
+6. Background Removal and Compositor
+Separates subjects and builds clean composites. It refines hair, edges, shadows, color spill, and
+perspective. It checks the result holds up on light and dark backgrounds. It returns a transparent asset
+or finished composite.
+7. Diagram and Infographic Designer
+Turns concepts or processes into readable visuals. It chooses hierarchy, flow, icons, labels, grouping,
+and scale. It checks the visual can be understood without decorative clutter. It returns a clear
+explanatory graphic.
+8. Brand Asset System Builder
+Creates a coherent family of visual assets. It defines palette, typography, image treatment, shapes, and
+usage rules. It checks assets remain consistent across formats. It returns a reusable brand kit.
+9. Image Accessibility Reviewer
+Checks whether visuals communicate inclusively. It reviews contrast, text size, color dependence, alt
+text needs, and cultural interpretation. It checks essential meaning has a nonvisual alternative. It
+returns an accessible image package.
+10. Image Export Optimizer
+Prepares assets for their final channel. It selects dimensions, format, compression, transparency, color
+profile, and naming. It checks quality and file size meet platform needs. It returns optimized exports.
+16. Video, Motion, and Multimedia
+1. Video Concept Developer
+Transforms a message into a producible video concept. It defines audience, runtime, narrative arc,
+format, visual language, and call to action. It checks the concept fits resources and channel. It returns a
+treatment and success criteria.
+2. Storyboard Builder
+Plans shots before production. It maps framing, action, transitions, narration, text, timing, and assets.
+It checks every key message has a visual beat. It returns a scene-by-scene storyboard.
+3. Text-to-Video Director
+Creates precise generation instructions for video models. It controls subject continuity, camera
+movement, motion, environment, style, and duration. It checks prompts avoid impossible motion and
+unwanted text. It returns a generation plan and shot set.
+4. Image-to-Video Animator
+Turns still images into controlled motion. It defines depth, parallax, camera path, subject movement,
+and loop behavior. It checks identity and composition remain stable. It returns a polished animated clip.
+5. Video Editor
+Assembles footage into a coherent program. It selects takes, trims pacing, builds continuity, mixes
+graphics, and manages versions. It checks the edit serves the intended narrative. It returns a finished
+timeline.
+6. Motion Graphics Designer
+Creates titles, lower thirds, transitions, and explanatory animation. It uses consistent typography,
+easing, timing, and safe areas. It checks graphics remain legible on target screens. It returns a motion
+graphics package.
+7. Caption and Subtitle Producer
+Creates accurate timed text. It handles segmentation, speaker labels, sound cues, reading speed, and
+localization. It checks captions synchronize and remain readable. It returns caption files and burned-in
+option.
+8. Audio-Video Sync Inspector
+Detects and repairs synchronization problems. It checks lip sync, drift, frame rate, sample rate, and
+edit boundaries. It checks sync holds across the full export. It returns a corrected master.
+9. Video Quality Controller
+Reviews picture, sound, captions, encoding, and playback. It checks black frames, clipping, artifacts,
+loudness, aspect ratio, and metadata. It checks the master plays correctly in target channels. It returns
+a verified delivery file.
+10. Multimedia Package Assembler
+Combines masters, captions, thumbnails, transcripts, and metadata. It applies naming, versioning,
+checksums, and platform-specific variants. It checks all components refer to the same cut. It returns a
+complete distribution package.
+17. Audio, Speech, and Music
+1. Audio Cleanup Engineer
+Improves noisy or inconsistent recordings. It reduces hum, hiss, clicks, room noise, and level variation
+without damaging speech. It checks processed audio remains natural. It returns a clean dialogue track.
+2. Speech Editing Specialist
+Edits spoken content for clarity and pacing. It removes mistakes, excessive gaps, repetitions, and filler
+while preserving intent. It checks cuts are seamless and meaning remains accurate. It returns a
+polished speech edit.
+3. Voice Preparation Director
+Prepares text for high-quality speech synthesis or recording. It adds pronunciation, pauses, emphasis,
+pacing, and speaker direction. It checks delivery matches the intended persona and context. It returns
+a voice-ready script.
+4. Transcript Producer
+Converts audio or video speech into structured text. It handles speakers, timecodes, punctuation,
+uncertain words, and terminology. It checks the transcript is checked against the media. It returns an
+accurate transcript.
+5. Sound Design Builder
+Creates a purposeful sonic environment. It selects ambience, effects, transitions, spatial placement, and
+dynamics. It checks sound supports rather than masks the message. It returns a layered sound design.
+6. Music Brief Composer
+Defines music needs for a scene or brand. It specifies mood, tempo, instrumentation, structure,
+references, and edit points. It checks the brief avoids rights ambiguity. It returns a production-ready
+music brief.
+7. Mixing Engineer
+Balances dialogue, music, and effects. It controls level, EQ, compression, space, panning, and
+automation. It checks priority content remains clear across devices. It returns a balanced mix.
+8. Mastering and Loudness Controller
+Prepares the final audio for distribution. It sets loudness, peak, dynamics, sequencing, and format for
+the target platform. It checks the master avoids clipping and excessive limiting. It returns a delivery-
+ready master.
+9. Audio Accessibility Producer
+Creates nonvisual and text alternatives. It supports transcripts, descriptions, speaker labels, and
+intelligibility checks. It checks essential information is accessible. It returns an inclusive audio package.
+10. Audio Export Validator
+Checks final files and metadata. It verifies codec, sample rate, channels, duration, tags, and playback. It
+checks exports match the approved master. It returns a verified audio package.
+18. Presentation and Learning Design
+1. Presentation Storyliner
+Builds a persuasive slide narrative. It defines audience, decision, arc, sections, evidence, and close. It
+checks each slide advances one clear idea. It returns a slide-by-slide storyline.
+2. Slide Layout Designer
+Creates readable, balanced slide layouts. It controls hierarchy, grids, whitespace, imagery, and
+consistent placement. It checks slides remain clear at presentation distance. It returns a polished
+presentation.
+3. Data Storytelling Designer
+Turns analysis into an understandable visual argument. It selects the right chart, annotation,
+comparison, and takeaway. It checks visuals show evidence without distortion. It returns decision-ready
+data slides.
+4. Speaker Notes Writer
+Creates delivery support for presenters. It adds talking points, transitions, timing, pronunciation, and
+audience prompts. It checks notes complement rather than repeat the slide. It returns presenter-ready
+notes.
+5. Deck Consistency Auditor
+Checks theme, typography, alignment, numbering, and visual rhythm. It finds outlier slides and broken
+masters. It checks the deck feels like one system. It returns a normalized deck.
+6. Learning Objective Designer
+Defines measurable learning outcomes. It uses observable verbs and aligns knowledge, practice, and
+assessment. It checks objectives match learner level and time. It returns a learning outcome map.
+7. Lesson Sequence Builder
+Organizes instruction from prior knowledge to mastery. It balances explanation, examples, practice,
+feedback, and review. It checks cognitive load remains manageable. It returns a lesson plan.
+8. Assessment Author
+Creates valid questions and tasks. It aligns items to objectives, difficulty, scoring, feedback, and bias
+checks. It checks assessment measures the intended skill. It returns an assessment set and rubric.
+9. Study Guide Generator
+Condenses source material into active learning support. It creates summaries, retrieval questions,
+worked examples, and spaced review cues. It checks content remains faithful to the source. It returns a
+practical study guide.
+10. Training Evaluation Designer
+Measures whether instruction changed capability. It defines reaction, learning, behavior, and outcome
+indicators. It checks evidence goes beyond attendance. It returns an evaluation plan.
+19. Business, Product, and Project Work
+1. Business Case Builder
+Evaluates whether an initiative is worth pursuing. It models problem, options, benefits, costs, risks,
+dependencies, and timing. It checks assumptions and sensitivity are explicit. It returns a decision-ready
+business case.
+2. Product Requirement Writer
+Defines a product capability for design and engineering. It captures users, jobs, scope, flows,
+requirements, metrics, edge cases, and non-goals. It checks requirements are testable and prioritized.
+It returns a product requirements document.
+3. Roadmap Planner
+Sequences outcomes over time without false precision. It balances strategy, dependencies, capacity,
+uncertainty, and learning milestones. It checks dates distinguish commitments from targets. It returns
+a phased roadmap.
+4. Project Plan Builder
+Creates an executable delivery plan. It defines work breakdown, owners, dependencies, milestones,
+risks, and communication. It checks the plan is maintainable as conditions change. It returns a project
+plan.
+5. Risk Register Manager
+Identifies and manages project uncertainty. It scores probability, impact, proximity, owner, mitigation,
+and contingency. It checks high exposure receives active treatment. It returns a prioritized risk
+register.
+6. Stakeholder Mapper
+Maps influence, needs, concerns, and engagement strategy. It distinguishes decision-makers,
+contributors, users, and affected groups. It checks communication matches stakeholder role. It returns
+an engagement map.
+7. Meeting Decision Extractor
+Turns meeting content into accountable follow-up. It captures decisions, actions, owners, dates, open
+questions, and dependencies. It checks ambiguous ownership is resolved. It returns a concise action
+record.
+8. Process Improvement Analyst
+Finds waste and failure in a workflow. It maps current state, handoffs, delays, errors, controls, and
+measures. It checks improvements address root causes. It returns a future-state process plan.
+9. Vendor Evaluation Designer
+Compares providers using consistent evidence. It defines weighted criteria, demonstrations,
+references, security, cost, integration, and exit risk. It checks scores are traceable and comparable. It
+returns a vendor scorecard.
+10. Executive Decision Memo Writer
+Presents a choice for leadership. It states decision, context, options, evidence, risks, recommendation,
+and requested action. It checks the memo is concise but complete. It returns a decision memo.
+20. Finance, Quantitative, and Decision Support
+1. Financial Model Builder
+Creates auditable models for planning and decisions. It separates inputs, calculations, outputs,
+scenarios, and checks. It checks totals reconcile and assumptions are visible. It returns a maintainable
+financial model.
+2. Budget Planner
+Allocates resources against goals and constraints. It models fixed, variable, one-time, contingency, and
+timing effects. It checks the budget balances and variance rules are defined. It returns a budget
+workbook.
+3. Unit Economics Analyzer
+Measures value and cost at the transaction or customer level. It calculates revenue, direct cost,
+contribution, acquisition, retention, and payback. It checks definitions and cohorts are consistent. It
+returns a unit economics view.
+4. Scenario and Sensitivity Analyst
+Shows how outcomes change when assumptions move. It selects key drivers, ranges, interactions, and
+break-even points. It checks scenarios remain plausible and labeled. It returns a sensitivity dashboard.
+5. Investment Option Comparator
+Compares alternatives under uncertainty. It uses cash flows, timing, risk, strategic fit, reversibility, and
+constraints. It checks methods and limitations are explicit. It returns a comparative decision model.
+6. Pricing Strategy Modeler
+Evaluates pricing structures and consequences. It tests willingness-to-pay evidence, segmentation,
+packaging, costs, elasticity, and revenue impact. It checks recommendations account for customer and
+operational effects. It returns a pricing scenario model.
+7. Cost Optimization Analyst
+Finds savings without hiding service impact. It classifies spend, usage, commitments, waste, switching
+cost, and risk. It checks savings are net of implementation cost. It returns an actionable savings plan.
+8. Forecast Accuracy Auditor
+Evaluates forecast performance over time. It uses bias, error distribution, horizon, seasonality, and
+benchmark models. It checks accuracy claims use out-of-sample evidence. It returns a forecast
+scorecard.
+9. Quantitative Decision Analyst
+Structures decisions with multiple objectives. It defines alternatives, criteria, weights, uncertainty, and
+sensitivity. It checks the recommendation is robust to reasonable changes. It returns a transparent
+decision analysis.
+10. Financial Control Checker
+Tests model and reporting controls. It checks reconciliations, approvals, segregation, change history,
+and exception handling. It checks material discrepancies are investigated. It returns a control report.
+21. Legal, Policy, and Compliance Support
+1. Jurisdiction Scope Identifier
+Determines which legal or policy framework matters. It extracts location, parties, activity, dates,
+industry, and governing terms. It checks uncertainty is not hidden. It returns a scoped issue statement.
+2. Policy Document Analyst
+Extracts obligations and operational implications. It maps definitions, duties, exceptions, deadlines,
+records, and enforcement. It checks interpretation is separated from quoted requirements. It returns a
+policy obligation matrix.
+3. Contract Clause Comparator
+Compares provisions across agreements. It normalizes topics, identifies differences, and highlights
+allocation of risk. It checks missing or conflicting clauses are visible. It returns a clause comparison
+table.
+4. Compliance Checklist Builder
+Turns requirements into observable controls. It maps obligation, owner, evidence, frequency,
+exception, and remediation. It checks the checklist can be audited. It returns an operational compliance
+plan.
+5. Regulatory Change Monitor
+Tracks updates that may alter obligations. It checks effective dates, transition rules, affected scope, and
+superseded guidance. It checks changes are tied to concrete actions. It returns a change impact brief.
+6. Record Retention Mapper
+Links information types to retention and disposal rules. It defines owner, system, duration, hold,
+deletion, and evidence. It checks conflicting rules are escalated. It returns a retention schedule.
+7. Consent and Notice Reviewer
+Checks whether notices and choices are clear and complete. It reviews purpose, data, sharing,
+withdrawal, contact, and accessibility. It checks language is understandable and not misleading. It
+returns an improved notice.
+8. Audit Evidence Organizer
+Packages records for review. It indexes controls, samples, approvals, logs, exceptions, and remediation.
+It checks evidence is complete and traceable. It returns an audit-ready evidence binder.
+9. Policy Drafting Assistant
+Creates practical internal policy drafts. It defines purpose, scope, roles, rules, exceptions, enforcement,
+and review cycle. It checks the draft aligns with actual operations. It returns an implementable policy.
+10. Legal Escalation Detector
+Recognizes when professional legal review is needed. It flags high stakes, disputed interpretation,
+deadlines, enforcement, litigation, and material rights. It checks support remains factual without
+pretending to replace counsel. It returns a focused escalation brief.
+22. Support, Troubleshooting, and Service
+1. Issue Intake Normalizer
+Turns a vague support report into reproducible information. It captures product, version, environment,
+steps, expected, observed, frequency, and impact. It checks missing facts are requested efficiently. It
+returns a structured incident ticket.
+2. Troubleshooting Decision Tree
+Orders diagnostic steps from safe and likely to costly and invasive. It uses symptoms, branching tests,
+stop conditions, and rollback. It checks each step distinguishes possible causes. It returns a guided
+troubleshooting flow.
+3. Known-Issue Matcher
+Compares symptoms with verified known problems. It checks version, environment, signatures, and
+workarounds. It checks similarity is not mistaken for proof. It returns a matched issue or new
+investigation path.
+4. Customer-Safe Explanation Writer
+Explains technical problems without blame or jargon. It states impact, cause if known, workaround, fix
+status, and next update. It checks uncertainty is communicated honestly. It returns a clear support
+message.
+5. Escalation Packager
+Prepares a case for engineering or specialists. It includes reproduction, logs, artifacts, timeline,
+attempts, severity, and business impact. It checks the recipient can begin without repeating intake. It
+returns an escalation packet.
+6. Workaround Risk Assessor
+Evaluates temporary fixes. It checks reversibility, data loss, security, supportability, and affected users.
+It checks risky workarounds are bounded. It returns a safe workaround decision.
+7. Service Recovery Coordinator
+Restores function while preserving evidence. It prioritizes containment, failover, validation,
+communication, and follow-up. It checks recovery does not hide the root cause. It returns a restored
+service state.
+8. Root Cause Report Writer
+Documents why an incident occurred and how recurrence is prevented. It separates trigger,
+contributing conditions, detection, response, and corrective actions. It checks the report avoids blame
+and vague actions. It returns a corrective-action report.
+9. Support Knowledge Article Builder
+Converts resolved cases into reusable guidance. It writes symptoms, cause, resolution, validation,
+alternatives, and version scope. It checks instructions are tested by a fresh reader. It returns a
+publishable knowledge article.
+10. Resolution Confirmation Agent
+Verifies the user's problem is actually solved. It retests the reported path and checks side effects. It
+checks closure is based on observed behavior. It returns a confirmed resolution or reopened case.
+23. Accessibility, Inclusion, and Human Factors
+1. Inclusive Language Reviewer
+Finds wording that may exclude, stereotype, or confuse. It checks identity terms, assumptions,
+metaphors, examples, and power dynamics. It checks revisions preserve meaning and respect. It
+returns an inclusive draft.
+2. Cognitive Load Reducer
+Makes complex workflows easier to follow. It chunks steps, removes unnecessary choices, adds cues,
+and sequences disclosure. It checks users can recover from errors. It returns a lower-friction
+experience.
+3. Keyboard Navigation Auditor
+Tests complete operation without a mouse. It checks order, focus visibility, traps, shortcuts, dialogs,
+and dynamic updates. It checks all essential actions are reachable. It returns a keyboard-access report.
+4. Screen Reader Experience Tester
+Reviews semantic and announced behavior. It checks landmarks, headings, labels, status messages,
+tables, and reading order. It checks critical journeys make sense nonvisually. It returns a screen-reader
+test report.
+5. Color and Contrast Specialist
+Ensures information is not lost through color choices. It checks contrast, states, charts, links, focus,
+and noncolor cues. It checks visual meaning remains distinguishable. It returns an accessible color
+specification.
+6. Caption and Description Planner
+Determines text alternatives for media. It chooses alt text, long description, captions, transcript, or
+audio description based on purpose. It checks alternatives communicate equivalent information. It
+returns an accessibility media plan.
+7. Form Usability Auditor
+Checks labels, instructions, errors, grouping, autocomplete, and recovery. It tests with keyboard and
+assistive technology. It checks users can complete and correct the form. It returns a repaired form flow.
+8. Reading Level Adapter
+Adjusts text complexity for the intended audience. It controls sentence length, vocabulary, structure,
+examples, and definitions. It checks essential precision remains intact. It returns a readability-
+appropriate version.
+9. Internationalization Readiness Checker
+Finds design assumptions that break across locales. It checks expansion, pluralization, RTL, dates,
+numbers, currency, names, and sorting. It checks interfaces can localize without redesign. It returns an
+i18n readiness report.
+10. Human Error Recovery Designer
+Builds forgiving interactions. It adds prevention, confirmation, undo, autosave, clear errors, and
+preserved input. It checks mistakes are recoverable without data loss. It returns a resilient interaction
+design.
+24. Packaging, Handoff, and Lifecycle
+1. Deliverable Structure Designer
+Creates a clear final folder and file organization. It uses predictable naming, relative links, versions,
+and separation of source and export. It checks recipients can find the primary artifact immediately. It
+returns a clean package tree.
+2. Archive Package Builder
+Creates portable ZIP packages. It preserves folder structure, checks names, excludes temporary files,
+and tests extraction. It checks the archive contains exactly the intended deliverables. It returns a
+verified ZIP.
+3. Manifest Generator
+Lists package contents and purposes. It records paths, types, versions, and optional checksums. It
+checks the manifest matches the actual archive. It returns a human-readable package manifest.
+4. Installation and Use Guide Writer
+Explains how to open, run, edit, or continue the work. It includes prerequisites, exact steps, examples,
+troubleshooting, and removal. It checks a new user can succeed from clean state. It returns a practical
+README.
+5. Version Release Manager
+Prepares a coherent release. It sets version, compatibility, changes, migration notes, known issues, and
+rollback. It checks all artifacts share the same release identity. It returns a release package.
+6. Editable Source Preserver
+Ensures final outputs remain maintainable. It includes source files, fonts or licenses where allowed,
+linked assets, and build instructions. It checks exports can be regenerated. It returns an editable
+source bundle.
+7. License and Attribution Checker
+Verifies reuse obligations for included assets and code. It tracks source, license, attribution,
+modification, and redistribution terms. It checks unknown rights are not silently packaged. It returns
+an attribution record.
+8. Handoff Acceptance Tester
+Uses the package as the recipient would. It tests download, extraction, opening, execution, editing, and
+navigation. It checks handoff friction is repaired before delivery. It returns a recipient-path pass.
+9. Lifecycle Maintenance Planner
+Defines how the artifact will stay useful. It sets owners, update triggers, review cadence, deprecation,
+backup, and archival. It checks maintenance cost is visible. It returns a lifecycle plan.
+10. Final Completeness Auditor
+Performs the last request-to-package review. It checks names, formats, folder structure, content, links,
+quality gates, and absence of temporary files. It checks no known material defect remains. It returns a
+final delivery decision.

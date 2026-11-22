@@ -1,0 +1,423 @@
+{
+  "schema_version": 1,
+  "purpose": "Bounded genre and place-template presets used by place_template and genre_* capabilities. Values are starting points for review, not measured Roblox recommendations.",
+  "genres": {
+    "obby": {
+      "systems": [
+        "checkpoints",
+        "respawn",
+        "timers",
+        "moving platforms",
+        "skip passes",
+        "mobile-friendly jumps"
+      ],
+      "remotes": [
+        "CheckpointReached",
+        "RequestRespawn"
+      ],
+      "data_keys": [
+        "bestStage",
+        "completedAt"
+      ],
+      "defaults": {
+        "stages": 30,
+        "jump_distance": 10,
+        "walk_speed": 16,
+        "jump_power": 50,
+        "gravity": 196.2,
+        "checkpoint_every": 5,
+        "mobile": true
+      }
+    },
+    "tycoon": {
+      "systems": [
+        "droppers",
+        "collectors",
+        "purchases",
+        "unlock tree",
+        "rebirth",
+        "plot assignment"
+      ],
+      "remotes": [
+        "PurchaseUpgrade",
+        "Rebirth"
+      ],
+      "data_keys": [
+        "cash",
+        "upgrades",
+        "rebirths"
+      ],
+      "defaults": {
+        "droppers": 4,
+        "drop_value": 1,
+        "drop_interval": 2,
+        "seconds": 600,
+        "unlock_cost": 100,
+        "rebirth_multiplier": 1.5,
+        "plot_owner": "player",
+        "requester": "player"
+      }
+    },
+    "simulator": {
+      "systems": [
+        "action loop",
+        "capacity",
+        "selling",
+        "upgrades",
+        "pets",
+        "zones",
+        "rebirth",
+        "quests"
+      ],
+      "remotes": [
+        "PerformAction",
+        "SellAll",
+        "BuyUpgrade"
+      ],
+      "data_keys": [
+        "coins",
+        "capacity",
+        "pets",
+        "zone"
+      ],
+      "defaults": {
+        "capacity": 100,
+        "action_seconds": 1,
+        "sell_price": 1,
+        "upgrade_cost": 50,
+        "balance": 0,
+        "actions": 600,
+        "rebirth_cost": 5000
+      }
+    },
+    "roleplay": {
+      "systems": [
+        "jobs",
+        "housing",
+        "vehicles",
+        "customization",
+        "social spaces",
+        "permissions"
+      ],
+      "remotes": [
+        "RequestJob",
+        "ReportPlayer"
+      ],
+      "data_keys": [
+        "job",
+        "home"
+      ],
+      "defaults": {
+        "plots": 20,
+        "actor": "player",
+        "action": "enter-plot",
+        "permission": "owner-or-invited",
+        "jobs": [
+          "cafe",
+          "taxi"
+        ],
+        "report": true,
+        "block": true
+      }
+    },
+    "tower": {
+      "systems": [
+        "path lanes",
+        "waves",
+        "enemies",
+        "towers",
+        "targeting",
+        "upgrades",
+        "status effects",
+        "co-op scaling"
+      ],
+      "remotes": [
+        "PlaceTower",
+        "UpgradeTower",
+        "StartWave"
+      ],
+      "data_keys": [
+        "towers",
+        "wave"
+      ],
+      "defaults": {
+        "waves": 20,
+        "base_enemies": 5,
+        "growth": 1.15,
+        "enemy_health": 100,
+        "towers": 6,
+        "tower_damage": 25,
+        "tower_interval": 1,
+        "wave_seconds": 60,
+        "path_length": 200,
+        "enemy_speed": 8
+      }
+    },
+    "survival": {
+      "systems": [
+        "map rotation",
+        "hazards",
+        "elimination",
+        "spectating",
+        "late joining",
+        "rewards"
+      ],
+      "remotes": [
+        "JoinRound",
+        "Eliminate"
+      ],
+      "data_keys": [
+        "roundsPlayed",
+        "wins"
+      ],
+      "defaults": {
+        "maps": 3,
+        "round_seconds": 300,
+        "players": 8,
+        "hazard_start": 60,
+        "late_join": true,
+        "reward": 10
+      }
+    },
+    "rpg": {
+      "systems": [
+        "stats",
+        "classes",
+        "quests",
+        "loot",
+        "combat",
+        "NPCs",
+        "dungeons",
+        "parties",
+        "progression",
+        "saving"
+      ],
+      "remotes": [
+        "UseAbility",
+        "AcceptQuest"
+      ],
+      "data_keys": [
+        "level",
+        "xp",
+        "inventory",
+        "quests",
+        "save_version"
+      ],
+      "defaults": {
+        "level": 10,
+        "base_health": 100,
+        "health_per_level": 10,
+        "base_damage": 10,
+        "damage_per_level": 2,
+        "party_size": 4,
+        "quest_count": 12,
+        "save_version": 1
+      }
+    },
+    "horror": {
+      "systems": [
+        "tension pacing",
+        "lighting",
+        "sound",
+        "pursuit",
+        "puzzles",
+        "checkpoints",
+        "accessibility"
+      ],
+      "remotes": [
+        "PuzzleSolved",
+        "CheckpointReached"
+      ],
+      "data_keys": [
+        "checkpoint",
+        "puzzlesSolved"
+      ],
+      "defaults": {
+        "duration": 900,
+        "safe_seconds": 120,
+        "chase_seconds": 240,
+        "puzzle_seconds": 300,
+        "checkpoint_count": 6,
+        "reduced_intensity": true,
+        "flashing": false
+      }
+    },
+    "hangout": {
+      "systems": [
+        "avatars",
+        "emotes",
+        "zones",
+        "activities",
+        "props",
+        "moderation",
+        "low-friction joining"
+      ],
+      "remotes": [
+        "PlayEmote",
+        "PlaceProp"
+      ],
+      "data_keys": [
+        "emotesOwned",
+        "favoriteZone"
+      ],
+      "defaults": {
+        "zones": 4,
+        "prop_limit_per_player": 20,
+        "block": true,
+        "report": true,
+        "join_seconds": 10
+      }
+    },
+    "sandbox": {
+      "systems": [
+        "creative tools",
+        "permissions",
+        "undo",
+        "saving",
+        "discovery",
+        "moderation",
+        "limits",
+        "collaboration"
+      ],
+      "remotes": [
+        "PlacePart",
+        "UndoAction",
+        "SaveBuild"
+      ],
+      "data_keys": [
+        "builds",
+        "limits"
+      ],
+      "defaults": {
+        "owner": "player",
+        "actor": "player",
+        "limit": 500,
+        "moderated": true,
+        "save_version": 1
+      }
+    }
+  },
+  "templates": {
+    "lobby": {
+      "rooms": 1,
+      "zones": [
+        "spawn",
+        "queue",
+        "shop"
+      ],
+      "bounds_studs": [
+        256,
+        64,
+        256
+      ]
+    },
+    "round": {
+      "rooms": 3,
+      "zones": [
+        "intermission",
+        "arena",
+        "results"
+      ],
+      "bounds_studs": [
+        512,
+        128,
+        512
+      ]
+    },
+    "world": {
+      "rooms": 8,
+      "zones": [
+        "landmark",
+        "biome",
+        "traversal"
+      ],
+      "bounds_studs": [
+        2048,
+        512,
+        2048
+      ]
+    },
+    "test_map": {
+      "rooms": 4,
+      "zones": [
+        "spawn",
+        "hazard",
+        "goal",
+        "stress"
+      ],
+      "bounds_studs": [
+        256,
+        64,
+        256
+      ]
+    },
+    "social_space": {
+      "rooms": 2,
+      "zones": [
+        "plaza",
+        "activity"
+      ],
+      "bounds_studs": [
+        384,
+        96,
+        384
+      ]
+    },
+    "obby": {
+      "rooms": 30,
+      "zones": [
+        "checkpoint",
+        "stage",
+        "finish"
+      ],
+      "bounds_studs": [
+        512,
+        256,
+        512
+      ]
+    },
+    "simulator": {
+      "rooms": 5,
+      "zones": [
+        "base",
+        "zone-1",
+        "zone-2",
+        "zone-3",
+        "zone-4"
+      ],
+      "bounds_studs": [
+        1024,
+        128,
+        1024
+      ]
+    },
+    "tycoon": {
+      "rooms": 6,
+      "zones": [
+        "plot",
+        "dropper",
+        "collector",
+        "expansion"
+      ],
+      "bounds_studs": [
+        512,
+        64,
+        512
+      ]
+    },
+    "narrative": {
+      "rooms": 6,
+      "zones": [
+        "prologue",
+        "hub",
+        "chapter",
+        "finale"
+      ],
+      "bounds_studs": [
+        768,
+        128,
+        768
+      ]
+    }
+  }
+}

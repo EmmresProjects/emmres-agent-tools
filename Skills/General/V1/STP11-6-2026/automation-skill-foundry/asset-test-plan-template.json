@@ -1,0 +1,87 @@
+{
+ "template_id": "autoforge-test-plan-template",
+ "version": "1.0.0",
+ "description": "Fill-in report structure for tests run by tools_selftest.py or by a generated project. Copy it, fill status per dimension, and keep it with the handoff bundle.",
+ "report": {
+  "automation": "<goal from the bundle>",
+  "bundle_file": "<relative path to bundle.json>",
+  "project_dir": "<relative path to generated project>",
+  "tester": "<name>",
+  "date": "<YYYY-MM-DD>",
+  "environment": {
+   "os": "<os>",
+   "python": "<version>",
+   "timezone": "<IANA>"
+  },
+  "dimensions": [
+   {
+    "dimension": "normal",
+    "status": "not-run",
+    "evidence": "",
+    "notes": ""
+   },
+   {
+    "dimension": "boundary",
+    "status": "not-run",
+    "evidence": "",
+    "notes": ""
+   },
+   {
+    "dimension": "failure",
+    "status": "not-run",
+    "evidence": "",
+    "notes": ""
+   },
+   {
+    "dimension": "repeat",
+    "status": "not-run",
+    "evidence": "",
+    "notes": ""
+   },
+   {
+    "dimension": "concurrency",
+    "status": "not-run",
+    "evidence": "",
+    "notes": ""
+   },
+   {
+    "dimension": "recovery",
+    "status": "not-run",
+    "evidence": "",
+    "notes": ""
+   },
+   {
+    "dimension": "clean_state",
+    "status": "not-run",
+    "evidence": "",
+    "notes": ""
+   }
+  ],
+  "gate_evidence": {
+   "approval": "",
+   "rollback": "",
+   "owner": "",
+   "idempotency": "",
+   "stop_control": "",
+   "secret_scan": ""
+  },
+  "verdict": "not-run",
+  "blockers": [],
+  "sign_off": {
+   "approved_by": "",
+   "date": ""
+  }
+ },
+ "allowed_status": [
+  "not-run",
+  "pass",
+  "fail",
+  "blocked",
+  "not-applicable"
+ ],
+ "rules": [
+  "A dimension is only 'pass' when a command was executed and its output is attached.",
+  "Any 'fail' keeps the automation out of production regardless of other passes.",
+  "Secret-scan findings block sign-off until the credential is rotated."
+ ]
+}

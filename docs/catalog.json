@@ -1,0 +1,173 @@
+{
+  "schemaVersion": "1.0",
+  "name": "Emmre's Agent Tools",
+  "sections": [
+    "Tools",
+    "Knowledge",
+    "Skills"
+  ],
+  "summary": {
+    "Tools": {
+      "files": 0,
+      "bytes": 0,
+      "categories": 0
+    },
+    "Knowledge": {
+      "files": 0,
+      "bytes": 0,
+      "categories": 0
+    },
+    "Skills": {
+      "files": 0,
+      "bytes": 0,
+      "categories": 0
+    }
+  },
+  "categories": [
+    {
+      "section": "Tools",
+      "name": "Audio",
+      "path": "Tools/Audio",
+      "depth": 1
+    },
+    {
+      "section": "Tools",
+      "name": "Automation",
+      "path": "Tools/Automation",
+      "depth": 1
+    },
+    {
+      "section": "Tools",
+      "name": "Code",
+      "path": "Tools/Code",
+      "depth": 1
+    },
+    {
+      "section": "Tools",
+      "name": "Data",
+      "path": "Tools/Data",
+      "depth": 1
+    },
+    {
+      "section": "Tools",
+      "name": "Documents",
+      "path": "Tools/Documents",
+      "depth": 1
+    },
+    {
+      "section": "Tools",
+      "name": "Models",
+      "path": "Tools/Models",
+      "depth": 1
+    },
+    {
+      "section": "Tools",
+      "name": "Other",
+      "path": "Tools/Other",
+      "depth": 1
+    },
+    {
+      "section": "Tools",
+      "name": "Pictures",
+      "path": "Tools/Pictures",
+      "depth": 1
+    },
+    {
+      "section": "Tools",
+      "name": "Video",
+      "path": "Tools/Video",
+      "depth": 1
+    },
+    {
+      "section": "Tools",
+      "name": "Web",
+      "path": "Tools/Web",
+      "depth": 1
+    },
+    {
+      "section": "Knowledge",
+      "name": "Datasets",
+      "path": "Knowledge/Datasets",
+      "depth": 1
+    },
+    {
+      "section": "Knowledge",
+      "name": "Examples",
+      "path": "Knowledge/Examples",
+      "depth": 1
+    },
+    {
+      "section": "Knowledge",
+      "name": "Guides",
+      "path": "Knowledge/Guides",
+      "depth": 1
+    },
+    {
+      "section": "Knowledge",
+      "name": "Other",
+      "path": "Knowledge/Other",
+      "depth": 1
+    },
+    {
+      "section": "Knowledge",
+      "name": "References",
+      "path": "Knowledge/References",
+      "depth": 1
+    },
+    {
+      "section": "Knowledge",
+      "name": "Standards",
+      "path": "Knowledge/Standards",
+      "depth": 1
+    },
+    {
+      "section": "Skills",
+      "name": "Automation",
+      "path": "Skills/Automation",
+      "depth": 1
+    },
+    {
+      "section": "Skills",
+      "name": "Code",
+      "path": "Skills/Code",
+      "depth": 1
+    },
+    {
+      "section": "Skills",
+      "name": "Data",
+      "path": "Skills/Data",
+      "depth": 1
+    },
+    {
+      "section": "Skills",
+      "name": "Documents",
+      "path": "Skills/Documents",
+      "depth": 1
+    },
+    {
+      "section": "Skills",
+      "name": "Media",
+      "path": "Skills/Media",
+      "depth": 1
+    },
+    {
+      "section": "Skills",
+      "name": "Other",
+      "path": "Skills/Other",
+      "depth": 1
+    },
+    {
+      "section": "Skills",
+      "name": "Research",
+      "path": "Skills/Research",
+      "depth": 1
+    },
+    {
+      "section": "Skills",
+      "name": "Web",
+      "path": "Skills/Web",
+      "depth": 1
+    }
+  ],
+  "files": []
+}

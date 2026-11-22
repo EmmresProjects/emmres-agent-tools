@@ -1,0 +1,119 @@
+{
+  "themes_version": "1.0",
+  "notes": "Every preset is checked by the audit command: text_primary/background and text_secondary/background must clear 7:1 and 4.5:1, and accent/background must clear 3:1 for graphic use. Override any value in a deck spec, then re-run audit to re-check.",
+  "default_theme": "aurora",
+  "themes": [
+    {
+      "id": "aurora",
+      "name": "Aurora (dark, stage-safe)",
+      "mode": "dark",
+      "background": "#0B1B2B",
+      "surface": "#14293D",
+      "text_primary": "#F5F8FB",
+      "text_secondary": "#BFD0E0",
+      "accent": "#57C7FF",
+      "accent_alt": "#FFB454",
+      "text_on_accent": "#04121F",
+      "chart_series": ["#57C7FF", "#FFB454", "#7BE0A8", "#C6A8FF", "#FF8FA3"],
+      "fonts": {
+        "heading": "Segoe UI Semibold, Helvetica Neue, Arial, sans-serif",
+        "body": "Segoe UI, Helvetica Neue, Arial, sans-serif",
+        "mono": "Consolas, Menlo, monospace"
+      },
+      "typography_pt": {
+        "title": 40,
+        "section": 44,
+        "heading": 26,
+        "body": 20,
+        "caption": 13,
+        "footer": 10,
+        "metric": 40
+      },
+      "geometry": {"radius_in": 0.12, "margin_in": 0.55, "gutter_in": 0.3}
+    },
+    {
+      "id": "graphite",
+      "name": "Graphite (light, corporate)",
+      "mode": "light",
+      "background": "#FFFFFF",
+      "surface": "#F1F4F8",
+      "text_primary": "#111827",
+      "text_secondary": "#465465",
+      "accent": "#1749C4",
+      "accent_alt": "#8A4B12",
+      "text_on_accent": "#FFFFFF",
+      "chart_series": ["#1749C4", "#8A4B12", "#0F7A54", "#6B3FA0", "#B02045"],
+      "fonts": {
+        "heading": "Segoe UI Semibold, Helvetica Neue, Arial, sans-serif",
+        "body": "Segoe UI, Helvetica Neue, Arial, sans-serif",
+        "mono": "Consolas, Menlo, monospace"
+      },
+      "typography_pt": {
+        "title": 38,
+        "section": 42,
+        "heading": 25,
+        "body": 19,
+        "caption": 12,
+        "footer": 10,
+        "metric": 38
+      },
+      "geometry": {"radius_in": 0.08, "margin_in": 0.55, "gutter_in": 0.3}
+    },
+    {
+      "id": "sandstone",
+      "name": "Sandstone (warm editorial)",
+      "mode": "light",
+      "background": "#FBF7F1",
+      "surface": "#F0E7DA",
+      "text_primary": "#2A2118",
+      "text_secondary": "#57483A",
+      "accent": "#96421A",
+      "accent_alt": "#1F5F50",
+      "text_on_accent": "#FFFFFF",
+      "chart_series": ["#96421A", "#1F5F50", "#7A5C1E", "#4A5A8C", "#8C3F55"],
+      "fonts": {
+        "heading": "Georgia, Cambria, Times New Roman, serif",
+        "body": "Segoe UI, Helvetica Neue, Arial, sans-serif",
+        "mono": "Consolas, Menlo, monospace"
+      },
+      "typography_pt": {
+        "title": 40,
+        "section": 44,
+        "heading": 26,
+        "body": 19,
+        "caption": 12,
+        "footer": 10,
+        "metric": 40
+      },
+      "geometry": {"radius_in": 0.1, "margin_in": 0.6, "gutter_in": 0.32}
+    },
+    {
+      "id": "forest",
+      "name": "Forest (calm, data-first)",
+      "mode": "light",
+      "background": "#F4F8F4",
+      "surface": "#E2EDE1",
+      "text_primary": "#0F2419",
+      "text_secondary": "#3C5345",
+      "accent": "#1B6247",
+      "accent_alt": "#8A4A12",
+      "text_on_accent": "#FFFFFF",
+      "chart_series": ["#1B6247", "#8A4A12", "#2C5F8A", "#5E4B8B", "#9C2F45"],
+      "fonts": {
+        "heading": "Segoe UI Semibold, Helvetica Neue, Arial, sans-serif",
+        "body": "Segoe UI, Helvetica Neue, Arial, sans-serif",
+        "mono": "Consolas, Menlo, monospace"
+      },
+      "typography_pt": {
+        "title": 38,
+        "section": 42,
+        "heading": 25,
+        "body": 19,
+        "caption": 12,
+        "footer": 10,
+        "metric": 38
+      },
+      "geometry": {"radius_in": 0.1, "margin_in": 0.55, "gutter_in": 0.3}
+    }
+  ]
+}

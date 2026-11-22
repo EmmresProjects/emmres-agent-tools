@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "policy_version": "1.0.0",
+  "notes": "Classes of action that must be approved by a human before the suite performs them. Approval ids are issued and recorded by tools-audio-approvals.py; the suite refuses the action without a matching, unexpired, unused grant.",
+  "ledger_default_filename": "approval-ledger.json",
+  "token_ttl_minutes": 120,
+  "actions": [
+    {
+      "id": "destructive-overwrite",
+      "label": "Overwrite an existing audio file",
+      "risk": "high",
+      "when": "Any processing run whose output path already exists",
+      "approver": "project owner or audio lead",
+      "applies_to": ["process", "recipe", "batch", "concat", "split"]
+    },
+    {
+      "id": "delete-masters",
+      "label": "Delete or replace master or source audio",
+      "risk": "critical",
+      "when": "Any removal of source, master, or approved deliverable files",
+      "approver": "project owner",
+      "applies_to": ["cleanup", "batch"]
+    },
+    {
+      "id": "publish-deliverable",
+      "label": "Publish, deliver, or mark a deliverable final",
+      "risk": "high",
+      "when": "Building a signed delivery package or transferring it to a recipient",
+      "approver": "producer plus rights holder where applicable",
+      "applies_to": ["manifest", "verify-manifest"]
+    },
+    {
+      "id": "rights-signoff",
+      "label": "Confirm rights and consent clearance",
+      "risk": "critical",
+      "when": "Declaring music, sample, voice, or likeness rights cleared",
+      "approver": "rights holder or qualified reviewer",
+      "applies_to": ["manifest", "plan", "spec"]
+    },
+    {
+      "id": "voice-likeness",
+      "label": "Use a real person's voice or likeness",
+      "risk": "critical",
+      "when": "Any synthetic speech, voice conversion, or imitation of an identifiable person",
+      "approver": "the person concerned or their authorised representative",
+      "applies_to": ["plan", "spec", "manifest"]
+    },
+    {
+      "id": "bulk-batch",
+      "label": "Run a batch over many files",
+      "risk": "medium",
+      "when": "A batch job that writes more than 10 output files or rewrites existing ones",
+      "approver": "project owner",
+      "applies_to": ["batch"]
+    },
+    {
+      "id": "irreversible-repair",
+      "label": "Apply irreversible restoration to an original",
+      "risk": "high",
+      "when": "Spectral repair, destructive cleanup, or resampling of a sole master copy",
+      "approver": "audio lead",
+      "applies_to": ["process", "recipe"]
+    }
+  ]
+}

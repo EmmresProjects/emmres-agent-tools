@@ -1,0 +1,9012 @@
+{
+ "asset": "asset-capability-map.json",
+ "source": "Microsoft Word Agent Skill Catalog (636 candidate skills / 53 categories)",
+ "generated_for": "word-document-agent skill tool routing layer",
+ "notes": [
+  "Each skill maps to exactly one operation implemented by tools-word-doc-agent.py.",
+  "engine=native: the operation reads or writes OOXML for that capability.",
+  "engine=advisory: the tool produces a validated procedure/checklist instead of a UI action.",
+  "Descriptions in the source catalog are boilerplate; routing uses the skill name, category purpose and surface list."
+ ],
+ "operations": {
+  "a11y": {
+   "catalog_skills": 17,
+   "categories": [
+    21,
+    22,
+    39
+   ]
+  },
+  "backup": {
+   "catalog_skills": 3,
+   "categories": [
+    4
+   ]
+  },
+  "comments": {
+   "catalog_skills": 12,
+   "categories": [
+    37
+   ]
+  },
+  "convert": {
+   "catalog_skills": 1,
+   "categories": [
+    1
+   ]
+  },
+  "copy": {
+   "catalog_skills": 2,
+   "categories": [
+    1
+   ]
+  },
+  "create": {
+   "catalog_skills": 8,
+   "categories": [
+    1,
+    5
+   ]
+  },
+  "export": {
+   "catalog_skills": 9,
+   "categories": [
+    45
+   ]
+  },
+  "fields": {
+   "catalog_skills": 10,
+   "categories": [
+    31
+   ]
+  },
+  "form": {
+   "catalog_skills": 12,
+   "categories": [
+    41
+   ]
+  },
+  "format": {
+   "catalog_skills": 49,
+   "categories": [
+    7,
+    9,
+    15,
+    16,
+    17,
+    46
+   ]
+  },
+  "headerfooter": {
+   "catalog_skills": 12,
+   "categories": [
+    18
+   ]
+  },
+  "image": {
+   "catalog_skills": 10,
+   "categories": [
+    22
+   ]
+  },
+  "insert": {
+   "catalog_skills": 16,
+   "categories": [
+    15,
+    31,
+    35
+   ]
+  },
+  "inspect": {
+   "catalog_skills": 134,
+   "categories": [
+    2,
+    3,
+    7,
+    12,
+    13,
+    22,
+    25,
+    28,
+    29,
+    30,
+    32,
+    33,
+    34,
+    42,
+    43,
+    44,
+    47,
+    48,
+    49,
+    50,
+    52
+   ]
+  },
+  "list": {
+   "catalog_skills": 12,
+   "categories": [
+    10
+   ]
+  },
+  "merge": {
+   "catalog_skills": 12,
+   "categories": [
+    36
+   ]
+  },
+  "plan": {
+   "catalog_skills": 179,
+   "categories": [
+    1,
+    4,
+    5,
+    6,
+    8,
+    9,
+    14,
+    16,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    34,
+    35,
+    40,
+    42,
+    45,
+    47,
+    48,
+    53
+   ]
+  },
+  "proof": {
+   "catalog_skills": 11,
+   "categories": [
+    13
+   ]
+  },
+  "protect": {
+   "catalog_skills": 15,
+   "categories": [
+    3,
+    49
+   ]
+  },
+  "qa": {
+   "catalog_skills": 14,
+   "categories": [
+    1,
+    51
+   ]
+  },
+  "replace": {
+   "catalog_skills": 11,
+   "categories": [
+    6,
+    12
+   ]
+  },
+  "restore": {
+   "catalog_skills": 4,
+   "categories": [
+    4,
+    52
+   ]
+  },
+  "revisions": {
+   "catalog_skills": 12,
+   "categories": [
+    38
+   ]
+  },
+  "sanitize": {
+   "catalog_skills": 2,
+   "categories": [
+    2
+   ]
+  },
+  "score": {
+   "catalog_skills": 8,
+   "categories": [
+    53
+   ]
+  },
+  "styles": {
+   "catalog_skills": 16,
+   "categories": [
+    5,
+    11
+   ]
+  },
+  "table": {
+   "catalog_skills": 32,
+   "categories": [
+    19,
+    20,
+    21
+   ]
+  },
+  "toc": {
+   "catalog_skills": 9,
+   "categories": [
+    32
+   ]
+  },
+  "watermark": {
+   "catalog_skills": 4,
+   "categories": [
+    46
+   ]
+  }
+ },
+ "categories": [
+  {
+   "id": 1,
+   "name": "File Lifecycle and Backstage Operations",
+   "purpose": "control documents from creation through closure.",
+   "surfaces": [
+    "File > Info",
+    "New",
+    "Open",
+    "Save",
+    "Save As",
+    "Save a Copy",
+    "Close",
+    "Account",
+    "Feedback",
+    "Options",
+    "Exit"
+   ],
+   "skills": [
+    {
+     "name": "Blank Document Creator",
+     "op": "create",
+     "params": {
+      "source": "blank"
+     },
+     "engine": "native",
+     "triggers": [
+      "blank",
+      "document",
+      "creator"
+     ]
+    },
+    {
+     "name": "Template-Based Document Creator",
+     "op": "create",
+     "params": {
+      "source": "template"
+     },
+     "engine": "native",
+     "triggers": [
+      "template",
+      "based",
+      "document",
+      "creator"
+     ]
+    },
+    {
+     "name": "Recent and Pinned File Opener",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "recent",
+      "and",
+      "pinned",
+      "file",
+      "opener"
+     ]
+    },
+    {
+     "name": "OneDrive and SharePoint File Opener",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "onedrive",
+      "and",
+      "sharepoint",
+      "file",
+      "opener"
+     ]
+    },
+    {
+     "name": "Local Browse File Opener",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "local",
+      "browse",
+      "file",
+      "opener"
+     ]
+    },
+    {
+     "name": "Safe Save Coordinator",
+     "op": "copy",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "safe",
+      "save",
+      "coordinator"
+     ]
+    },
+    {
+     "name": "Save As Format Converter",
+     "op": "convert",
+     "params": {
+      "format": "docx"
+     },
+     "engine": "native",
+     "triggers": [
+      "save",
+      "format",
+      "converter"
+     ]
+    },
+    {
+     "name": "Save-a-Copy Branch Manager",
+     "op": "copy",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "save",
+      "copy",
+      "branch",
+      "manager"
+     ]
+    },
+    {
+     "name": "Document Close Guard",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "document",
+      "close",
+      "guard"
+     ]
+    },
+    {
+     "name": "Word Account and Connected Services Inspector",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "word",
+      "account",
+      "and",
+      "connected",
+      "services",
+      "inspector"
+     ]
+    },
+    {
+     "name": "Office Update and Product Information Checker",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "office",
+      "update",
+      "and",
+      "product",
+      "information",
+      "checker"
+     ]
+    },
+    {
+     "name": "Unsaved Exit Prevention Manager",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "unsaved",
+      "exit",
+      "prevention",
+      "manager"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Document Properties, Inspection, and Hidden Data",
+   "purpose": "understand and sanitize the real document before release.",
+   "surfaces": [
+    "Info",
+    "Properties",
+    "Inspect Document",
+    "Document Inspector",
+    "hidden text",
+    "comments",
+    "revisions",
+    "headers",
+    "custom XML",
+    "embedded files",
+    "metadata"
+   ],
+   "skills": [
+    {
+     "name": "Document Property Profiler",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "document",
+      "property",
+      "profiler"
+     ]
+    },
+    {
+     "name": "Personal Metadata Detector",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "personal",
+      "metadata",
+      "detector"
+     ]
+    },
+    {
+     "name": "Comment and Revision Inspector",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "comment",
+      "and",
+      "revision",
+      "inspector"
+     ]
+    },
+    {
+     "name": "Hidden Text Scanner",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "hidden",
+      "text",
+      "scanner"
+     ]
+    },
+    {
+     "name": "Header and Footer Data Inspector",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "header",
+      "and",
+      "footer",
+      "data",
+      "inspector"
+     ]
+    },
+    {
+     "name": "Custom XML Inspector",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "custom",
+      "xml",
+      "inspector"
+     ]
+    },
+    {
+     "name": "Invisible Content Detector",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "invisible",
+      "content",
+      "detector"
+     ]
+    },
+    {
+     "name": "Embedded File Enumerator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "embedded",
+      "file",
+      "enumerator"
+     ]
+    },
+    {
+     "name": "Document Inspector Orchestrator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "document",
+      "inspector",
+      "orchestrator"
+     ]
+    },
+    {
+     "name": "Property Cleanup Planner",
+     "op": "sanitize",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "property",
+      "cleanup",
+      "planner"
+     ]
+    },
+    {
+     "name": "External Publication Sanitizer",
+     "op": "sanitize",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "external",
+      "publication",
+      "sanitizer"
+     ]
+    },
+    {
+     "name": "Inspection Exception Reporter",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "inspection",
+      "exception",
+      "reporter"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Protection, Encryption, Signatures, and Final Status",
+   "purpose": "apply appropriate document controls without blocking valid work.",
+   "surfaces": [
+    "Protect Document",
+    "password encryption",
+    "digital signatures",
+    "Mark as Final",
+    "Restrict Editing",
+    "rights management",
+    "sensitivity controls"
+   ],
+   "skills": [
+    {
+     "name": "Password Encryption Configurator",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "password",
+      "encryption",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Encryption Recovery Risk Advisor",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "encryption",
+      "recovery",
+      "risk",
+      "advisor"
+     ]
+    },
+    {
+     "name": "Digital Signature Inserter",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "digital",
+      "signature",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Signature Validity Verifier",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "signature",
+      "validity",
+      "verifier"
+     ]
+    },
+    {
+     "name": "Mark-as-Final Manager",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "mark",
+      "final",
+      "manager"
+     ]
+    },
+    {
+     "name": "Read-Only Protection Planner",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "read",
+      "only",
+      "protection",
+      "planner"
+     ]
+    },
+    {
+     "name": "Comments-Only Protection Manager",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "comments",
+      "only",
+      "protection",
+      "manager"
+     ]
+    },
+    {
+     "name": "Tracked-Changes Protection Manager",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "tracked",
+      "changes",
+      "protection",
+      "manager"
+     ]
+    },
+    {
+     "name": "Forms-Only Protection Manager",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "forms",
+      "only",
+      "protection",
+      "manager"
+     ]
+    },
+    {
+     "name": "Rights Management Policy Applier",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "rights",
+      "management",
+      "policy",
+      "applier"
+     ]
+    },
+    {
+     "name": "Protection Removal Controller",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "protection",
+      "removal",
+      "controller"
+     ]
+    },
+    {
+     "name": "Protected Delivery Gate",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "protected",
+      "delivery",
+      "gate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "name": "Recovery, Versions, and AutoSave",
+   "purpose": "preserve work and recover from interruption.",
+   "surfaces": [
+    "AutoSave",
+    "AutoRecover",
+    "Manage Document",
+    "Recover Unsaved Documents",
+    "Document Recovery",
+    "temporary files",
+    "cloud version history"
+   ],
+   "skills": [
+    {
+     "name": "AutoSave State Monitor",
+     "op": "backup",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "autosave",
+      "state",
+      "monitor"
+     ]
+    },
+    {
+     "name": "AutoRecover Interval Configurator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "autorecover",
+      "interval",
+      "configurator"
+     ]
+    },
+    {
+     "name": "AutoRecover Location Auditor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "autorecover",
+      "location",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Unsaved Document Recovery",
+     "op": "backup",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "unsaved",
+      "document",
+      "recovery"
+     ]
+    },
+    {
+     "name": "Document Recovery Pane Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "document",
+      "recovery",
+      "pane",
+      "operator"
+     ]
+    },
+    {
+     "name": "Cloud Version History Browser",
+     "op": "restore",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "cloud",
+      "version",
+      "history",
+      "browser"
+     ]
+    },
+    {
+     "name": "Named Version Checkpoint Manager",
+     "op": "restore",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "named",
+      "version",
+      "checkpoint",
+      "manager"
+     ]
+    },
+    {
+     "name": "Version Restore Coordinator",
+     "op": "restore",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "version",
+      "restore",
+      "coordinator"
+     ]
+    },
+    {
+     "name": "Temporary File Recovery Investigator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "temporary",
+      "file",
+      "recovery",
+      "investigator"
+     ]
+    },
+    {
+     "name": "Crash Recovery Verifier",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "crash",
+      "recovery",
+      "verifier"
+     ]
+    },
+    {
+     "name": "Last-Known-Good Snapshot Manager",
+     "op": "backup",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "last",
+      "known",
+      "good",
+      "snapshot",
+      "manager"
+     ]
+    },
+    {
+     "name": "Recovery Runbook Builder",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "recovery",
+      "runbook",
+      "builder"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Templates, Building Blocks, and Reusable Systems",
+   "purpose": "turn repeatable document structures into governed assets.",
+   "surfaces": [
+    "DOTX",
+    "DOTM",
+    "themes",
+    "styles",
+    "AutoText",
+    "Quick Parts",
+    "document properties",
+    "fields",
+    "content controls",
+    "template attachment"
+   ],
+   "skills": [
+    {
+     "name": "DOTX Template Builder",
+     "op": "create",
+     "params": {
+      "source": "template"
+     },
+     "engine": "native",
+     "triggers": [
+      "dotx",
+      "template",
+      "builder"
+     ]
+    },
+    {
+     "name": "DOTM Macro Template Builder",
+     "op": "create",
+     "params": {
+      "source": "template"
+     },
+     "engine": "native",
+     "triggers": [
+      "dotm",
+      "macro",
+      "template",
+      "builder"
+     ]
+    },
+    {
+     "name": "Template Attachment Manager",
+     "op": "create",
+     "params": {
+      "source": "template"
+     },
+     "engine": "native",
+     "triggers": [
+      "template",
+      "attachment",
+      "manager"
+     ]
+    },
+    {
+     "name": "Building Block Gallery Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "building",
+      "block",
+      "gallery",
+      "designer"
+     ]
+    },
+    {
+     "name": "AutoText Entry Creator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "autotext",
+      "entry",
+      "creator"
+     ]
+    },
+    {
+     "name": "Quick Parts Organizer",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "quick",
+      "parts",
+      "organizer"
+     ]
+    },
+    {
+     "name": "Document Property Block Inserter",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "document",
+      "property",
+      "block",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Reusable Cover Page Builder",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "reusable",
+      "cover",
+      "page",
+      "builder"
+     ]
+    },
+    {
+     "name": "Reusable Header Footer Packager",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "reusable",
+      "header",
+      "footer",
+      "packager"
+     ]
+    },
+    {
+     "name": "Template Version Migrator",
+     "op": "create",
+     "params": {
+      "source": "template"
+     },
+     "engine": "native",
+     "triggers": [
+      "template",
+      "version",
+      "migrator"
+     ]
+    },
+    {
+     "name": "Template Dependency Auditor",
+     "op": "create",
+     "params": {
+      "source": "template"
+     },
+     "engine": "native",
+     "triggers": [
+      "template",
+      "dependency",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Template Starter Kit Generator",
+     "op": "create",
+     "params": {
+      "source": "template"
+     },
+     "engine": "native",
+     "triggers": [
+      "template",
+      "starter",
+      "kit",
+      "generator"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "name": "Clipboard, Paste, and Content Transfer",
+   "purpose": "move content without importing damage.",
+   "surfaces": [
+    "Paste",
+    "Paste Special",
+    "Office Clipboard",
+    "source formatting",
+    "destination formatting",
+    "unformatted text",
+    "HTML",
+    "pictures",
+    "links",
+    "embedded objects"
+   ],
+   "skills": [
+    {
+     "name": "Paste Behavior Router",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "paste",
+      "behavior",
+      "router"
+     ]
+    },
+    {
+     "name": "Destination-Formatting Paste Specialist",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "destination",
+      "formatting",
+      "paste",
+      "specialist"
+     ]
+    },
+    {
+     "name": "Source-Formatting Paste Specialist",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "source",
+      "formatting",
+      "paste",
+      "specialist"
+     ]
+    },
+    {
+     "name": "Unformatted Text Paste Cleaner",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "unformatted",
+      "text",
+      "paste",
+      "cleaner"
+     ]
+    },
+    {
+     "name": "Paste Special Format Selector",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "paste",
+      "special",
+      "format",
+      "selector"
+     ]
+    },
+    {
+     "name": "Linked Content Paste Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "linked",
+      "content",
+      "paste",
+      "manager"
+     ]
+    },
+    {
+     "name": "Embedded Content Paste Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "embedded",
+      "content",
+      "paste",
+      "manager"
+     ]
+    },
+    {
+     "name": "Picture Paste Converter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "picture",
+      "paste",
+      "converter"
+     ]
+    },
+    {
+     "name": "Office Clipboard Queue Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "office",
+      "clipboard",
+      "queue",
+      "manager"
+     ]
+    },
+    {
+     "name": "Format Painter Operator",
+     "op": "replace",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "format",
+      "painter",
+      "operator"
+     ]
+    },
+    {
+     "name": "Cross-Application Paste Inspector",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "cross",
+      "application",
+      "paste",
+      "inspector"
+     ]
+    },
+    {
+     "name": "Clipboard Failure Workaround",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "clipboard",
+      "failure",
+      "workaround"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "name": "Fonts and Character Formatting",
+   "purpose": "control character-level presentation precisely.",
+   "surfaces": [
+    "font family",
+    "size",
+    "case",
+    "clear formatting",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "subscript",
+    "superscript",
+    "color",
+    "highlight",
+    "spacing",
+    "kerning",
+    "OpenType",
+    "language"
+   ],
+   "skills": [
+    {
+     "name": "Font Availability Auditor",
+     "op": "format",
+     "params": {
+      "scope": "character"
+     },
+     "engine": "native",
+     "triggers": [
+      "font",
+      "availability",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Theme Font Mapper",
+     "op": "format",
+     "params": {
+      "scope": "character"
+     },
+     "engine": "native",
+     "triggers": [
+      "theme",
+      "font",
+      "mapper"
+     ]
+    },
+    {
+     "name": "Font Size System Builder",
+     "op": "format",
+     "params": {
+      "scope": "character"
+     },
+     "engine": "native",
+     "triggers": [
+      "font",
+      "size",
+      "system",
+      "builder"
+     ]
+    },
+    {
+     "name": "Change Case Normalizer",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "change",
+      "case",
+      "normalizer"
+     ]
+    },
+    {
+     "name": "Clear Formatting Repair",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "clear",
+      "formatting",
+      "repair"
+     ]
+    },
+    {
+     "name": "Underline Style and Color Controller",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "underline",
+      "style",
+      "and",
+      "color",
+      "controller"
+     ]
+    },
+    {
+     "name": "Scientific Script Formatter",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "scientific",
+      "script",
+      "formatter"
+     ]
+    },
+    {
+     "name": "Character Spacing Optimizer",
+     "op": "format",
+     "params": {
+      "scope": "character"
+     },
+     "engine": "native",
+     "triggers": [
+      "character",
+      "spacing",
+      "optimizer"
+     ]
+    },
+    {
+     "name": "Kerning Threshold Configurator",
+     "op": "format",
+     "params": {
+      "scope": "character"
+     },
+     "engine": "native",
+     "triggers": [
+      "kerning",
+      "threshold",
+      "configurator"
+     ]
+    },
+    {
+     "name": "OpenType Feature Manager",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "opentype",
+      "feature",
+      "manager"
+     ]
+    },
+    {
+     "name": "Hidden Text Governance",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "hidden",
+      "text",
+      "governance"
+     ]
+    },
+    {
+     "name": "Font Substitution Repair",
+     "op": "format",
+     "params": {
+      "scope": "character"
+     },
+     "engine": "native",
+     "triggers": [
+      "font",
+      "substitution",
+      "repair"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "name": "Text Effects, WordArt, and Advanced Typography",
+   "purpose": "use display typography while preserving readability and compatibility.",
+   "surfaces": [
+    "text fill",
+    "outline",
+    "shadow",
+    "reflection",
+    "glow",
+    "bevel",
+    "3-D rotation",
+    "transforms",
+    "ligatures",
+    "stylistic sets",
+    "number forms",
+    "WordArt"
+   ],
+   "skills": [
+    {
+     "name": "Text Fill Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "text",
+      "fill",
+      "designer"
+     ]
+    },
+    {
+     "name": "Text Outline Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "text",
+      "outline",
+      "designer"
+     ]
+    },
+    {
+     "name": "Typographic Shadow Controller",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "typographic",
+      "shadow",
+      "controller"
+     ]
+    },
+    {
+     "name": "Text Reflection Auditor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "text",
+      "reflection",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Text Glow Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "text",
+      "glow",
+      "designer"
+     ]
+    },
+    {
+     "name": "WordArt Bevel Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "wordart",
+      "bevel",
+      "designer"
+     ]
+    },
+    {
+     "name": "WordArt 3-D Rotation Controller",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "wordart",
+      "rotation",
+      "controller"
+     ]
+    },
+    {
+     "name": "WordArt Transform Path Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "wordart",
+      "transform",
+      "path",
+      "designer"
+     ]
+    },
+    {
+     "name": "Ligature Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "ligature",
+      "manager"
+     ]
+    },
+    {
+     "name": "Stylistic Set Selector",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "stylistic",
+      "set",
+      "selector"
+     ]
+    },
+    {
+     "name": "Number Form and Spacing Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "number",
+      "form",
+      "and",
+      "spacing",
+      "manager"
+     ]
+    },
+    {
+     "name": "Advanced Typography Compatibility Tester",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "advanced",
+      "typography",
+      "compatibility",
+      "tester"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Paragraph Formatting and Pagination",
+   "purpose": "control flow, spacing, and page behavior at paragraph level.",
+   "surfaces": [
+    "alignment",
+    "indents",
+    "tabs",
+    "line spacing",
+    "paragraph spacing",
+    "widow/orphan control",
+    "keep options",
+    "page break before",
+    "borders",
+    "shading"
+   ],
+   "skills": [
+    {
+     "name": "Paragraph Alignment Advisor",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "paragraph",
+      "alignment",
+      "advisor"
+     ]
+    },
+    {
+     "name": "First-Line and Hanging Indent Builder",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "first",
+      "line",
+      "and",
+      "hanging",
+      "indent",
+      "builder"
+     ]
+    },
+    {
+     "name": "Decimal and Leader Tab Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "decimal",
+      "and",
+      "leader",
+      "tab",
+      "designer"
+     ]
+    },
+    {
+     "name": "Line Spacing Calibrator",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "line",
+      "spacing",
+      "calibrator"
+     ]
+    },
+    {
+     "name": "Paragraph Spacing Normalizer",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "paragraph",
+      "spacing",
+      "normalizer"
+     ]
+    },
+    {
+     "name": "Widow and Orphan Preventer",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "widow",
+      "and",
+      "orphan",
+      "preventer"
+     ]
+    },
+    {
+     "name": "Keep-with-Next Manager",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "keep",
+      "with",
+      "next",
+      "manager"
+     ]
+    },
+    {
+     "name": "Keep-Lines-Together Manager",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "keep",
+      "lines",
+      "together",
+      "manager"
+     ]
+    },
+    {
+     "name": "Page-Break-Before Controller",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "page",
+      "break",
+      "before",
+      "controller"
+     ]
+    },
+    {
+     "name": "Paragraph Border Designer",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "paragraph",
+      "border",
+      "designer"
+     ]
+    },
+    {
+     "name": "Paragraph Shading Designer",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "paragraph",
+      "shading",
+      "designer"
+     ]
+    },
+    {
+     "name": "Paragraph Formatting Drift Auditor",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "paragraph",
+      "formatting",
+      "drift",
+      "auditor"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "name": "Bullets, Numbering, and Multilevel Lists",
+   "purpose": "create stable list systems that survive editing.",
+   "surfaces": [
+    "symbol",
+    "picture bullets",
+    "numbering formats",
+    "restart",
+    "continue rules",
+    "nine-level multilevel lists",
+    "heading links",
+    "alignment",
+    "indents",
+    "follow-number characters"
+   ],
+   "skills": [
+    {
+     "name": "Custom Bullet Designer",
+     "op": "list",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "custom",
+      "bullet",
+      "designer"
+     ]
+    },
+    {
+     "name": "Picture Bullet Manager",
+     "op": "list",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "picture",
+      "bullet",
+      "manager"
+     ]
+    },
+    {
+     "name": "Numbering Format Builder",
+     "op": "list",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "numbering",
+      "format",
+      "builder"
+     ]
+    },
+    {
+     "name": "Restart and Continue Numbering Resolver",
+     "op": "list",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "restart",
+      "and",
+      "continue",
+      "numbering",
+      "resolver"
+     ]
+    },
+    {
+     "name": "Legal Numbering Formatter",
+     "op": "list",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "legal",
+      "numbering",
+      "formatter"
+     ]
+    },
+    {
+     "name": "Leading-Zero Numbering Formatter",
+     "op": "list",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "leading",
+      "zero",
+      "numbering",
+      "formatter"
+     ]
+    },
+    {
+     "name": "Multilevel List Architect",
+     "op": "list",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "multilevel",
+      "list",
+      "architect"
+     ]
+    },
+    {
+     "name": "Heading-Linked Numbering Builder",
+     "op": "list",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "heading",
+      "linked",
+      "numbering",
+      "builder"
+     ]
+    },
+    {
+     "name": "List Indent Calibrator",
+     "op": "list",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "list",
+      "indent",
+      "calibrator"
+     ]
+    },
+    {
+     "name": "List Style Creator",
+     "op": "list",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "list",
+      "style",
+      "creator"
+     ]
+    },
+    {
+     "name": "Broken Numbering Repair",
+     "op": "list",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "broken",
+      "numbering",
+      "repair"
+     ]
+    },
+    {
+     "name": "List Conversion and Cleanup",
+     "op": "list",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "list",
+      "conversion",
+      "and",
+      "cleanup"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Styles and Document Formatting Systems",
+   "purpose": "replace uncontrolled direct formatting with maintainable styles.",
+   "surfaces": [
+    "character",
+    "paragraph",
+    "linked",
+    "table",
+    "list styles; Style Sets; themes; colors; fonts; effects; paragraph spacing; inheritance;",
+    "automatic update"
+   ],
+   "skills": [
+    {
+     "name": "Style Inventory Auditor",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "style",
+      "inventory",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Normal Style Governance",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "normal",
+      "style",
+      "governance"
+     ]
+    },
+    {
+     "name": "Heading Style Architect",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "heading",
+      "style",
+      "architect"
+     ]
+    },
+    {
+     "name": "Custom Paragraph Style Builder",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "custom",
+      "paragraph",
+      "style",
+      "builder"
+     ]
+    },
+    {
+     "name": "Character Style Builder",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "character",
+      "style",
+      "builder"
+     ]
+    },
+    {
+     "name": "Linked Style Planner",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "linked",
+      "style",
+      "planner"
+     ]
+    },
+    {
+     "name": "Style Inheritance Resolver",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "style",
+      "inheritance",
+      "resolver"
+     ]
+    },
+    {
+     "name": "Automatically-Update Risk Auditor",
+     "op": "styles",
+     "params": {
+      "normalize": true
+     },
+     "engine": "native",
+     "triggers": [
+      "automatically",
+      "update",
+      "risk",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Style Set Designer",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "style",
+      "set",
+      "designer"
+     ]
+    },
+    {
+     "name": "Theme and Style Harmonizer",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "theme",
+      "and",
+      "style",
+      "harmonizer"
+     ]
+    },
+    {
+     "name": "Direct Formatting Reducer",
+     "op": "styles",
+     "params": {
+      "normalize": true
+     },
+     "engine": "native",
+     "triggers": [
+      "direct",
+      "formatting",
+      "reducer"
+     ]
+    },
+    {
+     "name": "Style Consistency Linter",
+     "op": "styles",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "style",
+      "consistency",
+      "linter"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "name": "Find, Replace, Navigation, and Selection",
+   "purpose": "locate and operate on content with accuracy.",
+   "surfaces": [
+    "Find",
+    "Advanced Find",
+    "Replace",
+    "Go To",
+    "Navigation Pane",
+    "Select All",
+    "Select Objects",
+    "similarly formatted text",
+    "headings",
+    "pages",
+    "tables",
+    "graphics",
+    "equations",
+    "footnotes",
+    "comments"
+   ],
+   "skills": [
+    {
+     "name": "Advanced Find Query Builder",
+     "op": "replace",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "advanced",
+      "find",
+      "query",
+      "builder"
+     ]
+    },
+    {
+     "name": "Wildcard Find Specialist",
+     "op": "replace",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "wildcard",
+      "find",
+      "specialist"
+     ]
+    },
+    {
+     "name": "Controlled Replace Operator",
+     "op": "replace",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "controlled",
+      "replace",
+      "operator"
+     ]
+    },
+    {
+     "name": "Formatting-Aware Replace",
+     "op": "replace",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "formatting",
+      "aware",
+      "replace"
+     ]
+    },
+    {
+     "name": "Go-To Navigator",
+     "op": "replace",
+     "params": {
+      "regex": true
+     },
+     "engine": "native",
+     "triggers": [
+      "navigator"
+     ]
+    },
+    {
+     "name": "Heading Navigation Manager",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "heading",
+      "navigation",
+      "manager"
+     ]
+    },
+    {
+     "name": "Page Thumbnail Navigator",
+     "op": "replace",
+     "params": {
+      "regex": true
+     },
+     "engine": "native",
+     "triggers": [
+      "page",
+      "thumbnail",
+      "navigator"
+     ]
+    },
+    {
+     "name": "Search Result Triage",
+     "op": "replace",
+     "params": {
+      "regex": true
+     },
+     "engine": "native",
+     "triggers": [
+      "search",
+      "result",
+      "triage"
+     ]
+    },
+    {
+     "name": "Select Similar Formatting Operator",
+     "op": "replace",
+     "params": {
+      "regex": true
+     },
+     "engine": "native",
+     "triggers": [
+      "select",
+      "similar",
+      "formatting",
+      "operator"
+     ]
+    },
+    {
+     "name": "Select Objects Manager",
+     "op": "replace",
+     "params": {
+      "regex": true
+     },
+     "engine": "native",
+     "triggers": [
+      "select",
+      "objects",
+      "manager"
+     ]
+    },
+    {
+     "name": "Navigation Pane Outline Reorganizer",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "navigation",
+      "pane",
+      "outline",
+      "reorganizer"
+     ]
+    },
+    {
+     "name": "Find-and-Replace Regression Checker",
+     "op": "replace",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "find",
+      "and",
+      "replace",
+      "regression",
+      "checker"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Editor, Proofing, Thesaurus, and Word Count",
+   "purpose": "improve language quality with controlled proofing.",
+   "surfaces": [
+    "Editor",
+    "spelling",
+    "grammar",
+    "clarity",
+    "conciseness",
+    "formality",
+    "vocabulary",
+    "inclusiveness",
+    "punctuation",
+    "similarity",
+    "thesaurus",
+    "word count",
+    "exceptions",
+    "dictionaries"
+   ],
+   "skills": [
+    {
+     "name": "Spelling Review Operator",
+     "op": "proof",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "spelling",
+      "review",
+      "operator"
+     ]
+    },
+    {
+     "name": "Grammar Review Operator",
+     "op": "proof",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "grammar",
+      "review",
+      "operator"
+     ]
+    },
+    {
+     "name": "Clarity Refinement Editor",
+     "op": "proof",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "clarity",
+      "refinement",
+      "editor"
+     ]
+    },
+    {
+     "name": "Conciseness Editor",
+     "op": "proof",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "conciseness",
+      "editor"
+     ]
+    },
+    {
+     "name": "Formality Adapter",
+     "op": "proof",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "formality",
+      "adapter"
+     ]
+    },
+    {
+     "name": "Vocabulary Improvement Reviewer",
+     "op": "proof",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "vocabulary",
+      "improvement",
+      "reviewer"
+     ]
+    },
+    {
+     "name": "Inclusiveness Language Reviewer",
+     "op": "proof",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "inclusiveness",
+      "language",
+      "reviewer"
+     ]
+    },
+    {
+     "name": "Punctuation Auditor",
+     "op": "proof",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "punctuation",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Similarity and Reuse Reviewer",
+     "op": "proof",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "similarity",
+      "and",
+      "reuse",
+      "reviewer"
+     ]
+    },
+    {
+     "name": "Thesaurus-Assisted Rewriter",
+     "op": "proof",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "thesaurus",
+      "assisted",
+      "rewriter"
+     ]
+    },
+    {
+     "name": "Word Count and Scope Reporter",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "word",
+      "count",
+      "and",
+      "scope",
+      "reporter"
+     ]
+    },
+    {
+     "name": "Custom Dictionary Manager",
+     "op": "proof",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "custom",
+      "dictionary",
+      "manager"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "name": "Dictation, Transcription, Voice, and Copilot Workflows",
+   "purpose": "use assisted authoring while retaining human-verifiable output.",
+   "surfaces": [
+    "Dictate",
+    "voice commands",
+    "Transcribe",
+    "Editor",
+    "Copilot drafting",
+    "rewriting",
+    "summarizing",
+    "document Q&A",
+    "tenant policy",
+    "language",
+    "license availability"
+   ],
+   "skills": [
+    {
+     "name": "Dictation Session Configurator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "dictation",
+      "session",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Voice Command Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "voice",
+      "command",
+      "operator"
+     ]
+    },
+    {
+     "name": "Dictation Cleanup Editor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "dictation",
+      "cleanup",
+      "editor"
+     ]
+    },
+    {
+     "name": "Transcription Intake Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "transcription",
+      "intake",
+      "manager"
+     ]
+    },
+    {
+     "name": "Transcript Speaker Cleanup",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "transcript",
+      "speaker",
+      "cleanup"
+     ]
+    },
+    {
+     "name": "Transcript-to-Document Converter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "transcript",
+      "document",
+      "converter"
+     ]
+    },
+    {
+     "name": "Copilot Draft Request Builder",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "copilot",
+      "draft",
+      "request",
+      "builder"
+     ]
+    },
+    {
+     "name": "Copilot Rewrite Reviewer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "copilot",
+      "rewrite",
+      "reviewer"
+     ]
+    },
+    {
+     "name": "Copilot Summary Verifier",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "copilot",
+      "summary",
+      "verifier"
+     ]
+    },
+    {
+     "name": "Document Question Answering Auditor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "document",
+      "question",
+      "answering",
+      "auditor"
+     ]
+    },
+    {
+     "name": "AI Availability and Policy Checker",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "availability",
+      "and",
+      "policy",
+      "checker"
+     ]
+    },
+    {
+     "name": "AI Output Attribution and Privacy Guard",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "output",
+      "attribution",
+      "and",
+      "privacy",
+      "guard"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "name": "Pages, Breaks, and Section Architecture",
+   "purpose": "control document structure across pages and sections.",
+   "surfaces": [
+    "cover pages",
+    "blank pages",
+    "page breaks",
+    "column breaks",
+    "text-wrapping breaks",
+    "next-page",
+    "continuous",
+    "even-page",
+    "odd-page section breaks"
+   ],
+   "skills": [
+    {
+     "name": "Cover Page Inserter",
+     "op": "insert",
+     "params": {
+      "type": "cover"
+     },
+     "engine": "native",
+     "triggers": [
+      "cover",
+      "page",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Blank Page Inserter",
+     "op": "insert",
+     "params": {
+      "type": "pagebreak"
+     },
+     "engine": "native",
+     "triggers": [
+      "blank",
+      "page",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Manual Page Break Manager",
+     "op": "insert",
+     "params": {
+      "type": "pagebreak"
+     },
+     "engine": "native",
+     "triggers": [
+      "manual",
+      "page",
+      "break",
+      "manager"
+     ]
+    },
+    {
+     "name": "Column Break Manager",
+     "op": "insert",
+     "params": {
+      "type": "pagebreak"
+     },
+     "engine": "native",
+     "triggers": [
+      "column",
+      "break",
+      "manager"
+     ]
+    },
+    {
+     "name": "Text-Wrapping Break Manager",
+     "op": "insert",
+     "params": {
+      "type": "pagebreak"
+     },
+     "engine": "native",
+     "triggers": [
+      "text",
+      "wrapping",
+      "break",
+      "manager"
+     ]
+    },
+    {
+     "name": "Next-Page Section Builder",
+     "op": "format",
+     "params": {
+      "scope": "section"
+     },
+     "engine": "native",
+     "triggers": [
+      "next",
+      "page",
+      "section",
+      "builder"
+     ]
+    },
+    {
+     "name": "Continuous Section Builder",
+     "op": "format",
+     "params": {
+      "scope": "section"
+     },
+     "engine": "native",
+     "triggers": [
+      "continuous",
+      "section",
+      "builder"
+     ]
+    },
+    {
+     "name": "Even-Page Section Builder",
+     "op": "format",
+     "params": {
+      "scope": "section"
+     },
+     "engine": "native",
+     "triggers": [
+      "even",
+      "page",
+      "section",
+      "builder"
+     ]
+    },
+    {
+     "name": "Odd-Page Section Builder",
+     "op": "format",
+     "params": {
+      "scope": "section"
+     },
+     "engine": "native",
+     "triggers": [
+      "odd",
+      "page",
+      "section",
+      "builder"
+     ]
+    },
+    {
+     "name": "Break Inventory Auditor",
+     "op": "insert",
+     "params": {
+      "type": "pagebreak"
+     },
+     "engine": "native",
+     "triggers": [
+      "break",
+      "inventory",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Accidental Blank Page Repair",
+     "op": "insert",
+     "params": {
+      "type": "pagebreak"
+     },
+     "engine": "native",
+     "triggers": [
+      "accidental",
+      "blank",
+      "page",
+      "repair"
+     ]
+    },
+    {
+     "name": "Section Architecture Planner",
+     "op": "format",
+     "params": {
+      "scope": "section"
+     },
+     "engine": "native",
+     "triggers": [
+      "section",
+      "architecture",
+      "planner"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Margins, Orientation, Paper, and Book Layout",
+   "purpose": "set production geometry for screen and print.",
+   "surfaces": [
+    "custom margins",
+    "gutter",
+    "mirror margins",
+    "portrait",
+    "landscape",
+    "Letter",
+    "Legal",
+    "A4",
+    "A3",
+    "envelopes",
+    "custom size",
+    "book fold",
+    "sheets per book",
+    "vertical alignment"
+   ],
+   "skills": [
+    {
+     "name": "Margin Preset Selector",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "margin",
+      "preset",
+      "selector"
+     ]
+    },
+    {
+     "name": "Custom Margin Designer",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "custom",
+      "margin",
+      "designer"
+     ]
+    },
+    {
+     "name": "Gutter and Binding Planner",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "gutter",
+      "and",
+      "binding",
+      "planner"
+     ]
+    },
+    {
+     "name": "Mirror Margin Configurator",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "mirror",
+      "margin",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Mixed Orientation Section Builder",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "mixed",
+      "orientation",
+      "section",
+      "builder"
+     ]
+    },
+    {
+     "name": "Paper Size Selector",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "paper",
+      "size",
+      "selector"
+     ]
+    },
+    {
+     "name": "Custom Paper Size Builder",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "custom",
+      "paper",
+      "size",
+      "builder"
+     ]
+    },
+    {
+     "name": "Book Fold Layout Designer",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "book",
+      "fold",
+      "layout",
+      "designer"
+     ]
+    },
+    {
+     "name": "Two-Pages-per-Sheet Configurator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "two",
+      "pages",
+      "per",
+      "sheet",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Vertical Page Alignment Controller",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "vertical",
+      "page",
+      "alignment",
+      "controller"
+     ]
+    },
+    {
+     "name": "Printer Capability Constraint Checker",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "printer",
+      "capability",
+      "constraint",
+      "checker"
+     ]
+    },
+    {
+     "name": "Page Geometry Consistency Auditor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "page",
+      "geometry",
+      "consistency",
+      "auditor"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "name": "Columns, Hyphenation, Line Numbers, and Text Flow",
+   "purpose": "format long-form multi-column and numbered documents.",
+   "surfaces": [
+    "one to custom columns",
+    "unequal widths",
+    "spacing",
+    "line between",
+    "column starts",
+    "automatic",
+    "manual hyphenation",
+    "zones",
+    "limits",
+    "line numbering modes"
+   ],
+   "skills": [
+    {
+     "name": "Column Layout Designer",
+     "op": "format",
+     "params": {
+      "scope": "columns"
+     },
+     "engine": "native",
+     "triggers": [
+      "column",
+      "layout",
+      "designer"
+     ]
+    },
+    {
+     "name": "Unequal Column Width Builder",
+     "op": "format",
+     "params": {
+      "scope": "columns"
+     },
+     "engine": "native",
+     "triggers": [
+      "unequal",
+      "column",
+      "width",
+      "builder"
+     ]
+    },
+    {
+     "name": "Column Spacing Calibrator",
+     "op": "format",
+     "params": {
+      "scope": "columns"
+     },
+     "engine": "native",
+     "triggers": [
+      "column",
+      "spacing",
+      "calibrator"
+     ]
+    },
+    {
+     "name": "Line-Between-Columns Manager",
+     "op": "format",
+     "params": {
+      "scope": "columns"
+     },
+     "engine": "native",
+     "triggers": [
+      "line",
+      "between",
+      "columns",
+      "manager"
+     ]
+    },
+    {
+     "name": "Start-New-Column Controller",
+     "op": "format",
+     "params": {
+      "scope": "columns"
+     },
+     "engine": "native",
+     "triggers": [
+      "start",
+      "new",
+      "column",
+      "controller"
+     ]
+    },
+    {
+     "name": "Automatic Hyphenation Configurator",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "automatic",
+      "hyphenation",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Manual Hyphenation Reviewer",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "manual",
+      "hyphenation",
+      "reviewer"
+     ]
+    },
+    {
+     "name": "Hyphenation Zone Tuner",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "hyphenation",
+      "zone",
+      "tuner"
+     ]
+    },
+    {
+     "name": "Consecutive Hyphen Limit Manager",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "consecutive",
+      "hyphen",
+      "limit",
+      "manager"
+     ]
+    },
+    {
+     "name": "Continuous Line Numbering Builder",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "continuous",
+      "line",
+      "numbering",
+      "builder"
+     ]
+    },
+    {
+     "name": "Restarting Line Numbering Manager",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "restarting",
+      "line",
+      "numbering",
+      "manager"
+     ]
+    },
+    {
+     "name": "Paragraph Line-Number Suppression",
+     "op": "format",
+     "params": {
+      "scope": "paragraph"
+     },
+     "engine": "native",
+     "triggers": [
+      "paragraph",
+      "line",
+      "number",
+      "suppression"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "name": "Headers, Footers, and Page Numbers",
+   "purpose": "create section-aware recurring content.",
+   "surfaces": [
+    "header",
+    "footer galleries",
+    "distance from edge",
+    "different first page",
+    "odd/even pages",
+    "Link to Previous",
+    "page numbers",
+    "chapter numbers",
+    "fields",
+    "images",
+    "tables",
+    "section navigation"
+   ],
+   "skills": [
+    {
+     "name": "Header Builder",
+     "op": "headerfooter",
+     "params": {
+      "target": "header"
+     },
+     "engine": "native",
+     "triggers": [
+      "header",
+      "builder"
+     ]
+    },
+    {
+     "name": "Footer Builder",
+     "op": "headerfooter",
+     "params": {
+      "target": "header"
+     },
+     "engine": "native",
+     "triggers": [
+      "footer",
+      "builder"
+     ]
+    },
+    {
+     "name": "Different First Page Configurator",
+     "op": "headerfooter",
+     "params": {
+      "target": "header"
+     },
+     "engine": "native",
+     "triggers": [
+      "different",
+      "first",
+      "page",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Different Odd-Even Header Builder",
+     "op": "headerfooter",
+     "params": {
+      "target": "header"
+     },
+     "engine": "native",
+     "triggers": [
+      "different",
+      "odd",
+      "even",
+      "header",
+      "builder"
+     ]
+    },
+    {
+     "name": "Link-to-Previous Controller",
+     "op": "headerfooter",
+     "params": {
+      "target": "header"
+     },
+     "engine": "native",
+     "triggers": [
+      "link",
+      "previous",
+      "controller"
+     ]
+    },
+    {
+     "name": "Header Footer Section Decoupler",
+     "op": "headerfooter",
+     "params": {
+      "target": "header"
+     },
+     "engine": "native",
+     "triggers": [
+      "header",
+      "footer",
+      "section",
+      "decoupler"
+     ]
+    },
+    {
+     "name": "Page Number Gallery Inserter",
+     "op": "headerfooter",
+     "params": {
+      "target": "footer",
+      "page_numbers": true
+     },
+     "engine": "native",
+     "triggers": [
+      "page",
+      "number",
+      "gallery",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Page Number Format Manager",
+     "op": "headerfooter",
+     "params": {
+      "target": "footer",
+      "page_numbers": true
+     },
+     "engine": "native",
+     "triggers": [
+      "page",
+      "number",
+      "format",
+      "manager"
+     ]
+    },
+    {
+     "name": "Page Number Restart Controller",
+     "op": "headerfooter",
+     "params": {
+      "target": "footer",
+      "page_numbers": true
+     },
+     "engine": "native",
+     "triggers": [
+      "page",
+      "number",
+      "restart",
+      "controller"
+     ]
+    },
+    {
+     "name": "Chapter Page Number Builder",
+     "op": "headerfooter",
+     "params": {
+      "target": "footer",
+      "page_numbers": true
+     },
+     "engine": "native",
+     "triggers": [
+      "chapter",
+      "page",
+      "number",
+      "builder"
+     ]
+    },
+    {
+     "name": "Header Footer Field Inserter",
+     "op": "headerfooter",
+     "params": {
+      "target": "header"
+     },
+     "engine": "native",
+     "triggers": [
+      "header",
+      "footer",
+      "field",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Header Footer Consistency Auditor",
+     "op": "headerfooter",
+     "params": {
+      "target": "header"
+     },
+     "engine": "native",
+     "triggers": [
+      "header",
+      "footer",
+      "consistency",
+      "auditor"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "name": "Tables: Creation and Conversion",
+   "purpose": "create tables from manual, textual, Excel, and reusable sources.",
+   "surfaces": [
+    "grid insertion",
+    "Insert Table",
+    "Draw Table",
+    "Convert Text to Table",
+    "Excel Spreadsheet",
+    "Quick Tables",
+    "nested tables",
+    "Convert to Text"
+   ],
+   "skills": [
+    {
+     "name": "Grid Table Creator",
+     "op": "table",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "grid",
+      "table",
+      "creator"
+     ]
+    },
+    {
+     "name": "Insert Table Dialog Operator",
+     "op": "table",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "insert",
+      "table",
+      "dialog",
+      "operator"
+     ]
+    },
+    {
+     "name": "Draw Table Builder",
+     "op": "table",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "draw",
+      "table",
+      "builder"
+     ]
+    },
+    {
+     "name": "Text-to-Table Converter",
+     "op": "table",
+     "params": {
+      "source": "data"
+     },
+     "engine": "native",
+     "triggers": [
+      "text",
+      "table",
+      "converter"
+     ]
+    },
+    {
+     "name": "Embedded Excel Table Inserter",
+     "op": "table",
+     "params": {
+      "source": "data"
+     },
+     "engine": "native",
+     "triggers": [
+      "embedded",
+      "excel",
+      "table",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Quick Table Template User",
+     "op": "table",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "quick",
+      "table",
+      "template",
+      "user"
+     ]
+    },
+    {
+     "name": "Nested Table Risk Planner",
+     "op": "table",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "nested",
+      "table",
+      "risk",
+      "planner"
+     ]
+    },
+    {
+     "name": "Table-to-Text Converter",
+     "op": "table",
+     "params": {
+      "source": "data"
+     },
+     "engine": "native",
+     "triggers": [
+      "table",
+      "text",
+      "converter"
+     ]
+    },
+    {
+     "name": "Table Structure Intake Auditor",
+     "op": "table",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "table",
+      "structure",
+      "intake",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Table Split Planner",
+     "op": "table",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "table",
+      "split",
+      "planner"
+     ]
+    },
+    {
+     "name": "Table Merge Planner",
+     "op": "table",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "table",
+      "merge",
+      "planner"
+     ]
+    },
+    {
+     "name": "Table Creation Method Router",
+     "op": "table",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "table",
+      "creation",
+      "method",
+      "router"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "name": "Tables: Structure, Size, and Flow",
+   "purpose": "manage rows, columns, cells, widths, heights, pagination, and fit behavior.",
+   "surfaces": [
+    "insert/delete rows",
+    "columns",
+    "merge/split cells",
+    "split table",
+    "AutoFit",
+    "fixed widths",
+    "preferred dimensions",
+    "row breaks",
+    "repeating headers",
+    "cell margins",
+    "spacing"
+   ],
+   "skills": [
+    {
+     "name": "Row and Column Inserter",
+     "op": "table",
+     "params": {
+      "mode": "structure"
+     },
+     "engine": "native",
+     "triggers": [
+      "row",
+      "and",
+      "column",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Safe Row and Column Deleter",
+     "op": "table",
+     "params": {
+      "mode": "structure"
+     },
+     "engine": "native",
+     "triggers": [
+      "safe",
+      "row",
+      "and",
+      "column",
+      "deleter"
+     ]
+    },
+    {
+     "name": "Merge Cells Manager",
+     "op": "table",
+     "params": {
+      "mode": "structure"
+     },
+     "engine": "native",
+     "triggers": [
+      "merge",
+      "cells",
+      "manager"
+     ]
+    },
+    {
+     "name": "Split Cells Manager",
+     "op": "table",
+     "params": {
+      "mode": "structure"
+     },
+     "engine": "native",
+     "triggers": [
+      "split",
+      "cells",
+      "manager"
+     ]
+    },
+    {
+     "name": "Split Table Operator",
+     "op": "table",
+     "params": {
+      "mode": "structure"
+     },
+     "engine": "native",
+     "triggers": [
+      "split",
+      "table",
+      "operator"
+     ]
+    },
+    {
+     "name": "AutoFit Contents Controller",
+     "op": "table",
+     "params": {
+      "mode": "structure"
+     },
+     "engine": "native",
+     "triggers": [
+      "autofit",
+      "contents",
+      "controller"
+     ]
+    },
+    {
+     "name": "AutoFit Window Controller",
+     "op": "table",
+     "params": {
+      "mode": "structure"
+     },
+     "engine": "native",
+     "triggers": [
+      "autofit",
+      "window",
+      "controller"
+     ]
+    },
+    {
+     "name": "Fixed Column Width Manager",
+     "op": "table",
+     "params": {
+      "mode": "structure"
+     },
+     "engine": "native",
+     "triggers": [
+      "fixed",
+      "column",
+      "width",
+      "manager"
+     ]
+    },
+    {
+     "name": "Exact Row Height Risk Checker",
+     "op": "table",
+     "params": {
+      "mode": "structure"
+     },
+     "engine": "native",
+     "triggers": [
+      "exact",
+      "row",
+      "height",
+      "risk",
+      "checker"
+     ]
+    },
+    {
+     "name": "Allow-Row-Break Manager",
+     "op": "table",
+     "params": {
+      "mode": "structure"
+     },
+     "engine": "native",
+     "triggers": [
+      "allow",
+      "row",
+      "break",
+      "manager"
+     ]
+    },
+    {
+     "name": "Repeat Header Rows Configurator",
+     "op": "table",
+     "params": {
+      "mode": "structure"
+     },
+     "engine": "native",
+     "triggers": [
+      "repeat",
+      "header",
+      "rows",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Cell Margin and Spacing Designer",
+     "op": "table",
+     "params": {
+      "mode": "structure"
+     },
+     "engine": "native",
+     "triggers": [
+      "cell",
+      "margin",
+      "and",
+      "spacing",
+      "designer"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Tables: Design, Sorting, Formulas, and Accessibility",
+   "purpose": "format, calculate, and make tables understandable.",
+   "surfaces": [
+    "Table Styles",
+    "conditional regions",
+    "borders",
+    "shading",
+    "border painter",
+    "alignment",
+    "text direction",
+    "sorting",
+    "formulas",
+    "captions",
+    "alt text",
+    "simple header structures"
+   ],
+   "skills": [
+    {
+     "name": "Table Style Designer",
+     "op": "table",
+     "params": {
+      "mode": "design"
+     },
+     "engine": "native",
+     "triggers": [
+      "table",
+      "style",
+      "designer"
+     ]
+    },
+    {
+     "name": "Header and Total Row Styler",
+     "op": "table",
+     "params": {
+      "mode": "design"
+     },
+     "engine": "native",
+     "triggers": [
+      "header",
+      "and",
+      "total",
+      "row",
+      "styler"
+     ]
+    },
+    {
+     "name": "Banded Row and Column Controller",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "banded",
+      "row",
+      "and",
+      "column",
+      "controller"
+     ]
+    },
+    {
+     "name": "Table Border Painter",
+     "op": "table",
+     "params": {
+      "mode": "design"
+     },
+     "engine": "native",
+     "triggers": [
+      "table",
+      "border",
+      "painter"
+     ]
+    },
+    {
+     "name": "Table Shading Designer",
+     "op": "table",
+     "params": {
+      "mode": "design"
+     },
+     "engine": "native",
+     "triggers": [
+      "table",
+      "shading",
+      "designer"
+     ]
+    },
+    {
+     "name": "Nine-Position Cell Alignment Manager",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "nine",
+      "position",
+      "cell",
+      "alignment",
+      "manager"
+     ]
+    },
+    {
+     "name": "Cell Text Direction Controller",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "cell",
+      "text",
+      "direction",
+      "controller"
+     ]
+    },
+    {
+     "name": "Three-Key Table Sorter",
+     "op": "table",
+     "params": {
+      "mode": "sort"
+     },
+     "engine": "native",
+     "triggers": [
+      "three",
+      "key",
+      "table",
+      "sorter"
+     ]
+    },
+    {
+     "name": "Word Table Formula Builder",
+     "op": "table",
+     "params": {
+      "mode": "formula"
+     },
+     "engine": "native",
+     "triggers": [
+      "word",
+      "table",
+      "formula",
+      "builder"
+     ]
+    },
+    {
+     "name": "Formula Refresh and Limitation Reporter",
+     "op": "table",
+     "params": {
+      "mode": "formula"
+     },
+     "engine": "native",
+     "triggers": [
+      "formula",
+      "refresh",
+      "and",
+      "limitation",
+      "reporter"
+     ]
+    },
+    {
+     "name": "Accessible Table Header Designer",
+     "op": "table",
+     "params": {
+      "mode": "design"
+     },
+     "engine": "native",
+     "triggers": [
+      "accessible",
+      "table",
+      "header",
+      "designer"
+     ]
+    },
+    {
+     "name": "Table Caption and Alt Text Builder",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "table",
+      "caption",
+      "and",
+      "alt",
+      "text",
+      "builder"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Pictures and Image Processing",
+   "purpose": "insert, edit, compress, position, and describe images.",
+   "surfaces": [
+    "device",
+    "clipboard",
+    "stock",
+    "online images; background removal; corrections; color; artistic effects; transparency; compression; crop; change/reset picture; alt text;",
+    "linked versus embedded behavior"
+   ],
+   "skills": [
+    {
+     "name": "Multi-Source Picture Inserter",
+     "op": "image",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "multi",
+      "source",
+      "picture",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Background Removal Specialist",
+     "op": "image",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "background",
+      "removal",
+      "specialist"
+     ]
+    },
+    {
+     "name": "Sharpness Brightness Contrast Tuner",
+     "op": "image",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "sharpness",
+      "brightness",
+      "contrast",
+      "tuner"
+     ]
+    },
+    {
+     "name": "Picture Color and Tone Adjuster",
+     "op": "image",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "picture",
+      "color",
+      "and",
+      "tone",
+      "adjuster"
+     ]
+    },
+    {
+     "name": "Artistic Effect Auditor",
+     "op": "image",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "artistic",
+      "effect",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Picture Transparency Controller",
+     "op": "image",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "picture",
+      "transparency",
+      "controller"
+     ]
+    },
+    {
+     "name": "Picture Compression Planner",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "picture",
+      "compression",
+      "planner"
+     ]
+    },
+    {
+     "name": "Delete-Cropped-Areas Risk Guard",
+     "op": "image",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "delete",
+      "cropped",
+      "areas",
+      "risk",
+      "guard"
+     ]
+    },
+    {
+     "name": "Change Picture Preserver",
+     "op": "image",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "change",
+      "picture",
+      "preserver"
+     ]
+    },
+    {
+     "name": "Crop and Aspect Ratio Specialist",
+     "op": "image",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "crop",
+      "and",
+      "aspect",
+      "ratio",
+      "specialist"
+     ]
+    },
+    {
+     "name": "Linked Picture Dependency Auditor",
+     "op": "image",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "linked",
+      "picture",
+      "dependency",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Picture Alt Text Author",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "picture",
+      "alt",
+      "text",
+      "author"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "name": "Shapes, Text Boxes, Fills, and Lines",
+   "purpose": "build editable visual components with full property control.",
+   "surfaces": [
+    "shape gallery",
+    "edit shape",
+    "edit points",
+    "solid",
+    "gradient",
+    "picture",
+    "texture",
+    "pattern",
+    "no fill",
+    "line properties",
+    "text margins",
+    "alignment",
+    "direction",
+    "autofit",
+    "columns",
+    "naming"
+   ],
+   "skills": [
+    {
+     "name": "Shape Gallery Selector",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "shape",
+      "gallery",
+      "selector"
+     ]
+    },
+    {
+     "name": "Edit Shape Converter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "edit",
+      "shape",
+      "converter"
+     ]
+    },
+    {
+     "name": "Edit Points Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "edit",
+      "points",
+      "operator"
+     ]
+    },
+    {
+     "name": "Solid Fill Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "solid",
+      "fill",
+      "designer"
+     ]
+    },
+    {
+     "name": "Gradient Stop Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "gradient",
+      "stop",
+      "designer"
+     ]
+    },
+    {
+     "name": "Picture and Texture Fill Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "picture",
+      "and",
+      "texture",
+      "fill",
+      "designer"
+     ]
+    },
+    {
+     "name": "Pattern Fill Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "pattern",
+      "fill",
+      "designer"
+     ]
+    },
+    {
+     "name": "Shape Line Engineering",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "shape",
+      "line",
+      "engineering"
+     ]
+    },
+    {
+     "name": "Text Box Internal Margin Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "text",
+      "box",
+      "internal",
+      "margin",
+      "designer"
+     ]
+    },
+    {
+     "name": "Text Direction Controller",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "text",
+      "direction",
+      "controller"
+     ]
+    },
+    {
+     "name": "Text Box Autofit Router",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "text",
+      "box",
+      "autofit",
+      "router"
+     ]
+    },
+    {
+     "name": "Selection Pane Shape Naming Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "selection",
+      "pane",
+      "shape",
+      "naming",
+      "manager"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "name": "Shape Effects and 3-D Formatting",
+   "purpose": "apply and govern visual effects without harming clarity.",
+   "surfaces": [
+    "outer",
+    "inner",
+    "perspective shadows; reflection; glow; soft edges; bevels; depth; contour; material; lighting; X/Y/Z rotation; perspective;",
+    "keep-text-flat"
+   ],
+   "skills": [
+    {
+     "name": "Shadow Preset and Detail Controller",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "shadow",
+      "preset",
+      "and",
+      "detail",
+      "controller"
+     ]
+    },
+    {
+     "name": "Reflection Detail Controller",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "reflection",
+      "detail",
+      "controller"
+     ]
+    },
+    {
+     "name": "Glow Effect Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "glow",
+      "effect",
+      "designer"
+     ]
+    },
+    {
+     "name": "Soft Edge Radius Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "soft",
+      "edge",
+      "radius",
+      "manager"
+     ]
+    },
+    {
+     "name": "Top and Bottom Bevel Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "top",
+      "and",
+      "bottom",
+      "bevel",
+      "designer"
+     ]
+    },
+    {
+     "name": "Shape Depth Controller",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "shape",
+      "depth",
+      "controller"
+     ]
+    },
+    {
+     "name": "Contour Color and Size Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "contour",
+      "color",
+      "and",
+      "size",
+      "manager"
+     ]
+    },
+    {
+     "name": "Material and Lighting Selector",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "material",
+      "and",
+      "lighting",
+      "selector"
+     ]
+    },
+    {
+     "name": "3-D Rotation Configurator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "rotation",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Perspective and Camera Controller",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "perspective",
+      "and",
+      "camera",
+      "controller"
+     ]
+    },
+    {
+     "name": "Keep-Text-Flat Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "keep",
+      "text",
+      "flat",
+      "manager"
+     ]
+    },
+    {
+     "name": "Effect Compatibility and Restraint Auditor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "effect",
+      "compatibility",
+      "and",
+      "restraint",
+      "auditor"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "name": "Object Positioning, Wrapping, Anchors, and Layers",
+   "purpose": "place floating and inline objects predictably.",
+   "surfaces": [
+    "inline",
+    "square",
+    "tight",
+    "through",
+    "top",
+    "bottom",
+    "behind",
+    "in front of text; wrap points; distances; page",
+    "margin",
+    "column",
+    "character",
+    "paragraph",
+    "line references; anchors; overlap;",
+    "layer order"
+   ],
+   "skills": [
+    {
+     "name": "Inline-versus-Floating Object Router",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "inline",
+      "versus",
+      "floating",
+      "object",
+      "router"
+     ]
+    },
+    {
+     "name": "Wrap Text Mode Selector",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "wrap",
+      "text",
+      "mode",
+      "selector"
+     ]
+    },
+    {
+     "name": "Edit Wrap Points Specialist",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "edit",
+      "wrap",
+      "points",
+      "specialist"
+     ]
+    },
+    {
+     "name": "Distance-from-Text Calibrator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "distance",
+      "from",
+      "text",
+      "calibrator"
+     ]
+    },
+    {
+     "name": "Absolute Position Setter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "absolute",
+      "position",
+      "setter"
+     ]
+    },
+    {
+     "name": "Relative Position Setter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "relative",
+      "position",
+      "setter"
+     ]
+    },
+    {
+     "name": "Move-with-Text Controller",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "move",
+      "with",
+      "text",
+      "controller"
+     ]
+    },
+    {
+     "name": "Lock Anchor Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "lock",
+      "anchor",
+      "manager"
+     ]
+    },
+    {
+     "name": "Allow Overlap Controller",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "allow",
+      "overlap",
+      "controller"
+     ]
+    },
+    {
+     "name": "Table Cell Positioning Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "table",
+      "cell",
+      "positioning",
+      "manager"
+     ]
+    },
+    {
+     "name": "Layer Order Controller",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "layer",
+      "order",
+      "controller"
+     ]
+    },
+    {
+     "name": "Floating Object Drift Repair",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "floating",
+      "object",
+      "drift",
+      "repair"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Arrange, Align, Group, Rotate, and Selection Pane",
+   "purpose": "control object geometry and selection at scale.",
+   "surfaces": [
+    "bring forward/backward",
+    "front/behind text",
+    "align to page/margin/selection",
+    "distribute",
+    "group",
+    "ungroup",
+    "regroup",
+    "rotate",
+    "flip",
+    "rename",
+    "hide",
+    "show"
+   ],
+   "skills": [
+    {
+     "name": "Bring-to-Front Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "bring",
+      "front",
+      "operator"
+     ]
+    },
+    {
+     "name": "Send-to-Back Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "send",
+      "back",
+      "operator"
+     ]
+    },
+    {
+     "name": "Text-Layer Ordering Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "text",
+      "layer",
+      "ordering",
+      "manager"
+     ]
+    },
+    {
+     "name": "Align-to-Page Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "align",
+      "page",
+      "operator"
+     ]
+    },
+    {
+     "name": "Align-to-Margin Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "align",
+      "margin",
+      "operator"
+     ]
+    },
+    {
+     "name": "Align-Selected-Objects Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "align",
+      "selected",
+      "objects",
+      "operator"
+     ]
+    },
+    {
+     "name": "Horizontal Distribution Equalizer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "horizontal",
+      "distribution",
+      "equalizer"
+     ]
+    },
+    {
+     "name": "Vertical Distribution Equalizer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "vertical",
+      "distribution",
+      "equalizer"
+     ]
+    },
+    {
+     "name": "Group and Ungroup Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "group",
+      "and",
+      "ungroup",
+      "manager"
+     ]
+    },
+    {
+     "name": "Regroup Restorer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "regroup",
+      "restorer"
+     ]
+    },
+    {
+     "name": "Rotate and Flip Controller",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "rotate",
+      "and",
+      "flip",
+      "controller"
+     ]
+    },
+    {
+     "name": "Selection Pane Layer Auditor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "selection",
+      "pane",
+      "layer",
+      "auditor"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "name": "SmartArt",
+   "purpose": "create and transform structured diagrams.",
+   "surfaces": [
+    "List",
+    "Process",
+    "Cycle",
+    "Hierarchy",
+    "Relationship",
+    "Matrix",
+    "Pyramid",
+    "Picture layouts; Text Pane; add shape; promote/demote; reorder; colors; styles; reset;",
+    "conversion"
+   ],
+   "skills": [
+    {
+     "name": "SmartArt Layout Selector",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "smartart",
+      "layout",
+      "selector"
+     ]
+    },
+    {
+     "name": "SmartArt Text Pane Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "smartart",
+      "text",
+      "pane",
+      "operator"
+     ]
+    },
+    {
+     "name": "SmartArt Shape Inserter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "smartart",
+      "shape",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Promote and Demote Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "promote",
+      "and",
+      "demote",
+      "manager"
+     ]
+    },
+    {
+     "name": "SmartArt Reorder Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "smartart",
+      "reorder",
+      "operator"
+     ]
+    },
+    {
+     "name": "Right-to-Left SmartArt Converter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "right",
+      "left",
+      "smartart",
+      "converter"
+     ]
+    },
+    {
+     "name": "SmartArt Color Harmonizer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "smartart",
+      "color",
+      "harmonizer"
+     ]
+    },
+    {
+     "name": "SmartArt Style Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "smartart",
+      "style",
+      "designer"
+     ]
+    },
+    {
+     "name": "SmartArt Reset Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "smartart",
+      "reset",
+      "operator"
+     ]
+    },
+    {
+     "name": "SmartArt-to-Text Converter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "smartart",
+      "text",
+      "converter"
+     ]
+    },
+    {
+     "name": "SmartArt-to-Shapes Converter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "smartart",
+      "shapes",
+      "converter"
+     ]
+    },
+    {
+     "name": "SmartArt Accessibility Companion",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "smartart",
+      "accessibility",
+      "companion"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "name": "Charts and Data Visualization",
+   "purpose": "create and format charts with analytical integrity.",
+   "surfaces": [
+    "chart types",
+    "Quick Layout",
+    "colors",
+    "styles",
+    "row/column switching",
+    "Select Data",
+    "embedded data",
+    "chart elements",
+    "axes",
+    "series",
+    "labels",
+    "trendlines",
+    "error bars",
+    "gap width",
+    "overlap",
+    "secondary axes"
+   ],
+   "skills": [
+    {
+     "name": "Chart Type Selector",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "chart",
+      "type",
+      "selector"
+     ]
+    },
+    {
+     "name": "Chart Data Editor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "chart",
+      "data",
+      "editor"
+     ]
+    },
+    {
+     "name": "Switch Row Column Operator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "switch",
+      "row",
+      "column",
+      "operator"
+     ]
+    },
+    {
+     "name": "Chart Element Composer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "chart",
+      "element",
+      "composer"
+     ]
+    },
+    {
+     "name": "Axis Bounds and Units Auditor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "axis",
+      "bounds",
+      "and",
+      "units",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Data Series Format Manager",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "data",
+      "series",
+      "format",
+      "manager"
+     ]
+    },
+    {
+     "name": "Gap Width and Overlap Controller",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "gap",
+      "width",
+      "and",
+      "overlap",
+      "controller"
+     ]
+    },
+    {
+     "name": "Secondary Axis Risk Auditor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "secondary",
+      "axis",
+      "risk",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Data Label and Legend Optimizer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "data",
+      "label",
+      "and",
+      "legend",
+      "optimizer"
+     ]
+    },
+    {
+     "name": "Trendline Builder",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "trendline",
+      "builder"
+     ]
+    },
+    {
+     "name": "Error Bar Configurator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "error",
+      "bar",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Accessible Chart Summary Writer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "accessible",
+      "chart",
+      "summary",
+      "writer"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "name": "Icons, SVG, 3-D Models, Screenshots, and Embedded",
+   "purpose": "use specialized visual and linked content safely.",
+   "surfaces": [
+    "Icons",
+    "SVG graphics",
+    "Graphics Fill",
+    "Outline",
+    "Convert to Shape",
+    "3-D model views",
+    "Screen Clipping",
+    "Object embedding",
+    "display as icon",
+    "links",
+    "source application editing",
+    "alt text"
+   ],
+   "skills": [
+    {
+     "name": "Icon Library Inserter",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "icon",
+      "library",
+      "inserter"
+     ]
+    },
+    {
+     "name": "SVG Graphics Formatter",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "svg",
+      "graphics",
+      "formatter"
+     ]
+    },
+    {
+     "name": "SVG-to-Shape Converter",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "svg",
+      "shape",
+      "converter"
+     ]
+    },
+    {
+     "name": "3-D Model Inserter",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "model",
+      "inserter"
+     ]
+    },
+    {
+     "name": "3-D Model View Controller",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "model",
+      "view",
+      "controller"
+     ]
+    },
+    {
+     "name": "Screenshot Window Capturer",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "screenshot",
+      "window",
+      "capturer"
+     ]
+    },
+    {
+     "name": "Screen Clipping Operator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "screen",
+      "clipping",
+      "operator"
+     ]
+    },
+    {
+     "name": "Embedded Object Creator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "embedded",
+      "object",
+      "creator"
+     ]
+    },
+    {
+     "name": "Display-as-Icon Manager",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "display",
+      "icon",
+      "manager"
+     ]
+    },
+    {
+     "name": "Linked Object Update Manager",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "linked",
+      "object",
+      "update",
+      "manager"
+     ]
+    },
+    {
+     "name": "Source Application Edit Handoff",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "source",
+      "application",
+      "edit",
+      "handoff"
+     ]
+    },
+    {
+     "name": "Special Object Alt Text Author",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "special",
+      "object",
+      "alt",
+      "text",
+      "author"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "name": "Equations, Symbols, and Scientific Notation",
+   "purpose": "author technical notation accurately.",
+   "surfaces": [
+    "professional",
+    "linear equations",
+    "structures",
+    "symbols",
+    "ink equation",
+    "matrices",
+    "integrals",
+    "scripts",
+    "radicals",
+    "limits",
+    "Unicode",
+    "ASCII codes",
+    "shortcut keys",
+    "AutoCorrect mappings"
+   ],
+   "skills": [
+    {
+     "name": "Professional Equation Builder",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "professional",
+      "equation",
+      "builder"
+     ]
+    },
+    {
+     "name": "Linear Equation Author",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "linear",
+      "equation",
+      "author"
+     ]
+    },
+    {
+     "name": "Equation Structure Composer",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "equation",
+      "structure",
+      "composer"
+     ]
+    },
+    {
+     "name": "Matrix Equation Builder",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "matrix",
+      "equation",
+      "builder"
+     ]
+    },
+    {
+     "name": "Ink-to-Math Converter",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "ink",
+      "math",
+      "converter"
+     ]
+    },
+    {
+     "name": "Equation Display Converter",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "equation",
+      "display",
+      "converter"
+     ]
+    },
+    {
+     "name": "Equation Numbering Planner",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "equation",
+      "numbering",
+      "planner"
+     ]
+    },
+    {
+     "name": "Symbol Font and Subset Browser",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "symbol",
+      "font",
+      "and",
+      "subset",
+      "browser"
+     ]
+    },
+    {
+     "name": "Unicode Character Code Inserter",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "unicode",
+      "character",
+      "code",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Symbol Shortcut Key Assigner",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "symbol",
+      "shortcut",
+      "key",
+      "assigner"
+     ]
+    },
+    {
+     "name": "Math AutoCorrect Mapper",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "math",
+      "autocorrect",
+      "mapper"
+     ]
+    },
+    {
+     "name": "Scientific Notation Accessibility Reviewer",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "scientific",
+      "notation",
+      "accessibility",
+      "reviewer"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "name": "Links, Bookmarks, Cross-References, and Fields",
+   "purpose": "build dynamic navigation and references.",
+   "surfaces": [
+    "web",
+    "email",
+    "file",
+    "heading",
+    "bookmark links; bookmarks; cross-references; field codes; switches; update",
+    "lock",
+    "preserve-format behavior"
+   ],
+   "skills": [
+    {
+     "name": "Hyperlink Target Router",
+     "op": "fields",
+     "params": {
+      "mode": "links"
+     },
+     "engine": "native",
+     "triggers": [
+      "hyperlink",
+      "target",
+      "router"
+     ]
+    },
+    {
+     "name": "Accessible Link Text Writer",
+     "op": "fields",
+     "params": {
+      "mode": "links"
+     },
+     "engine": "native",
+     "triggers": [
+      "accessible",
+      "link",
+      "text",
+      "writer"
+     ]
+    },
+    {
+     "name": "Email Link Builder",
+     "op": "fields",
+     "params": {
+      "mode": "links"
+     },
+     "engine": "native",
+     "triggers": [
+      "email",
+      "link",
+      "builder"
+     ]
+    },
+    {
+     "name": "Bookmark Creator",
+     "op": "insert",
+     "params": {
+      "type": "bookmark"
+     },
+     "engine": "native",
+     "triggers": [
+      "bookmark",
+      "creator"
+     ]
+    },
+    {
+     "name": "Bookmark Integrity Auditor",
+     "op": "insert",
+     "params": {
+      "type": "bookmark"
+     },
+     "engine": "native",
+     "triggers": [
+      "bookmark",
+      "integrity",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Heading Cross-Reference Builder",
+     "op": "fields",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "heading",
+      "cross",
+      "reference",
+      "builder"
+     ]
+    },
+    {
+     "name": "Figure and Table Cross-Reference Builder",
+     "op": "fields",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "figure",
+      "and",
+      "table",
+      "cross",
+      "reference",
+      "builder"
+     ]
+    },
+    {
+     "name": "Field Code Inspector",
+     "op": "fields",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "field",
+      "code",
+      "inspector"
+     ]
+    },
+    {
+     "name": "Field Switch Configurator",
+     "op": "fields",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "field",
+      "switch",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Field Update Manager",
+     "op": "fields",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "field",
+      "update",
+      "manager"
+     ]
+    },
+    {
+     "name": "Field Lock and Unlock Controller",
+     "op": "fields",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "field",
+      "lock",
+      "and",
+      "unlock",
+      "controller"
+     ]
+    },
+    {
+     "name": "Broken Reference Repair",
+     "op": "fields",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "broken",
+      "reference",
+      "repair"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "name": "Table of Contents and Document Navigation",
+   "purpose": "produce reliable long-document navigation.",
+   "surfaces": [
+    "automatic",
+    "manual TOCs",
+    "heading levels",
+    "TC entries",
+    "page numbers",
+    "hyperlinks",
+    "update page numbers",
+    "update full table",
+    "navigation pane",
+    "style mapping"
+   ],
+   "skills": [
+    {
+     "name": "Automatic TOC Builder",
+     "op": "toc",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "automatic",
+      "toc",
+      "builder"
+     ]
+    },
+    {
+     "name": "Manual TOC Builder",
+     "op": "toc",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "manual",
+      "toc",
+      "builder"
+     ]
+    },
+    {
+     "name": "TOC Heading Level Mapper",
+     "op": "toc",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "toc",
+      "heading",
+      "level",
+      "mapper"
+     ]
+    },
+    {
+     "name": "Custom TOC Style Designer",
+     "op": "toc",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "custom",
+      "toc",
+      "style",
+      "designer"
+     ]
+    },
+    {
+     "name": "TOC Hyperlink Configurator",
+     "op": "toc",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "toc",
+      "hyperlink",
+      "configurator"
+     ]
+    },
+    {
+     "name": "TOC Page Number Alignment Manager",
+     "op": "toc",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "toc",
+      "page",
+      "number",
+      "alignment",
+      "manager"
+     ]
+    },
+    {
+     "name": "Update-Page-Numbers-Only Operator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "update",
+      "page",
+      "numbers",
+      "only",
+      "operator"
+     ]
+    },
+    {
+     "name": "Full TOC Update Operator",
+     "op": "toc",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "full",
+      "toc",
+      "update",
+      "operator"
+     ]
+    },
+    {
+     "name": "Missing Heading Diagnosis",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "missing",
+      "heading",
+      "diagnosis"
+     ]
+    },
+    {
+     "name": "TOC Field Repair",
+     "op": "toc",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "toc",
+      "field",
+      "repair"
+     ]
+    },
+    {
+     "name": "Document Navigation Architecture Planner",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "document",
+      "navigation",
+      "architecture",
+      "planner"
+     ]
+    },
+    {
+     "name": "TOC Release Gate",
+     "op": "toc",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "toc",
+      "release",
+      "gate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "name": "Footnotes and Endnotes",
+   "purpose": "manage scholarly notes and numbering.",
+   "surfaces": [
+    "footnote",
+    "endnote insertion",
+    "location",
+    "number formats",
+    "custom marks",
+    "start number",
+    "continuous",
+    "restart rules",
+    "columns",
+    "navigation",
+    "conversion",
+    "scope"
+   ],
+   "skills": [
+    {
+     "name": "Footnote Inserter",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "footnote",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Endnote Inserter",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "endnote",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Note Location Configurator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "note",
+      "location",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Note Number Format Manager",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "note",
+      "number",
+      "format",
+      "manager"
+     ]
+    },
+    {
+     "name": "Custom Note Mark Builder",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "custom",
+      "note",
+      "mark",
+      "builder"
+     ]
+    },
+    {
+     "name": "Note Start Number Controller",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "note",
+      "start",
+      "number",
+      "controller"
+     ]
+    },
+    {
+     "name": "Continuous Note Numbering Manager",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "continuous",
+      "note",
+      "numbering",
+      "manager"
+     ]
+    },
+    {
+     "name": "Restart Note Numbering Manager",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "restart",
+      "note",
+      "numbering",
+      "manager"
+     ]
+    },
+    {
+     "name": "Footnote Column Designer",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "footnote",
+      "column",
+      "designer"
+     ]
+    },
+    {
+     "name": "Footnote-to-Endnote Converter",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "footnote",
+      "endnote",
+      "converter"
+     ]
+    },
+    {
+     "name": "Note Navigation Operator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "note",
+      "navigation",
+      "operator"
+     ]
+    },
+    {
+     "name": "Footnote Layout Auditor",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "footnote",
+      "layout",
+      "auditor"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 34,
+   "name": "Citations, Bibliographies, and Research",
+   "purpose": "create traceable academic references.",
+   "surfaces": [
+    "Insert Citation",
+    "Manage Sources",
+    "source placeholders",
+    "citation styles",
+    "bibliography",
+    "works cited",
+    "Researcher or Search availability",
+    "source reuse",
+    "field updates"
+   ],
+   "skills": [
+    {
+     "name": "Citation Style Selector",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "citation",
+      "style",
+      "selector"
+     ]
+    },
+    {
+     "name": "Source Record Creator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "source",
+      "record",
+      "creator"
+     ]
+    },
+    {
+     "name": "Source Placeholder Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "source",
+      "placeholder",
+      "manager"
+     ]
+    },
+    {
+     "name": "Manage Sources Library Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "manage",
+      "sources",
+      "library",
+      "operator"
+     ]
+    },
+    {
+     "name": "In-Text Citation Inserter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "text",
+      "citation",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Citation Field Editor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "citation",
+      "field",
+      "editor"
+     ]
+    },
+    {
+     "name": "Bibliography Builder",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "bibliography",
+      "builder"
+     ]
+    },
+    {
+     "name": "Works Cited Builder",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "works",
+      "cited",
+      "builder"
+     ]
+    },
+    {
+     "name": "Citation Style Migration Planner",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "citation",
+      "style",
+      "migration",
+      "planner"
+     ]
+    },
+    {
+     "name": "Missing Source Detector",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "missing",
+      "source",
+      "detector"
+     ]
+    },
+    {
+     "name": "Citation Consistency Auditor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "citation",
+      "consistency",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Research Source Intake Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "research",
+      "source",
+      "intake",
+      "manager"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 35,
+   "name": "Captions, Tables of Figures, Indexes, and Authorities",
+   "purpose": "build generated reference apparatus.",
+   "surfaces": [
+    "Insert Caption",
+    "custom labels",
+    "chapter numbering",
+    "Table of Figures",
+    "cross-references",
+    "Mark Entry",
+    "Index",
+    "Mark Citation",
+    "Table of Authorities",
+    "updates"
+   ],
+   "skills": [
+    {
+     "name": "Figure Caption Inserter",
+     "op": "insert",
+     "params": {
+      "type": "caption"
+     },
+     "engine": "native",
+     "triggers": [
+      "figure",
+      "caption",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Table Caption Inserter",
+     "op": "insert",
+     "params": {
+      "type": "caption"
+     },
+     "engine": "native",
+     "triggers": [
+      "table",
+      "caption",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Equation Caption Inserter",
+     "op": "insert",
+     "params": {
+      "type": "caption"
+     },
+     "engine": "native",
+     "triggers": [
+      "equation",
+      "caption",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Custom Caption Label Builder",
+     "op": "insert",
+     "params": {
+      "type": "caption"
+     },
+     "engine": "native",
+     "triggers": [
+      "custom",
+      "caption",
+      "label",
+      "builder"
+     ]
+    },
+    {
+     "name": "Chapter-Numbered Caption Manager",
+     "op": "insert",
+     "params": {
+      "type": "caption"
+     },
+     "engine": "native",
+     "triggers": [
+      "chapter",
+      "numbered",
+      "caption",
+      "manager"
+     ]
+    },
+    {
+     "name": "Table of Figures Builder",
+     "op": "insert",
+     "params": {
+      "type": "caption"
+     },
+     "engine": "native",
+     "triggers": [
+      "table",
+      "figures",
+      "builder"
+     ]
+    },
+    {
+     "name": "Caption Cross-Reference Manager",
+     "op": "insert",
+     "params": {
+      "type": "caption"
+     },
+     "engine": "native",
+     "triggers": [
+      "caption",
+      "cross",
+      "reference",
+      "manager"
+     ]
+    },
+    {
+     "name": "Index Entry Marker",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "index",
+      "entry",
+      "marker"
+     ]
+    },
+    {
+     "name": "Index Builder and Updater",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "index",
+      "builder",
+      "and",
+      "updater"
+     ]
+    },
+    {
+     "name": "Legal Citation Marker",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "legal",
+      "citation",
+      "marker"
+     ]
+    },
+    {
+     "name": "Table of Authorities Builder",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "table",
+      "authorities",
+      "builder"
+     ]
+    },
+    {
+     "name": "Generated Reference Integrity Auditor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "generated",
+      "reference",
+      "integrity",
+      "auditor"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 36,
+   "name": "Mail Merge, Labels, Envelopes, and Directories",
+   "purpose": "produce personalized outputs from structured recipient data.",
+   "surfaces": [
+    "letters",
+    "email messages",
+    "envelopes",
+    "labels",
+    "directories",
+    "wizard",
+    "existing",
+    "new lists",
+    "filters",
+    "sorting",
+    "deduplication",
+    "Address Block",
+    "Greeting Line",
+    "fields",
+    "rules",
+    "preview",
+    "errors",
+    "print",
+    "email"
+   ],
+   "skills": [
+    {
+     "name": "Mail Merge Type Selector",
+     "op": "merge",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "mail",
+      "merge",
+      "type",
+      "selector"
+     ]
+    },
+    {
+     "name": "Recipient Data Source Connector",
+     "op": "merge",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "recipient",
+      "data",
+      "source",
+      "connector"
+     ]
+    },
+    {
+     "name": "Recipient List Filter and Sorter",
+     "op": "merge",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "recipient",
+      "list",
+      "filter",
+      "and",
+      "sorter"
+     ]
+    },
+    {
+     "name": "Recipient Deduplication Manager",
+     "op": "merge",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "recipient",
+      "deduplication",
+      "manager"
+     ]
+    },
+    {
+     "name": "Match Fields Resolver",
+     "op": "merge",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "match",
+      "fields",
+      "resolver"
+     ]
+    },
+    {
+     "name": "Address Block Builder",
+     "op": "merge",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "address",
+      "block",
+      "builder"
+     ]
+    },
+    {
+     "name": "Greeting Line Builder",
+     "op": "merge",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "greeting",
+      "line",
+      "builder"
+     ]
+    },
+    {
+     "name": "Merge Field Inserter",
+     "op": "merge",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "merge",
+      "field",
+      "inserter"
+     ]
+    },
+    {
+     "name": "If-Then-Else Rule Builder",
+     "op": "merge",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "then",
+      "else",
+      "rule",
+      "builder"
+     ]
+    },
+    {
+     "name": "Next Record and Sequence Rule Manager",
+     "op": "merge",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "next",
+      "record",
+      "and",
+      "sequence",
+      "rule",
+      "manager"
+     ]
+    },
+    {
+     "name": "Preview and Merge Error Checker",
+     "op": "merge",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "preview",
+      "and",
+      "merge",
+      "error",
+      "checker"
+     ]
+    },
+    {
+     "name": "Finish-and-Merge Output Manager",
+     "op": "merge",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "finish",
+      "and",
+      "merge",
+      "output",
+      "manager"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 37,
+   "name": "Comments, Mentions, and Collaborative Review",
+   "purpose": "run a controlled comment lifecycle.",
+   "surfaces": [
+    "modern threaded comments",
+    "@mentions",
+    "assignments",
+    "replies",
+    "previous/next navigation",
+    "resolve",
+    "reopen",
+    "delete",
+    "display",
+    "coauthoring",
+    "presence",
+    "sharing",
+    "version history"
+   ],
+   "skills": [
+    {
+     "name": "Comment Inserter",
+     "op": "comments",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "comment",
+      "inserter"
+     ]
+    },
+    {
+     "name": "Threaded Reply Manager",
+     "op": "comments",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "threaded",
+      "reply",
+      "manager"
+     ]
+    },
+    {
+     "name": "Mention and Assignment Router",
+     "op": "comments",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "mention",
+      "and",
+      "assignment",
+      "router"
+     ]
+    },
+    {
+     "name": "Comment Navigation Operator",
+     "op": "comments",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "comment",
+      "navigation",
+      "operator"
+     ]
+    },
+    {
+     "name": "Resolve and Reopen Manager",
+     "op": "comments",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "resolve",
+      "and",
+      "reopen",
+      "manager"
+     ]
+    },
+    {
+     "name": "Comment Deletion Controller",
+     "op": "comments",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "comment",
+      "deletion",
+      "controller"
+     ]
+    },
+    {
+     "name": "Comment Display Manager",
+     "op": "comments",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "comment",
+      "display",
+      "manager"
+     ]
+    },
+    {
+     "name": "Coauthoring Presence Monitor",
+     "op": "comments",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "coauthoring",
+      "presence",
+      "monitor"
+     ]
+    },
+    {
+     "name": "Review Ownership Planner",
+     "op": "comments",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "review",
+      "ownership",
+      "planner"
+     ]
+    },
+    {
+     "name": "External Reviewer Access Tester",
+     "op": "comments",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "external",
+      "reviewer",
+      "access",
+      "tester"
+     ]
+    },
+    {
+     "name": "Comment Privacy Auditor",
+     "op": "comments",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "comment",
+      "privacy",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Review Completion Gate",
+     "op": "comments",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "review",
+      "completion",
+      "gate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 38,
+   "name": "Track Changes, Accept, Reject, Compare, and Combine",
+   "purpose": "manage revisions without losing auditability.",
+   "surfaces": [
+    "Track Changes for insertions",
+    "deletions",
+    "formatting",
+    "moves; display modes; markup filters; Reviewing Pane; accept/reject; Compare; Combine; reviewer attribution;",
+    "clean copies"
+   ],
+   "skills": [
+    {
+     "name": "Track Changes Configurator",
+     "op": "revisions",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "track",
+      "changes",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Display-for-Review Manager",
+     "op": "revisions",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "display",
+      "for",
+      "review",
+      "manager"
+     ]
+    },
+    {
+     "name": "Markup Type Filter",
+     "op": "revisions",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "markup",
+      "type",
+      "filter"
+     ]
+    },
+    {
+     "name": "Reviewer Filter Manager",
+     "op": "revisions",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "reviewer",
+      "filter",
+      "manager"
+     ]
+    },
+    {
+     "name": "Reviewing Pane Analyst",
+     "op": "revisions",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "reviewing",
+      "pane",
+      "analyst"
+     ]
+    },
+    {
+     "name": "Accept Current Change Operator",
+     "op": "revisions",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "accept",
+      "current",
+      "change",
+      "operator"
+     ]
+    },
+    {
+     "name": "Reject Current Change Operator",
+     "op": "revisions",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "reject",
+      "current",
+      "change",
+      "operator"
+     ]
+    },
+    {
+     "name": "Accept-All Governance",
+     "op": "revisions",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "accept",
+      "all",
+      "governance"
+     ]
+    },
+    {
+     "name": "Reject-All Governance",
+     "op": "revisions",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "reject",
+      "all",
+      "governance"
+     ]
+    },
+    {
+     "name": "Document Compare Builder",
+     "op": "revisions",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "document",
+      "compare",
+      "builder"
+     ]
+    },
+    {
+     "name": "Multi-Reviewer Combine Operator",
+     "op": "revisions",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "multi",
+      "reviewer",
+      "combine",
+      "operator"
+     ]
+    },
+    {
+     "name": "Clean and Redline Copy Packager",
+     "op": "revisions",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "clean",
+      "and",
+      "redline",
+      "copy",
+      "packager"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 39,
+   "name": "Accessibility and Inclusive Documents",
+   "purpose": "make Word documents usable by more readers.",
+   "surfaces": [
+    "Accessibility Checker",
+    "headings",
+    "document title",
+    "alt text",
+    "decorative marking",
+    "table headers",
+    "reading order",
+    "contrast",
+    "language",
+    "accessible links",
+    "captions",
+    "tagged PDF",
+    "screen readers",
+    "keyboard access",
+    "high contrast"
+   ],
+   "skills": [
+    {
+     "name": "Accessibility Baseline Audit",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "accessibility",
+      "baseline",
+      "audit"
+     ]
+    },
+    {
+     "name": "Heading Structure Repair",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "heading",
+      "structure",
+      "repair"
+     ]
+    },
+    {
+     "name": "Document Title Metadata Setter",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "document",
+      "title",
+      "metadata",
+      "setter"
+     ]
+    },
+    {
+     "name": "Alt Text Coverage Manager",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "alt",
+      "text",
+      "coverage",
+      "manager"
+     ]
+    },
+    {
+     "name": "Decorative Object Marker",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "decorative",
+      "object",
+      "marker"
+     ]
+    },
+    {
+     "name": "Accessible Table Header Builder",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "accessible",
+      "table",
+      "header",
+      "builder"
+     ]
+    },
+    {
+     "name": "Reading Order Auditor",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "reading",
+      "order",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Color Contrast Reviewer",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "color",
+      "contrast",
+      "reviewer"
+     ]
+    },
+    {
+     "name": "Document Language Setter",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "document",
+      "language",
+      "setter"
+     ]
+    },
+    {
+     "name": "Accessible Link Text Repair",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "accessible",
+      "link",
+      "text",
+      "repair"
+     ]
+    },
+    {
+     "name": "Caption and Media Alternative Builder",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "caption",
+      "and",
+      "media",
+      "alternative",
+      "builder"
+     ]
+    },
+    {
+     "name": "Tagged PDF Accessibility Verifier",
+     "op": "a11y",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "tagged",
+      "pdf",
+      "accessibility",
+      "verifier"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 40,
+   "name": "Language, Translation, and Localization",
+   "purpose": "adapt documents across languages and regions.",
+   "surfaces": [
+    "Translate selection or document",
+    "proofing language",
+    "display",
+    "authoring languages",
+    "detect language",
+    "do-not-check controls",
+    "RTL",
+    "CJK typography",
+    "fonts",
+    "dates",
+    "numbers",
+    "units",
+    "regional settings"
+   ],
+   "skills": [
+    {
+     "name": "Selection Translation Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "selection",
+      "translation",
+      "operator"
+     ]
+    },
+    {
+     "name": "Whole-Document Translation Planner",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "whole",
+      "document",
+      "translation",
+      "planner"
+     ]
+    },
+    {
+     "name": "Proofing Language Setter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "proofing",
+      "language",
+      "setter"
+     ]
+    },
+    {
+     "name": "Automatic Language Detection Controller",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "automatic",
+      "language",
+      "detection",
+      "controller"
+     ]
+    },
+    {
+     "name": "Do-Not-Check Exception Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "not",
+      "check",
+      "exception",
+      "manager"
+     ]
+    },
+    {
+     "name": "Right-to-Left Document Adapter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "right",
+      "left",
+      "document",
+      "adapter"
+     ]
+    },
+    {
+     "name": "CJK Typography Adapter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "cjk",
+      "typography",
+      "adapter"
+     ]
+    },
+    {
+     "name": "Multilingual Font Coverage Tester",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "multilingual",
+      "font",
+      "coverage",
+      "tester"
+     ]
+    },
+    {
+     "name": "Locale Date and Number Converter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "locale",
+      "date",
+      "and",
+      "number",
+      "converter"
+     ]
+    },
+    {
+     "name": "Bilingual Document Composer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "bilingual",
+      "document",
+      "composer"
+     ]
+    },
+    {
+     "name": "Translation Layout Reflow Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "translation",
+      "layout",
+      "reflow",
+      "manager"
+     ]
+    },
+    {
+     "name": "Localization QA Comparator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "localization",
+      "comparator"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 41,
+   "name": "Forms, Content Controls, and XML Mapping",
+   "purpose": "build structured fillable documents.",
+   "surfaces": [
+    "rich",
+    "plain text",
+    "picture",
+    "building block",
+    "check box",
+    "combo box",
+    "drop-down",
+    "date picker",
+    "repeating section",
+    "legacy controls",
+    "properties",
+    "title",
+    "tag",
+    "color",
+    "style",
+    "locking",
+    "list items",
+    "dates",
+    "multiline behavior",
+    "Design Mode",
+    "XML Mapping"
+   ],
+   "skills": [
+    {
+     "name": "Rich Text Content Control Builder",
+     "op": "form",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "rich",
+      "text",
+      "content",
+      "control",
+      "builder"
+     ]
+    },
+    {
+     "name": "Plain Text Content Control Builder",
+     "op": "form",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "plain",
+      "text",
+      "content",
+      "control",
+      "builder"
+     ]
+    },
+    {
+     "name": "Picture Content Control Builder",
+     "op": "form",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "picture",
+      "content",
+      "control",
+      "builder"
+     ]
+    },
+    {
+     "name": "Check Box Control Builder",
+     "op": "form",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "check",
+      "box",
+      "control",
+      "builder"
+     ]
+    },
+    {
+     "name": "Combo Box Control Builder",
+     "op": "form",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "combo",
+      "box",
+      "control",
+      "builder"
+     ]
+    },
+    {
+     "name": "Drop-Down List Builder",
+     "op": "form",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "drop",
+      "down",
+      "list",
+      "builder"
+     ]
+    },
+    {
+     "name": "Date Picker Builder",
+     "op": "form",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "date",
+      "picker",
+      "builder"
+     ]
+    },
+    {
+     "name": "Repeating Section Builder",
+     "op": "form",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "repeating",
+      "section",
+      "builder"
+     ]
+    },
+    {
+     "name": "Content Control Property Manager",
+     "op": "form",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "content",
+      "control",
+      "property",
+      "manager"
+     ]
+    },
+    {
+     "name": "Content Control Locking Manager",
+     "op": "form",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "content",
+      "control",
+      "locking",
+      "manager"
+     ]
+    },
+    {
+     "name": "XML Mapping Pane Operator",
+     "op": "form",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "xml",
+      "mapping",
+      "pane",
+      "operator"
+     ]
+    },
+    {
+     "name": "Protected Form Workflow Builder",
+     "op": "form",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "protected",
+      "form",
+      "workflow",
+      "builder"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 42,
+   "name": "Macros, VBA, Developer Tools, and Automation",
+   "purpose": "automate desktop Word safely and repeatably.",
+   "surfaces": [
+    "Visual Basic",
+    "recorded macros",
+    "Word object model",
+    "events",
+    "templates",
+    "DOCM",
+    "DOTM",
+    "macro security",
+    "trusted locations",
+    "signatures",
+    "add-ins",
+    "content controls",
+    "fields",
+    "batch processing"
+   ],
+   "skills": [
+    {
+     "name": "Macro Recorder Operator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "macro",
+      "recorder",
+      "operator"
+     ]
+    },
+    {
+     "name": "VBA Procedure Author",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "vba",
+      "procedure",
+      "author"
+     ]
+    },
+    {
+     "name": "Word Object Model Navigator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "word",
+      "object",
+      "model",
+      "navigator"
+     ]
+    },
+    {
+     "name": "Document Event Automation Builder",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "document",
+      "event",
+      "automation",
+      "builder"
+     ]
+    },
+    {
+     "name": "Template Event Automation Builder",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "template",
+      "event",
+      "automation",
+      "builder"
+     ]
+    },
+    {
+     "name": "DOCM Packaging Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "docm",
+      "packaging",
+      "manager"
+     ]
+    },
+    {
+     "name": "DOTM Automation Template Builder",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "dotm",
+      "automation",
+      "template",
+      "builder"
+     ]
+    },
+    {
+     "name": "Macro Digital Signature Manager",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "macro",
+      "digital",
+      "signature",
+      "manager"
+     ]
+    },
+    {
+     "name": "Macro Security Compatibility Checker",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "macro",
+      "security",
+      "compatibility",
+      "checker"
+     ]
+    },
+    {
+     "name": "Batch Document Processor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "batch",
+      "document",
+      "processor"
+     ]
+    },
+    {
+     "name": "Automation Error and Recovery Handler",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "automation",
+      "error",
+      "and",
+      "recovery",
+      "handler"
+     ]
+    },
+    {
+     "name": "Clean-State Macro Test Harness",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "clean",
+      "state",
+      "macro",
+      "test",
+      "harness"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 43,
+   "name": "Add-ins, COM, Web Add-ins, and Connected Services",
+   "purpose": "extend Word while controlling dependencies.",
+   "surfaces": [
+    "Office Add-ins",
+    "COM add-ins",
+    "templates",
+    "actions",
+    "XML expansion packs",
+    "disabled items",
+    "organization catalogs",
+    "OAuth permissions",
+    "connected services",
+    "admin policy"
+   ],
+   "skills": [
+    {
+     "name": "Office Add-in Evaluator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "office",
+      "add",
+      "evaluator"
+     ]
+    },
+    {
+     "name": "Organization Catalog Add-in Installer",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "organization",
+      "catalog",
+      "add",
+      "installer"
+     ]
+    },
+    {
+     "name": "COM Add-in Manager",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "com",
+      "add",
+      "manager"
+     ]
+    },
+    {
+     "name": "Disabled Add-in Recovery",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "disabled",
+      "add",
+      "recovery"
+     ]
+    },
+    {
+     "name": "Template Add-in Manager",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "template",
+      "add",
+      "manager"
+     ]
+    },
+    {
+     "name": "Add-in Permission Auditor",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "add",
+      "permission",
+      "auditor"
+     ]
+    },
+    {
+     "name": "OAuth Scope Reviewer",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "oauth",
+      "scope",
+      "reviewer"
+     ]
+    },
+    {
+     "name": "Connected Service Inventory",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "connected",
+      "service",
+      "inventory"
+     ]
+    },
+    {
+     "name": "Add-in Performance Profiler",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "add",
+      "performance",
+      "profiler"
+     ]
+    },
+    {
+     "name": "Add-in Failure Isolation",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "add",
+      "failure",
+      "isolation"
+     ]
+    },
+    {
+     "name": "Dependency Exit Planner",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "dependency",
+      "exit",
+      "planner"
+     ]
+    },
+    {
+     "name": "Third-Party Integration Register",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "third",
+      "party",
+      "integration",
+      "register"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 44,
+   "name": "Open XML, File Formats, and Compatibility",
+   "purpose": "preserve structure across formats and versions.",
+   "surfaces": [
+    "DOCX",
+    "DOCM",
+    "DOTX",
+    "DOTM ZIP packages",
+    "parts",
+    "relationships",
+    "styles",
+    "media",
+    "metadata",
+    "Compatibility Mode",
+    "Compatibility Checker",
+    "DOC",
+    "ODT",
+    "RTF",
+    "TXT",
+    "HTML",
+    "converters"
+   ],
+   "skills": [
+    {
+     "name": "Open XML Package Inspector",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "open",
+      "xml",
+      "package",
+      "inspector"
+     ]
+    },
+    {
+     "name": "Document Part and Relationship Mapper",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "document",
+      "part",
+      "and",
+      "relationship",
+      "mapper"
+     ]
+    },
+    {
+     "name": "Styles XML Auditor",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "styles",
+      "xml",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Media Part Enumerator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "media",
+      "part",
+      "enumerator"
+     ]
+    },
+    {
+     "name": "Metadata Part Inspector",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "metadata",
+      "part",
+      "inspector"
+     ]
+    },
+    {
+     "name": "Compatibility Mode Manager",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "compatibility",
+      "mode",
+      "manager"
+     ]
+    },
+    {
+     "name": "Compatibility Checker Operator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "compatibility",
+      "checker",
+      "operator"
+     ]
+    },
+    {
+     "name": "Legacy DOC Conversion Planner",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "legacy",
+      "doc",
+      "conversion",
+      "planner"
+     ]
+    },
+    {
+     "name": "ODT Round-Trip Tester",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "odt",
+      "round",
+      "trip",
+      "tester"
+     ]
+    },
+    {
+     "name": "RTF and TXT Loss Mapper",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "rtf",
+      "and",
+      "txt",
+      "loss",
+      "mapper"
+     ]
+    },
+    {
+     "name": "HTML Export Compatibility Tester",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "html",
+      "export",
+      "compatibility",
+      "tester"
+     ]
+    },
+    {
+     "name": "Malformed Package Repair Planner",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "malformed",
+      "package",
+      "repair",
+      "planner"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 45,
+   "name": "PDF, XPS, Export, and Print Production",
+   "purpose": "produce reliable fixed outputs.",
+   "surfaces": [
+    "PDF/XPS",
+    "standard or minimum size",
+    "page ranges",
+    "markup",
+    "properties",
+    "bookmarks",
+    "tags",
+    "PDF/A",
+    "bitmap text",
+    "font embedding",
+    "printer selection",
+    "duplex",
+    "collation",
+    "orientation",
+    "paper",
+    "trays",
+    "scaling",
+    "color",
+    "grayscale",
+    "preview"
+   ],
+   "skills": [
+    {
+     "name": "PDF Export Profile Selector",
+     "op": "export",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "pdf",
+      "export",
+      "profile",
+      "selector"
+     ]
+    },
+    {
+     "name": "Tagged PDF Exporter",
+     "op": "export",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "tagged",
+      "pdf",
+      "exporter"
+     ]
+    },
+    {
+     "name": "PDF Bookmark Builder",
+     "op": "export",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "pdf",
+      "bookmark",
+      "builder"
+     ]
+    },
+    {
+     "name": "PDF-A Option Manager",
+     "op": "export",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "pdf",
+      "option",
+      "manager"
+     ]
+    },
+    {
+     "name": "PDF Page Range Controller",
+     "op": "export",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "pdf",
+      "page",
+      "range",
+      "controller"
+     ]
+    },
+    {
+     "name": "Markup-versus-Clean PDF Manager",
+     "op": "export",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "markup",
+      "versus",
+      "clean",
+      "pdf",
+      "manager"
+     ]
+    },
+    {
+     "name": "Font Embedding Auditor",
+     "op": "export",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "font",
+      "embedding",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Bitmap Text Fallback Reporter",
+     "op": "export",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "bitmap",
+      "text",
+      "fallback",
+      "reporter"
+     ]
+    },
+    {
+     "name": "Printer and Tray Selector",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "printer",
+      "and",
+      "tray",
+      "selector"
+     ]
+    },
+    {
+     "name": "Duplex and Collation Configurator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "duplex",
+      "and",
+      "collation",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Print Preview Inspector",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "print",
+      "preview",
+      "inspector"
+     ]
+    },
+    {
+     "name": "Print and PDF Fidelity Comparator",
+     "op": "export",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "print",
+      "and",
+      "pdf",
+      "fidelity",
+      "comparator"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 46,
+   "name": "Watermarks, Page Color, Borders, and Backgrounds",
+   "purpose": "apply document-level visual treatments with section awareness.",
+   "surfaces": [
+    "text",
+    "picture watermarks",
+    "scale",
+    "washout",
+    "font",
+    "color",
+    "layout",
+    "page color",
+    "page borders",
+    "art",
+    "width",
+    "spacing",
+    "edge or text measurement",
+    "section scope"
+   ],
+   "skills": [
+    {
+     "name": "Text Watermark Builder",
+     "op": "watermark",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "text",
+      "watermark",
+      "builder"
+     ]
+    },
+    {
+     "name": "Picture Watermark Builder",
+     "op": "watermark",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "picture",
+      "watermark",
+      "builder"
+     ]
+    },
+    {
+     "name": "Watermark Scope and Section Manager",
+     "op": "watermark",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "watermark",
+      "scope",
+      "and",
+      "section",
+      "manager"
+     ]
+    },
+    {
+     "name": "Washout and Transparency Tuner",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "washout",
+      "and",
+      "transparency",
+      "tuner"
+     ]
+    },
+    {
+     "name": "Page Color Designer",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "page",
+      "color",
+      "designer"
+     ]
+    },
+    {
+     "name": "Page Color Print Behavior Auditor",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "page",
+      "color",
+      "print",
+      "behavior",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Page Border Designer",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "page",
+      "border",
+      "designer"
+     ]
+    },
+    {
+     "name": "Art Border Selector",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "art",
+      "border",
+      "selector"
+     ]
+    },
+    {
+     "name": "Page Border Spacing Controller",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "page",
+      "border",
+      "spacing",
+      "controller"
+     ]
+    },
+    {
+     "name": "Section-Specific Border Manager",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "section",
+      "specific",
+      "border",
+      "manager"
+     ]
+    },
+    {
+     "name": "Background Accessibility Checker",
+     "op": "format",
+     "params": {
+      "scope": "page"
+     },
+     "engine": "native",
+     "triggers": [
+      "background",
+      "accessibility",
+      "checker"
+     ]
+    },
+    {
+     "name": "Watermark Removal and Audit",
+     "op": "watermark",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "watermark",
+      "removal",
+      "and",
+      "audit"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 47,
+   "name": "Views, Windows, Focus, and Immersive Reading",
+   "purpose": "control editing and reading environments.",
+   "surfaces": [
+    "Read Mode",
+    "Print Layout",
+    "Web Layout",
+    "Outline",
+    "Draft",
+    "Focus",
+    "Immersive Reader",
+    "Read Aloud",
+    "page movement",
+    "thumbnails",
+    "zoom",
+    "new window",
+    "split",
+    "side by side",
+    "synchronous scrolling",
+    "switch windows"
+   ],
+   "skills": [
+    {
+     "name": "Document View Router",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "document",
+      "view",
+      "router"
+     ]
+    },
+    {
+     "name": "Read Mode Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "read",
+      "mode",
+      "operator"
+     ]
+    },
+    {
+     "name": "Outline View Structure Editor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "outline",
+      "view",
+      "structure",
+      "editor"
+     ]
+    },
+    {
+     "name": "Draft View Long-Document Editor",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "draft",
+      "view",
+      "long",
+      "document",
+      "editor"
+     ]
+    },
+    {
+     "name": "Focus Mode Configurator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "focus",
+      "mode",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Immersive Reader Configurator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "immersive",
+      "reader",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Read Aloud Operator",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "read",
+      "aloud",
+      "operator"
+     ]
+    },
+    {
+     "name": "Page Movement Controller",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "page",
+      "movement",
+      "controller"
+     ]
+    },
+    {
+     "name": "Zoom and Page Width Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "zoom",
+      "and",
+      "page",
+      "width",
+      "manager"
+     ]
+    },
+    {
+     "name": "Split Window Operator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "split",
+      "window",
+      "operator"
+     ]
+    },
+    {
+     "name": "Side-by-Side Compare Viewer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "side",
+      "side",
+      "compare",
+      "viewer"
+     ]
+    },
+    {
+     "name": "Synchronous Scrolling Manager",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "synchronous",
+      "scrolling",
+      "manager"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 48,
+   "name": "Word Options, Ribbon, Quick Access, and Interface",
+   "purpose": "configure Word for repeatable professional use.",
+   "surfaces": [
+    "General",
+    "Display",
+    "Proofing",
+    "Save",
+    "Language",
+    "Accessibility",
+    "Advanced",
+    "Customize Ribbon",
+    "Quick Access Toolbar",
+    "Add-ins",
+    "Trust Center",
+    "title bar",
+    "status bar",
+    "search",
+    "context menus",
+    "mini toolbar",
+    "task panes",
+    "KeyTips",
+    "touch mode"
+   ],
+   "skills": [
+    {
+     "name": "General Options Configurator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "general",
+      "options",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Display Options Configurator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "display",
+      "options",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Proofing Options Configurator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "proofing",
+      "options",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Save Options Configurator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "save",
+      "options",
+      "configurator"
+     ]
+    },
+    {
+     "name": "Advanced Editing Options Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "advanced",
+      "editing",
+      "options",
+      "manager"
+     ]
+    },
+    {
+     "name": "Customize Ribbon Designer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "customize",
+      "ribbon",
+      "designer"
+     ]
+    },
+    {
+     "name": "Quick Access Toolbar Builder",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "quick",
+      "access",
+      "toolbar",
+      "builder"
+     ]
+    },
+    {
+     "name": "Ribbon Customization Exporter",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "ribbon",
+      "customization",
+      "exporter"
+     ]
+    },
+    {
+     "name": "Status Bar Customizer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "status",
+      "bar",
+      "customizer"
+     ]
+    },
+    {
+     "name": "Task Pane Workflow Organizer",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "task",
+      "pane",
+      "workflow",
+      "organizer"
+     ]
+    },
+    {
+     "name": "Keyboard Shortcut Customizer",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "keyboard",
+      "shortcut",
+      "customizer"
+     ]
+    },
+    {
+     "name": "Word Options Baseline Packager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "word",
+      "options",
+      "baseline",
+      "packager"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 49,
+   "name": "Trust Center, Protected View, and Security",
+   "purpose": "manage execution and file-opening risk.",
+   "surfaces": [
+    "trusted publishers",
+    "trusted locations",
+    "trusted documents",
+    "add-ins",
+    "ActiveX",
+    "macros",
+    "Protected View",
+    "Message Bar",
+    "File Block",
+    "privacy options",
+    "sensitivity labels",
+    "retention",
+    "encryption",
+    "DLP"
+   ],
+   "skills": [
+    {
+     "name": "Trust Center Baseline Auditor",
+     "op": "inspect",
+     "params": {
+      "mode": "risk"
+     },
+     "engine": "native",
+     "triggers": [
+      "trust",
+      "center",
+      "baseline",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Trusted Publisher Manager",
+     "op": "inspect",
+     "params": {
+      "mode": "risk"
+     },
+     "engine": "native",
+     "triggers": [
+      "trusted",
+      "publisher",
+      "manager"
+     ]
+    },
+    {
+     "name": "Trusted Location Manager",
+     "op": "inspect",
+     "params": {
+      "mode": "risk"
+     },
+     "engine": "native",
+     "triggers": [
+      "trusted",
+      "location",
+      "manager"
+     ]
+    },
+    {
+     "name": "Trusted Document Manager",
+     "op": "inspect",
+     "params": {
+      "mode": "risk"
+     },
+     "engine": "native",
+     "triggers": [
+      "trusted",
+      "document",
+      "manager"
+     ]
+    },
+    {
+     "name": "Protected View Policy Interpreter",
+     "op": "inspect",
+     "params": {
+      "mode": "risk"
+     },
+     "engine": "native",
+     "triggers": [
+      "protected",
+      "view",
+      "policy",
+      "interpreter"
+     ]
+    },
+    {
+     "name": "Macro Security Level Planner",
+     "op": "inspect",
+     "params": {
+      "mode": "risk"
+     },
+     "engine": "native",
+     "triggers": [
+      "macro",
+      "security",
+      "level",
+      "planner"
+     ]
+    },
+    {
+     "name": "ActiveX Risk Auditor",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "activex",
+      "risk",
+      "auditor"
+     ]
+    },
+    {
+     "name": "File Block Settings Reviewer",
+     "op": "inspect",
+     "params": {
+      "mode": "risk"
+     },
+     "engine": "native",
+     "triggers": [
+      "file",
+      "block",
+      "settings",
+      "reviewer"
+     ]
+    },
+    {
+     "name": "Message Bar Configuration Manager",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "message",
+      "bar",
+      "configuration",
+      "manager"
+     ]
+    },
+    {
+     "name": "Privacy Option Auditor",
+     "op": "inspect",
+     "params": {
+      "mode": "risk"
+     },
+     "engine": "native",
+     "triggers": [
+      "privacy",
+      "option",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Sensitivity Label Workflow Manager",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "sensitivity",
+      "label",
+      "workflow",
+      "manager"
+     ]
+    },
+    {
+     "name": "Data Loss Prevention Release Gate",
+     "op": "protect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "data",
+      "loss",
+      "prevention",
+      "release",
+      "gate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 50,
+   "name": "Performance, File Size, and Fidelity",
+   "purpose": "keep documents responsive without degrading output.",
+   "surfaces": [
+    "image compression",
+    "cropped- area deletion",
+    "default resolution",
+    "high-fidelity output",
+    "embedded fonts",
+    "cached files",
+    "linked objects",
+    "field updates",
+    "large tables",
+    "many revisions",
+    "add-ins"
+   ],
+   "skills": [
+    {
+     "name": "Document Size Profiler",
+     "op": "inspect",
+     "params": {
+      "mode": "size"
+     },
+     "engine": "native",
+     "triggers": [
+      "document",
+      "size",
+      "profiler"
+     ]
+    },
+    {
+     "name": "Picture Resolution Optimizer",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "picture",
+      "resolution",
+      "optimizer"
+     ]
+    },
+    {
+     "name": "High-Fidelity Image Setting Manager",
+     "op": "inspect",
+     "params": {
+      "mode": "size"
+     },
+     "engine": "native",
+     "triggers": [
+      "high",
+      "fidelity",
+      "image",
+      "setting",
+      "manager"
+     ]
+    },
+    {
+     "name": "Cropped Image Data Cleaner",
+     "op": "inspect",
+     "params": {
+      "mode": "size"
+     },
+     "engine": "native",
+     "triggers": [
+      "cropped",
+      "image",
+      "data",
+      "cleaner"
+     ]
+    },
+    {
+     "name": "Embedded Font Size Auditor",
+     "op": "inspect",
+     "params": {
+      "mode": "size"
+     },
+     "engine": "native",
+     "triggers": [
+      "embedded",
+      "font",
+      "size",
+      "auditor"
+     ]
+    },
+    {
+     "name": "Linked-versus-Embedded Asset Planner",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "linked",
+      "versus",
+      "embedded",
+      "asset",
+      "planner"
+     ]
+    },
+    {
+     "name": "Revision Bloat Reducer",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "revision",
+      "bloat",
+      "reducer"
+     ]
+    },
+    {
+     "name": "Large Table Performance Optimizer",
+     "op": "inspect",
+     "params": {
+      "mode": "size"
+     },
+     "engine": "native",
+     "triggers": [
+      "large",
+      "table",
+      "performance",
+      "optimizer"
+     ]
+    },
+    {
+     "name": "Field Update Performance Planner",
+     "op": "inspect",
+     "params": {
+      "mode": "size"
+     },
+     "engine": "native",
+     "triggers": [
+      "field",
+      "update",
+      "performance",
+      "planner"
+     ]
+    },
+    {
+     "name": "Add-in Performance Isolator",
+     "op": "inspect",
+     "params": {
+      "mode": "size"
+     },
+     "engine": "native",
+     "triggers": [
+      "add",
+      "performance",
+      "isolator"
+     ]
+    },
+    {
+     "name": "Long Document Responsiveness Tester",
+     "op": "inspect",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "long",
+      "document",
+      "responsiveness",
+      "tester"
+     ]
+    },
+    {
+     "name": "Quality-versus-Size Decision Reporter",
+     "op": "inspect",
+     "params": {
+      "mode": "size"
+     },
+     "engine": "native",
+     "triggers": [
+      "quality",
+      "versus",
+      "size",
+      "decision",
+      "reporter"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 51,
+   "name": "Quality Assurance, Regression, and Release",
+   "purpose": "prove the document works through the recipient path.",
+   "surfaces": [
+    "rendering",
+    "pagination",
+    "styles",
+    "tables",
+    "headers",
+    "footers",
+    "fields",
+    "references",
+    "links",
+    "accessibility",
+    "comments",
+    "revisions",
+    "protection",
+    "export",
+    "print",
+    "clean-state opening",
+    "recipient access"
+   ],
+   "skills": [
+    {
+     "name": "Requirement Coverage Checker",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "requirement",
+      "coverage",
+      "checker"
+     ]
+    },
+    {
+     "name": "Page Render Inspector",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "page",
+      "render",
+      "inspector"
+     ]
+    },
+    {
+     "name": "Pagination Regression Comparator",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "pagination",
+      "regression",
+      "comparator"
+     ]
+    },
+    {
+     "name": "Style Consistency Test",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "style",
+      "consistency",
+      "test"
+     ]
+    },
+    {
+     "name": "Table Break and Header Test",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "table",
+      "break",
+      "and",
+      "header",
+      "test"
+     ]
+    },
+    {
+     "name": "Header Footer Section Test",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "header",
+      "footer",
+      "section",
+      "test"
+     ]
+    },
+    {
+     "name": "Field and Cross-Reference Test",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "field",
+      "and",
+      "cross",
+      "reference",
+      "test"
+     ]
+    },
+    {
+     "name": "Hyperlink and Bookmark Test",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "hyperlink",
+      "and",
+      "bookmark",
+      "test"
+     ]
+    },
+    {
+     "name": "Tracked Change State Test",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "tracked",
+      "change",
+      "state",
+      "test"
+     ]
+    },
+    {
+     "name": "Protection and Form Test",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "protection",
+      "and",
+      "form",
+      "test"
+     ]
+    },
+    {
+     "name": "Export and Print Parity Test",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "export",
+      "and",
+      "print",
+      "parity",
+      "test"
+     ]
+    },
+    {
+     "name": "Final Release Gate",
+     "op": "qa",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "final",
+      "release",
+      "gate"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 52,
+   "name": "Repair, Recovery, and Workarounds",
+   "purpose": "fix the earliest responsible cause while preserving valid work.",
+   "surfaces": [
+    "last-known-good copies",
+    "minimal reproductions",
+    "styles",
+    "sections",
+    "fields",
+    "tables",
+    "fonts",
+    "anchors",
+    "links",
+    "add-ins",
+    "Open XML",
+    "recovery files",
+    "clean-state retesting"
+   ],
+   "skills": [
+    {
+     "name": "Layout Drift Root-Cause Analyzer",
+     "op": "inspect",
+     "params": {
+      "mode": "repair"
+     },
+     "engine": "native",
+     "triggers": [
+      "layout",
+      "drift",
+      "root",
+      "cause",
+      "analyzer"
+     ]
+    },
+    {
+     "name": "Corrupt Style Repair",
+     "op": "inspect",
+     "params": {
+      "mode": "repair"
+     },
+     "engine": "native",
+     "triggers": [
+      "corrupt",
+      "style",
+      "repair"
+     ]
+    },
+    {
+     "name": "Broken Section Repair",
+     "op": "inspect",
+     "params": {
+      "mode": "repair"
+     },
+     "engine": "native",
+     "triggers": [
+      "broken",
+      "section",
+      "repair"
+     ]
+    },
+    {
+     "name": "Field Result Repair",
+     "op": "inspect",
+     "params": {
+      "mode": "repair"
+     },
+     "engine": "native",
+     "triggers": [
+      "field",
+      "result",
+      "repair"
+     ]
+    },
+    {
+     "name": "Broken Cross-Reference Repair",
+     "op": "inspect",
+     "params": {
+      "mode": "repair"
+     },
+     "engine": "native",
+     "triggers": [
+      "broken",
+      "cross",
+      "reference",
+      "repair"
+     ]
+    },
+    {
+     "name": "Table Pagination Repair",
+     "op": "inspect",
+     "params": {
+      "mode": "repair"
+     },
+     "engine": "native",
+     "triggers": [
+      "table",
+      "pagination",
+      "repair"
+     ]
+    },
+    {
+     "name": "Floating Object Anchor Repair",
+     "op": "inspect",
+     "params": {
+      "mode": "repair"
+     },
+     "engine": "native",
+     "triggers": [
+      "floating",
+      "object",
+      "anchor",
+      "repair"
+     ]
+    },
+    {
+     "name": "Missing Font Reflow Repair",
+     "op": "inspect",
+     "params": {
+      "mode": "repair"
+     },
+     "engine": "native",
+     "triggers": [
+      "missing",
+      "font",
+      "reflow",
+      "repair"
+     ]
+    },
+    {
+     "name": "Broken Link and Embedded Object Repair",
+     "op": "inspect",
+     "params": {
+      "mode": "repair"
+     },
+     "engine": "native",
+     "triggers": [
+      "broken",
+      "link",
+      "and",
+      "embedded",
+      "object",
+      "repair"
+     ]
+    },
+    {
+     "name": "Add-in Conflict Isolation",
+     "op": "restore",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "add",
+      "conflict",
+      "isolation"
+     ]
+    },
+    {
+     "name": "Open XML Salvage Recovery",
+     "op": "inspect",
+     "params": {
+      "mode": "repair"
+     },
+     "engine": "native",
+     "triggers": [
+      "open",
+      "xml",
+      "salvage",
+      "recovery"
+     ]
+    },
+    {
+     "name": "Smallest Responsible Repair Planner",
+     "op": "inspect",
+     "params": {
+      "mode": "repair"
+     },
+     "engine": "native",
+     "triggers": [
+      "smallest",
+      "responsible",
+      "repair",
+      "planner"
+     ]
+    }
+   ]
+  },
+  {
+   "id": 53,
+   "name": "Evaluation, Benchmarking, and Skill Management",
+   "purpose": "measure and maintain the Word capability ecosystem.",
+   "surfaces": [
+    "feature coverage",
+    "task success",
+    "accessibility",
+    "fidelity",
+    "automation",
+    "compatibility",
+    "repairability",
+    "triggers",
+    "dependencies",
+    "tests",
+    "versioning",
+    "deprecation",
+    "clean-state use",
+    "recipient effort"
+   ],
+   "skills": [
+    {
+     "name": "Microsoft Word Feature Coverage Scorer",
+     "op": "score",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "microsoft",
+      "word",
+      "feature",
+      "coverage",
+      "scorer"
+     ]
+    },
+    {
+     "name": "Workflow Success Benchmark",
+     "op": "score",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "workflow",
+      "success",
+      "benchmark"
+     ]
+    },
+    {
+     "name": "Document Fidelity Benchmark",
+     "op": "score",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "document",
+      "fidelity",
+      "benchmark"
+     ]
+    },
+    {
+     "name": "Accessibility Benchmark",
+     "op": "score",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "accessibility",
+      "benchmark"
+     ]
+    },
+    {
+     "name": "Automation Reliability Benchmark",
+     "op": "score",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "automation",
+      "reliability",
+      "benchmark"
+     ]
+    },
+    {
+     "name": "Compatibility Benchmark",
+     "op": "score",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "compatibility",
+      "benchmark"
+     ]
+    },
+    {
+     "name": "Repairability Benchmark",
+     "op": "score",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "repairability",
+      "benchmark"
+     ]
+    },
+    {
+     "name": "Skill Trigger Disambiguator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "skill",
+      "trigger",
+      "disambiguator"
+     ]
+    },
+    {
+     "name": "Skill Dependency Mapper",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "skill",
+      "dependency",
+      "mapper"
+     ]
+    },
+    {
+     "name": "Skill Test Case Generator",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "skill",
+      "test",
+      "case",
+      "generator"
+     ]
+    },
+    {
+     "name": "Skill Version and Deprecation Manager",
+     "op": "plan",
+     "params": {},
+     "engine": "advisory",
+     "triggers": [
+      "skill",
+      "version",
+      "and",
+      "deprecation",
+      "manager"
+     ]
+    },
+    {
+     "name": "Catalog Gap Finder",
+     "op": "score",
+     "params": {},
+     "engine": "native",
+     "triggers": [
+      "catalog",
+      "gap",
+      "finder"
+     ]
+    }
+   ]
+  }
+ ]
+}

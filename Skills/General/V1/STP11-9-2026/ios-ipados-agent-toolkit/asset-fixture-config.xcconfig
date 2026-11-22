@@ -1,0 +1,6 @@
+// fixture xcconfig
+BASE_SDK = iphoneos
+APP_SUFFIX = fixture
+PRODUCT_BUNDLE_IDENTIFIER = com.example.$(APP_SUFFIX)
+CODE_SIGN_STYLE = Automatic
+SWIFT_VERSION = 5.0

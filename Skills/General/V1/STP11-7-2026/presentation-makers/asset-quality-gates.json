@@ -1,0 +1,74 @@
+{
+  "gates_version": "1.0",
+  "scoring": {
+    "method": "Each gate scores 100 when no failing check is present and loses the check weight per distinct finding, floored at 0. The deck score is the weighted mean of gate scores using gate weight.",
+    "block_on": ["error"],
+    "warn_on": ["warning"],
+    "strict_note": "In --strict mode warnings also block delivery."
+  },
+  "gates": [
+    {
+      "id": "content-integrity",
+      "name": "Content integrity and narrative",
+      "weight": 22,
+      "blocking": true,
+      "purpose": "The deck answers the brief, every claim carries evidence, and the action is explicit.",
+      "checks": ["narrative.cta-missing", "narrative.sections-missing", "narrative.summary-missing", "narrative.agenda-missing", "narrative.evidence-unsourced", "data.missing-source", "data.percent-sum", "data.truncated-axis", "data.missing-baseline", "data.stale", "data.table-too-dense"],
+      "remediation": "Add the missing evidence or call to action to the deck spec, then re-run audit."
+    },
+    {
+      "id": "accessible-by-default",
+      "name": "Accessibility",
+      "weight": 22,
+      "blocking": true,
+      "purpose": "Titles, alt text, contrast, font size, reading order, captions, and motion safety pass automated checks.",
+      "checks": ["a11y.missing-title", "a11y.missing-alt-text", "a11y.decorative-conflict", "a11y.contrast-text", "a11y.contrast-graphic", "a11y.font-size-small", "a11y.reading-order", "a11y.table-header-missing", "a11y.media-caption-missing", "a11y.motion-flash-risk", "a11y.autoplay-media"],
+      "remediation": "Fix the flagged slide fields; contrast is recomputed from the theme colours in the spec."
+    },
+    {
+      "id": "layout-safety",
+      "name": "Layout and density safety",
+      "weight": 18,
+      "blocking": true,
+      "purpose": "No slide is overcrowded, no text is likely to overflow its box, and pacing is realistic.",
+      "checks": ["density.bullets-exceeded", "density.bullet-length", "density.overflow-risk", "density.words-per-minute", "geometry.off-slide", "geometry.too-many-objects"],
+      "remediation": "Split the slide, shorten bullets, or move detail into speaker notes or the appendix."
+    },
+    {
+      "id": "privacy-governance",
+      "name": "Security, privacy, and governance",
+      "weight": 16,
+      "blocking": true,
+      "purpose": "No unreviewed personal data, external links, confidential markers, or hidden content ships by accident.",
+      "checks": ["privacy.pii-email", "privacy.pii-phone", "privacy.confidential-marker", "privacy.external-link-review", "privacy.hidden-slide-review", "privacy.metadata"],
+      "remediation": "Remove or approve each flagged item, then record the decision in the review checkpoint list."
+    },
+    {
+      "id": "delivery-readiness",
+      "name": "Delivery and export readiness",
+      "weight": 14,
+      "blocking": true,
+      "purpose": "Every promised output exists, parses, and is self-contained enough to open on another machine.",
+      "checks": ["delivery.build-missing", "delivery.pptx-invalid", "delivery.pdf-unreadable", "delivery.html-external-resource", "delivery.notes-missing", "delivery.file-too-large"],
+      "remediation": "Re-run build, or fix the flagged export issue, then re-run audit."
+    },
+    {
+      "id": "brand-consistency",
+      "name": "Brand and template consistency",
+      "weight": 5,
+      "blocking": false,
+      "purpose": "Fonts, colours, logo, and footer match the approved theme.",
+      "checks": ["brand.font-not-allowed", "brand.color-not-in-theme", "brand.logo-missing", "brand.footer-missing"],
+      "remediation": "Apply the approved theme preset or record a documented exception."
+    },
+    {
+      "id": "motion-comfort",
+      "name": "Motion and focus comfort",
+      "weight": 3,
+      "blocking": false,
+      "purpose": "Animation is purposeful, limited, and never the only carrier of meaning.",
+      "checks": ["motion.excessive-objects", "motion.meaning-on-motion-only"],
+      "remediation": "Reduce declared animation objects or state the information statically as well."
+    }
+  ]
+}

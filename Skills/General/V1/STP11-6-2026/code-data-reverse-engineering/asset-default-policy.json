@@ -1,0 +1,69 @@
+{
+  "policy_version": 1,
+  "tool_version": "1.0.0",
+  "defaults": {
+    "max_file_bytes": 67108864,
+    "max_read_bytes": 16777216,
+    "max_scan_bytes": 8388608,
+    "max_strings": 250,
+    "min_string_length": 4,
+    "entropy_block_bytes": 65536,
+    "max_entropy_blocks": 128,
+    "max_embedded_hits": 64,
+    "max_archive_entries": 10000,
+    "max_archive_uncompressed_bytes": 536870912,
+    "max_archive_ratio": 200,
+    "max_archive_depth": 3,
+    "max_nested_entry_bytes": 4194304,
+    "max_source_files": 2000,
+    "max_source_file_bytes": 2097152,
+    "max_compare_bytes": 8388608,
+    "max_diff_ranges": 100,
+    "timeout_seconds": 120,
+    "chunk_bytes": 262144
+  },
+  "source_extensions": {
+    ".c": "c", ".h": "c", ".cc": "cpp", ".cpp": "cpp", ".cxx": "cpp", ".hpp": "cpp",
+    ".m": "objective-c", ".mm": "objective-c", ".cs": "csharp", ".java": "java", ".kt": "kotlin",
+    ".kts": "kotlin", ".swift": "swift", ".rs": "rust", ".go": "go", ".py": "python",
+    ".js": "javascript", ".mjs": "javascript", ".cjs": "javascript", ".ts": "typescript", ".tsx": "typescript",
+    ".jsx": "javascript", ".php": "php", ".rb": "ruby", ".pl": "perl", ".pm": "perl",
+    ".sh": "shell", ".bash": "shell", ".zsh": "shell", ".fish": "shell", ".ps1": "powershell",
+    ".bat": "batch", ".cmd": "batch", ".sql": "sql", ".lua": "lua", ".r": "r",
+    ".scala": "scala", ".dart": "dart", ".vue": "vue", ".s": "assembly", ".asm": "assembly",
+    ".yaml": "yaml", ".yml": "yaml", ".json": "json", ".toml": "toml", ".ini": "ini",
+    ".xml": "xml", ".gradle": "gradle", ".tf": "terraform", ".hcl": "terraform"
+  },
+  "source_filenames": {
+    "makefile": "make", "cmakelists.txt": "cmake", "dockerfile": "docker", "compose.yml": "compose",
+    "compose.yaml": "compose", "package.json": "node", "pyproject.toml": "python", "requirements.txt": "python",
+    "pom.xml": "maven", "build.gradle": "gradle", "build.gradle.kts": "gradle", "cargo.toml": "rust",
+    "go.mod": "go", "gemfile": "ruby", "rakefile": "ruby", "vagrantfile": "vagrant",
+    "terraform.tfvars": "terraform", ".gitlab-ci.yml": "gitlab-ci", "azure-pipelines.yml": "azure-pipelines"
+  },
+  "secret_patterns": [
+    {"id": "private-key", "pattern": "-----BEGIN(?: [A-Z0-9]+)? PRIVATE KEY-----", "severity": "high"},
+    {"id": "aws-access-key-id", "pattern": "\\bAKIA[0-9A-Z]{16}\\b", "severity": "high"},
+    {"id": "github-token", "pattern": "\\bgh[pousr]_[A-Za-z0-9_]{20,}\\b", "severity": "high"},
+    {"id": "generic-assignment-secret", "pattern": "(?i)\\b(?:api[_-]?key|secret|password|token)\\s*[:=]\\s*['\\\"][^'\\\"\\r\\n]{8,}", "severity": "medium"},
+    {"id": "jwt-like-token", "pattern": "\\beyJ[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{8,}\\b", "severity": "medium"}
+  ],
+  "risk_rules": [
+    {"id": "c-unsafe-copy", "pattern": "\\b(?:strcpy|strcat|gets|sprintf|vsprintf)\\s*\\(", "languages": ["c", "cpp", "objective-c"], "severity": "high", "message": "Potentially unsafe C-family string or formatting API; review bounds and destination capacity."},
+    {"id": "command-shell", "pattern": "\\b(?:system|popen|os\\.system|subprocess\\.(?:call|run|Popen))\\s*\\(", "languages": ["c", "cpp", "objective-c", "python"], "severity": "medium", "message": "Command execution API found; review argument construction, authorization, and shell use."},
+    {"id": "python-eval", "pattern": "\\b(?:eval|exec)\\s*\\(", "languages": ["python"], "severity": "high", "message": "Dynamic Python evaluation found; review untrusted-input paths."},
+    {"id": "javascript-eval", "pattern": "\\b(?:eval|Function)\\s*\\(", "languages": ["javascript", "typescript"], "severity": "high", "message": "Dynamic JavaScript evaluation found; review untrusted-input paths."},
+    {"id": "insecure-deserialization", "pattern": "\\b(?:pickle\\.loads?|yaml\\.load|ObjectInputStream|BinaryFormatter|unserialize)\\b", "languages": ["python", "java", "csharp", "php"], "severity": "high", "message": "Potential unsafe deserialization API found; confirm trusted data and constrained loader settings."},
+    {"id": "weak-hash", "pattern": "\\b(?:md5|sha1)\\b", "languages": ["c", "cpp", "python", "java", "csharp", "javascript", "typescript", "go", "rust"], "severity": "low", "message": "Legacy hash reference found; determine whether it is used for non-security integrity or a security decision."},
+    {"id": "tls-verify-disabled", "pattern": "(?:verify\\s*=\\s*False|CURLOPT_SSL_VERIFYPEER\\s*,\\s*0|rejectUnauthorized\\s*:\\s*false)", "languages": ["python", "c", "cpp", "javascript", "typescript"], "severity": "high", "message": "TLS certificate verification may be disabled; review transport-security impact."},
+    {"id": "sql-concatenation", "pattern": "(?i)(?:select|insert|update|delete)\\s+.{0,120}(?:\\+|format\\s*\\(|f['\\\"])", "languages": ["python", "javascript", "typescript", "java", "csharp", "php", "ruby"], "severity": "medium", "message": "Possible dynamically constructed SQL; review parameterization and input handling."}
+  ],
+  "approval": {
+    "copy_requires_flag": true,
+    "extract_requires_flag": true,
+    "decoded_write_requires_flag": true,
+    "overwrite_requires_flag": true,
+    "dynamic_execution_supported": false,
+    "network_supported": false
+  }
+}

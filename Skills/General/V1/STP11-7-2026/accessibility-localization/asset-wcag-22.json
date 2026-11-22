@@ -1,0 +1,490 @@
+{
+  "standard": "WCAG 2.2",
+  "levels_included": [
+    "A",
+    "AA"
+  ],
+  "note": "4.1.1 Parsing was removed in WCAG 2.2. AAA criteria are included only where they inform enhanced targets.",
+  "criteria": [
+    {
+      "id": "1.1.1",
+      "level": "A",
+      "title": "Non-text Content",
+      "principle": "Perceivable",
+      "description": "All non-text content has a text alternative that serves the equivalent purpose.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.2.1",
+      "level": "A",
+      "title": "Audio-only and Video-only (Prerecorded)",
+      "principle": "Perceivable",
+      "description": "Prerecorded audio-only and video-only media have an alternative that presents equivalent information.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.2.2",
+      "level": "A",
+      "title": "Captions (Prerecorded)",
+      "principle": "Perceivable",
+      "description": "Captions are provided for all prerecorded audio content in synchronized media.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.2.3",
+      "level": "A",
+      "title": "Audio Description or Media Alternative (Prerecorded)",
+      "principle": "Perceivable",
+      "description": "An alternative for time-based media or audio description is provided for prerecorded video content.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.2.4",
+      "level": "AA",
+      "title": "Captions (Live)",
+      "principle": "Perceivable",
+      "description": "Captions are provided for all live audio content in synchronized media.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.2.5",
+      "level": "AA",
+      "title": "Audio Description (Prerecorded)",
+      "principle": "Perceivable",
+      "description": "Audio description is provided for all prerecorded video content in synchronized media.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.3.1",
+      "level": "A",
+      "title": "Info and Relationships",
+      "principle": "Perceivable",
+      "description": "Information, structure, and relationships conveyed through presentation are programmatically determinable or available in text.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.3.2",
+      "level": "A",
+      "title": "Meaningful Sequence",
+      "principle": "Perceivable",
+      "description": "When the sequence in which content is presented affects its meaning, a correct reading sequence is programmatically determinable.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.3.3",
+      "level": "A",
+      "title": "Sensory Characteristics",
+      "principle": "Perceivable",
+      "description": "Instructions for understanding and operating content do not rely solely on sensory characteristics such as shape, color, size, location, or sound.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.3.4",
+      "level": "AA",
+      "title": "Orientation",
+      "principle": "Perceivable",
+      "description": "Content does not restrict its display and operation to a single display orientation unless essential.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.3.5",
+      "level": "AA",
+      "title": "Identify Input Purpose",
+      "principle": "Perceivable",
+      "description": "The purpose of each input field collecting information about the user can be programmatically determined.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.4.1",
+      "level": "A",
+      "title": "Use of Color",
+      "principle": "Perceivable",
+      "description": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.4.2",
+      "level": "A",
+      "title": "Audio Control",
+      "principle": "Perceivable",
+      "description": "If audio plays automatically for more than 3 seconds, a mechanism is available to pause or stop it, or to control volume independently.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.4.3",
+      "level": "AA",
+      "title": "Contrast (Minimum)",
+      "principle": "Perceivable",
+      "description": "Text and images of text have a contrast ratio of at least 4.5:1, except large text and incidental text.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.4.4",
+      "level": "AA",
+      "title": "Resize Text",
+      "principle": "Perceivable",
+      "description": "Text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.4.5",
+      "level": "AA",
+      "title": "Images of Text",
+      "principle": "Perceivable",
+      "description": "Images of text are used only when the particular presentation is essential or the image can be customized.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.4.6",
+      "level": "AAA",
+      "title": "Contrast (Enhanced)",
+      "principle": "Perceivable",
+      "description": "Text has a contrast ratio of at least 7:1; large text at least 4.5:1.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.4.10",
+      "level": "AA",
+      "title": "Reflow",
+      "principle": "Perceivable",
+      "description": "Content can be presented without loss of information or functionality, and without requiring scrolling in two dimensions at 320 CSS pixels.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.4.11",
+      "level": "AA",
+      "title": "Non-text Contrast",
+      "principle": "Perceivable",
+      "description": "Visual information required to identify UI components and states, and graphical objects, has a contrast ratio of at least 3:1.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.4.12",
+      "level": "AA",
+      "title": "Text Spacing",
+      "principle": "Perceivable",
+      "description": "No loss of content or functionality occurs when text spacing is increased to specified values.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "1.4.13",
+      "level": "AA",
+      "title": "Content on Hover or Focus",
+      "principle": "Perceivable",
+      "description": "Additional content on hover or focus is dismissible, hoverable, and persistent.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.1.1",
+      "level": "A",
+      "title": "Keyboard",
+      "principle": "Operable",
+      "description": "All functionality is operable through a keyboard interface.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.1.2",
+      "level": "A",
+      "title": "No Keyboard Trap",
+      "principle": "Operable",
+      "description": "Keyboard focus is never trapped; focus can be moved away using standard keyboard interfaces.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.1.4",
+      "level": "A",
+      "title": "Character Key Shortcuts",
+      "principle": "Operable",
+      "description": "Single-character shortcuts can be turned off, remapped, or activated only on focus.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.2.1",
+      "level": "A",
+      "title": "Timing Adjustable",
+      "principle": "Operable",
+      "description": "Time limits can be extended, adjusted, or turned off.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.2.2",
+      "level": "A",
+      "title": "Pause, Stop, Hide",
+      "principle": "Operable",
+      "description": "Moving, blinking, scrolling, or auto-updating content can be paused, stopped, or hidden.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.2.6",
+      "level": "A",
+      "title": "Timeouts",
+      "principle": "Operable",
+      "description": "Users are informed of timeouts and can extend or cancel them.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.3.1",
+      "level": "A",
+      "title": "Three Flashes or Below Threshold",
+      "principle": "Operable",
+      "description": "Content does not flash more than three times in any one-second period.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.3.3",
+      "level": "AA",
+      "title": "Animation from Interactions",
+      "principle": "Operable",
+      "description": "Motion animation triggered by interaction can be disabled unless essential.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.4.1",
+      "level": "A",
+      "title": "Bypass Blocks",
+      "principle": "Operable",
+      "description": "A mechanism is available to skip repeated blocks of content.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.4.2",
+      "level": "A",
+      "title": "Page Titled",
+      "principle": "Operable",
+      "description": "Web pages have titles that describe topic or purpose.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.4.3",
+      "level": "A",
+      "title": "Focus Order",
+      "principle": "Operable",
+      "description": "A logical focus order preserves meaning and operability.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.4.4",
+      "level": "A",
+      "title": "Link Purpose (In Context)",
+      "principle": "Operable",
+      "description": "The purpose of each link can be determined from the link text or its context.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.4.5",
+      "level": "AA",
+      "title": "Multiple Ways",
+      "principle": "Operable",
+      "description": "More than one way is available to locate a web page within a set of web pages.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.4.6",
+      "level": "AA",
+      "title": "Headings and Labels",
+      "principle": "Operable",
+      "description": "Headings and labels describe topic or purpose.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.4.7",
+      "level": "AA",
+      "title": "Focus Visible",
+      "principle": "Operable",
+      "description": "Any keyboard-operable user interface has a visible focus indicator.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.4.8",
+      "level": "AA",
+      "title": "Location",
+      "principle": "Operable",
+      "description": "The user is informed about their location within a set of web pages.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.4.11",
+      "level": "AA",
+      "title": "Focus Not Obscured (Minimum)",
+      "principle": "Operable",
+      "description": "When a component receives keyboard focus, it is not entirely hidden by author-created content.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.5.1",
+      "level": "A",
+      "title": "Pointer Gestures",
+      "principle": "Operable",
+      "description": "Multipoint or path-based gestures have a single-pointer alternative unless essential.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.5.2",
+      "level": "A",
+      "title": "Pointer Cancellation",
+      "principle": "Operable",
+      "description": "Pointer activation can be cancelled or undone.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.5.3",
+      "level": "A",
+      "title": "Label in Name",
+      "principle": "Operable",
+      "description": "The accessible name contains the visible label text.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.5.4",
+      "level": "A",
+      "title": "Motion Actuation",
+      "principle": "Operable",
+      "description": "Functionality triggered by device motion has an alternative and can be disabled.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.5.7",
+      "level": "AA",
+      "title": "Dragging Movements",
+      "principle": "Operable",
+      "description": "Dragging movements have a single-pointer alternative unless essential.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "2.5.8",
+      "level": "AA",
+      "title": "Target Size (Minimum) (2.2)",
+      "principle": "Operable",
+      "description": "Pointer targets meet the 24 by 24 CSS pixel minimum or spacing exception.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.1.1",
+      "level": "A",
+      "title": "Language of Page",
+      "principle": "Understandable",
+      "description": "The default human language of each web page can be programmatically determined.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.1.2",
+      "level": "AA",
+      "title": "Language of Parts",
+      "principle": "Understandable",
+      "description": "The human language of each passage or phrase can be programmatically determined.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.2.1",
+      "level": "A",
+      "title": "On Focus",
+      "principle": "Understandable",
+      "description": "Receiving focus does not initiate a change of context.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.2.2",
+      "level": "A",
+      "title": "On Input",
+      "principle": "Understandable",
+      "description": "Changing a setting does not automatically change context unless the user is advised.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.2.3",
+      "level": "AA",
+      "title": "Consistent Navigation",
+      "principle": "Understandable",
+      "description": "Repeated navigation mechanisms occur in the same relative order.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.2.4",
+      "level": "AA",
+      "title": "Consistent Identification",
+      "principle": "Understandable",
+      "description": "Components with the same functionality are identified consistently.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.2.6",
+      "level": "A",
+      "title": "Consistent Help",
+      "principle": "Understandable",
+      "description": "Help mechanisms occur in the same relative order across pages.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.3.1",
+      "level": "A",
+      "title": "Error Identification",
+      "principle": "Understandable",
+      "description": "Input errors are identified in text and described to the user.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.3.2",
+      "level": "A",
+      "title": "Labels or Instructions",
+      "principle": "Understandable",
+      "description": "Labels or instructions are provided when content requires user input.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.3.3",
+      "level": "AA",
+      "title": "Error Suggestion",
+      "principle": "Understandable",
+      "description": "Suggestions for correcting input errors are provided in text.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.3.4",
+      "level": "AA",
+      "title": "Error Prevention (Legal, Financial, Data)",
+      "principle": "Understandable",
+      "description": "Users can review, confirm, and reverse submissions for legal, financial, or data transactions.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.3.6",
+      "level": "A",
+      "title": "Redundant Entry",
+      "principle": "Understandable",
+      "description": "Information previously entered is not required to be re-entered in the same process.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.3.7",
+      "level": "AA",
+      "title": "Accessible Authentication",
+      "principle": "Understandable",
+      "description": "Authentication does not rely on a cognitive function test, and users can passkey, paste, or use a password manager.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "3.3.8",
+      "level": "AAA",
+      "title": "Accessible Authentication (Enhanced)",
+      "principle": "Understandable",
+      "description": "Authentication requires no cognitive function test.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "4.1.2",
+      "level": "A",
+      "title": "Name, Role, Value",
+      "principle": "Robust",
+      "description": "For all UI components, name, role, and value can be programmatically determined and are exposed to assistive technologies.",
+      "wcag_version": "2.2"
+    },
+    {
+      "id": "4.1.3",
+      "level": "AA",
+      "title": "Status Messages",
+      "principle": "Robust",
+      "description": "Status messages are exposed through roles and properties so assistive technologies can announce them without receiving focus.",
+      "wcag_version": "2.2"
+    }
+  ]
+}

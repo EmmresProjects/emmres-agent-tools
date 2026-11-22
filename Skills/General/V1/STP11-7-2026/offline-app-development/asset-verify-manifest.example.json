@@ -1,0 +1,15 @@
+{
+  "$comment": "Example integrity manifest verified by `tools-offline-app-dev.py verify --manifest <this-file> --root <bundle-dir>`. Replace the example entry with your own files (generate one manifest for a directory with `verify --init-manifest <this-file> --root <bundle-dir>`). Paths are relative to --root; sha256 is lowercase hex. Files listed but missing, or whose hash differs, fail verification. Files in the root that are NOT listed are reported as untracked (warning, not failure, unless --strict is given).",
+  "schema_version": 1,
+  "bundle": "example-offline-bundle",
+  "algorithm": "sha256",
+  "created": "2026-11-01T00:00:00Z",
+  "files": [
+    {
+      "path": "example/placeholder-payload.bin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "example-only: sha256 of an empty file; replace with your real bundle entries"
+    }
+  ]
+}

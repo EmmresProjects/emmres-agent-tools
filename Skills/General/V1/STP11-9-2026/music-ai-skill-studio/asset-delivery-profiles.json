@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "note": "Delivery targets used by the plan and handoff steps. Values are widely used defaults; platforms change their normalisation, so confirm against the destination's current documentation before a commercial release. This studio does not measure LUFS or true peak - see the limitations in knowledge-readme.md.",
+  "profiles": {
+    "streaming-generic": {
+      "label": "Streaming (generic)",
+      "loudness_target_lufs": -14,
+      "true_peak_max_dbtp": -1.0,
+      "sample_rate_hz": 44100,
+      "bit_depth": 24,
+      "channels": 2,
+      "format": "WAV or FLAC master; lossy delivery generated from the WAV",
+      "notes": "Normalisation on playback is common, so loudness above target buys no level and costs dynamics."
+    },
+    "streaming-apple": {
+      "label": "Apple Music",
+      "loudness_target_lufs": -16,
+      "true_peak_max_dbtp": -1.0,
+      "sample_rate_hz": 44100,
+      "bit_depth": 24,
+      "channels": 2,
+      "format": "WAV or ALAC source; AAC delivery handled by the platform",
+      "notes": "Apple publishes its own guidance; treat this as a starting point."
+    },
+    "streaming-spotify": {
+      "label": "Spotify",
+      "loudness_target_lufs": -14,
+      "true_peak_max_dbtp": -1.0,
+      "sample_rate_hz": 44100,
+      "bit_depth": 24,
+      "channels": 2,
+      "format": "WAV 24-bit source",
+      "notes": "Loud masters get turned down, not up; keep true peak headroom for lossy encoding."
+    },
+    "video-broadcast": {
+      "label": "Video / broadcast bed",
+      "loudness_target_lufs": -23,
+      "true_peak_max_dbtp": -2.0,
+      "sample_rate_hz": 48000,
+      "bit_depth": 24,
+      "channels": 2,
+      "format": "WAV 48 kHz, with music-only and full-mix stems",
+      "notes": "Broadcast delivery usually also needs a dialogue-free stem and a cue sheet."
+    },
+    "podcast-spoken": {
+      "label": "Podcast / spoken word",
+      "loudness_target_lufs": -16,
+      "true_peak_max_dbtp": -1.0,
+      "sample_rate_hz": 44100,
+      "bit_depth": 16,
+      "channels": 1,
+      "format": "WAV master plus MP3/AAC delivery",
+      "notes": "Mono is common; intelligibility matters more than musical loudness."
+    },
+    "game-audio": {
+      "label": "Game / interactive audio",
+      "loudness_target_lufs": -18,
+      "true_peak_max_dbtp": -1.0,
+      "sample_rate_hz": 48000,
+      "bit_depth": 24,
+      "channels": 2,
+      "format": "WAV, looping assets cut to sample-accurate loop points",
+      "notes": "Deliver loop metadata and an unlooped variant for each cue."
+    },
+    "film-stems": {
+      "label": "Film / TV delivery",
+      "loudness_target_lufs": -24,
+      "true_peak_max_dbtp": -3.0,
+      "sample_rate_hz": 48000,
+      "bit_depth": 24,
+      "channels": 2,
+      "format": "WAV 48 kHz, 5.1 or stereo stems plus a cue sheet",
+      "notes": "Follow the post house's spec sheet; it always overrides a default profile."
+    },
+    "physical-master": {
+      "label": "Physical / archive master",
+      "loudness_target_lufs": -12,
+      "true_peak_max_dbtp": -0.3,
+      "sample_rate_hz": 44100,
+      "bit_depth": 24,
+      "channels": 2,
+      "format": "WAV or DDP-ready set, plus a 96 kHz archival copy",
+      "notes": "Keep the pre-master and one level-matched reference for every approved revision."
+    }
+  }
+}

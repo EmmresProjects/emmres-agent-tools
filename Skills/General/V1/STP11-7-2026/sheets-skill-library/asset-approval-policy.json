@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "description": "Human-approval policy for sheets-skill-library. Gates are attached to capabilities by risk tier and by keyword triggers; approval_required gates block execution until a named approver records a scoped, expiring approval.",
+  "defaults": {
+    "ttl_hours": 24,
+    "require_named_approver": true,
+    "approval_is_scoped_to_one_capability_and_gate": true,
+    "deny_when_integration_disabled": true
+  },
+  "gates": {
+    "review_before_publish": {
+      "approval_required": false,
+      "reason": "A human must read the artefact before it leaves the workbook (export, share, send, publish).",
+      "evidence": ["rendered artefact", "reviewer name", "date"],
+      "blocks": ["share", "export to others", "email", "html publication"]
+    },
+    "backup_before_change": {
+      "approval_required": true,
+      "reason": "A copy of the workbook must exist before destructive or bulk changes.",
+      "evidence": ["copy location", "timestamp", "row count of the copy"],
+      "blocks": ["delete", "replace", "bulk rewrite", "range shift"]
+    },
+    "approval_required": {
+      "approval_required": true,
+      "reason": "Risk tier is high or critical: a named human approves this capability for this workbook.",
+      "evidence": ["approval record in approvals.json", "scope", "expiry"],
+      "blocks": ["execution of the capability"]
+    },
+    "security_sign_off": {
+      "approval_required": true,
+      "reason": "Critical risk: security/privacy owner confirms the data handling before execution.",
+      "evidence": ["privacy review", "data minimisation note", "security owner name"],
+      "blocks": ["pseudonymisation", "permission change", "script review", "extension decommission"]
+    },
+    "external_integration_unavailable": {
+      "approval_required": false,
+      "reason": "The capability needs an integration disabled in tools-config.json; deliver reviewed manual steps instead.",
+      "evidence": ["disabled integration list"],
+      "blocks": []
+    },
+    "destructive_action": {
+      "approval_required": true,
+      "reason": "The capability text contains a destructive verb (delete, drop, overwrite all, wipe).",
+      "evidence": ["target range", "backup reference", "approver name"],
+      "blocks": ["delete rows/columns", "clear ranges", "replace workbook"]
+    },
+    "publishing_action": {
+      "approval_required": true,
+      "reason": "The capability distributes content (share link, email, PDF, HTML).",
+      "evidence": ["recipient or link scope", "artefact snapshot"],
+      "blocks": ["share", "send", "publish"]
+    },
+    "permission_change": {
+      "approval_required": true,
+      "reason": "Access levels or ownership change.",
+      "evidence": ["previous access state", "new access state", "principal list"],
+      "blocks": ["grant editor", "change owner", "make public"]
+    },
+    "financial_exposure": {
+      "approval_required": true,
+      "reason": "Financial data or money movement is involved.",
+      "evidence": ["reconciliation total", "reviewer name"],
+      "blocks": ["payroll output", "invoice distribution", "payment files"]
+    },
+    "external_dependency": {
+      "approval_required": false,
+      "reason": "The capability depends on an external source (IMPORTRANGE, IMPORTXML, webhook); record owner, refresh and fallback.",
+      "evidence": ["source owner", "refresh schedule", "fallback snapshot"],
+      "blocks": []
+    },
+    "privileged_script": {
+      "approval_required": true,
+      "reason": "Apps Script, add-on or webhook code can act with the user's authority.",
+      "evidence": ["code review", "scope list", "rollback plan"],
+      "blocks": ["deploy script", "install trigger", "install add-on"]
+    }
+  },
+  "triggers": [
+    { "gate": "destructive_action", "keywords": ["delete", "remove", "drop", "truncate", "wipe", "overwrite all", "clear all"] },
+    { "gate": "publishing_action", "keywords": ["publish", "share", "public link", "send", "email", "distribute", "export"] },
+    { "gate": "permission_change", "keywords": ["permission", "access", "owner", "editor", "viewer", "sharing"] },
+    { "gate": "financial_exposure", "keywords": ["budget", "invoice", "payroll", "salary", "cash flow", "financial", "commission"] },
+    { "gate": "external_dependency", "keywords": ["importrange", "importhtml", "importxml", "importdata", "webhook", "bigquery", "looker", "api "] },
+    { "gate": "privileged_script", "keywords": ["apps script", "macro", "trigger", "add-on", "addon", "custom function", "web app"] }
+  ],
+  "denied_without_approval": [
+    "changing Drive ownership",
+    "publishing a public link",
+    "sending email to recipients",
+    "deleting rows or columns from a source sheet",
+    "installing an add-on or trigger in a shared workbook",
+    "pseudonymising data without keeping the re-identification key separate"
+  ]
+}

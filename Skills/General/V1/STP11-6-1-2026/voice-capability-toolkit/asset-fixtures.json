@@ -1,0 +1,102 @@
+{
+  "version": "1.0.0",
+  "description": "Example inputs used by the tools and by the self-test suite (tools-selftest.py). They are small, deterministic and safe to modify.",
+  "pronunciation_example": {
+    "name": "demo-brand-dictionary",
+    "language": "en-US",
+    "version": "1.0.0",
+    "entries": [
+      {"term": "Anemoi", "say": "uh-NEM-oy", "ipa": "/əˈnɛmɔɪ/", "stress": "2", "scope": "brand", "source": "client style guide", "approved_by": "brand-review"},
+      {"term": "Saoirse", "say": "SEER-sha", "ipa": "/ˈsɪərʃə/", "scope": "character", "source": "actor confirmation"},
+      {"term": "Xylos-9", "say": "ZY-loss nine", "scope": "project", "case_sensitive": true},
+      {"term": "Dr. Reyes", "say": "doctor RAY-ess", "scope": "project", "case_sensitive": true}
+    ]
+  },
+  "brief_example": {
+    "project": "aurora-launch",
+    "language": "en-US",
+    "target_duration_seconds": 24,
+    "target_lufs": -16,
+    "formats": ["wav", "mp3"],
+    "direction": {
+      "emotion": "confidence",
+      "intensity": 0.7,
+      "pace_wpm": 155,
+      "attitude": "professional",
+      "pronunciation_preset": "demo-brand-dictionary"
+    },
+    "segments": [
+      {"id": "s01", "speaker": "host", "text": "Aurora is here. One platform for every voice your product needs.", "emotion": "confidence", "intensity": 0.7},
+      {"id": "s02", "speaker": "host", "text": "Anemoi brings warmth. Xylos-9 brings control. You bring the story.", "emotion": "joy", "intensity": 0.6},
+      {"id": "s03", "speaker": "host", "text": "Start building today, and keep every approval on record.", "emotion": "satisfaction", "intensity": 0.5}
+    ]
+  },
+  "voice_profile_example": {
+    "profile_id": "aurora-host",
+    "display_name": "Aurora Host",
+    "umbrella": "voice-creation-and-identity-design",
+    "origin": {"type": "synthetic-original", "notes": "Fictional presenter identity designed for the Aurora launch."},
+    "design": {
+      "age_presentation": "adult",
+      "gender_presentation": "androgynous",
+      "pitch": {"base_hz": 165, "range_st": 10.5},
+      "resonance": "balanced",
+      "pace_wpm": 155,
+      "energy": 0.62,
+      "texture": ["clean", "slight air"],
+      "accent": {"locale": "en-US", "strength": 0.35},
+      "personality": ["warm", "precise", "curious"],
+      "signature_habits": ["short breath before the call to action", "downward cadence on the last word of a promise"]
+    },
+    "preferred_styles": ["warm", "conversational", "elegant"],
+    "forbidden_traits": ["shouty", "sarcastic", "raspy"],
+    "evaluation": {
+      "sample_lines": [
+        "Aurora is here. One platform for every voice your product needs.",
+        "Anemoi brings warmth. Xylos-9 brings control."
+      ],
+      "criteria": ["identity stable across lines", "no metallic artefacts", "numbers clearly spoken"]
+    },
+    "rights": {
+      "origin_license": "internal-original-design",
+      "allowed_uses": ["advertising", "product-demo", "social"],
+      "territories": ["worldwide"],
+      "disclosure_required": true,
+      "revocable": true
+    }
+  },
+  "consent_example": {
+    "consent_id": "consent-demo-talent",
+    "subject": {"display_name": "Demo Talent", "is_real_person": true, "relationship": "talent", "verification": "signed release form on file"},
+    "granted_by": "Demo Talent",
+    "granted_at": "2026-01-15",
+    "evidence": ["asset-fixtures.json#consent_example", "release-form-ref-2026-01"],
+    "scope": {
+      "uses": ["advertising", "product-demo"],
+      "projects": ["aurora-launch"],
+      "territories": ["PH", "worldwide"],
+      "media": ["video", "audio"],
+      "commercial": true,
+      "duration": "12 months",
+      "derivatives_allowed": false,
+      "sublicense_allowed": false
+    },
+    "disclosure": {"required": true, "form": "metadata"},
+    "expires_at": "2027-01-15",
+    "revocation": {"revocable": true, "contact": "rights-review@example.invalid", "procedure": "Written notice; revocation flag set with tools-voice-profile.py revoke."},
+    "signature": {"method": "sha256-body", "value": "example-signature-placeholder-not-a-secret", "verified_at": "2026-01-16"}
+  },
+  "usage_request_example": {
+    "use": "advertising",
+    "project": "aurora-launch",
+    "territory": "PH",
+    "medium": "video",
+    "commercial": true,
+    "duration": "12 months",
+    "imitate_real_person": false,
+    "sensitive_domain": "none"
+  },
+  "sanitize_text_example": "Call 0917-555-0134 before 09/12/2026 — the fee is ₱2,500.00 (USD 45.50), about 12 kg at 3.5 m/s, see https://example.invalid/docs?x=1 and NASA/JPL.",
+  "prosody_example": "We shipped the first version in March. It was fast, but it was not honest. So we rebuilt it.",
+  "checklist_targets": ["advertising", "audiobook", "podcast", "game-voiceover", "telephony", "accessibility"]
+}

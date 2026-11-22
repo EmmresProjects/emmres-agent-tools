@@ -1,0 +1,80 @@
+{
+ "blueprint_id": "autoforge-scaffold-blueprint",
+ "version": "1.0.0",
+ "description": "Files tools_scaffold.py build creates, plus the marker that proves the entry point already has a dry-run path.",
+ "files": [
+  {
+   "path": "automation_entry.py",
+   "source": "asset-runner-skeleton.py",
+   "kind": "runnable",
+   "markers": [
+    "--dry-run",
+    "__main__",
+    "audit("
+   ],
+   "required": true
+  },
+  {
+   "path": "config.json",
+   "kind": "config",
+   "markers": [
+    "input_dir",
+    "limits",
+    "secrets"
+   ],
+   "required": true
+  },
+  {
+   "path": "README.md",
+   "kind": "doc",
+   "markers": [
+    "## Install",
+    "## Run",
+    "## Recover"
+   ],
+   "required": true
+  },
+  {
+   "path": "requirements.txt",
+   "kind": "deps",
+   "markers": [
+    "no third-party"
+   ],
+   "required": true
+  },
+  {
+   "path": "fixtures/sample.csv",
+   "kind": "fixture",
+   "markers": [
+    "record_id"
+   ],
+   "required": true
+  },
+  {
+   "path": "run_history.json",
+   "kind": "state",
+   "markers": [
+    "generated_at"
+   ],
+   "required": false
+  }
+ ],
+ "verify_markers": [
+  "dry run",
+  "run_id"
+ ],
+ "forbidden_defaults": [
+  "AKIA",
+  "BEGIN PRIVATE KEY",
+  "password ="
+ ],
+ "post_build_checks": [
+  "python3 automation_entry.py --dry-run",
+  "python3 automation_entry.py --stages"
+ ],
+ "owner_fields": [
+  "owner",
+  "review_date",
+  "stop_control"
+ ]
+}

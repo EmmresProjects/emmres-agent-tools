@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "title": "Offline research operation request",
+  "type": "object",
+  "required": [
+    "operation"
+  ],
+  "properties": {
+    "operation": {
+      "type": "string",
+      "enum": [
+        "audio-transcripts",
+        "bibliographic",
+        "citations",
+        "composition",
+        "deduplication",
+        "deployment",
+        "document-layout",
+        "editing",
+        "evaluation",
+        "evidence-review",
+        "fact-check",
+        "governance",
+        "human-review",
+        "ingest",
+        "knowledge-graph",
+        "legal-corpus",
+        "localization-qa",
+        "news-archive",
+        "originality",
+        "packaging",
+        "provenance",
+        "question-answering",
+        "reference-corpus",
+        "retrieval",
+        "rights",
+        "scholarly-corpus",
+        "security",
+        "semantic-retrieval",
+        "specialized-writing",
+        "standards-library",
+        "terminology",
+        "translation"
+      ]
+    },
+    "input": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "output": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "params": {
+      "type": "object"
+    },
+    "timeout_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 1800
+    },
+    "retries": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "cancel_file": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "approval_token": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "run_id": {
+      "type": "string",
+      "max_length": 128
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Archetype brief templates used by `tools-offline-app-dev.py brief`. Placeholders {ref}, {name}, {category}, {description} are substituted at generation time. Editing this file changes the generated briefs; keep section names stable.",
+  "brief_note": "Briefs are deterministic work orders. They do not execute the catalog concept; they make it actionable with pinned inputs, offline boundaries, and verification steps.",
+  "archetypes": {
+    "implement": {
+      "id": "implement",
+      "label": "Focused reusable capability",
+      "contract": "Declared inputs and outputs, pinned dependencies, offline behavior, security boundaries, tests, diagnostics, documentation, and cross-platform acceptance criteria.",
+      "sections": [
+        {"heading": "Responsibility", "body": "Implement {name} as a focused, reusable capability (catalog {ref}, category: {category}). {description}"},
+        {"heading": "Declared inputs", "body": "- Explicit configuration object (schema versioned, all paths relative, no ambient environment reads)\n- Pinned dependency manifest and local cache/lockfile (no implicit network fetch)\n- Target platform identifier and minimum OS/API level\n- Workload parameters and permission grants required by the platform"},
+        {"heading": "Declared outputs", "body": "- Deterministic result artifact(s) written to an explicit output path\n- Structured diagnostics (JSON) with severity, code, message, remediation hint\n- Test evidence (unit + contract) tied to the acceptance criteria below"},
+        {"heading": "Offline boundary", "body": "- All dependencies restored from the local offline bundle/cache with hashes verified\n- No hidden first-run downloads; any provisioning step fails fast with a clear offline error\n- Optional networked features degrade gracefully and are verified separately in controlled connected environments"},
+        {"heading": "Security boundaries", "body": "- Least-privilege: request only the platform permissions required\n- No secrets, keys, or credentials in source or fixtures; inject at runtime from the platform keystore/secret store\n- Inputs validated before use; untrusted data never reaches privileged APIs unchecked"},
+        {"heading": "Tests", "body": "- Unit tests for pure logic (offline)\n- Contract tests per supported platform (mocked adapters permitted)\n- Negative-path tests: missing dependency, denied permission, corrupt cache, read-only target\n- Diagnostics emit actionable codes; documentation lists every code and its remediation"},
+        {"heading": "Cross-platform acceptance criteria", "body": "- Same public interface on every supported target; platform specifics hidden behind the interface\n- Behavior parity verified on at least one simulator/emulator and one physical device per mobile target\n- Documented escape hatch to the native API for platform-only needs"}
+      ]
+    },
+    "evaluate": {
+      "id": "evaluate",
+      "label": "Pass/warn/fail evaluation",
+      "contract": "Clean, reproducible evaluation with explicit pass, warn, and fail criteria; retain target platform, toolchain version, device or simulator, observed result, failure evidence, and exact remediation and retest steps.",
+      "sections": [
+        {"heading": "Responsibility", "body": "Evaluate {name} (catalog {ref}, category: {category}) in a clean, reproducible environment. {description}"},
+        {"heading": "Required recorded context", "body": "- Target platform, OS version, and architecture\n- Toolchain and SDK versions (exact, pinned)\n- Device, simulator, or emulator model and OS image\n- Date, operator, and source revision of the build under test"},
+        {"heading": "Pass / warn / fail criteria", "body": "- PASS: observed result meets the criterion with margin; evidence attached\n- WARN: criterion met with degradation or advisory; document, schedule, and retest trigger defined\n- FAIL: criterion not met; capture failure evidence (logs, screenshots, traces) and exact remediation steps\n- UNTESTED: no result recorded; never silently counted as pass"},
+        {"heading": "Evidence retention", "body": "- Store raw logs, screenshots, and profiler/trace output beside the report\n- Record the exact retest command and expected result after remediation\n- Keep reports immutable; supersede with a new report rather than editing history"},
+        {"heading": "Environment cleanliness", "body": "- Evaluate on a clean machine or reset VM/container; network blocked for offline criteria\n- Restore from the pinned offline bundle; verify integrity before the run\n- No leftover state from previous runs (clear app data, fresh install)"}
+      ]
+    },
+    "adapter": {
+      "id": "adapter",
+      "label": "Stable-interface platform adapter",
+      "contract": "Behind a stable interface with capability detection, permission handling, mocked offline tests, platform-specific implementations, graceful degradation, and contract tests for every supported target.",
+      "sections": [
+        {"heading": "Responsibility", "body": "Provide {name} behind a stable interface (catalog {ref}, category: {category}). {description}"},
+        {"heading": "Stable interface", "body": "- Interface defined once, platform-agnostic (types, errors, async semantics)\n- Versioned contract; additive changes only within a major version\n- Capability descriptor reported at runtime: name, version, features supported, requires-permission list"},
+        {"heading": "Capability detection and graceful degradation", "body": "- Detect hardware/OS capability before first use; never assume availability\n- When absent: disable the feature with a documented fallback path, not a crash\n- Denial of permission yields a typed error + rationale UI hook, never an infinite prompt"},
+        {"heading": "Permission handling", "body": "- Request at the latest responsible moment with a user-facing rationale\n- Handle granted/denied/restricted states distinctly (platform rules differ)\n- Re-check on resume; permissions can be revoked while the app is backgrounded"},
+        {"heading": "Implementations and tests", "body": "- One platform-specific implementation per supported target; shared logic factored out\n- Mocked offline tests run without devices; contract tests run per target (emulator/device/hardware)\n- Escape hatch: documented accessor to the native API for target-specific needs, clearly marked unstable"}
+      ]
+    },
+    "build": {
+      "id": "build",
+      "label": "Pinned-input builder",
+      "contract": "From pinned local inputs with integrity checks, deterministic paths, rollback or cleanup behavior, platform-specific metadata, and a post-build install, open, or verification test that requires no hidden download.",
+      "sections": [
+        {"heading": "Responsibility", "body": "Create {name} from pinned local inputs (catalog {ref}, category: {category}). {description}"},
+        {"heading": "Inputs and integrity", "body": "- Every input pinned by version and SHA-256 (offline bundle manifest)\n- Verify hashes before any step runs; abort atomically on mismatch\n- Deterministic output paths derived from the config; no timestamps leaking into reproducible artifacts where the platform permits"},
+        {"heading": "Rollback and cleanup", "body": "- Stage outputs in a temporary sibling directory; publish by atomic rename only after all checks pass\n- On failure: remove partial outputs, restore previous state, print recovery instructions\n- Never mutate the input bundle in place"},
+        {"heading": "Platform-specific metadata", "body": "- Stamp artifacts with platform metadata required for install/launch (version, SDK/min-OS, arch, signing identity placeholder, package id)\n- Keep signing material outside the build inputs; reference it by handle/alias only"},
+        {"heading": "Post-build verification", "body": "- Automatic install-or-open smoke test on a local device/simulator/emulator, or equivalent headless check\n- The verification requires no hidden download; it must pass on a network-blocked clean machine\n- Record verification evidence beside the artifact (checksum manifest, log, verdict)"}
+      ]
+    },
+    "operate": {
+      "id": "operate",
+      "label": "Long-running managed operation",
+      "contract": "Versioned configuration, bounded resource use, deterministic state transitions, cancellation and recovery paths, structured errors, and platform-specific fallbacks that preserve user data.",
+      "sections": [
+        {"heading": "Responsibility", "body": "Operate {name} as a managed, recoverable capability (catalog {ref}, category: {category}). {description}"},
+        {"heading": "Versioned configuration", "body": "- Configuration schema carries an explicit version; migrations are forward-only with backup\n- Unknown keys are rejected or ignored per policy, never silently misread\n- Defaults are safe, offline-first, and documented"},
+        {"heading": "Bounded resource use", "body": "- Explicit limits: memory, disk, concurrency, retry count, and wall-clock timeout\n- Backpressure or rejection when saturated; never unbounded queues\n- Resource exhaustion produces a typed, actionable error"},
+        {"heading": "State transitions and cancellation", "body": "- Deterministic state machine: idle -> running -> (succeeded | failed | cancelled); transitions logged\n- Cancellation is cooperative, prompt, and leaves no corrupt state (atomic commits or journal)\n- Recovery path documented for every failure state; user data always preserved"},
+        {"heading": "Errors and fallbacks", "body": "- Structured errors: stable code, human message, remediation hint, correlation id\n- Platform-specific fallbacks degrade functionality, never integrity\n- Preserve user data above all; partial results are committed or rolled back atomically"}
+      ]
+    },
+    "plan": {
+      "id": "plan",
+      "label": "Owned, verifiable plan",
+      "contract": "Owners, prerequisites, ordered steps, decision points, failure recovery, required evidence, and a clean completion condition suitable for offline teams and repeatable releases.",
+      "sections": [
+        {"heading": "Responsibility", "body": "Define {name} (catalog {ref}, category: {category}) with owners, prerequisites, ordered steps, decision points, failure recovery, and evidence. {description}"},
+        {"heading": "Owners and prerequisites", "body": "- Named roles (not just people): accountable owner, reviewer, decider for each decision point\n- Prerequisites verified before step 1: pinned toolchain, offline bundle restored, devices/emulators available, prior ADRs reviewed\n- Missing prerequisite blocks the plan loudly; no silent skipping"},
+        {"heading": "Ordered steps and decision points", "body": "- Steps are sequential, each with entry criteria, action, exit criteria, and evidence artifact\n- Decision points have explicit options, a decider, and a default taken offline without external input\n- Parallelizable steps are marked; dependencies between steps are explicit"},
+        {"heading": "Failure recovery", "body": "- Every step names its failure modes and the recovery action (retry with backoff / roll back / escalate)\n- Rollback restores the last known-good state; data migrations are reversible or dual-written\n- Re-plan trigger: any failed gate stops the plan until re-reviewed"},
+        {"heading": "Evidence and completion condition", "body": "- Required evidence list archived with the release record (logs, reports, checksums, sign-offs)\n- Completion condition is objectively checkable (e.g., acceptance checklist all-pass, artifact reproducible)\n- Nothing is 'done' on verbal confirmation alone"}
+      ]
+    },
+    "select-configure": {
+      "id": "select-configure",
+      "label": "Smallest-maintainable selection",
+      "contract": "Select and configure the smallest maintainable solution for the target platforms, documenting compatibility, dependency weight, performance, accessibility, distribution constraints, and escape paths for platform-specific code.",
+      "sections": [
+        {"heading": "Responsibility", "body": "Use {name} to select and configure the smallest maintainable solution (catalog {ref}, category: {category}). {description}"},
+        {"heading": "Selection method", "body": "- Enumerate candidate solutions; prefer the smallest dependency weight that meets hard constraints\n- Score against the decision matrix criteria (see asset-decision-matrix.json; override weights via the matrix command)\n- Reject any candidate that cannot be restored offline or cannot satisfy the minimum OS/arch targets"},
+        {"heading": "Documented decision record", "body": "- Compatibility: platforms, minimum OS versions, CPU architectures\n- Dependency weight: direct + transitive size, license class, pinning status\n- Performance: startup, memory, and binary-size implications with measurement plan\n- Accessibility: platform a11y APIs honored (VoiceOver/TalkBack/UI Automation/AT-SPI)\n- Distribution constraints: store policies, signing, notarization, update channel, enterprise vs consumer route"},
+        {"heading": "Configuration and escape paths", "body": "- Minimal configuration checked into source; secrets stay out\n- Document the escape path to platform-specific code for anything the abstraction cannot express\n- Record the decision as an ADR (see the adr command) so future changes have context"}
+      ]
+    }
+  }
+}

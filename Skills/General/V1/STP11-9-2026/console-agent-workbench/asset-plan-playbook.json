@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0",
+  "title": "Reversible experiment and task decomposition playbook",
+  "baseline": [
+    "record the current state: tool versions, media identifiers, hashes, and settings",
+    "hash every input before touching it and store the manifest beside the evidence",
+    "capture the hardware model, firmware version, reader firmware and cable path",
+    "record the operator authorization for the material in scope"
+  ],
+  "stop_conditions": [
+    "a read is not repeatable across two independent passes",
+    "the media becomes warmer than usual, emits noise, or the reader reports unstable current",
+    "any step would require circumvention, leaked tooling, or unlicensed firmware",
+    "evidence hashes stop matching the recorded baseline",
+    "the overall time budget or file-count budget is exceeded"
+  ],
+  "rollback": [
+    "restore the pre-change snapshot or copy, then re-hash and compare against the baseline",
+    "keep changes in a copy-on-write directory so the original media is never modified",
+    "reverse the step from the recorded command log; never delete evidence during rollback",
+    "mark the run as rolled back and attach both baselines to the report"
+  ],
+  "approvals": [
+    "destructive or irreversible media operations",
+    "writing to firmware, flash, EEPROM or optical media",
+    "publishing or sharing any report that names a person, account or device",
+    "deleting evidence through the retention controller"
+  ],
+  "stages": [
+    {
+      "id": "acquire",
+      "objective": "Establish lawful ownership and bring the material into a controlled workspace.",
+      "checklist": [
+        "record the ownership/authorization statement with: gate authorize --attest",
+        "log the material reference, region and visible serial or label text",
+        "copy media into a workspace directory that is separate from the originals",
+        "confirm the destination has enough free space for at least two full copies"
+      ],
+      "tool_hint": "tools-console-agent.py gate authorize",
+      "exit_criteria": "an authorization record exists and covers every material in scope"
+    },
+    {
+      "id": "preserve",
+      "objective": "Create a verified baseline without modifying the source.",
+      "checklist": [
+        "hash every file into a manifest before any conversion",
+        "perform at least two independent reads of physical media",
+        "compare the reads and stop on any divergence",
+        "store the manifest and the raw read log next to the evidence"
+      ],
+      "tool_hint": "tools-console-agent.py hash / verify --crosscheck",
+      "approval_required": false,
+      "exit_criteria": "two reads agree and the manifest hash is recorded"
+    },
+    {
+      "id": "identify",
+      "objective": "Determine what the material actually is.",
+      "checklist": [
+        "inspect container headers, magic values and size relationships",
+        "match against a trusted DAT if one is available and versioned",
+        "record platform, region, revision and any uncertainty explicitly"
+      ],
+      "tool_hint": "tools-console-agent.py inspect / verify --dat",
+      "exit_criteria": "format, platform and confidence are recorded"
+    },
+    {
+      "id": "inspect",
+      "objective": "Read structures without extracting or decrypting anything.",
+      "checklist": [
+        "list the structures the format documents publicly",
+        "note any field you cannot verify and why",
+        "keep proprietary or NDA-bound structure notes out of shareable reports"
+      ],
+      "tool_hint": "tools-console-agent.py inspect",
+      "exit_criteria": "structure notes exist and are marked with their evidence source"
+    },
+    {
+      "id": "reproduce",
+      "objective": "Reproduce the observation with an independent tool or worker.",
+      "checklist": [
+        "repeat the identification on a clean worker or fresh snapshot",
+        "record tool versions and settings for both runs",
+        "treat disagreements as findings, not as noise"
+      ],
+      "tool_hint": "tools-console-agent.py selftest --clean-state-hint",
+      "exit_criteria": "a second independent run agrees or the difference is explained"
+    },
+    {
+      "id": "test",
+      "objective": "Exercise the behavior that matters for the claimed result.",
+      "checklist": [
+        "define pass/fail criteria before running",
+        "capture logs, frames or traces that support the verdict",
+        "record emulator or hardware version, firmware and controller configuration"
+      ],
+      "tool_hint": "tools-console-agent.py report (with test evidence inputs)",
+      "exit_criteria": "every criterion has recorded evidence"
+    },
+    {
+      "id": "compare",
+      "objective": "Compare runs, revisions or implementations.",
+      "checklist": [
+        "compare hashes first, then behavior, then performance",
+        "separate exact duplicates, overdumps and revisions",
+        "record discrepancies with environment details"
+      ],
+      "tool_hint": "tools-console-agent.py verify --crosscheck",
+      "exit_criteria": "differences are listed with their cause or marked unknown"
+    },
+    {
+      "id": "package",
+      "objective": "Assemble a redistribution-safe package.",
+      "checklist": [
+        "run the guardrail scan in package mode and resolve every blocking finding",
+        "keep the package metadata-only unless rights are explicitly established",
+        "exclude nested archives, keys, firmware and content you may not share"
+      ],
+      "tool_hint": "tools-console-agent.py scan --mode package / report --minimal",
+      "approval_required": false,
+      "exit_criteria": "scan verdict is clear and the report states the rights basis"
+    },
+    {
+      "id": "handoff",
+      "objective": "Hand the work to another operator without losing context.",
+      "checklist": [
+        "render one report with the report command",
+        "append the provenance records to the hash-chained ledger",
+        "list open issues, rollback steps and the exact tool versions used"
+      ],
+      "tool_hint": "tools-console-agent.py report / provenance append / provenance verify-ledger",
+      "exit_criteria": "report plus verified ledger reproduces the whole run"
+    }
+  ],
+  "platform_addenda": {
+    "cartridge": {
+      "notes": "Cartridge work: clean contacts dry, verify voltage, prefer two readers if available.",
+      "extra_preserve": [
+        "record the board revision, chip markings and mapper/board type",
+        "read the save memory before any write-capable operation"
+      ],
+      "tool_hint": "physical-console-lab worker"
+    },
+    "game-boy": {
+      "notes": "Game Boy work: confirm MBC type and battery state before reading saves.",
+      "extra_identify": [
+        "verify the Nintendo logo and both header checksums"
+      ],
+      "tool_hint": "physical-console-lab worker"
+    },
+    "nes": {
+      "notes": "NES work: distinguish iNES from NES 2.0 headers and confirm mapper/submapper.",
+      "extra_identify": [
+        "record mapper, submapper, mirroring and PRG/CHR banking"
+      ],
+      "tool_hint": "physical-console-lab worker"
+    },
+    "snes": {
+      "notes": "SNES work: header offset depends on the mapping mode; check both LoROM and HiROM.",
+      "extra_identify": [
+        "confirm checksum/complement consistency and the mapping byte"
+      ],
+      "tool_hint": "physical-console-lab worker"
+    },
+    "optical": {
+      "notes": "Optical work: record the drive model, firmware and read offsets; use ddrescue for damage.",
+      "extra_preserve": [
+        "record drive model, firmware, read speed and error map",
+        "verify the image against a redump-style DAT when one is versioned locally"
+      ],
+      "tool_hint": "physical-console-lab worker with optical drive"
+    },
+    "arcade": {
+      "notes": "Arcade work: document the board, JAMMA wiring and any suicide-battery state first.",
+      "extra_acquire": [
+        "photograph the board and record the harness pinout before power-on"
+      ],
+      "tool_hint": "physical-console-lab worker"
+    },
+    "ps4": {
+      "notes": "PS4 work requires PlayStation Partners access, a licensed SDK and a devkit.",
+      "approval_stages": [
+        "test",
+        "handoff"
+      ],
+      "tool_hint": "official-playstation-partner worker"
+    },
+    "ps5": {
+      "notes": "PS5/PS5 Pro work requires PlayStation Partners access, a licensed SDK and a devkit.",
+      "approval_stages": [
+        "test",
+        "handoff"
+      ],
+      "tool_hint": "official-playstation-partner worker"
+    },
+    "xbox": {
+      "notes": "Xbox One and Series work requires Microsoft GDK access and licensed hardware.",
+      "approval_stages": [
+        "test",
+        "handoff"
+      ],
+      "tool_hint": "official-xbox-gdk worker"
+    },
+    "switch": {
+      "notes": "Switch and Switch 2 work requires Nintendo Developer Portal access and licensed hardware.",
+      "approval_stages": [
+        "test",
+        "handoff"
+      ],
+      "tool_hint": "official-nintendo-dev worker"
+    },
+    "fpga": {
+      "notes": "FPGA work: lint and simulate before synthesis; keep pin constraints under version control.",
+      "extra_test": [
+        "run lint, simulation and timing analysis before any hardware flash"
+      ],
+      "approval_stages": [
+        "test"
+      ],
+      "tool_hint": "fpga-lab worker"
+    }
+  }
+}

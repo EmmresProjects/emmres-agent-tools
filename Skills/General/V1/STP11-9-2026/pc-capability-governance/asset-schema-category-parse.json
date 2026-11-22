@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "pc-capability-governance category parse result",
+  "description": "Result of `parse`: extracted categories, Skill Tool names, descriptions and count reconciliation from plain text, Markdown or copied HTML.",
+  "type": "object",
+  "required": ["tool", "schema_version", "operation", "format", "counts", "categories", "skills"],
+  "properties": {
+    "tool": {"type": "string", "pattern": "^pc-capability-governance$"},
+    "schema_version": {"type": "string"},
+    "operation": {"type": "string", "enum": ["parse"]},
+    "generated_at": {"type": "string"},
+    "source": {"type": "string"},
+    "format": {"type": "string", "enum": ["text", "markdown", "html"]},
+    "counts": {
+      "type": "object",
+      "required": ["categories", "skills", "with_description"],
+      "properties": {
+        "categories": {"type": "integer", "minimum": 0},
+        "skills": {"type": "integer", "minimum": 0},
+        "with_description": {"type": "integer", "minimum": 0},
+        "declared_total": {"type": "integer", "minimum": 0},
+        "format": {"type": "string"}
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "slug", "skills", "actual_count"],
+        "properties": {
+          "name": {"type": "string", "minLength": 3},
+          "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "declared_count": {"type": ["integer", "null"]},
+          "actual_count": {"type": "integer", "minimum": 0},
+          "count_matches": {"type": ["boolean", "null"]},
+          "skills": {"type": "array", "items": {"type": "object"}}
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "slug", "description", "category"],
+        "properties": {
+          "name": {"type": "string", "minLength": 2},
+          "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "description": {"type": "string"},
+          "category": {"type": "string"},
+          "category_slug": {"type": "string"},
+          "number": {"type": ["integer", "null"]}
+        }
+      }
+    },
+    "empty_names": {"type": "array", "items": {"type": "string"}},
+    "umbrella_suggestion": {"type": ["object", "null"]}
+  }
+}

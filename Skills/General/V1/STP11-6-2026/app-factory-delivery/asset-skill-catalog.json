@@ -1,0 +1,2485 @@
+{
+ "schema_version": "1.0",
+ "source": {
+  "kind": "text",
+  "path": "supplied agent skill catalog (PDF text export; not shipped)",
+  "sha256": "135b4643e1d8176829962917070d7fb035d2ebbe24073b4d7bb426141ed7d284"
+ },
+ "counts": {
+  "categories": 30,
+  "skills": 244,
+  "ignored": 6,
+  "description_missing": 0
+ },
+ "categories": [
+  {
+   "number": "1",
+   "name": "Product Strategy and App Architecture",
+   "slug": "product-strategy-and-app-architecture",
+   "skills": [
+    {
+     "name": "Universal App Solution Architect",
+     "slug": "universal-app-solution-architect",
+     "description": "Turns a product idea into a buildable architecture for web, mobile, desktop, embedded, cloud, or hybrid delivery. Selects languages, frameworks, data stores, APIs, deployment targets, risks, milestones, and acceptance checks.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "product-strategy-and-app-architecture"
+    },
+    {
+     "name": "Requirements-to-Backlog Engineer",
+     "slug": "requirements-to-backlog-engineer",
+     "description": "Converts unclear goals into personas, user stories, functional and nonfunctional requirements, edge cases, dependencies, priorities, and testable acceptance criteria.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "product-strategy-and-app-architecture"
+    },
+    {
+     "name": "Technology Stack Selector",
+     "slug": "technology-stack-selector",
+     "description": "Compares viable stacks using platform fit, team skills, performance, security, accessibility, cost, maintainability, ecosystem maturity, and long-term support.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "product-strategy-and-app-architecture"
+    },
+    {
+     "name": "Legacy-to-Modern Architecture Planner",
+     "slug": "legacy-to-modern-architecture-planner",
+     "description": "Maps old systems, versions, protocols, dependencies, and data flows, then designs staged modernization with compatibility layers, rollback points, and regression checks.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "product-strategy-and-app-architecture"
+    },
+    {
+     "name": "Multi-Platform Product Planner",
+     "slug": "multi-platform-product-planner",
+     "description": "Defines shared and platform-specific behavior across browser, Android, iOS, Windows, macOS, Linux, console, wearables, TV, automotive, and spatial devices.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "product-strategy-and-app-architecture"
+    },
+    {
+     "name": "Modular Monolith Designer",
+     "slug": "modular-monolith-designer",
+     "description": "Designs maintainable modular monoliths with bounded modules, explicit interfaces, dependency rules, test seams, and a future path to services when justified.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "product-strategy-and-app-architecture"
+    },
+    {
+     "name": "Microservices and Distributed Systems Architect",
+     "slug": "microservices-and-distributed-systems-architect",
+     "description": "Designs service boundaries, contracts, messaging, consistency models, observability, resilience, deployment, and failure recovery for distributed applications.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "product-strategy-and-app-architecture"
+    },
+    {
+     "name": "Prototype-to-Production Planner",
+     "slug": "prototype-to-production-planner",
+     "description": "Creates a thin working prototype, identifies production gaps, and defines hardening work for performance, security, reliability, operations, compliance, and support.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "product-strategy-and-app-architecture"
+    }
+   ],
+   "index": 1
+  },
+  {
+   "number": "2",
+   "name": "Full-Stack Web Application Engineering",
+   "slug": "full-stack-web-application-engineering",
+   "skills": [
+    {
+     "name": "Full-Stack Web App Builder",
+     "slug": "full-stack-web-app-builder",
+     "description": "Produces complete web applications with frontend, backend, database, authentication, validation, testing, configuration, and deployment instructions in the requested stack.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "full-stack-web-application-engineering"
+    },
+    {
+     "name": "HTML CSS JavaScript Application Builder",
+     "slug": "html-css-javascript-application-builder",
+     "description": "Creates standards-based browser applications using semantic HTML, responsive CSS, modern JavaScript, progressive enhancement, accessibility, and browser compatibility checks.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "full-stack-web-application-engineering"
+    },
+    {
+     "name": "TypeScript Web Platform Engineer",
+     "slug": "typescript-web-platform-engineer",
+     "description": "Builds type-safe web systems with strict TypeScript, reusable contracts, validated inputs, predictable error handling, tests, linting, and build tooling.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "full-stack-web-application-engineering"
+    },
+    {
+     "name": "React Application Engineer",
+     "slug": "react-application-engineer",
+     "description": "Builds and repairs React applications using component architecture, state management, routing, forms, accessibility, testing, performance profiling, and modern build systems.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "full-stack-web-application-engineering"
+    },
+    {
+     "name": "Angular Enterprise App Engineer",
+     "slug": "angular-enterprise-app-engineer",
+     "description": "Creates Angular applications with standalone components or modules, services, routing, forms, RxJS, testing, dependency injection, and enterprise conventions.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "full-stack-web-application-engineering"
+    },
+    {
+     "name": "Vue and Nuxt Application Engineer",
+     "slug": "vue-and-nuxt-application-engineer",
+     "description": "Creates Vue or Nuxt applications with composition patterns, routing, state, server rendering, data fetching, testing, and production deployment.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "full-stack-web-application-engineering"
+    },
+    {
+     "name": "Svelte and SvelteKit Engineer",
+     "slug": "svelte-and-sveltekit-engineer",
+     "description": "Builds Svelte applications with reactive components, server routes, forms, adapters, testing, accessibility, and deployment configuration.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "full-stack-web-application-engineering"
+    },
+    {
+     "name": "Next.js Application Engineer",
+     "slug": "next-js-application-engineer",
+     "description": "Builds Next.js applications with routing, server and client components, data fetching, caching, authentication, metadata, tests, and deployment safeguards.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "full-stack-web-application-engineering"
+    },
+    {
+     "name": "Progressive Web App Engineer",
+     "slug": "progressive-web-app-engineer",
+     "description": "Adds installability, offline behavior, service workers, caching, background synchronization, notifications, responsive design, and update strategies.",
+     "description_source": "explicit",
+     "index": 9,
+     "number": "9",
+     "category_slug": "full-stack-web-application-engineering"
+    },
+    {
+     "name": "Web Components Engineer",
+     "slug": "web-components-engineer",
+     "description": "Creates framework-neutral custom elements with Shadow DOM, slots, events, styling contracts, accessibility, packaging, and interoperability tests.",
+     "description_source": "explicit",
+     "index": 10,
+     "number": "10",
+     "category_slug": "full-stack-web-application-engineering"
+    }
+   ],
+   "index": 2
+  },
+  {
+   "number": "3",
+   "name": "Mobile Application Engineering",
+   "slug": "mobile-application-engineering",
+   "skills": [
+    {
+     "name": "Android Studio Application Builder",
+     "slug": "android-studio-application-builder",
+     "description": "Creates ready-to-open Android Studio projects with Gradle configuration, manifests, resources, navigation, persistence, networking, tests, signing guidance, and version-aware compatibility.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "mobile-application-engineering"
+    },
+    {
+     "name": "Kotlin Android Engineer",
+     "slug": "kotlin-android-engineer",
+     "description": "Builds Android applications in Kotlin with Jetpack Compose or Views, coroutines, architecture components, dependency injection, Room, networking, and automated tests.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "mobile-application-engineering"
+    },
+    {
+     "name": "Java Android Engineer",
+     "slug": "java-android-engineer",
+     "description": "Builds and modernizes Java-based Android applications while preserving compatibility with older APIs, Gradle versions, libraries, and device constraints.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "mobile-application-engineering"
+    },
+    {
+     "name": "iOS Swift Application Engineer",
+     "slug": "ios-swift-application-engineer",
+     "description": "Creates iOS applications in Swift using SwiftUI or UIKit, navigation, concurrency, persistence, networking, tests, entitlements, and App Store readiness.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "mobile-application-engineering"
+    },
+    {
+     "name": "Objective-C Legacy iOS Maintainer",
+     "slug": "objective-c-legacy-ios-maintainer",
+     "description": "Reads, repairs, and incrementally modernizes Objective-C iOS projects while preserving runtime behavior and interoperability with Swift.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "mobile-application-engineering"
+    },
+    {
+     "name": "Flutter Cross-Platform Engineer",
+     "slug": "flutter-cross-platform-engineer",
+     "description": "Builds Flutter applications for mobile, web, and desktop with Dart, adaptive UI, state management, plugins, tests, builds, and release configuration.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "mobile-application-engineering"
+    },
+    {
+     "name": "React Native Application Engineer",
+     "slug": "react-native-application-engineer",
+     "description": "Creates React Native applications with native modules, navigation, state, offline data, testing, performance tuning, and Android and iOS builds.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "mobile-application-engineering"
+    },
+    {
+     "name": ".NET MAUI Application Engineer",
+     "slug": "net-maui-application-engineer",
+     "description": "Builds cross-platform applications in C# with.NET MAUI, XAML, MVVM, platform services, testing, packaging, and store deployment guidance.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "mobile-application-engineering"
+    },
+    {
+     "name": "Mobile Offline-First Engineer",
+     "slug": "mobile-offline-first-engineer",
+     "description": "Designs local-first storage, synchronization, conflict handling, background work, retry policies, encryption, and recovery for unreliable networks.",
+     "description_source": "explicit",
+     "index": 9,
+     "number": "9",
+     "category_slug": "mobile-application-engineering"
+    },
+    {
+     "name": "Mobile Release Readiness Auditor",
+     "slug": "mobile-release-readiness-auditor",
+     "description": "Checks permissions, privacy disclosures, signing, icons, screenshots, store metadata, device coverage, crashes, accessibility, and staged rollout plans.",
+     "description_source": "explicit",
+     "index": 10,
+     "number": "10",
+     "category_slug": "mobile-application-engineering"
+    }
+   ],
+   "index": 3
+  },
+  {
+   "number": "4",
+   "name": "Desktop and Native Application Engineering",
+   "slug": "desktop-and-native-application-engineering",
+   "skills": [
+    {
+     "name": "Windows Desktop Application Builder",
+     "slug": "windows-desktop-application-builder",
+     "description": "Creates Windows applications using WinUI, WPF, Windows Forms, UWP migration paths, C#, C++, packaging, installers, and system integrations.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "desktop-and-native-application-engineering"
+    },
+    {
+     "name": "macOS Application Engineer",
+     "slug": "macos-application-engineer",
+     "description": "Builds macOS applications with SwiftUI or AppKit, sandboxing, entitlements, signing, notarization, persistence, tests, and distribution.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "desktop-and-native-application-engineering"
+    },
+    {
+     "name": "Linux Desktop Application Engineer",
+     "slug": "linux-desktop-application-engineer",
+     "description": "Builds Linux desktop applications using GTK, Qt, Electron, Tauri, or native toolkits with packaging for major distributions.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "desktop-and-native-application-engineering"
+    },
+    {
+     "name": "Electron Desktop Engineer",
+     "slug": "electron-desktop-engineer",
+     "description": "Creates cross-platform desktop apps with secure preload bridges, process isolation, auto-update strategy, packaging, native integrations, and performance controls.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "desktop-and-native-application-engineering"
+    },
+    {
+     "name": "Tauri Desktop Engineer",
+     "slug": "tauri-desktop-engineer",
+     "description": "Builds lightweight desktop apps with a web frontend and Rust backend, strict command boundaries, secure configuration, packaging, and updater support.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "desktop-and-native-application-engineering"
+    },
+    {
+     "name": "Qt C++ Application Engineer",
+     "slug": "qt-c-application-engineer",
+     "description": "Creates portable Qt applications with widgets or QML, signals and slots, models, resources, tests, CMake, and deployment bundles.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "desktop-and-native-application-engineering"
+    },
+    {
+     "name": "CLI Application Builder",
+     "slug": "cli-application-builder",
+     "description": "Creates polished command-line tools with subcommands, configuration, structured output, interactive prompts, exit codes, logging, tests, and installers.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "desktop-and-native-application-engineering"
+    },
+    {
+     "name": "System Tray and Background App Engineer",
+     "slug": "system-tray-and-background-app-engineer",
+     "description": "Builds background services and tray or menu-bar applications with startup behavior, notifications, safe updates, and resource controls.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "desktop-and-native-application-engineering"
+    }
+   ],
+   "index": 4
+  },
+  {
+   "number": "5",
+   "name": "Programming Languages and Runtime Expertise",
+   "slug": "programming-languages-and-runtime-expertise",
+   "skills": [
+    {
+     "name": "Python Version-Aware Engineer",
+     "slug": "python-version-aware-engineer",
+     "description": "Writes, reads, tests, ports, and repairs Python across legacy and current versions, accounting for syntax, standard-library, packaging, typing, runtime, and dependency differences.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "programming-languages-and-runtime-expertise"
+    },
+    {
+     "name": "Java Platform Engineer",
+     "slug": "java-platform-engineer",
+     "description": "Builds Java applications across supported and legacy JDKs with build tools, frameworks, concurrency, testing, packaging, and migration plans.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "programming-languages-and-runtime-expertise"
+    },
+    {
+     "name": "C Language Systems Engineer",
+     "slug": "c-language-systems-engineer",
+     "description": "Creates and audits portable C programs with explicit memory management, build systems, ABI concerns, defensive parsing, tests, and platform-specific integrations.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "programming-languages-and-runtime-expertise"
+    },
+    {
+     "name": "Modern C++ Engineer",
+     "slug": "modern-c-engineer",
+     "description": "Builds C++ applications using version-appropriate language features, RAII, templates, concurrency, CMake, testing, profiling, and safe interoperability.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "programming-languages-and-runtime-expertise"
+    },
+    {
+     "name": "C# and.NET Engineer",
+     "slug": "c-and-net-engineer",
+     "description": "Creates C# applications across.NET and legacy.NET Framework, with async patterns, LINQ, testing, packaging, and migration-safe project files.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "programming-languages-and-runtime-expertise"
+    },
+    {
+     "name": "Go Application Engineer",
+     "slug": "go-application-engineer",
+     "description": "Builds Go services and tools with clear packages, concurrency, context cancellation, interfaces, testing, modules, profiling, and cross-compilation.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "programming-languages-and-runtime-expertise"
+    },
+    {
+     "name": "Rust Application Engineer",
+     "slug": "rust-application-engineer",
+     "description": "Builds safe systems, services, CLIs, and WebAssembly components using ownership, lifetimes, traits, async runtimes, Cargo, tests, and FFI boundaries.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "programming-languages-and-runtime-expertise"
+    },
+    {
+     "name": "PHP Web Engineer",
+     "slug": "php-web-engineer",
+     "description": "Builds and modernizes PHP applications with Composer, frameworks, secure request handling, database access, tests, queues, and version migration.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "programming-languages-and-runtime-expertise"
+    },
+    {
+     "name": "Ruby Application Engineer",
+     "slug": "ruby-application-engineer",
+     "description": "Creates Ruby and Rails applications with idiomatic models, services, jobs, tests, security controls, and upgrade-compatible dependencies.",
+     "description_source": "explicit",
+     "index": 9,
+     "number": "9",
+     "category_slug": "programming-languages-and-runtime-expertise"
+    },
+    {
+     "name": "Dart Application Engineer",
+     "slug": "dart-application-engineer",
+     "description": "Creates Dart packages, server tools, and Flutter components with null safety, async code, testing, analysis rules, and package publishing.",
+     "description_source": "explicit",
+     "index": 10,
+     "number": "10",
+     "category_slug": "programming-languages-and-runtime-expertise"
+    },
+    {
+     "name": "JavaScript Runtime Engineer",
+     "slug": "javascript-runtime-engineer",
+     "description": "Builds JavaScript for browsers, Node.js, Deno, or Bun with runtime-aware APIs, modules, package tools, testing, and compatibility controls.",
+     "description_source": "explicit",
+     "index": 11,
+     "number": "11",
+     "category_slug": "programming-languages-and-runtime-expertise"
+    },
+    {
+     "name": "Functional Programming Engineer",
+     "slug": "functional-programming-engineer",
+     "description": "Designs applications in F#, Haskell, Elixir, Clojure, Scala, or similar languages using immutability, algebraic modeling, concurrency, and property testing.",
+     "description_source": "explicit",
+     "index": 12,
+     "number": "12",
+     "category_slug": "programming-languages-and-runtime-expertise"
+    }
+   ],
+   "index": 5
+  },
+  {
+   "number": "6",
+   "name": "Compilers, Interpreters, Editors, and Developer Tools",
+   "slug": "compilers-interpreters-editors-and-developer-tools",
+   "skills": [
+    {
+     "name": "Compiler Construction Engineer",
+     "slug": "compiler-construction-engineer",
+     "description": "Designs lexers, parsers, semantic analysis, intermediate representations, optimization passes, code generation, diagnostics, and conformance tests for a requested language.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "compilers-interpreters-editors-and-developer-tools"
+    },
+    {
+     "name": "Interpreter and Virtual Machine Builder",
+     "slug": "interpreter-and-virtual-machine-builder",
+     "description": "Creates interpreters, bytecode engines, runtimes, REPLs, debuggers, garbage collection strategies, and execution tests.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "compilers-interpreters-editors-and-developer-tools"
+    },
+    {
+     "name": "Domain-Specific Language Designer",
+     "slug": "domain-specific-language-designer",
+     "description": "Defines grammar, semantics, tooling, validation, examples, migration rules, and secure execution for a focused language.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "compilers-interpreters-editors-and-developer-tools"
+    },
+    {
+     "name": "Visual Studio Code Extension Builder",
+     "slug": "visual-studio-code-extension-builder",
+     "description": "Creates VS Code extensions with commands, views, language features, debugging adapters, settings, tests, packaging, and Marketplace readiness.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "compilers-interpreters-editors-and-developer-tools"
+    },
+    {
+     "name": "IDE and Code Editor Builder",
+     "slug": "ide-and-code-editor-builder",
+     "description": "Designs a desktop or web code editor with file handling, syntax highlighting, language services, search, terminal integration, plugins, debugging, and workspace settings.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "compilers-interpreters-editors-and-developer-tools"
+    },
+    {
+     "name": "Language Server Protocol Engineer",
+     "slug": "language-server-protocol-engineer",
+     "description": "Builds language servers providing completion, diagnostics, hover, navigation, refactoring, formatting, and incremental document synchronization.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "compilers-interpreters-editors-and-developer-tools"
+    },
+    {
+     "name": "Debugger and Profiler Toolsmith",
+     "slug": "debugger-and-profiler-toolsmith",
+     "description": "Creates debugging and profiling tools with breakpoints, stepping, stack inspection, trace collection, symbol handling, and performance reports.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "compilers-interpreters-editors-and-developer-tools"
+    },
+    {
+     "name": "Build System and Task Runner Engineer",
+     "slug": "build-system-and-task-runner-engineer",
+     "description": "Creates or repairs build graphs, incremental builds, caching, dependency discovery, reproducible outputs, and task orchestration.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "compilers-interpreters-editors-and-developer-tools"
+    },
+    {
+     "name": "Code Generator and Scaffolding Engineer",
+     "slug": "code-generator-and-scaffolding-engineer",
+     "description": "Builds safe generators for projects, APIs, models, clients, tests, migrations, and configuration with idempotent updates.",
+     "description_source": "explicit",
+     "index": 9,
+     "number": "9",
+     "category_slug": "compilers-interpreters-editors-and-developer-tools"
+    },
+    {
+     "name": "Static Analyzer and Linter Builder",
+     "slug": "static-analyzer-and-linter-builder",
+     "description": "Creates syntax, semantic, data-flow, security, and style checks with precise diagnostics, autofixes, suppression rules, and test corpora.",
+     "description_source": "explicit",
+     "index": 10,
+     "number": "10",
+     "category_slug": "compilers-interpreters-editors-and-developer-tools"
+    }
+   ],
+   "index": 6
+  },
+  {
+   "number": "7",
+   "name": "Backend, API, and Integration Engineering",
+   "slug": "backend-api-and-integration-engineering",
+   "skills": [
+    {
+     "name": "REST API Engineer",
+     "slug": "rest-api-engineer",
+     "description": "Designs and implements REST APIs with resource models, validation, pagination, filtering, authentication, rate limits, error contracts, tests, and OpenAPI documentation.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "backend-api-and-integration-engineering"
+    },
+    {
+     "name": "GraphQL API Engineer",
+     "slug": "graphql-api-engineer",
+     "description": "Builds GraphQL schemas, resolvers, authorization, batching, subscriptions, validation, complexity controls, caching, and client integration.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "backend-api-and-integration-engineering"
+    },
+    {
+     "name": "gRPC and Protobuf Engineer",
+     "slug": "grpc-and-protobuf-engineer",
+     "description": "Creates version-safe Protobuf contracts, gRPC services, streaming flows, deadlines, retries, interceptors, generated clients, and compatibility tests.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "backend-api-and-integration-engineering"
+    },
+    {
+     "name": "WebSocket and Real-Time Systems Engineer",
+     "slug": "websocket-and-real-time-systems-engineer",
+     "description": "Builds real-time applications with connection lifecycle, rooms, presence, ordering, backpressure, reconnection, scaling, and observability.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "backend-api-and-integration-engineering"
+    },
+    {
+     "name": "Webhook Integration Engineer",
+     "slug": "webhook-integration-engineer",
+     "description": "Implements signed webhooks with replay protection, idempotency, queues, retry policies, audit trails, and delivery diagnostics.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "backend-api-and-integration-engineering"
+    },
+    {
+     "name": "Third-Party API Integration Engineer",
+     "slug": "third-party-api-integration-engineer",
+     "description": "Reads provider documentation, generates clients, handles credentials, limits, pagination, errors, version changes, mocks, and fallback behavior.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "backend-api-and-integration-engineering"
+    },
+    {
+     "name": "Background Jobs and Queue Engineer",
+     "slug": "background-jobs-and-queue-engineer",
+     "description": "Designs workers, schedules, retries, dead-letter handling, idempotency, prioritization, monitoring, and safe shutdown.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "backend-api-and-integration-engineering"
+    },
+    {
+     "name": "Enterprise Integration Engineer",
+     "slug": "enterprise-integration-engineer",
+     "description": "Connects systems through APIs, files, events, ETL, message brokers, SSO, and adapters while preserving data contracts and auditability.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "backend-api-and-integration-engineering"
+    }
+   ],
+   "index": 7
+  },
+  {
+   "number": "8",
+   "name": "Data, Database, and Storage Engineering",
+   "slug": "data-database-and-storage-engineering",
+   "skills": [
+    {
+     "name": "Relational Database Designer",
+     "slug": "relational-database-designer",
+     "description": "Designs normalized schemas, constraints, indexes, transactions, migrations, views, query patterns, backup needs, and data lifecycle rules.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "data-database-and-storage-engineering"
+    },
+    {
+     "name": "SQL Query and Performance Engineer",
+     "slug": "sql-query-and-performance-engineer",
+     "description": "Writes and tunes SQL using execution plans, indexes, statistics, partitioning, locking analysis, and workload-aware benchmarks.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "data-database-and-storage-engineering"
+    },
+    {
+     "name": "NoSQL Data Modeler",
+     "slug": "nosql-data-modeler",
+     "description": "Designs document, key-value, wide-column, graph, or time-series models around access patterns, consistency, scale, and operational limits.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "data-database-and-storage-engineering"
+    },
+    {
+     "name": "Database Migration Engineer",
+     "slug": "database-migration-engineer",
+     "description": "Plans and implements zero- or low-downtime schema and data migrations with backfills, dual writes, verification, rollback, and cleanup.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "data-database-and-storage-engineering"
+    },
+    {
+     "name": "Embedded Storage Engineer",
+     "slug": "embedded-storage-engineer",
+     "description": "Builds local persistence with SQLite, Realm, files, caches, indexes, encryption, migrations, corruption recovery, and synchronization.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "data-database-and-storage-engineering"
+    },
+    {
+     "name": "Vector Search Application Engineer",
+     "slug": "vector-search-application-engineer",
+     "description": "Builds embedding, indexing, hybrid retrieval, metadata filtering, evaluation, re-ranking, freshness, and access controls.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "data-database-and-storage-engineering"
+    },
+    {
+     "name": "Data Access Layer Engineer",
+     "slug": "data-access-layer-engineer",
+     "description": "Creates repositories, ORMs, query builders, transaction boundaries, connection management, tests, and database portability layers.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "data-database-and-storage-engineering"
+    },
+    {
+     "name": "Backup Restore and Retention Planner",
+     "slug": "backup-restore-and-retention-planner",
+     "description": "Defines backup frequency, recovery objectives, retention, encryption, offsite copies, restore drills, and evidence of recoverability.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "data-database-and-storage-engineering"
+    }
+   ],
+   "index": 8
+  },
+  {
+   "number": "9",
+   "name": "Cloud, Containers, and Platform Engineering",
+   "slug": "cloud-containers-and-platform-engineering",
+   "skills": [
+    {
+     "name": "Azure Application Platform Engineer",
+     "slug": "azure-application-platform-engineer",
+     "description": "Builds and deploys applications using appropriate Azure compute, storage, identity, networking, monitoring, secrets, and infrastructure-as-code services.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "cloud-containers-and-platform-engineering"
+    },
+    {
+     "name": "AWS Application Platform Engineer",
+     "slug": "aws-application-platform-engineer",
+     "description": "Builds and deploys applications using appropriate AWS compute, storage, identity, networking, observability, secrets, and infrastructure-as-code services.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "cloud-containers-and-platform-engineering"
+    },
+    {
+     "name": "Google Cloud Application Engineer",
+     "slug": "google-cloud-application-engineer",
+     "description": "Builds and deploys applications using appropriate Google Cloud compute, data, identity, networking, monitoring, and infrastructure-as-code services.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "cloud-containers-and-platform-engineering"
+    },
+    {
+     "name": "Docker Container Engineer",
+     "slug": "docker-container-engineer",
+     "description": "Creates secure multi-stage container builds, minimal images, health checks, non-root execution, local composition, caching, and supply-chain metadata.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "cloud-containers-and-platform-engineering"
+    },
+    {
+     "name": "Kubernetes Application Engineer",
+     "slug": "kubernetes-application-engineer",
+     "description": "Designs deployments, services, ingress, configuration, secrets, autoscaling, policies, observability, upgrades, and failure recovery.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "cloud-containers-and-platform-engineering"
+    },
+    {
+     "name": "Serverless Application Engineer",
+     "slug": "serverless-application-engineer",
+     "description": "Builds event-driven functions and managed workflows with cold-start control, idempotency, limits, local tests, monitoring, and cost safeguards.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "cloud-containers-and-platform-engineering"
+    },
+    {
+     "name": "Infrastructure as Code Engineer",
+     "slug": "infrastructure-as-code-engineer",
+     "description": "Creates modular Terraform, Bicep, CloudFormation, Pulumi, or equivalent definitions with state controls, validation, policy checks, and environment promotion.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "cloud-containers-and-platform-engineering"
+    },
+    {
+     "name": "Platform Engineering Blueprint Designer",
+     "slug": "platform-engineering-blueprint-designer",
+     "description": "Designs internal developer platforms, golden paths, templates, self-service environments, policy controls, observability, and developer experience metrics.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "cloud-containers-and-platform-engineering"
+    },
+    {
+     "name": "Edge and CDN Engineer",
+     "slug": "edge-and-cdn-engineer",
+     "description": "Designs caching, routing, edge compute, image delivery, invalidation, security rules, origins, and globally distributed performance.",
+     "description_source": "explicit",
+     "index": 9,
+     "number": "9",
+     "category_slug": "cloud-containers-and-platform-engineering"
+    }
+   ],
+   "index": 9
+  },
+  {
+   "number": "10",
+   "name": "DevOps, CI/CD, and Release Engineering",
+   "slug": "devops-ci-cd-and-release-engineering",
+   "skills": [
+    {
+     "name": "CI Pipeline Engineer",
+     "slug": "ci-pipeline-engineer",
+     "description": "Builds fast, reproducible pipelines for formatting, linting, tests, builds, security scans, artifacts, caching, and branch protection.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "devops-ci-cd-and-release-engineering"
+    },
+    {
+     "name": "CD and Environment Promotion Engineer",
+     "slug": "cd-and-environment-promotion-engineer",
+     "description": "Designs automated releases across development, test, staging, and production with approvals, configuration separation, verification, and rollback.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "devops-ci-cd-and-release-engineering"
+    },
+    {
+     "name": "GitHub Actions Engineer",
+     "slug": "github-actions-engineer",
+     "description": "Creates secure reusable workflows, matrices, caches, artifacts, environments, permissions, secrets handling, and release automation.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "devops-ci-cd-and-release-engineering"
+    },
+    {
+     "name": "Azure DevOps Pipeline Engineer",
+     "slug": "azure-devops-pipeline-engineer",
+     "description": "Builds YAML pipelines, templates, variable groups, environments, artifacts, approvals, tests, and deployment strategies.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "devops-ci-cd-and-release-engineering"
+    },
+    {
+     "name": "GitLab CI Engineer",
+     "slug": "gitlab-ci-engineer",
+     "description": "Creates GitLab pipelines with stages, rules, runners, caches, artifacts, environments, security scans, and release jobs.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "devops-ci-cd-and-release-engineering"
+    },
+    {
+     "name": "Release Packaging Engineer",
+     "slug": "release-packaging-engineer",
+     "description": "Produces installers, archives, packages, checksums, signatures, software bills of materials, release notes, and upgrade paths.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "devops-ci-cd-and-release-engineering"
+    },
+    {
+     "name": "Semantic Versioning and Changelog Manager",
+     "slug": "semantic-versioning-and-changelog-manager",
+     "description": "Applies versioning rules, breaking-change detection, automated changelogs, deprecation notices, and release branches.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "devops-ci-cd-and-release-engineering"
+    },
+    {
+     "name": "Feature Flag and Progressive Delivery Engineer",
+     "slug": "feature-flag-and-progressive-delivery-engineer",
+     "description": "Implements controlled rollouts, targeting, kill switches, experiments, telemetry, cleanup, and safe defaults.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "devops-ci-cd-and-release-engineering"
+    }
+   ],
+   "index": 10
+  },
+  {
+   "number": "11",
+   "name": "Testing, Verification, and Quality Engineering",
+   "slug": "testing-verification-and-quality-engineering",
+   "skills": [
+    {
+     "name": "Test Strategy Architect",
+     "slug": "test-strategy-architect",
+     "description": "Defines a risk-based test pyramid covering unit, component, integration, contract, system, acceptance, performance, security, accessibility, and recovery tests.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "testing-verification-and-quality-engineering"
+    },
+    {
+     "name": "Unit Test Engineer",
+     "slug": "unit-test-engineer",
+     "description": "Creates focused deterministic unit tests with clear fixtures, boundary cases, failure cases, mutation resistance, and maintainable assertions.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "testing-verification-and-quality-engineering"
+    },
+    {
+     "name": "Integration Test Engineer",
+     "slug": "integration-test-engineer",
+     "description": "Tests real joins among services, databases, queues, files, and external adapters with isolated environments and reliable cleanup.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "testing-verification-and-quality-engineering"
+    },
+    {
+     "name": "End-to-End Test Engineer",
+     "slug": "end-to-end-test-engineer",
+     "description": "Builds browser, mobile, desktop, or API flows that validate critical user journeys, stable selectors, test data, traces, screenshots, and retries only when justified.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "testing-verification-and-quality-engineering"
+    },
+    {
+     "name": "Property-Based and Fuzz Test Engineer",
+     "slug": "property-based-and-fuzz-test-engineer",
+     "description": "Generates broad and adversarial inputs, defines invariants, minimizes failures, and turns discovered cases into regressions.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "testing-verification-and-quality-engineering"
+    },
+    {
+     "name": "Contract Testing Engineer",
+     "slug": "contract-testing-engineer",
+     "description": "Validates provider and consumer API compatibility, schemas, versioning, generated clients, and deployment gates.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "testing-verification-and-quality-engineering"
+    },
+    {
+     "name": "Performance and Load Test Engineer",
+     "slug": "performance-and-load-test-engineer",
+     "description": "Designs realistic workloads, latency and throughput targets, soak tests, resource monitoring, bottleneck analysis, and capacity findings.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "testing-verification-and-quality-engineering"
+    },
+    {
+     "name": "Cross-Browser and Device Test Engineer",
+     "slug": "cross-browser-and-device-test-engineer",
+     "description": "Validates functionality and layout across browser engines, viewport sizes, operating systems, input methods, and representative devices.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "testing-verification-and-quality-engineering"
+    },
+    {
+     "name": "Regression Repair Engineer",
+     "slug": "regression-repair-engineer",
+     "description": "Reproduces defects, isolates the earliest cause, applies the smallest responsible fix, and adds checks that prevent recurrence.",
+     "description_source": "explicit",
+     "index": 9,
+     "number": "9",
+     "category_slug": "testing-verification-and-quality-engineering"
+    }
+   ],
+   "index": 11
+  },
+  {
+   "number": "12",
+   "name": "Security, Privacy, and Secure Software Delivery",
+   "slug": "security-privacy-and-secure-software-delivery",
+   "skills": [
+    {
+     "name": "Secure Coding Reviewer",
+     "slug": "secure-coding-reviewer",
+     "description": "Reviews code for injection, broken access control, data exposure, unsafe deserialization, path traversal, race conditions, cryptographic misuse, and platform-specific risks.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "security-privacy-and-secure-software-delivery"
+    },
+    {
+     "name": "Threat Modeling Facilitator",
+     "slug": "threat-modeling-facilitator",
+     "description": "Maps assets, trust boundaries, actors, entry points, abuse cases, mitigations, residual risk, and verification tasks.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "security-privacy-and-secure-software-delivery"
+    },
+    {
+     "name": "Authentication and Authorization Engineer",
+     "slug": "authentication-and-authorization-engineer",
+     "description": "Implements sessions, OAuth 2.0, OpenID Connect, passkeys, MFA, roles, policies, token validation, revocation, and secure recovery.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "security-privacy-and-secure-software-delivery"
+    },
+    {
+     "name": "Secrets and Key Management Engineer",
+     "slug": "secrets-and-key-management-engineer",
+     "description": "Removes embedded secrets, designs secure storage, rotation, least privilege, auditing, development workflows, and incident response.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "security-privacy-and-secure-software-delivery"
+    },
+    {
+     "name": "Software Supply Chain Security Engineer",
+     "slug": "software-supply-chain-security-engineer",
+     "description": "Adds dependency pinning, provenance, signed artifacts, SBOMs, vulnerability scanning, update policies, and compromised-package response.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "security-privacy-and-secure-software-delivery"
+    },
+    {
+     "name": "Privacy-by-Design Engineer",
+     "slug": "privacy-by-design-engineer",
+     "description": "Minimizes data collection, defines consent and purpose, retention, deletion, export, encryption, access controls, and privacy-safe telemetry.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "security-privacy-and-secure-software-delivery"
+    },
+    {
+     "name": "Application Security Test Engineer",
+     "slug": "application-security-test-engineer",
+     "description": "Creates SAST, DAST, dependency, container, infrastructure, API, and manual security checks with prioritized remediation.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "security-privacy-and-secure-software-delivery"
+    },
+    {
+     "name": "Security Hardening and Baseline Engineer",
+     "slug": "security-hardening-and-baseline-engineer",
+     "description": "Applies secure defaults, headers, permissions, sandboxing, network controls, logging, patch strategy, and configuration verification.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "security-privacy-and-secure-software-delivery"
+    }
+   ],
+   "index": 12
+  },
+  {
+   "number": "13",
+   "name": "UI, UX, Accessibility, and Design Systems",
+   "slug": "ui-ux-accessibility-and-design-systems",
+   "skills": [
+    {
+     "name": "User Experience Flow Designer",
+     "slug": "user-experience-flow-designer",
+     "description": "Turns user goals into task flows, information architecture, screen states, error recovery, onboarding, and measurable usability criteria.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "ui-ux-accessibility-and-design-systems"
+    },
+    {
+     "name": "Responsive Interface Engineer",
+     "slug": "responsive-interface-engineer",
+     "description": "Builds adaptive layouts for phones, tablets, desktops, large displays, orientation changes, zoom, and dynamic content.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "ui-ux-accessibility-and-design-systems"
+    },
+    {
+     "name": "Accessibility Engineering Specialist",
+     "slug": "accessibility-engineering-specialist",
+     "description": "Implements keyboard support, focus order, semantics, labels, contrast, motion control, screen-reader behavior, captions, and accessible validation.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "ui-ux-accessibility-and-design-systems"
+    },
+    {
+     "name": "Design System Engineer",
+     "slug": "design-system-engineer",
+     "description": "Creates tokens, components, variants, themes, documentation, governance, testing, package distribution, and migration paths.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "ui-ux-accessibility-and-design-systems"
+    },
+    {
+     "name": "Component Library Builder",
+     "slug": "component-library-builder",
+     "description": "Builds reusable UI components with stable APIs, accessibility, visual states, tests, examples, and framework packaging.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "ui-ux-accessibility-and-design-systems"
+    },
+    {
+     "name": "Form Experience Engineer",
+     "slug": "form-experience-engineer",
+     "description": "Designs usable forms with clear labels, input modes, validation timing, error summaries, saved progress, accessibility, and secure submission.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "ui-ux-accessibility-and-design-systems"
+    },
+    {
+     "name": "International UX Engineer",
+     "slug": "international-ux-engineer",
+     "description": "Supports locale-aware layout, right-to-left interfaces, text expansion, cultural formats, translated assets, and fallback behavior.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "ui-ux-accessibility-and-design-systems"
+    },
+    {
+     "name": "UI Reconstruction from Image Engineer",
+     "slug": "ui-reconstruction-from-image-engineer",
+     "description": "Analyzes screenshots or mockups and produces maintainable responsive interfaces while identifying uncertain behavior and avoiding inaccessible pixel-only duplication.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "ui-ux-accessibility-and-design-systems"
+    }
+   ],
+   "index": 13
+  },
+  {
+   "number": "14",
+   "name": "Graphics, Media, Games, and Interactive Experiences",
+   "slug": "graphics-media-games-and-interactive-experiences",
+   "skills": [
+    {
+     "name": "2D Game Engineer",
+     "slug": "2d-game-engineer",
+     "description": "Builds complete 2D game loops, input, physics, animation, audio, UI, save data, levels, testing, and packaging in the requested engine or language.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "graphics-media-games-and-interactive-experiences"
+    },
+    {
+     "name": "3D Game Engineer",
+     "slug": "3d-game-engineer",
+     "description": "Builds 3D gameplay, cameras, physics, animation, materials, lighting, AI, optimization, saves, and builds in the requested engine or language.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "graphics-media-games-and-interactive-experiences"
+    },
+    {
+     "name": "Unity Game Engineer",
+     "slug": "unity-game-engineer",
+     "description": "Creates Unity projects in C# with scenes, prefabs, input, physics, UI, persistence, tests, profiling, and platform builds.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "graphics-media-games-and-interactive-experiences"
+    },
+    {
+     "name": "Unreal Engine Game Engineer",
+     "slug": "unreal-engine-game-engineer",
+     "description": "Creates Unreal projects using C++ and Blueprints with gameplay systems, assets, networking, tests, profiling, and packaging.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "graphics-media-games-and-interactive-experiences"
+    },
+    {
+     "name": "Godot Game Engineer",
+     "slug": "godot-game-engineer",
+     "description": "Builds Godot games using GDScript, C#, or C++ with scenes, signals, resources, physics, UI, tests, exports, and version-aware migration.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "graphics-media-games-and-interactive-experiences"
+    },
+    {
+     "name": "Custom Game Engine Engineer",
+     "slug": "custom-game-engine-engineer",
+     "description": "Designs rendering, input, audio, physics, entities, assets, scripting, tooling, loops, serialization, and platform abstraction.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "graphics-media-games-and-interactive-experiences"
+    },
+    {
+     "name": "Web Game Engineer",
+     "slug": "web-game-engineer",
+     "description": "Creates browser games using Canvas, WebGL, WebGPU, or game frameworks with input, audio, saves, responsive scaling, and deployment.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "graphics-media-games-and-interactive-experiences"
+    },
+    {
+     "name": "Multiplayer Game Systems Engineer",
+     "slug": "multiplayer-game-systems-engineer",
+     "description": "Designs authoritative networking, prediction, reconciliation, lobbies, matchmaking, anti-cheat measures, persistence, and load tests.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "graphics-media-games-and-interactive-experiences"
+    },
+    {
+     "name": "Computer Graphics Shader Engineer",
+     "slug": "computer-graphics-shader-engineer",
+     "description": "Creates shaders, material systems, post-processing, lighting, debugging views, performance budgets, and compatibility fallbacks.",
+     "description_source": "explicit",
+     "index": 9,
+     "number": "9",
+     "category_slug": "graphics-media-games-and-interactive-experiences"
+    },
+    {
+     "name": "Media Processing Application Engineer",
+     "slug": "media-processing-application-engineer",
+     "description": "Builds image, audio, and video conversion, editing, metadata, preview, queue, progress, error recovery, and export workflows.",
+     "description_source": "explicit",
+     "index": 10,
+     "number": "10",
+     "category_slug": "graphics-media-games-and-interactive-experiences"
+    }
+   ],
+   "index": 14
+  },
+  {
+   "number": "15",
+   "name": "AI, Machine Learning, and Intelligent Applications",
+   "slug": "ai-machine-learning-and-intelligent-applications",
+   "skills": [
+    {
+     "name": "AI Application Architect",
+     "slug": "ai-application-architect",
+     "description": "Designs intelligent features with model selection, prompt or inference flows, retrieval, tools, data controls, evaluation, monitoring, cost, latency, and fallback behavior.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "ai-machine-learning-and-intelligent-applications"
+    },
+    {
+     "name": "Machine Learning Pipeline Engineer",
+     "slug": "machine-learning-pipeline-engineer",
+     "description": "Builds repeatable data preparation, training, validation, experiment tracking, packaging, deployment, drift checks, and retraining workflows.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "ai-machine-learning-and-intelligent-applications"
+    },
+    {
+     "name": "LLM Application Engineer",
+     "slug": "llm-application-engineer",
+     "description": "Builds language-model applications with structured outputs, grounding, tool calls, memory boundaries, safety controls, tests, observability, and model portability.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "ai-machine-learning-and-intelligent-applications"
+    },
+    {
+     "name": "Retrieval-Augmented Generation Engineer",
+     "slug": "retrieval-augmented-generation-engineer",
+     "description": "Designs ingestion, chunking, metadata, embeddings, hybrid search, re-ranking, citation, authorization, freshness, and retrieval evaluation.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "ai-machine-learning-and-intelligent-applications"
+    },
+    {
+     "name": "Agent Workflow Engineer",
+     "slug": "agent-workflow-engineer",
+     "description": "Builds bounded agents with explicit tools, state, plans, approval points, budgets, retries, verification, and safe completion criteria.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "ai-machine-learning-and-intelligent-applications"
+    },
+    {
+     "name": "Computer Vision Application Engineer",
+     "slug": "computer-vision-application-engineer",
+     "description": "Builds classification, detection, segmentation, OCR, tracking, preprocessing, evaluation, deployment, and privacy-aware image handling.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "ai-machine-learning-and-intelligent-applications"
+    },
+    {
+     "name": "On-Device AI Engineer",
+     "slug": "on-device-ai-engineer",
+     "description": "Optimizes models for mobile, browser, desktop, or edge execution using quantization, acceleration, batching, memory limits, and offline behavior.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "ai-machine-learning-and-intelligent-applications"
+    },
+    {
+     "name": "AI Evaluation and Red-Team Engineer",
+     "slug": "ai-evaluation-and-red-team-engineer",
+     "description": "Creates representative test sets, rubrics, automated checks, adversarial cases, regression baselines, human review, and release gates.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "ai-machine-learning-and-intelligent-applications"
+    }
+   ],
+   "index": 15
+  },
+  {
+   "number": "16",
+   "name": "Search, Knowledge, and Information Systems",
+   "slug": "search-knowledge-and-information-systems",
+   "skills": [
+    {
+     "name": "Application Search Engineer",
+     "slug": "application-search-engineer",
+     "description": "Builds full-text, faceted, semantic, hybrid, typo-tolerant, secure, and relevance-tuned search experiences.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "search-knowledge-and-information-systems"
+    },
+    {
+     "name": "Knowledge Base Application Builder",
+     "slug": "knowledge-base-application-builder",
+     "description": "Creates structured knowledge ingestion, authoring, versioning, permissions, search, feedback, analytics, and publishing workflows.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "search-knowledge-and-information-systems"
+    },
+    {
+     "name": "Web Crawler and Indexer Engineer",
+     "slug": "web-crawler-and-indexer-engineer",
+     "description": "Builds respectful crawlers with robots handling, rate limits, deduplication, extraction, canonicalization, scheduling, and index updates.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "search-knowledge-and-information-systems"
+    },
+    {
+     "name": "Recommendation Systems Engineer",
+     "slug": "recommendation-systems-engineer",
+     "description": "Builds content, collaborative, rules-based, or hybrid recommendations with cold-start handling, evaluation, feedback, and safety constraints.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "search-knowledge-and-information-systems"
+    },
+    {
+     "name": "Document Intelligence Engineer",
+     "slug": "document-intelligence-engineer",
+     "description": "Extracts structure, fields, tables, entities, relationships, confidence, review queues, and exports from documents.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "search-knowledge-and-information-systems"
+    },
+    {
+     "name": "Taxonomy and Metadata Designer",
+     "slug": "taxonomy-and-metadata-designer",
+     "description": "Defines categories, identifiers, controlled vocabularies, tagging rules, inheritance, governance, and migration for findable content.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "search-knowledge-and-information-systems"
+    }
+   ],
+   "index": 16
+  },
+  {
+   "number": "17",
+   "name": "Automation, Scripting, and Workflow Engineering",
+   "slug": "automation-scripting-and-workflow-engineering",
+   "skills": [
+    {
+     "name": "Cross-Platform Automation Engineer",
+     "slug": "cross-platform-automation-engineer",
+     "description": "Creates repeatable automation for Windows, macOS, and Linux with environment detection, safe defaults, logging, dry runs, and rollback.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "automation-scripting-and-workflow-engineering"
+    },
+    {
+     "name": "PowerShell Automation Engineer",
+     "slug": "powershell-automation-engineer",
+     "description": "Builds PowerShell modules and scripts with advanced functions, pipeline support, remoting, error handling, tests, and signed distribution.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "automation-scripting-and-workflow-engineering"
+    },
+    {
+     "name": "Bash and POSIX Shell Engineer",
+     "slug": "bash-and-posix-shell-engineer",
+     "description": "Creates portable shell tools with strict error handling, quoting, signals, temporary files, idempotency, and compatibility checks.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "automation-scripting-and-workflow-engineering"
+    },
+    {
+     "name": "Python Automation Engineer",
+     "slug": "python-automation-engineer",
+     "description": "Builds maintainable automation with configuration, structured logging, concurrency, retries, packaging, tests, and operating-system integrations.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "automation-scripting-and-workflow-engineering"
+    },
+    {
+     "name": "Desktop RPA Workflow Engineer",
+     "slug": "desktop-rpa-workflow-engineer",
+     "description": "Designs resilient user-interface automation with selectors, waits, checkpoints, exception paths, audit logs, and human handoff.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "automation-scripting-and-workflow-engineering"
+    },
+    {
+     "name": "Business Process Automation Designer",
+     "slug": "business-process-automation-designer",
+     "description": "Maps approvals, forms, notifications, records, integrations, service levels, exception handling, and operational ownership.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "automation-scripting-and-workflow-engineering"
+    },
+    {
+     "name": "Scheduled Task and Job Engineer",
+     "slug": "scheduled-task-and-job-engineer",
+     "description": "Implements reliable cron, task scheduler, queue, or cloud schedules with overlap prevention, retries, monitoring, and missed-run recovery.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "automation-scripting-and-workflow-engineering"
+    },
+    {
+     "name": "File and Batch Processing Engineer",
+     "slug": "file-and-batch-processing-engineer",
+     "description": "Creates safe high-volume pipelines for folders, archives, naming, parsing, conversion, validation, quarantine, resumability, and reports.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "automation-scripting-and-workflow-engineering"
+    }
+   ],
+   "index": 17
+  },
+  {
+   "number": "18",
+   "name": "Observability, Reliability, and Operations",
+   "slug": "observability-reliability-and-operations",
+   "skills": [
+    {
+     "name": "Observability Instrumentation Engineer",
+     "slug": "observability-instrumentation-engineer",
+     "description": "Adds structured logs, metrics, traces, correlation identifiers, dashboards, alerts, privacy controls, and actionable diagnostic context.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "observability-reliability-and-operations"
+    },
+    {
+     "name": "Site Reliability Engineer",
+     "slug": "site-reliability-engineer",
+     "description": "Defines service objectives, error budgets, capacity, automation, incident response, toil reduction, resilience, and operational review.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "observability-reliability-and-operations"
+    },
+    {
+     "name": "Incident Diagnosis and Recovery Engineer",
+     "slug": "incident-diagnosis-and-recovery-engineer",
+     "description": "Triages symptoms, constructs timelines, isolates causes, mitigates impact, verifies recovery, and records prevention actions.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "observability-reliability-and-operations"
+    },
+    {
+     "name": "Resilience and Chaos Test Engineer",
+     "slug": "resilience-and-chaos-test-engineer",
+     "description": "Tests timeouts, retries, circuit breakers, dependency loss, latency, resource exhaustion, failover, and recovery without hiding failures.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "observability-reliability-and-operations"
+    },
+    {
+     "name": "Application Performance Engineer",
+     "slug": "application-performance-engineer",
+     "description": "Profiles CPU, memory, I/O, network, rendering, startup, database, and concurrency to produce measured fixes and regressions tests.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "observability-reliability-and-operations"
+    },
+    {
+     "name": "Production Readiness Reviewer",
+     "slug": "production-readiness-reviewer",
+     "description": "Checks ownership, runbooks, dashboards, alerts, rollback, backups, dependencies, security, capacity, and support before release.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "observability-reliability-and-operations"
+    },
+    {
+     "name": "Cost and Resource Optimization Engineer",
+     "slug": "cost-and-resource-optimization-engineer",
+     "description": "Finds waste in compute, storage, network, licenses, queries, and model usage while protecting performance and reliability targets.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "observability-reliability-and-operations"
+    }
+   ],
+   "index": 18
+  },
+  {
+   "number": "19",
+   "name": "Code Understanding, Repair, and Modernization",
+   "slug": "code-understanding-repair-and-modernization",
+   "skills": [
+    {
+     "name": "Repository Comprehension Engineer",
+     "slug": "repository-comprehension-engineer",
+     "description": "Maps entry points, modules, dependencies, data flows, build commands, tests, configuration, and risky areas before changing code.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "code-understanding-repair-and-modernization"
+    },
+    {
+     "name": "Multi-Language Code Repair Engineer",
+     "slug": "multi-language-code-repair-engineer",
+     "description": "Reads unfamiliar code, reproduces errors, traces behavior across languages and tools, repairs the smallest cause, and validates integrations.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "code-understanding-repair-and-modernization"
+    },
+    {
+     "name": "Legacy Code Modernization Engineer",
+     "slug": "legacy-code-modernization-engineer",
+     "description": "Introduces characterization tests, removes obsolete patterns, upgrades language and framework versions, and preserves behavior through staged changes.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "code-understanding-repair-and-modernization"
+    },
+    {
+     "name": "Dependency Upgrade Engineer",
+     "slug": "dependency-upgrade-engineer",
+     "description": "Audits changelogs and compatibility, updates dependencies in controlled groups, repairs breakage, tests behavior, and creates rollback-ready commits.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "code-understanding-repair-and-modernization"
+    },
+    {
+     "name": "Refactoring Engineer",
+     "slug": "refactoring-engineer",
+     "description": "Improves structure, names, boundaries, duplication, complexity, and testability without changing observable behavior.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "code-understanding-repair-and-modernization"
+    },
+    {
+     "name": "Code Translation and Porting Engineer",
+     "slug": "code-translation-and-porting-engineer",
+     "description": "Ports applications between languages, frameworks, operating systems, architectures, or runtimes while preserving contracts and behavior.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "code-understanding-repair-and-modernization"
+    },
+    {
+     "name": "Build Failure Resolver",
+     "slug": "build-failure-resolver",
+     "description": "Diagnoses compilers, linkers, package managers, environment variables, SDKs, generators, paths, and platform mismatches to restore reproducible builds.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "code-understanding-repair-and-modernization"
+    },
+    {
+     "name": "Runtime Error and Crash Analyst",
+     "slug": "runtime-error-and-crash-analyst",
+     "description": "Analyzes logs, traces, dumps, race conditions, memory faults, resource leaks, and edge inputs to produce verified fixes.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "code-understanding-repair-and-modernization"
+    }
+   ],
+   "index": 19
+  },
+  {
+   "number": "20",
+   "name": "API Documentation, Technical Writing, and Developer Experience",
+   "slug": "api-documentation-technical-writing-and-developer-experience",
+   "skills": [
+    {
+     "name": "API Documentation Engineer",
+     "slug": "api-documentation-engineer",
+     "description": "Creates accurate endpoint, schema, authentication, error, pagination, rate-limit, webhook, and example documentation tied to actual contracts.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "api-documentation-technical-writing-and-developer-experience"
+    },
+    {
+     "name": "Codebase Onboarding Guide Builder",
+     "slug": "codebase-onboarding-guide-builder",
+     "description": "Creates setup, architecture, workflows, conventions, debugging, testing, deployment, and first-contribution guidance.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "api-documentation-technical-writing-and-developer-experience"
+    },
+    {
+     "name": "Tutorial and Sample Application Engineer",
+     "slug": "tutorial-and-sample-application-engineer",
+     "description": "Builds runnable step-by-step samples with prerequisites, checkpoints, expected outputs, troubleshooting, and cleanup.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "api-documentation-technical-writing-and-developer-experience"
+    },
+    {
+     "name": "Reference Documentation Generator",
+     "slug": "reference-documentation-generator",
+     "description": "Produces structured language, library, configuration, CLI, SDK, or protocol references with version and compatibility notes.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "api-documentation-technical-writing-and-developer-experience"
+    },
+    {
+     "name": "Architecture Decision Record Manager",
+     "slug": "architecture-decision-record-manager",
+     "description": "Captures context, options, decision, consequences, status, owners, and superseding decisions in a searchable record.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "api-documentation-technical-writing-and-developer-experience"
+    },
+    {
+     "name": "Developer Portal Builder",
+     "slug": "developer-portal-builder",
+     "description": "Creates documentation, API catalogs, examples, keys, sandboxes, changelogs, support paths, analytics, and search for developers.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "api-documentation-technical-writing-and-developer-experience"
+    },
+    {
+     "name": "Error Message and Diagnostic Writer",
+     "slug": "error-message-and-diagnostic-writer",
+     "description": "Rewrites errors and warnings to state the failure, likely cause, location, safe fix, and relevant context without leaking sensitive data.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "api-documentation-technical-writing-and-developer-experience"
+    }
+   ],
+   "index": 20
+  },
+  {
+   "number": "21",
+   "name": "Commerce, Payments, and Business Applications",
+   "slug": "commerce-payments-and-business-applications",
+   "skills": [
+    {
+     "name": "E-Commerce Application Engineer",
+     "slug": "e-commerce-application-engineer",
+     "description": "Builds catalogs, search, carts, pricing, inventory, checkout, orders, returns, accounts, analytics, and administrative workflows.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "commerce-payments-and-business-applications"
+    },
+    {
+     "name": "Payment Integration Engineer",
+     "slug": "payment-integration-engineer",
+     "description": "Implements payment intents, redirects, webhooks, idempotency, refunds, disputes, receipts, reconciliation, and failure recovery without storing prohibited data.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "commerce-payments-and-business-applications"
+    },
+    {
+     "name": "Subscription and Billing Engineer",
+     "slug": "subscription-and-billing-engineer",
+     "description": "Builds plans, trials, metering, proration, invoices, taxes as configured, dunning, entitlements, cancellation, and billing history.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "commerce-payments-and-business-applications"
+    },
+    {
+     "name": "Marketplace Platform Engineer",
+     "slug": "marketplace-platform-engineer",
+     "description": "Designs buyers, sellers, listings, commissions, payouts, disputes, trust, moderation, messaging, and platform operations.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "commerce-payments-and-business-applications"
+    },
+    {
+     "name": "Inventory and Order Management Engineer",
+     "slug": "inventory-and-order-management-engineer",
+     "description": "Builds stock tracking, reservations, fulfillment, shipment, returns, backorders, audit trails, and multi-location rules.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "commerce-payments-and-business-applications"
+    },
+    {
+     "name": "CRM Application Builder",
+     "slug": "crm-application-builder",
+     "description": "Creates contacts, accounts, pipelines, activities, permissions, automation, reports, imports, integrations, and data quality controls.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "commerce-payments-and-business-applications"
+    },
+    {
+     "name": "Booking and Scheduling Application Engineer",
+     "slug": "booking-and-scheduling-application-engineer",
+     "description": "Builds availability, time zones, resources, buffers, recurrence, payments, reminders, cancellation, and conflict prevention.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "commerce-payments-and-business-applications"
+    },
+    {
+     "name": "Point-of-Sale Application Engineer",
+     "slug": "point-of-sale-application-engineer",
+     "description": "Creates catalog, barcode, cart, discounts, tax configuration, payments, receipts, offline operation, sync, shifts, and reporting.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "commerce-payments-and-business-applications"
+    }
+   ],
+   "index": 21
+  },
+  {
+   "number": "22",
+   "name": "Collaboration, Communication, and Productivity Apps",
+   "slug": "collaboration-communication-and-productivity-apps",
+   "skills": [
+    {
+     "name": "Real-Time Collaboration Engineer",
+     "slug": "real-time-collaboration-engineer",
+     "description": "Builds shared editing, presence, comments, cursors, conflict resolution, permissions, history, offline changes, and synchronization.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "collaboration-communication-and-productivity-apps"
+    },
+    {
+     "name": "Chat and Messaging Application Engineer",
+     "slug": "chat-and-messaging-application-engineer",
+     "description": "Creates conversations, delivery state, receipts, attachments, search, moderation, notifications, encryption boundaries, and scalable real-time transport.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "collaboration-communication-and-productivity-apps"
+    },
+    {
+     "name": "Email Application and Integration Engineer",
+     "slug": "email-application-and-integration-engineer",
+     "description": "Builds compose, send, receive, threading, search, attachments, templates, scheduling, retries, authentication, and deliverability controls.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "collaboration-communication-and-productivity-apps"
+    },
+    {
+     "name": "Calendar and Meeting Application Engineer",
+     "slug": "calendar-and-meeting-application-engineer",
+     "description": "Builds events, recurrence, invitations, time zones, availability, reminders, conferencing links, updates, and conflict handling.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "collaboration-communication-and-productivity-apps"
+    },
+    {
+     "name": "Task and Project Management App Engineer",
+     "slug": "task-and-project-management-app-engineer",
+     "description": "Creates projects, tasks, dependencies, boards, timelines, roles, comments, notifications, automations, reports, and imports.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "collaboration-communication-and-productivity-apps"
+    },
+    {
+     "name": "Note-Taking and Knowledge App Engineer",
+     "slug": "note-taking-and-knowledge-app-engineer",
+     "description": "Builds structured notes, rich editing, links, tags, search, attachments, synchronization, history, export, and collaboration.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "collaboration-communication-and-productivity-apps"
+    },
+    {
+     "name": "Notification Systems Engineer",
+     "slug": "notification-systems-engineer",
+     "description": "Designs in-app, email, SMS, push, and webhook notifications with preferences, templates, localization, batching, deduplication, delivery logs, and retries.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "collaboration-communication-and-productivity-apps"
+    }
+   ],
+   "index": 22
+  },
+  {
+   "number": "23",
+   "name": "Embedded, IoT, Robotics, and Hardware-Connected Apps",
+   "slug": "embedded-iot-robotics-and-hardware-connected-apps",
+   "skills": [
+    {
+     "name": "Embedded Firmware Engineer",
+     "slug": "embedded-firmware-engineer",
+     "description": "Builds firmware with drivers, interrupts, timers, memory constraints, power management, boot behavior, logging, testing, and update safety.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "embedded-iot-robotics-and-hardware-connected-apps"
+    },
+    {
+     "name": "IoT Device and Cloud Engineer",
+     "slug": "iot-device-and-cloud-engineer",
+     "description": "Designs provisioning, identity, telemetry, commands, device twins, offline buffering, updates, fleet management, and secure cloud integration.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "embedded-iot-robotics-and-hardware-connected-apps"
+    },
+    {
+     "name": "Robotics Software Engineer",
+     "slug": "robotics-software-engineer",
+     "description": "Builds sensing, control, planning, state estimation, simulation, safety interlocks, calibration, telemetry, and hardware abstraction.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "embedded-iot-robotics-and-hardware-connected-apps"
+    },
+    {
+     "name": "Bluetooth and Nearby Connectivity Engineer",
+     "slug": "bluetooth-and-nearby-connectivity-engineer",
+     "description": "Implements discovery, pairing, services, permissions, reconnection, background behavior, data framing, and platform compatibility.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "embedded-iot-robotics-and-hardware-connected-apps"
+    },
+    {
+     "name": "Serial USB and Device Integration Engineer",
+     "slug": "serial-usb-and-device-integration-engineer",
+     "description": "Builds drivers or applications for serial, USB, HID, or vendor protocols with framing, timeouts, diagnostics, and recovery.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "embedded-iot-robotics-and-hardware-connected-apps"
+    },
+    {
+     "name": "Edge Gateway Engineer",
+     "slug": "edge-gateway-engineer",
+     "description": "Creates gateways for protocol translation, local rules, buffering, security, device management, synchronization, and remote operations.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "embedded-iot-robotics-and-hardware-connected-apps"
+    },
+    {
+     "name": "Firmware Update Engineer",
+     "slug": "firmware-update-engineer",
+     "description": "Designs signed, resumable, rollback-safe over-the-air or local updates with compatibility checks and power-loss recovery.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "embedded-iot-robotics-and-hardware-connected-apps"
+    }
+   ],
+   "index": 23
+  },
+  {
+   "number": "24",
+   "name": "Spatial Computing, AR, VR, and Simulation",
+   "slug": "spatial-computing-ar-vr-and-simulation",
+   "skills": [
+    {
+     "name": "Augmented Reality Application Engineer",
+     "slug": "augmented-reality-application-engineer",
+     "description": "Builds tracking, anchors, placement, occlusion, interaction, assets, permissions, performance, and device-specific fallbacks.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "spatial-computing-ar-vr-and-simulation"
+    },
+    {
+     "name": "Virtual Reality Application Engineer",
+     "slug": "virtual-reality-application-engineer",
+     "description": "Creates locomotion, interaction, comfort settings, spatial audio, performance budgets, accessibility, testing, and headset packaging.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "spatial-computing-ar-vr-and-simulation"
+    },
+    {
+     "name": "WebXR Application Engineer",
+     "slug": "webxr-application-engineer",
+     "description": "Builds browser-based immersive experiences with session handling, controllers, hit testing, anchors, rendering, and graceful non-XR fallback.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "spatial-computing-ar-vr-and-simulation"
+    },
+    {
+     "name": "Digital Twin Application Architect",
+     "slug": "digital-twin-application-architect",
+     "description": "Models assets, state, telemetry, relationships, simulation, visualization, alerts, history, and synchronization with physical systems.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "spatial-computing-ar-vr-and-simulation"
+    },
+    {
+     "name": "Physics and Scientific Simulation Engineer",
+     "slug": "physics-and-scientific-simulation-engineer",
+     "description": "Builds numerical simulations with explicit units, methods, stability tests, validation data, reproducibility, and visualization.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "spatial-computing-ar-vr-and-simulation"
+    },
+    {
+     "name": "3D Asset Pipeline Engineer",
+     "slug": "3d-asset-pipeline-engineer",
+     "description": "Defines import, conversion, coordinate, material, texture, level-of-detail, compression, validation, naming, and runtime loading workflows.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "spatial-computing-ar-vr-and-simulation"
+    }
+   ],
+   "index": 24
+  },
+  {
+   "number": "25",
+   "name": "Localization, Compatibility, and Migration",
+   "slug": "localization-compatibility-and-migration",
+   "skills": [
+    {
+     "name": "Internationalization Engineer",
+     "slug": "internationalization-engineer",
+     "description": "Externalizes text, handles pluralization, locale formats, time zones, currencies, input, collation, fonts, and bidirectional layout.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "localization-compatibility-and-migration"
+    },
+    {
+     "name": "Localization Pipeline Engineer",
+     "slug": "localization-pipeline-engineer",
+     "description": "Creates extraction, translation, context, review, pseudo-localization, validation, screenshots, versioning, and release workflows.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "localization-compatibility-and-migration"
+    },
+    {
+     "name": "Backward Compatibility Engineer",
+     "slug": "backward-compatibility-engineer",
+     "description": "Maintains API, file, database, protocol, and behavioral compatibility with adapters, deprecations, tests, and migration notices.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "localization-compatibility-and-migration"
+    },
+    {
+     "name": "Legacy Version Support Engineer",
+     "slug": "legacy-version-support-engineer",
+     "description": "Uses version matrices, conditional features, polyfills, toolchain pinning, compatible libraries, and test environments to support older targets safely.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "localization-compatibility-and-migration"
+    },
+    {
+     "name": "Framework Migration Engineer",
+     "slug": "framework-migration-engineer",
+     "description": "Plans and executes migrations between frameworks with inventory, equivalence mapping, coexistence, staged replacement, and regression checks.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "localization-compatibility-and-migration"
+    },
+    {
+     "name": "Operating System Porting Engineer",
+     "slug": "operating-system-porting-engineer",
+     "description": "Adapts filesystem, processes, permissions, networking, UI, packaging, and system integrations across operating systems.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "localization-compatibility-and-migration"
+    },
+    {
+     "name": "Data Format Conversion Engineer",
+     "slug": "data-format-conversion-engineer",
+     "description": "Converts structured and binary formats with schema mapping, validation, precision control, streaming, error reports, and round-trip tests.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "localization-compatibility-and-migration"
+    }
+   ],
+   "index": 25
+  },
+  {
+   "number": "26",
+   "name": "Low-Code, No-Code, and Builder Platforms",
+   "slug": "low-code-no-code-and-builder-platforms",
+   "skills": [
+    {
+     "name": "Microsoft Power Apps Solution Builder",
+     "slug": "microsoft-power-apps-solution-builder",
+     "description": "Designs canvas or model-driven apps, Dataverse models, formulas, roles, flows, connectors, testing, packaging, and environment promotion.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "low-code-no-code-and-builder-platforms"
+    },
+    {
+     "name": "Power Automate Workflow Engineer",
+     "slug": "power-automate-workflow-engineer",
+     "description": "Builds cloud and desktop flows with triggers, connectors, expressions, approvals, retries, concurrency, monitoring, and solution-aware deployment.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "low-code-no-code-and-builder-platforms"
+    },
+    {
+     "name": "AppSheet Application Builder",
+     "slug": "appsheet-application-builder",
+     "description": "Creates data-driven mobile and web apps with tables, views, actions, automations, security filters, offline behavior, and deployment checks.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "low-code-no-code-and-builder-platforms"
+    },
+    {
+     "name": "Bubble Application Builder",
+     "slug": "bubble-application-builder",
+     "description": "Builds Bubble applications with data types, workflows, responsive pages, privacy rules, plugins, API connections, and release validation.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "low-code-no-code-and-builder-platforms"
+    },
+    {
+     "name": "FlutterFlow Application Builder",
+     "slug": "flutterflow-application-builder",
+     "description": "Creates FlutterFlow projects with screens, components, state, APIs, authentication, custom code, testing, and export-ready Flutter structure.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "low-code-no-code-and-builder-platforms"
+    },
+    {
+     "name": "Webflow Site and App Engineer",
+     "slug": "webflow-site-and-app-engineer",
+     "description": "Builds responsive Webflow sites with CMS, components, interactions, forms, accessibility, SEO, custom code, and publishing workflows.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "low-code-no-code-and-builder-platforms"
+    },
+    {
+     "name": "Retool Internal Tool Builder",
+     "slug": "retool-internal-tool-builder",
+     "description": "Creates secure internal applications with resources, queries, components, permissions, workflows, environments, and audit-friendly deployment.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "low-code-no-code-and-builder-platforms"
+    },
+    {
+     "name": "Builder Platform Selection Advisor",
+     "slug": "builder-platform-selection-advisor",
+     "description": "Compares low-code, no-code, and coded approaches using extensibility, lock-in, scale, security, cost, exportability, and team ownership.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "low-code-no-code-and-builder-platforms"
+    }
+   ],
+   "index": 26
+  },
+  {
+   "number": "27",
+   "name": "Application Packaging, Distribution, and Stores",
+   "slug": "application-packaging-distribution-and-stores",
+   "skills": [
+    {
+     "name": "Android Package and Play Release Engineer",
+     "slug": "android-package-and-play-release-engineer",
+     "description": "Configures application identifiers, signing, bundles, variants, shrinking, testing tracks, store listing, policy checks, and staged releases.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "application-packaging-distribution-and-stores"
+    },
+    {
+     "name": "Apple App Store Release Engineer",
+     "slug": "apple-app-store-release-engineer",
+     "description": "Configures identifiers, certificates, profiles, entitlements, archives, TestFlight, metadata, privacy declarations, review readiness, and phased releases.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "application-packaging-distribution-and-stores"
+    },
+    {
+     "name": "Windows Packaging and Store Engineer",
+     "slug": "windows-packaging-and-store-engineer",
+     "description": "Creates MSIX or installers, signing, capabilities, update behavior, Store metadata, validation, and enterprise distribution.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "application-packaging-distribution-and-stores"
+    },
+    {
+     "name": "macOS Signing and Notarization Engineer",
+     "slug": "macos-signing-and-notarization-engineer",
+     "description": "Creates signed, hardened, notarized application bundles, disk images or packages, update feeds, and verification steps.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "application-packaging-distribution-and-stores"
+    },
+    {
+     "name": "Linux Packaging Engineer",
+     "slug": "linux-packaging-engineer",
+     "description": "Produces Debian, RPM, Flatpak, Snap, AppImage, or archive packages with dependencies, desktop integration, signing, and update guidance.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "application-packaging-distribution-and-stores"
+    },
+    {
+     "name": "Package Registry Publisher",
+     "slug": "package-registry-publisher",
+     "description": "Publishes libraries to npm, PyPI, NuGet, Maven, crates.io, or other registries with metadata, signatures, provenance, versioning, and deprecation plans.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "application-packaging-distribution-and-stores"
+    },
+    {
+     "name": "Auto-Update Systems Engineer",
+     "slug": "auto-update-systems-engineer",
+     "description": "Implements signed update discovery, channels, differential downloads, safe installation, rollback, telemetry, and user controls.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "application-packaging-distribution-and-stores"
+    }
+   ],
+   "index": 27
+  },
+  {
+   "number": "28",
+   "name": "Specialized Application Domains",
+   "slug": "specialized-application-domains",
+   "skills": [
+    {
+     "name": "Education Application Engineer",
+     "slug": "education-application-engineer",
+     "description": "Builds courses, lessons, assessments, progress, feedback, classrooms, content management, accessibility, offline use, and analytics.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "specialized-application-domains"
+    },
+    {
+     "name": "Healthcare Application Engineer",
+     "slug": "healthcare-application-engineer",
+     "description": "Builds privacy-aware workflows for registration, scheduling, records, messaging, forms, audit, interoperability, and safety review without replacing clinical judgment.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "specialized-application-domains"
+    },
+    {
+     "name": "Financial Application Engineer",
+     "slug": "financial-application-engineer",
+     "description": "Builds ledger-aware money flows, account views, reconciliation, permissions, validation, audit trails, reporting, and failure-safe transactions.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "specialized-application-domains"
+    },
+    {
+     "name": "Geospatial Application Engineer",
+     "slug": "geospatial-application-engineer",
+     "description": "Builds maps, layers, geocoding, routing, spatial queries, offline tiles, coordinate systems, permissions, and performance controls.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "specialized-application-domains"
+    },
+    {
+     "name": "Scientific Research Application Engineer",
+     "slug": "scientific-research-application-engineer",
+     "description": "Builds reproducible data capture, analysis, notebooks, provenance, units, validation, visualization, exports, and experiment history.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "specialized-application-domains"
+    },
+    {
+     "name": "Legal Workflow Application Engineer",
+     "slug": "legal-workflow-application-engineer",
+     "description": "Builds matter, document, deadline, approval, search, audit, retention, access, and export workflows while preserving human legal review.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "specialized-application-domains"
+    },
+    {
+     "name": "Government Service Application Engineer",
+     "slug": "government-service-application-engineer",
+     "description": "Builds accessible public forms, identity flows, case tracking, notifications, records, language support, audit, and low-bandwidth experiences.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "specialized-application-domains"
+    },
+    {
+     "name": "Media Streaming Application Engineer",
+     "slug": "media-streaming-application-engineer",
+     "description": "Builds catalogs, playback, adaptive streaming, subtitles, DRM integration boundaries, recommendations, downloads, analytics, and device support.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "specialized-application-domains"
+    }
+   ],
+   "index": 28
+  },
+  {
+   "number": "29",
+   "name": "Skill Orchestration and App-Factory Operations",
+   "slug": "skill-orchestration-and-app-factory-operations",
+   "skills": [
+    {
+     "name": "App Factory Orchestrator",
+     "slug": "app-factory-orchestrator",
+     "description": "Routes a request through requirements, architecture, implementation, testing, security, documentation, packaging, and release skills with explicit handoffs and completion checks.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "skill-orchestration-and-app-factory-operations"
+    },
+    {
+     "name": "Language and Framework Router",
+     "slug": "language-and-framework-router",
+     "description": "Selects the correct language, framework, version, SDK, toolchain, and specialist skill from user constraints and repository evidence.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "skill-orchestration-and-app-factory-operations"
+    },
+    {
+     "name": "Version and Documentation Resolver",
+     "slug": "version-and-documentation-resolver",
+     "description": "Separates legacy from current behavior, identifies authoritative documentation needed for the selected version, and prevents mixing incompatible syntax or APIs.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "skill-orchestration-and-app-factory-operations"
+    },
+    {
+     "name": "Build-Run-Test Coordinator",
+     "slug": "build-run-test-coordinator",
+     "description": "Determines how to install dependencies, compile, run, test, package, and verify a project in the available environment without claiming unobserved success.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "skill-orchestration-and-app-factory-operations"
+    },
+    {
+     "name": "Cross-Skill State Manager",
+     "slug": "cross-skill-state-manager",
+     "description": "Maintains requirements, decisions, interfaces, artifacts, unresolved risks, and passing checks across multi-step work so later skills receive clean context.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "skill-orchestration-and-app-factory-operations"
+    },
+    {
+     "name": "Artifact Handoff and Packaging Manager",
+     "slug": "artifact-handoff-and-packaging-manager",
+     "description": "Packages source, configuration, assets, documentation, examples, tests, licenses, and build instructions into a clean delivery structure.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "skill-orchestration-and-app-factory-operations"
+    },
+    {
+     "name": "Capability Boundary and Escalation Manager",
+     "slug": "capability-boundary-and-escalation-manager",
+     "description": "Detects missing tools, credentials, hardware, licenses, or authoritative inputs, preserves completed work, and requests only the blocking item.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "skill-orchestration-and-app-factory-operations"
+    },
+    {
+     "name": "Quality Gate Controller",
+     "slug": "quality-gate-controller",
+     "description": "Applies requirement, syntax, semantic, boundary, integration, regression, presentation, security, and handoff checks before delivery.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "skill-orchestration-and-app-factory-operations"
+    }
+   ],
+   "index": 29
+  },
+  {
+   "number": "30",
+   "name": "Universal Code Delivery and Maintenance",
+   "slug": "universal-code-delivery-and-maintenance",
+   "skills": [
+    {
+     "name": "Ready-to-Run Project Generator",
+     "slug": "ready-to-run-project-generator",
+     "description": "Produces a complete project tree with source, configuration, dependency manifests, sample data only when requested, tests, build commands, run instructions, and expected outputs.",
+     "description_source": "explicit",
+     "index": 1,
+     "number": "1",
+     "category_slug": "universal-code-delivery-and-maintenance"
+    },
+    {
+     "name": "Ready-to-Build Project Generator",
+     "slug": "ready-to-build-project-generator",
+     "description": "Produces compiler- or IDE-ready projects for the specified language and platform, including solution files, build settings, resources, targets, and dependency setup.",
+     "description_source": "explicit",
+     "index": 2,
+     "number": "2",
+     "category_slug": "universal-code-delivery-and-maintenance"
+    },
+    {
+     "name": "Single-File Application Builder",
+     "slug": "single-file-application-builder",
+     "description": "Creates self-contained applications when the language and platform permit, with clear limitations and a path to modular expansion.",
+     "description_source": "explicit",
+     "index": 3,
+     "number": "3",
+     "category_slug": "universal-code-delivery-and-maintenance"
+    },
+    {
+     "name": "Existing Script Transformer",
+     "slug": "existing-script-transformer",
+     "description": "Reads a supplied script, preserves intended behavior, applies requested changes, handles edge cases, and returns a clean revised version with relevant tests.",
+     "description_source": "explicit",
+     "index": 4,
+     "number": "4",
+     "category_slug": "universal-code-delivery-and-maintenance"
+    },
+    {
+     "name": "Multi-File Repository Editor",
+     "slug": "multi-file-repository-editor",
+     "description": "Makes coordinated changes across a repository while preserving interfaces, user edits, formatting, build behavior, tests, and deployment configuration.",
+     "description_source": "explicit",
+     "index": 5,
+     "number": "5",
+     "category_slug": "universal-code-delivery-and-maintenance"
+    },
+    {
+     "name": "Code Explanation and Learning Engineer",
+     "slug": "code-explanation-and-learning-engineer",
+     "description": "Explains syntax, control flow, data flow, APIs, design choices, bugs, and alternatives at the user's requested depth without changing the code unless asked.",
+     "description_source": "explicit",
+     "index": 6,
+     "number": "6",
+     "category_slug": "universal-code-delivery-and-maintenance"
+    },
+    {
+     "name": "Application Template and Starter Kit Engineer",
+     "slug": "application-template-and-starter-kit-engineer",
+     "description": "Creates reusable starters with opinionated structure, authentication boundaries, configuration, testing, CI, documentation, and extension points.",
+     "description_source": "explicit",
+     "index": 7,
+     "number": "7",
+     "category_slug": "universal-code-delivery-and-maintenance"
+    },
+    {
+     "name": "Maintenance and Upgrade Planner",
+     "slug": "maintenance-and-upgrade-planner",
+     "description": "Creates prioritized maintenance work for dependencies, security, performance, compatibility, tests, documentation, observability, and release health.",
+     "description_source": "explicit",
+     "index": 8,
+     "number": "8",
+     "category_slug": "universal-code-delivery-and-maintenance"
+    }
+   ],
+   "index": 30
+  }
+ ],
+ "ignored": [
+  {
+   "reason": "appendix_region",
+   "text": "Intake: Requirements-to-Backlog Engineer + Language and Framework Router"
+  },
+  {
+   "reason": "appendix_region",
+   "text": "Design: Universal App Solution Architect + relevant platform architect"
+  },
+  {
+   "reason": "appendix_region",
+   "text": "Build: Requested language, framework, builder, database, and integration skills"
+  },
+  {
+   "reason": "appendix_region",
+   "text": "Verify: Test Strategy Architect + security + accessibility + performance skills"
+  },
+  {
+   "reason": "appendix_region",
+   "text": "Deliver: Build-Run-Test Coordinator + Artifact Handoff and Packaging Manager"
+  },
+  {
+   "reason": "appendix_region",
+   "text": "Operate: Observability Instrumentation Engineer + Site Reliability Engineer + Maintenance and"
+  }
+ ],
+ "provenance": {
+  "title": "Universal Application Creation, Software Engineering, and Delivery",
+  "origin": "Agent Skill Catalog (30 categories, 244 proposed skills) extracted from the supplied PDF with tools-catalog-normalizer.py",
+  "note": "Bundled reference data for the catalog and route commands. Descriptions are catalog specifications, not claims that this Skill Tool implements each specialist skill itself.",
+  "category_count_declared": 30,
+  "skill_count_declared": 244
+ }
+}

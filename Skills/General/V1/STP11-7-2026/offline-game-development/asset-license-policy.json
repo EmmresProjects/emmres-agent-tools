@@ -1,0 +1,341 @@
+{
+ "schema_version": "1.0",
+ "policy_id": "offline-game-development-rights",
+ "summary": "Rights rules applied to every asset that a capability consumes or produces. A blocking finding cannot be waived by the tool; it is cleared by completing the provenance record or by removing the asset.",
+ "provenance_required_fields": [
+  "asset",
+  "kind",
+  "license",
+  "source",
+  "acquired_from",
+  "acquired_on",
+  "generated_by",
+  "commercial_use",
+  "redistribution",
+  "record_path"
+ ],
+ "provenance_recommended_fields": [
+  "attribution",
+  "spdx_expression",
+  "bundle_allowed",
+  "notes",
+  "reviewed_by",
+  "reviewed_on"
+ ],
+ "asset_kinds": [
+  "code",
+  "mesh",
+  "texture",
+  "material",
+  "audio",
+  "animation",
+  "font",
+  "shader",
+  "ui-asset",
+  "level-geometry",
+  "video",
+  "dataset",
+  "model-weights",
+  "engine",
+  "middleware",
+  "sdk",
+  "generated-asset",
+  "documentation",
+  "config"
+ ],
+ "licenses": [
+  {
+   "id": "CC0-1.0",
+   "name": "Creative Commons Zero 1.0 Universal",
+   "commercial_use": true,
+   "redistribution": true,
+   "attribution_required": false,
+   "source_code": false,
+   "note": "public domain dedication; credit is courtesy, not obligation"
+  },
+  {
+   "id": "CC-BY-4.0",
+   "name": "Creative Commons Attribution 4.0 International",
+   "commercial_use": true,
+   "redistribution": true,
+   "attribution_required": true,
+   "source_code": false,
+   "note": "attribution text must ship with the build"
+  },
+  {
+   "id": "CC-BY-SA-4.0",
+   "name": "Creative Commons Attribution ShareAlike 4.0",
+   "commercial_use": true,
+   "redistribution": true,
+   "attribution_required": true,
+   "source_code": true,
+   "note": "derivative assets must be released under the same license"
+  },
+  {
+   "id": "CC-BY-NC-4.0",
+   "name": "Creative Commons Attribution NonCommercial 4.0",
+   "commercial_use": false,
+   "redistribution": false,
+   "attribution_required": true,
+   "source_code": false,
+   "note": "not usable in a commercial or monetised build"
+  },
+  {
+   "id": "CC-BY-NC-SA-4.0",
+   "name": "Creative Commons Attribution NonCommercial ShareAlike 4.0",
+   "commercial_use": false,
+   "redistribution": false,
+   "attribution_required": true,
+   "source_code": true,
+   "note": "blocks commercial releases and requires share-alike"
+  },
+  {
+   "id": "MIT",
+   "name": "MIT License",
+   "commercial_use": true,
+   "redistribution": true,
+   "attribution_required": true,
+   "source_code": true,
+   "note": "keep the copyright line in credits or a license file"
+  },
+  {
+   "id": "Apache-2.0",
+   "name": "Apache License 2.0",
+   "commercial_use": true,
+   "redistribution": true,
+   "attribution_required": true,
+   "source_code": true,
+   "note": "notice file required; patent grant applies"
+  },
+  {
+   "id": "BSD-3-Clause",
+   "name": "BSD 3-Clause License",
+   "commercial_use": true,
+   "redistribution": true,
+   "attribution_required": true,
+   "source_code": true,
+   "note": "no endorsement use of names"
+  },
+  {
+   "id": "GPL-3.0-only",
+   "name": "GNU GPL v3 only",
+   "commercial_use": true,
+   "redistribution": true,
+   "attribution_required": true,
+   "source_code": true,
+   "note": "static linking makes the whole build a derivative; consult legal before shipping"
+  },
+  {
+   "id": "LGPL-2.1-only",
+   "name": "GNU LGPL v2.1 only",
+   "commercial_use": true,
+   "redistribution": true,
+   "attribution_required": true,
+   "source_code": true,
+   "note": "dynamic linking preferred; relinking rights must be preserved"
+  },
+  {
+   "id": "MPL-2.0",
+   "name": "Mozilla Public License 2.0",
+   "commercial_use": true,
+   "redistribution": true,
+   "attribution_required": true,
+   "source_code": true,
+   "note": "file-level copyleft on modified sources only"
+  },
+  {
+   "id": "OFL-1.1",
+   "name": "SIL Open Font License 1.1",
+   "commercial_use": true,
+   "redistribution": true,
+   "attribution_required": true,
+   "source_code": true,
+   "note": "font may not be sold alone; embed allowed in a work"
+  },
+  {
+   "id": "Unlicense",
+   "name": "The Unlicense",
+   "commercial_use": true,
+   "redistribution": true,
+   "attribution_required": false,
+   "source_code": false,
+   "note": "public domain equivalent"
+  },
+  {
+   "id": "Zlib",
+   "name": "zlib License",
+   "commercial_use": true,
+   "redistribution": true,
+   "attribution_required": false,
+   "source_code": false,
+   "note": "no endorsement; source credit appreciated"
+  },
+  {
+   "id": "Engine-Standard-Edition",
+   "name": "Proprietary game engine standard edition",
+   "commercial_use": true,
+   "redistribution": false,
+   "attribution_required": false,
+   "source_code": false,
+   "note": "editor, export templates, and runtime may not be redistributed in a shared package"
+  },
+  {
+   "id": "Engine-Credits-Clause",
+   "name": "Proprietary engine with a mandatory on-screen credit",
+   "commercial_use": true,
+   "redistribution": false,
+   "attribution_required": true,
+   "source_code": false,
+   "note": "credits screen must include the engine notice"
+  },
+  {
+   "id": "Middleware-Per-Product",
+   "name": "Middleware licensed per shipped product",
+   "commercial_use": true,
+   "redistribution": false,
+   "attribution_required": true,
+   "source_code": false,
+   "note": "each release needs its own entitlement record"
+  },
+  {
+   "id": "Console-SDK-Confidential",
+   "name": "Console platform SDK (confidential, NDA)",
+   "commercial_use": true,
+   "redistribution": false,
+   "attribution_required": false,
+   "source_code": false,
+   "note": "must never be bundled, mirrored, or referenced by path in shared docs"
+  },
+  {
+   "id": "Vendor-Audio-Library",
+   "name": "Royalty-free audio library, per-seat",
+   "commercial_use": true,
+   "redistribution": false,
+   "attribution_required": true,
+   "source_code": false,
+   "note": "seats must cover every contributor who used the content"
+  },
+  {
+   "id": "Unknown",
+   "name": "No license recorded",
+   "commercial_use": null,
+   "redistribution": null,
+   "attribution_required": null,
+   "source_code": null,
+   "note": "treated as blocked until the provenance record is complete"
+  }
+ ],
+ "gates": [
+  {
+   "id": "R1",
+   "rule": "license-known",
+   "severity": "block",
+   "applies_to": "every asset",
+   "message": "license is missing or not in the bundled policy",
+   "remediation": "record the exact SPDX id or add it to asset-license-policy.json with its flags"
+  },
+  {
+   "id": "R2",
+   "rule": "required-fields",
+   "severity": "block",
+   "applies_to": "every asset",
+   "message": "one or more provenance fields are empty",
+   "remediation": "fill source, acquired_from, acquired_on, and generated_by (use n/a, not blank)"
+  },
+  {
+   "id": "R3",
+   "rule": "commercial-use",
+   "severity": "block",
+   "applies_to": "a project declared commercial",
+   "message": "the license does not permit commercial use",
+   "remediation": "buy a commercial licence, replace the asset, or ship the project as non-commercial"
+  },
+  {
+   "id": "R4",
+   "rule": "redistribution",
+   "severity": "block",
+   "applies_to": "a build that is bundled or shared",
+   "message": "the asset may not be redistributed with the package",
+   "remediation": "exclude it from the bundle and require the recipient to acquire it themselves"
+  },
+  {
+   "id": "R5",
+   "rule": "attribution",
+   "severity": "warn",
+   "applies_to": "every asset",
+   "message": "attribution is required but no credit text is recorded",
+   "remediation": "add the credit line to the credits screen and to attribution in the record"
+  },
+  {
+   "id": "R6",
+   "rule": "generated-assets",
+   "severity": "block",
+   "applies_to": "model-generated or scraped content",
+   "message": "generated content needs its generator, prompt or source, and a human review",
+   "remediation": "record generated_by plus the review, or replace with in-house work"
+  },
+  {
+   "id": "R7",
+   "rule": "engine-and-sdks",
+   "severity": "block",
+   "applies_to": "engine editors, export templates, platform SDKs",
+   "message": "engine binaries and platform SDKs may not be bundled into a shared package",
+   "remediation": "keep them in the local offline bundle only, and document the install step"
+  },
+  {
+   "id": "R8",
+   "rule": "record-file",
+   "severity": "warn",
+   "applies_to": "every asset",
+   "message": "record_path does not point at an existing file",
+   "remediation": "write the per-asset rights record at the stated path"
+  },
+  {
+   "id": "R9",
+   "rule": "stale-record",
+   "severity": "warn",
+   "applies_to": "every asset",
+   "message": "the record is older than the review window",
+   "remediation": "re-review before the next release and update acquired_on or reviewed_on"
+  },
+  {
+   "id": "R10",
+   "rule": "approval-required",
+   "severity": "block",
+   "applies_to": "store, signing, monetisation, and account actions",
+   "message": "this action needs a named approver, not an automated pass",
+   "remediation": "escalate to the owner in approvals.require_for and attach the sign-off"
+  }
+ ],
+ "review_window_days": 180,
+ "waiver": {
+  "allowed": false,
+  "note": "the tool reports rights findings; only a human owner may decide a finding does not apply, and that decision belongs in the asset's own record file"
+ },
+ "manifest_input_contract": {
+  "accepted_shapes": [
+   "top-level array of records",
+   "object with an assets array",
+   "CSV or TSV with the required columns"
+  ],
+  "required_columns": [
+   "asset",
+   "kind",
+   "license",
+   "source",
+   "acquired_from",
+   "acquired_on",
+   "generated_by",
+   "commercial_use",
+   "redistribution",
+   "record_path"
+  ],
+  "optional_columns": [
+   "attribution",
+   "bundle_allowed",
+   "spdx_expression",
+   "notes"
+  ],
+  "booleans_must_be_explicit": true
+ }
+}

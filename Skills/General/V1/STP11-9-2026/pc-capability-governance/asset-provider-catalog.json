@@ -1,0 +1,87 @@
+{
+  "catalog_version": "1.0.0",
+  "purpose": "Category-to-capability map for the 'Capability Discovery, Routing, and Governance' category. Agents use it to pick the right provider, worker and approval class for a requested PC task without re-deriving policy.",
+  "categories": {
+    "capability-discovery-routing-governance": {
+      "approval_default": "read-only",
+      "goal_stages": ["inspect", "preserve", "reproduce", "repair", "test", "package", "verify", "handoff"],
+      "providers": ["python3", "git", "sha256sum", "file"],
+      "notes": "This Skill Tool implements the category itself: inventory, self-test, routing, boundary, approval, reversible planning, provenance, parsing."
+    },
+    "core-native-build": {
+      "approval_default": "reversible",
+      "providers": ["gcc", "clang", "cmake", "ninja", "make"],
+      "notes": "Bind build output to a clean directory; never build over an artifact being inspected."
+    },
+    "windows-cross-build": {
+      "approval_default": "reversible",
+      "providers": ["mingw-w64", "cmake", "ninja"],
+      "notes": "Cross-built binaries should be verified on the real target worker before handoff."
+    },
+    "dotnet-managed": {
+      "approval_default": "reversible",
+      "providers": ["dotnet-sdk", "mono"],
+      "notes": "Pin the SDK with a global.json; legacy Mono builds stay in a disposable worker."
+    },
+    "java-python-node-desktop": {
+      "approval_default": "reversible",
+      "providers": ["java", "node", "npm", "python3"],
+      "notes": "Lock dependency files before builds; no registry writes during verification."
+    },
+    "binary-inspection": {
+      "approval_default": "read-only",
+      "providers": ["file", "strings", "readelf", "pefile", "lief", "detect-it-easy"],
+      "notes": "Read-only metadata and header parsing only. Disassembly of owned or licensed binaries."
+    },
+    "debugging-profiling": {
+      "approval_default": "read-only",
+      "providers": ["readelf", "radare2", "python3"],
+      "notes": "Crash dumps may contain personal data; scope collection and retention explicitly."
+    },
+    "compatibility-wine-proton": {
+      "approval_default": "reversible",
+      "providers": ["wine", "file", "sha256sum"],
+      "notes": "One dedicated prefix per application; snapshot before prefix changes."
+    },
+    "virtualization-emulation": {
+      "approval_default": "reversible",
+      "providers": ["qemu-system", "qemu-img", "kvm"],
+      "notes": "Snapshot first; keep guests on isolated networks unless networking is approved."
+    },
+    "packaging-signing": {
+      "approval_default": "signing",
+      "providers": ["nsis", "osslsigncode", "signtool"],
+      "notes": "Signing and publishing always require a human approval record and key custody confirmation."
+    },
+    "archives-media": {
+      "approval_default": "read-only",
+      "providers": ["7zip", "zip", "ffmpeg", "imagemagick", "exiftool"],
+      "notes": "Extract into a fresh directory; treat archive paths as untrusted (no traversal, no overwrite)."
+    },
+    "local-data": {
+      "approval_default": "read-only",
+      "providers": ["sqlite3", "file"],
+      "notes": "Open application databases read-only and copy before migrating."
+    },
+    "networking-tls": {
+      "approval_default": "networked",
+      "providers": ["openssl", "curl"],
+      "notes": "Allowlisted endpoints only; no credential forwarding."
+    },
+    "security-supply-chain": {
+      "approval_default": "reversible",
+      "providers": ["syft", "trivy", "git"],
+      "notes": "Scan owned code and permitted images; database refreshes are networked actions."
+    },
+    "containers-linux-desktop": {
+      "approval_default": "privileged",
+      "providers": ["docker", "wsl"],
+      "notes": "Container execution is privileged: require approval and a disposable runtime."
+    }
+  },
+  "approval_reminders": [
+    "Read-only inspection never needs approval but must still record evidence.",
+    "Any write to a system path, registry, driver, service or firmware needs a snapshot and an approval record.",
+    "Signing, publishing, financial and credential actions always need a human role from asset-approval-policy.json."
+  ]
+}

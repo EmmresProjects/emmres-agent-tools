@@ -1,0 +1,1885 @@
+{
+ "schema": "ultimate-text/unicode-tables@1",
+ "version": "1.0.0",
+ "purpose": "Curated character, script and notation tables used by the Unicode, legacy-charset, notation and retrieval capabilities. Authoritative runtime data (names, categories, decomposition, bidi class) comes from Python's unicodedata module; this file only adds curated mappings and policy notes.",
+ "invisible_chars": {
+  "​": {
+   "name": "ZERO WIDTH SPACE",
+   "risk": "high",
+   "note": "invisible word break; used in homoglyph and steganography attacks"
+  },
+  "‌": {
+   "name": "ZERO WIDTH NON-JOINER",
+   "risk": "medium",
+   "note": "legitimate in Persian/Indic text, suspicious in Latin text"
+  },
+  "‍": {
+   "name": "ZERO WIDTH JOINER",
+   "risk": "medium",
+   "note": "required for emoji ZWJ sequences"
+  },
+  "‎": {
+   "name": "LEFT-TO-RIGHT MARK",
+   "risk": "medium",
+   "note": "direction control"
+  },
+  "‏": {
+   "name": "RIGHT-TO-LEFT MARK",
+   "risk": "medium",
+   "note": "direction control"
+  },
+  "‪": {
+   "name": "LEFT-TO-RIGHT EMBEDDING",
+   "risk": "high",
+   "note": "bidi control; Trojan Source vector"
+  },
+  "‫": {
+   "name": "RIGHT-TO-LEFT EMBEDDING",
+   "risk": "high",
+   "note": "bidi control; Trojan Source vector"
+  },
+  "‬": {
+   "name": "POP DIRECTIONAL FORMATTING",
+   "risk": "high",
+   "note": "bidi control"
+  },
+  "‭": {
+   "name": "LEFT-TO-RIGHT OVERRIDE",
+   "risk": "critical",
+   "note": "can reverse visual order of code"
+  },
+  "‮": {
+   "name": "RIGHT-TO-LEFT OVERRIDE",
+   "risk": "critical",
+   "note": "classic filename spoofing vector"
+  },
+  "⁦": {
+   "name": "LEFT-TO-RIGHT ISOLATE",
+   "risk": "high",
+   "note": "bidi isolate"
+  },
+  "⁧": {
+   "name": "RIGHT-TO-LEFT ISOLATE",
+   "risk": "high",
+   "note": "bidi isolate"
+  },
+  "⁨": {
+   "name": "FIRST STRONG ISOLATE",
+   "risk": "high",
+   "note": "bidi isolate"
+  },
+  "⁩": {
+   "name": "POP DIRECTIONAL ISOLATE",
+   "risk": "high",
+   "note": "bidi isolate"
+  },
+  " ": {
+   "name": "NO-BREAK SPACE",
+   "risk": "low",
+   "note": "legitimate typography; breaks naive parsing"
+  },
+  "­": {
+   "name": "SOFT HYPHEN",
+   "risk": "low",
+   "note": "invisible optional break"
+  },
+  "﻿": {
+   "name": "ZERO WIDTH NO-BREAK SPACE / BOM",
+   "risk": "medium",
+   "note": "byte order mark when at start of file"
+  },
+  "᠎": {
+   "name": "MONGOLIAN VOWEL SEPARATOR",
+   "risk": "medium",
+   "note": "no longer whitespace"
+  },
+  "⁠": {
+   "name": "WORD JOINER",
+   "risk": "medium",
+   "note": "prevents line breaks"
+  },
+  "⁡": {
+   "name": "FUNCTION APPLICATION",
+   "risk": "low",
+   "note": "invisible math operator"
+  },
+  "⁢": {
+   "name": "INVISIBLE TIMES",
+   "risk": "low",
+   "note": "invisible math operator"
+  },
+  "⁣": {
+   "name": "INVISIBLE SEPARATOR",
+   "risk": "medium",
+   "note": "used as a hidden delimiter"
+  },
+  "⁤": {
+   "name": "INVISIBLE PLUS",
+   "risk": "low",
+   "note": "invisible math operator"
+  },
+  "ㅤ": {
+   "name": "HANGUL FILLER",
+   "risk": "medium",
+   "note": "renders as blank; common spoof character"
+  },
+  "ᅟ": {
+   "name": "HANGUL CHOSEONG FILLER",
+   "risk": "medium",
+   "note": "renders as blank"
+  },
+  "󠀁": {
+   "name": "LANGUAGE TAG",
+   "risk": "critical",
+   "note": "tag characters can hide entire messages"
+  },
+  "󠁁": {
+   "name": "TAG LATIN CAPITAL LETTER A",
+   "risk": "critical",
+   "note": "tag block used for invisible text"
+  }
+ },
+ "bidi_classes": {
+  "L": "strong left-to-right",
+  "R": "strong right-to-left",
+  "AL": "strong right-to-left (Arabic)",
+  "EN": "European number",
+  "AN": "Arabic number",
+  "ES": "European separator",
+  "ET": "European terminator",
+  "CS": "common separator",
+  "NSM": "nonspacing mark",
+  "BN": "boundary neutral",
+  "B": "paragraph separator",
+  "S": "segment separator",
+  "WS": "whitespace",
+  "ON": "other neutral",
+  "LRE": "left-to-right embedding",
+  "LRO": "left-to-right override",
+  "RLE": "right-to-left embedding",
+  "RLO": "right-to-left override",
+  "PDF": "pop directional formatting",
+  "LRI": "left-to-right isolate",
+  "RLI": "right-to-left isolate",
+  "FSI": "first strong isolate",
+  "PDI": "pop directional isolate"
+ },
+ "pua_ranges": [
+  [
+   57344,
+   63743,
+   "BMP Private Use Area",
+   "vendor glyphs, icon fonts, legacy symbol fonts"
+  ],
+  [
+   983040,
+   1048573,
+   "Plane 15 Private Use",
+   "rarely legitimate in interchange text"
+  ],
+  [
+   1048574,
+   1114109,
+   "Plane 16 Private Use",
+   "rarely legitimate in interchange text"
+  ]
+ ],
+ "combining_marks": {
+  "acute": "́",
+  "grave": "̀",
+  "circumflex": "̂",
+  "tilde": "̃",
+  "diaeresis": "̈",
+  "ring": "̊",
+  "cedilla": "̧",
+  "caron": "̌",
+  "macron": "̄",
+  "breve": "̆",
+  "dot-above": "̇",
+  "dot-below": "̣",
+  "ogonek": "̨",
+  "stroke": "̵",
+  "double-acute": "̋",
+  "comma-below": "̦",
+  "hook-above": "̉",
+  "horn": "̛",
+  "line-below": "̱",
+  "tilde-below": "̰",
+  "circumflex-below": "̭",
+  "breve-below": "̮",
+  "diaeresis-below": "̤",
+  "double-grave": "̏",
+  "inverted-breve": "̑",
+  "candrabindu": "̐"
+ },
+ "compatibility_examples": {
+  "ﬁ": "fi ligature",
+  "①": "circled digit one",
+  "Ａ": "fullwidth A",
+  "²": "superscript two",
+  "…": "horizontal ellipsis",
+  "½": "vulgar fraction one half",
+  "ﬂ": "fl ligature",
+  "Ⅸ": "roman numeral nine",
+  "™": "trade mark sign"
+ },
+ "confusables": {
+  "а": "a",
+  "е": "e",
+  "о": "o",
+  "р": "p",
+  "с": "c",
+  "у": "y",
+  "х": "x",
+  "ѕ": "s",
+  "і": "i",
+  "ј": "j",
+  "һ": "h",
+  "ԁ": "d",
+  "α": "a",
+  "ο": "o",
+  "ρ": "p",
+  "ν": "v",
+  "ι": "i",
+  "κ": "k",
+  "υ": "u",
+  "χ": "x",
+  "ε": "e",
+  "η": "n",
+  "ω": "w",
+  "ı": "i",
+  "ȷ": "j",
+  "æ": "ae",
+  "ø": "o",
+  "đ": "d",
+  "ł": "l",
+  "ａ": "a",
+  "ｂ": "b",
+  "ｃ": "c",
+  "ｄ": "d",
+  "ｅ": "e",
+  "‐": "-",
+  "‑": "-",
+  "‒": "-",
+  "–": "-",
+  "—": "-",
+  "−": "-",
+  "‘": "'",
+  "’": "'",
+  "‛": "'",
+  "ʼ": "'",
+  "′": "'",
+  "“": "\"",
+  "”": "\"",
+  "‟": "\"",
+  "″": "\"",
+  "օ": "o",
+  "հ": "h",
+  "ս": "u",
+  "ա": "w",
+  "०": "0",
+  "۰": "0",
+  "０": "0",
+  " ": " ",
+  " ": " ",
+  " ": " ",
+  " ": " ",
+  " ": " ",
+  "​": "",
+  "‌": "",
+  "‍": "",
+  "﻿": "",
+  "İ": "I",
+  "Ι": "I",
+  "І": "I",
+  "Ӏ": "I",
+  "ǀ": "|"
+ },
+ "mixed_script_ranges": [
+  [
+   65,
+   90,
+   "Latin"
+  ],
+  [
+   97,
+   122,
+   "Latin"
+  ],
+  [
+   192,
+   687,
+   "Latin"
+  ],
+  [
+   1024,
+   1327,
+   "Cyrillic"
+  ],
+  [
+   1329,
+   1366,
+   "Greek"
+  ],
+  [
+   1424,
+   1535,
+   "Hebrew"
+  ],
+  [
+   1536,
+   1791,
+   "Arabic"
+  ],
+  [
+   2304,
+   2431,
+   "Devanagari"
+  ],
+  [
+   2432,
+   2559,
+   "Bengali"
+  ],
+  [
+   3584,
+   3711,
+   "Thai"
+  ],
+  [
+   4352,
+   4607,
+   "Hangul"
+  ],
+  [
+   12352,
+   12447,
+   "Hiragana"
+  ],
+  [
+   12448,
+   12543,
+   "Katakana"
+  ],
+  [
+   19968,
+   40959,
+   "Han"
+  ],
+  [
+   40960,
+   42191,
+   "Yi"
+  ],
+  [
+   4304,
+   4346,
+   "Georgian"
+  ],
+  [
+   1328,
+   1328,
+   "Armenian"
+  ]
+ ],
+ "escape_forms": {
+  "note": "Formats rendered by unicode.unicode-escape-converter.",
+  "supported": [
+   "escape-u",
+   "escape-x",
+   "html-entity",
+   "names",
+   "bytes",
+   "python"
+  ]
+ },
+ "transliteration": {
+  "greek": {
+   "α": "a",
+   "β": "b",
+   "γ": "g",
+   "δ": "d",
+   "ε": "e",
+   "ζ": "z",
+   "η": "i",
+   "θ": "th",
+   "ι": "i",
+   "κ": "k",
+   "λ": "l",
+   "μ": "m",
+   "ν": "n",
+   "ξ": "x",
+   "ο": "o",
+   "π": "p",
+   "ρ": "r",
+   "σ": "s",
+   "ς": "s",
+   "τ": "t",
+   "υ": "y",
+   "φ": "f",
+   "χ": "ch",
+   "ψ": "ps",
+   "ω": "o",
+   "Α": "A",
+   "Β": "B",
+   "Γ": "G",
+   "Δ": "D",
+   "Ε": "E",
+   "Ζ": "Z",
+   "Η": "I",
+   "Θ": "Th",
+   "Ι": "I",
+   "Κ": "K",
+   "Λ": "L",
+   "Μ": "M",
+   "Ν": "N",
+   "Ξ": "X",
+   "Ο": "O",
+   "Π": "P",
+   "Ρ": "R",
+   "Σ": "S",
+   "Τ": "T",
+   "Υ": "Y",
+   "Φ": "F",
+   "Χ": "Ch",
+   "Ψ": "Ps",
+   "Ω": "O",
+   "ά": "a",
+   "έ": "e",
+   "ή": "i",
+   "ί": "i",
+   "ό": "o",
+   "ύ": "y",
+   "ώ": "o"
+  },
+  "cyrillic": {
+   "а": "a",
+   "б": "b",
+   "в": "v",
+   "г": "g",
+   "д": "d",
+   "е": "e",
+   "ё": "yo",
+   "ж": "zh",
+   "з": "z",
+   "и": "i",
+   "й": "y",
+   "к": "k",
+   "л": "l",
+   "м": "m",
+   "н": "n",
+   "о": "o",
+   "п": "p",
+   "р": "r",
+   "с": "s",
+   "т": "t",
+   "у": "u",
+   "ф": "f",
+   "х": "kh",
+   "ц": "ts",
+   "ч": "ch",
+   "ш": "sh",
+   "щ": "shch",
+   "ъ": "",
+   "ы": "y",
+   "ь": "",
+   "э": "e",
+   "ю": "yu",
+   "я": "ya",
+   "А": "A",
+   "Б": "B",
+   "В": "V",
+   "Г": "G",
+   "Д": "D",
+   "Е": "E",
+   "Ё": "Yo",
+   "Ж": "Zh",
+   "З": "Z",
+   "И": "I",
+   "Й": "Y",
+   "К": "K",
+   "Л": "L",
+   "М": "M",
+   "Н": "N",
+   "О": "O",
+   "П": "P",
+   "Р": "R",
+   "С": "S",
+   "Т": "T",
+   "У": "U",
+   "Ф": "F",
+   "Х": "Kh",
+   "Ц": "Ts",
+   "Ч": "Ch",
+   "Ш": "Sh",
+   "Щ": "Shch",
+   "Ъ": "",
+   "Ы": "Y",
+   "Ь": "",
+   "Э": "E",
+   "Ю": "Yu",
+   "Я": "Ya",
+   "і": "i",
+   "ї": "yi",
+   "є": "ye",
+   "ґ": "g",
+   "ў": "u"
+  },
+  "hebrew": {
+   "א": "a",
+   "ב": "b",
+   "ג": "g",
+   "ד": "d",
+   "ה": "h",
+   "ו": "v",
+   "ז": "z",
+   "ח": "ch",
+   "ט": "t",
+   "י": "y",
+   "כ": "k",
+   "ך": "k",
+   "ל": "l",
+   "מ": "m",
+   "ם": "m",
+   "נ": "n",
+   "ן": "n",
+   "ס": "s",
+   "ע": "a",
+   "פ": "p",
+   "ף": "f",
+   "צ": "ts",
+   "ץ": "ts",
+   "ק": "k",
+   "ר": "r",
+   "ש": "sh",
+   "ת": "t"
+  },
+  "arabic": {
+   "ا": "a",
+   "ب": "b",
+   "ت": "t",
+   "ث": "th",
+   "ج": "j",
+   "ح": "h",
+   "خ": "kh",
+   "د": "d",
+   "ذ": "dh",
+   "ر": "r",
+   "ز": "z",
+   "س": "s",
+   "ش": "sh",
+   "ص": "s",
+   "ض": "d",
+   "ط": "t",
+   "ظ": "z",
+   "ع": "a",
+   "غ": "gh",
+   "ف": "f",
+   "ق": "q",
+   "ك": "k",
+   "ل": "l",
+   "م": "m",
+   "ن": "n",
+   "ه": "h",
+   "و": "w",
+   "ي": "y",
+   "ى": "a",
+   "ء": "'",
+   "ئ": "'",
+   "ؤ": "'",
+   "ة": "a",
+   "ٔ": "",
+   "َ": "a",
+   "ُ": "u",
+   "ِ": "i",
+   "ّ": "",
+   "ْ": ""
+  },
+  "devanagari": {
+   "अ": "a",
+   "आ": "aa",
+   "इ": "i",
+   "ई": "ii",
+   "उ": "u",
+   "ऊ": "uu",
+   "ऋ": "ri",
+   "ए": "e",
+   "ऐ": "ai",
+   "ओ": "o",
+   "औ": "au",
+   "क": "ka",
+   "ख": "kha",
+   "ग": "ga",
+   "घ": "gha",
+   "ङ": "nga",
+   "च": "cha",
+   "छ": "chha",
+   "ज": "ja",
+   "झ": "jha",
+   "ञ": "nya",
+   "ट": "ta",
+   "ठ": "tha",
+   "ड": "da",
+   "ढ": "dha",
+   "ण": "na",
+   "त": "ta",
+   "थ": "tha",
+   "द": "da",
+   "ध": "dha",
+   "न": "na",
+   "प": "pa",
+   "फ": "pha",
+   "ब": "ba",
+   "भ": "bha",
+   "म": "ma",
+   "य": "ya",
+   "र": "ra",
+   "ल": "la",
+   "व": "va",
+   "श": "sha",
+   "ष": "sha",
+   "स": "sa",
+   "ह": "ha",
+   "्": "",
+   "ा": "aa",
+   "ि": "i",
+   "ी": "ii",
+   "ु": "u",
+   "ू": "uu",
+   "े": "e",
+   "ै": "ai",
+   "ो": "o",
+   "ौ": "au",
+   "ं": "n",
+   "ः": "h",
+   "ँ": "n"
+  },
+  "kana": {
+   "あ": "a",
+   "い": "i",
+   "う": "u",
+   "え": "e",
+   "お": "o",
+   "か": "ka",
+   "き": "ki",
+   "く": "ku",
+   "け": "ke",
+   "こ": "ko",
+   "さ": "sa",
+   "し": "shi",
+   "す": "su",
+   "せ": "se",
+   "そ": "so",
+   "た": "ta",
+   "ち": "chi",
+   "つ": "tsu",
+   "て": "te",
+   "と": "to",
+   "な": "na",
+   "に": "ni",
+   "ぬ": "nu",
+   "ね": "ne",
+   "の": "no",
+   "は": "ha",
+   "ひ": "hi",
+   "ふ": "fu",
+   "へ": "he",
+   "ほ": "ho",
+   "ま": "ma",
+   "み": "mi",
+   "む": "mu",
+   "め": "me",
+   "も": "mo",
+   "や": "ya",
+   "ゆ": "yu",
+   "よ": "yo",
+   "ら": "ra",
+   "り": "ri",
+   "る": "ru",
+   "れ": "re",
+   "ろ": "ro",
+   "わ": "wa",
+   "を": "wo",
+   "ん": "n",
+   "が": "ga",
+   "ぎ": "gi",
+   "ぐ": "gu",
+   "げ": "ge",
+   "ご": "go",
+   "ざ": "za",
+   "じ": "ji",
+   "ず": "zu",
+   "ぜ": "ze",
+   "ぞ": "zo",
+   "だ": "da",
+   "ぢ": "ji",
+   "づ": "zu",
+   "で": "de",
+   "ど": "do",
+   "ば": "ba",
+   "び": "bi",
+   "ぶ": "bu",
+   "べ": "be",
+   "ぼ": "bo",
+   "ぱ": "pa",
+   "ぴ": "pi",
+   "ぷ": "pu",
+   "ぺ": "pe",
+   "ぽ": "po",
+   "ア": "a",
+   "イ": "i",
+   "ウ": "u",
+   "エ": "e",
+   "オ": "o",
+   "カ": "ka",
+   "キ": "ki",
+   "ク": "ku",
+   "ケ": "ke",
+   "コ": "ko",
+   "サ": "sa",
+   "シ": "shi",
+   "ス": "su",
+   "セ": "se",
+   "ソ": "so",
+   "タ": "ta",
+   "チ": "chi",
+   "ツ": "tsu",
+   "テ": "te",
+   "ト": "to",
+   "ナ": "na",
+   "ニ": "ni",
+   "ヌ": "nu",
+   "ネ": "ne",
+   "ノ": "no",
+   "ハ": "ha",
+   "ヒ": "hi",
+   "フ": "fu",
+   "ヘ": "he",
+   "ホ": "ho",
+   "マ": "ma",
+   "ミ": "mi",
+   "ム": "mu",
+   "メ": "me",
+   "モ": "mo",
+   "ヤ": "ya",
+   "ユ": "yu",
+   "ヨ": "yo",
+   "ラ": "ra",
+   "リ": "ri",
+   "ル": "ru",
+   "レ": "re",
+   "ロ": "ro",
+   "ワ": "wa",
+   "ヲ": "wo",
+   "ン": "n",
+   "ー": "-",
+   "ッ": ""
+  },
+  "german": {
+   "ä": "ae",
+   "ö": "oe",
+   "ü": "ue",
+   "Ä": "Ae",
+   "Ö": "Oe",
+   "Ü": "Ue",
+   "ß": "ss"
+  }
+ },
+ "romanization_systems": {
+  "cyrillic": [
+   {
+    "char": "ж",
+    "iso9": "ž",
+    "gost": "zh",
+    "english": "zh"
+   },
+   {
+    "char": "х",
+    "iso9": "h",
+    "gost": "kh",
+    "english": "kh"
+   },
+   {
+    "char": "ц",
+    "iso9": "c",
+    "gost": "ts",
+    "english": "ts"
+   },
+   {
+    "char": "щ",
+    "iso9": "ŝ",
+    "gost": "shch",
+    "english": "shch"
+   },
+   {
+    "char": "ю",
+    "iso9": "û",
+    "gost": "yu",
+    "english": "yu"
+   },
+   {
+    "char": "я",
+    "iso9": "â",
+    "gost": "ya",
+    "english": "ya"
+   },
+   {
+    "char": "й",
+    "iso9": "j",
+    "gost": "y",
+    "english": "y"
+   },
+   {
+    "char": "ы",
+    "iso9": "y",
+    "gost": "y",
+    "english": "y"
+   }
+  ],
+  "greek": [
+   {
+    "char": "η",
+    "iso843": "ē",
+    "english": "i",
+    "classical": "e"
+   },
+   {
+    "char": "υ",
+    "iso843": "y",
+    "english": "y",
+    "classical": "u"
+   },
+   {
+    "char": "χ",
+    "iso843": "ch",
+    "english": "ch",
+    "classical": "kh"
+   },
+   {
+    "char": "φ",
+    "iso843": "ph",
+    "english": "f",
+    "classical": "ph"
+   },
+   {
+    "char": "β",
+    "iso843": "v",
+    "english": "v",
+    "classical": "b"
+   }
+  ],
+  "kana": [
+   {
+    "char": "し",
+    "hepburn": "shi",
+    "kunrei": "si",
+    "nihon": "si"
+   },
+   {
+    "char": "ち",
+    "hepburn": "chi",
+    "kunrei": "ti",
+    "nihon": "ti"
+   },
+   {
+    "char": "つ",
+    "hepburn": "tsu",
+    "kunrei": "tu",
+    "nihon": "tu"
+   },
+   {
+    "char": "ふ",
+    "hepburn": "fu",
+    "kunrei": "hu",
+    "nihon": "hu"
+   },
+   {
+    "char": "じ",
+    "hepburn": "ji",
+    "kunrei": "zi",
+    "nihon": "zi"
+   }
+  ],
+  "hangul": [
+   {
+    "char": "ㄱ",
+    "rr": "g/k",
+    "mr": "k"
+   },
+   {
+    "char": "ㄷ",
+    "rr": "d/t",
+    "mr": "t"
+   },
+   {
+    "char": "ㅂ",
+    "rr": "b/p",
+    "mr": "p"
+   },
+   {
+    "char": "ㅈ",
+    "rr": "j",
+    "mr": "ch"
+   },
+   {
+    "char": "ㅊ",
+    "rr": "ch",
+    "mr": "ch'"
+   }
+  ]
+ },
+ "hangul_jamo": {
+  "initial": [
+   "g",
+   "kk",
+   "n",
+   "d",
+   "tt",
+   "r",
+   "m",
+   "b",
+   "pp",
+   "s",
+   "ss",
+   "",
+   "j",
+   "jj",
+   "ch",
+   "k",
+   "t",
+   "p",
+   "h"
+  ],
+  "medial": [
+   "a",
+   "ae",
+   "ya",
+   "yae",
+   "eo",
+   "e",
+   "yeo",
+   "ye",
+   "o",
+   "wa",
+   "wae",
+   "oe",
+   "yo",
+   "u",
+   "wo",
+   "we",
+   "wi",
+   "yu",
+   "eu",
+   "ui",
+   "i"
+  ],
+  "final": [
+   "",
+   "k",
+   "k",
+   "ks",
+   "n",
+   "nj",
+   "nh",
+   "t",
+   "l",
+   "lk",
+   "lm",
+   "lb",
+   "ls",
+   "lt",
+   "lp",
+   "lh",
+   "m",
+   "p",
+   "ps",
+   "t",
+   "t",
+   "ng",
+   "t",
+   "t",
+   "k",
+   "t",
+   "p",
+   "h"
+  ]
+ },
+ "math_latex": {
+  "\\alpha": "α",
+  "\\beta": "β",
+  "\\gamma": "γ",
+  "\\delta": "δ",
+  "\\epsilon": "ε",
+  "\\theta": "θ",
+  "\\lambda": "λ",
+  "\\mu": "μ",
+  "\\pi": "π",
+  "\\sigma": "σ",
+  "\\phi": "φ",
+  "\\omega": "ω",
+  "\\sum": "∑",
+  "\\prod": "∏",
+  "\\int": "∫",
+  "\\infty": "∞",
+  "\\partial": "∂",
+  "\\nabla": "∇",
+  "\\sqrt": "√",
+  "\\approx": "≈",
+  "\\neq": "≠",
+  "\\leq": "≤",
+  "\\geq": "≥",
+  "\\pm": "±",
+  "\\times": "×",
+  "\\div": "÷",
+  "\\cdot": "·",
+  "\\in": "∈",
+  "\\notin": "∉",
+  "\\subset": "⊂",
+  "\\supset": "⊃",
+  "\\cup": "∪",
+  "\\cap": "∩",
+  "\\emptyset": "∅",
+  "\\forall": "∀",
+  "\\exists": "∃",
+  "\\rightarrow": "→",
+  "\\leftarrow": "←",
+  "\\Rightarrow": "⇒",
+  "\\Leftarrow": "⇐",
+  "\\leftrightarrow": "↔",
+  "\\equiv": "≡",
+  "\\propto": "∝",
+  "\\angle": "∠",
+  "\\degree": "°",
+  "\\prime": "′",
+  "\\ldots": "…",
+  "\\dots": "…"
+ },
+ "superscripts": {
+  "0": "⁰",
+  "1": "¹",
+  "2": "²",
+  "3": "³",
+  "4": "⁴",
+  "5": "⁵",
+  "6": "⁶",
+  "7": "⁷",
+  "8": "⁸",
+  "9": "⁹",
+  "+": "⁺",
+  "-": "⁻",
+  "=": "⁼",
+  "(": "⁽",
+  ")": "⁾",
+  "n": "ⁿ",
+  "i": "ⁱ"
+ },
+ "subscripts": {
+  "0": "₀",
+  "1": "₁",
+  "2": "₂",
+  "3": "₃",
+  "4": "₄",
+  "5": "₅",
+  "6": "₆",
+  "7": "₇",
+  "8": "₈",
+  "9": "₉",
+  "+": "₊",
+  "-": "₋",
+  "=": "₌",
+  "(": "₍",
+  ")": "₎",
+  "a": "ₐ",
+  "e": "ₑ",
+  "o": "ₒ",
+  "x": "ₓ"
+ },
+ "logic_symbols": {
+  "and": "∧",
+  "or": "∨",
+  "not": "¬",
+  "implies": "→",
+  "iff": "↔",
+  "forall": "∀",
+  "exists": "∃",
+  "therefore": "∴",
+  "because": "∵",
+  "union": "∪",
+  "intersect": "∩",
+  "subset": "⊆",
+  "element": "∈",
+  "empty": "∅",
+  "top": "⊤",
+  "bottom": "⊥",
+  "turnstile": "⊢"
+ },
+ "logic_ascii": {
+  "&": "and",
+  "|": "or",
+  "!": "not",
+  "~": "not",
+  "->": "implies",
+  "<->": "iff",
+  "=>": "implies"
+ },
+ "arrows": {
+  "->": "→",
+  "<-": "←",
+  "<->": "↔",
+  "=>": "⇒",
+  "<=": "⇐",
+  "<=>": "⇔",
+  "-->": "⟶",
+  "|->": "↦",
+  "up": "↑",
+  "down": "↓",
+  "uarr": "↑",
+  "darr": "↓",
+  "~>": "⇝",
+  "==>": "⟹",
+  "<==": "⟸",
+  "onto": "↠",
+  "inj": "↪"
+ },
+ "relations": {
+  "=": "=",
+  "!=": "≠",
+  "~=": "≈",
+  "<=": "≤",
+  ">=": "≥",
+  "<<": "≪",
+  ">>": "≫",
+  "<": "<",
+  ">": ">",
+  "equiv": "≡",
+  "prop": "∝",
+  "subset": "⊂",
+  "superset": "⊃",
+  "in": "∈",
+  "notin": "∉"
+ },
+ "currency": {
+  "USD": {
+   "symbol": "$",
+   "name": "US dollar",
+   "minor": "cent",
+   "minor_per": 100
+  },
+  "EUR": {
+   "symbol": "€",
+   "name": "euro",
+   "minor": "cent",
+   "minor_per": 100
+  },
+  "GBP": {
+   "symbol": "£",
+   "name": "pound sterling",
+   "minor": "penny",
+   "minor_per": 100
+  },
+  "JPY": {
+   "symbol": "¥",
+   "name": "Japanese yen",
+   "minor": "sen",
+   "minor_per": 1
+  },
+  "CNY": {
+   "symbol": "¥",
+   "name": "Chinese yuan",
+   "minor": "fen",
+   "minor_per": 100
+  },
+  "INR": {
+   "symbol": "₹",
+   "name": "Indian rupee",
+   "minor": "paisa",
+   "minor_per": 100
+  },
+  "KRW": {
+   "symbol": "₩",
+   "name": "South Korean won",
+   "minor": "jeon",
+   "minor_per": 1
+  },
+  "RUB": {
+   "symbol": "₽",
+   "name": "Russian ruble",
+   "minor": "kopek",
+   "minor_per": 100
+  },
+  "BRL": {
+   "symbol": "R$",
+   "name": "Brazilian real",
+   "minor": "centavo",
+   "minor_per": 100
+  },
+  "PHP": {
+   "symbol": "₱",
+   "name": "Philippine peso",
+   "minor": "sentimo",
+   "minor_per": 100
+  },
+  "THB": {
+   "symbol": "฿",
+   "name": "Thai baht",
+   "minor": "satang",
+   "minor_per": 100
+  },
+  "VND": {
+   "symbol": "₫",
+   "name": "Vietnamese dong",
+   "minor": "hao",
+   "minor_per": 10
+  },
+  "CHF": {
+   "symbol": "CHF",
+   "name": "Swiss franc",
+   "minor": "rappen",
+   "minor_per": 100
+  },
+  "AUD": {
+   "symbol": "A$",
+   "name": "Australian dollar",
+   "minor": "cent",
+   "minor_per": 100
+  },
+  "CAD": {
+   "symbol": "C$",
+   "name": "Canadian dollar",
+   "minor": "cent",
+   "minor_per": 100
+  },
+  "SGD": {
+   "symbol": "S$",
+   "name": "Singapore dollar",
+   "minor": "cent",
+   "minor_per": 100
+  },
+  "ZAR": {
+   "symbol": "R",
+   "name": "South African rand",
+   "minor": "cent",
+   "minor_per": 100
+  },
+  "NGN": {
+   "symbol": "₦",
+   "name": "Nigerian naira",
+   "minor": "kobo",
+   "minor_per": 100
+  },
+  "TRY": {
+   "symbol": "₺",
+   "name": "Turkish lira",
+   "minor": "kuruş",
+   "minor_per": 100
+  },
+  "PLN": {
+   "symbol": "zł",
+   "name": "Polish złoty",
+   "minor": "grosz",
+   "minor_per": 100
+  },
+  "SEK": {
+   "symbol": "kr",
+   "name": "Swedish krona",
+   "minor": "öre",
+   "minor_per": 100
+  },
+  "MXN": {
+   "symbol": "MX$",
+   "name": "Mexican peso",
+   "minor": "centavo",
+   "minor_per": 100
+  },
+  "AED": {
+   "symbol": "د.إ",
+   "name": "UAE dirham",
+   "minor": "fils",
+   "minor_per": 100
+  }
+ },
+ "proofreading_marks": [
+  {
+   "mark": "¶",
+   "name": "pilcrow",
+   "meaning": "start a new paragraph"
+  },
+  {
+   "mark": "§",
+   "name": "section sign",
+   "meaning": "section break or section reference"
+  },
+  {
+   "mark": "^",
+   "name": "caret",
+   "meaning": "insert here"
+  },
+  {
+   "mark": "⌐",
+   "name": "dele",
+   "meaning": "delete marked character"
+  },
+  {
+   "mark": "lc",
+   "name": "lower case",
+   "meaning": "set in lowercase"
+  },
+  {
+   "mark": "uc",
+   "name": "upper case",
+   "meaning": "set in capitals"
+  },
+  {
+   "mark": "sp",
+   "name": "spell out",
+   "meaning": "expand an abbreviation"
+  },
+  {
+   "mark": "stet",
+   "name": "stet",
+   "meaning": "let it stand; ignore the correction"
+  },
+  {
+   "mark": "tr",
+   "name": "transpose",
+   "meaning": "swap the marked characters"
+  },
+  {
+   "mark": "#",
+   "name": "space mark",
+   "meaning": "insert a space"
+  },
+  {
+   "mark": "¶¶",
+   "name": "double pilcrow",
+   "meaning": "insert a blank line"
+  },
+  {
+   "mark": "⟨ ⟩",
+   "name": "angle brackets",
+   "meaning": "restore deleted text"
+  },
+  {
+   "mark": "∕",
+   "name": "slash",
+   "meaning": "set in italic"
+  },
+  {
+   "mark": "___",
+   "name": "underline",
+   "meaning": "set in italic (traditional)"
+  }
+ ],
+ "keyboard_shortcuts": [
+  {
+   "symbol": "—",
+   "name": "em dash",
+   "windows": "Alt+0151",
+   "macos": "Option+Shift+-",
+   "linux": "Compose - - -",
+   "emacs": "C-x 8 RET 2014",
+   "vim": "C-v u 2014"
+  },
+  {
+   "symbol": "–",
+   "name": "en dash",
+   "windows": "Alt+0150",
+   "macos": "Option+-",
+   "linux": "Compose - - .",
+   "emacs": "C-x 8 RET 2013",
+   "vim": "C-v u 2013"
+  },
+  {
+   "symbol": "…",
+   "name": "ellipsis",
+   "windows": "Alt+0133",
+   "macos": "Option+;",
+   "linux": "Compose . . .",
+   "emacs": "C-x 8 RET 2026",
+   "vim": "C-v u 2026"
+  },
+  {
+   "symbol": "“",
+   "name": "left double quote",
+   "windows": "Alt+0147",
+   "macos": "Option+[",
+   "linux": "Compose < \"",
+   "emacs": "C-x 8 RET 201C",
+   "vim": "C-v u 201c"
+  },
+  {
+   "symbol": "”",
+   "name": "right double quote",
+   "windows": "Alt+0148",
+   "macos": "Option+Shift+[",
+   "linux": "Compose > \"",
+   "emacs": "C-x 8 RET 201D",
+   "vim": "C-v u 201d"
+  },
+  {
+   "symbol": "‘",
+   "name": "left single quote",
+   "windows": "Alt+0145",
+   "macos": "Option+]",
+   "linux": "Compose < '",
+   "emacs": "C-x 8 RET 2018",
+   "vim": "C-v u 2018"
+  },
+  {
+   "symbol": "’",
+   "name": "right single quote",
+   "windows": "Alt+0146",
+   "macos": "Option+Shift+]",
+   "linux": "Compose > '",
+   "emacs": "C-x 8 RET 2019",
+   "vim": "C-v u 2019"
+  },
+  {
+   "symbol": "€",
+   "name": "euro sign",
+   "windows": "Alt+0128",
+   "macos": "Option+Shift+2",
+   "linux": "Compose = e",
+   "emacs": "C-x 8 RET 20AC",
+   "vim": "C-v u 20ac"
+  },
+  {
+   "symbol": "£",
+   "name": "pound sign",
+   "windows": "Alt+0163",
+   "macos": "Option+3",
+   "linux": "Compose - L -",
+   "emacs": "C-x 8 RET A3",
+   "vim": "C-v u a3"
+  },
+  {
+   "symbol": "¥",
+   "name": "yen sign",
+   "windows": "Alt+0165",
+   "macos": "Option+y",
+   "linux": "Compose = y",
+   "emacs": "C-x 8 RET A5",
+   "vim": "C-v u a5"
+  },
+  {
+   "symbol": "©",
+   "name": "copyright",
+   "windows": "Alt+0169",
+   "macos": "Option+g",
+   "linux": "Compose O C",
+   "emacs": "C-x 8 RET A9",
+   "vim": "C-v u a9"
+  },
+  {
+   "symbol": "®",
+   "name": "registered",
+   "windows": "Alt+0174",
+   "macos": "Option+r",
+   "linux": "Compose O R",
+   "emacs": "C-x 8 RET AE",
+   "vim": "C-v u ae"
+  },
+  {
+   "symbol": "™",
+   "name": "trade mark",
+   "windows": "Alt+0153",
+   "macos": "Option+2",
+   "linux": "Compose T M",
+   "emacs": "C-x 8 RET 2122",
+   "vim": "C-v u 2122"
+  },
+  {
+   "symbol": "°",
+   "name": "degree sign",
+   "windows": "Alt+0176",
+   "macos": "Option+Shift+8",
+   "linux": "Compose o o",
+   "emacs": "C-x 8 RET B0",
+   "vim": "C-v u b0"
+  },
+  {
+   "symbol": "±",
+   "name": "plus-minus",
+   "windows": "Alt+0177",
+   "macos": "Option+Shift+=",
+   "linux": "Compose + -",
+   "emacs": "C-x 8 RET B1",
+   "vim": "C-v u b1"
+  },
+  {
+   "symbol": "×",
+   "name": "multiplication",
+   "windows": "Alt+0215",
+   "macos": "Option+*",
+   "linux": "Compose x x",
+   "emacs": "C-x 8 RET D7",
+   "vim": "C-v u d7"
+  },
+  {
+   "symbol": "÷",
+   "name": "division",
+   "windows": "Alt+0247",
+   "macos": "Option+/",
+   "linux": "Compose - :",
+   "emacs": "C-x 8 RET F7",
+   "vim": "C-v u f7"
+  },
+  {
+   "symbol": "≠",
+   "name": "not equal",
+   "windows": "Alt+8800",
+   "macos": "Option+=",
+   "linux": "Compose = / =",
+   "emacs": "C-x 8 RET 2260",
+   "vim": "C-v u 2260"
+  },
+  {
+   "symbol": "≤",
+   "name": "less or equal",
+   "windows": "Alt+8804",
+   "macos": "Option+,",
+   "linux": "Compose < =",
+   "emacs": "C-x 8 RET 2264",
+   "vim": "C-v u 2264"
+  },
+  {
+   "symbol": "≥",
+   "name": "greater or equal",
+   "windows": "Alt+8805",
+   "macos": "Option+.",
+   "linux": "Compose > =",
+   "emacs": "C-x 8 RET 2265",
+   "vim": "C-v u 2265"
+  },
+  {
+   "symbol": "→",
+   "name": "rightwards arrow",
+   "windows": "Alt+8594",
+   "macos": "Option+→",
+   "linux": "Compose - >",
+   "emacs": "C-x 8 RET 2192",
+   "vim": "C-v u 2192"
+  },
+  {
+   "symbol": "→",
+   "name": "rightwards arrow (alt)",
+   "windows": "2192",
+   "macos": "Option+→",
+   "linux": "Compose - >",
+   "emacs": "C-x 8 RET 2192",
+   "vim": "C-v u 2192"
+  },
+  {
+   "symbol": "☑",
+   "name": "ballot box with check",
+   "windows": "Alt+9745",
+   "macos": "Character Viewer",
+   "linux": "Compose o x",
+   "emacs": "C-x 8 RET 2611",
+   "vim": "C-v u 2611"
+  },
+  {
+   "symbol": "•",
+   "name": "bullet",
+   "windows": "Alt+0149",
+   "macos": "Option+8",
+   "linux": "Compose o .",
+   "emacs": "C-x 8 RET 2022",
+   "vim": "C-v u 2022"
+  },
+  {
+   "symbol": "†",
+   "name": "dagger",
+   "windows": "Alt+0134",
+   "macos": "Option+t",
+   "linux": "Compose / /",
+   "emacs": "C-x 8 RET 2020",
+   "vim": "C-v u 2020"
+  },
+  {
+   "symbol": "§",
+   "name": "section sign",
+   "windows": "Alt+0167",
+   "macos": "Option+6",
+   "linux": "Compose o s",
+   "emacs": "C-x 8 RET A7",
+   "vim": "C-v u a7"
+  },
+  {
+   "symbol": "¶",
+   "name": "pilcrow",
+   "windows": "Alt+0182",
+   "macos": "Option+7",
+   "linux": "Compose p !",
+   "emacs": "C-x 8 RET B6",
+   "vim": "C-v u b6"
+  },
+  {
+   "symbol": "½",
+   "name": "one half",
+   "windows": "Alt+0189",
+   "macos": "Option+Shift+1",
+   "linux": "Compose 1 2",
+   "emacs": "C-x 8 RET BD",
+   "vim": "C-v u bd"
+  },
+  {
+   "symbol": "«",
+   "name": "left guillemet",
+   "windows": "Alt+0171",
+   "macos": "Option+\\",
+   "linux": "Compose < <",
+   "emacs": "C-x 8 RET AB",
+   "vim": "C-v u ab"
+  },
+  {
+   "symbol": "»",
+   "name": "right guillemet",
+   "windows": "Alt+0187",
+   "macos": "Option+Shift+\\",
+   "linux": "Compose > >",
+   "emacs": "C-x 8 RET BB",
+   "vim": "C-v u bb"
+  }
+ ],
+ "standards": [
+  {
+   "id": "unicode",
+   "name": "The Unicode Standard",
+   "org": "Unicode Consortium",
+   "url": "https://www.unicode.org/versions/latest/",
+   "scope": "character repertoire, properties, normalization"
+  },
+  {
+   "id": "uax15",
+   "name": "UAX #15 Unicode Normalization Forms",
+   "org": "Unicode Consortium",
+   "url": "https://www.unicode.org/reports/tr15/",
+   "scope": "NFC/NFD/NFKC/NFKD"
+  },
+  {
+   "id": "uax9",
+   "name": "UAX #9 Unicode Bidirectional Algorithm",
+   "org": "Unicode Consortium",
+   "url": "https://www.unicode.org/reports/tr9/",
+   "scope": "bidi resolution and isolates"
+  },
+  {
+   "id": "uax29",
+   "name": "UAX #29 Unicode Text Segmentation",
+   "org": "Unicode Consortium",
+   "url": "https://www.unicode.org/reports/tr29/",
+   "scope": "grapheme, word, sentence boundaries"
+  },
+  {
+   "id": "uax31",
+   "name": "UAX #31 Unicode Identifier and Pattern Syntax",
+   "org": "Unicode Consortium",
+   "url": "https://www.unicode.org/reports/tr31/",
+   "scope": "identifiers in programming languages"
+  },
+  {
+   "id": "uax39",
+   "name": "UAX #39 Unicode Security Mechanisms",
+   "org": "Unicode Consortium",
+   "url": "https://www.unicode.org/reports/tr39/",
+   "scope": "confusables, mixed scripts, restriction levels"
+  },
+  {
+   "id": "uax44",
+   "name": "UAX #44 Unicode Character Database",
+   "org": "Unicode Consortium",
+   "url": "https://www.unicode.org/reports/tr44/",
+   "scope": "property definitions"
+  },
+  {
+   "id": "utn11",
+   "name": "UTN #11 East Asian Width",
+   "org": "Unicode Consortium",
+   "url": "https://www.unicode.org/notes/tn11/",
+   "scope": "display width of characters"
+  },
+  {
+   "id": "emoji",
+   "name": "Unicode Emoji Standard and Data Files",
+   "org": "Unicode Consortium",
+   "url": "https://www.unicode.org/reports/tr51/",
+   "scope": "emoji sequences, flags, variants"
+  },
+  {
+   "id": "ecma404",
+   "name": "ECMA-404 JSON Data Interchange Syntax",
+   "org": "Ecma International",
+   "url": "https://ecma-international.org/publications-and-standards/standards/ecma-404/",
+   "scope": "JSON grammar"
+  },
+  {
+   "id": "rfc8259",
+   "name": "RFC 8259 The JavaScript Object Notation (JSON) Data Interchange Format",
+   "org": "IETF",
+   "url": "https://www.rfc-editor.org/rfc/rfc8259",
+   "scope": "JSON over the wire"
+  },
+  {
+   "id": "rfc4180",
+   "name": "RFC 4180 Common Format and MIME Type for CSV Files",
+   "org": "IETF",
+   "url": "https://www.rfc-editor.org/rfc/rfc4180",
+   "scope": "CSV quoting and escaping"
+  },
+  {
+   "id": "rfc3629",
+   "name": "RFC 3629 UTF-8, a transformation format of ISO 10646",
+   "org": "IETF",
+   "url": "https://www.rfc-editor.org/rfc/rfc3629",
+   "scope": "UTF-8 encoding"
+  },
+  {
+   "id": "rfc5322",
+   "name": "RFC 5322 Internet Message Format",
+   "org": "IETF",
+   "url": "https://www.rfc-editor.org/rfc/rfc5322",
+   "scope": "email header and text limits"
+  },
+  {
+   "id": "rfc2047",
+   "name": "RFC 2047 MIME Header Extensions",
+   "org": "IETF",
+   "url": "https://www.rfc-editor.org/rfc/rfc2047",
+   "scope": "encoded words in headers"
+  },
+  {
+   "id": "iso8601",
+   "name": "ISO 8601 Date and Time Format",
+   "org": "ISO",
+   "url": "https://www.iso.org/iso-8601-date-and-time-format.html",
+   "scope": "date and time representation"
+  },
+  {
+   "id": "iso639",
+   "name": "ISO 639 Language Codes",
+   "org": "ISO",
+   "url": "https://www.iso.org/iso-639-language-codes.html",
+   "scope": "language identifiers"
+  },
+  {
+   "id": "iso15924",
+   "name": "ISO 15924 Script Codes",
+   "org": "ISO",
+   "url": "https://unicode.org/iso15924/",
+   "scope": "script identifiers"
+  },
+  {
+   "id": "bpc47",
+   "name": "BCP 47 Tags for Identifying Languages",
+   "org": "IETF",
+   "url": "https://www.rfc-editor.org/rfc/bcp/bcp47.txt",
+   "scope": "locale tags"
+  },
+  {
+   "id": "cldr",
+   "name": "Unicode CLDR",
+   "org": "Unicode Consortium",
+   "url": "https://cldr.unicode.org/",
+   "scope": "locale data, cased and plural rules"
+  },
+  {
+   "id": "icu",
+   "name": "ICU MessageFormat",
+   "org": "Unicode Consortium",
+   "url": "https://unicode-org.github.io/icu/userguide/format_parse/messages/",
+   "scope": "plural and select templates"
+  },
+  {
+   "id": "wcag",
+   "name": "WCAG 2.2",
+   "org": "W3C",
+   "url": "https://www.w3.org/TR/WCAG22/",
+   "scope": "alt text, reading level, captions"
+  },
+  {
+   "id": "aria",
+   "name": "WAI-ARIA Authoring Practices",
+   "org": "W3C",
+   "url": "https://www.w3.org/WAI/ARIA/apg/",
+   "scope": "accessible naming and roles"
+  },
+  {
+   "id": "commonmark",
+   "name": "CommonMark Specification",
+   "org": "CommonMark",
+   "url": "https://spec.commonmark.org/",
+   "scope": "Markdown syntax"
+  },
+  {
+   "id": "gfm",
+   "name": "GitHub Flavored Markdown Spec",
+   "org": "GitHub",
+   "url": "https://github.github.com/gfm/",
+   "scope": "tables, task lists, autolinks"
+  },
+  {
+   "id": "srt",
+   "name": "SubRip (SRT) subtitle format",
+   "org": "de facto",
+   "url": "https://www.w3.org/TR/webvtt1/",
+   "scope": "caption timing blocks"
+  },
+  {
+   "id": "webvtt",
+   "name": "WebVTT",
+   "org": "W3C",
+   "url": "https://www.w3.org/TR/webvtt1/",
+   "scope": "web captions"
+  },
+  {
+   "id": "idna",
+   "name": "IDNA2008 (RFC 5890-5895)",
+   "org": "IETF",
+   "url": "https://www.rfc-editor.org/rfc/rfc5890",
+   "scope": "internationalised domain names"
+  },
+  {
+   "id": "tr51",
+   "name": "UTS #51 Unicode Emoji",
+   "org": "Unicode Consortium",
+   "url": "https://www.unicode.org/reports/tr51/",
+   "scope": "emoji definitions and ordering"
+  },
+  {
+   "id": "tr35",
+   "name": "UTS #35 Unicode Locale Data Markup Language",
+   "org": "Unicode Consortium",
+   "url": "https://www.unicode.org/reports/tr35/",
+   "scope": "locale patterns"
+  },
+  {
+   "id": "xsampa",
+   "name": "X-SAMPA",
+   "org": "de facto",
+   "url": "https://www.phon.ucl.ac.uk/home/sampa/x-sampa.htm",
+   "scope": "ASCII encoding of IPA"
+  },
+  {
+   "id": "ipa",
+   "name": "International Phonetic Alphabet",
+   "org": "IPA",
+   "url": "https://www.internationalphoneticassociation.org/",
+   "scope": "phonetic transcription"
+  },
+  {
+   "id": "fen",
+   "name": "Forsyth-Edwards Notation",
+   "org": "de facto",
+   "url": "https://www.chessprogramming.org/Forsyth-Edwards_Notation",
+   "scope": "chess positions"
+  },
+  {
+   "id": "fountain",
+   "name": "Fountain screenplay format",
+   "org": "Fountain",
+   "url": "https://fountain.io/syntax",
+   "scope": "plain-text screenplays"
+  }
+ ]
+}

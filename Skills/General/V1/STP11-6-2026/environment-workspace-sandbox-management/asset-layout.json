@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "folders": ["inputs", "sources", "working", "scratch", "cache", "build", "tests", "reports", "deliverables", "backups"],
+  "classification": {
+    "documents": [".pdf", ".docx", ".pptx", ".xlsx", ".odt", ".md", ".txt"],
+    "data": [".csv", ".json", ".sqlite", ".db", ".parquet"],
+    "media": [".png", ".jpg", ".jpeg", ".svg", ".wav", ".mp3", ".mp4"],
+    "source": [".py", ".js", ".ts", ".html", ".css", ".go", ".rs", ".java"],
+    "archives": [".zip", ".tar", ".gz"]
+  }
+}

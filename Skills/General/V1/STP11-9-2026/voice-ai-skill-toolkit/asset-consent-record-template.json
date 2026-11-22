@@ -1,0 +1,44 @@
+{
+  "schema": "voice-ai-consent-record/1.0.0",
+  "description": "Template for a documented voice-consent record. Required whenever a work package involves a real person's voice (cloning, dataset capture, biometric modelling, evidentiary/clinical voice). Copy this file into the work package as consent-record.json and fill every field. The consent-check command validates against the rules in the voice-ai-skill-toolkit (tools-validate.py).",
+  "record_id": "VC-0000",
+  "voice_owner_name": "",
+  "voice_owner_contact": "",
+  "relationship_to_voice_owner": "self",
+  "signed_by": "",
+  "signature_date": "2026-01-01",
+  "signature_method": "wet-ink | e-signature | recorded verbal consent (with transcript reference)",
+  "scope": {
+    "use_cases": ["narration", "advertising"],
+    "languages": ["en-US"],
+    "territory": "worldwide | list of regions",
+    "term_start": "2026-01-01",
+    "term_end": "2027-01-01",
+    "exclusivity": "exclusive | non-exclusive",
+    "max_duration_seconds": null
+  },
+  "disclosures": {
+    "ai_generated_voice_disclosed": true,
+    "synthesis_or_cloning_disclosed": true,
+    "redistribution_terms_disclosed": true,
+    "compensation_terms_disclosed": true
+  },
+  "data_handling": {
+    "storage_description": "where raw recordings and derived models are stored",
+    "retention_days": 365,
+    "encryption_required": true,
+    "deletion_on_revocation": true,
+    "third_party_sharing": "none | list parties and purposes"
+  },
+  "revocation": {
+    "contact": "email or postal address for revocation requests",
+    "process": "how a revocation request is submitted and verified",
+    "lead_time_days": 30
+  },
+  "witness": {
+    "name": "",
+    "role": "producer | legal | other",
+    "date": "2026-01-01"
+  },
+  "notes": ""
+}

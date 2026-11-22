@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "default_set": "grounded-document-v1",
+  "sets": {
+    "grounded-document-v1": {
+      "system": "Use only the supplied input and cited configuration. Do not invent facts. Mark uncertainty. Ask for human approval before any sensitive action.",
+      "templates": {
+        "summarize": "Summarize the supplied document. Cite section names. List unanswered questions. Keep the output factual and editable.",
+        "extract": "Extract only fields requested by the operator from the supplied input. Return a table with source references and confidence notes.",
+        "draft": "Draft an editable document from the supplied facts and outline. Preserve placeholders only for absent facts, and label them clearly.",
+        "rewrite": "Rewrite for the requested tone without changing factual meaning. Provide a change log and a human review checklist.",
+        "formula": "Explain the formula using the supplied columns only. Do not execute code. Provide assumptions and validation checks.",
+        "qa": "Check the supplied artifact against the requested rules. Report pass, fail, and not-tested items separately.",
+        "classify": "Classify the supplied content using the configured labels. Give evidence for each label and an approval gate for sensitive labels."
+      },
+      "required_context": [
+        "input_path",
+        "requested_operation",
+        "output_path",
+        "policy_path"
+      ],
+      "approval_gate": "Human approval is mandatory for publishing, financial, credential, security, destructive, privileged, and integration actions.",
+      "provenance": [
+        "source_path",
+        "source_sha256",
+        "prompt_set",
+        "template_id",
+        "generated_at_utc",
+        "operator_provided_options",
+        "reviewer_decision"
+      ]
+    }
+  }
+}

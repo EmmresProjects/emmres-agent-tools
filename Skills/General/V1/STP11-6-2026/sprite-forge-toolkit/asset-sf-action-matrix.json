@@ -1,0 +1,25 @@
+{
+  "axes": {
+    "hero": ["idle", "walk", "run", "attack", "block", "hit", "death"],
+    "slime": ["idle", "hop", "hit", "death"],
+    "boss": ["idle", "slam", "summon", "phase_change", "death"]
+  },
+  "status": {
+    "hero:idle": "approved",
+    "hero:walk": "approved",
+    "hero:run": "required",
+    "hero:attack": "approved",
+    "hero:block": "optional",
+    "hero:hit": "required",
+    "hero:death": "required",
+    "slime:idle": "approved",
+    "slime:hop": "approved",
+    "slime:hit": "blocked",
+    "slime:death": "required",
+    "boss:idle": "required",
+    "boss:slam": "required",
+    "boss:summon": "optional",
+    "boss:phase_change": "blocked",
+    "boss:death": "required"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "description": "Planning profiles for compute.vram_budget, compute.resolution and compute.training_plan. Parameter counts are rounded public figures for planning only; check the model card of the exact checkpoint you use. Activation and overhead constants are conservative planning values, not measurements. Edit this file to match your own hardware measurements.",
+  "families": {
+    "sd15": {
+      "label": "Stable Diffusion 1.5-class",
+      "unet_params_billion": 0.86,
+      "text_encoder_params_billion": 0.12,
+      "vae_params_million": 84,
+      "latent_channels": 4,
+      "vae_scale": 8,
+      "budget_side": 512,
+      "train_resolution": 512,
+      "activation_gb_per_megapixel": 0.9
+    },
+    "sdxl": {
+      "label": "SDXL-class",
+      "unet_params_billion": 2.6,
+      "text_encoder_params_billion": 0.82,
+      "vae_params_million": 84,
+      "latent_channels": 4,
+      "vae_scale": 8,
+      "budget_side": 1024,
+      "train_resolution": 1024,
+      "activation_gb_per_megapixel": 1.6
+    },
+    "sd3": {
+      "label": "SD3-class (MMDiT with large text encoder)",
+      "unet_params_billion": 2.0,
+      "text_encoder_params_billion": 5.2,
+      "vae_params_million": 84,
+      "latent_channels": 16,
+      "vae_scale": 8,
+      "budget_side": 1024,
+      "train_resolution": 1024,
+      "activation_gb_per_megapixel": 2.4
+    }
+  },
+  "precision_bytes": {"fp32": 4.0, "fp16": 2.0, "bf16": 2.0, "int8": 1.0, "int4": 0.5},
+  "residency_factor": {"none": 1.0, "cpu": 0.35, "sequential": 0.2},
+  "overhead_gb": 1.0,
+  "control_adapter_gb": 0.7,
+  "lora_gb": 0.05,
+  "resolution_multiple": 64,
+  "training_defaults": {
+    "lora": {"learning_rate": 0.0001, "rank": 16, "alpha": 16, "resolution": 1024, "warn_steps_per_image": 400},
+    "dreambooth": {"learning_rate": 0.000002, "rank": null, "alpha": null, "resolution": 1024, "warn_steps_per_image": 150},
+    "textual-inversion": {"learning_rate": 0.005, "rank": null, "alpha": null, "resolution": 512, "warn_steps_per_image": 300}
+  }
+}

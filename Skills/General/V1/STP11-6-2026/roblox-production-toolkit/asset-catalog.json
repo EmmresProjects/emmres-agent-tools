@@ -1,0 +1,1880 @@
+{
+  "schema_version": 1,
+  "name": "roblox-production-toolkit",
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": 1,
+      "name": "Roblox Studio Foundations",
+      "engine": "studio"
+    },
+    {
+      "id": 2,
+      "name": "Instances, Objects, and DataModel",
+      "engine": "instances"
+    },
+    {
+      "id": 3,
+      "name": "Luau Programming and Architecture",
+      "engine": "luau"
+    },
+    {
+      "id": 4,
+      "name": "Client-Server Networking and Remotes",
+      "engine": "network"
+    },
+    {
+      "id": 5,
+      "name": "Data Persistence and Player Profiles",
+      "engine": "data"
+    },
+    {
+      "id": 6,
+      "name": "Avatar, Character, and Rig Creation",
+      "engine": "avatar"
+    },
+    {
+      "id": 7,
+      "name": "Clothing, Accessories, and Marketplace Assets",
+      "engine": "clothing"
+    },
+    {
+      "id": 8,
+      "name": "Animation, Emotes, and Cinematics",
+      "engine": "animation"
+    },
+    {
+      "id": 9,
+      "name": "3D Modeling, Meshes, and Content Pipeline",
+      "engine": "mesh"
+    },
+    {
+      "id": 10,
+      "name": "World Building, Terrain, and Environment",
+      "engine": "world"
+    },
+    {
+      "id": 11,
+      "name": "Physics, Constraints, and Vehicles",
+      "engine": "physics"
+    },
+    {
+      "id": 12,
+      "name": "Player Movement, Camera, and Input",
+      "engine": "movement"
+    },
+    {
+      "id": 13,
+      "name": "User Interface and Experience Design",
+      "engine": "ui"
+    },
+    {
+      "id": 14,
+      "name": "Accessibility, Localization, and Inclusivity",
+      "engine": "accessibility"
+    },
+    {
+      "id": 15,
+      "name": "Audio, Voice, and Music",
+      "engine": "audio"
+    },
+    {
+      "id": 16,
+      "name": "Visual Effects, Lighting, and Rendering",
+      "engine": "vfx"
+    },
+    {
+      "id": 17,
+      "name": "Gameplay Systems and Core Loops",
+      "engine": "gameplay"
+    },
+    {
+      "id": 18,
+      "name": "Combat, Weapons, and Abilities",
+      "engine": "combat"
+    },
+    {
+      "id": 19,
+      "name": "NPCs, AI, and Pathfinding",
+      "engine": "ai"
+    },
+    {
+      "id": 20,
+      "name": "Social, Chat, Parties, and Community",
+      "engine": "social"
+    },
+    {
+      "id": 21,
+      "name": "Matchmaking, Teleportation, and Servers",
+      "engine": "servers"
+    },
+    {
+      "id": 22,
+      "name": "Economy, Monetization, and Commerce",
+      "engine": "economy"
+    },
+    {
+      "id": 23,
+      "name": "Analytics, Experiments, and Live Operations",
+      "engine": "analytics"
+    },
+    {
+      "id": 24,
+      "name": "Security, Anti-Cheat, and Abuse Prevention",
+      "engine": "security"
+    },
+    {
+      "id": 25,
+      "name": "Safety, Moderation, and Policy",
+      "engine": "safety"
+    },
+    {
+      "id": 26,
+      "name": "Performance and Optimization",
+      "engine": "performance"
+    },
+    {
+      "id": 27,
+      "name": "Testing, Debugging, and Quality Assurance",
+      "engine": "testing"
+    },
+    {
+      "id": 28,
+      "name": "Plugins, Tools, and Creator Automation",
+      "engine": "plugins"
+    },
+    {
+      "id": 29,
+      "name": "Packages, Collaboration, and Source Control",
+      "engine": "collaboration"
+    },
+    {
+      "id": 30,
+      "name": "CI/CD, Publishing, and Release Engineering",
+      "engine": "release"
+    },
+    {
+      "id": 31,
+      "name": "Open Cloud, Web APIs, and External Services",
+      "engine": "cloud"
+    },
+    {
+      "id": 32,
+      "name": "Discovery, Marketing, and Creator Business",
+      "engine": "business"
+    },
+    {
+      "id": 33,
+      "name": "Genre Production Kits",
+      "engine": "genre"
+    },
+    {
+      "id": 34,
+      "name": "Documentation, Education, and Support",
+      "engine": "docs"
+    }
+  ],
+  "format": "capabilities: [id, name, description] per entry; categories: {id, name, engine}",
+  "capabilities": [
+    [
+      "studio-project-bootstrapper",
+      "Studio Project Bootstrapper",
+      "Creates a clean Roblox Studio project structure with named folders, starter scripts, configuration modules, collision groups, tags, and environment settings suitable for team development."
+    ],
+    [
+      "explorer-hierarchy-architect",
+      "Explorer Hierarchy Architect",
+      "Designs and audits the DataModel hierarchy across Workspace, ReplicatedStorage, ServerStorage, ServerScriptService, StarterPlayer, StarterGui, Lighting, SoundService, and related services."
+    ],
+    [
+      "property-configuration-specialist",
+      "Property Configuration Specialist",
+      "Selects safe, performance-aware Instance properties and explains how property changes affect replication, physics, rendering, input, and gameplay."
+    ],
+    [
+      "template-and-place-generator",
+      "Template and Place Generator",
+      "Builds reusable place templates for lobbies, rounds, worlds, test maps, social spaces, obbies, simulators, tycoons, and narrative experiences."
+    ],
+    [
+      "studio-settings-auditor",
+      "Studio Settings Auditor",
+      "Reviews game, place, security, streaming, avatar, physics, and publishing settings for conflicts, unsafe defaults, or missing production configuration."
+    ],
+    [
+      "object-insertion-and-wiring",
+      "Object Insertion and Wiring",
+      "Adds Instances and connects references, attributes, CollectionService tags, events, constraints, and scripts without leaving broken dependencies."
+    ],
+    [
+      "multi-place-universe-planner",
+      "Multi-Place Universe Planner",
+      "Plans universes with multiple places, teleport routes, reserved servers, shared data, access rules, and graceful return paths."
+    ],
+    [
+      "team-create-workflow-designer",
+      "Team Create Workflow Designer",
+      "Defines collaboration conventions for Team Create, ownership boundaries, script locations, naming, review, and conflict reduction."
+    ],
+    [
+      "studio-productivity-automator",
+      "Studio Productivity Automator",
+      "Automates repetitive Studio work through command-bar utilities, plugins, selection tools, batch edits, and validation scripts."
+    ],
+    [
+      "experience-configuration-manager",
+      "Experience Configuration Manager",
+      "Maintains experience metadata, icons, thumbnails, permissions, localization, supported devices, private servers, and release settings."
+    ],
+    [
+      "instance-api-navigator",
+      "Instance API Navigator",
+      "Finds appropriate Roblox classes, properties, methods, events, callbacks, inheritance relationships, and service access patterns for a requested feature."
+    ],
+    [
+      "object-factory-builder",
+      "Object Factory Builder",
+      "Creates configurable object factories for Parts, Models, Attachments, GUI objects, effects, sounds, constraints, and gameplay entities."
+    ],
+    [
+      "attribute-schema-designer",
+      "Attribute Schema Designer",
+      "Defines typed attribute conventions for tunable object state, designer settings, runtime flags, versioning, and debugging."
+    ],
+    [
+      "collectionservice-tag-architect",
+      "CollectionService Tag Architect",
+      "Uses tags to discover, initialize, update, and clean up groups of objects without fragile hierarchy searches."
+    ],
+    [
+      "object-lifecycle-manager",
+      "Object Lifecycle Manager",
+      "Controls creation, parenting, activation, pooling, cleanup, destruction, and reconnection of runtime Instances."
+    ],
+    [
+      "clone-and-template-safety-auditor",
+      "Clone and Template Safety Auditor",
+      "Prevents duplicate scripts, stale references, accidental Archivable behavior, and unsafe cloning of stateful objects."
+    ],
+    [
+      "reference-resolver",
+      "Reference Resolver",
+      "Builds robust dependency lookup using WaitForChild timeouts, tags, attributes, ObjectValues, exported references, and explicit initialization."
+    ],
+    [
+      "pivot-and-model-coordinator",
+      "Pivot and Model Coordinator",
+      "Handles Model pivots, PrimaryPart alternatives, bounding boxes, world transforms, placement previews, and grouped movement."
+    ],
+    [
+      "folder-and-container-organizer",
+      "Folder and Container Organizer",
+      "Creates a predictable container taxonomy for remotes, assets, modules, maps, NPCs, tools, effects, and temporary objects."
+    ],
+    [
+      "object-diff-and-migration-tool",
+      "Object Diff and Migration Tool",
+      "Compares object trees or template versions and produces safe migrations for renamed instances, changed properties, and updated schemas."
+    ],
+    [
+      "luau-code-generator",
+      "Luau Code Generator",
+      "Produces idiomatic Luau with clear types, guarded inputs, deterministic behavior, and Roblox-compatible APIs."
+    ],
+    [
+      "strict-type-system-specialist",
+      "Strict Type System Specialist",
+      "Adds --!strict typing, exported types, generics, unions, intersections, type guards, and typed module interfaces."
+    ],
+    [
+      "modulescript-api-designer",
+      "ModuleScript API Designer",
+      "Creates small, composable ModuleScripts with explicit ownership, initialization, teardown, and dependency boundaries."
+    ],
+    [
+      "object-oriented-luau-builder",
+      "Object-Oriented Luau Builder",
+      "Implements class-like patterns with metatables, constructors, inheritance alternatives, composition, and typed methods."
+    ],
+    [
+      "functional-luau-designer",
+      "Functional Luau Designer",
+      "Uses pure functions, immutable transformations, table utilities, reducers, and data-oriented pipelines where they improve reliability."
+    ],
+    [
+      "async-task-and-promise-architect",
+      "Async Task and Promise Architect",
+      "Designs cancellable asynchronous workflows around task scheduling, signals, timeouts, retries, and optional promise libraries."
+    ],
+    [
+      "state-machine-engineer",
+      "State Machine Engineer",
+      "Creates finite, hierarchical, or event-driven state machines for rounds, NPCs, UI, tools, quests, and player flows."
+    ],
+    [
+      "signal-and-event-bus-designer",
+      "Signal and Event Bus Designer",
+      "Builds typed signals and scoped event buses while avoiding connection leaks, hidden coupling, and recursive event storms."
+    ],
+    [
+      "dependency-injection-planner",
+      "Dependency Injection Planner",
+      "Separates services and modules through explicit dependencies, test doubles, interfaces, and predictable startup order."
+    ],
+    [
+      "luau-refactoring-specialist",
+      "Luau Refactoring Specialist",
+      "Reorganizes large scripts, removes duplication, names concepts clearly, isolates side effects, and preserves behavior through focused tests."
+    ],
+    [
+      "remoteevent-contract-designer",
+      "RemoteEvent Contract Designer",
+      "Defines typed client-server messages, direction, payload schemas, rate expectations, authorization, and error behavior."
+    ],
+    [
+      "remotefunction-risk-auditor",
+      "RemoteFunction Risk Auditor",
+      "Identifies yield, timeout, trust, and deadlock risks in synchronous remoting and recommends safer request-response patterns."
+    ],
+    [
+      "server-authority-architect",
+      "Server Authority Architect",
+      "Moves critical decisions to the server and treats client input as an untrusted request rather than confirmed game state."
+    ],
+    [
+      "network-payload-optimizer",
+      "Network Payload Optimizer",
+      "Reduces remote frequency and payload size through batching, delta updates, compression-friendly schemas, and relevance filtering."
+    ],
+    [
+      "prediction-and-reconciliation-designer",
+      "Prediction and Reconciliation Designer",
+      "Creates responsive client prediction with server validation, correction, smoothing, and tolerance rules."
+    ],
+    [
+      "replication-boundary-planner",
+      "Replication Boundary Planner",
+      "Determines what belongs in replicated containers, server-only storage, client-only state, or streamed regions."
+    ],
+    [
+      "remote-rate-limiter",
+      "Remote Rate Limiter",
+      "Implements token buckets, cooldowns, per-action budgets, burst handling, and security logging for player requests."
+    ],
+    [
+      "network-ownership-specialist",
+      "Network Ownership Specialist",
+      "Assigns and validates physics network ownership for vehicles, projectiles, characters, and movable assemblies."
+    ],
+    [
+      "cross-server-messaging-designer",
+      "Cross-Server Messaging Designer",
+      "Coordinates live servers through MessagingService topics, idempotent handlers, expiry, and failure-tolerant processing."
+    ],
+    [
+      "protocol-versioning-manager",
+      "Protocol Versioning Manager",
+      "Versions remote contracts and introduces backward-compatible message migration for staged client and server releases."
+    ],
+    [
+      "datastore-schema-architect",
+      "DataStore Schema Architect",
+      "Designs durable player and world data schemas with defaults, version fields, normalization, and forward migrations."
+    ],
+    [
+      "profile-session-lock-manager",
+      "Profile Session Lock Manager",
+      "Prevents duplicate server ownership of the same player profile and handles takeover, timeout, shutdown, and recovery safely."
+    ],
+    [
+      "datastore-budget-coordinator",
+      "DataStore Budget Coordinator",
+      "Schedules reads and writes around request budgets, queues, shutdown limits, retries, and backoff."
+    ],
+    [
+      "atomic-update-specialist",
+      "Atomic Update Specialist",
+      "Uses UpdateAsync-style transformations to prevent lost updates and enforce invariants under concurrent writes."
+    ],
+    [
+      "ordered-leaderboard-data-designer",
+      "Ordered Leaderboard Data Designer",
+      "Stores and retrieves sortable numeric rankings with paging, tie handling, season keys, and display caching."
+    ],
+    [
+      "memorystore-queue-engineer",
+      "MemoryStore Queue Engineer",
+      "Builds temporary queues and matchmaking pipelines using expiry, invisibility windows, retries, and idempotency."
+    ],
+    [
+      "memorystore-sorted-map-specialist",
+      "MemoryStore Sorted Map Specialist",
+      "Implements fast ephemeral rankings, reservations, leases, and server registries with bounded lifetime."
+    ],
+    [
+      "data-migration-runner",
+      "Data Migration Runner",
+      "Applies resumable, observable migrations across player schemas while preserving backups and handling partial failures."
+    ],
+    [
+      "save-failure-recovery-designer",
+      "Save Failure Recovery Designer",
+      "Handles unavailable services, exhausted retries, player exit, BindToClose, reconciliation, and user-facing recovery states."
+    ],
+    [
+      "privacy-aware-data-retention-planner",
+      "Privacy-Aware Data Retention Planner",
+      "Minimizes stored personal data, separates operational identifiers, and supports deletion, export, and retention workflows."
+    ],
+    [
+      "avatar-body-modeler",
+      "Avatar Body Modeler",
+      "Plans Roblox-compatible body geometry, proportions, topology, naming, scale, and import preparation for avatar bodies."
+    ],
+    [
+      "r15-rig-builder",
+      "R15 Rig Builder",
+      "Creates and validates R15-compatible parts, joints, attachments, hierarchy, humanoid configuration, and animation readiness."
+    ],
+    [
+      "custom-character-controller",
+      "Custom Character Controller",
+      "Builds nonstandard playable characters while preserving movement, camera, input, animation, health, and replication behavior."
+    ],
+    [
+      "humanoiddescription-specialist",
+      "HumanoidDescription Specialist",
+      "Applies body colors, scales, clothing, accessories, animations, emotes, and bundles through HumanoidDescription workflows."
+    ],
+    [
+      "dynamic-head-creator",
+      "Dynamic Head Creator",
+      "Prepares facial rigs, poses, masks, skinning, and expression-compatible assets for dynamic heads."
+    ],
+    [
+      "avatar-auto-setup-operator",
+      "Avatar Auto-Setup Operator",
+      "Uses avatar setup and validation workflows to convert imported meshes into functional Roblox avatar assets."
+    ],
+    [
+      "automatic-skinning-transfer-specialist",
+      "Automatic Skinning Transfer Specialist",
+      "Transfers skinning to compatible clothing or body assets and diagnoses deformation around joints."
+    ],
+    [
+      "avatar-import-validator",
+      "Avatar Import Validator",
+      "Checks hierarchy, mesh integrity, scale, cage data, attachments, skin weights, textures, and naming before upload."
+    ],
+    [
+      "npc-rig-generator",
+      "NPC Rig Generator",
+      "Creates humanoid or AnimationController-based NPC rigs with collision, navigation, animation, and interaction hooks."
+    ],
+    [
+      "avatar-preview-and-fitting-tool",
+      "Avatar Preview and Fitting Tool",
+      "Builds in-experience preview, try-on, camera framing, outfit comparison, and fit validation interfaces."
+    ],
+    [
+      "classic-clothing-designer",
+      "Classic Clothing Designer",
+      "Creates and validates classic shirts, pants, and T-shirts using correct templates, seams, transparency, and preview workflows."
+    ],
+    [
+      "layered-clothing-modeler",
+      "Layered Clothing Modeler",
+      "Builds layered garments with inner and outer cages, skinning, deformation testing, and multi-body fit checks."
+    ],
+    [
+      "rigid-accessory-creator",
+      "Rigid Accessory Creator",
+      "Creates hats, hair, glasses, shoulder items, back items, waist items, and other rigid accessories with correct attachments."
+    ],
+    [
+      "accessory-fitting-specialist",
+      "Accessory Fitting Specialist",
+      "Uses fitting tools and attachment adjustments to correct position, orientation, scale, and cross-avatar compatibility."
+    ],
+    [
+      "cage-debugging-specialist",
+      "Cage Debugging Specialist",
+      "Diagnoses cage intersections, inflation, clipping, wrapping, and deformation problems in layered accessories."
+    ],
+    [
+      "texture-and-surface-author",
+      "Texture and Surface Author",
+      "Creates efficient color, normal, roughness, metalness, and opacity textures with consistent UV use."
+    ],
+    [
+      "marketplace-compliance-preflight",
+      "Marketplace Compliance Preflight",
+      "Checks asset type, geometry, metadata, thumbnails, technical limits, and policy-sensitive content before submission."
+    ],
+    [
+      "asset-thumbnail-director",
+      "Asset Thumbnail Director",
+      "Plans readable catalog thumbnails, neutral posing, camera framing, lighting, and asset-focused presentation."
+    ],
+    [
+      "outfit-and-bundle-composer",
+      "Outfit and Bundle Composer",
+      "Combines bodies, clothing, accessories, animations, and presentation into coherent avatar collections."
+    ],
+    [
+      "in-experience-avatar-item-creator",
+      "In-Experience Avatar Item Creator",
+      "Designs platform-supported flows for players to create, preview, validate, save, and optionally publish avatar items."
+    ],
+    [
+      "animation-editor-operator",
+      "Animation Editor Operator",
+      "Creates keyframed character and object animations with clean timing, easing, loop behavior, and export settings."
+    ],
+    [
+      "animation-rigging-specialist",
+      "Animation Rigging Specialist",
+      "Builds Motor6D, bone, attachment, and control setups that animate predictably at runtime."
+    ],
+    [
+      "animator-runtime-engineer",
+      "Animator Runtime Engineer",
+      "Loads, prioritizes, blends, stops, and cleans AnimationTracks across humanoids and AnimationControllers."
+    ],
+    [
+      "procedural-animation-designer",
+      "Procedural Animation Designer",
+      "Adds runtime look-at, recoil, sway, foot placement, leaning, and secondary motion on top of authored tracks."
+    ],
+    [
+      "inverse-kinematics-specialist",
+      "Inverse Kinematics Specialist",
+      "Configures IK controls and targets for hands, feet, aiming, climbing, interaction, and constrained posing."
+    ],
+    [
+      "facial-animation-director",
+      "Facial Animation Director",
+      "Coordinates facial poses, lip sync, expressions, and performance capture with body animation."
+    ],
+    [
+      "emote-system-builder",
+      "Emote System Builder",
+      "Creates emote wheels, ownership checks, playback rules, cancellation, camera behavior, and social synchronization."
+    ],
+    [
+      "cutscene-sequencer",
+      "Cutscene Sequencer",
+      "Coordinates cameras, character animation, dialogue, effects, audio, UI, skip logic, and multiplayer state."
+    ],
+    [
+      "animation-retargeting-specialist",
+      "Animation Retargeting Specialist",
+      "Adapts animations between compatible rigs while correcting proportions, joint orientation, and contact points."
+    ],
+    [
+      "animation-optimization-auditor",
+      "Animation Optimization Auditor",
+      "Finds excess tracks, conflicting priorities, replication waste, keyframe density, and lifecycle leaks."
+    ],
+    [
+      "mesh-asset-pipeline-designer",
+      "Mesh Asset Pipeline Designer",
+      "Defines export, import, naming, scale, pivot, material, texture, collision, LOD, and versioning conventions."
+    ],
+    [
+      "blender-to-roblox-specialist",
+      "Blender-to-Roblox Specialist",
+      "Prepares Blender scenes for Roblox using clean transforms, topology, UVs, armatures, materials, and FBX or supported interchange."
+    ],
+    [
+      "maya-to-roblox-specialist",
+      "Maya-to-Roblox Specialist",
+      "Prepares Maya models, rigs, skin weights, animation clips, units, and export settings for Roblox import."
+    ],
+    [
+      "topology-and-poly-budget-auditor",
+      "Topology and Poly Budget Auditor",
+      "Reviews silhouette, deformation loops, hidden geometry, triangle cost, and mobile-friendly asset density."
+    ],
+    [
+      "uv-unwrap-planner",
+      "UV Unwrap Planner",
+      "Creates efficient UV layouts with consistent texel density, minimal distortion, padding, and reusable materials."
+    ],
+    [
+      "pbr-material-author",
+      "PBR Material Author",
+      "Builds SurfaceAppearance-ready maps and tunes physically based results under Roblox lighting."
+    ],
+    [
+      "collision-mesh-designer",
+      "Collision Mesh Designer",
+      "Creates accurate or simplified collision strategies using primitives, decomposition, CanCollide groups, and query settings."
+    ],
+    [
+      "lod-and-impostor-planner",
+      "LOD and Impostor Planner",
+      "Designs distance-aware model variants and visual substitutes to reduce render cost in large worlds."
+    ],
+    [
+      "mesh-deformation-debugger",
+      "Mesh Deformation Debugger",
+      "Diagnoses bad normals, incorrect weights, bone transforms, scale, bind pose, and runtime deformation artifacts."
+    ],
+    [
+      "asset-version-and-dependency-manager",
+      "Asset Version and Dependency Manager",
+      "Tracks source files, imported assets, package versions, texture links, ownership, and downstream usage."
+    ],
+    [
+      "biome-world-generator",
+      "Biome World Generator",
+      "Designs procedural or authored biomes with terrain materials, elevation, vegetation, landmarks, and traversal goals."
+    ],
+    [
+      "terrain-sculpting-specialist",
+      "Terrain Sculpting Specialist",
+      "Uses terrain tools and scripts for mountains, caves, rivers, coastlines, erosion-like forms, and cleanup."
+    ],
+    [
+      "procedural-map-generator",
+      "Procedural Map Generator",
+      "Creates seeded rooms, roads, islands, dungeons, arenas, or resource fields with validation and replayable generation."
+    ],
+    [
+      "modular-environment-kit-designer",
+      "Modular Environment Kit Designer",
+      "Builds grid-aware, pivot-consistent kits for walls, floors, roofs, props, and snap-based assembly."
+    ],
+    [
+      "lighting-and-atmosphere-artist",
+      "Lighting and Atmosphere Artist",
+      "Configures Lighting, Atmosphere, clouds, sky, color correction, bloom, depth of field, and time-of-day mood."
+    ],
+    [
+      "vegetation-placement-system",
+      "Vegetation Placement System",
+      "Distributes trees, grass, rocks, and biome props with slope, density, spacing, and performance constraints."
+    ],
+    [
+      "water-and-weather-designer",
+      "Water and Weather Designer",
+      "Creates water behavior, rain, snow, wind, lightning, fog, wetness cues, and synchronized ambience."
+    ],
+    [
+      "destruction-and-rebuild-system",
+      "Destruction and Rebuild System",
+      "Implements breakable environments with staged damage, debris control, server authority, and restoration."
+    ],
+    [
+      "world-streaming-planner",
+      "World Streaming Planner",
+      "Partitions large environments around StreamingEnabled, persistent regions, model streaming modes, and gameplay dependencies."
+    ],
+    [
+      "environmental-storytelling-designer",
+      "Environmental Storytelling Designer",
+      "Uses layout, props, lighting, sound, signage, and traces of activity to communicate history and objectives."
+    ],
+    [
+      "assembly-physics-engineer",
+      "Assembly Physics Engineer",
+      "Designs stable assemblies with correct mass, anchoring, center of mass, collision, and network ownership."
+    ],
+    [
+      "constraint-system-builder",
+      "Constraint System Builder",
+      "Configures hinges, springs, ropes, rods, prismatic constraints, aligners, motors, limits, and attachments."
+    ],
+    [
+      "vehicle-chassis-engineer",
+      "Vehicle Chassis Engineer",
+      "Builds cars and wheeled vehicles with suspension, steering, traction, braking, gearing, seats, and server checks."
+    ],
+    [
+      "aircraft-flight-model-designer",
+      "Aircraft Flight Model Designer",
+      "Creates arcade or simulation-style lift, drag, thrust, control surfaces, stabilization, and camera behavior."
+    ],
+    [
+      "boat-and-buoyancy-engineer",
+      "Boat and Buoyancy Engineer",
+      "Implements buoyancy, propulsion, steering, wave response, occupancy, and water interaction."
+    ],
+    [
+      "projectile-physics-specialist",
+      "Projectile Physics Specialist",
+      "Creates hitscan, raycast, ballistic, guided, bouncing, or area projectiles with authoritative hit validation."
+    ],
+    [
+      "ragdoll-system-builder",
+      "Ragdoll System Builder",
+      "Switches characters between animated and physical states using constraints, collision groups, recovery, and cleanup."
+    ],
+    [
+      "physics-stability-auditor",
+      "Physics Stability Auditor",
+      "Finds tunneling, jitter, explosive constraints, excessive velocity, ownership churn, and solver-heavy assemblies."
+    ],
+    [
+      "interaction-physics-designer",
+      "Interaction Physics Designer",
+      "Builds pushing, carrying, dragging, grabbing, stacking, and jointed interactive objects."
+    ],
+    [
+      "physics-test-harness",
+      "Physics Test Harness",
+      "Creates repeatable scenarios for slopes, impacts, latency, ownership, extreme mass ratios, and server load."
+    ],
+    [
+      "character-movement-controller",
+      "Character Movement Controller",
+      "Builds walk, sprint, crouch, jump, dash, slide, vault, climb, swim, fly, or custom locomotion."
+    ],
+    [
+      "parkour-system-designer",
+      "Parkour System Designer",
+      "Combines ledge detection, mantling, wall runs, vaults, stamina, animation, and prediction into responsive traversal."
+    ],
+    [
+      "camera-controller-engineer",
+      "Camera Controller Engineer",
+      "Creates first-person, third-person, shoulder, top-down, side-view, orbit, cinematic, and spectator cameras."
+    ],
+    [
+      "camera-collision-specialist",
+      "Camera Collision Specialist",
+      "Prevents cameras entering walls while preserving composition, zoom, transparency, and comfort."
+    ],
+    [
+      "cross-platform-input-mapper",
+      "Cross-Platform Input Mapper",
+      "Maps keyboard, mouse, touch, controller, and contextual actions through device-aware abstractions."
+    ],
+    [
+      "mobile-controls-designer",
+      "Mobile Controls Designer",
+      "Creates touch controls with safe zones, scalable buttons, gesture handling, sensitivity, and thumb reach."
+    ],
+    [
+      "gamepad-navigation-specialist",
+      "Gamepad Navigation Specialist",
+      "Supports focus selection, prompts, rebinding, deadzones, and console-friendly menu navigation."
+    ],
+    [
+      "vr-interaction-designer",
+      "VR Interaction Designer",
+      "Plans comfortable VR locomotion, hand interaction, world-space UI, scale, and motion-sickness safeguards."
+    ],
+    [
+      "accessibility-controls-builder",
+      "Accessibility Controls Builder",
+      "Adds remapping, hold-versus-toggle options, sensitivity, camera shake controls, and motor-friendly alternatives."
+    ],
+    [
+      "movement-anti-cheat-validator",
+      "Movement Anti-Cheat Validator",
+      "Checks impossible speed, teleport, flight, acceleration, cooldown, and state transitions without punishing normal latency."
+    ],
+    [
+      "screengui-layout-architect",
+      "ScreenGui Layout Architect",
+      "Builds responsive UI with anchors, scale, offsets, constraints, safe areas, and reusable components."
+    ],
+    [
+      "design-system-builder",
+      "Design System Builder",
+      "Defines color, typography, spacing, iconography, components, states, tokens, and accessibility rules."
+    ],
+    [
+      "hud-designer",
+      "HUD Designer",
+      "Creates clear health, resources, objectives, cooldowns, navigation, and status feedback without obstructing play."
+    ],
+    [
+      "menu-flow-architect",
+      "Menu Flow Architect",
+      "Designs title, lobby, inventory, store, settings, matchmaking, results, and return navigation flows."
+    ],
+    [
+      "inventory-ui-builder",
+      "Inventory UI Builder",
+      "Implements grid, list, search, filter, sort, compare, equip, favorite, and drag interactions for item collections."
+    ],
+    [
+      "world-space-ui-specialist",
+      "World-Space UI Specialist",
+      "Uses SurfaceGui, BillboardGui, adornee tracking, visibility rules, distance scaling, and occlusion-aware presentation."
+    ],
+    [
+      "ui-animation-and-microinteraction-designer",
+      "UI Animation and Microinteraction Designer",
+      "Adds purposeful transitions, hover, press, loading, success, error, reward, and attention cues."
+    ],
+    [
+      "responsive-device-adapter",
+      "Responsive Device Adapter",
+      "Adapts one interface to phone, tablet, desktop, console, and varied aspect ratios without overlapping controls."
+    ],
+    [
+      "ui-state-management-engineer",
+      "UI State Management Engineer",
+      "Separates view state, server data, navigation, async loading, optimistic updates, and cleanup."
+    ],
+    [
+      "usability-review-specialist",
+      "Usability Review Specialist",
+      "Audits hierarchy, readability, task steps, feedback, error recovery, touch targets, and cognitive load."
+    ],
+    [
+      "localization-table-manager",
+      "Localization Table Manager",
+      "Extracts, organizes, translates, reviews, and updates interface and content strings through localization tables."
+    ],
+    [
+      "context-aware-translation-designer",
+      "Context-Aware Translation Designer",
+      "Adds translator notes, placeholders, grammatical context, plural handling, and length expectations."
+    ],
+    [
+      "right-to-left-ui-adapter",
+      "Right-to-Left UI Adapter",
+      "Plans mirrored layout, alignment, icon direction, mixed-script display, and testing for right-to-left languages."
+    ],
+    [
+      "color-accessibility-auditor",
+      "Color Accessibility Auditor",
+      "Checks contrast, color-only meaning, color vision deficiencies, outlined text, and effect visibility."
+    ],
+    [
+      "subtitle-and-caption-system",
+      "Subtitle and Caption System",
+      "Creates timed captions for dialogue, sound cues, speaker identity, readability, and player preferences."
+    ],
+    [
+      "screen-reader-semantics-planner",
+      "Screen Reader Semantics Planner",
+      "Structures labels, descriptions, order, focus, and status communication for accessible interfaces."
+    ],
+    [
+      "photosensitivity-safety-reviewer",
+      "Photosensitivity Safety Reviewer",
+      "Identifies rapid flashing, high-contrast pulses, strobing effects, and provides reduced-effects alternatives."
+    ],
+    [
+      "reduced-motion-mode-builder",
+      "Reduced Motion Mode Builder",
+      "Disables or softens camera shake, parallax, large transitions, motion blur, and repetitive movement."
+    ],
+    [
+      "cognitive-accessibility-designer",
+      "Cognitive Accessibility Designer",
+      "Improves plain language, predictable navigation, reminders, pacing, tutorials, and error recovery."
+    ],
+    [
+      "inclusive-avatar-and-social-ux-reviewer",
+      "Inclusive Avatar and Social UX Reviewer",
+      "Reviews body, clothing, identity, communication, and moderation flows for respectful player choice."
+    ],
+    [
+      "soundscape-designer",
+      "Soundscape Designer",
+      "Builds layered ambience, one-shots, loops, zones, transitions, occlusion cues, and environmental variation."
+    ],
+    [
+      "sfx-implementation-specialist",
+      "SFX Implementation Specialist",
+      "Connects gameplay events to pooled, randomized, distance-aware sounds with volume and pitch discipline."
+    ],
+    [
+      "music-state-system",
+      "Music State System",
+      "Transitions music by location, danger, round phase, narrative beat, or player state without abrupt cuts."
+    ],
+    [
+      "3d-audio-spatialization-designer",
+      "3D Audio Spatialization Designer",
+      "Tunes emitter size, rolloff, listener context, occlusion approximations, and spatial clarity."
+    ],
+    [
+      "voice-chat-integration-planner",
+      "Voice Chat Integration Planner",
+      "Designs spatial voice use, eligibility handling, UI status, mute controls, safety, and non-voice alternatives."
+    ],
+    [
+      "audio-asset-pipeline-manager",
+      "Audio Asset Pipeline Manager",
+      "Organizes source, edit, loudness, looping, metadata, ownership, upload, and replacement workflows."
+    ],
+    [
+      "adaptive-footstep-system",
+      "Adaptive Footstep System",
+      "Selects footsteps by terrain material, movement state, character type, speed, and local acoustics."
+    ],
+    [
+      "dialogue-playback-manager",
+      "Dialogue Playback Manager",
+      "Coordinates voice lines, subtitles, interruption, priority, localization, and replay."
+    ],
+    [
+      "audio-performance-auditor",
+      "Audio Performance Auditor",
+      "Finds excessive concurrent sounds, long assets, unused instances, loudness imbalance, and streaming problems."
+    ],
+    [
+      "creator-music-compliance-reviewer",
+      "Creator Music Compliance Reviewer",
+      "Tracks licenses, permitted uses, attribution, ownership, and replacement plans for music assets."
+    ],
+    [
+      "particle-effect-designer",
+      "Particle Effect Designer",
+      "Builds readable particles for impacts, magic, weather, ambience, rewards, and movement with bounded emission cost."
+    ],
+    [
+      "beam-and-trail-specialist",
+      "Beam and Trail Specialist",
+      "Creates beams and trails with attachments, curves, texture flow, width, lifetime, and gameplay readability."
+    ],
+    [
+      "post-processing-director",
+      "Post-Processing Director",
+      "Uses bloom, blur, depth of field, color correction, sun rays, and atmosphere without harming clarity."
+    ],
+    [
+      "combat-vfx-choreographer",
+      "Combat VFX Choreographer",
+      "Coordinates anticipation, hit confirmation, area boundaries, damage timing, screen effects, and cleanup."
+    ],
+    [
+      "material-and-surface-stylist",
+      "Material and Surface Stylist",
+      "Selects materials, textures, reflectance, PBR response, and palette for a coherent visual language."
+    ],
+    [
+      "day-night-cycle-engineer",
+      "Day-Night Cycle Engineer",
+      "Animates time, sun, moon, lighting, atmosphere, ambience, NPC schedules, and gameplay rules."
+    ],
+    [
+      "vfx-pooling-manager",
+      "VFX Pooling Manager",
+      "Reuses effect objects and safely resets emitters, attachments, sounds, tweens, and delayed cleanup."
+    ],
+    [
+      "render-cost-auditor",
+      "Render Cost Auditor",
+      "Reviews transparency, particles, lights, shadows, mesh complexity, overdraw, and view distance."
+    ],
+    [
+      "quality-level-adapter",
+      "Quality-Level Adapter",
+      "Scales effects, shadows, detail, particles, and post-processing according to device capability and user settings."
+    ],
+    [
+      "screenshot-and-trailer-scene-director",
+      "Screenshot and Trailer Scene Director",
+      "Builds polished in-engine scenes for thumbnails, promotional captures, and cinematic footage."
+    ],
+    [
+      "core-loop-designer",
+      "Core Loop Designer",
+      "Defines repeatable player actions, feedback, rewards, rising challenge, session goals, and long-term motivation."
+    ],
+    [
+      "round-system-engineer",
+      "Round System Engineer",
+      "Implements intermission, map selection, player assignment, countdown, active play, results, rewards, and recovery."
+    ],
+    [
+      "checkpoint-and-respawn-system",
+      "Checkpoint and Respawn System",
+      "Creates checkpoints, lives, spawn selection, state restoration, invulnerability, and anti-abuse rules."
+    ],
+    [
+      "quest-system-architect",
+      "Quest System Architect",
+      "Models objectives, prerequisites, progress, branching, rewards, persistence, tracking, and localization."
+    ],
+    [
+      "inventory-and-equipment-backend",
+      "Inventory and Equipment Backend",
+      "Manages item ownership, stacks, slots, durability, loadouts, validation, and synchronization."
+    ],
+    [
+      "crafting-system-designer",
+      "Crafting System Designer",
+      "Defines recipes, stations, ingredients, discovery, queues, success rules, and server-authoritative outputs."
+    ],
+    [
+      "building-and-placement-system",
+      "Building and Placement System",
+      "Creates previews, grid snapping, rotation, collision checks, cost validation, ownership, and persistence."
+    ],
+    [
+      "interaction-framework",
+      "Interaction Framework",
+      "Standardizes prompts, distance, line of sight, permissions, animation, and callbacks."
+    ],
+    [
+      "progression-system-designer",
+      "Progression System Designer",
+      "Builds levels, mastery, unlocks, prestige, skill trees, milestones, and catch-up mechanics."
+    ],
+    [
+      "tutorial-and-onboarding-builder",
+      "Tutorial and Onboarding Builder",
+      "Guides first-time players through short, interactive steps with detection, recovery, and skip-safe design."
+    ],
+    [
+      "melee-combat-engineer",
+      "Melee Combat Engineer",
+      "Implements attacks, combos, hitboxes, blocking, parrying, stamina, animation windows, and authoritative damage."
+    ],
+    [
+      "ranged-weapon-system",
+      "Ranged Weapon System",
+      "Builds aiming, recoil, spread, reload, ammunition, projectile or raycast hits, and server validation."
+    ],
+    [
+      "ability-framework-designer",
+      "Ability Framework Designer",
+      "Creates reusable abilities with targeting, cooldowns, costs, casting, interruption, effects, and replication."
+    ],
+    [
+      "damage-and-health-modeler",
+      "Damage and Health Modeler",
+      "Defines damage types, armor, shields, resistances, critical hits, healing, assists, and death attribution."
+    ],
+    [
+      "hit-detection-specialist",
+      "Hit Detection Specialist",
+      "Chooses raycasts, shapecasts, spatial queries, server rewinds, or hybrid hitboxes for the combat style."
+    ],
+    [
+      "status-effect-system",
+      "Status Effect System",
+      "Manages buffs, debuffs, stacking, duration, cleansing, immunity, visualization, and persistence rules."
+    ],
+    [
+      "combat-targeting-designer",
+      "Combat Targeting Designer",
+      "Builds lock-on, aim assist, target priority, line-of-sight, team filters, and accessibility options."
+    ],
+    [
+      "boss-encounter-scripter",
+      "Boss Encounter Scripter",
+      "Creates telegraphed phases, patterns, adds, arena hazards, fail recovery, scaling, and rewards."
+    ],
+    [
+      "pvp-balance-analyst",
+      "PvP Balance Analyst",
+      "Evaluates time-to-defeat, range, mobility, cooldowns, counters, team composition, and skill expression."
+    ],
+    [
+      "combat-exploit-auditor",
+      "Combat Exploit Auditor",
+      "Validates fire rate, ammunition, range, hit claims, cooldowns, state, team, and impossible damage patterns."
+    ],
+    [
+      "npc-behavior-tree-designer",
+      "NPC Behavior Tree Designer",
+      "Builds reusable selectors, sequences, conditions, actions, cooldowns, and fallback behavior."
+    ],
+    [
+      "pathfindingservice-specialist",
+      "PathfindingService Specialist",
+      "Computes, follows, repairs, and throttles paths with agent parameters, waypoint actions, and stuck recovery."
+    ],
+    [
+      "perception-system-engineer",
+      "Perception System Engineer",
+      "Implements vision cones, hearing, line of sight, memory, suspicion, faction, and target selection."
+    ],
+    [
+      "npc-combat-ai",
+      "NPC Combat AI",
+      "Coordinates positioning, attacks, cover, retreat, support actions, telegraphs, and difficulty scaling."
+    ],
+    [
+      "crowd-simulation-planner",
+      "Crowd Simulation Planner",
+      "Manages many agents with simplified updates, local avoidance, region activation, and animation budgets."
+    ],
+    [
+      "companion-ai-builder",
+      "Companion AI Builder",
+      "Creates follow, assist, wait, teleport catch-up, command, inventory, and ownership behavior."
+    ],
+    [
+      "dialogue-npc-system",
+      "Dialogue NPC System",
+      "Combines proximity, conversation trees, quests, shops, expressions, voice, and persistence."
+    ],
+    [
+      "utility-ai-designer",
+      "Utility AI Designer",
+      "Scores possible actions from context and selects behavior based on dynamic needs and priorities."
+    ],
+    [
+      "ai-director",
+      "AI Director",
+      "Adjusts encounters, pacing, spawns, resources, and pressure according to team state and session progress."
+    ],
+    [
+      "npc-debug-visualization",
+      "NPC Debug Visualization",
+      "Displays paths, targets, state, perception, decisions, cooldowns, and performance for diagnosis."
+    ],
+    [
+      "textchatservice-integrator",
+      "TextChatService Integrator",
+      "Configures channels, commands, message formatting, filtering-safe display, permissions, and system messages."
+    ],
+    [
+      "party-system-architect",
+      "Party System Architect",
+      "Builds invites, membership, leaders, readiness, cross-server travel, recovery, and privacy controls."
+    ],
+    [
+      "friends-and-join-flow-designer",
+      "Friends and Join Flow Designer",
+      "Creates social join, follow, server selection, teleport, and fallback experiences."
+    ],
+    [
+      "guild-and-clan-system",
+      "Guild and Clan System",
+      "Implements membership, roles, permissions, shared progression, announcements, logs, and moderation."
+    ],
+    [
+      "trading-system-engineer",
+      "Trading System Engineer",
+      "Builds two-sided offers, confirmation, inventory locks, cancellation, atomic exchange, and abuse logging."
+    ],
+    [
+      "social-deduction-framework",
+      "Social Deduction Framework",
+      "Handles hidden roles, private information, voting, phases, elimination, reconnect, and anti-collusion constraints."
+    ],
+    [
+      "player-reputation-system",
+      "Player Reputation System",
+      "Aggregates positive and negative signals with decay, appeals, safeguards, and limited surface exposure."
+    ],
+    [
+      "community-event-orchestrator",
+      "Community Event Orchestrator",
+      "Runs scheduled goals, global progress, server contributions, rewards, announcements, and late joining."
+    ],
+    [
+      "safe-user-generated-text-workflow",
+      "Safe User-Generated Text Workflow",
+      "Routes player text through platform filtering and designs safe display, reporting, and fallback behavior."
+    ],
+    [
+      "invite-and-referral-experience",
+      "Invite and Referral Experience",
+      "Creates invitation prompts, attribution, reward eligibility, fraud checks, and recipient-friendly onboarding."
+    ],
+    [
+      "matchmaking-queue-designer",
+      "Matchmaking Queue Designer",
+      "Groups players by mode, region, skill, party, latency, and wait time using temporary queue state."
+    ],
+    [
+      "skill-rating-system",
+      "Skill Rating System",
+      "Implements Elo-like, Glicko-like, or custom ratings with uncertainty, placement, decay, and team adjustment."
+    ],
+    [
+      "teleportservice-workflow-engineer",
+      "TeleportService Workflow Engineer",
+      "Handles public, reserved, and specific-server teleports with data, retries, failure UI, and return routes."
+    ],
+    [
+      "reserved-server-coordinator",
+      "Reserved Server Coordinator",
+      "Creates and manages private match servers, access codes, party assignment, and orphan recovery."
+    ],
+    [
+      "server-browser-builder",
+      "Server Browser Builder",
+      "Publishes server metadata and lets players filter, inspect, join, and handle stale listings."
+    ],
+    [
+      "region-and-latency-matcher",
+      "Region and Latency Matcher",
+      "Uses available regional and latency signals to reduce poor connections while respecting party cohesion."
+    ],
+    [
+      "server-lifecycle-manager",
+      "Server Lifecycle Manager",
+      "Controls startup readiness, player admission, draining, shutdown saves, migration, and maintenance messages."
+    ],
+    [
+      "reconnect-and-session-recovery",
+      "Reconnect and Session Recovery",
+      "Restores players after disconnects using session tokens, reserved destinations, state snapshots, and expiry."
+    ],
+    [
+      "cross-server-global-state",
+      "Cross-Server Global State",
+      "Coordinates rotations, boss status, announcements, and live operations with idempotent messaging."
+    ],
+    [
+      "match-integrity-auditor",
+      "Match Integrity Auditor",
+      "Checks team balance, duplicate entries, queue manipulation, abandoned matches, and result submission."
+    ],
+    [
+      "virtual-economy-designer",
+      "Virtual Economy Designer",
+      "Models currency sources, sinks, balances, inflation, progression, exchange boundaries, and abuse resistance."
+    ],
+    [
+      "marketplaceservice-purchase-handler",
+      "MarketplaceService Purchase Handler",
+      "Implements safe prompts, receipt processing, duplicate protection, retries, grants, and purchase UI."
+    ],
+    [
+      "developer-product-system",
+      "Developer Product System",
+      "Designs repeatable purchases with idempotent receipt grants and clear delivery confirmation."
+    ],
+    [
+      "game-pass-entitlement-manager",
+      "Game Pass Entitlement Manager",
+      "Checks ownership, grants permanent benefits, handles delayed updates, and avoids client-trusted entitlement."
+    ],
+    [
+      "subscription-benefit-designer",
+      "Subscription Benefit Designer",
+      "Plans recurring benefits, entitlement checks, grace behavior, clear value, and non-punitive cancellation effects."
+    ],
+    [
+      "dynamic-pricing-experiment-planner",
+      "Dynamic Pricing Experiment Planner",
+      "Tests price and offer presentation with controlled cohorts, guardrails, and business metrics."
+    ],
+    [
+      "shop-and-offer-ui-builder",
+      "Shop and Offer UI Builder",
+      "Creates browsable, transparent storefronts with previews, comparisons, ownership state, and purchase recovery."
+    ],
+    [
+      "reward-calendar-designer",
+      "Reward Calendar Designer",
+      "Builds daily and streak rewards with timezone rules, missed-day policy, anti-clock abuse, and catch-up design."
+    ],
+    [
+      "loot-and-drop-table-engineer",
+      "Loot and Drop Table Engineer",
+      "Defines weighted rewards, pity systems, guarantees, duplicates, disclosure, and simulation-based balance checks."
+    ],
+    [
+      "economy-telemetry-analyst",
+      "Economy Telemetry Analyst",
+      "Tracks earning, spending, balances, conversion, item flow, cohort inflation, and suspicious transactions."
+    ],
+    [
+      "analytics-event-taxonomy-designer",
+      "Analytics Event Taxonomy Designer",
+      "Defines consistent event names, properties, identifiers, funnels, outcomes, and privacy-aware collection."
+    ],
+    [
+      "funnel-analysis-builder",
+      "Funnel Analysis Builder",
+      "Measures onboarding, matchmaking, purchase, quest, and return funnels with clear entry and completion rules."
+    ],
+    [
+      "retention-cohort-analyst",
+      "Retention Cohort Analyst",
+      "Examines new-player and returning-player retention by acquisition date, device, region, and experience version."
+    ],
+    [
+      "experiment-design-specialist",
+      "Experiment Design Specialist",
+      "Creates hypotheses, variants, assignment, success metrics, guardrails, duration, and interpretation plans."
+    ],
+    [
+      "feature-flag-manager",
+      "Feature Flag Manager",
+      "Controls staged rollout, targeting, kill switches, defaults, expiry, and auditability for live features."
+    ],
+    [
+      "live-event-scheduler",
+      "Live Event Scheduler",
+      "Coordinates start and end times, content activation, announcements, rewards, server compatibility, and rollback."
+    ],
+    [
+      "remote-configuration-designer",
+      "Remote Configuration Designer",
+      "Moves safe tuning values into validated configuration that can change without code duplication."
+    ],
+    [
+      "kpi-dashboard-planner",
+      "KPI Dashboard Planner",
+      "Defines actionable dashboards for engagement, retention, conversion, stability, performance, and moderation."
+    ],
+    [
+      "anomaly-detection-operator",
+      "Anomaly Detection Operator",
+      "Flags unexpected changes in errors, economy flow, purchases, matchmaking, retention, or server health."
+    ],
+    [
+      "post-launch-review-analyst",
+      "Post-Launch Review Analyst",
+      "Compares intended and observed outcomes, segments results, identifies regressions, and produces prioritized follow-up."
+    ],
+    [
+      "threat-model-builder",
+      "Threat Model Builder",
+      "Maps valuable assets, trust boundaries, attacker goals, entry points, detection, mitigation, and recovery."
+    ],
+    [
+      "server-validation-engineer",
+      "Server Validation Engineer",
+      "Validates type, range, ownership, proximity, state, timing, inventory, entitlement, and business rules."
+    ],
+    [
+      "remote-exploit-auditor",
+      "Remote Exploit Auditor",
+      "Reviews every remote for spoofing, spam, oversized payloads, unauthorized targets, and hidden client trust."
+    ],
+    [
+      "economy-fraud-detector",
+      "Economy Fraud Detector",
+      "Finds impossible grants, duplicate receipts, trade duplication, rollback abuse, and suspicious currency flow."
+    ],
+    [
+      "movement-exploit-detector",
+      "Movement Exploit Detector",
+      "Combines server movement checks, state context, latency tolerance, and escalating responses."
+    ],
+    [
+      "combat-cheat-detector",
+      "Combat Cheat Detector",
+      "Identifies impossible aim, fire rate, hit rate, range, cooldown, or damage while limiting false positives."
+    ],
+    [
+      "secure-admin-command-system",
+      "Secure Admin Command System",
+      "Restricts commands by server-verified identity and role, validates arguments, logs actions, and supports revocation."
+    ],
+    [
+      "secret-and-credential-manager",
+      "Secret and Credential Manager",
+      "Keeps API keys and secrets out of replicated scripts and uses platform-supported secret storage for cloud workflows."
+    ],
+    [
+      "abuse-logging-and-evidence-pipeline",
+      "Abuse Logging and Evidence Pipeline",
+      "Records minimal, structured evidence for investigation without leaking sensitive internals to players."
+    ],
+    [
+      "incident-response-playbook",
+      "Incident Response Playbook",
+      "Defines detection, containment, feature shutdown, rollback, player communication, repair, and retrospective steps."
+    ],
+    [
+      "experience-safety-reviewer",
+      "Experience Safety Reviewer",
+      "Reviews gameplay, social features, purchases, user content, and presentation for foreseeable player safety risks."
+    ],
+    [
+      "content-moderation-workflow-designer",
+      "Content Moderation Workflow Designer",
+      "Creates submission, automated checks, human review, rejection reasons, appeals, and removal paths."
+    ],
+    [
+      "reporting-system-builder",
+      "Reporting System Builder",
+      "Lets players report users, chat, creations, trades, or incidents with structured context and confirmation."
+    ],
+    [
+      "block-and-mute-controls",
+      "Block and Mute Controls",
+      "Implements clear local controls around communication, invitations, visibility, and repeated contact."
+    ],
+    [
+      "user-generated-content-gatekeeper",
+      "User-Generated Content Gatekeeper",
+      "Validates asset type, text, images, ownership, dimensions, limits, and moderation state before display."
+    ],
+    [
+      "age-aware-feature-planner",
+      "Age-Aware Feature Planner",
+      "Adapts communication, content, commerce, and social features to platform eligibility and policy constraints."
+    ],
+    [
+      "private-server-safety-designer",
+      "Private Server Safety Designer",
+      "Preserves reporting, blocking, moderation, access control, and owner boundaries in private spaces."
+    ],
+    [
+      "policy-change-impact-auditor",
+      "Policy Change Impact Auditor",
+      "Maps new Roblox rules or API changes to affected systems, assets, UI, data, and operational procedures."
+    ],
+    [
+      "creator-rights-and-ip-reviewer",
+      "Creator Rights and IP Reviewer",
+      "Tracks ownership, permissions, licenses, trademarks, music rights, and takedown readiness for uploaded content."
+    ],
+    [
+      "safety-ux-writer",
+      "Safety UX Writer",
+      "Writes concise, non-accusatory warnings, errors, consent prompts, reporting steps, and appeal messages."
+    ],
+    [
+      "microprofiler-performance-analyst",
+      "MicroProfiler Performance Analyst",
+      "Uses profiling captures to locate expensive scripts, rendering, physics, networking, and frame spikes."
+    ],
+    [
+      "script-performance-optimizer",
+      "Script Performance Optimizer",
+      "Reduces hot-loop work, allocations, repeated searches, connection growth, and unnecessary event traffic."
+    ],
+    [
+      "instance-count-auditor",
+      "Instance Count Auditor",
+      "Finds excessive objects, duplicated decorations, hidden geometry, stale effects, and avoidable runtime creation."
+    ],
+    [
+      "memory-leak-investigator",
+      "Memory Leak Investigator",
+      "Tracks retained connections, tables, closures, Instances, animation tracks, sounds, and caches across repeated play."
+    ],
+    [
+      "rendering-optimization-specialist",
+      "Rendering Optimization Specialist",
+      "Optimizes geometry, materials, transparency, lights, shadows, particles, and distance behavior."
+    ],
+    [
+      "physics-budget-optimizer",
+      "Physics Budget Optimizer",
+      "Reduces moving assemblies, active constraints, collision complexity, awake parts, and ownership churn."
+    ],
+    [
+      "network-bandwidth-analyst",
+      "Network Bandwidth Analyst",
+      "Measures remote traffic, replication, physics updates, payload size, and update frequency."
+    ],
+    [
+      "streamingenabled-optimizer",
+      "StreamingEnabled Optimizer",
+      "Tunes streaming targets, persistent content, atomic models, preload behavior, and scripts that tolerate missing regions."
+    ],
+    [
+      "mobile-performance-tuner",
+      "Mobile Performance Tuner",
+      "Targets memory, thermal load, controls, rendering, asset size, and frame stability on lower-end devices."
+    ],
+    [
+      "performance-regression-gate",
+      "Performance Regression Gate",
+      "Defines representative benchmarks and blocks releases when frame time, memory, load time, or network cost regresses."
+    ],
+    [
+      "testservice-unit-test-builder",
+      "TestService Unit Test Builder",
+      "Creates repeatable tests for modules, pure logic, validation, state transitions, and data migrations."
+    ],
+    [
+      "integration-test-harness",
+      "Integration Test Harness",
+      "Tests connected client-server, persistence, teleport, purchase, matchmaking, and gameplay flows with controlled dependencies."
+    ],
+    [
+      "multiplayer-simulation-planner",
+      "Multiplayer Simulation Planner",
+      "Uses local servers and multiple clients to reproduce replication, ownership, race, and late-join failures."
+    ],
+    [
+      "bug-reproduction-specialist",
+      "Bug Reproduction Specialist",
+      "Turns reports into minimal steps, expected versus actual behavior, environment details, and a repeatable failing case."
+    ],
+    [
+      "runtime-assertion-designer",
+      "Runtime Assertion Designer",
+      "Adds development-time invariants, type checks, state checks, and actionable failures without exposing internals to players."
+    ],
+    [
+      "edge-case-test-generator",
+      "Edge Case Test Generator",
+      "Covers empty data, duplicate actions, disconnects, latency, timeouts, full inventories, missing assets, and shutdown."
+    ],
+    [
+      "regression-test-curator",
+      "Regression Test Curator",
+      "Preserves tests for repaired bugs and runs them against future changes to prevent recurrence."
+    ],
+    [
+      "visual-qa-checklist-builder",
+      "Visual QA Checklist Builder",
+      "Checks UI scaling, clipping, text overflow, lighting, animation, effects, avatars, and device differences."
+    ],
+    [
+      "chaos-and-failure-injection-tester",
+      "Chaos and Failure Injection Tester",
+      "Simulates service failure, dropped messages, delayed responses, save errors, and partial initialization."
+    ],
+    [
+      "release-acceptance-tester",
+      "Release Acceptance Tester",
+      "Executes a full player path from join through progression, purchase-safe flows, saving, reconnect, and exit."
+    ],
+    [
+      "studio-plugin-architect",
+      "Studio Plugin Architect",
+      "Builds dock widgets, toolbars, selections, settings, undo support, permissions, and safe edit-mode automation."
+    ],
+    [
+      "custom-inspector-plugin",
+      "Custom Inspector Plugin",
+      "Creates specialized editors for attributes, tags, configs, dialogue, quests, maps, or gameplay data."
+    ],
+    [
+      "batch-property-editor",
+      "Batch Property Editor",
+      "Applies validated property, tag, attribute, collision, naming, or material changes to many selected objects."
+    ],
+    [
+      "map-validation-plugin",
+      "Map Validation Plugin",
+      "Scans maps for missing spawns, invalid tags, blocked paths, oversized objects, unsafe scripts, and performance hazards."
+    ],
+    [
+      "asset-import-automation",
+      "Asset Import Automation",
+      "Standardizes imported model placement, naming, material setup, collision, metadata, and source tracking."
+    ],
+    [
+      "code-generation-plugin",
+      "Code Generation Plugin",
+      "Generates typed ModuleScripts, service wrappers, remote contracts, data schemas, and tests from structured definitions."
+    ],
+    [
+      "localization-extraction-tool",
+      "Localization Extraction Tool",
+      "Finds player-facing strings and prepares them for localization review and table updates."
+    ],
+    [
+      "content-browser-plugin",
+      "Content Browser Plugin",
+      "Indexes project assets, templates, packages, dependencies, ownership, and usage locations."
+    ],
+    [
+      "plugin-security-reviewer",
+      "Plugin Security Reviewer",
+      "Audits permissions, network access, code insertion, source trust, updates, and destructive actions."
+    ],
+    [
+      "creator-workflow-cli-designer",
+      "Creator Workflow CLI Designer",
+      "Builds external scripts for validation, file transformation, publishing support, and repeatable project checks."
+    ],
+    [
+      "package-architecture-designer",
+      "Package Architecture Designer",
+      "Identifies reusable Roblox packages, ownership, configuration boundaries, update strategy, and dependency rules."
+    ],
+    [
+      "package-update-manager",
+      "Package Update Manager",
+      "Reviews linked source changes, safe updates, modified descendants, version notes, and rollback strategy."
+    ],
+    [
+      "rojo-project-architect",
+      "Rojo Project Architect",
+      "Maps filesystem source to Roblox containers with maintainable project configuration and clear generated-file boundaries."
+    ],
+    [
+      "git-workflow-designer",
+      "Git Workflow Designer",
+      "Defines branches, pull requests, reviews, code ownership, commits, tags, releases, and binary asset handling."
+    ],
+    [
+      "merge-conflict-resolver",
+      "Merge Conflict Resolver",
+      "Repairs script and project-file conflicts while preserving intended logic and Roblox hierarchy."
+    ],
+    [
+      "code-review-specialist",
+      "Code Review Specialist",
+      "Reviews correctness, security, replication, performance, typing, API clarity, tests, and maintainability."
+    ],
+    [
+      "project-convention-enforcer",
+      "Project Convention Enforcer",
+      "Applies naming, formatting, linting, directory, dependency, and documentation standards."
+    ],
+    [
+      "dependency-license-auditor",
+      "Dependency License Auditor",
+      "Tracks third-party modules, plugin sources, licenses, notices, update risk, and replacement options."
+    ],
+    [
+      "team-ownership-mapper",
+      "Team Ownership Mapper",
+      "Assigns code, art, UI, systems, data, releases, and incidents to clear maintainers and reviewers."
+    ],
+    [
+      "change-impact-analyzer",
+      "Change Impact Analyzer",
+      "Finds affected scripts, assets, packages, remotes, data schemas, UI, and places before a modification ships."
+    ],
+    [
+      "automated-validation-pipeline",
+      "Automated Validation Pipeline",
+      "Runs formatting, linting, type checks, tests, asset checks, and project validation before release."
+    ],
+    [
+      "place-publishing-automator",
+      "Place Publishing Automator",
+      "Publishes approved place versions through supported creator workflows with environment and version safeguards."
+    ],
+    [
+      "asset-api-integration-builder",
+      "Asset API Integration Builder",
+      "Uses Roblox Open Cloud asset capabilities for supported uploads, updates, metadata, version inspection, and rollback workflows."
+    ],
+    [
+      "release-channel-manager",
+      "Release Channel Manager",
+      "Separates development, staging, canary, and production configurations with controlled promotion."
+    ],
+    [
+      "canary-rollout-planner",
+      "Canary Rollout Planner",
+      "Releases to a limited audience or server population, monitors guardrails, and expands or rolls back."
+    ],
+    [
+      "rollback-and-recovery-engineer",
+      "Rollback and Recovery Engineer",
+      "Preserves known-good place, package, config, and data migration paths for rapid recovery."
+    ],
+    [
+      "release-notes-generator",
+      "Release Notes Generator",
+      "Produces player-facing and team-facing notes from approved changes, fixes, known issues, and migration steps."
+    ],
+    [
+      "environment-configuration-manager",
+      "Environment Configuration Manager",
+      "Separates identifiers, endpoints, feature flags, economy settings, and secrets across environments."
+    ],
+    [
+      "open-cloud-authentication-specialist",
+      "Open Cloud Authentication Specialist",
+      "Configures API keys or supported OAuth flows, scopes, permissions, rotation, and least-privilege access."
+    ],
+    [
+      "deployment-verification-runner",
+      "Deployment Verification Runner",
+      "Joins the published experience and verifies critical gameplay, remotes, assets, data, commerce, and telemetry."
+    ],
+    [
+      "open-cloud-api-client-builder",
+      "Open Cloud API Client Builder",
+      "Generates resilient clients from Roblox OpenAPI descriptions with authentication, pagination, errors, and rate handling."
+    ],
+    [
+      "data-stores-api-integrator",
+      "Data Stores API Integrator",
+      "Builds authorized external tools to inspect or modify supported experience data with schema and concurrency safeguards."
+    ],
+    [
+      "universe-and-place-api-operator",
+      "Universe and Place API Operator",
+      "Automates supported universe and place administration, publishing, metadata, and operational workflows."
+    ],
+    [
+      "messaging-api-integrator",
+      "Messaging API Integrator",
+      "Publishes controlled external messages to live servers with topic conventions, validation, idempotency, and audit logs."
+    ],
+    [
+      "asset-management-api-client",
+      "Asset Management API Client",
+      "Uploads or updates supported assets, tracks operations, manages versions, and records ownership and metadata."
+    ],
+    [
+      "webhook-receiver-architect",
+      "Webhook Receiver Architect",
+      "Validates Roblox webhook events, prevents duplicate processing, stores delivery state, and retries internal work."
+    ],
+    [
+      "oauth-application-designer",
+      "OAuth Application Designer",
+      "Implements consent, redirect, token storage, scope selection, refresh, revocation, and user-facing permission clarity."
+    ],
+    [
+      "creator-operations-dashboard",
+      "Creator Operations Dashboard",
+      "Builds a secure web dashboard for releases, configuration, server health, content, and live operations."
+    ],
+    [
+      "api-rate-and-retry-manager",
+      "API Rate and Retry Manager",
+      "Handles quotas, backoff, jitter, idempotency, pagination, timeouts, and partial failures across cloud tools."
+    ],
+    [
+      "external-service-boundary-reviewer",
+      "External Service Boundary Reviewer",
+      "Evaluates privacy, latency, availability, credentials, cost, terms, and fallback when connecting outside Roblox."
+    ],
+    [
+      "experience-positioning-strategist",
+      "Experience Positioning Strategist",
+      "Defines audience, fantasy, differentiators, session promise, and recognizable visual identity for a Roblox experience."
+    ],
+    [
+      "icon-and-thumbnail-brief-writer",
+      "Icon and Thumbnail Brief Writer",
+      "Creates precise briefs for readable icons and thumbnails with subject, composition, contrast, mood, and variant goals."
+    ],
+    [
+      "experience-page-copywriter",
+      "Experience Page Copywriter",
+      "Writes concise titles and descriptions that accurately communicate gameplay, audience, updates, and expectations."
+    ],
+    [
+      "discovery-funnel-optimizer",
+      "Discovery Funnel Optimizer",
+      "Analyzes impression, click, qualified play, onboarding, retention, and return behavior without misleading presentation."
+    ],
+    [
+      "update-campaign-planner",
+      "Update Campaign Planner",
+      "Coordinates content reveal, changelog, thumbnails, social posts, event timing, and in-experience messaging."
+    ],
+    [
+      "creator-community-manager",
+      "Creator Community Manager",
+      "Plans feedback channels, moderation, announcements, playtests, issue triage, and respectful responses."
+    ],
+    [
+      "playtest-recruitment-planner",
+      "Playtest Recruitment Planner",
+      "Selects representative player groups, test goals, session scripts, incentives, consent, and feedback capture."
+    ],
+    [
+      "creator-revenue-forecaster",
+      "Creator Revenue Forecaster",
+      "Builds scenario-based estimates from audience, retention, conversion, pricing, platform dynamics, and uncertainty."
+    ],
+    [
+      "portfolio-and-case-study-builder",
+      "Portfolio and Case Study Builder",
+      "Documents design goals, responsibilities, technical choices, visuals, outcomes, and lessons for creator portfolios."
+    ],
+    [
+      "brand-partnership-integration-designer",
+      "Brand Partnership Integration Designer",
+      "Plans authentic, policy-aware branded content with clear objectives, asset approvals, measurement, and player value."
+    ],
+    [
+      "obby-production-specialist",
+      "Obby Production Specialist",
+      "Builds checkpoints, hazards, moving platforms, timers, difficulty curves, respawn, skips, and mobile-friendly traversal."
+    ],
+    [
+      "tycoon-system-specialist",
+      "Tycoon System Specialist",
+      "Creates droppers, collectors, purchases, unlock trees, rebirth, persistence, plot assignment, and anti-theft rules."
+    ],
+    [
+      "simulator-system-specialist",
+      "Simulator System Specialist",
+      "Builds action loops, capacity, selling, upgrades, pets, zones, rebirth, quests, and economy balancing."
+    ],
+    [
+      "roleplay-world-specialist",
+      "Roleplay World Specialist",
+      "Creates jobs, housing, vehicles, customization, social spaces, permissions, and safe player expression."
+    ],
+    [
+      "tower-defense-specialist",
+      "Tower Defense Specialist",
+      "Implements path lanes, waves, enemies, towers, targeting, upgrades, status effects, rewards, and co-op scaling."
+    ],
+    [
+      "round-based-survival-specialist",
+      "Round-Based Survival Specialist",
+      "Builds map rotation, hazards, elimination, spectating, late joining, rewards, and short-session pacing."
+    ],
+    [
+      "rpg-systems-specialist",
+      "RPG Systems Specialist",
+      "Combines stats, classes, quests, loot, combat, NPCs, dungeons, parties, progression, and robust saving."
+    ],
+    [
+      "horror-experience-specialist",
+      "Horror Experience Specialist",
+      "Designs tension, lighting, sound, pursuit, puzzles, checkpoints, accessibility, and multiplayer synchronization."
+    ],
+    [
+      "social-hangout-specialist",
+      "Social Hangout Specialist",
+      "Creates expressive avatars, emotes, spaces, activities, voice-aware zones, props, moderation, and low-friction joining."
+    ],
+    [
+      "sandbox-building-specialist",
+      "Sandbox Building Specialist",
+      "Implements creative tools, permissions, undo, saving, discovery, moderation, limits, and collaborative construction."
+    ],
+    [
+      "technical-design-document-writer",
+      "Technical Design Document Writer",
+      "Produces implementable Roblox design documents with architecture, data, remotes, states, edge cases, and acceptance criteria."
+    ],
+    [
+      "api-documentation-generator",
+      "API Documentation Generator",
+      "Documents ModuleScripts, functions, parameters, return values, errors, types, ownership, examples, and lifecycle."
+    ],
+    [
+      "creator-tutorial-author",
+      "Creator Tutorial Author",
+      "Creates step-by-step Studio and Luau tutorials with prerequisites, checks, troubleshooting, and extension tasks."
+    ],
+    [
+      "lua-to-luau-learning-guide",
+      "Lua-to-Luau Learning Guide",
+      "Teaches Roblox-specific Luau types, tables, services, events, modules, client-server boundaries, and safe patterns."
+    ],
+    [
+      "system-runbook-writer",
+      "System Runbook Writer",
+      "Documents deployment, configuration, monitoring, common failures, recovery, ownership, and escalation."
+    ],
+    [
+      "player-help-center-writer",
+      "Player Help Center Writer",
+      "Creates clear support content for controls, accounts, save issues, purchases, safety, accessibility, and known problems."
+    ],
+    [
+      "error-message-designer",
+      "Error Message Designer",
+      "Writes actionable errors that explain what happened, what was preserved, and what the player or creator can do next."
+    ],
+    [
+      "code-example-curator",
+      "Code Example Curator",
+      "Builds minimal, correct, secure examples that demonstrate one Roblox concept without hidden dependencies."
+    ],
+    [
+      "architecture-diagram-specifier",
+      "Architecture Diagram Specifier",
+      "Describes client, server, Studio, Open Cloud, data, remotes, and external-system relationships for diagramming."
+    ],
+    [
+      "skill-catalog-maintainer",
+      "Skill Catalog Maintainer",
+      "Adds, merges, splits, deprecates, tags, versions, and cross-references Roblox capabilities as the platform evolves."
+    ]
+  ]
+}

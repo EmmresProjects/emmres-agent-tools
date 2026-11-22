@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "brand": {
+    "voice": "Clear, warm, concise, and respectful",
+    "register": "natural professional",
+    "inclusivity_rules": [
+      "Use respectful identity and disability terminology appropriate to the locale.",
+      "Do not infer personal gender or add stereotypes.",
+      "Preserve vernacular and character identity unless a reviewer approves adaptation."
+    ],
+    "prohibited_claims": [
+      "Do not add guarantees, medical efficacy claims, legal conclusions, or unsupported superlatives."
+    ]
+  },
+  "channel_rules": {
+    "ui": "Prefer concise action-led labels and preserve accessible names and declared limits.",
+    "marketing": "Preserve approved claims and document transcreation rationale and back-translation.",
+    "technical": "Preserve identifiers, commands, warnings, cross-references, and procedural order.",
+    "subtitles": "Preserve speaker, sound cues, timing, reading speed, and line limits.",
+    "easy-language": "Use explicit short steps without weakening required terms or safety."
+  },
+  "review": {
+    "native_review": true,
+    "domain_expert_for_high_risk": true,
+    "rendered_review_for_ui_and_media": true
+  }
+}

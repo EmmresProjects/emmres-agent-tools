@@ -1,0 +1,115 @@
+{
+  "schema": "foic.license-policy/1",
+  "version": "1.0.0",
+  "mode": "audit-only",
+  "classification": {
+    "allow": [
+      "apache-2.0",
+      "mit",
+      "bsd-2-clause",
+      "bsd-3-clause",
+      "cc0-1.0",
+      "public-domain",
+      "openrail-m",
+      "creativeml-openrail-m",
+      "openrail++-m",
+      "s-lab-1.0",
+      "openclip-mit",
+      "stability-ai-community",
+      "cc-by-4.0",
+      "cc-by-sa-4.0"
+    ],
+    "review": [
+      "flux.1-dev-non-commercial",
+      "cc-by-nc-4.0",
+      "cc-by-nc-sa-4.0",
+      "research-only",
+      "custom",
+      "unknown",
+      "unspecified",
+      "see-file"
+    ],
+    "deny": [
+      "proprietary-no-redistribution",
+      "all-rights-reserved",
+      "no-license",
+      "evaluation-only"
+    ]
+  },
+  "redistribution": {
+    "apache-2.0": "permit",
+    "mit": "permit",
+    "bsd-2-clause": "permit",
+    "bsd-3-clause": "permit",
+    "cc0-1.0": "permit",
+    "public-domain": "permit",
+    "creativeml-openrail-m": "permit-with-terms",
+    "openrail-m": "permit-with-terms",
+    "openrail++-m": "permit-with-terms",
+    "stability-ai-community": "permit-with-terms",
+    "s-lab-1.0": "restricted",
+    "flux.1-dev-non-commercial": "restricted",
+    "cc-by-nc-4.0": "restricted",
+    "cc-by-nc-sa-4.0": "restricted",
+    "cc-by-4.0": "permit-with-terms",
+    "cc-by-sa-4.0": "permit-with-terms",
+    "unknown": "block",
+    "unspecified": "block",
+    "custom": "block",
+    "non-commercial-unspecified": "restricted",
+    "research-only": "restricted",
+    "all-rights-reserved": "block",
+    "no-license": "block",
+    "evaluation-only": "block",
+    "proprietary-no-redistribution": "block",
+    "see-file": "restricted"
+  },
+  "attribution_templates": {
+    "apache-2.0": "{name} - Copyright {year} {holder}. Licensed under Apache-2.0. {url}",
+    "mit": "{name} - Copyright {year} {holder}. Licensed under the MIT License.",
+    "bsd-3-clause": "{name} - Copyright {year} {holder}. Licensed under BSD-3-Clause.",
+    "creativeml-openrail-m": "{name} - CreativeML OpenRAIL-M with use restrictions. {url}",
+    "stability-ai-community": "{name} - Stability AI Community License. {url}",
+    "flux.1-dev-non-commercial": "{name} - FLUX.1-dev non-commercial license. Not for commercial redistribution.",
+    "cc-by-4.0": "{name} by {holder} is licensed under CC BY 4.0.",
+    "unknown": "{name} - license undetermined; do not redistribute until classified."
+  },
+  "detection": {
+    "sidecar_filenames": [
+      "LICENSE",
+      "LICENSE.txt",
+      "LICENSE.md",
+      "COPYING",
+      "license.txt",
+      "*.license.txt",
+      "*.LICENSE.txt"
+    ],
+    "json_fields": [
+      "license",
+      "licence",
+      "license_name",
+      "licenses"
+    ],
+    "safetensors_metadata_keys": [
+      "license",
+      "license_name",
+      "__metadata__.license"
+    ],
+    "spdx_hint_patterns": [
+      "(?i)\\bapache\\s*license\\b|\\bapache-?2\\.0\\b",
+      "(?i)\\bmit\\s+license\\b",
+      "(?i)\\bbsd\\b",
+      "(?i)\\bopenrail\\b",
+      "(?i)\\bcreative\\s*ml\\b",
+      "(?i)\\bnon-?commercial\\b",
+      "(?i)\\ball rights reserved\\b",
+      "(?i)\\bcc0\\b|\\bpublic domain\\b",
+      "(?i)\\bstability ai community\\b"
+    ]
+  },
+  "rules": [
+    "This tool classifies and reports; it does not grant rights or give legal advice.",
+    "Any component classified as deny or unknown blocks Release-Rights-Gate status.",
+    "Restricted licenses require a recorded commercial-use decision before packaging for handoff."
+  ]
+}

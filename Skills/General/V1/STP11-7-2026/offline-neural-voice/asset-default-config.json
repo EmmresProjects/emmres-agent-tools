@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "skill": {
+    "name": "offline-neural-voice",
+    "title": "Offline Neural Voice",
+    "config_version": "1.0.0",
+    "description": "Offline, CPU-only, air-gapped capable neural text-to-speech control plane with rights gating, expressive presets, mastering, measurable QA, packaging and lifecycle governance."
+  },
+  "paths": {
+    "state_dir": "~/.local/state/offline-neural-voice",
+    "models_dir": "~/.local/state/offline-neural-voice/models",
+    "output_dir": "~/.local/state/offline-neural-voice/output",
+    "work_dir": "~/.local/state/offline-neural-voice/work",
+    "journal_path": "~/.local/state/offline-neural-voice/work/journal.jsonl",
+    "evidence_dir": "~/.local/state/offline-neural-voice/output/evidence",
+    "registry_path": "asset-model-registry.json",
+    "presets_path": "asset-voice-presets.json",
+    "policies_path": "asset-rights-policy.json",
+    "lexicon_path": "asset-pronunciation-lexicon.json",
+    "acceptance_fixture_path": "asset-acceptance-fixture.json",
+    "result_schema_path": "asset-result-schema.json",
+    "config_schema_path": "asset-config-schema.json",
+    "caption_policy_path": "asset-caption-policy.json",
+    "manifest_out": "~/.local/state/offline-neural-voice/output/manifest.json",
+    "allowed_roots": []
+  },
+  "execution": {
+    "offline": true,
+    "allow_network": false,
+    "timeout_seconds": 120.0,
+    "run_timeout_seconds": 900.0,
+    "cancel_poll_seconds": 0.2,
+    "numpy_threads": 1,
+    "strict_checksum": true,
+    "allow_fallback_engine": true,
+    "fail_on_blocked_rights": true,
+    "max_chars": 4000,
+    "max_sentences": 64,
+    "allow_absolute_paths": false,
+    "overwrite": false,
+    "script_guard": "block"
+  },
+  "inference": {
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "intra_op_threads": 1,
+    "inter_op_threads": 1,
+    "graph_optimization": "ORT_ENABLE_ALL",
+    "max_memory_bytes": 1500000000
+  },
+  "synthesis": {
+    "length_scale": 1.0,
+    "noise_scale": 0.667,
+    "noise_w": 0.8,
+    "seed": 1337,
+    "volume": 1.0,
+    "normalize_audio": false
+  },
+  "mastering": {
+    "target_lufs": -14.0,
+    "max_true_peak_dbfs": -1.0,
+    "loudness_tolerance_lu": 1.0,
+    "limiter_lookahead_ms": 20.0,
+    "highpass_hz": 70.0,
+    "resample_hz": null,
+    "max_gain_db": 24.0,
+    "loudness_correction_passes": 3,
+    "max_limiter_drive_db": 6.0
+  },
+  "qa": {
+    "min_duration_s": 2.5,
+    "max_duration_s": 4.0,
+    "default_min_duration_s": 0.0,
+    "default_max_duration_s": 0.0,
+    "short_ceiling_ok": true,
+    "max_silence_ratio": 0.45,
+    "max_clipped_samples": 0,
+    "max_dc_offset": 0.02,
+    "min_level_rms_dbfs": -40.0,
+    "max_level_rms_dbfs": -6.0,
+    "duplicate_word_repeat_limit": 2,
+    "min_word_accuracy": 0.85,
+    "asr": {
+      "enabled": false,
+      "model": "base.en",
+      "compute_type": "int8",
+      "language": "en",
+      "download_root": "~/.local/state/offline-neural-voice/work/asr-models"
+    }
+  },
+  "safety": {
+    "require_consent_for_cloning": true,
+    "require_approval_for_release": true,
+    "require_approval_for_delete": true,
+    "require_approval_for_registry_write": true,
+    "disclose_fallback": true,
+    "max_copy_seconds": 60.0
+  },
+  "journal": {
+    "enabled": true,
+    "max_bytes": 2000000,
+    "reset_requires_approval": true
+  },
+  "packaging": {
+    "formats": [
+      "wav"
+    ],
+    "mp3_bitrate_kbps": 192,
+    "include_evidence": true,
+    "include_captions": true,
+    "include_manifest": true
+  },
+  "accessibility": {
+    "plain_language": false,
+    "verbose": false,
+    "color": false,
+    "pause_after_sentence_ms": 0
+  }
+}

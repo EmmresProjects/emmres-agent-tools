@@ -1,0 +1,30 @@
+{
+  "schema": "android-toolkit-config/1",
+  "description": "Default configuration for android-artifact-recovery. Copy this file elsewhere and pass --config to override. Paths may stay empty; the tool then auto-detects from PATH, ANDROID_HOME, ANDROID_SDK_ROOT and APKTOOL_JAR.",
+  "paths": {
+    "apktool_jar": "",
+    "build_tools_dir": "",
+    "android_home": "",
+    "assets_dir": "",
+    "work_dir": ""
+  },
+  "limits": {
+    "max_parse_bytes": 268435456,
+    "max_entries_listed": 5000,
+    "max_artifacts_per_batch": 200,
+    "subprocess_timeout_seconds": 600,
+    "report_max_findings": 400
+  },
+  "signing": {
+    "keystore_env": "ANDROID_TOOLKIT_KS_PASS",
+    "keystore_alias_env": "ANDROID_TOOLKIT_KS_ALIAS",
+    "min_sdk_for_scheme": 23,
+    "refuse_to_overwrite_input": true
+  },
+  "policy": {
+    "min_target_sdk_for_store_upload": 35,
+    "require_exported_from_api": 31,
+    "page_size_bytes": 16384,
+    "treat_warnings_as_failure": false
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "profiles_version": "1.0.0",
+  "purpose": "Readiness profiles consumed with `self-test --profile <name>` so a job can fail early when a required subset of capabilities is unavailable.",
+  "default_profile": "governance-baseline",
+  "profiles": {
+    "governance-baseline": {
+      "description": "Minimum set for governed PC work: inventory, hashing, archives and a compiler to prove probes work.",
+      "required": ["python3", "sha256sum", "file"],
+      "optional": ["git", "7zip", "zip"],
+      "fail_statuses": ["MISSING", "BROKEN", "WRONG VERSION"]
+    },
+    "native-build": {
+      "description": "Native and cross-platform C/C++ build readiness.",
+      "required": ["gcc", "cmake", "git"],
+      "optional": ["clang", "ninja", "make"],
+      "fail_statuses": ["MISSING", "BROKEN", "WRONG VERSION"]
+    },
+    "managed-windows": {
+      "description": "Managed .NET build readiness on a disposable worker.",
+      "required": ["dotnet-sdk"],
+      "optional": ["mono", "mingw-w64"],
+      "fail_statuses": ["MISSING", "BROKEN", "WRONG VERSION", "WINDOWS HOST REQUIRED"]
+    },
+    "inspection-only": {
+      "description": "Safe read-only binary and archive inspection.",
+      "required": ["file", "strings", "7zip"],
+      "optional": ["readelf", "pefile", "lief", "detect-it-easy"],
+      "fail_statuses": ["MISSING", "BROKEN"]
+    },
+    "compatibility-lab": {
+      "description": "Wine/VM compatibility work readiness.",
+      "required": ["wine", "qemu-img"],
+      "optional": ["qemu-system", "kvm"],
+      "fail_statuses": ["MISSING", "BROKEN", "WRONG VERSION", "VIRTUALIZATION REQUIRED"]
+    },
+    "signing-release": {
+      "description": "Release pipeline readiness including signing tooling.",
+      "required": ["osslsigncode", "zip"],
+      "optional": ["nsis", "signtool"],
+      "fail_statuses": ["MISSING", "BROKEN", "LICENSE REQUIRED"]
+    }
+  }
+}

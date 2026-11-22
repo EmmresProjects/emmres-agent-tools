@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "asset-report.schema.json",
+  "title": "iOS/iPadOS Agent Skill Tool report",
+  "description": "Machine report emitted by every tools-iosh.py command. Versioned; consumers must tolerate additive fields within the same major schema_version and must reject unknown major versions.",
+  "type": "object",
+  "required": ["schema_version", "tool", "run_id", "command", "generated_at", "status", "ok", "host", "inputs", "limits", "counts", "findings", "data", "errors", "next_actions", "truncated"],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "tool": {
+      "type": "object",
+      "required": ["name", "version", "policy_version"],
+      "properties": {
+        "name": {"const": "ios-ipados-agent-toolkit"},
+        "version": {"type": "string"},
+        "policy_version": {"type": "string"}
+      }
+    },
+    "run_id": {"type": "string", "minLength": 6},
+    "command": {"type": "string", "minLength": 1},
+    "generated_at": {"type": "string", "description": "RFC 3339 UTC timestamp"},
+    "status": {"enum": ["OK", "WARN", "FAIL"]},
+    "ok": {"type": "boolean"},
+    "host": {
+      "type": "object",
+      "required": ["system", "machine", "python", "is_macos", "is_linux"],
+      "properties": {
+        "system": {"type": "string"},
+        "machine": {"type": "string"},
+        "python": {"type": "string"},
+        "is_macos": {"type": "boolean"},
+        "is_linux": {"type": "boolean"}
+      }
+    },
+    "inputs": {"type": "object"},
+    "limits": {
+      "type": "object",
+      "description": "Limits actually applied to this run; echoed so a report is reproducible.",
+      "required": ["max_entries", "max_file_bytes", "max_total_bytes", "max_depth", "timeout_s", "retries", "max_workers", "max_findings", "max_output_bytes", "max_disk_ratio"]
+    },
+    "counts": {
+      "type": "object",
+      "required": ["info", "warn", "error", "critical"],
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "level", "message"],
+        "properties": {
+          "code": {"type": "string", "pattern": "^[a-z0-9]+(/[a-z0-9.-]+)+$"},
+          "level": {"enum": ["info", "warn", "error", "critical"]},
+          "message": {"type": "string"},
+          "capability": {"type": "string"},
+          "path": {"type": "string"},
+          "remediation": {"type": "string"},
+          "evidence": {"type": "object"}
+        }
+      }
+    },
+    "data": {"type": "object", "description": "Command-specific structured payload; always contains 'summary' for human rendering."},
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "message"],
+        "properties": {
+          "code": {"type": "string"},
+          "message": {"type": "string"},
+          "remediation": {"type": "string"},
+          "details": {"type": "object"}
+        }
+      }
+    },
+    "next_actions": {"type": "array", "items": {"type": "string"}},
+    "truncated": {"type": "boolean", "description": "True when a configured limit cut the report short."}
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "note": "Default workflow configuration for music-ai-skill-studio. Pass with --workflow PATH. Every key is optional; unspecified keys fall back to the built-in defaults shown here.",
+  "limits": {
+    "max_input_bytes": 4000000,
+    "max_catalog_entries": 2000,
+    "max_categories": 200,
+    "max_batch_jobs": 200,
+    "max_audio_bytes": 268435456,
+    "max_audio_scan_seconds": 30.0,
+    "max_string_length": 4000,
+    "max_name_length": 120
+  },
+  "retries": 0,
+  "timeout_seconds": 60,
+  "output": {
+    "markdown": true,
+    "json": true,
+    "checklist_csv": true,
+    "archive": true
+  },
+  "approvals": {
+    "required_for": [
+      "release_publish",
+      "rights_signing",
+      "payment",
+      "credential_use",
+      "irreversible_delete"
+    ]
+  },
+  "qc": {
+    "clip_ceiling_dbfs": -0.3,
+    "minimum_duration_seconds": 1.0,
+    "maximum_duration_seconds": 3600.0,
+    "require_non_silent": true
+  },
+  "naming": {
+    "max_slug_words": 6
+  },
+  "delivery": {
+    "default_profile": "general"
+  }
+}

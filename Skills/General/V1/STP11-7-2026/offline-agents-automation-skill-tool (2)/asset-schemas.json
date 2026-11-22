@@ -1,0 +1,117 @@
+{
+  "schema_bundle_version": "1.0.0",
+  "schemas": {
+    "ExecutionEnvelope": {
+      "type": "object",
+      "required": ["ok", "capability", "category", "trace_id", "timestamp_utc", "result", "provenance"],
+      "properties": {
+        "ok": {"type": "boolean"},
+        "capability": {"type": "string", "minLength": 1},
+        "category": {"type": "string", "minLength": 1},
+        "trace_id": {"type": "string", "minLength": 8},
+        "timestamp_utc": {"type": "string", "minLength": 10},
+        "result": {"type": "object"},
+        "provenance": {
+          "type": "object",
+          "required": ["input_sha256", "policy_version", "audit_event_hash"],
+          "properties": {
+            "input_sha256": {"type": "string"},
+            "policy_version": {"type": "string"},
+            "audit_event_hash": {"type": "string"}
+          }
+        }
+      }
+    },
+    "ToolContract": {
+      "type": "object",
+      "required": ["tool_id", "version", "description", "side_effect_class", "timeout_seconds", "input_schema"],
+      "properties": {
+        "tool_id": {"type": "string", "minLength": 2},
+        "version": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 5},
+        "side_effect_class": {
+          "type": "string",
+          "enum": ["read-only", "reversible", "approval-required", "dual-control"]
+        },
+        "timeout_seconds": {"type": "number", "minimum": 0.1, "maximum": 3600},
+        "input_schema": {"type": "object"}
+      }
+    },
+    "WorkflowDefinition": {
+      "type": "object",
+      "required": ["workflow_id", "version", "owner", "steps"],
+      "properties": {
+        "workflow_id": {"type": "string", "minLength": 2},
+        "version": {"type": "string", "minLength": 1},
+        "owner": {"type": "string", "minLength": 1},
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["step_id", "capability"],
+            "properties": {
+              "step_id": {"type": "string", "minLength": 1},
+              "capability": {"type": "string", "minLength": 1},
+              "depends_on": {"type": "array", "items": {"type": "string"}},
+              "params": {"type": "object"},
+              "compensate_capability": {"type": "string"},
+              "require_approval": {"type": "boolean"}
+            }
+          }
+        }
+      }
+    },
+    "GroundedAnswerContract": {
+      "type": "object",
+      "required": ["status", "answer", "citations", "confidence", "abstained"],
+      "properties": {
+        "status": {"type": "string", "enum": ["grounded", "abstained", "conflict-detected"]},
+        "answer": {"type": "string"},
+        "citations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["source_id", "chunk_id", "excerpt"],
+            "properties": {
+              "source_id": {"type": "string"},
+              "chunk_id": {"type": "string"},
+              "excerpt": {"type": "string"}
+            }
+          }
+        },
+        "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+        "abstained": {"type": "boolean"}
+      }
+    },
+    "AgentMessage": {
+      "type": "object",
+      "required": ["message_id", "message_type", "sender_agent", "recipient_agent", "task_id", "payload"],
+      "properties": {
+        "message_id": {"type": "string", "minLength": 4},
+        "message_type": {
+          "type": "string",
+          "enum": ["task", "status", "result", "evidence", "error", "cancellation", "escalation"]
+        },
+        "sender_agent": {"type": "string", "minLength": 1},
+        "recipient_agent": {"type": "string", "minLength": 1},
+        "task_id": {"type": "string", "minLength": 1},
+        "payload": {"type": "object"}
+      }
+    },
+    "SkillInterfaceStandard": {
+      "type": "object",
+      "required": ["skill_slug", "category", "description", "risk_class", "permissions", "inputs", "outputs", "validation_rules"],
+      "properties": {
+        "skill_slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "category": {"type": "string", "minLength": 2},
+        "description": {"type": "string", "minLength": 10},
+        "risk_class": {"type": "string", "enum": ["read-only", "reversible", "approval-required", "dual-control"]},
+        "permissions": {"type": "array", "items": {"type": "string"}},
+        "inputs": {"type": "object"},
+        "outputs": {"type": "object"},
+        "validation_rules": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

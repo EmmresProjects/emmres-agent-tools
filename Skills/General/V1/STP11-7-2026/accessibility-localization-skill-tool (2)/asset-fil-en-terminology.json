@@ -1,0 +1,242 @@
+{
+  "asset_version": "1.0",
+  "scope": "Filipino/English terminology, inclusive-language policy and cultural-adaptation patterns used by the localization and content engines.",
+  "disclaimer": "Terminology and style guidance is a starting point for the Philippines context, not an authority. A qualified Filipino-English reviewer approves the termbase before it is enforced in a release gate.",
+  "source_locale": "en-PH",
+  "target_locale": "fil-PH",
+  "do_not_translate": [
+    "Arena", "GCash", "Maya", "PayMaya", "Philippine Statistics Authority", "NBI", "SSS", "PhilHealth",
+    "Pag-IBIG", "BIR", "eGov", "COVID-19", "Wi-Fi", "email", "SMS", "OTP", "QR", "ID", "URL", "PIN"
+  ],
+  "jargon": [
+    "utilise", "utilize", "leverage", "synergy", "paradigm", "facilitate", "commence", "terminate",
+    "endeavour", "ascertain", "promulgate", "aforementioned", "heretofore", "notwithstanding",
+    "not later than", "pursuant to", "in the event that", "prior to", "subsequent to"
+  ],
+  "terms": [
+    {"source": "accessibility", "target": "aksesibilidad", "status": "approved", "domain": "a11y",
+     "forbidden": ["accessability"], "context": "Quality of being usable by people with disabilities."},
+    {"source": "person with disability", "target": "taong may kapansanan", "status": "approved", "domain": "a11y",
+     "forbidden": ["disabled person", "the disabled", "handicapped"], "context": "Person-first wording required."},
+    {"source": "screen reader", "target": "tagapagbasa ng iskrin", "status": "approved", "domain": "a11y",
+     "forbidden": ["screenreader", "screen reader software"], "context": "Assistive technology that speaks the interface."},
+    {"source": "keyboard", "target": "teklado", "status": "approved", "domain": "a11y", "forbidden": []},
+    {"source": "alternative text", "target": "tekstong alternatibo", "status": "approved", "domain": "a11y",
+     "forbidden": ["alt text"], "context": "Text alternative for non-text content."},
+    {"source": "caption", "target": "kapsyon", "status": "approved", "domain": "media", "forbidden": ["captions"]},
+    {"source": "sign language", "target": "wikang pasenyas", "status": "approved", "domain": "a11y",
+     "forbidden": ["sign languages", "hand sign language"], "context": "RA 11106 recognises Filipino Sign Language."},
+    {"source": "user", "target": "gumagamit", "status": "approved", "domain": "ui", "forbidden": []},
+    {"source": "account", "target": "account", "status": "approved-loanword", "domain": "ui",
+     "forbidden": ["akawnt"], "context": "Accepted loanword; do not invent a translation."},
+    {"source": "password", "target": "password", "status": "approved-loanword", "domain": "ui",
+     "forbidden": ["kodal", "passsword"], "context": "Accepted loanword in Philippine interfaces."},
+    {"source": "sign in", "target": "mag-sign in", "status": "approved-loanword", "domain": "ui",
+     "forbidden": ["login", "log-in"], "context": "Verb form uses the mag- prefix."},
+    {"source": "submit", "target": "isumite", "status": "approved", "domain": "ui", "forbidden": ["submit"]},
+    {"source": "cancel", "target": "kanselahin", "status": "approved", "domain": "ui", "forbidden": ["cancel"]},
+    {"source": "search", "target": "maghanap", "status": "approved", "domain": "ui", "forbidden": ["search"]},
+    {"source": "help", "target": "tulong", "status": "approved", "domain": "ui", "forbidden": ["help"]},
+    {"source": "next", "target": "susunod", "status": "approved", "domain": "ui", "forbidden": ["next"]},
+    {"source": "back", "target": "bumalik", "status": "approved", "domain": "ui", "forbidden": ["back"]},
+    {"source": "close", "target": "isara", "status": "approved", "domain": "ui", "forbidden": ["close"]},
+    {"source": "download", "target": "i-download", "status": "approved-loanword", "domain": "ui", "forbidden": []},
+    {"source": "settings", "target": "mga setting", "status": "approved-loanword", "domain": "ui", "forbidden": []},
+    {"source": "error message", "target": "mensahe ng error", "status": "approved", "domain": "ui", "forbidden": []},
+    {"source": "privacy notice", "target": "paunawa sa pagkapribado", "status": "approved", "domain": "legal",
+     "forbidden": ["privacy notice"], "context": "Data Privacy Act materials use this rendering."},
+    {"source": "consent", "target": "pahintulot", "status": "approved", "domain": "legal", "forbidden": ["konsent"]},
+    {"source": "barangay", "target": "barangay", "status": "do-not-translate", "domain": "address", "forbidden": []}
+  ],
+  "filipino": {
+    "style_rules": {
+      "max_sentence_words": 22,
+      "formality_markers": ["po", "opo", "ho"],
+      "note": "Plain Filipino favours short clauses and one idea per sentence. Formality markers belong in direct address, not in every sentence."
+    },
+    "jargon": [
+      "utilisasyon", "implementasyon", "operasyonalisasyon", "institusyonalisasyon", "pagsasaalang-alang",
+      "naaangkop", "kaukulan", "pagpapasubali"
+    ],
+    "spelling_rules": [
+      {"pattern": "\\betc\\.", "message": "English abbreviation in Filipino text",
+       "suggestion": "Use 'atbp.' (at iba pa) in Filipino content.", "severity": "medium"},
+      {"pattern": "\\be\\.g\\.|\\bi\\.e\\.", "message": "Latin abbreviation used in Filipino text",
+       "suggestion": "Use 'hal.' (halimbawa) or write the phrase out.", "severity": "medium"},
+      {"pattern": "\\bcomputer\\b", "message": "Unadapted English spelling",
+       "suggestion": "Use the adapted spelling 'kompyuter'.", "severity": "medium"},
+      {"pattern": "\\bpercent\\b", "message": "English unit word",
+       "suggestion": "Use 'porsiyento' or the % symbol.", "severity": "low"},
+      {"pattern": "\\bwebsite\\b", "message": "Unadapted English spelling",
+       "suggestion": "Use 'websayt' unless the brand fixes the spelling.", "severity": "low"},
+      {"pattern": "\\bJanuary\\b|\\bFebruary\\b|\\bMarch\\b|\\bApril\\b|\\bMay\\b|\\bJune\\b|\\bJuly\\b|\\bAugust\\b|\\bSeptember\\b|\\bOctober\\b|\\bNovember\\b|\\bDecember\\b",
+       "message": "English month name in Filipino text",
+       "suggestion": "Use Enero, Pebrero, Marso, Abril, Mayo, Hunyo, Hulyo, Agosto, Setyembre, Oktubre, Nobyembre, Disyembre.",
+       "severity": "medium"},
+      {"pattern": "\\bgovernment\\b", "message": "English word in Filipino content",
+       "suggestion": "Use 'pamahalaan'.", "severity": "low"},
+      {"pattern": "\\bPresident\\b", "message": "English title in Filipino content",
+       "suggestion": "Use 'Pangulo'.", "severity": "low"}
+    ],
+    "taglish_markers": [
+      "the", "and", "you", "your", "please", "click", "button", "settings", "account", "password",
+      "download", "upload", "sign in", "log in", "submit", "cancel", "search", "help", "next", "back",
+      "okay", "ok", "sorry", "actually", "basically", "anyway", "so"
+    ],
+    "preferred_terms": [
+      {"avoid": "I-click", "prefer": "Pindutin", "context": "Button instructions",
+       "note": "Pindutin is the standard Filipino verb for pressing a control."},
+      {"avoid": "Mag-click", "prefer": "Pindutin", "context": "Button instructions"},
+      {"avoid": "Type here", "prefer": "I-type dito", "context": "Field instructions"},
+      {"avoid": "No results found", "prefer": "Walang nahanap na resulta", "context": "Empty state"},
+      {"avoid": "Something went wrong", "prefer": "May naganap na problema", "context": "Error message"},
+      {"avoid": "Loading", "prefer": "Naglo-load", "context": "Progress state"},
+      {"avoid": "Sign up", "prefer": "Magrehistro", "context": "Registration"},
+      {"avoid": "Forgot password", "prefer": "Nakalimutan ang password", "context": "Authentication"},
+      {"avoid": "Terms and conditions", "prefer": "Mga tuntunin at kundisyon", "context": "Legal"},
+      {"avoid": "Contact us", "prefer": "Makipag-ugnayan sa amin", "context": "Support"}
+    ],
+    "inclusive_language": {
+      "the disabled": "mga taong may kapansanan",
+      "handicapped": "may kapansanan",
+      "crippled": "may kapansanan sa paggalaw",
+      "wheelchair-bound": "gumagamit ng wheelchair",
+      "suffers from": "may",
+      "victim of": "may",
+      "special needs": "partikular na pangangailangan",
+      "differently abled": "may kapansanan",
+      "normal person": "taong walang kapansanan"
+    },
+    "government_terms": [
+      {"en": "Department of Social Welfare and Development", "fil": "Kagawaran ng Kagalingan at Pagpapaunlad Panlipunan"},
+      {"en": "Department of Health", "fil": "Kagawaran ng Kalusugan"},
+      {"en": "Department of Education", "fil": "Kagawaran ng Edukasyon"},
+      {"en": "Department of Justice", "fil": "Kagawaran ng Katarungan"},
+      {"en": "National Council on Disability Affairs", "fil": "Pambansang Sanggunian sa Kapakanan ng mga May Kapansanan"},
+      {"en": "local government unit", "fil": "lokal na pamahalaan"},
+      {"en": "Republic Act", "fil": "Batas Republika"},
+      {"en": "certificate of live birth", "fil": "sertipiko ng kapanganakan"},
+      {"en": "person with disability identification card", "fil": "kard ng pagkakakilanlan ng taong may kapansanan"}
+    ]
+  },
+  "inclusive_language": {
+    "disability": [
+      {"avoid": "the disabled", "prefer": "people with disabilities", "severity": "high",
+       "guidance": "Use person-first wording unless the community in the target language prefers identity-first."},
+      {"avoid": "handicapped", "prefer": "person with a disability", "severity": "high"},
+      {"avoid": "wheelchair-bound", "prefer": "wheelchair user", "severity": "high"},
+      {"avoid": "confined to a wheelchair", "prefer": "uses a wheelchair", "severity": "high"},
+      {"avoid": "suffers from", "prefer": "has / lives with", "severity": "medium"},
+      {"avoid": "victim of", "prefer": "person who experienced", "severity": "medium"},
+      {"avoid": "special needs", "prefer": "specific access requirements", "severity": "medium"},
+      {"avoid": "differently abled", "prefer": "person with a disability", "severity": "medium"},
+      {"avoid": "crippled by", "prefer": "severely affected by", "severity": "high"},
+      {"avoid": "deaf and dumb", "prefer": "deaf", "severity": "high"},
+      {"avoid": "blind as a bat", "prefer": "low vision", "severity": "high"}
+    ],
+    "gender": [
+      {"avoid": "chairman", "prefer": "chair / chairperson", "severity": "medium"},
+      {"avoid": "fireman", "prefer": "firefighter", "severity": "medium"},
+      {"avoid": "policeman", "prefer": "police officer", "severity": "medium"},
+      {"avoid": "manpower", "prefer": "workforce / staffing", "severity": "low"},
+      {"avoid": "guys", "prefer": "everyone / team", "severity": "low"},
+      {"avoid": "he or she", "prefer": "they", "severity": "low"}
+    ],
+    "age": [
+      {"avoid": "the elderly", "prefer": "older adults", "severity": "medium"},
+      {"avoid": "senior citizen", "prefer": "older adult (use the official term only in legal text)", "severity": "low"},
+      {"avoid": "young and tech-savvy", "prefer": "experienced with technology", "severity": "medium"}
+    ],
+    "condescending": [
+      {"avoid": "obviously", "prefer": "(remove)", "severity": "low"},
+      {"avoid": "simply", "prefer": "(remove)", "severity": "low"},
+      {"avoid": "just click", "prefer": "select", "severity": "low"},
+      {"avoid": "easy", "prefer": "(describe the step instead)", "severity": "low"},
+      {"avoid": "of course", "prefer": "(remove)", "severity": "low"}
+    ]
+  },
+  "cultural_rules": {
+    "idioms": [
+      {"pattern": "\\bhit the ground running\\b", "message": "Idiom does not translate literally into Filipino.",
+       "severity": "medium", "guidance": "Rewrite as plain action, e.g. 'start immediately'."},
+      {"pattern": "\\b(a )?piece of cake\\b", "message": "Idiom with no direct Filipino equivalent.",
+       "severity": "medium", "guidance": "Use 'madaling gawin' or describe the ease plainly."},
+      {"pattern": "\\b(low-hanging|low hanging) fruit\\b", "message": "Business idiom that loses meaning.",
+       "severity": "medium", "guidance": "Say 'quick wins' or 'the easiest tasks first'."},
+      {"pattern": "\\bbreak a leg\\b", "message": "Superstition-based idiom.",
+       "severity": "medium", "guidance": "Say 'good luck'."},
+      {"pattern": "\\btouch base\\b", "message": "Sports-derived idiom.",
+       "severity": "low", "guidance": "Say 'check in' or 'follow up'."},
+      {"pattern": "\\bin the pipeline\\b", "message": "Business metaphor.",
+       "severity": "low", "guidance": "Say 'planned' or 'in progress'."},
+      {"pattern": "\\bget the ball rolling\\b", "message": "Sports metaphor.",
+       "severity": "low", "guidance": "Say 'start'."}
+    ],
+    "metaphors": [
+      {"pattern": "\\bkill two birds\\b", "message": "Violent metaphor.",
+       "severity": "medium", "guidance": "Say 'accomplish two things at once'."},
+      {"pattern": "\\bcut corners\\b", "message": "Metaphor that may imply unsafe shortcuts.",
+       "severity": "low", "guidance": "Say 'reduce quality to save time'."},
+      {"pattern": "\\brule of thumb\\b", "message": "Metaphor with disputed origin; replace in public content.",
+       "severity": "low", "guidance": "Say 'general guideline'."},
+      {"pattern": "\\b(native|master) (speaker|language)\\b", "message": "Frames language ability as identity.",
+       "severity": "low", "guidance": "Say 'fluent speaker' or 'proficient in'."}
+    ],
+    "gestures": [
+      {"pattern": "\\bthumbs?[- ]up\\b", "message": "Gesture meaning varies by culture.",
+       "severity": "low", "guidance": "Pair with text; never rely on the gesture alone."},
+      {"pattern": "\\bokay (sign|gesture)\\b", "message": "Offensive in some cultures.",
+       "severity": "medium", "guidance": "Replace with a checkmark plus text."},
+      {"pattern": "\\bpoint(ing)? (finger|at the screen)\\b", "message": "Pointing can be impolite in some cultures.",
+       "severity": "low", "guidance": "Describe the target instead."}
+    ],
+    "colour_meaning": [
+      {"pattern": "\\bgreen means (go|success)\\b", "message": "Colour meaning is not universal.",
+       "severity": "medium", "guidance": "Always pair colour with text or an icon."},
+      {"pattern": "\\bred (means|for) (danger|warning)\\b", "message": "Colour meaning is not universal.",
+       "severity": "low", "guidance": "Add a text label with the colour."}
+    ],
+    "holidays": [
+      {"pattern": "\\bThanksgiving\\b", "message": "US holiday with no Philippine counterpart.",
+       "severity": "medium", "guidance": "Use a neutral seasonal reference."},
+      {"pattern": "\\bBlack Friday\\b", "message": "US retail event.",
+       "severity": "low", "guidance": "Use the actual local promotion name."},
+      {"pattern": "\\bNew Year'?s? resolution\\b", "message": "Culture-specific framing.",
+       "severity": "low", "guidance": "Keep if the campaign is seasonal and locally reviewed."}
+    ],
+    "religious": [
+      {"pattern": "\\bblessed by (God|the Lord)\\b", "message": "Religious reference in neutral product content.",
+       "severity": "medium", "guidance": "Keep religious language only where the audience and context support it."},
+      {"pattern": "\\bSunday mass\\b", "message": "Religion-specific scheduling reference.",
+       "severity": "low", "guidance": "Use 'weekend' or a neutral time reference."}
+    ],
+    "sports": [
+      {"pattern": "\\b(home run|strike out|step up to the plate|out of left field|slam dunk)\\b",
+       "message": "Baseball or US-sports metaphor.",
+       "severity": "low", "guidance": "Replace with plain description; basketball metaphors are more familiar in the Philippines."}
+    ],
+    "us_centric": [
+      {"pattern": "\\bZIP code\\b", "message": "US postal term.",
+       "severity": "high", "guidance": "Use 'postal code' or 'zip code' only with a local example."},
+      {"pattern": "\\bSSN\\b|\\bSocial Security Number\\b", "message": "US identifier.",
+       "severity": "high", "guidance": "Use the local identifier (e.g. PhilSys, TIN, PWD ID)."},
+      {"pattern": "\\b(IRS|401\\(k\\)|W-2)\\b", "message": "US tax or employment term.",
+       "severity": "high", "guidance": "Use BIR and local equivalents."},
+      {"pattern": "\\b(Fahrenheit|miles?|gallons?|pounds)\\b", "message": "US customary unit.",
+       "severity": "medium", "guidance": "Use metric units (Celsius, kilometres, litres, kilograms)."},
+      {"pattern": "\\b(Apt\\.?|Suite)\\s*\\d+\\b.*\\b(CA|NY|TX|FL)\\b\\s*\\d{5}", "message": "US address example.",
+       "severity": "medium", "guidance": "Use a Philippine address example."}
+    ]
+  },
+  "accessibility_language": {
+    "note": "Wording used when writing accessible names, errors and instructions; enforced for content produced by this tool.",
+    "instruction_verbs": ["select", "choose", "enter", "review", "confirm"],
+    "error_formula": ["what happened", "why it happened", "what to do next"],
+    "avoid_in_errors": ["invalid input", "error 422", "something went wrong", "illegal value"],
+    "label_rules": [
+      "The visible label must be contained in the accessible name (WCAG 2.5.3).",
+      "Do not use colour words as the only description of state.",
+      "Never use placeholder text as the only label."
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "asset": "config-presets",
+  "version": "1.0.0",
+  "purpose": "Workspace presets for `rwt init --preset`. Edit before use; these are starting points, not compliance guarantees.",
+  "presets": [
+    {
+      "name": "minimal",
+      "languages": [
+        "en"
+      ],
+      "quotation_limits": {
+        "default_words": 90,
+        "licensed_words": 250
+      },
+      "export_gate": {
+        "require_approval": true,
+        "embargo_until": null
+      },
+      "retention_days": 365,
+      "redaction_profile": "standard",
+      "roles": [
+        "author",
+        "editor",
+        "fact-checker",
+        "translator",
+        "domain-expert",
+        "legal",
+        "approver"
+      ],
+      "note": "Default: full toolchain, approval required for exports"
+    },
+    {
+      "name": "review",
+      "languages": [
+        "en"
+      ],
+      "quotation_limits": {
+        "default_words": 200,
+        "licensed_words": 400
+      },
+      "export_gate": {
+        "require_approval": true,
+        "embargo_until": null
+      },
+      "retention_days": 1095,
+      "redaction_profile": "standard",
+      "roles": [
+        "screening-reviewer",
+        "evidence-extractor",
+        "risk-of-bias-assessor",
+        "synthesizer",
+        "approver",
+        "legal"
+      ],
+      "note": "Systematic-review oriented: screening queue roles and RoB assessors"
+    },
+    {
+      "name": "translation",
+      "languages": [
+        "en",
+        "es"
+      ],
+      "quotation_limits": {
+        "default_words": 90,
+        "licensed_words": 250
+      },
+      "export_gate": {
+        "require_approval": true,
+        "embargo_until": null
+      },
+      "retention_days": 730,
+      "redaction_profile": "standard",
+      "roles": [
+        "translator",
+        "bilingual-reviewer",
+        "domain-expert",
+        "proofreader",
+        "qa",
+        "approver"
+      ],
+      "note": "Translation-pipeline oriented: bilingual review and QA roles"
+    },
+    {
+      "name": "legal",
+      "languages": [
+        "en"
+      ],
+      "quotation_limits": {
+        "default_words": 120,
+        "licensed_words": 300
+      },
+      "export_gate": {
+        "require_approval": true,
+        "embargo_until": null
+      },
+      "retention_days": 2555,
+      "redaction_profile": "strict",
+      "roles": [
+        "researcher",
+        "attorney-review",
+        "approver"
+      ],
+      "note": "Legal research: strict redaction, long retention, attorney review role"
+    }
+  ]
+}

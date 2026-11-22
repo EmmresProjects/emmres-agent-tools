@@ -1,0 +1,52 @@
+{
+  "request_version": "1.0",
+  "project": {
+    "name": "Parcel Runner",
+    "genre": "arcade",
+    "goal": "Build a deterministic, editable browser arcade slice with a visible core loop and smoke checks.",
+    "engine": "auto",
+    "engine_version": "unspecified",
+    "language": "javascript",
+    "platforms": [
+      "web"
+    ],
+    "dimension": "2d",
+    "scope": "prototype",
+    "team_size": 2,
+    "weeks": 4,
+    "target_fps": 60,
+    "constraints": [
+      "no network",
+      "standard library only for tooling",
+      "editable source output"
+    ],
+    "acceptance_criteria": [
+      "core loop runs locally",
+      "build instructions are present",
+      "checks have evidence fields"
+    ]
+  },
+  "capabilities": {
+    "categories": [
+      "game-vision-design-and-production-planning",
+      "web-html5-javascript-and-browser-games"
+    ],
+    "skills": [],
+    "phases": [],
+    "tags": [],
+    "exclude": [],
+    "limit": 12
+  },
+  "overrides": {
+    "verification_commands": {
+      "smoke": "python3 -m unittest discover"
+    },
+    "performance_budget_ms": 16.67,
+    "notes": "Editable handoff only; no external SDK, store, cloud, or credential action is performed."
+  },
+  "output": {
+    "format": "both",
+    "include_specs": true,
+    "overwrite": false
+  }
+}

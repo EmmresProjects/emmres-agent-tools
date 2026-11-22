@@ -1,0 +1,75 @@
+{
+  "name": "editorial-warm",
+  "description": "Warm ivory editorial palette with serif headings for research, magazine, and thought-leadership decks.",
+  "fonts": {
+    "heading": "Georgia",
+    "body": "Verdana",
+    "mono": "Courier New"
+  },
+  "colors": {
+    "background": "#FBF7F0",
+    "surface": "#F2EADF",
+    "primary": "#2B2118",
+    "secondary": "#5C3A2E",
+    "accent": "#9C3B2E",
+    "accent_soft": "#D9A79A",
+    "text": "#241C15",
+    "text_inverse": "#FBF7F0",
+    "muted": "#6E5D4F",
+    "border": "#DCCCBB",
+    "success": "#4E6B4A",
+    "warning": "#A8741F",
+    "danger": "#8E2B22"
+  },
+  "typography": {
+    "title_pt": 34,
+    "subtitle_pt": 18,
+    "section_pt": 42,
+    "heading_pt": 21,
+    "body_pt": 16,
+    "small_pt": 11,
+    "kpi_pt": 42,
+    "quote_pt": 28,
+    "line_spacing": 1.2,
+    "bullet_indent_in": 0.3
+  },
+  "grid": {
+    "margin_x_in": 0.75,
+    "margin_y_in": 0.5,
+    "title_top_in": 0.5,
+    "content_top_in": 1.6,
+    "footer_y_in": 6.9,
+    "gap_in": 0.35
+  },
+  "art": {
+    "title_band": true,
+    "accent_bar": true,
+    "corner_radius_in": 0.04
+  },
+  "table": {
+    "header_fill": "primary",
+    "header_text": "text_inverse",
+    "row_fill": "background",
+    "alt_row_fill": "surface",
+    "border": "border",
+    "body_pt": 12,
+    "header_pt": 12
+  },
+  "chart": {
+    "palette": [
+      "accent",
+      "secondary",
+      "accent_soft",
+      "success",
+      "warning",
+      "danger"
+    ],
+    "gridline": "border",
+    "font_pt": 11
+  },
+  "footer": {
+    "show_slide_number": true,
+    "show_footer": true,
+    "show_date": false
+  }
+}

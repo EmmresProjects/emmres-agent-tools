@@ -1,0 +1,81 @@
+{
+  "schema_id": "ugm-brief-1.0",
+  "goal": "Deliver a compact arcade delivery game where the player collects eight courier parcels while avoiding drifting obstacles.",
+  "genre": "arcade action",
+  "engine": "html5",
+  "engine_version": "ES2020 browser runtime",
+  "language": "javascript",
+  "language_version": "ECMAScript 2020",
+  "target_platform": "browser",
+  "assets": [
+    {
+      "name": "courier-sprite",
+      "kind": "procedural-canvas-shape",
+      "source": "generated in template",
+      "license": "owned"
+    },
+    {
+      "name": "parcel-shape",
+      "kind": "procedural-canvas-shape",
+      "source": "generated in template",
+      "license": "owned"
+    }
+  ],
+  "references": [
+    "keyboard and touch input",
+    "high-contrast HUD",
+    "deterministic seed"
+  ],
+  "constraints": [
+    "single self-contained HTML file",
+    "no external network requests",
+    "no third-party libraries",
+    "keyboard and pointer controls"
+  ],
+  "repository": "local-repository",
+  "build_environment": {
+    "runtime": "browser",
+    "compiler": "none",
+    "package_manager": "none",
+    "clean_machine_check": "open the generated HTML file"
+  },
+  "acceptance_criteria": [
+    "The generated HTML file parses and contains no external resource references.",
+    "The pure game logic advances, collects parcels, applies hazards, and reaches a win state.",
+    "The plan includes all 33 category handlers and all 330 named specialists.",
+    "No deployment, publishing, credential, or financial action is executed."
+  ],
+  "controls": {
+    "movement": "WASD, arrow keys, or pointer drag",
+    "pause": "P or pause button",
+    "restart": "R or restart button",
+    "audio": "M or mute button",
+    "quality": "prototype",
+    "difficulty": "three lives and a 90 second limit"
+  },
+  "categories": [],
+  "skills": [],
+  "version_notes": [
+    "Use the exact browser language field from this brief; do not infer newer APIs."
+  ],
+  "seed": 20261105,
+  "quality": "prototype",
+  "performance_budget": {
+    "target_fps": 60,
+    "fixed_step_seconds": 0.0166667,
+    "max_voices": 8,
+    "max_output_bytes": 200000
+  },
+  "accessibility": [
+    "keyboard controls",
+    "high-contrast text",
+    "reduced-motion respect",
+    "visible focus",
+    "mute control"
+  ],
+  "approval_gates": [
+    "publish",
+    "deploy",
+    "store-submission"
+  ]
+}

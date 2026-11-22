@@ -1,0 +1,101 @@
+{
+  "policy_version": "1.0",
+  "note": "Rights, consent, provenance and disclosure policy consumed by tools-onv-governance.py. Field names here match the ledger record schema.",
+  "ledger": {
+    "default_path": "ledger/rights-ledger.json",
+    "schema_version": "1.0",
+    "record_fields": [
+      "subject_id",
+      "kind",
+      "consent",
+      "rights",
+      "provenance"
+    ],
+    "append_only": true
+  },
+  "consent": {
+    "required_when": [
+      "animate",
+      "generate",
+      "transform",
+      "edit"
+    ],
+    "accepted_status": [
+      "granted"
+    ],
+    "reject_status": [
+      "denied",
+      "withdrawn",
+      "unknown",
+      null
+    ],
+    "require_evidence": true,
+    "require_scope_match": true,
+    "expiry_field": "expires_utc",
+    "operator_may_override": false
+  },
+  "scopes": {
+    "allowed_use_values": [
+      "internal-preview",
+      "research",
+      "commercial-delivery",
+      "editorial",
+      "education",
+      "publication"
+    ],
+    "commercial_delivery_requires": [
+      "license",
+      "consent",
+      "disclosure"
+    ],
+    "publication_requires": [
+      "license",
+      "consent",
+      "disclosure",
+      "watermark"
+    ],
+    "default_allowed_use": "internal-preview"
+  },
+  "disclosure": {
+    "required_for_ops": [
+      "generate",
+      "animate",
+      "transform",
+      "edit"
+    ],
+    "required_when_publication": true,
+    "templates_file": "asset-disclosure-templates.json",
+    "default_template": "synthetic-media-full",
+    "attach_to_package": true
+  },
+  "provenance": {
+    "required_records": [
+      "job_id",
+      "spec_sha256",
+      "tool_version",
+      "catalog_version",
+      "registry_version",
+      "model_ids",
+      "input_sha256",
+      "output_sha256",
+      "validation_summary",
+      "operator_approvals"
+    ],
+    "hash_algorithm": "sha256",
+    "include_environment": true
+  },
+  "licenses": {
+    "note": "Redistribution status is taken from the model registry; anything marked 'unknown' blocks delivery packaging until an operator records a decision in the ledger.",
+    "blocking_status": [
+      "unknown"
+    ],
+    "warning_status": [
+      "restricted"
+    ]
+  },
+  "retention": {
+    "keep_stage_logs_days": 30,
+    "keep_validation_reports_days": 365,
+    "keep_provenance_forever": true
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "source": "AI Image Skill Catalog - safety, rights and governance rule data",
+  "content_safety": {
+    "note": "Heuristic pattern screening. It is a triage aid, not a substitute for human review, and it never certifies content as safe.",
+    "categories": [
+      {
+        "id": "violence",
+        "label": "Violence and gore",
+        "severity": "high",
+        "patterns": ["gore", "dismembered", "mutilat", "graphic wound", "bloody stump", "torture scene", "beheaded", "decapitat", "mangled flesh"],
+        "guidance": "Escalate to a human reviewer. Refuse graphic gore; offer a non-graphic alternative."
+      },
+      {
+        "id": "sexual",
+        "label": "Sexual content and exploitation",
+        "severity": "high",
+        "patterns": ["nude", "nudity", "explicit sex", "pornograph", "lingerie seduce", "erotic explicit", "fellatio", "genital"],
+        "guidance": "Escalate. Refuse explicit sexual content and any sexualised depiction of minors or age-ambiguous subjects."
+      },
+      {
+        "id": "minors",
+        "label": "Minors or age ambiguity",
+        "severity": "critical",
+        "patterns": ["child", "children", "kid", "toddler", "minor", "underage", "schoolgirl", "young boy", "young girl", "preteen", "little girl", "little boy"],
+        "guidance": "Always escalate. Apply the strict age-safe path: no sexualisation, no grooming cues, no age ambiguity."
+      },
+      {
+        "id": "self_harm",
+        "label": "Self-harm and suicide",
+        "severity": "high",
+        "patterns": ["suicide", "self harm", "self-harm", "cutting myself", "overdose", "hanging", "cutting arms", "starving myself"],
+        "guidance": "Escalate to a human. Do not generate instructive depictions."
+      },
+      {
+        "id": "privacy",
+        "label": "Privacy and personal data",
+        "severity": "medium",
+        "patterns": ["nude photo of", "private photo", "secret photo", "hidden camera", "spy on", "dox", "home address of", "bank details", "social security"],
+        "guidance": "Block doxxing and non-consensual intimate imagery. Confirm consent records for identifiable people."
+      },
+      {
+        "id": "fraud",
+        "label": "Fraud and deception",
+        "severity": "high",
+        "patterns": ["fake id", "forged signature", "counterfeit money", "scam script", "phishing page", "clone my voice", "impersonate ceo"],
+        "guidance": "Refuse impersonation and forgery assistance. Offer clearly-labelled synthetic alternatives."
+      },
+      {
+        "id": "hate",
+        "label": "Hate and dehumanisation",
+        "severity": "high",
+        "patterns": ["racist caricature", "ethnic stereotype", "degenerate race", "superior race", "hate symbol", "nazi propaganda"],
+        "guidance": "Escalate and refuse dehumanising depictions."
+      },
+      {
+        "id": "weapons",
+        "label": "Weapons and dangerous instructions",
+        "severity": "medium",
+        "patterns": ["build a bomb", "3d print gun", "untraceable firearm", "poison recipe", "nerve agent", "pipe bomb"],
+        "guidance": "Refuse actionable weapon construction instructions."
+      }
+    ]
+  },
+  "copyright": {
+    "note": "Screens for high-risk imitation. Any hit is a flag for human legal review, never an automatic approval or an automatic refusal.",
+    "protected_characters": ["mickey mouse", "pikachu", "darth vader", "spider-man", "batman", "elsa", "super mario", "scooby doo", "optimus prime", "kermit", "goku", "hello kitty", "winnie the pooh", "the minions"],
+    "protected_marks": ["disney", "marvel", "dc comics", "nike", "adidas", "coca-cola", "pepsi", "apple logo", "mcdonald's", "starbucks", "lego", "rolex", "chanel", "gucci", "louis vuitton", "disney pixar", "pokemon", "minecraft", "fortnite", "taylor swift", "the beatles"],
+    "trade_dress_signals": ["identical packaging", "same box shape and colours", "copy the packaging layout", "identical logo placement", "same storefront design"],
+    "living_artist_naming": ["in the style of", "inspired by the art of", "like the paintings of"],
+    "risk_levels": {"low": "no marker found", "medium": "generic resemblance or trade dress signal", "high": "named protected character, mark or living artist"}
+  },
+  "consent": {
+    "required_records": ["subject_identity", "authorization_scope", "allowed_uses", "excluded_uses", "expiry_date", "consent_reference", "reviewer"],
+    "sensitive_contexts": ["medical", "political", "religious", "sexual", "criminal record", "minors", "workplace", "private property", "financial"],
+    "minors_rule": "Any subject who may be under 18 requires documented guardian consent, a non-sexual and non-exploitative purpose, and a second reviewer."
+  },
+  "age_safety": {
+    "strict_rules": [
+      "no sexualisation of any kind",
+      "no body focus or suggestive framing",
+      "no age-ambiguous styling such as child-like swimwear or adult styling on a young subject",
+      "no degrading or humiliating framing",
+      "no medical or forensic exposure without consent",
+      "no composite manipulation that places a real minor in a fabricated context"
+    ],
+    "escalation": "always"
+  },
+  "disclosure_templates": {
+    "social_post": "AI-generated image. Created with generative AI tools; not a photograph.",
+    "press_release": "This image was produced with generative AI. It depicts a fictional scene and should not be read as documentary evidence.",
+    "email": "Attached is an AI-generated image. It is illustrative only and does not show a real person, place or product.",
+    "report": "Figure generated with generative AI for illustration purposes. Values, findings and conclusions are from the underlying data, not from the image.",
+    "dataset": "Synthetic images. Not photographs of real people or places. Generated for augmentation purposes.",
+    "edited": "This image has been edited with generative AI tools. Areas changed are described in the accompanying notes.",
+    "watermark": "AI-GENERATED IMAGE"
+  },
+  "release_checklist": {
+    "categories": [
+      {"id": "rights", "label": "Rights and licences", "items": ["Source and licence of every input reference confirmed", "No protected character or mark reproduced", "Model licence permits the intended commercial use", "Font and asset licences permit redistribution"]},
+      {"id": "privacy", "label": "Privacy", "items": ["Consent record present for every identifiable person", "Metadata stripped from public copies", "No addresses, plates, screens or documents exposed"]},
+      {"id": "factuality", "label": "Factuality", "items": ["No fabricated claim about a real product, place or event", "Evidence and interpretation separated in scientific imagery", "Non-diagnostic framing applied to medical visuals"]},
+      {"id": "disclosure", "label": "Disclosure", "items": ["Synthetic media label present where required", "Disclosure wording matches the channel", "Visible label legible at delivery size"]},
+      {"id": "brand", "label": "Brand", "items": ["Logo clear space respected", "Approved palette and typography used", "No competitor marks visible"]},
+      {"id": "accessibility", "label": "Accessibility", "items": ["Alternative text written", "Contrast meets the required ratio", "Information is not encoded by colour alone"]},
+      {"id": "platform", "label": "Platform rules", "items": ["Dimensions and format match the channel specification", "Prohibited content checked against the platform policy", "Commercial-use disclosure provided where required"]},
+      {"id": "security", "label": "Security", "items": ["No internal-only detail visible", "No credential, token or infrastructure identifiers exposed"]}
+    ]
+  },
+  "adversarial": {
+    "note": "Detects obfuscation attempts commonly used to bypass image safeguards.",
+    "signals": [
+      {"id": "leetspeak", "label": "Leetspeak substitution", "how": "digit lookalikes inside alphabetic words"},
+      {"id": "zero_width", "label": "Zero-width characters", "how": "invisible unicode characters inserted inside words"},
+      {"id": "homoglyph", "label": "Cyrillic or Greek homoglyphs", "how": "visually identical non-latin letters mixed into latin text"},
+      {"id": "char_spacing", "label": "Spaced or split characters", "how": "single words broken by spaces or punctuation"},
+      {"id": "reversed", "label": "Reversed text", "how": "reversed token order or reversed letters"},
+      {"id": "encoding", "label": "Encoded payload", "how": "base64, hex or unicode escape sequences"},
+      {"id": "multilingual", "label": "Language switch", "how": "the same request repeated in another language"},
+      {"id": "roleplay_wrap", "label": "Role-play or fiction wrapper", "how": "the request is wrapped in a story or system-prompt disguise"},
+      {"id": "split_request", "label": "Split request", "how": "fragments of one request distributed across turns"}
+    ]
+  },
+  "cultural": {
+    "note": "Flags imagery that may read incorrectly in a target locale.",
+    "flags": [
+      {"id": "gesture", "label": "Gesture meaning", "detail": "Hand gestures change meaning between cultures; check the target locale."},
+      {"id": "clothing", "label": "Clothing and modesty", "detail": "Modesty norms differ; verify sleeves, hems and head covering."},
+      {"id": "symbol", "label": "Symbols and iconography", "detail": "Check religious, political and brand symbols."},
+      {"id": "colour", "label": "Colour symbolism", "detail": "Colour associations (for example white for mourning) differ by region."},
+      {"id": "food", "label": "Food and table settings", "detail": "Check portion, utensils and dish combinations."},
+      {"id": "map", "label": "Maps and borders", "detail": "Check borders, place names and flag depictions."},
+      {"id": "holiday", "label": "Holidays and ceremonies", "detail": "Check the calendar, customs and dress for the target locale."},
+      {"id": "naming", "label": "Names and script", "detail": "Check transliteration and native script rendering."}
+    ]
+  },
+  "privacy_redaction": {
+    "checklist": [
+      "Faces that should not be identifiable",
+      "Vehicle registration plates",
+      "House numbers, street names and other addresses",
+      "Computer screens, tablets and documents",
+      "Badges, passes and identity cards",
+      "Personal messages and notifications",
+      "Tattoos and jewellery that identify an individual",
+      "Geolocation clues such as distinctive landmarks or signage",
+      "Embedded EXIF, GPS, camera serial and software history"
+    ]
+  },
+  "deepfake": {
+    "risk_factors": [
+      {"id": "real_person", "label": "Depicts a real identifiable person", "weight": 3},
+      {"id": "political", "label": "Political or public-figure context", "weight": 3},
+      {"id": "journalistic", "label": "Presented in a news or documentary context", "weight": 3},
+      {"id": "financial", "label": "Used to support a financial or commercial claim", "weight": 2},
+      {"id": "explicit", "label": "Sexual or intimate context", "weight": 4},
+      {"id": "defamation", "label": "Depicts conduct the subject would object to", "weight": 3},
+      {"id": "widely_shared", "label": "Intended for wide distribution", "weight": 2}
+    ],
+    "mitigations": ["visible synthetic media label", "metadata provenance with C2PA-style manifest", "limit distribution scope", "obtain subject consent", "replace with a clearly synthetic or stylised depiction", "escalate to a human reviewer before release"]
+  }
+}

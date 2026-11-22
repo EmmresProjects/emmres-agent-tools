@@ -1,0 +1,137 @@
+{
+  "description": "Plan templates consumed by `tools-offline-app-dev.py plan <template-id>`. Placeholders {project}, {owner}, {date} are substituted from --set key=value flags (any string may be set; unknown placeholders are left in place and reported). Every template is written for offline teams and repeatable releases.",
+  "templates": [
+    {
+      "id": "desktop-first",
+      "name": "Desktop-First Architecture Plan",
+      "purpose": "Plan a desktop-first application whose mobile/web variants, if any, are secondary targets reusing the core.",
+      "owners": ["Accountable: desktop tech lead", "Consulted: platform engineers (OS packaging), QA lead", "Decider: product architect"],
+      "prerequisites": ["Target OSes and minimum versions fixed (Windows/macOS/Linux)", "Offline toolchain bundle verified on a clean machine with network blocked", "Windowing strategy and form-factor baseline chosen (single window, multi-document, tray, kiosk)", "Distribution route decided (store, direct download, enterprise MDM)"],
+      "steps": ["Freeze scope: features must run 100% offline; networked features listed separately", "Scaffold the app shell with pinned framework (see profile command output)", "Implement core domain + local persistence with migration path", "Add platform integrations behind stable interfaces (filesystem, notifications, tray, update check)", "Wire packaging (MSIX/DMG/AppImage+deb/rpm) with checksums", "Run acceptance checklist on each target OS on physical or VM hardware", "Produce release record: artifacts, checksums, SBOM, rollback instructions"],
+      "decision_points": ["Framework: native vs Qt vs Tauri vs Electron vs Avalonia (use the matrix command)", "Update channel: store-managed vs self-hosted updates vs manual", "Single binary vs modular install"],
+      "failure_recovery": ["Build breaks after toolchain update: freeze to last known-good pin, re-verify on clean machine, then retry", "Packaging rejected by store: fall back to direct signed distribution, log policy delta, plan compliance fix", "Data migration failure on upgrade: abort before commit, restore backup, ship forward-only fix release"],
+      "evidence": ["Clean-machine build log with network blocked", "Acceptance report per OS (accept command output)", "Artifacts + SHA-256 manifest + SBOM + license manifest", "ADR for framework decision"],
+      "completion_condition": "Installer built from the offline bundle launches on every target OS from a clean machine with network blocked, passes the acceptance checklist, and can be rolled back to the previous version without data loss."
+    },
+    {
+      "id": "mobile-first",
+      "name": "Mobile-First Architecture Plan",
+      "purpose": "Plan a mobile-first application (Android/iOS) with optional desktop later, optimizing for touch, offline, and store policies.",
+      "owners": ["Accountable: mobile tech lead", "Consulted: Android/iOS engineers, release manager", "Decider: product architect"],
+      "prerequisites": ["Minimum API/OS levels chosen; target devices enumerated (low-end to flagship)", "Offline toolchain bundle verified (Android SDK/Gradle cache or Xcode/SPM mirror)", "Physical devices reserved for camera/mic/GPS/biometrics/background/notification acceptance", "Store accounts exist or are created before release milestones"],
+      "steps": ["Freeze offline-first scope; define degradation for any networked feature", "Scaffold app with pinned toolchain; commit lockfile and dependency hashes", "Implement persistence + migrations; test upgrade from N-1 and N-2 versions", "Implement permission-gated features behind interfaces with mocked offline tests", "Background work, notifications, and battery/thermal budgets defined and measured", "Accessibility pass: TalkBack/VoiceOver, 200% font scale, focus order", "Release: AAB/IPA signed, reproducible where platform permits, store submission via connected environment"],
+      "decision_points": ["Native (Compose/SwiftUI) vs Flutter vs KMP vs React Native (use the matrix command)", "Play App Signing vs self-signed APK route (iOS: App Store vs ad hoc/enterprise)", "Target SDK policy risk acceptance vs upgrading dependencies now"],
+      "failure_recovery": ["Store rejection: remediate against written policy, resubmit; do not ship policy workarounds", "Crash on low-end device class: gate feature by device capability, hotfix via expedited review only if data-loss class", "Migration corrupts on-device data: halt rollout, restore from encrypted backup, ship forward migration fix with tests from the corrupted fixture"],
+      "evidence": ["Clean-machine build log with network blocked", "Device matrix test report (low-end + flagship, both ABIs where applicable)", "Upgrade/rollback data-preservation report", "Store submission receipt / signed artifact checksums", "ADR for framework decision"],
+      "completion_condition": "Signed AAB/IPA built from the offline bundle installs and passes acceptance on representative physical devices of every declared class, including upgrade from the previous release with user data preserved."
+    },
+    {
+      "id": "universal",
+      "name": "Universal Application Architecture Plan",
+      "purpose": "Plan one codebase for desktop + mobile (and optionally web), with per-platform shells over a shared core.",
+      "owners": ["Accountable: cross-platform tech lead", "Consulted: per-platform engineers, UX, release manager", "Decider: product architect"],
+      "prerequisites": ["Explicit per-platform acceptance matrix (what must work where)", "Shared-core boundaries agreed (domain, persistence, sync vs platform UI/adapters)", "Offline bundle covers ALL target toolchains; CI restores all before build", "Universal binary / per-ABI distribution strategy decided"],
+      "steps": ["Write the acceptance matrix first; if a platform cannot pass it, drop the platform, do not fork the app", "Design module layout: core (pure, tested) / platform adapters (interfaces) / platform shells (thin)", "Implement shared core with golden-file and contract tests", "Implement per-platform shells and adapters; contract tests per adapter", "Form-factor adaptation: windowing/responsive/tablet/foldable rules with tests", "Per-platform packaging and signing pipelines sharing one release record", "Run full acceptance checklist on every target on real hardware"],
+      "decision_points": ["Flutter vs KMP+native UI vs Avalonia vs Uno vs Qt (matrix command; check accessibility scores)", "Shared sync engine vs platform-native sync", "Single train release vs per-platform trains"],
+      "failure_recovery": ["One platform fails acceptance: hold its release, ship others, fix forward - never block all trains on one target's simulator", "Shared core regression: contract tests catch it pre-merge; revert to last good core, re-run full matrix", "Toolchain drift between targets: pin exact versions in one manifest; the verify command checks them"],
+      "evidence": ["Acceptance matrix with per-target pass/warn/fail", "Contract test results per adapter", "Per-platform artifacts + checksums + SBOMs", "ADR for framework and train model"],
+      "completion_condition": "Every platform in the acceptance matrix passes with network blocked on clean machines/devices, from one tagged source revision, with per-platform artifacts and rollback instructions."
+    },
+    {
+      "id": "clean-architecture",
+      "name": "Clean Architecture Plan",
+      "purpose": "Plan dependency-inverted layering (entities -> use cases -> adapters -> frameworks) for testable offline apps.",
+      "owners": ["Accountable: architect", "Consulted: feature leads", "Decider: architect + tech leads"],
+      "prerequisites": ["Module/build system supports dependency rules enforcement (lint, import guard, or arch-test)", "Domain glossary agreed; persistence and framework choices listed but NOT baked into entities"],
+      "steps": ["Define entities and value objects (no outward imports)", "Define use cases with ports (interfaces) for every I/O: storage, network, clock, identity, files", "Implement gateway adapters; contract tests against the ports", "Wire framework layer last; DI composition root per platform", "Add architecture tests: import rules, cyclic-dependency ban, adapter conformance", "Document the dependency rule and the escape-hatch policy for pragmatic violations"],
+      "decision_points": ["Anemic vs rich entities", "Ports on use-case side vs consumer-defined interfaces", "Transaction boundary per use case (unit of work)"],
+      "failure_recovery": ["Dependency rule violated in review: block merge; move code behind the port, never import outward", "Use case grows orchestration logic: split by transaction boundary; extract domain service", "Framework upgrade ripples inward: only composition root may change; ports isolate the blast radius"],
+      "evidence": ["Architecture test output (import rules) passing in CI", "Dependency graph artifact (e.g. tools-generated module graph)", "ADR documenting layering and any sanctioned violations"],
+      "completion_condition": "Domain module builds with zero outward dependencies, architecture tests pass in CI, and every external dependency is reachable only through a port with a contract test."
+    },
+    {
+      "id": "hexagonal",
+      "name": "Hexagonal (Ports and Adapters) Plan",
+      "purpose": "Plan ports/adapters decomposition so storage, network, and device capabilities are swappable and fully mockable offline.",
+      "owners": ["Accountable: architect", "Consulted: adapter owners (storage, net, device)", "Decider: architect"],
+      "prerequisites": ["List of every external capability the app needs (drive at least storage, identity, clock, network)", "Offline test strategy agreed: adapters must be runnable against in-memory fakes"],
+      "steps": ["Define primary (driving) ports: UI actions and external events as typed commands/queries", "Define secondary (driven) ports: repositories, gateways, notifiers, key stores", "Implement in-memory adapters first; tests green before any real adapter exists", "Implement real adapters (SQLite, filesystem, platform keystore) behind the same ports", "Contract tests: every adapter passes the same suite; fakes and real adapters both run", "Document adapter selection per platform and the degradation order when a capability is missing"],
+      "decision_points": ["Sync engine as port vs internal detail", "One generic repository port vs per-aggregate ports", "In-memory fake vs SQLite-backed test double"],
+      "failure_recovery": ["Adapter cannot satisfy the port offline (e.g. push): declare explicit unsupported state, degrade, never fake success", "Contract drift between fake and real adapter: CI runs both suites; a green fake with a red real adapter blocks release"],
+      "evidence": ["Contract test matrix (fake vs real, per platform)", "Port catalog with owner, fallback, and offline behavior", "ADR for adapter selection per platform"],
+      "completion_condition": "All external capabilities behind ports; contract suite green for every real adapter on its target platform; in-memory fakes pass tests with the network blocked."
+    },
+    {
+      "id": "offline-requirements",
+      "name": "Offline-First Product Requirements Builder",
+      "purpose": "Author the product requirements document from pinned local inputs with integrity checks, so requirements are reproducible and reviewable offline.",
+      "owners": ["Accountable: product owner", "Consulted: architect, QA, release", "Decider: product owner + architect"],
+      "prerequisites": ["Inputs collected as local files: prior PRDs, ADRs, acceptance reference, store/enterprise policies", "Input manifest with SHA-256 of every source (use verify --init-manifest)", "Constraint register seeded (offline, signing, distribution, compliance)"],
+      "steps": ["Verify input manifest before drafting; reject on hash mismatch", "Capture goals and NON-goals; list networked features with offline degradation for each", "Enumerate constraints: platform, toolchain, licensing, signing, privacy, accessibility, store policy", "Define quality bars: performance budgets, a11y criteria, localization scope, offline test coverage", "Write acceptance matrix skeleton (input to the acceptance-signoff template)", "Review on paper/PDF offline; record decisions as ADRs; archive the verified inputs with the PRD"],
+      "decision_points": ["What is explicitly out of scope for offline (store submission packet, push, payments) and how each degrades", "Which platforms are in the release trains", "Quality bar sign-off authority"],
+      "failure_recovery": ["Input contradicts itself: log the conflict as a decision point; do not silently pick one", "Requirement unverifiable: mark blocked, add verification method or drop the requirement", "Hash mismatch on an input: stop, re-obtain the input from its owner, re-verify, restart drafting"],
+      "evidence": ["Verified input manifest + PRD archive", "Constraint register export", "Decision points resolved into ADRs", "Acceptance matrix skeleton"],
+      "completion_condition": "PRD archive contains verified inputs, every requirement is testable or removed, every networked feature has a written offline degradation, and the acceptance matrix is ready for sign-off planning."
+    },
+    {
+      "id": "poc-spine",
+      "name": "Proof-of-Concept Spine Builder",
+      "purpose": "Build the thinnest end-to-end spine (input -> domain -> storage -> UI -> packaging) that installs and launches offline, before feature work.",
+      "owners": ["Accountable: tech lead", "Consulted: architect", "Decider: tech lead"],
+      "prerequisites": ["Framework selected (matrix command + ADR)", "Offline toolchain bundle verified", "One representative user journey chosen (not a toy)"],
+      "steps": ["Scaffold minimal app shell; no features", "Implement ONE real persistence path (write + read + migrate) with a migration test", "Implement ONE real UI path exercising the persistence", "Wire local packaging; install and launch on a clean machine/device with network blocked", "Add smoke test that fails loudly; wire into CI restore-build-test", "Freeze the spine; cut the tag; all feature work builds on it"],
+      "decision_points": ["Which single journey proves the spine", "Migration engine choice now vs later", "CI runner offline capability"],
+      "failure_recovery": ["Spine cannot install on target: stop all feature work; fix the bundle/packaging until it passes; partial features on a broken spine are wasted work", "Migration test fails: rollback to empty schema v1, implement migration correctly, re-tag"],
+      "evidence": ["Clean-machine install/launch log", "Tagged spine revision + CI green", "ADR for stack and persistence choices"],
+      "completion_condition": "A clean machine with network blocked installs the packaged spine, launches it, writes and reads one real record through a migration, and the CI smoke test passes on the tag."
+    },
+    {
+      "id": "maintenance-release",
+      "name": "Maintenance Release Planner",
+      "purpose": "Plan a patch/maintenance release with controlled risk, reproducible build, and verified rollback.",
+      "owners": ["Accountable: release manager", "Consulted: fix author, QA", "Decider: release manager + product owner"],
+      "prerequisites": ["Release branch cut from the shipped tag; hotfix cherry-picks only", "Issue(s) reproduced and assigned; regression test written that fails on main", "Rollback target identified and artifacts available"],
+      "steps": ["Reproduce with the regression test; confirm fix on branch", "Run full affected suite + acceptance checklist on the release candidate", "Build reproducible artifact; verify SHA-256 against rebuild if platform permits", "Stage rollout (internal -> beta -> broad) with explicit go/no-go gates", "Monitor crash/diagnostic signals; rollback trigger pre-agreed with a time box", "Retro-write the ADR/RCA; feed systemic fixes into next minor release"],
+      "decision_points": ["Ship now vs wait for next scheduled release", "Rollback vs forward-fix if the candidate fails acceptance", "Expedited store review request (only for data-loss/security classes)"],
+      "failure_recovery": ["Candidate fails acceptance: abort release, revert the hotfix, schedule forward fix", "Field regression detected post-release: execute pre-agreed rollback to prior artifact, halt staged rollout", "Rebuild mismatch (non-reproducible): investigate before shipping anything; non-reproducibility is itself a defect"],
+      "evidence": ["Regression test id and CI link", "Acceptance report for the candidate", "Artifact checksums + SBOM + rollback instructions", "RCA document"],
+      "completion_condition": "Patch released through the staged rollout with the pre-agreed rollback armed, acceptance report attached, and RCA archived; or cleanly aborted with the branch restored."
+    },
+    {
+      "id": "upgrade-migration",
+      "name": "Upgrade and Migration Plan",
+      "purpose": "Plan a risky upgrade: SDK, framework, database schema, OS floor, or dependency with breaking changes.",
+      "owners": ["Accountable: upgrade owner", "Consulted: affected feature owners, QA", "Decider: architect + release manager"],
+      "prerequisites": ["Current state inventoried: exact versions, schema hash, config surface", "Backup/restore tested on a production-like snapshot", "Offline bundle for the NEW toolchain verified before any code change"],
+      "steps": ["Inventory and baseline: capture versions, golden outputs, benchmark numbers", "Load the new bundle; build unmodified source; catalog compile breaks", "Migrate in layers: build -> test -> data -> behavior; one layer per commit", "Database: write forward + backward migrations; test from N-2, N-1, and corrupted fixtures", "Re-run benchmarks; compare against budgets; investigate any regression", "Full acceptance checklist; stage rollout with rollback armed"],
+      "decision_points": ["Big-bang vs incremental (strangler) migration", "Minimum supported source version (N-2 vs N-1)", "Dual-write period for migrations touching sync"],
+      "failure_recovery": ["Migration fails mid-upgrade on device: abort before commit point, restore backup, report; never half-migrate", "Performance regression > budget: block release; profile; optimize or negotiate the budget with an ADR", "New toolchain cannot be restored offline: abort upgrade entirely until the bundle is complete"],
+      "evidence": ["Before/after inventory diff", "Migration test matrix (N-2, N-1, corrupted)", "Benchmark comparison vs budgets", "Acceptance report + staged rollout log"],
+      "completion_condition": "Upgraded build passes the full acceptance checklist on clean machines and physical devices for upgrade paths from N-2 and N-1, with data preserved and rollback rehearsed, under the staged rollout."
+    },
+    {
+      "id": "rollback-recovery",
+      "name": "Rollback and Recovery Plan",
+      "purpose": "Plan for shipping and executing rollback when a release goes wrong, including data-format rollback.",
+      "owners": ["Accountable: release manager", "Consulted: on-call, support, legal/privacy if data involved", "Decider: release manager + product owner (time-boxed)"],
+      "prerequisites": ["Previous known-good artifacts retained and checksummed", "Rollback trigger criteria written BEFORE release (crash rate, data errors, install failures)", "Data backward-compatibility verified (new format readable by old build, or dual-write)"],
+      "steps": ["Detect: monitoring thresholds or user reports escalated into the release channel", "Decide within the time box: rollback vs forward-fix (forward-fix only for trivial, proven patches)", "Halt staged rollout and any store phased release", "Execute rollback: re-sign/point update channel at previous artifact (stores obey store mechanics - plan for store latency)", "Verify field recovery: metrics return to baseline; support confirms", "Post-incident review; file defect; feed fixes into maintenance-release template"],
+      "decision_points": ["Rollback vs forward-fix (time-boxed, data-safety first)", "Store rollback limitations: can prior version re-roll-out? Phasing pauses are the lever when binary rollback is impossible", "Data restore vs quarantine for unreadable records"],
+      "failure_recovery": ["Rollback impossible for store release: pause rollout, communicate, forward-fix expedited; learn the constraint for next release", "Data already migrated and incompatible: ship recovery build that upgrades-forward only; never attempt destructive downgrade", "Rollback itself fails integrity check: quarantine the release channel; escalate to incident process"],
+      "evidence": ["Rollback decision record with timestamps", "Checksums of rolled-back artifact", "Recovery metrics (crash-free rate, error rate) vs baseline", "Post-incident review"],
+      "completion_condition": "Field metrics back to pre-release baseline, all affected users on a known-good build, incident review archived, and the release criteria updated so the same failure mode is caught pre-release next time."
+    },
+    {
+      "id": "acceptance-signoff",
+      "name": "Target Device Acceptance Sign-off Plan",
+      "purpose": "Plan the acceptance evaluation per target device/simulator and the sign-off gate for release, per the catalog's acceptance reference.",
+      "owners": ["Accountable: QA lead", "Consulted: platform engineers, release manager", "Decider: release manager (sign-off), product owner (go/no-go)"],
+      "prerequisites": ["Acceptance checklist finalized (accept --init-results from asset-acceptance-checklist.json)", "Devices/emulators provisioned: low-end + flagship per platform, real hardware for hardware-dependent features", "Build under test tagged; environment (OS, SDK, toolchain) recorded"],
+      "steps": ["Enumerate the acceptance matrix: platform x device class x checklist", "Execute checks on each cell; record pass/warn/fail with evidence (logs, screenshots)", "Triage warns: accept with documented rationale or convert to fix+retest within the time box", "Any fail halts sign-off; remediation retest scoped to the failed cells plus regression sweep", "Aggregate report; release manager signs or rejects with written reasons", "Archive report with the release record; feed gaps into the next planning cycle"],
+      "decision_points": ["Ship with documented warns vs hold", "Device class coverage vs time budget", "Simulator-only coverage acceptable for which check rows"],
+      "failure_recovery": ["Late fail on one device class: hold that class's train; do not ship partial matrix as 'accepted'", "Cannot reproduce fail in clean environment: keep the cell as UNTESTED, never as pass; escalate with evidence", "Sign-off dispute: defer to the pre-agreed criterion table, not to seniority"],
+      "evidence": ["accept command report per device cell (retained)", "Checksums of the exact binaries installed", "Signed go/no-go record", "Registry of known warns with owners and due dates"],
+      "completion_condition": "Every cell of the acceptance matrix is pass (or a documented, owned warn), zero fails, report retained in the release record, and the go/no-go decision written and signed."
+    }
+  ]
+}

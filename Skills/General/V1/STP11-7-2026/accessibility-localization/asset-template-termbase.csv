@@ -1,0 +1,8 @@
+term,language,translation,definition,part_of_speech,domain,status,forbidden_forms
+account,en,account,The record of a user's relationship with the service,noun,product,approved,
+account,fil,account,The record of a user's relationship with the service,noun,product,approved,awt
+sign in,en,sign in,To authenticate,verb,product,approved,log in
+sign in,fil,mag-log in,To authenticate,verb,product,approved,
+save,en,save,To store changes,verb,product,approved,
+save,fil,i-save,To store changes,verb,product,approved,
+save,en,store,To store changes,verb,product,approved,

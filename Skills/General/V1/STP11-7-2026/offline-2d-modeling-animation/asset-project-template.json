@@ -1,0 +1,49 @@
+{
+  "name": "studio-project-template",
+  "version": "1.0",
+  "description": "Scaffold template for the project init command (tools-project.py). Folder keys become relative directories inside the new project; manifest keys become the initial shot-manifest and registry files. All paths stay relative to the project root.",
+  "tree": {
+    "00_concepts": ["briefs", "thumbnails"],
+    "10_design": ["characters", "props", "environments", "palettes"],
+    "20_boards": ["panels", "animatic"],
+    "30_scenes": [],
+    "40_audio": ["dialogue", "music", "sfx"],
+    "50_render": ["frames", "comps"],
+    "60_exports": ["review", "delivery"],
+    "70_review": ["sheets", "notes"],
+    "90_caches": ["proxies", "thumbnails"]
+  },
+  "naming": {
+    "project": "{project}",
+    "sequence": "{seq}",
+    "shot": "{project}-{seq}-{shot}",
+    "task_file": "{project}-{seq}-{shot}-{task}-v{version:03d}",
+    "frame": "{project}-{seq}-{shot}-{task}-v{version:03d}/{frame:04d}.png",
+    "rules": "lowercase ascii, hyphen separated, zero-padded numbers, no spaces"
+  },
+  "shot_manifest": {
+    "file": "shot-manifest.json",
+    "fields": ["shot_id", "sequence", "frame_start", "frame_end", "fps", "resolution",
+               "color_space", "status", "owner", "depends_on", "audio", "notes"],
+    "statuses": ["blocked", "ready", "wip", "review", "approved", "final", "omitted"]
+  },
+  "asset_registry": {
+    "file": "asset-registry.json",
+    "fields": ["asset_id", "kind", "source_path", "derivatives", "license", "attribution",
+               "version", "sha256", "approved_uses", "notes"],
+    "kinds": ["character", "prop", "background", "effect", "brush", "font", "model",
+              "audio", "script", "palette"]
+  },
+  "version_snapshots": {
+    "dir": "80_snapshots",
+    "naming": "{project}-snapshot-{timestamp}",
+    "retention": "keep latest 10 plus all tagged milestones"
+  },
+  "defaults": {
+    "fps": 24,
+    "resolution": [1920, 1080],
+    "color_space": "sRGB",
+    "render_format": "png-8bpc",
+    "master_format": "ffv1-mkv (when ffmpeg available) or png sequence + wav"
+  }
+}

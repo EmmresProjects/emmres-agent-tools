@@ -1,0 +1,122 @@
+{
+ "service": "checkout-api",
+ "environment": "production",
+ "provider": "aws",
+ "region": "ap-southeast-1",
+ "exposure": "public",
+ "naming": {
+  "standardCompliant": true,
+  "resourceNames": ["checkout-api-production-ap-southeast-1-eks", "checkout-api-production-ap-southeast-1-rds"]
+ },
+ "tags": {
+  "required": {
+   "owner": "team-checkout",
+   "costCenter": "CC-4180",
+   "environment": "production",
+   "service": "checkout-api",
+   "dataClassification": "confidential",
+   "backupPolicy": "daily-35d"
+  }
+ },
+ "iac": {
+  "reviewed": true,
+  "pinnedArtifacts": true,
+  "policyChecked": true,
+  "remoteStateLocked": true,
+  "driftDetection": true
+ },
+ "change": {
+  "approvalRequired": true,
+  "changeTicket": "CHG-2026-1187",
+  "approvedBy": "release-council"
+ },
+ "iam": {
+  "leastPrivilege": true,
+  "shortLivedCredentials": true,
+  "deployCredentialsIsolated": true
+ },
+ "secrets": {
+  "noEmbedded": true,
+  "rotationDays": 90,
+  "store": "vault"
+ },
+ "tls": {
+  "validCertificate": true,
+  "minVersion": "1.3",
+  "daysToExpiry": 74
+ },
+ "encryption": {
+  "atRest": true,
+  "inTransit": true,
+  "kmsManaged": true
+ },
+ "network": {
+  "wafEnabled": true,
+  "rateLimited": true,
+  "noUnintendedPublicServices": true,
+  "privateSubnets": true
+ },
+ "vulnerability": {
+  "scanPassed": true,
+  "criticalFindings": 0
+ },
+ "logging": {
+  "centralized": true,
+  "auditTrail": true,
+  "retentionDays": 400
+ },
+ "backup": {
+  "enabled": true,
+  "restoreTested": true,
+  "restoreTestDate": "2026-10-18",
+  "rpoMinutes": 15,
+  "frequencyHours": 6
+ },
+ "dr": {
+  "rpoMinutes": 15,
+  "rtoMinutes": 60,
+  "drillCompleted": true,
+  "drillDate": "2026-09-30"
+ },
+ "availability": {
+  "replicas": 3,
+  "multiAz": true,
+  "failoverTested": true
+ },
+ "rollback": {
+  "tested": true,
+  "strategy": "blue-green",
+  "automatedRollback": true
+ },
+ "capacity": {
+  "loadTestPassed": true,
+  "headroomPercent": 45
+ },
+ "monitoring": {
+  "goldenSignals": true,
+  "sloDefined": true,
+  "sloObjectives": "99.9% availability, p95 < 250ms"
+ },
+ "alerting": {
+  "tested": true,
+  "routeToOnCall": true,
+  "onCallDefined": true
+ },
+ "runbook": {
+  "exists": true,
+  "url": "runbooks/checkout-api.md"
+ },
+ "ownership": {
+  "registryUpdated": true,
+  "owner": "team-checkout"
+ },
+ "cost": {
+  "budgetAlert": true,
+  "monthlyBudgetUsd": 4200,
+  "rightsized": true
+ },
+ "privacy": {
+  "dataClassification": "confidential",
+  "retentionPolicy": true
+ }
+}

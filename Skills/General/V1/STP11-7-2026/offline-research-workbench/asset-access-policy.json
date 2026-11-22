@@ -1,0 +1,48 @@
+{
+  "policy_version": "1.0",
+  "principle": "least privilege; every export, purge, publication and redaction is approved by a named human",
+  "permissions": [
+    "read-corpus", "write-corpus", "ingest", "translate", "export", "publish",
+    "approve", "audit", "purge", "redact", "admin"
+  ],
+  "roles": {
+    "researcher": {
+      "description": "Runs searches, extracts claims and drafts from approved sources.",
+      "permissions": ["read-corpus", "write-corpus", "ingest", "translate"]
+    },
+    "editor": {
+      "description": "Edits and proofreads drafts and translations.",
+      "permissions": ["read-corpus", "write-corpus", "translate"]
+    },
+    "translator": {
+      "description": "Produces and reviews translations against terminology and memory.",
+      "permissions": ["read-corpus", "write-corpus", "translate"]
+    },
+    "domain-reviewer": {
+      "description": "Confirms subject-matter accuracy and claim support.",
+      "permissions": ["read-corpus", "translate"]
+    },
+    "approver": {
+      "description": "Approves publication, export, archive signing and destructive actions.",
+      "permissions": ["read-corpus", "export", "publish", "approve"]
+    },
+    "auditor": {
+      "description": "Reads the audit chain, registries and provenance records.",
+      "permissions": ["read-corpus", "audit"]
+    },
+    "admin": {
+      "description": "Manages workspaces, retention and incident response.",
+      "permissions": ["read-corpus", "write-corpus", "ingest", "export", "publish", "approve",
+                      "audit", "purge", "redact", "admin"]
+    }
+  },
+  "separation_of_duties": {
+    "rule": "the actor who drafted an artifact may not be the approving actor for its publication",
+    "enforced_in": ["workflow ready", "guard export-gate", "workflow archive"]
+  },
+  "export_rules": {
+    "default": "redacted text only",
+    "originals_require": ["recorded licence", "approver role", "--include-originals"],
+    "restricted_labels": ["confidential", "restricted", "legal-privileged", "export-controlled"]
+  }
+}

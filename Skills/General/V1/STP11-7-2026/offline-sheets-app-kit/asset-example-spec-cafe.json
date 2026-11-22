@@ -1,0 +1,142 @@
+{
+  "specVersion": 1,
+  "app": {
+    "name": "Brew Street",
+    "title": "Brew Street Coffee POS",
+    "slug": "brew-street",
+    "businessName": "Brew Street Coffee",
+    "tagline": "Café counter, kitchen queue and two-branch reporting that keep working when the wifi does not",
+    "author": "Brew Street Operations",
+    "authorEmail": "ops@brewstreet.example",
+    "version": "1.0.0",
+    "brandColor": "#d9a05b",
+    "brandColorAlt": "#b8763a",
+    "brandInk": "#2a1705",
+    "themeColor": "#0f0c0a",
+    "initials": "BS",
+    "androidAppId": "ph.brewstreet.pos",
+    "orientation": "default",
+    "keystoreAlias": "brewstreet",
+    "timeZone": "Asia/Manila"
+  },
+
+  "categories": [
+    { "id": "CAT-ESPRESSO", "name": "Espresso Bar", "icon": "☕" },
+    { "id": "CAT-BREW", "name": "Slow Brew", "icon": "🫖" },
+    { "id": "CAT-COLD", "name": "Cold Drinks", "icon": "🧊" },
+    { "id": "CAT-PASTRY", "name": "Pastries", "icon": "🥐" },
+    { "id": "CAT-SANDWICH", "name": "Sandwiches", "icon": "🥪" },
+    { "id": "CAT-BEANS", "name": "Beans & Retail", "icon": "🛍️" }
+  ],
+
+  "products": [
+    { "id": "P-ESP-01", "name": "Espresso", "category": "CAT-ESPRESSO", "price": 85, "volumeLabel": "shot", "volume": [{ "unit": "Espresso Shot", "qty": 1 }], "sort": 10 },
+    { "id": "P-ESP-02", "name": "Americano", "category": "CAT-ESPRESSO", "price": 110, "volumeLabel": "shot", "volume": [{ "unit": "Espresso Shot", "qty": 2 }], "sort": 20 },
+    { "id": "P-ESP-03", "name": "Cappuccino", "category": "CAT-ESPRESSO", "price": 135, "volumeLabel": "shot", "volume": [{ "unit": "Espresso Shot", "qty": 2 }, { "unit": "Milk (ml)", "qty": 120 }], "sort": 30 },
+    { "id": "P-ESP-04", "name": "Caffè Latte", "category": "CAT-ESPRESSO", "price": 145, "volumeLabel": "shot", "volume": [{ "unit": "Espresso Shot", "qty": 2 }, { "unit": "Milk (ml)", "qty": 220 }], "sort": 40 },
+    { "id": "P-ESP-05", "name": "Mocha", "category": "CAT-ESPRESSO", "price": 160, "volumeLabel": "shot", "volume": [{ "unit": "Espresso Shot", "qty": 2 }, { "unit": "Milk (ml)", "qty": 200 }, { "unit": "Chocolate Syrup", "qty": 1 }], "sort": 50 },
+    { "id": "P-BRW-01", "name": "Pour Over (V60)", "category": "CAT-BREW", "price": 150, "volumeLabel": "cup", "volume": [{ "unit": "Beans (g)", "qty": 18 }], "sort": 60 },
+    { "id": "P-BRW-02", "name": "French Press", "category": "CAT-BREW", "price": 140, "volumeLabel": "cup", "volume": [{ "unit": "Beans (g)", "qty": 22 }], "sort": 70 },
+    { "id": "P-BRW-03", "name": "Batch Brew Bottomless", "category": "CAT-BREW", "price": 120, "volumeLabel": "cup", "volume": [{ "unit": "Beans (g)", "qty": 20 }], "sort": 80 },
+    { "id": "P-CLD-01", "name": "Iced Latte", "category": "CAT-COLD", "price": 155, "volumeLabel": "shot", "volume": [{ "unit": "Espresso Shot", "qty": 2 }, { "unit": "Milk (ml)", "qty": 180 }], "sort": 90 },
+    { "id": "P-CLD-02", "name": "Cold Brew", "category": "CAT-COLD", "price": 150, "volumeLabel": "cup", "volume": [{ "unit": "Cold Brew Concentrate", "qty": 1 }], "sort": 100 },
+    { "id": "P-CLD-03", "name": "Iced Matcha Latte", "category": "CAT-COLD", "price": 165, "volumeLabel": "scoop", "volume": [{ "unit": "Matcha Powder (g)", "qty": 6 }, { "unit": "Milk (ml)", "qty": 200 }], "sort": 110 },
+    { "id": "P-PST-01", "name": "Butter Croissant", "category": "CAT-PASTRY", "price": 95, "volumeLabel": "piece", "volume": [{ "unit": "Croissant", "qty": 1 }], "sort": 120 },
+    { "id": "P-PST-02", "name": "Pain au Chocolat", "category": "CAT-PASTRY", "price": 105, "volumeLabel": "piece", "volume": [{ "unit": "Chocolate Croissant", "qty": 1 }], "sort": 130 },
+    { "id": "P-PST-03", "name": "Banana Bread Slice", "category": "CAT-PASTRY", "price": 90, "volumeLabel": "slice", "volume": [{ "unit": "Banana Bread Loaf", "qty": 0.12 }], "sort": 140 },
+    { "id": "P-SND-01", "name": "Ham & Cheese Toastie", "category": "CAT-SANDWICH", "price": 175, "volumeLabel": "piece", "volume": [{ "unit": "Bread Slice", "qty": 2 }, { "unit": "Ham Slice", "qty": 2 }, { "unit": "Cheese Slice", "qty": 1 }], "sort": 150 },
+    { "id": "P-SND-02", "name": "Chicken Pesto Panini", "category": "CAT-SANDWICH", "price": 195, "volumeLabel": "piece", "volume": [{ "unit": "Panini Bun", "qty": 1 }, { "unit": "Chicken Fillet", "qty": 1 }], "sort": 160 },
+    { "id": "P-CMB-01", "name": "Morning Set", "category": "CAT-PASTRY", "price": 245, "volumeLabel": "set", "contents": "Any espresso drink + butter croissant", "volume": [{ "unit": "Espresso Shot", "qty": 2 }, { "unit": "Croissant", "qty": 1 }], "sort": 170 },
+    { "id": "P-CMB-02", "name": "Work From Café Set", "category": "CAT-SANDWICH", "price": 295, "volumeLabel": "set", "contents": "Any cold drink + toastie + cookie", "volume": [{ "unit": "Espresso Shot", "qty": 2 }, { "unit": "Bread Slice", "qty": 2 }, { "unit": "Cookie", "qty": 1 }], "sort": 180 },
+    { "id": "P-RTL-01", "name": "House Blend Beans 250g", "category": "CAT-BEANS", "price": 420, "volumeLabel": "bag", "volume": [{ "unit": "Beans (g)", "qty": 250 }], "sort": 190 },
+    { "id": "P-RTL-02", "name": "Ceramic Mug", "category": "CAT-BEANS", "price": 380, "volumeLabel": "piece", "volume": [{ "unit": "Mug", "qty": 1 }], "sort": 200 }
+  ],
+
+  "paymentMethods": ["Cash", "GCash", "Maya"],
+
+  "nonRevenueTypes": [
+    { "label": "Spoilage", "badge": "bad", "hint": "Expired pastries, soured milk, rejected shots." },
+    { "label": "Staff Drink", "badge": "info", "hint": "Free or discounted drinks taken by the team." },
+    { "label": "Training Cup", "badge": "warn", "hint": "Practice shots pulled during barista training." }
+  ],
+
+  "branches": [
+    { "id": "BR-01", "name": "Brew Street - Katipunan", "address": "Katipunan Ave., Quezon City", "contact": "0917 555 0101", "note": "Flagship, espresso bar + roastery" },
+    { "id": "BR-02", "name": "Brew Street - Salcedo", "address": "Salcedo Village, Makati", "contact": "0917 555 0102", "note": "Weekday office crowd" }
+  ],
+
+  "roles": [
+    {
+      "id": "ROLE-ADMIN", "name": "Owner / Admin",
+      "description": "Sees every branch, manages the catalogue and accounts, exports everything.",
+      "permissions": ["pos.use", "kitchen.view", "kitchen.update", "payment.collect", "order.void.any", "reports.view", "nonrev.log", "eod.manage", "products.manage", "export"],
+      "isAdmin": true, "canPOS": true, "canKitchen": true, "allBranches": true, "canManage": true, "canExport": true
+    },
+    {
+      "id": "ROLE-BARISTA", "name": "Barista",
+      "description": "Takes orders, collects payment, may void own orders only.",
+      "permissions": ["pos.use", "kitchen.view", "payment.collect", "order.void.own", "reports.view", "nonrev.log"],
+      "isAdmin": false, "canPOS": true, "canKitchen": true, "allBranches": false, "canManage": false, "canExport": false
+    },
+    {
+      "id": "ROLE-BAR", "name": "Bar / Kitchen",
+      "description": "Sees the drink queue and marks orders preparing, ready, served.",
+      "permissions": ["kitchen.view", "kitchen.update", "nonrev.log"],
+      "isAdmin": false, "canPOS": false, "canKitchen": true, "allBranches": false, "canManage": false, "canExport": false
+    },
+    {
+      "id": "ROLE-SHIFT", "name": "Shift Supervisor",
+      "description": "Runs one shift: any void, catalogue edits, exports.",
+      "permissions": ["pos.use", "kitchen.view", "kitchen.update", "payment.collect", "order.void.any", "reports.view", "nonrev.log", "eod.manage", "products.manage", "export"],
+      "isAdmin": false, "canPOS": true, "canKitchen": true, "allBranches": true, "canManage": true, "canExport": true
+    }
+  ],
+
+  "accounts": {
+    "ownerUsername": "owner",
+    "ownerPassword": "BrewOwner@2026",
+    "list": [
+      { "accountId": "ACC-OWNER", "username": "owner", "displayName": "Mia Santos", "roleId": "ROLE-ADMIN", "branchId": "BR-01", "password": "BrewOwner@2026", "pin": "1234" },
+      { "accountId": "ACC-BAR1", "username": "barista1", "displayName": "Luis Reyes", "roleId": "ROLE-BARISTA", "branchId": "BR-01", "password": "Barista@2026", "pin": "1111" },
+      { "accountId": "ACC-BAR2", "username": "barista2", "displayName": "Ana Cruz", "roleId": "ROLE-BARISTA", "branchId": "BR-02", "password": "Barista@2026", "pin": "2222" },
+      { "accountId": "ACC-BR3", "username": "bar1", "displayName": "Kit Station", "roleId": "ROLE-BAR", "branchId": "BR-01", "password": "BarPass@2026", "pin": "4444" },
+      { "accountId": "ACC-SUP1", "username": "shiftlead", "displayName": "Rico Dela Peña", "roleId": "ROLE-SHIFT", "branchId": "BR-01", "password": "Shift@2026", "pin": "5555" }
+    ]
+  },
+
+  "features": {
+    "kitchen": true,
+    "queueCards": true,
+    "discounts": true,
+    "productVolume": true,
+    "multiBranch": true,
+    "unpaidOrders": true
+  },
+
+  "queue": { "min": 1, "max": 12 },
+
+  "settings": {
+    "Currency": "₱",
+    "CurrencyCode": "PHP",
+    "QueueMin": "1",
+    "QueueMax": "12",
+    "AutoSync": "Yes",
+    "SyncIntervalSec": "45",
+    "Theme": "dark",
+    "Density": "comfortable",
+    "VoidWindowMinutes": "15",
+    "KitchenWarnMinutes": "6",
+    "ReceiptFooter": "Thank you for brewing with us! Follow @brewstreet.ph",
+    "DeviceLabel": "Counter 1",
+    "NonRevenuePageHint": "Record drinks and pastries that left the bar without a sale. They are excluded from revenue totals."
+  },
+
+  "settingNotes": {
+    "Currency": "Symbol shown on buttons and receipts",
+    "QueueMax": "Highest queue card handed to customers",
+    "KitchenWarnMinutes": "Orders older than this are highlighted on the bar screen",
+    "NonRevenuePageHint": "Text shown at the top of the non-revenue page"
+  },
+
+  "token": { "default": "" }
+}

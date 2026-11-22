@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "purpose": "Default UI design tokens for contrast, touch-target and spacing checks. Starting values for review; not brand guidance.",
+  "colors": {
+    "background": "#14161c",
+    "surface": "#1f232c",
+    "foreground": "#f5f7fa",
+    "muted": "#a7b0bf",
+    "accent": "#4cc2ff",
+    "success": "#2fbf71",
+    "warning": "#ffb020",
+    "danger": "#ff5c5c"
+  },
+  "spacing": {
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24
+  },
+  "typography": {
+    "body": 16,
+    "label": 14,
+    "title": 24,
+    "caption": 12
+  },
+  "touch": {
+    "minimum_target_px": 44,
+    "recommended_target_px": 48
+  },
+  "contrast": {
+    "text_normal": 4.5,
+    "text_large": 3.0,
+    "non_text": 3.0,
+    "large_text_min_px": 24
+  },
+  "safe_area_default_px": {
+    "top": 24,
+    "bottom": 24,
+    "left": 16,
+    "right": 16
+  },
+  "viewports": [
+    {
+      "name": "phone-portrait",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "phone-landscape",
+      "width": 844,
+      "height": 390
+    },
+    {
+      "name": "tablet",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "name": "desktop",
+      "width": 1920,
+      "height": 1080
+    }
+  ]
+}

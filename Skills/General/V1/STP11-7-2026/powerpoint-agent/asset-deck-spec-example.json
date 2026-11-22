@@ -1,0 +1,366 @@
+{
+  "spec_version": "1.0",
+  "meta": {
+    "title": "Q4 Revenue and Retention Review",
+    "author": "Acme Analytics FP&A",
+    "subject": "Board review of Q4 performance and the FY27 plan",
+    "company": "Acme Analytics",
+    "language": "en-US",
+    "keywords": [
+      "board review",
+      "revenue",
+      "retention",
+      "fy27"
+    ]
+  },
+  "theme": {
+    "preset": "corporate-blue",
+    "overrides": {}
+  },
+  "slide_size": {
+    "width_in": 13.333,
+    "height_in": 7.5
+  },
+  "footer": {
+    "text": "Acme Analytics \u2014 Confidential",
+    "show_footer": true,
+    "show_slide_number": true,
+    "show_date": false
+  },
+  "sections": [
+    {
+      "name": "Opening",
+      "slide_ids": [
+        "title-q4-review",
+        "executive-summary",
+        "quarter-in-numbers"
+      ]
+    },
+    {
+      "name": "Evidence",
+      "slide_ids": [
+        "net-revenue-by-quarter",
+        "segment-performance",
+        "where-growth-came-from",
+        "customer-voice",
+        "what-worked-and-what-to-change"
+      ]
+    },
+    {
+      "name": "FY27 plan",
+      "slide_ids": [
+        "fy27-plan",
+        "fy27-priorities",
+        "retention-trajectory"
+      ]
+    },
+    {
+      "name": "Close",
+      "slide_ids": [
+        "questions-and-discussion"
+      ]
+    }
+  ],
+  "slides": [
+    {
+      "id": "title-q4-review",
+      "layout": "title",
+      "eyebrow": "Board of Directors \u00b7 12 November 2026",
+      "title": "Q4 revenue and retention review",
+      "subtitle": "What changed this quarter, what it means, and the plan we are asking the board to endorse.",
+      "notes": "Open by framing the decision: endorse the FY27 plan and the retention investment. Keep the opening under 90 seconds."
+    },
+    {
+      "id": "executive-summary",
+      "layout": "bullets",
+      "title": "Executive summary",
+      "bullets": [
+        {
+          "text": "Net revenue grew 18% year over year to $42.6M, driven by enterprise expansion.",
+          "level": 0
+        },
+        {
+          "text": "Gross retention held at 94% while net retention reached 112%.",
+          "level": 0
+        },
+        {
+          "text": "Two segments missed plan: SMB acquisition and partner-led deals in EMEA.",
+          "level": 0
+        },
+        {
+          "text": "The FY27 plan reallocates 22% of acquisition spend to expansion and partner enablement.",
+          "level": 0
+        }
+      ],
+      "notes": "This is the only slide some board members will read in the pre-read. Keep it to four lines."
+    },
+    {
+      "id": "quarter-in-numbers",
+      "layout": "kpi",
+      "title": "The quarter in numbers",
+      "subtitle": "Vs. Q4 last year unless noted",
+      "kpis": [
+        {
+          "value": "$42.6M",
+          "label": "Net revenue",
+          "detail": "+18% YoY"
+        },
+        {
+          "value": "112%",
+          "label": "Net retention",
+          "detail": "+5 pts YoY"
+        },
+        {
+          "value": "94%",
+          "label": "Gross retention",
+          "detail": "flat YoY"
+        },
+        {
+          "value": "$8.1M",
+          "label": "New ARR",
+          "detail": "-6% vs plan"
+        }
+      ],
+      "notes": "Call out that new ARR missed plan while expansion over-delivered; the mix shift is the story."
+    },
+    {
+      "id": "net-revenue-by-quarter",
+      "layout": "chart",
+      "title": "Net revenue by quarter",
+      "caption": "Revenue is unaudited management reporting; see appendix for reconciliation.",
+      "chart": {
+        "chart_type": "column",
+        "categories": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4"
+        ],
+        "series": [
+          {
+            "name": "FY26",
+            "values": [
+              31.2,
+              34.8,
+              38.1,
+              42.6
+            ]
+          },
+          {
+            "name": "FY25",
+            "values": [
+              27.5,
+              29.1,
+              31.6,
+              36.1
+            ]
+          }
+        ],
+        "value_suffix": "M",
+        "show_legend": true
+      },
+      "notes": "Growth is steady but decelerating: 18% this quarter vs 21% in Q3."
+    },
+    {
+      "id": "segment-performance",
+      "layout": "table",
+      "title": "Segment performance",
+      "table": {
+        "headers": [
+          "Segment",
+          "Revenue",
+          "YoY",
+          "vs plan"
+        ],
+        "rows": [
+          [
+            "Enterprise",
+            "$24.9M",
+            "+26%",
+            "+4%"
+          ],
+          [
+            "Mid-market",
+            "$11.4M",
+            "+14%",
+            "+1%"
+          ],
+          [
+            "SMB",
+            "$4.1M",
+            "+3%",
+            "-9%"
+          ],
+          [
+            "Partner-led",
+            "$2.2M",
+            "+11%",
+            "-6%"
+          ]
+        ],
+        "column_widths_in": [
+          3.2,
+          2.4,
+          1.8,
+          1.8
+        ],
+        "first_row_header": true
+      },
+      "caption": "Segment definitions follow the FY26 reporting hierarchy.",
+      "notes": "SMB and partner-led are the two misses; both are addressed on the priorities slide."
+    },
+    {
+      "id": "where-growth-came-from",
+      "layout": "image-right",
+      "title": "Where growth came from",
+      "image": {
+        "path": "asset-deck-spec-illustration.png",
+        "alt": "Bar chart illustration showing six quarters of accelerating revenue with a trend line",
+        "fit": "contain"
+      },
+      "bullets": [
+        {
+          "text": "Expansion revenue contributed 61% of net new revenue.",
+          "level": 0
+        },
+        {
+          "text": "Enterprise seat growth outpaced new-logo growth by 3:1.",
+          "level": 0
+        },
+        {
+          "text": "Partner-sourced pipeline converted at 27%, below the 35% target.",
+          "level": 0
+        }
+      ],
+      "caption": "Illustrative trend, not to scale.",
+      "notes": "Explain the shift from acquisition-led to expansion-led growth."
+    },
+    {
+      "id": "customer-voice",
+      "layout": "quote",
+      "title": "Customer voice",
+      "quote": "The upgrade path was obvious once we saw usage across teams. That is why we consolidated two vendors into one.",
+      "attribution": "VP Operations, Fortune 500 logistics customer",
+      "notes": "Anonymised quote approved by the customer success team in October."
+    },
+    {
+      "id": "what-worked-and-what-to-change",
+      "layout": "two-column",
+      "title": "What worked and what to change",
+      "left": {
+        "heading": "Keep",
+        "bullets": [
+          {
+            "text": "Expansion plays mapped to product usage signals",
+            "level": 0
+          },
+          {
+            "text": "Enterprise onboarding with a named success manager",
+            "level": 0
+          },
+          {
+            "text": "Quarterly executive business reviews",
+            "level": 0
+          }
+        ]
+      },
+      "right": {
+        "heading": "Change",
+        "bullets": [
+          {
+            "text": "SMB self-serve funnel needs a pricing test before scale",
+            "level": 0
+          },
+          {
+            "text": "Partner enablement is under-resourced in EMEA",
+            "level": 0
+          },
+          {
+            "text": "Renewal forecasting moves from spreadsheet to system of record",
+            "level": 0
+          }
+        ]
+      },
+      "notes": "Balance the two columns: this is not a defence of the quarter."
+    },
+    {
+      "id": "fy27-plan",
+      "layout": "section",
+      "title": "FY27 plan",
+      "subtitle": "Reallocate 22% of acquisition spend to expansion and partner enablement",
+      "notes": "Transition: from evidence to what we are asking for."
+    },
+    {
+      "id": "fy27-priorities",
+      "layout": "bullets",
+      "title": "FY27 priorities",
+      "bullets": [
+        {
+          "text": "Grow net retention from 112% to 118% by shifting 22% of acquisition spend into expansion.",
+          "level": 0
+        },
+        {
+          "text": "Rebuild partner enablement in EMEA with two regional leads and a certification path.",
+          "level": 0
+        },
+        {
+          "text": "Run a pricing test for SMB self-serve in two markets before any headcount increase.",
+          "level": 0
+        },
+        {
+          "text": "Hold gross retention at or above 94% while the expansion motion scales.",
+          "level": 0
+        }
+      ],
+      "notes": "The ask: approve the reallocation, not new budget."
+    },
+    {
+      "id": "retention-trajectory",
+      "layout": "chart",
+      "title": "Retention trajectory under the FY27 plan",
+      "chart": {
+        "chart_type": "line",
+        "categories": [
+          "Q4 FY26",
+          "Q1 FY27",
+          "Q2 FY27",
+          "Q3 FY27",
+          "Q4 FY27"
+        ],
+        "series": [
+          {
+            "name": "Net retention",
+            "values": [
+              112,
+              113,
+              115,
+              116,
+              118
+            ]
+          },
+          {
+            "name": "Gross retention",
+            "values": [
+              94,
+              94,
+              94,
+              95,
+              95
+            ]
+          }
+        ],
+        "value_suffix": "%",
+        "show_legend": true
+      },
+      "caption": "Plan case assumes expansion plays land as scheduled in Q1.",
+      "notes": "If expansion slips a quarter, net retention lands at 116%, not 118%."
+    },
+    {
+      "id": "questions-and-discussion",
+      "layout": "closing",
+      "title": "Questions and discussion",
+      "subtitle": "Board liaison: board@acme-analytics.example",
+      "notes": "Close on the decision, not on thanks."
+    }
+  ]
+}

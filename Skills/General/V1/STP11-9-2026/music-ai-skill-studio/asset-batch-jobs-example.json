@@ -1,0 +1,93 @@
+{
+  "defaults": {
+    "source": "asset-catalog-music-ai-400.md",
+    "rights_status": "original",
+    "voice_consent": "not_applicable"
+  },
+  "jobs": [
+    {
+      "title": "Salt Harbor mix pass",
+      "category": "19",
+      "intake": {
+        "goal": "Produce a streaming-ready mix and stem set for the single Salt Harbor.",
+        "inputs": [
+          "48 kHz/24-bit session",
+          "rough mix reference",
+          "approved tempo map"
+        ],
+        "constraints": [
+          "vocal intelligible on phone speakers",
+          "no destructive edits"
+        ],
+        "platform": "Spotify",
+        "tempo_bpm": 104,
+        "key": "D major",
+        "meter": "4/4",
+        "duration": "3:42",
+        "stem_format": "8 stems, 24-bit/48kHz WAV",
+        "rights_status": "original",
+        "voice_consent": "consented",
+        "model": "none",
+        "seed": "n/a"
+      }
+    },
+    {
+      "title": "Catalog metadata audit",
+      "category": "Music Cataloging, Archives, and Knowledge Bases",
+      "intake": {
+        "goal": "Audit catalog metadata completeness before the catalog migration.",
+        "inputs": [
+          "CSV export of 1200 recordings",
+          "migration field mapping",
+          "naming convention v3"
+        ],
+        "constraints": [
+          "no data loss",
+          "keep the legacy identifiers"
+        ],
+        "rights_status": "cleared",
+        "voice_consent": "not_applicable"
+      }
+    },
+    {
+      "title": "Voice clone consent review",
+      "capability": "Voice Consent and Disclosure Reviewer",
+      "intake": {
+        "goal": "Review whether the planned synthetic vocal for the ad bed is cleared for broadcast.",
+        "inputs": [
+          "signed talent release",
+          "generated demo vocal",
+          "ad script"
+        ],
+        "constraints": [
+          "no impersonation of any real artist",
+          "disclosure required in credits"
+        ],
+        "platform": "broadcast + social",
+        "rights_status": "licensed",
+        "voice_consent": "consented",
+        "model": "internal voice model v2",
+        "seed": "session-2026-11-04",
+        "actions": [
+          "release_publish"
+        ]
+      }
+    },
+    {
+      "title": "Intentionally failing job (missing goal)",
+      "category": "20",
+      "intake": {
+        "goal": "",
+        "inputs": [
+          "master.wav"
+        ],
+        "rights_status": "original"
+      }
+    },
+    {
+      "title": "Intentionally malformed job (invalid intake JSON)",
+      "category": "20",
+      "intake": "{this is not valid json"
+    }
+  ]
+}

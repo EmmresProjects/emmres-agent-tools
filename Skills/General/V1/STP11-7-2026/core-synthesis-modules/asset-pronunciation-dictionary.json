@@ -1,0 +1,32 @@
+{
+  "description": "Pronunciation overrides and acronym expansions used by the phonemizer/pronunciation operators. Extend this file to teach the offline system custom pronunciations without touching code.",
+  "acronyms": {
+    "NASA": "N A S A",
+    "TTS": "T T S",
+    "ASR": "A S R",
+    "ONNX": "O N N X",
+    "LUFS": "L U F S",
+    "CPU": "C P U",
+    "GPU": "G P U",
+    "WAV": "W A V",
+    "MP3": "M P 3",
+    "AI": "A I",
+    "API": "A P I",
+    "UX": "U X",
+    "UI": "U I",
+    "ID": "I D"
+  },
+  "overrides": {
+    "readme": "reed mee",
+    "read-me": "reed mee",
+    "video": "vih dee oh",
+    "greetings": "gree tings",
+    "welcome": "wel kum",
+    "friends": "frendz",
+    "offline": "off line",
+    "neural": "nyoo ral",
+    "voice": "voys",
+    "system": "sis tem",
+    "heuristic": "yoo ris tik"
+  }
+}

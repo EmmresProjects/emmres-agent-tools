@@ -1,0 +1,31 @@
+{
+  "phase": "build",
+  "evidence": [
+    {
+      "type": "artifact",
+      "value": "inventory.json (2 files, 21680 bytes, readable)",
+      "reproducible": true,
+      "status": "pass",
+      "command": "python3 tools-work-splitter.py run --stage 1 --apply --approve"
+    },
+    {
+      "type": "check",
+      "value": "requirement R001 verified by file inventory; every named file present and readable",
+      "reproducible": true,
+      "status": "pass",
+      "command": "python3 tools-work-splitter.py validate --kind project --input <skill-tool-folder>/asset-sample-project.json"
+    },
+    {
+      "type": "review",
+      "value": "stage 1 exit criteria reviewed against acceptance checklist",
+      "reproducible": true,
+      "status": "pass"
+    },
+    {
+      "type": "coverage",
+      "value": "requirement coverage matrix for stage 1",
+      "reproducible": true,
+      "status": "pass"
+    }
+  ]
+}

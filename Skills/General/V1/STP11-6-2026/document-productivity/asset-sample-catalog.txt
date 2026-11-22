@@ -1,0 +1,7 @@
+  Category 5: PDF Engineering  
+
+1. Skill Name: PDF Creation
+Description: A specialized capability to create, inspect, transform, secure, and validate portable documents; it produces a complete, editable deliverable with validated structure and output settings.
+
+  2) Skill Name: PDF Preflight
+  Description:   A specialized capability to   create, inspect, transform, secure, and validate portable documents; it checks and reports defects, risks, and corrective actions.

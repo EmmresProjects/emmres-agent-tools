@@ -1,0 +1,50 @@
+{
+  "skill_tool_name": "software-engineering",
+  "version": "1.0.0",
+  "paths": {
+    "catalog": "software-engineering/asset-skill-catalog.json",
+    "safety_policy": "software-engineering/asset-safety-policy.json",
+    "output_schema": "software-engineering/asset-output-schema.json",
+    "prompt_templates": "software-engineering/asset-prompt-templates.json",
+    "workflow_presets": "software-engineering/asset-workflow-presets.json",
+    "sample_fixture": "software-engineering/asset-sample-fixture.json",
+    "node_analyzer": "software-engineering/tools-node-analyzer.mjs",
+    "default_output_dir": "se-workbench-output",
+    "checkpoint_filename": "checkpoint-state.json"
+  },
+  "limits": {
+    "command_timeout_seconds": 25,
+    "workflow_timeout_seconds": 180,
+    "max_retries": 2,
+    "retry_backoff_seconds": 0.25,
+    "retry_backoff_multiplier": 2.0,
+    "max_input_bytes": 10485760,
+    "max_repository_files": 2500,
+    "max_directory_depth": 12,
+    "max_parallel_workers": 4,
+    "max_sql_rows": 500
+  },
+  "providers": {
+    "llm_mode": "offline-deterministic",
+    "provider_name": "configurable-local-or-custom",
+    "model_name": "none-required-offline",
+    "endpoint_env_var": "SE_WORKBENCH_MODEL_ENDPOINT",
+    "api_key_env_var": "SE_WORKBENCH_API_KEY",
+    "network_execution_enabled": false
+  },
+  "runtime_verifiers": {
+    "enable_python_ast": true,
+    "enable_node_check": true,
+    "enable_gcc_syntax": true,
+    "enable_gpp_syntax": true,
+    "enable_javac_check": true,
+    "enable_bash_syntax": true,
+    "enable_perl_syntax": true,
+    "enable_sqlite_engine": true
+  },
+  "formatting": {
+    "default_format": "json",
+    "json_indent": 2,
+    "redact_detected_secrets": true
+  }
+}

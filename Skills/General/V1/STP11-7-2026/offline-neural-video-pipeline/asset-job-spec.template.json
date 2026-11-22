@@ -1,0 +1,70 @@
+{
+  "spec_version": "1.0",
+  "job_id": "demo-001",
+  "title": "Preview animatic from a reference still",
+  "capability": "offline-image-to-video-engine",
+  "mode": "auto",
+  "preset": "preview",
+  "prompt": "slow cinematic push-in on a rain-soaked neon alley, volumetric haze",
+  "inputs": [
+    {"role": "image", "path": "inputs/reference.png"}
+  ],
+  "params": {
+    "width": 640,
+    "height": 360,
+    "fps": 24,
+    "duration_s": 3.0,
+    "steps": 20,
+    "seed": 1234
+  },
+  "hardware": {
+    "profile": "auto",
+    "vram_gb": null,
+    "ram_gb": null,
+    "allow_cpu": true
+  },
+  "models": {
+    "root": "models",
+    "model_id": null,
+    "files": [],
+    "check_hashes": true
+  },
+  "backend": {
+    "command": null,
+    "timeout_s": 900,
+    "retries": 1
+  },
+  "output": {
+    "dir": "outputs",
+    "filename": null
+  },
+  "delivery": {
+    "container": "mp4",
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "package": true
+  },
+  "rights": {
+    "ledger": "ledger/rights-ledger.json",
+    "require_consent": false,
+    "subject_ids": [],
+    "allowed_use": "internal-preview",
+    "license": "operator-declared",
+    "disclosure_required": true
+  },
+  "limits": {
+    "timeout_s": 3600,
+    "max_frames": 240,
+    "max_output_mb": 2048
+  },
+  "proxy": {
+    "allow_placeholder": false
+  },
+  "fallback": {
+    "on_backend_unavailable": "proxy"
+  },
+  "audio": null,
+  "captions": null,
+  "compose": null,
+  "notes": "Copy this file, edit capability/inputs/params, then run: python3 tools-onv.py plan --spec <file>"
+}

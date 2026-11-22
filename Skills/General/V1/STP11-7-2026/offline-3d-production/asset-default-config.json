@@ -1,0 +1,97 @@
+{
+  "schema": "o3d/config/1",
+  "project": {
+    "name": "offline-production",
+    "units": "m",
+    "up_axis": "Z",
+    "forward_axis": "Y",
+    "handedness": "right",
+    "rotation_order": "XYZ",
+    "fps": 24,
+    "resolution": [1920, 1080],
+    "pixel_aspect": 1.0,
+    "color_management": "ACEScg",
+    "display_space": "sRGB"
+  },
+  "limits": {
+    "timeout_seconds": 900,
+    "max_input_mb": 128,
+    "max_bvh_frames": 200000,
+    "max_output_triangles": 400000,
+    "max_render_pixels": 64000000,
+    "max_texture_pixels": 16777216,
+    "audit_dir": "outputs/audit",
+    "output_dir": "outputs",
+    "retries": 2
+  },
+  "mesh": {
+    "profile": {
+      "max_triangles": 250000,
+      "require_closed": false,
+      "require_symmetry": false,
+      "symmetry_axis": "X",
+      "symmetry_tolerance": 0.002,
+      "up_axis": "Z",
+      "expected_height_m": 1.8,
+      "min_angle_degrees": 5.0,
+      "max_uv_stretch_ratio": 8.0,
+      "texel_density": 1024,
+      "check_uv": true,
+      "texture_resolution": 2048,
+      "max_pairs": 200000,
+      "fail_on": "error"
+    },
+    "decimate_method": "vertex-clustering",
+    "weld_distance": 0.00001
+  },
+  "texture": {
+    "default_resolution": [2048, 2048],
+    "channel_order": "ORM",
+    "normal_convention": "OpenGL",
+    "padding_px": 8,
+    "fail_on": "error",
+    "pbr_families": ["stone", "metal", "fabric", "skin", "wood"]
+  },
+  "render": {
+    "engine": "software-raster",
+    "device": "CPU",
+    "samples": 2,
+    "resolution": [960, 640],
+    "still_format": "png",
+    "exr": true,
+    "ffmpeg_path": null,
+    "bitrate": "4M",
+    "denoise": false
+  },
+  "animation": {
+    "fps": 24,
+    "frame_start": 1,
+    "frame_end": 120,
+    "easing_default": "smooth",
+    "loop_tolerance": 0.001,
+    "profile": {
+      "frame_start": 1,
+      "frame_end": 120,
+      "max_jitter_per_frame": 0.25,
+      "loop_tolerance": 0.001,
+      "fail_on": "warning"
+    }
+  },
+  "qa": {
+    "package_profile": {
+      "require_readme": true,
+      "allowed_extensions": [".obj", ".mtl", ".fbx", ".glb", ".gltf", ".usd", ".usda", ".usdc", ".png",
+                             ".jpg", ".exr", ".tif", ".json", ".md", ".txt", ".vtt", ".srt", ".bvh", ".abc"],
+      "max_total_mb": 4096,
+      "scan_mb": 8,
+      "fail_on": "error"
+    },
+    "fail_on": "error"
+  },
+  "licensing": {
+    "policy_file": "asset-license-policy.json",
+    "consent_policy_file": "asset-consent-policy.json",
+    "require_attribution": true,
+    "allow_ai_training": false
+  }
+}

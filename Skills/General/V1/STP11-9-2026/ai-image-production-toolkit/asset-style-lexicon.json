@@ -1,0 +1,400 @@
+{
+  "source": "AI Image Skill Catalog - creative direction vocabulary",
+  "notes": "Attribute vocabulary used to build prompts and to rewrite artist-name requests into neutral visual attributes.",
+  "camera": [
+    {
+      "id": "14mm ultra wide",
+      "value": "14mm ultra-wide lens, expansive perspective, edge distortion"
+    },
+    {
+      "id": "24mm wide",
+      "value": "24mm wide-angle lens"
+    },
+    {
+      "id": "35mm reportage",
+      "value": "35mm reportage lens, natural perspective"
+    },
+    {
+      "id": "50mm standard",
+      "value": "50mm prime lens, natural field of view"
+    },
+    {
+      "id": "85mm portrait",
+      "value": "85mm portrait lens, shallow depth of field, compressed background"
+    },
+    {
+      "id": "135mm telephoto",
+      "value": "135mm telephoto lens, strong background compression"
+    },
+    {
+      "id": "macro",
+      "value": "macro lens, extreme close detail, shallow focus"
+    },
+    {
+      "id": "tilt-shift",
+      "value": "tilt-shift lens, miniature perspective"
+    }
+  ],
+  "lighting": [
+    {
+      "id": "golden-hour",
+      "value": "golden hour sunlight, long soft shadows, warm rim light"
+    },
+    {
+      "id": "blue-hour",
+      "value": "blue hour ambience, cool ambient light, warm practical lights"
+    },
+    {
+      "id": "overcast",
+      "value": "overcast diffused daylight, soft shadowless light"
+    },
+    {
+      "id": "studio-softbox",
+      "value": "large softbox key light, soft falloff, clean catchlights"
+    },
+    {
+      "id": "three-point",
+      "value": "three-point lighting, key fill and rim separation"
+    },
+    {
+      "id": "hard-noon",
+      "value": "hard midday sun, crisp short shadows, high contrast"
+    },
+    {
+      "id": "candlelit",
+      "value": "candlelight, warm low key, deep shadows"
+    },
+    {
+      "id": "neon-night",
+      "value": "neon signage lighting, magenta and cyan bounce, wet reflections"
+    },
+    {
+      "id": "moonlight",
+      "value": "cool moonlight, silver highlights, deep blue shadows"
+    },
+    {
+      "id": "high-key",
+      "value": "high-key lighting, bright airy exposure, minimal shadow"
+    }
+  ],
+  "palette": [
+    {
+      "id": "warm-earth",
+      "value": "warm earthy palette, ochre terracotta and olive, hex #b5651d #7d6b3f #e8d5b7",
+      "swatches": [
+        "#b5651d",
+        "#7d6b3f",
+        "#e8d5b7"
+      ]
+    },
+    {
+      "id": "cool-marine",
+      "value": "cool marine palette, deep teal slate and seafoam, hex #14505c #2f6f7f #cfe6e0",
+      "swatches": [
+        "#14505c",
+        "#2f6f7f",
+        "#cfe6e0"
+      ]
+    },
+    {
+      "id": "cinematic-teal-orange",
+      "value": "cinematic teal and amber palette, hex #0f3b45 #c98a3c #f2e3c9",
+      "swatches": [
+        "#0f3b45",
+        "#c98a3c",
+        "#f2e3c9"
+      ]
+    },
+    {
+      "id": "monochrome",
+      "value": "monochrome palette, single hue, tonal separation only",
+      "swatches": [
+        "#101010",
+        "#7a7a7a",
+        "#e8e8e8"
+      ]
+    },
+    {
+      "id": "pastel",
+      "value": "muted pastel palette, soft pinks mint and lilac, hex #f4c7c3 #b9e3d2 #cfc7e8",
+      "swatches": [
+        "#f4c7c3",
+        "#b9e3d2",
+        "#cfc7e8"
+      ]
+    },
+    {
+      "id": "noir",
+      "value": "noir palette, blacks greys and one accent, hex #0a0a0a #4a4a4a #b3122f",
+      "swatches": [
+        "#0a0a0a",
+        "#4a4a4a",
+        "#b3122f"
+      ]
+    },
+    {
+      "id": "pastoral",
+      "value": "pastoral palette, sage cream and dusty rose, hex #9aa87c #f0e6d2 #c98f8f",
+      "swatches": [
+        "#9aa87c",
+        "#f0e6d2",
+        "#c98f8f"
+      ]
+    },
+    {
+      "id": "neon-cyberpunk",
+      "value": "neon cyberpunk palette, electric magenta and cyan, hex #ff2e88 #00e5ff #12002e",
+      "swatches": [
+        "#ff2e88",
+        "#00e5ff",
+        "#12002e"
+      ]
+    }
+  ],
+  "texture": [
+    {
+      "id": "matte",
+      "value": "matte surface response, low specular highlight"
+    },
+    {
+      "id": "glossy",
+      "value": "glossy reflective surface with sharp specular highlights"
+    },
+    {
+      "id": "rough-concrete",
+      "value": "rough pitted concrete with fine grain and subtle chips"
+    },
+    {
+      "id": "brushed-metal",
+      "value": "brushed metal with directional micro-scratches"
+    },
+    {
+      "id": "woven-fabric",
+      "value": "visible woven fabric weave with thread irregularity"
+    },
+    {
+      "id": "weathered",
+      "value": "weathered patina with edge wear and dust"
+    },
+    {
+      "id": "wet-surface",
+      "value": "wet surface with sharp mirror reflections"
+    },
+    {
+      "id": "subsurface",
+      "value": "subsurface scattering in skin and translucent materials"
+    }
+  ],
+  "composition": [
+    {
+      "id": "rule-of-thirds",
+      "value": "rule of thirds composition, subject on the thirds intersection"
+    },
+    {
+      "id": "centered",
+      "value": "centred symmetrical composition, static and formal"
+    },
+    {
+      "id": "leading-lines",
+      "value": "leading lines drawing the eye to the focal point"
+    },
+    {
+      "id": "negative-space",
+      "value": "generous negative space around the subject, minimal composition"
+    },
+    {
+      "id": "low-angle",
+      "value": "low camera angle looking up, monumental scale"
+    },
+    {
+      "id": "high-angle",
+      "value": "high camera angle looking down, map-like layout"
+    },
+    {
+      "id": "dutch-angle",
+      "value": "dutch angle, dynamic tilted horizon"
+    },
+    {
+      "id": "over-the-shoulder",
+      "value": "over-the-shoulder framing, foreground occlusion"
+    }
+  ],
+  "medium": [
+    {
+      "id": "photography",
+      "value": "photograph, natural lens rendering"
+    },
+    {
+      "id": "editorial",
+      "value": "editorial illustration, clean vector-like shapes, flat colour"
+    },
+    {
+      "id": "watercolor",
+      "value": "watercolour painting, soft pigment blooms, visible paper tooth"
+    },
+    {
+      "id": "ink",
+      "value": "ink drawing, confident line work, cross-hatching"
+    },
+    {
+      "id": "oil-paint",
+      "value": "oil painting, impasto brushwork, rich glazing"
+    },
+    {
+      "id": "technical",
+      "value": "technical illustration, precise linework, annotated engineering style"
+    },
+    {
+      "id": "vector",
+      "value": "flat vector artwork, geometric shapes, no gradients"
+    },
+    {
+      "id": "3d-render",
+      "value": "physically based 3D render, global illumination, soft studio HDRI"
+    },
+    {
+      "id": "pixel-art",
+      "value": "pixel art, limited palette, hard edges, deliberate clusters"
+    }
+  ],
+  "quality_tokens": [
+    "highly detailed",
+    "sharp focus",
+    "correct anatomy",
+    "consistent lighting",
+    "professional colour grading"
+  ],
+  "exclusions": [
+    "text artifacts",
+    "watermark",
+    "signature",
+    "extra fingers",
+    "malformed hands",
+    "duplicated subject",
+    "blurry edges",
+    "jpeg artifacts",
+    "oversaturated",
+    "plastic skin",
+    "visible noise",
+    "warped perspective",
+    "cropped subject"
+  ],
+  "era": [
+    "1920s",
+    "1950s",
+    "1970s",
+    "1990s",
+    "contemporary",
+    "near future",
+    "far future",
+    "medieval",
+    "victorian"
+  ],
+  "weather": [
+    "clear",
+    "light rain",
+    "heavy rain",
+    "mist",
+    "fog",
+    "snow",
+    "sandstorm",
+    "overcast",
+    "storm"
+  ],
+  "time_of_day": [
+    "dawn",
+    "morning",
+    "midday",
+    "golden hour",
+    "dusk",
+    "night",
+    "blue hour"
+  ],
+  "mood": [
+    "serene",
+    "ominous",
+    "triumphant",
+    "melancholic",
+    "playful",
+    "austere",
+    "romantic",
+    "clinical",
+    "heroic",
+    "cozy"
+  ],
+  "composition_notes": {
+    "text_to_image": "state the subject first, then environment, then framing, then light, then palette, then medium, then quality",
+    "negative_prompt": "name the defect class you are trying to avoid, not the subject you want"
+  },
+  "artist_style_rewrite": {
+    "policy": "Requests naming a living artist are rewritten into neutral, attribute-level visual descriptions. The rewrite preserves the creative intent without instructing the model to imitate a specific artist's recognisable style.",
+    "map": {
+      "greg rutkowski": [
+        "dramatic chiaroscuro",
+        "grim romantic landscape mood",
+        "muted teal and amber palette",
+        "misty layered depth",
+        "painterly brush texture"
+      ],
+      "alexander mclaren": [
+        "clean graphic shapes",
+        "flat blocks of saturated colour",
+        "rhythmic repetition",
+        "graphic poster sensibility"
+      ],
+      "artgerm": [
+        "stylised painterly rendering",
+        "strong directional light",
+        "saturated fantasy colour"
+      ],
+      "matt willis": [
+        "vibrant geometric abstraction",
+        "hard-edged forms",
+        "bold complementary colour"
+      ],
+      "wayne white": [
+        "soft airbrushed gradients",
+        "muted pastel palette",
+        "dreamlike negative space"
+      ],
+      "vic nguyen": [
+        "stylised portrait rendering",
+        "strong rim lighting",
+        "polished skin highlights"
+      ],
+      "ayako morita": [
+        "soft painterly portraiture",
+        "muted warm light",
+        "delicate fabric detail"
+      ],
+      "aaron kessler": [
+        "graphic cinematic illustration",
+        "bold silhouettes",
+        "saturated theatrical colour"
+      ],
+      "kazuya kondo": [
+        "airy luminous illustration",
+        "soft pastel wash",
+        "light-as-subject composition"
+      ],
+      "sam k doe": [
+        "dark graphic illustration",
+        "heavy contrast",
+        "graphic texture overlays"
+      ],
+      "angelina kai": [
+        "painterly narrative illustration",
+        "soft rounded forms",
+        "warm nostalgic palette"
+      ],
+      "david chen": [
+        "painterly narrative illustration",
+        "soft rounded forms",
+        "warm nostalgic palette"
+      ]
+    },
+    "generic_fallback": [
+      "describe the medium, the brush or rendering behaviour, the lighting, the palette and the mood instead of the artist name"
+    ]
+  }
+}

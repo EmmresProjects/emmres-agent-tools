@@ -1,0 +1,394 @@
+{
+ "rules_id": "autoforge-automation-rules",
+ "version": "1.0.0",
+ "description": "Deterministic bundle staging and risk vocabulary used by tools_catalog.py, tools_plan.py and tools_governance.py.",
+ "bundle_stages": [
+  {
+   "id": "plan",
+   "label": "Plan",
+   "match": [
+    "requirements",
+    "architect",
+    "designer",
+    "opportunity",
+    "roadmap",
+    "roi",
+    "risk assessor",
+    "dependency mapper",
+    "human-in-the-loop"
+   ],
+   "priority": 1,
+   "order": 1
+  },
+  {
+   "id": "build",
+   "label": "Build",
+   "match": [
+    "builder",
+    "packager",
+    "generator",
+    "pipeline",
+    "designer",
+    "extension",
+    "release",
+    "cli",
+    "gui",
+    "automation builder"
+   ],
+   "priority": 4,
+   "order": 2
+  },
+  {
+   "id": "trigger",
+   "label": "Trigger / Schedule",
+   "match": [
+    "scheduler",
+    "trigger",
+    "cron",
+    "queue",
+    "calendar",
+    "deadline",
+    "reminder",
+    "folder watch",
+    "watches folders",
+    "event",
+    "webhook",
+    "file change"
+   ],
+   "priority": 5,
+   "order": 3
+  },
+  {
+   "id": "guard",
+   "label": "Protect",
+   "match": [
+    "validation",
+    "gate",
+    "approval",
+    "secrets",
+    "privacy",
+    "policy",
+    "consent",
+    "rollback",
+    "recovery",
+    "quarantine",
+    "permission",
+    "safe",
+    "redact",
+    "mask"
+   ],
+   "priority": 2,
+   "order": 4
+  },
+  {
+   "id": "verify",
+   "label": "Test",
+   "match": [
+    "test",
+    "harness",
+    "dry-run",
+    "idempotency",
+    "failure injection",
+    "load",
+    "evaluation",
+    "compliance",
+    "checker"
+   ],
+   "priority": 3,
+   "order": 5
+  },
+  {
+   "id": "operate",
+   "label": "Operate",
+   "match": [
+    "monitor",
+    "alert",
+    "log",
+    "observability",
+    "escalation",
+    "uptime",
+    "health",
+    "incident",
+    "sla",
+    "service level",
+    "tracker",
+    "audit log",
+    "audit"
+   ],
+   "priority": 6,
+   "order": 6
+  },
+  {
+   "id": "handoff",
+   "label": "Handoff",
+   "match": [
+    "documentation",
+    "handoff",
+    "deployment packager",
+    "catalog router",
+    "maintenance",
+    "deprecation",
+    "change control"
+   ],
+   "priority": 7,
+   "order": 7
+  }
+ ],
+ "risk_dimensions": [
+  {
+   "id": "destructive",
+   "label": "Destructive or irreversible change",
+   "level": "critical",
+   "weight": 8,
+   "keywords": [
+    "delete",
+    "remove",
+    "wipe",
+    "purge",
+    "overwrite",
+    "format disk",
+    "drop table",
+    "uninstall",
+    "shred",
+    "truncate",
+    "destructive"
+   ]
+  },
+  {
+   "id": "financial",
+   "label": "Financial or purchasing impact",
+   "level": "high",
+   "weight": 6,
+   "keywords": [
+    "invoice",
+    "payment",
+    "payroll",
+    "billing",
+    "purchase",
+    "charge",
+    "refund",
+    "transfer money",
+    "budget",
+    "price",
+    "checkout",
+    "subscription"
+   ]
+  },
+  {
+   "id": "public_publishing",
+   "label": "Public, customer-facing, or publishing action",
+   "level": "high",
+   "weight": 6,
+   "keywords": [
+    "publish",
+    "post",
+    "tweet",
+    "social",
+    "public",
+    "announce",
+    "newsletter",
+    "website update",
+    "release to customers",
+    "send email",
+    "sms"
+   ]
+  },
+  {
+   "id": "credentials",
+   "label": "Credential or secret handling",
+   "level": "critical",
+   "weight": 8,
+   "keywords": [
+    "password",
+    "secret",
+    "api key",
+    "token",
+    "credential",
+    "private key",
+    "vault",
+    "login",
+    "oauth",
+    "certificate"
+   ]
+  },
+  {
+   "id": "privacy",
+   "label": "Personal or sensitive data",
+   "level": "high",
+   "weight": 6,
+   "keywords": [
+    "personal data",
+    "pii",
+    "gdpr",
+    "medical",
+    "health",
+    "biometric",
+    "customer records",
+    "scrape email",
+    "resume",
+    "address",
+    "financial data"
+   ]
+  },
+  {
+   "id": "privileged",
+   "label": "Privileged system or admin action",
+   "level": "high",
+   "weight": 5,
+   "keywords": [
+    "admin",
+    "root",
+    "sudo",
+    "service restart",
+    "registry",
+    "firewall",
+    "permission change",
+    "group policy",
+    "role assignment",
+    "keystore"
+   ]
+  },
+  {
+   "id": "legacy_files",
+   "label": "Bulk file mutation",
+   "level": "medium",
+   "weight": 4,
+   "keywords": [
+    "bulk rename",
+    "bulk delete",
+    "move files",
+    "organize files",
+    "duplicate removal",
+    "cleanup",
+    "archive",
+    "sync folder",
+    "dfs"
+   ]
+  },
+  {
+   "id": "external_network",
+   "label": "External network crawling or scraping",
+   "level": "medium",
+   "weight": 4,
+   "keywords": [
+    "scrape",
+    "crawl",
+    "browser automation",
+    "login as user",
+    "bypass",
+    "proxy rotation",
+    "headless",
+    "selenium",
+    "rate limit"
+   ]
+  },
+  {
+   "id": "communication",
+   "label": "Outbound communication on behalf of people",
+   "level": "medium",
+   "weight": 3,
+   "keywords": [
+    "send message",
+    "notify team",
+    "email bot",
+    "slack",
+    "teams",
+    "whatsapp",
+    "telegram",
+    "reply automatically"
+   ]
+  },
+  {
+   "id": "data_quality",
+   "label": "Data correctness dependency",
+   "level": "low",
+   "weight": 2,
+   "keywords": [
+    "ocr",
+    "extract",
+    "transcribe",
+    "parse pdf",
+    "schema",
+    "deduplicate",
+    "validate",
+    "reconcile"
+   ]
+  },
+  {
+   "id": "availability",
+   "label": "Availability / uptime dependency",
+   "level": "low",
+   "weight": 2,
+   "keywords": [
+    "monitor",
+    "uptime",
+    "health check",
+    "alert",
+    "watchdog",
+    "heartbeat",
+    "probe"
+   ]
+  }
+ ],
+ "approval_policy": {
+  "levels_requiring_human_approval": [
+   "high",
+   "critical"
+  ],
+  "auto_approve_levels": [
+   "low",
+   "medium"
+  ],
+  "note": "High and critical bundles cannot be executed until a named approver is recorded with --approve."
+ },
+ "limits": {
+  "max_bundle_skills": 12,
+  "max_retries": 3,
+  "default_job_timeout_seconds": 900,
+  "max_schedule_horizon_days": 730,
+  "max_queue_depth": 10000,
+  "max_concurrency": 8
+ },
+ "stage_checks": {
+  "plan": [
+   "goal stated as one sentence",
+   "trigger identified",
+   "inputs and outputs named",
+   "owner named"
+  ],
+  "build": [
+   "runnable entry point exists",
+   "config externalised",
+   "no embedded secrets",
+   "help text present"
+  ],
+  "trigger": [
+   "time zone explicit",
+   "overlap policy set",
+   "missed-run policy set"
+  ],
+  "guard": [
+   "input validation before action",
+   "dry-run path available",
+   "approval gate for high-impact steps",
+   "rollback path documented"
+  ],
+  "verify": [
+   "normal case passes",
+   "invalid input handled",
+   "repeat run is idempotent",
+   "failure path recovers"
+  ],
+  "operate": [
+   "structured log emitted",
+   "failure alert routed to an owner",
+   "stop control documented"
+  ],
+  "handoff": [
+   "install steps documented",
+   "recovery steps documented",
+   "owner and review date set"
+  ]
+ },
+ "stage_priority_note": "`order` is the lifecycle sequence used for plans and dependency edges; `priority` is the tie-break used when assigning a skill to one stage (lower wins: plan, guard, verify, build, trigger, operate, handoff)."
+}

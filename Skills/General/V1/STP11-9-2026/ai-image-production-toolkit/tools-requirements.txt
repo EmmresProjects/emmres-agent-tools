@@ -1,0 +1,19 @@
+# Optional dependencies for the AI Image Production Toolkit.
+#
+# The toolkit runs on the Python standard library alone: every capability
+# works without any of the packages below.  Pillow and NumPy unlock the
+# pixel-level analysis and editing capabilities (image metrics, colour
+# grading, compositing, artifact detection, contact sheets, texture and
+# sprite generation).  Without them those capabilities report a blocked
+# integration instead of returning invented numbers.
+#
+# Install with:
+#     python3 -m pip install -r tools-requirements.txt
+#
+# The diffusion runtime itself is deliberately NOT a dependency: this Skill
+# Tool plans, analyses and prepares engine-ready artefacts (prompts, sampler
+# settings, A1111 parameters, ComfyUI graphs, manifests, QA checklists) and
+# does not render images.  Point the generated artefacts at your own engine.
+
+pillow>=10.0
+numpy>=1.24

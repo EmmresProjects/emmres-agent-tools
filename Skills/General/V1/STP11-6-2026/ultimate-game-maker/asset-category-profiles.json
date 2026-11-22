@@ -1,0 +1,2415 @@
+{
+  "schema_version": "1.0",
+  "description": "Per-category production profiles used to turn each catalog capability into a concrete contract: default phase, engine/language family, expected artifacts, acceptance checks, risk register entries, verification intents, and approval-sensitive actions. Editable by design; command hints are advisory and must be confirmed against the exact engine/editor version in use.",
+  "phase_order": [
+    "phase-1",
+    "phase-2",
+    "phase-3",
+    "phase-4",
+    "phase-5"
+  ],
+  "phases": {
+    "phase-1": {
+      "label": "Reliable Foundation",
+      "goal": "Version intelligence, project creation, source control, core gameplay, input, UI, saves, tests, builds, and documentation.",
+      "exit_criteria": "A clean machine can build and start the project from the locked dependency set and pass the documented smoke checks."
+    },
+    "phase-2": {
+      "label": "Complete Playable Production",
+      "goal": "Levels, graphics, animation, audio, AI, physics, progression, deployment, performance, and platform adaptation.",
+      "exit_criteria": "The full gameplay loop is playable end to end inside the performance budget on declared target hardware."
+    },
+    "phase-3": {
+      "label": "Advanced Systems",
+      "goal": "Multiplayer, backend, procedural generation, XR, custom engines, compilers, modding, live services, and specialized platforms.",
+      "exit_criteria": "Advanced systems are observable, bounded, and covered by automated or scripted verification."
+    },
+    "phase-4": {
+      "label": "Scale and Trust",
+      "goal": "Security, privacy, accessibility, compliance, certification, CI/CD, telemetry, regression testing, archival, and disaster recovery.",
+      "exit_criteria": "Release evidence exists for security, privacy, accessibility, reproducibility, and recovery, and human approvals are recorded."
+    },
+    "phase-5": {
+      "label": "Autonomous Creation",
+      "goal": "Multimodal briefs, engine routing, prototype generation, repository repair, adaptive tests, approvals, and end-to-end orchestration.",
+      "exit_criteria": "Every automated change is traceable to a request, every risky action carries an approval record, and the artifact set is reproducible."
+    }
+  },
+  "profiles": {
+    "game-vision-design-and-production-planning": {
+      "phase": "phase-1",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Design brief with observable player outcomes",
+          "format": "markdown",
+          "purpose": "Single source of truth for what the player does and feels."
+        },
+        {
+          "title": "Scope and milestone plan with acceptance criteria",
+          "format": "markdown",
+          "purpose": "Timeboxed commitments that can be checked off."
+        },
+        {
+          "title": "Risk and assumption register",
+          "format": "json",
+          "purpose": "Tracks unknowns that can invalidate the design."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Every stated player outcome is observable in a build and mapped to at least one acceptance check",
+          "evidence": "design brief section plus linked check ids",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Scope is timeboxed with an explicit cut list for the current milestone",
+          "evidence": "scope table with included and excluded items",
+          "required": true,
+          "class": "process"
+        },
+        {
+          "statement": "Assumptions and unknowns are recorded with an owner and a validation method",
+          "evidence": "risk register entries",
+          "required": false,
+          "class": "process"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Unbounded scope consumes the schedule before a playable slice exists",
+          "mitigation": "Freeze a vertical slice scope and defer everything else to the cut list",
+          "severity": "high"
+        },
+        {
+          "risk": "Design assumptions are never validated with players",
+          "mitigation": "Attach a playtest question set and a session log to each milestone",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Walk the brief and confirm each outcome maps to a check id",
+          "command_hint": null
+        },
+        {
+          "intent": "Re-read the milestone plan and confirm the cut list is explicit",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "scope-cut"
+      ]
+    },
+    "engine-discovery-documentation-and-version-intelligence": {
+      "phase": "phase-1",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Exact version matrix (engine, editor, SDK, compiler, language standard)",
+          "format": "markdown",
+          "purpose": "Prevents cross-version assumption errors."
+        },
+        {
+          "title": "Documentation citation log",
+          "format": "markdown",
+          "purpose": "Every applied behavior cites an official versioned source."
+        },
+        {
+          "title": "Compatibility and migration notes",
+          "format": "markdown",
+          "purpose": "Deprecations and breaking changes with the affected files."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "The exact engine and editor version is recorded for every build path used",
+          "evidence": "version matrix plus build log header",
+          "required": true,
+          "class": "compatibility"
+        },
+        {
+          "statement": "Each applied API or syntax decision cites an official version-specific source",
+          "evidence": "citation log entries with URLs or doc section names",
+          "required": true,
+          "class": "compatibility"
+        },
+        {
+          "statement": "No behavior is assumed to be identical across releases without a test",
+          "evidence": "list of tested behaviors per version",
+          "required": false,
+          "class": "compatibility"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Guidance from an older or newer release is applied to the pinned version",
+          "mitigation": "Pin the version, quote the official source, and prove the call in a scratch project",
+          "severity": "high"
+        },
+        {
+          "risk": "Documentation is unreachable offline",
+          "mitigation": "Cache the relevant doc pages with the version lock and record the retrieval date",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Open the pinned version's docs and confirm each cited API exists at that version",
+          "command_hint": null
+        },
+        {
+          "intent": "Prove one risky API call in a scratch project before applying it to the repo",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": []
+    },
+    "unity-development": {
+      "phase": "phase-1",
+      "engine_family": [
+        "unity"
+      ],
+      "languages": [
+        "csharp"
+      ],
+      "artifacts": [
+        {
+          "title": "Project settings and package manifest snapshot",
+          "format": "markdown",
+          "purpose": "Reproducible editor, package, and render pipeline state."
+        },
+        {
+          "title": "Scene, prefab, and ScriptableObject inventory",
+          "format": "markdown",
+          "purpose": "Maps gameplay code to authored assets."
+        },
+        {
+          "title": "Player settings and build target report",
+          "format": "markdown",
+          "purpose": "Documents what each platform build actually contains."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "The project compiles with zero errors and the recorded editor version",
+          "evidence": "editor or batchmode compile log",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "All packages, render pipeline assets, and asmdefs resolve with no missing references",
+          "evidence": "package resolution output and reference scan",
+          "required": true,
+          "class": "compatibility"
+        },
+        {
+          "statement": "Each declared target platform produces a build artifact from a clean import",
+          "evidence": "build log plus artifact path and size",
+          "required": false,
+          "class": "functional"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Editor and package versions differ from the documented set",
+          "mitigation": "Commit manifest and project version files and verify in batchmode",
+          "severity": "high"
+        },
+        {
+          "risk": "Scene or prefab reference loss after moving assets",
+          "mitigation": "Move assets with Unity closed or use AssetDatabase APIs, then scan for missing references",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Run a batchmode compile and capture the full log",
+          "command_hint": "Unity -batchmode -quit -projectPath <path> -logFile -"
+        },
+        {
+          "intent": "Confirm the build artifact launches and reaches the first playable state",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "asset-import-destructive"
+      ]
+    },
+    "unreal-engine-development": {
+      "phase": "phase-1",
+      "engine_family": [
+        "unreal"
+      ],
+      "languages": [
+        "cpp",
+        "blueprint"
+      ],
+      "artifacts": [
+        {
+          "title": "Module, plugin, and target inventory",
+          "format": "markdown",
+          "purpose": "Records build graph and enabled features."
+        },
+        {
+          "title": "Gameplay framework map (GameMode, PlayerController, Pawn, GameState)",
+          "format": "markdown",
+          "purpose": "Shows ownership and authority of each framework class."
+        },
+        {
+          "title": "Cook and packaging configuration notes",
+          "format": "markdown",
+          "purpose": "Captures maps, assets, and platform cook rules."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "The project builds in a documented configuration with the recorded engine version",
+          "evidence": "build log with configuration and engine version",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Content references resolve after cook for every packaged map",
+          "evidence": "cook log with no missing asset warnings",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Blueprint and C++ boundaries are documented so neither silently overrides the other",
+          "evidence": "framework map plus repr(notify) policy",
+          "required": false,
+          "class": "process"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Cook-only asset references break the packaged build while the editor works",
+          "mitigation": "Package a test build per milestone and diff cook warnings",
+          "severity": "high"
+        },
+        {
+          "risk": "Live Coding hides a real compile failure",
+          "mitigation": "Perform one full close-editor rebuild per milestone",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Run a full rebuild plus cook for the target platform and capture logs",
+          "command_hint": "UnrealBuildTool <Target> <Platform> <Configuration>"
+        },
+        {
+          "intent": "Launch the packaged build and complete the smoke gameplay path",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "plugin-enable"
+      ]
+    },
+    "godot-engine-development": {
+      "phase": "phase-1",
+      "engine_family": [
+        "godot"
+      ],
+      "languages": [
+        "gdscript",
+        "csharp"
+      ],
+      "artifacts": [
+        {
+          "title": "Scene tree and node ownership map",
+          "format": "markdown",
+          "purpose": "Documents composition and signal wiring."
+        },
+        {
+          "title": "Resource and signal contract sheet",
+          "format": "markdown",
+          "purpose": "Keeps typed resources and signals stable."
+        },
+        {
+          "title": "Export preset and platform report",
+          "format": "markdown",
+          "purpose": "Proves each export template actually produces a build."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "The project opens headless with no script or parse errors at the recorded engine version",
+          "evidence": "headless import or run log",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Every declared export preset produces an artifact that launches",
+          "evidence": "export log plus artifact path",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Signal connections are documented and free of duplicate or orphan connections",
+          "evidence": "signal contract sheet plus debug print of connected signals",
+          "required": false,
+          "class": "functional"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Godot 3.x guidance applied to a 4.x project (or the reverse)",
+          "mitigation": "Pin the major version and verify each API in the pinned editor",
+          "severity": "high"
+        },
+        {
+          "risk": "Export templates missing for the target platform",
+          "mitigation": "Install templates for the exact version and record the template version in the report",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Run the project headless and capture the log",
+          "command_hint": "godot --headless --path <project> --quit"
+        },
+        {
+          "intent": "Export one preset and launch the result",
+          "command_hint": "godot --headless --path <project> --export-release <preset> <out>"
+        }
+      ],
+      "approval_actions": []
+    },
+    "web-html5-javascript-and-browser-games": {
+      "phase": "phase-1",
+      "engine_family": [
+        "web",
+        "html5"
+      ],
+      "languages": [
+        "javascript",
+        "typescript"
+      ],
+      "artifacts": [
+        {
+          "title": "Bundle and asset size budget report",
+          "format": "markdown",
+          "purpose": "Keeps first-load weight inside the declared budget."
+        },
+        {
+          "title": "Browser and device compatibility matrix",
+          "format": "markdown",
+          "purpose": "Records what was actually tested."
+        },
+        {
+          "title": "Input and audio unlock policy (keyboard, pointer, touch, gamepad)",
+          "format": "markdown",
+          "purpose": "Handles browser gesture and autoplay restrictions."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "The build loads and reaches gameplay in every declared browser with no console errors",
+          "evidence": "per-browser console capture",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Pointer, touch, and keyboard input all drive the same gameplay actions",
+          "evidence": "manual or scripted input test notes",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Total first-load transfer stays inside the declared size budget",
+          "evidence": "size report per emitted asset",
+          "required": false,
+          "class": "performance"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "AudioContext stays suspended until a user gesture",
+          "mitigation": "Resume audio on the first pointer or key event and show a start prompt",
+          "severity": "medium"
+        },
+        {
+          "risk": "Mobile Safari memory limits kill large atlases",
+          "mitigation": "Split atlases and measure peak memory on a real device",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Serve the build and confirm gameplay in each declared browser",
+          "command_hint": "python3 -m http.server <port>"
+        },
+        {
+          "intent": "Measure transfer size of every emitted asset",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "publish-web"
+      ]
+    },
+    "python-pygame-renpy-and-scripting-games": {
+      "phase": "phase-1",
+      "engine_family": [
+        "python",
+        "pygame",
+        "renpy"
+      ],
+      "languages": [
+        "python"
+      ],
+      "artifacts": [
+        {
+          "title": "Module architecture and entry point map",
+          "format": "markdown",
+          "purpose": "Makes the runtime path obvious."
+        },
+        {
+          "title": "Locked dependency set with interpreter version",
+          "format": "text",
+          "purpose": "Reproducible environment."
+        },
+        {
+          "title": "Distribution notes for the target runtime",
+          "format": "markdown",
+          "purpose": "Documents how the game actually ships."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "The game starts from a clean environment created from the lock file",
+          "evidence": "install and launch log",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Save and load round-trips game state without data loss",
+          "evidence": "automated round-trip test output",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "The interpreter and library versions match the lock file in the shipped runtime",
+          "evidence": "runtime version print",
+          "required": false,
+          "class": "compatibility"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Unpinned dependencies change behavior on another machine",
+          "mitigation": "Pin exact versions and test in a fresh virtual environment",
+          "severity": "high"
+        },
+        {
+          "risk": "Headless CI cannot open a display or audio device",
+          "mitigation": "Add a headless or dummy-driver mode used by tests",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Create a clean environment, install from the lock, run the smoke test",
+          "command_hint": "python3 -m venv .venv && python3 -m pip install -r <lock>"
+        },
+        {
+          "intent": "Run one automated save/load round-trip",
+          "command_hint": "python3 -m pytest"
+        }
+      ],
+      "approval_actions": []
+    },
+    "c-cpp-csharp-java-and-native-frameworks": {
+      "phase": "phase-1",
+      "engine_family": [
+        "native",
+        "sdl",
+        "sfml",
+        "monogame",
+        "libgdx",
+        "opengl",
+        "vulkan"
+      ],
+      "languages": [
+        "c",
+        "cpp",
+        "csharp",
+        "java"
+      ],
+      "artifacts": [
+        {
+          "title": "Build system files and compiler standard declaration",
+          "format": "text",
+          "purpose": "Reproducible native build."
+        },
+        {
+          "title": "Third-party dependency and license matrix",
+          "format": "markdown",
+          "purpose": "Tracks versions and obligations you must ship."
+        },
+        {
+          "title": "Platform abstraction layer notes",
+          "format": "markdown",
+          "purpose": "Isolates OS and GPU specific code."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "The project builds with the documented compiler and language standard from a clean tree",
+          "evidence": "clean build log with compiler banner",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Static analysis and warnings-as-errors pass on the primary target",
+          "evidence": "analyzer output with exit code",
+          "required": true,
+          "class": "quality"
+        },
+        {
+          "statement": "Ships with the license texts its dependencies require",
+          "evidence": "dependency and license matrix",
+          "required": false,
+          "class": "compliance"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Undefined behavior appears only under a different optimization level",
+          "mitigation": "Build and test at more than one optimization level",
+          "severity": "high"
+        },
+        {
+          "risk": "Platform SDK mismatch makes the build unreproducible",
+          "mitigation": "Record compiler, SDK, and runtime versions in the build log",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Clean build with the recorded toolchain and capture the banner",
+          "command_hint": "cmake --build <build-dir> --config Release"
+        },
+        {
+          "intent": "Run the test binary or automated suite for the primary target",
+          "command_hint": "ctest --test-dir <build-dir>"
+        }
+      ],
+      "approval_actions": [
+        "dependency-add"
+      ]
+    },
+    "additional-engines-and-creator-platforms": {
+      "phase": "phase-1",
+      "engine_family": [
+        "gamemaker",
+        "construct",
+        "rpg-maker",
+        "love2d",
+        "bevy",
+        "raylib",
+        "monogame"
+      ],
+      "languages": [
+        "engine-specific"
+      ],
+      "artifacts": [
+        {
+          "title": "Engine choice rationale with capability comparison",
+          "format": "markdown",
+          "purpose": "Records why this platform fits the constraints."
+        },
+        {
+          "title": "Stub project proving the platform works in this environment",
+          "format": "markdown",
+          "purpose": "De-risks before committing."
+        },
+        {
+          "title": "Export and distribution path notes",
+          "format": "markdown",
+          "purpose": "Documents the real shipping route and its limits."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "A stub project builds and runs through the platform's own tooling at the recorded version",
+          "evidence": "tool output and artifact path",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Platform limits that affect design (scripting language, asset formats, store rules) are documented",
+          "evidence": "engine comparison matrix",
+          "required": true,
+          "class": "compatibility"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Platform cannot export to a required store without a paid tier or plugin",
+          "mitigation": "Prove the export path with a stub build before production work starts",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Build and launch the stub project with the platform tooling",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "license-purchase"
+      ]
+    },
+    "custom-engines-compilers-ides-and-developer-tooling": {
+      "phase": "phase-3",
+      "engine_family": [
+        "custom",
+        "tooling"
+      ],
+      "languages": [
+        "cpp",
+        "rust",
+        "python",
+        "csharp"
+      ],
+      "artifacts": [
+        {
+          "title": "Architecture and subsystem boundary document",
+          "format": "markdown",
+          "purpose": "Keeps the engine or tool maintainable."
+        },
+        {
+          "title": "Grammar, AST, or IR specification when applicable",
+          "format": "markdown",
+          "purpose": "Defines input the tooling must accept."
+        },
+        {
+          "title": "Editor and tool UX specification",
+          "format": "markdown",
+          "purpose": "Defines the workflows the tool must support."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "The tool builds and runs a documented sample input end to end",
+          "evidence": "sample run transcript",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Malformed input fails with a specific, actionable error instead of crashing",
+          "evidence": "negative test outputs",
+          "required": true,
+          "class": "robustness"
+        },
+        {
+          "statement": "Core algorithms have unit tests that can fail",
+          "evidence": "test output with at least one deliberately induced failure",
+          "required": false,
+          "class": "quality"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Growing a custom engine becomes more expensive than adopting a maintained one",
+          "mitigation": "Record the build-vs-adopt decision and review it each milestone",
+          "severity": "high"
+        },
+        {
+          "risk": "Tooling crashes on malformed input and loses work",
+          "mitigation": "Validate input at the boundary and save state before irreversible operations",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Run the tool against the sample and the malformed sample and capture both outputs",
+          "command_hint": null
+        },
+        {
+          "intent": "Run the unit test suite and record pass and fail counts",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "grammar-breaking-change"
+      ]
+    },
+    "gameplay-programming-and-player-mechanics": {
+      "phase": "phase-1",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Mechanics specification with tuning parameters",
+          "format": "markdown",
+          "purpose": "Makes behavior explicit and adjustable."
+        },
+        {
+          "title": "Player state machine or ability map",
+          "format": "markdown",
+          "purpose": "Defines legal transitions and interrupts."
+        },
+        {
+          "title": "Input-to-feedback loop table",
+          "format": "markdown",
+          "purpose": "Ties each action to visible and audible feedback."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Every mechanic is observable in a build and has an exposed tuning value",
+          "evidence": "tuning table plus in-game demonstration",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Each player state transition is reachable and each illegal transition is blocked",
+          "evidence": "state machine test output or manual matrix",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Input latency and feedback timing are measured against the responsiveness target",
+          "evidence": "measured timings from instrumented build",
+          "required": false,
+          "class": "performance"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Mechanics feel wrong even though code is correct",
+          "mitigation": "Playtest the slice and record concrete tuning changes per session",
+          "severity": "medium"
+        },
+        {
+          "risk": "State machine grows into untestable spaghetti",
+          "mitigation": "Keep transitions data-driven and list them in the ability map",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Play each mechanic from a clean start state and log the observation",
+          "command_hint": null
+        },
+        {
+          "intent": "Run the state transition test matrix",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": []
+    },
+    "game-ai-navigation-and-procedural-behavior": {
+      "phase": "phase-2",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Agent behavior specification with perception and fallback states",
+          "format": "markdown",
+          "purpose": "Defines what the agent can and cannot do."
+        },
+        {
+          "title": "Navigation data and query configuration",
+          "format": "markdown",
+          "purpose": "Documents baked navmesh, cost areas, and avoidance."
+        },
+        {
+          "title": "AI debug visualization specification",
+          "format": "markdown",
+          "purpose": "Makes decisions inspectable at runtime."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Agents reach their goal across the documented test scenarios without stalling",
+          "evidence": "scenario run log with success rate",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Blocked or unreachable paths trigger documented fallback behavior instead of idling",
+          "evidence": "fallback scenario capture",
+          "required": true,
+          "class": "robustness"
+        },
+        {
+          "statement": "Agent count stays inside the declared CPU budget in the stress scenario",
+          "evidence": "profiler capture with agent count",
+          "required": false,
+          "class": "performance"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Agent population causes frame spikes on low-end targets",
+          "mitigation": "Add a stress scenario and time-slice decision logic",
+          "severity": "high"
+        },
+        {
+          "risk": "Navmesh rebake invalidates level changes silently",
+          "mitigation": "Gate level edits on a navmesh validation step",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Run the scenario suite and record success rates per scenario",
+          "command_hint": null
+        },
+        {
+          "intent": "Capture a profiler trace of the stress scenario",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": []
+    },
+    "procedural-generation-and-simulation": {
+      "phase": "phase-3",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Generation pipeline specification with constraints",
+          "format": "markdown",
+          "purpose": "Defines valid output strictly."
+        },
+        {
+          "title": "Seed and determinism policy",
+          "format": "markdown",
+          "purpose": "Makes content reproducible and debuggable."
+        },
+        {
+          "title": "Quality metrics and rejection report",
+          "format": "json",
+          "purpose": "Measures generated quality quantitatively."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "The same seed and configuration reproduce byte-identical or structurally identical output",
+          "evidence": "two-run comparison output",
+          "required": true,
+          "class": "determinism"
+        },
+        {
+          "statement": "Rejection and retry loops are bounded and logged",
+          "evidence": "generation log with attempt counts",
+          "required": true,
+          "class": "robustness"
+        },
+        {
+          "statement": "Generated output passes the declared playability and connectivity constraints at the target rate",
+          "evidence": "batch generation metrics over N seeds",
+          "required": false,
+          "class": "functional"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Hidden global randomness breaks reproducibility",
+          "mitigation": "Route all randomness through one seeded generator and audit call sites",
+          "severity": "high"
+        },
+        {
+          "risk": "Rare seeds produce unplayable layouts",
+          "mitigation": "Batch-test hundreds of seeds and add validation before acceptance",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Generate with a fixed seed twice and diff the outputs",
+          "command_hint": null
+        },
+        {
+          "intent": "Batch generate seeds and report constraint failures",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": []
+    },
+    "2d-games-tilemaps-sprites-and-pixel-systems": {
+      "phase": "phase-2",
+      "engine_family": [
+        "engine-agnostic",
+        "2d"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Tile, atlas, and sprite packing specification",
+          "format": "markdown",
+          "purpose": "Keeps rendering batches and memory predictable."
+        },
+        {
+          "title": "Pixel grid and scaling policy",
+          "format": "markdown",
+          "purpose": "Prevents shimmering and uneven pixels."
+        },
+        {
+          "title": "Animation frame and origin table",
+          "format": "markdown",
+          "purpose": "Defines consistent pivots and timings."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Sprites render without seams or shimmer at every declared zoom and resolution",
+          "evidence": "screenshots at each configuration",
+          "required": true,
+          "class": "visual"
+        },
+        {
+          "statement": "Atlases stay inside the target texture size limit with documented padding",
+          "evidence": "atlas report with dimensions and padding",
+          "required": true,
+          "class": "performance"
+        },
+        {
+          "statement": "Collision shapes align with sprite silhouettes within the declared tolerance",
+          "evidence": "debug overlay capture",
+          "required": false,
+          "class": "functional"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Mixed pixel densities produce inconsistent art",
+          "mitigation": "Declare per-asset pixels-per-unit and validate on import",
+          "severity": "medium"
+        },
+        {
+          "risk": "Sub-pixel camera motion causes visible jitter",
+          "mitigation": "Snap the camera to the pixel grid and test at fractional zoom",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Capture screenshots at each declared resolution and zoom",
+          "command_hint": null
+        },
+        {
+          "intent": "Validate atlas dimensions and padding against the target limit",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": []
+    },
+    "3d-worlds-rendering-materials-and-shaders": {
+      "phase": "phase-2",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic",
+        "hlsl",
+        "glsl"
+      ],
+      "artifacts": [
+        {
+          "title": "Render pipeline and quality tier configuration",
+          "format": "markdown",
+          "purpose": "Defines what lower tiers turn off."
+        },
+        {
+          "title": "Material library with parameter contracts",
+          "format": "markdown",
+          "purpose": "Keeps shader inputs consistent."
+        },
+        {
+          "title": "Frame budget and draw call report",
+          "format": "markdown",
+          "purpose": "Measures the real cost per scene."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Frame time stays inside budget on the minimum declared hardware tier",
+          "evidence": "profiler capture with hardware and settings",
+          "required": true,
+          "class": "performance"
+        },
+        {
+          "statement": "Every shader variant compiles for each declared quality tier and platform",
+          "evidence": "shader compiler log",
+          "required": true,
+          "class": "compatibility"
+        },
+        {
+          "statement": "Each quality tier has an explicit fallback path and looks acceptable",
+          "evidence": "comparison captures per tier",
+          "required": false,
+          "class": "visual"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Shader variant explosion increases build time and memory",
+          "mitigation": "Strip unused variants and record the variant count per shader",
+          "severity": "high"
+        },
+        {
+          "risk": "Visual target is unreachable on low-end hardware",
+          "mitigation": "Define the low tier first and prove the budget before polishing",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Capture profiler data on the minimum tier and record frame time",
+          "command_hint": null
+        },
+        {
+          "intent": "Compile the shader set for every tier and capture warnings",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": []
+    },
+    "physics-vehicles-destruction-and-simulation": {
+      "phase": "phase-2",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Physics layer and collision matrix",
+          "format": "markdown",
+          "purpose": "Prevents unintended interactions."
+        },
+        {
+          "title": "Unit, mass, and timestep policy",
+          "format": "markdown",
+          "purpose": "Makes simulation stable and comparable."
+        },
+        {
+          "title": "Tuning table for forces and constraints",
+          "format": "markdown",
+          "purpose": "Makes feel adjustable."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Simulation is stable at the fixed timestep with documented substeps and does not jitter",
+          "evidence": "capture or log over a fixed test scene",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Fast-moving objects do not tunnel through declared critical colliders",
+          "evidence": "tunneling test scenario output",
+          "required": true,
+          "class": "robustness"
+        },
+        {
+          "statement": "Behavior is identical across the declared frame rate range",
+          "evidence": "comparison run at each frame rate",
+          "required": false,
+          "class": "determinism"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Frame-rate dependent physics produces different gameplay on different hardware",
+          "mitigation": "Use fixed timestep with interpolation and test at multiple rates",
+          "severity": "high"
+        },
+        {
+          "risk": "Unbounded debris count collapses performance",
+          "mitigation": "Cap active bodies and pool or despawn the rest",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Run the physics test scene at each declared frame rate",
+          "command_hint": null
+        },
+        {
+          "intent": "Run the tunneling scenario with extreme velocities",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": []
+    },
+    "animation-rigging-cinematics-and-motion": {
+      "phase": "phase-2",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Animation state machine and transition map",
+          "format": "markdown",
+          "purpose": "Defines legal motion transitions."
+        },
+        {
+          "title": "Retargeting and skeleton mapping notes",
+          "format": "markdown",
+          "purpose": "Keeps motion reusable across characters."
+        },
+        {
+          "title": "Event and camera synchronization timeline",
+          "format": "markdown",
+          "purpose": "Aligns gameplay events with motion and cutscenes."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Transitions and blends show no visible pop in the recorded test clips",
+          "evidence": "video captures with transition timings",
+          "required": true,
+          "class": "visual"
+        },
+        {
+          "statement": "Animation events fire in the declared order within tolerance",
+          "evidence": "event log with timestamps",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Animation cost stays inside the per-frame budget with the declared character count",
+          "evidence": "profiler capture",
+          "required": false,
+          "class": "performance"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Root motion conflicts with code-driven movement",
+          "mitigation": "Pick one authority per state and document it",
+          "severity": "medium"
+        },
+        {
+          "risk": "Retargeted motion breaks contact points",
+          "mitigation": "Validate foot and hand contacts on the target rig",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Record each transition and review the capture for pops",
+          "command_hint": null
+        },
+        {
+          "intent": "Log animation event order in a test scene",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": []
+    },
+    "ui-ux-hud-menus-and-input": {
+      "phase": "phase-1",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "UI flow and screen inventory",
+          "format": "markdown",
+          "purpose": "Defines every screen and its entry and exit."
+        },
+        {
+          "title": "Input map with device coverage and rebinding rules",
+          "format": "json",
+          "purpose": "Makes controls configurable and testable."
+        },
+        {
+          "title": "Accessibility and readability checklist",
+          "format": "markdown",
+          "purpose": "Records minimum text size, contrast, and options."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Layouts hold at every declared aspect ratio and safe area with no clipped or overlapping elements",
+          "evidence": "captures at each configuration",
+          "required": true,
+          "class": "visual"
+        },
+        {
+          "statement": "Every action is reachable on keyboard, gamepad, and pointer where declared, with correct glyphs",
+          "evidence": "input coverage matrix",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Focus order and navigation are complete for non-pointer input, with no traps",
+          "evidence": "focus path capture",
+          "required": false,
+          "class": "accessibility"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Text is unreadable on the smallest declared display",
+          "mitigation": "Define a minimum font size and test on the smallest target",
+          "severity": "medium"
+        },
+        {
+          "risk": "Hardcoded keys make rebinding claims false",
+          "mitigation": "Route all input through the input map and test with a rebound layout",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Capture each screen at min, default, and max resolution",
+          "command_hint": null
+        },
+        {
+          "intent": "Complete a full menu path with gamepad only",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": []
+    },
+    "audio-music-voice-and-interactive-sound": {
+      "phase": "phase-2",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Audio event and parameter map",
+          "format": "markdown",
+          "purpose": "Defines triggers and modulation inputs."
+        },
+        {
+          "title": "Mix bus, snapshot, and ducking specification",
+          "format": "markdown",
+          "purpose": "Keeps the mix predictable across states."
+        },
+        {
+          "title": "Loudness and format report",
+          "format": "markdown",
+          "purpose": "Proves platform-safe delivery."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Program loudness lands on the declared target with no intersample clipping",
+          "evidence": "loudness measurement per delivered asset",
+          "required": true,
+          "class": "quality"
+        },
+        {
+          "statement": "All delivered audio uses codecs and sample rates accepted by every declared target",
+          "evidence": "format report cross-checked with platform requirements",
+          "required": true,
+          "class": "compatibility"
+        },
+        {
+          "statement": "Each event fires exactly once per trigger with no duplicates on state change",
+          "evidence": "event log over a scripted play session",
+          "required": false,
+          "class": "functional"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Uncompressed audio inflates build size beyond the platform limit",
+          "mitigation": "Set per-type compression policy and report total audio bytes",
+          "severity": "medium"
+        },
+        {
+          "risk": "Voice channel limits drop critical dialogue",
+          "mitigation": "Define virtual voice limits and priority rules, then test the worst case",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Measure loudness per delivered file and record results",
+          "command_hint": null
+        },
+        {
+          "intent": "Play the scripted session and log event firing counts",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": []
+    },
+    "networking-multiplayer-online-services-and-backend": {
+      "phase": "phase-3",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Network topology and authority model",
+          "format": "markdown",
+          "purpose": "Defines who owns each piece of state."
+        },
+        {
+          "title": "Message schema with versioning",
+          "format": "json",
+          "purpose": "Keeps clients compatible across builds."
+        },
+        {
+          "title": "Latency and bandwidth budget",
+          "format": "markdown",
+          "purpose": "Bounds what the netcode may consume."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "A two-client session completes the core gameplay path with correct shared state",
+          "evidence": "session transcript from two clients",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Reconnect, host migration, or teardown is handled without a crash or stuck state",
+          "evidence": "failure-injection test output",
+          "required": true,
+          "class": "robustness"
+        },
+        {
+          "statement": "Measured bandwidth and tick rate stay inside the declared budget under simulated latency",
+          "evidence": "network profiler capture",
+          "required": false,
+          "class": "performance"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Client-authoritative state enables cheating and desync",
+          "mitigation": "Move authoritative decisions to the server and validate inputs",
+          "severity": "high"
+        },
+        {
+          "risk": "Protocol changes break older clients in the wild",
+          "mitigation": "Version messages and reject mismatches with a clear error",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Run two clients locally with simulated latency and capture the session",
+          "command_hint": null
+        },
+        {
+          "intent": "Kill the host mid-session and record recovery behavior",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "service-endpoint-change"
+      ]
+    },
+    "databases-accounts-cloud-and-live-services": {
+      "phase": "phase-3",
+      "engine_family": [
+        "engine-agnostic",
+        "cloud"
+      ],
+      "languages": [
+        "engine-agnostic",
+        "sql"
+      ],
+      "artifacts": [
+        {
+          "title": "Data model and schema migration plan",
+          "format": "markdown",
+          "purpose": "Keeps live data safe across releases."
+        },
+        {
+          "title": "Account and identity flow map",
+          "format": "markdown",
+          "purpose": "Documents sign-in, recovery, and deletion."
+        },
+        {
+          "title": "Data retention and privacy policy summary",
+          "format": "markdown",
+          "purpose": "Defines what is collected and for how long."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Schema migrations run and roll back successfully against a copy of production-like data",
+          "evidence": "migration run log on a copy",
+          "required": true,
+          "class": "robustness"
+        },
+        {
+          "statement": "Sign-in, sign-out, recovery, and account deletion each complete without leaking data",
+          "evidence": "auth flow test transcript",
+          "required": true,
+          "class": "security"
+        },
+        {
+          "statement": "No personal data is written to logs or analytics beyond the documented fields",
+          "evidence": "log sample review",
+          "required": false,
+          "class": "privacy"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Migration on live data causes irreversible loss",
+          "mitigation": "Rehearse on a copy, back up first, and require explicit approval to run against production",
+          "severity": "high"
+        },
+        {
+          "risk": "Credentials are committed or embedded in the client",
+          "mitigation": "Keep secrets server-side and scan the repository before every release",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Run migrations forward and back on a restored copy",
+          "command_hint": null
+        },
+        {
+          "intent": "Walk every account flow and record the outcome",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "production-migration",
+        "credential-change"
+      ]
+    },
+    "mobile-console-desktop-and-platform-integration": {
+      "phase": "phase-2",
+      "engine_family": [
+        "engine-agnostic",
+        "mobile",
+        "console",
+        "desktop"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Platform requirement matrix (SDK, store, certification rules)",
+          "format": "markdown",
+          "purpose": "Turns platform rules into checks."
+        },
+        {
+          "title": "Capability abstraction layer specification",
+          "format": "markdown",
+          "purpose": "Isolates device-specific features."
+        },
+        {
+          "title": "Submission checklist per store",
+          "format": "markdown",
+          "purpose": "Prevents avoidable rejection."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "The build launches and reaches gameplay on every declared target device or platform",
+          "evidence": "device test matrix with build ids",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Unsupported platform features degrade gracefully with a documented fallback",
+          "evidence": "feature fallback test notes",
+          "required": true,
+          "class": "robustness"
+        },
+        {
+          "statement": "Store and certification requirements are mapped to a passing or planned check",
+          "evidence": "requirement matrix with status",
+          "required": false,
+          "class": "compliance"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Certification failure close to submission",
+          "mitigation": "Map requirements to checks early and test on real devices each milestone",
+          "severity": "high"
+        },
+        {
+          "risk": "Missing SDK or license blocks the platform entirely",
+          "mitigation": "Confirm SDK and license availability before scheduling platform work",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Install and launch the build on each declared device and record the build id",
+          "command_hint": null
+        },
+        {
+          "intent": "Disable a platform capability and confirm the fallback path",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "store-submission",
+        "sdk-license"
+      ]
+    },
+    "xr-ar-vr-mr-and-spatial-games": {
+      "phase": "phase-3",
+      "engine_family": [
+        "engine-agnostic",
+        "xr"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "XR interaction and locomotion specification",
+          "format": "markdown",
+          "purpose": "Defines comfort-preserving movement."
+        },
+        {
+          "title": "Comfort and accessibility policy",
+          "format": "markdown",
+          "purpose": "Records comfort options that must exist."
+        },
+        {
+          "title": "Performance budget for the XR device",
+          "format": "markdown",
+          "purpose": "XR budgets are far tighter than flat-screen ones."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "The experience sustains the declared frame rate on the actual device with no reprojection storms",
+          "evidence": "on-device profiler capture",
+          "required": true,
+          "class": "performance"
+        },
+        {
+          "statement": "Comfort options (snap turn, vignette, seated mode) are present and functional",
+          "evidence": "options test notes",
+          "required": true,
+          "class": "accessibility"
+        },
+        {
+          "statement": "Tracking loss and controller disconnect are handled without breaking the session",
+          "evidence": "failure-injection notes",
+          "required": false,
+          "class": "robustness"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Frame drops cause motion sickness and store rejection",
+          "mitigation": "Budget against the device first and keep a reprojection-safe fallback path",
+          "severity": "high"
+        },
+        {
+          "risk": "Device-only testing is impossible on the development machine",
+          "mitigation": "Keep device verification as an explicit blocked item owned by a human tester",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Profile on the physical device and record frame timing",
+          "command_hint": null
+        },
+        {
+          "intent": "Walk the comfort options and record behavior",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "device-access"
+      ]
+    },
+    "narrative-dialogue-visual-novels-and-localization": {
+      "phase": "phase-2",
+      "engine_family": [
+        "engine-agnostic",
+        "renpy"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Dialogue or narrative graph with branch conditions",
+          "format": "markdown",
+          "purpose": "Makes branching inspectable."
+        },
+        {
+          "title": "String table and locale set",
+          "format": "csv",
+          "purpose": "Single source for translatable text."
+        },
+        {
+          "title": "Font and glyph coverage report",
+          "format": "markdown",
+          "purpose": "Prevents missing glyph boxes per locale."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "No user-facing string is missing from the string table in any declared locale",
+          "evidence": "string coverage report",
+          "required": true,
+          "class": "localization"
+        },
+        {
+          "statement": "Longest translated strings fit their UI containers without truncation or overflow",
+          "evidence": "pseudo-locale or longest-locale captures",
+          "required": true,
+          "class": "visual"
+        },
+        {
+          "statement": "Every branch in the narrative graph is reachable and every ending is resolvable",
+          "evidence": "graph reachability report",
+          "required": false,
+          "class": "functional"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Strings are concatenated at runtime and become untranslatable",
+          "mitigation": "Use whole-sentence keys with placeholders and validate in a pseudo-locale",
+          "severity": "medium"
+        },
+        {
+          "risk": "Missing CJK or Arabic glyphs render as boxes",
+          "mitigation": "Ship a font with declared coverage and test each locale's glyph set",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Run the string coverage report against every locale",
+          "command_hint": null
+        },
+        {
+          "intent": "Render each screen in a pseudo-locale and capture overflow",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": []
+    },
+    "levels-worlds-puzzles-and-content-design": {
+      "phase": "phase-2",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Level design document with intent per beat",
+          "format": "markdown",
+          "purpose": "States what each level teaches or tests."
+        },
+        {
+          "title": "Puzzle dependency and progression graph",
+          "format": "markdown",
+          "purpose": "Proves solvability and ordering."
+        },
+        {
+          "title": "Blockout map and metrics sheet",
+          "format": "markdown",
+          "purpose": "Gives artists correct scale and proportions."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Every level is completable from a clean save with the intended progression path",
+          "evidence": "playthrough log per level",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "No reachable state soft-locks progression, or every soft-lock has an escape",
+          "evidence": "soft-lock audit notes",
+          "required": true,
+          "class": "robustness"
+        },
+        {
+          "statement": "Blockout scale matches character and camera metrics",
+          "evidence": "overlay captures with metrics",
+          "required": false,
+          "class": "visual"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Players get stuck and have no recovery path",
+          "mitigation": "Add a reset or checkpoint path and test the worst-case sequence",
+          "severity": "high"
+        },
+        {
+          "risk": "Content volume outpaces the production budget",
+          "mitigation": "Track content hours per milestone against a stated per-level cost",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Play each level from a clean save and log completion time",
+          "command_hint": null
+        },
+        {
+          "intent": "Attempt the documented soft-lock sequences",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": []
+    },
+    "game-economy-progression-monetization-and-live-operations": {
+      "phase": "phase-2",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Economy model sheet with sources, sinks, and prices",
+          "format": "markdown",
+          "purpose": "Makes balance checkable."
+        },
+        {
+          "title": "Progression curve data",
+          "format": "csv",
+          "purpose": "Exposes pacing to scrutiny."
+        },
+        {
+          "title": "Live operations calendar and rollback plan",
+          "format": "markdown",
+          "purpose": "Plans events and their removal."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Simulated play of the economy produces intended currency flow without runaway inflation or dead ends",
+          "evidence": "simulation output over a declared player model",
+          "required": true,
+          "class": "balance"
+        },
+        {
+          "statement": "Every purchase or reward path is idempotent and recoverable after a disconnect",
+          "evidence": "transaction test transcript",
+          "required": true,
+          "class": "robustness"
+        },
+        {
+          "statement": "Monetization and live-event changes carry a recorded human approval before release",
+          "evidence": "approval record id",
+          "required": true,
+          "class": "compliance"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Lost purchases create refund and trust damage",
+          "mitigation": "Make transactions idempotent and test disconnect mid-transaction",
+          "severity": "high"
+        },
+        {
+          "risk": "Monetization design ships without policy or ratings review",
+          "mitigation": "Require explicit human approval and ratings disclosure before release",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Run the economy simulation and record sources and sinks",
+          "command_hint": null
+        },
+        {
+          "intent": "Interrupt a transaction and confirm state consistency",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "monetization-change",
+        "live-event-publish",
+        "pricing-change"
+      ]
+    },
+    "testing-debugging-qa-and-automation": {
+      "phase": "phase-1",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Test plan with risk-based coverage",
+          "format": "markdown",
+          "purpose": "Ties tests to actual risk."
+        },
+        {
+          "title": "Automation harness specification and entry command",
+          "format": "markdown",
+          "purpose": "Makes tests runnable by anyone."
+        },
+        {
+          "title": "Reproducible bug report template with capture rules",
+          "format": "markdown",
+          "purpose": "Removes vague defect reports."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "The suite fails when a known defect is deliberately reintroduced",
+          "evidence": "mutation or fault-injection run output",
+          "required": true,
+          "class": "quality"
+        },
+        {
+          "statement": "Every automated test runs from a clean state with a documented single command",
+          "evidence": "clean run log with exit code and duration",
+          "required": true,
+          "class": "process"
+        },
+        {
+          "statement": "Failures produce enough captured context (log, build id, seed, repro steps) to reproduce",
+          "evidence": "sample failure artifact",
+          "required": false,
+          "class": "process"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Flaky tests erode trust until failures are ignored",
+          "mitigation": "Quarantine flaky tests, fix or delete them, and track flake rate",
+          "severity": "high"
+        },
+        {
+          "risk": "Tests pass without exercising real gameplay",
+          "mitigation": "Add at least one end-to-end smoke path per milestone and mutate it to prove sensitivity",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Run the suite from a clean state and record exit code and duration",
+          "command_hint": null
+        },
+        {
+          "intent": "Introduce a deliberate defect and confirm the suite fails",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "test-deletion"
+      ]
+    },
+    "performance-memory-profiling-and-optimization": {
+      "phase": "phase-2",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Performance budget table per target and subsystem",
+          "format": "markdown",
+          "purpose": "Turns performance into a checkable contract."
+        },
+        {
+          "title": "Profile capture set with hardware and settings",
+          "format": "markdown",
+          "purpose": "Makes measurements comparable."
+        },
+        {
+          "title": "Optimization log with before and after measurements",
+          "format": "markdown",
+          "purpose": "Proves each change actually helped."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Frame time and memory stay inside the declared budget on the minimum target with captured evidence",
+          "evidence": "profiler capture plus hardware description",
+          "required": true,
+          "class": "performance"
+        },
+        {
+          "statement": "No unbounded growth appears across a long play session or repeated level loads",
+          "evidence": "memory timeline over a timed soak run",
+          "required": true,
+          "class": "performance"
+        },
+        {
+          "statement": "Each optimization records before and after numbers on the same scenario",
+          "evidence": "optimization log entries",
+          "required": false,
+          "class": "process"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Optimizing with invalid measurements wastes effort",
+          "mitigation": "Fix the scenario, hardware, and settings before recording any number",
+          "severity": "high"
+        },
+        {
+          "risk": "Soak-test memory leaks only appear after release",
+          "mitigation": "Run a timed soak with allocations traced in CI",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Capture profile data on the minimum target and store it with the build id",
+          "command_hint": null
+        },
+        {
+          "intent": "Run a timed soak and record the memory timeline",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": []
+    },
+    "builds-packaging-deployment-ci-cd-and-releases": {
+      "phase": "phase-4",
+      "engine_family": [
+        "engine-agnostic",
+        "ci"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Pipeline definition and pinned tool versions",
+          "format": "text",
+          "purpose": "Makes builds reproducible on any agent."
+        },
+        {
+          "title": "Release checklist with signing and versioning steps",
+          "format": "markdown",
+          "purpose": "Prevents avoidable release defects."
+        },
+        {
+          "title": "Rollback and hotfix plan",
+          "format": "markdown",
+          "purpose": "Makes failures survivable."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "A clean machine builds the exact release artifact from the locked dependency set",
+          "evidence": "clean-machine build log with artifact hash",
+          "required": true,
+          "class": "reproducibility"
+        },
+        {
+          "statement": "Rollback to the previous release is rehearsed and works",
+          "evidence": "rollback rehearsal transcript",
+          "required": true,
+          "class": "recovery"
+        },
+        {
+          "statement": "Artifacts are signed, versioned, and accompanied by symbols where declared",
+          "evidence": "signing and version output",
+          "required": false,
+          "class": "release"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Irreproducible builds block hotfixes",
+          "mitigation": "Pin toolchains, commit lock files, and rebuild from clean images",
+          "severity": "high"
+        },
+        {
+          "risk": "Publishing an unreviewed build damages players and stores",
+          "mitigation": "Require recorded human approval before any publish or submission step",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Build from a clean image and record artifact hashes",
+          "command_hint": null
+        },
+        {
+          "intent": "Rehearse the rollback path on staging",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "publish-release",
+        "store-submission",
+        "signing-key-use"
+      ]
+    },
+    "security-privacy-safety-accessibility-and-compliance": {
+      "phase": "phase-4",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Threat model with assets, actors, and mitigations",
+          "format": "markdown",
+          "purpose": "Directs security work at real risks."
+        },
+        {
+          "title": "Data map with collection, storage, and retention",
+          "format": "markdown",
+          "purpose": "Makes privacy claims auditable."
+        },
+        {
+          "title": "Accessibility conformance report with option inventory",
+          "format": "markdown",
+          "purpose": "Records what accessibility actually exists."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "No secrets, private keys, or credentials appear in shipped builds or the repository",
+          "evidence": "secret scan output on the release artifact and repo",
+          "required": true,
+          "class": "security"
+        },
+        {
+          "statement": "Declared privacy paths (consent, data deletion, minor protection) are implemented and tested",
+          "evidence": "flow test transcript plus data map reference",
+          "required": true,
+          "class": "privacy"
+        },
+        {
+          "statement": "Accessibility options (subtitles, remapping, color modes, text scaling) work in a build",
+          "evidence": "options verification capture",
+          "required": true,
+          "class": "accessibility"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Non-compliance with store, ratings, or privacy rules blocks release",
+          "mitigation": "Map each rule to a check, then require human sign-off before submission",
+          "severity": "high"
+        },
+        {
+          "risk": "Untrusted input reaches privileged code paths",
+          "mitigation": "Validate and sandbox all external input and review the privileged surface",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Scan repo and release artifact for secrets and record output",
+          "command_hint": null
+        },
+        {
+          "intent": "Walk every accessibility option in a build",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "privacy-policy-change",
+        "security-exception",
+        "compliance-signoff"
+      ]
+    },
+    "modding-plugins-scripting-apis-and-user-generated-content": {
+      "phase": "phase-3",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic",
+        "lua",
+        "javascript"
+      ],
+      "artifacts": [
+        {
+          "title": "Public API surface specification with versioning rules",
+          "format": "markdown",
+          "purpose": "Defines what creators may depend on."
+        },
+        {
+          "title": "Sandbox and permission model",
+          "format": "markdown",
+          "purpose": "Bounds what user code can touch."
+        },
+        {
+          "title": "Content validation and load order rules",
+          "format": "json",
+          "purpose": "Makes mod loading deterministic."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "User content cannot read arbitrary files, open sockets, or execute native code through the API",
+          "evidence": "sandbox escape test results",
+          "required": true,
+          "class": "security"
+        },
+        {
+          "statement": "Invalid or conflicting content is rejected with a specific message and does not break the game",
+          "evidence": "negative content test transcript",
+          "required": true,
+          "class": "robustness"
+        },
+        {
+          "statement": "Load order resolution is deterministic for the same content set",
+          "evidence": "two-run resolution comparison",
+          "required": false,
+          "class": "determinism"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Mod API becomes an arbitrary code execution path",
+          "mitigation": "Expose a curated API, deny filesystem and network by default, and test escape attempts",
+          "severity": "high"
+        },
+        {
+          "risk": "API changes break the creator ecosystem",
+          "mitigation": "Version the API, deprecate with a window, and keep compatibility shims",
+          "severity": "medium"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Run the sandbox escape test suite",
+          "command_hint": null
+        },
+        {
+          "intent": "Load a deliberately broken mod and record the error path",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "api-breaking-change",
+        "content-publish"
+      ]
+    },
+    "legacy-games-reverse-engineering-ports-and-preservation": {
+      "phase": "phase-4",
+      "engine_family": [
+        "engine-agnostic",
+        "legacy"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Provenance and lawfulness note for every recovered artifact",
+          "format": "markdown",
+          "purpose": "Keeps the work lawful and auditable."
+        },
+        {
+          "title": "Format and behavior mapping table",
+          "format": "markdown",
+          "purpose": "Maps original behavior to the port."
+        },
+        {
+          "title": "Parity test results against the original",
+          "format": "markdown",
+          "purpose": "Proves fidelity claims."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Original artifacts are preserved unmodified with recorded hashes before any conversion",
+          "evidence": "hash manifest of originals",
+          "required": true,
+          "class": "preservation"
+        },
+        {
+          "statement": "Converted data and behavior pass declared parity checks against the original",
+          "evidence": "parity test output",
+          "required": true,
+          "class": "functional"
+        },
+        {
+          "statement": "Legal basis (ownership, license, permission) is documented before analysis or redistribution",
+          "evidence": "provenance note reviewed by a human",
+          "required": true,
+          "class": "compliance"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "Working on assets without rights creates legal exposure",
+          "mitigation": "Require documented legal clearance before touching binaries or shipping derived assets",
+          "severity": "high"
+        },
+        {
+          "risk": "Original behavior is lost when artifacts are overwritten",
+          "mitigation": "Copy and hash originals first, work only on copies",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Hash and archive the originals before conversion",
+          "command_hint": null
+        },
+        {
+          "intent": "Run parity checks and record differences per mapped behavior",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "binary-analysis",
+        "redistribution",
+        "legal-clearance"
+      ]
+    },
+    "autonomous-game-creation-and-agent-orchestration": {
+      "phase": "phase-5",
+      "engine_family": [
+        "engine-agnostic"
+      ],
+      "languages": [
+        "engine-agnostic"
+      ],
+      "artifacts": [
+        {
+          "title": "Request-to-task traceability map",
+          "format": "markdown",
+          "purpose": "Proves every change answers a request item."
+        },
+        {
+          "title": "Engine and language routing record with rationale",
+          "format": "markdown",
+          "purpose": "Makes routing auditable and revisable."
+        },
+        {
+          "title": "Approval ledger for risky actions",
+          "format": "json",
+          "purpose": "Shows who approved what before it happened."
+        }
+      ],
+      "checks": [
+        {
+          "statement": "Every generated change traces to a request item and a capability id",
+          "evidence": "traceability map plus commit or diff references",
+          "required": true,
+          "class": "process"
+        },
+        {
+          "statement": "Risky actions (publish, delete, credentials, payments, signing) carry a recorded approval before execution",
+          "evidence": "approval ledger entries with approver and timestamp",
+          "required": true,
+          "class": "approval"
+        },
+        {
+          "statement": "The orchestration run is reproducible from the recorded inputs and seeds",
+          "evidence": "two-run comparison of plan ids and artifact hashes",
+          "required": false,
+          "class": "reproducibility"
+        }
+      ],
+      "risks": [
+        {
+          "risk": "An agent performs an unattended destructive or publishing action",
+          "mitigation": "Gate risky actions behind an explicit approval ledger entry and default to dry runs",
+          "severity": "high"
+        },
+        {
+          "risk": "Generated work drifts from the request without anyone noticing",
+          "mitigation": "Require a traceability map entry per change and review it at each gate",
+          "severity": "high"
+        }
+      ],
+      "verification": [
+        {
+          "intent": "Diff the traceability map against the actual changed files",
+          "command_hint": null
+        },
+        {
+          "intent": "Re-run the plan with identical inputs and compare plan ids",
+          "command_hint": null
+        }
+      ],
+      "approval_actions": [
+        "autonomous-publish",
+        "autonomous-delete"
+      ]
+    }
+  },
+  "universal_checks": [
+    {
+      "statement": "The deliverable is editable source plus explicit build or run instructions, not a compiled black box",
+      "evidence": "source files present plus a run command and its expected output",
+      "required": true,
+      "class": "process"
+    },
+    {
+      "statement": "At least one automated or scripted check exists for this capability and it can actually fail",
+      "evidence": "test output showing a pass run and a deliberately induced failure",
+      "required": true,
+      "class": "quality"
+    },
+    {
+      "statement": "Exact engine, editor, language, SDK, and dependency versions are recorded with the artifact",
+      "evidence": "version matrix or lock file stored beside the deliverable",
+      "required": true,
+      "class": "compatibility"
+    },
+    {
+      "statement": "The handoff names the next owner, the exact commands to run, and the known limitations",
+      "evidence": "handoff section with owner, commands, and limitation list",
+      "required": false,
+      "class": "process"
+    }
+  ]
+}

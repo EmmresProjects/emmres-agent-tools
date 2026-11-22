@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "scoring": {
+    "weights": {
+      "scope": 0.18,
+      "file_volume": 0.12,
+      "dependencies": 0.12,
+      "tool_calls": 0.1,
+      "uncertainty": 0.12,
+      "verification_burden": 0.16,
+      "context_size": 0.2
+    },
+    "one_turn_threshold": 0.38,
+    "hard_factor_ceiling": 0.95,
+    "scope_divisor": 12,
+    "file_divisor": 8,
+    "dependency_divisor": 20,
+    "tool_call_divisor": 20,
+    "verification_divisor": 10,
+    "max_context_chars": 20000
+  },
+  "stages": {
+    "min": 1,
+    "max": 24,
+    "units_per_stage": 2,
+    "gates_per_stage": 2,
+    "files_per_group": 4,
+    "max_units_per_stage": 4,
+    "buffer_factor": 0.15,
+    "critical_slack_threshold": 0.5,
+    "merge_contract": {
+      "naming": "stable lowercase-hyphenated ids",
+      "schema": "schema_version 1.0",
+      "versioning": "monotonic stage numbers with Stage X of Y labels",
+      "compatibility": "identical requirement ids and artifact names across parallel streams"
+    }
+  },
+  "limits": {
+    "max_input_bytes": 2000000,
+    "max_output_bytes": 5000000,
+    "max_requirements": 200,
+    "max_packages": 200,
+    "max_stages": 24,
+    "max_evidence_items": 500,
+    "max_actions": 200,
+    "timeout_seconds": 30,
+    "retries": 2,
+    "retry_backoff_seconds": 0.05
+  },
+  "approval": {
+    "require_for_destructive": true,
+    "destructive_commands": ["reset", "cleanup", "publish", "apply"],
+    "approval_flag": "--approve",
+    "policy": "destructive, irreversible, privileged, publishing, financial, credential and security-sensitive actions require explicit user approval before execution",
+    "unsupported_action_classes": ["financial", "credential", "network", "shell", "arbitrary code"]
+  },
+  "continuation": {
+    "phrases": ["continue", "proceed", "go on", "next", "resume", "carry on"],
+    "scope_change_words": ["add", "remove", "expand", "compress", "instead", "change", "drop", "skip", "replace"],
+    "pause_instruction": "Reply Continue, proceed, go on, next, or equivalent to resume from the saved checkpoint.",
+    "reject_ambiguous_replies": true
+  },
+  "gates": {
+    "phases": {
+      "discovery": {"required_evidence_types": ["intake"]},
+      "build": {"required_evidence_types": ["artifact", "check"]},
+      "test": {"required_evidence_types": ["artifact", "check"]},
+      "release": {"required_evidence_types": ["artifact", "check", "coverage"]}
+    }
+  },
+  "storage": {
+    "state_path": "./work-splitter-state.json",
+    "output_dir": "./work-splitter-output",
+    "backup_on_write": true,
+    "temp_prefix": ".ws-"
+  },
+  "artifacts": {
+    "allowed_extensions": [".json", ".md", ".txt", ".csv", ".svg", ".png", ".jpg", ".html", ".yaml", ".yml"],
+    "forbidden_name_patterns": ["^\\.", "(^|[-_])tmp([-_.]|$)", "(^|[-_])temp([-_.]|$)", "\\.bak$", "\\.log$"]
+  },
+  "catalog": {
+    "registry_path": "orchestration-planning-and-work-splitting/asset-skill-catalog.json",
+    "source_path": "orchestration-planning-and-work-splitting/asset-catalog-source.txt"
+  },
+  "schemas": {
+    "state_schema": "orchestration-planning-and-work-splitting/asset-state-schema.json"
+  },
+  "output": {
+    "format": "json",
+    "pretty": true
+  }
+}

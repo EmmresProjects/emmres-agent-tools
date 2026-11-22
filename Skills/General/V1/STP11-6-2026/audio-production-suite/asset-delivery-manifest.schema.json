@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Audio delivery manifest",
+  "description": "Signed record of a delivery package: every file, its checksum, the delivery preset it was validated against, and the approval that released it.",
+  "type": "object",
+  "required": ["manifest_version", "created_at", "root", "preset", "files", "totals"],
+  "properties": {
+    "manifest_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "created_at": {"type": "string"},
+    "generated_by": {"type": "string"},
+    "root": {"type": "string"},
+    "preset": {"type": "string"},
+    "notes": {"type": "string"},
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "role", "bytes", "sha256"],
+        "properties": {
+          "path": {"type": "string"},
+          "role": {"type": "string"},
+          "bytes": {"type": "integer", "minimum": 0},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "audio": {
+            "type": "object",
+            "properties": {
+              "sample_rate": {"type": "integer"},
+              "channels": {"type": "integer"},
+              "bit_depth": {"type": "integer"},
+              "duration_seconds": {"type": "number"},
+              "true_peak_dbtp": {"type": ["number", "null"]},
+              "integrated_lufs": {"type": ["number", "null"]},
+              "structurally_valid": {"type": "boolean"}
+            }
+          }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "required": ["file_count", "total_bytes"],
+      "properties": {
+        "file_count": {"type": "integer", "minimum": 0},
+        "total_bytes": {"type": "integer", "minimum": 0},
+        "audio_files": {"type": "integer", "minimum": 0}
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["check", "status"],
+        "properties": {
+          "check": {"type": "string"},
+          "status": {"type": "string", "enum": ["pass", "warn", "fail", "skipped"]},
+          "detail": {"type": "string"}
+        }
+      }
+    },
+    "sign_off": {
+      "type": "object",
+      "properties": {
+        "approved_by": {"type": "string"},
+        "approval_id": {"type": "string"},
+        "rights_status": {"type": "string"},
+        "approved_at": {"type": "string"}
+      },
+      "required": ["approved_by", "approval_id"]
+    }
+  }
+}

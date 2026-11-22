@@ -1,0 +1,56 @@
+{
+  "scope": "Reusable diagram, line, connector, shape, table, text, arrangement, and accessibility formatting for Microsoft PowerPoint and Google Slides",
+  "powerpoint": {
+    "connector_types": [
+      {"id":"straight","ui":"Insert > Shapes > Lines > Connector: Straight","best_for":"Same-row or same-column relationships"},
+      {"id":"elbow","ui":"Insert > Shapes > Lines > Connector: Elbow","best_for":"Orthogonal diagrams with one routed bend"},
+      {"id":"curved","ui":"Insert > Shapes > Lines > Connector: Curved","best_for":"Sparse diagrams where a curve avoids a collision"},
+      {"id":"freeform","ui":"Insert > Shapes > Lines > Freeform","best_for":"Manual multi-bend paths that do not need connector behavior"}
+    ],
+    "line_styles": {
+      "width_pt_recommended":[0.5,0.75,1.0,1.5,2.0,2.25,3.0,4.5,6.0],
+      "dash_styles":["solid","round-dot","square-dot","dash","dash-dot","long-dash","long-dash-dot","long-dash-dot-dot"],
+      "compound_types":["single","double","thick-thin","thin-thick","triple"],
+      "cap_types":["flat","round","square"],
+      "join_types":["round","bevel","miter"],
+      "transparency_percent":{"min":0,"max":100},
+      "color_sources":["theme","standard","recent","more-colors-rgb","eyedropper"]
+    },
+    "arrow_types": ["none","triangle","stealth","diamond","oval","open-arrow"],
+    "arrow_sizes": ["small","medium","large"],
+    "shape_fill": ["none","solid","gradient","picture-or-texture","pattern","slide-background-fill"],
+    "shape_effects": ["shadow","reflection","glow","soft-edges","bevel","3d-rotation"],
+    "shape_operations": ["change-shape","edit-points","merge-union","merge-combine","merge-fragment","merge-intersect","merge-subtract","group","ungroup","regroup","rotate","flip-horizontal","flip-vertical"],
+    "arrange": ["bring-to-front","send-to-back","bring-forward","send-backward","align-left","align-center","align-right","align-top","align-middle","align-bottom","distribute-horizontally","distribute-vertically","align-to-slide","align-selected-objects","selection-pane","group","rotate"],
+    "size_position": ["height","width","rotation","scale-height","scale-width","lock-aspect-ratio","left","top"],
+    "text_in_shape": ["font-family","font-size","bold","italic","underline","font-color","character-spacing","change-case","horizontal-alignment","vertical-alignment","text-direction","internal-margins","wrap-text","autofit-shrink-text","autofit-resize-shape","do-not-autofit","paragraph-spacing","line-spacing","bullets","numbering"],
+    "table": ["header-row","total-row","banded-rows","first-column","last-column","banded-columns","table-styles","shading","borders","border-color","border-weight","border-dash","cell-margins","merge-cells","split-cells","distribute-rows","distribute-columns","text-direction","vertical-alignment","height","width"],
+    "accessibility": ["alt-text-title","alt-text-description","decorative","reading-order","selection-pane-order","contrast","descriptive-link-text"]
+  },
+  "google_slides": {
+    "line_tools": ["line","arrow","elbow-connector","curved-connector","curve","polyline","scribble"],
+    "line_format": ["line-color","line-weight","line-dash","line-start","line-end"],
+    "arrow_types_common": ["none","arrow","stealth-arrow","filled-arrow","open-arrow","circle","square","diamond"],
+    "shape_format": ["fill-color","border-color","border-weight","border-dash","drop-shadow","reflection","rotation","size-and-rotation","position","alt-text"],
+    "arrange": ["order","align-horizontally","align-vertically","center-on-page-horizontally","center-on-page-vertically","distribute-horizontally","distribute-vertically","group","ungroup","rotate-clockwise-90","rotate-counterclockwise-90","flip-horizontally","flip-vertically"],
+    "format_options": ["size-and-rotation","position","drop-shadow","reflection","alt-text"],
+    "table": ["insert-row-above","insert-row-below","insert-column-left","insert-column-right","delete-row","delete-column","distribute-rows","distribute-columns","merge-cells","unmerge-cells","cell-fill","border-color","border-weight","border-dash","vertical-align","text-format"],
+    "text": ["font","size","bold","italic","underline","text-color","highlight-color","alignment","line-spacing","paragraph-spacing","bullets","numbering","indent","capitalization","link"],
+    "accessibility": ["alt-text-title","alt-text-description","reading-order","contrast","descriptive-link-text"]
+  },
+  "production_defaults": {
+    "diagram_line_width_pt": 1.0,
+    "primary_connector": "elbow-or-segmented-orthogonal",
+    "implementation_connector": "dashed-orthogonal-shared-bus",
+    "begin_arrow": "none",
+    "end_arrow": "triangle-medium",
+    "outline_color": "000000",
+    "fill_color": "FFFFFF",
+    "table_header_fill": "000000",
+    "table_header_text": "FFFFFF",
+    "table_alt_fill": "D9D9D9",
+    "minimum_gap_in": 0.18,
+    "minimum_text_pt": 7,
+    "relationship_label_pt": 6.5
+  }
+}

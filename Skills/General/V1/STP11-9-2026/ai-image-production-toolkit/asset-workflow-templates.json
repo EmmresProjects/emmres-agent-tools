@@ -1,0 +1,184 @@
+{
+  "source": "AI Image Skill Catalog - workflow, platform and template data",
+  "a1111_presets": {
+    "txt2img": {
+      "negative_prompt": "text artifacts, watermark, signature, blurry, low quality, extra fingers, malformed hands, deformed anatomy, duplicate subject, oversaturated",
+      "params": {"sampler_name": "DPM++ 2M", "scheduler": "Karras", "steps": 30, "cfg_scale": 7.0, "width": 1024, "height": 1024, "hires_fix": false, "clip_skip": 1, "seed": -1},
+      "notes": "Baseline SDXL text-to-image preset."
+    },
+    "txt2img_hires": {
+      "negative_prompt": "text artifacts, watermark, signature, blurry, low quality, extra fingers, malformed hands, deformed anatomy, duplicate subject, oversaturated",
+      "params": {"sampler_name": "DPM++ 2M", "scheduler": "Karras", "steps": 30, "cfg_scale": 7.0, "width": 1024, "height": 1024, "clip_skip": 1, "seed": -1, "hires_fix": true, "hires_upscaler": "4x-UltraSharp", "hires_steps": 12, "hires_cfg_scale": 6.0, "hires_resize": 1.5, "hires_denoising_strength": 0.35, "hires_upscaler_for": "Latent"},
+      "notes": "Two-pass rendering. Keep hires denoising below 0.45 or detail turns waxy."
+    },
+    "img2img": {
+      "negative_prompt": "text artifacts, watermark, signature, blurry, low quality, deformed anatomy",
+      "params": {"sampler_name": "DPM++ 2M", "scheduler": "Karras", "steps": 30, "cfg_scale": 7.0, "width": 1024, "height": 1024, "denoising_strength": 0.55, "clip_skip": 1},
+      "notes": "Below 0.35 the source dominates; above 0.75 the composition is redrawn."
+    },
+    "inpaint": {
+      "negative_prompt": "text artifacts, watermark, signature, blurry, low quality, visible seams, mismatched lighting",
+      "params": {"sampler_name": "DPM++ 2M", "scheduler": "Karras", "steps": 30, "cfg_scale": 7.0, "width": 1024, "height": 1024, "denoising_strength": 0.75, "mask_blur": 8, "inpaint_full_res": false, "inpaint_full_res_padding": 32, "inpaint_area": "Only masked"},
+      "notes": "Mask blur above the seam length hides the boundary. Keep masked content at the native resolution."
+    },
+    "controlnet": {
+      "negative_prompt": "text artifacts, watermark, signature, blurry, low quality, deformed anatomy",
+      "params": {"sampler_name": "DPM++ 2M", "scheduler": "Karras", "steps": 30, "cfg_scale": 7.0, "width": 1024, "height": 1024, "alwayson_scripts": [], "controlnet": [{"module": "control_v11p_sd15_canny", "model": "control_v11p_sd15_canny", "weight": 0.7, "control_mode": "Balanced", "pixel_perfect": true, "resize_mode": "Crop and resize", "start_percent": 0.0, "end_percent": 0.8}]},
+      "notes": "Balanced control mode; pixel perfect on. Reduce weight before touching the denoise window."
+    }
+  },
+  "comfyui_templates": {
+    "txt2img": {
+      "nodes": [
+        {"id": 1, "type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "sdxl_base.safetensors"}, "outputs": ["MODEL", "CLIP", "VAE"]},
+        {"id": 2, "type": "CLIPTextEncode", "inputs": {"text": "{prompt}", "clip": [1, 1]}, "outputs": ["CONDITIONING"]},
+        {"id": 3, "type": "CLIPTextEncode", "inputs": {"text": "{negative}", "clip": [1, 1]}, "outputs": ["CONDITIONING"]},
+        {"id": 4, "type": "EmptyLatentImage", "inputs": {"width": 1024, "height": 1024, "batch_size": 1}, "outputs": ["LATENT"]},
+        {"id": 5, "type": "KSampler", "inputs": {"seed": 0, "steps": 30, "cfg": 7.0, "sampler_name": "dpmpp_2m", "scheduler": "karras", "denoise": 1.0, "model": [1, 0], "positive": [2, 0], "negative": [3, 0], "latent_image": [4, 0]}, "outputs": ["LATENT"]},
+        {"id": 6, "type": "VAEDecode", "inputs": {"samples": [5, 0], "vae": [1, 2]}, "outputs": ["IMAGE"]},
+        {"id": 7, "type": "SaveImage", "inputs": {"filename_prefix": "render", "images": [6, 0]}, "outputs": []}
+      ]
+    },
+    "img2img": {
+      "nodes": [
+        {"id": 1, "type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "sdxl_base.safetensors"}, "outputs": ["MODEL", "CLIP", "VAE"]},
+        {"id": 2, "type": "CLIPTextEncode", "inputs": {"text": "{prompt}", "clip": [1, 1]}, "outputs": ["CONDITIONING"]},
+        {"id": 3, "type": "CLIPTextEncode", "inputs": {"text": "{negative}", "clip": [1, 1]}, "outputs": ["CONDITIONING"]},
+        {"id": 8, "type": "LoadImage", "inputs": {"image": "input.png"}, "outputs": ["IMAGE", "MASK"]},
+        {"id": 9, "type": "VAEEncode", "inputs": {"pixels": [8, 0], "vae": [1, 2]}, "outputs": ["LATENT"]},
+        {"id": 5, "type": "KSampler", "inputs": {"seed": 0, "steps": 30, "cfg": 7.0, "sampler_name": "dpmpp_2m", "scheduler": "karras", "denoise": 0.55, "model": [1, 0], "positive": [2, 0], "negative": [3, 0], "latent_image": [9, 0]}, "outputs": ["LATENT"]},
+        {"id": 6, "type": "VAEDecode", "inputs": {"samples": [5, 0], "vae": [1, 2]}, "outputs": ["IMAGE"]},
+        {"id": 7, "type": "SaveImage", "inputs": {"filename_prefix": "render", "images": [6, 0]}, "outputs": []}
+      ]
+    },
+    "inpaint": {
+      "nodes": [
+        {"id": 1, "type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "sdxl_base.safetensors"}, "outputs": ["MODEL", "CLIP", "VAE"]},
+        {"id": 2, "type": "CLIPTextEncode", "inputs": {"text": "{prompt}", "clip": [1, 1]}, "outputs": ["CONDITIONING"]},
+        {"id": 3, "type": "CLIPTextEncode", "inputs": {"text": "{negative}", "clip": [1, 1]}, "outputs": ["CONDITIONING"]},
+        {"id": 8, "type": "LoadImage", "inputs": {"image": "input.png"}, "outputs": ["IMAGE", "MASK"]},
+        {"id": 10, "type": "LoadImage", "inputs": {"image": "mask.png"}, "outputs": ["IMAGE", "MASK"]},
+        {"id": 11, "type": "VAEEncodeForInpaint", "inputs": {"pixels": [8, 0], "vae": [1, 2], "mask": [10, 1], "grow_mask_by": 12}, "outputs": ["LATENT"]},
+        {"id": 5, "type": "KSampler", "inputs": {"seed": 0, "steps": 30, "cfg": 7.0, "sampler_name": "dpmpp_2m", "scheduler": "karras", "denoise": 0.75, "model": [1, 0], "positive": [2, 0], "negative": [3, 0], "latent_image": [11, 0]}, "outputs": ["LATENT"]},
+        {"id": 6, "type": "VAEDecode", "inputs": {"samples": [5, 0], "vae": [1, 2]}, "outputs": ["IMAGE"]},
+        {"id": 7, "type": "SaveImage", "inputs": {"filename_prefix": "render", "images": [6, 0]}, "outputs": []}
+      ]
+    },
+    "controlnet": {
+      "nodes": [
+        {"id": 1, "type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "sdxl_base.safetensors"}, "outputs": ["MODEL", "CLIP", "VAE"]},
+        {"id": 2, "type": "CLIPTextEncode", "inputs": {"text": "{prompt}", "clip": [1, 1]}, "outputs": ["CONDITIONING"]},
+        {"id": 3, "type": "CLIPTextEncode", "inputs": {"text": "{negative}", "clip": [1, 1]}, "outputs": ["CONDITIONING"]},
+        {"id": 12, "type": "ControlNetLoader", "inputs": {"control_net_name": "control_v11p_sd15_canny.pth"}, "outputs": ["CONTROL_NET"]},
+        {"id": 13, "type": "LoadImage", "inputs": {"image": "control.png"}, "outputs": ["IMAGE", "MASK"]},
+        {"id": 14, "type": "ControlNetApplyAdvanced", "inputs": {"strength": 0.7, "start_percent": 0.0, "end_percent": 0.8, "positive": [2, 0], "negative": [3, 0], "control_net": [12, 0], "image": [13, 0]}, "outputs": ["CONDITIONING", "CONDITIONING"]},
+        {"id": 4, "type": "EmptyLatentImage", "inputs": {"width": 1024, "height": 1024, "batch_size": 1}, "outputs": ["LATENT"]},
+        {"id": 5, "type": "KSampler", "inputs": {"seed": 0, "steps": 30, "cfg": 7.0, "sampler_name": "dpmpp_2m", "scheduler": "karras", "denoise": 1.0, "model": [1, 0], "positive": [14, 0], "negative": [14, 1], "latent_image": [4, 0]}, "outputs": ["LATENT"]},
+        {"id": 6, "type": "VAEDecode", "inputs": {"samples": [5, 0], "vae": [1, 2]}, "outputs": ["IMAGE"]},
+        {"id": 7, "type": "SaveImage", "inputs": {"filename_prefix": "render", "images": [6, 0]}, "outputs": []}
+      ]
+    },
+    "upscale": {
+      "nodes": [
+        {"id": 1, "type": "LoadImage", "inputs": {"image": "input.png"}, "outputs": ["IMAGE", "MASK"]},
+        {"id": 2, "type": "ImageUpscaleWithModel", "inputs": {"upscale_model_name": "4x-UltraSharp.pth"}, "outputs": ["IMAGE"]},
+        {"id": 3, "type": "SaveImage", "inputs": {"filename_prefix": "upscaled", "images": [2, 0]}, "outputs": []}
+      ]
+    },
+    "hires-fix": {
+      "nodes": [
+        {"id": 1, "type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "sdxl_base.safetensors"}, "outputs": ["MODEL", "CLIP", "VAE"]},
+        {"id": 2, "type": "CLIPTextEncode", "inputs": {"text": "{prompt}", "clip": [1, 1]}, "outputs": ["CONDITIONING"]},
+        {"id": 3, "type": "CLIPTextEncode", "inputs": {"text": "{negative}", "clip": [1, 1]}, "outputs": ["CONDITIONING"]},
+        {"id": 4, "type": "EmptyLatentImage", "inputs": {"width": 1024, "height": 1024, "batch_size": 1}, "outputs": ["LATENT"]},
+        {"id": 5, "type": "KSampler", "inputs": {"seed": 0, "steps": 30, "cfg": 7.0, "sampler_name": "dpmpp_2m", "scheduler": "karras", "denoise": 1.0, "model": [1, 0], "positive": [2, 0], "negative": [3, 0], "latent_image": [4, 0]}, "outputs": ["LATENT"]},
+        {"id": 6, "type": "VAEDecode", "inputs": {"samples": [5, 0], "vae": [1, 2]}, "outputs": ["IMAGE"]},
+        {"id": 7, "type": "ImageUpscaleWithModel", "inputs": {"upscale_model_name": "4x-UltraSharp.pth"}, "outputs": ["IMAGE"]},
+        {"id": 8, "type": "VAEEncode", "inputs": {"pixels": [7, 0], "vae": [1, 2]}, "outputs": ["LATENT"]},
+        {"id": 9, "type": "KSampler", "inputs": {"seed": 0, "steps": 14, "cfg": 6.0, "sampler_name": "dpmpp_2m", "scheduler": "karras", "denoise": 0.35, "model": [1, 0], "positive": [2, 0], "negative": [3, 0], "latent_image": [8, 0]}, "outputs": ["LATENT"]},
+        {"id": 10, "type": "VAEDecode", "inputs": {"samples": [9, 0], "vae": [1, 2]}, "outputs": ["IMAGE"]},
+        {"id": 11, "type": "SaveImage", "inputs": {"filename_prefix": "hires", "images": [10, 0]}, "outputs": []}
+      ]
+    }
+  },
+  "marketplaces": {
+    "generic": {
+      "label": "Generic product listing",
+      "min_width": 1000, "max_width": 2000, "min_height": 1000, "max_height": 2000,
+      "formats": ["png", "jpeg", "webp"], "max_bytes": 10000000, "min_aspect": 0.8, "max_aspect": 1.25,
+      "background": "pure white or near white", "max_background_deviation": 12, "no_text_overlay": true, "watermark": false
+    },
+    "amazon": {
+      "label": "Marketplace A (white background catalogue)",
+      "min_width": 1600, "max_width": 10000, "min_height": 1600, "max_height": 10000,
+      "formats": ["png", "jpeg", "tiff"], "max_bytes": 25000000, "min_aspect": 0.8, "max_aspect": 1.25,
+      "background": "pure white RGB 255,255,255", "max_background_deviation": 8, "no_text_overlay": true, "watermark": false,
+      "notes": "Product should occupy 85% or more of the frame."
+    },
+    "etsy": {
+      "label": "Marketplace B (handmade marketplace)",
+      "min_width": 2000, "max_width": 10000, "min_height": 2000, "max_height": 10000,
+      "formats": ["png", "jpeg"], "max_bytes": 20000000, "min_aspect": 0.7, "max_aspect": 1.4,
+      "background": "any", "max_background_deviation": 255, "no_text_overlay": false, "watermark": false
+    },
+    "shopify": {
+      "label": "Storefront product page",
+      "min_width": 800, "max_width": 4000, "min_height": 800, "max_height": 4000,
+      "formats": ["png", "jpeg", "webp", "avif"], "max_bytes": 8000000, "min_aspect": 0.5, "max_aspect": 2.0,
+      "background": "any", "max_background_deviation": 255, "no_text_overlay": false, "watermark": false
+    }
+  },
+  "platform_sizes": {
+    "instagram_post": {"width": 1080, "height": 1080, "safe_margin": 0.06},
+    "instagram_portrait": {"width": 1080, "height": 1350, "safe_margin": 0.06},
+    "instagram_story": {"width": 1080, "height": 1920, "safe_margin": 0.12},
+    "facebook_post": {"width": 1200, "height": 1200, "safe_margin": 0.05},
+    "linkedin_post": {"width": 1200, "height": 627, "safe_margin": 0.05},
+    "x_post": {"width": 1600, "height": 900, "safe_margin": 0.05},
+    "youtube_thumbnail": {"width": 1280, "height": 720, "safe_margin": 0.04},
+    "banner_web": {"width": 1584, "height": 396, "safe_margin": 0.03},
+    "card_app": {"width": 800, "height": 600, "safe_margin": 0.05},
+    "avatar": {"width": 512, "height": 512, "safe_margin": 0.08}
+  },
+  "crop_ratios": {
+    "square_1_1": 1.0, "portrait_4_5": 0.8, "story_9_16": 0.5625, "landscape_16_9": 1.7777778,
+    "wide_21_9": 2.3333333, "twitter_1_1": 1.0, "classic_4_3": 1.3333333
+  },
+  "brands": {
+    "northwind": {
+      "name": "Northwind Coffee",
+      "palette": {"primary": "#1f3a2e", "secondary": "#c2703d", "accent": "#f2e8dc", "ink": "#14100d"},
+      "fonts": {"display": "Georgia", "body": "Source Sans 3"},
+      "clear_space": 0.04, "logo": "NW monogram in a circle",
+      "notes": "Warm, crafted, quiet. Keep photography natural and unfiltered."
+    },
+    "helios": {
+      "name": "Helios Solar",
+      "palette": {"primary": "#0b3d91", "secondary": "#f5b700", "accent": "#ffffff", "ink": "#0a1a2f"},
+      "fonts": {"display": "Inter", "body": "Inter"},
+      "clear_space": 0.05, "logo": "Helios wordmark with a rising-sun glyph",
+      "notes": "Clean, technical, optimistic. Blue and yellow only."
+    },
+    "verdant": {
+      "name": "Verdant Organics",
+      "palette": {"primary": "#3f6b35", "secondary": "#e4d8b7", "accent": "#a8c686", "ink": "#22301c"},
+      "fonts": {"display": "Lora", "body": "Work Sans"},
+      "clear_space": 0.03, "logo": "Verdant leaf wordmark",
+      "notes": "Botanical, tactile, muted. Avoid synthetic gloss."
+    }
+  },
+  "packaging_dielines": {
+    "sleek_carton_120x60": {"panels": ["front", "back", "left", "right", "top", "bottom"], "width_mm": 60, "height_mm": 120, "depth_mm": 60, "fold_mm": 3, "print_area_inset_mm": 3, "barcode_panel": "back", "legal_panel": "back"},
+    "sleeve_150x80": {"panels": ["front", "back", "top", "bottom"], "width_mm": 80, "height_mm": 150, "depth_mm": 45, "fold_mm": 2, "print_area_inset_mm": 2, "barcode_panel": "back", "legal_panel": "side"},
+    "label_flat_90x45": {"panels": ["front"], "width_mm": 90, "height_mm": 45, "depth_mm": 0, "fold_mm": 0, "print_area_inset_mm": 2, "barcode_panel": "front", "legal_panel": "front"}
+  },
+  "light_rigs": {
+    "three_point_soft": {"key": {"position": "45 degrees left, 30 degrees above", "size": "120 cm softbox", "power": "1.0"},
+                         "fill": {"position": "45 degrees right, 20 degrees above", "size": "90 cm reflector", "power": "0.4"},
+                         "rim": {"position": "behind subject, high", "size": "60 cm strip", "power": "0.6"}},
+    "single_soft": {"key": {"position": "30 degrees left, 20 degrees above", "size": "150 cm softbox", "power": "1.0"}},
+    "top_down_flatlay": {"key": {"position": "directly overhead", "size": "120 cm softbox", "power": "1.0"}},
+    "edge_high_contrast": {"key": {"position": "90 degrees left, level with subject", "size": "30 cm strip", "power": "1.0"},
+                           "fill": {"position": "none", "size": "none", "power": "0.0"}}
+  }
+}

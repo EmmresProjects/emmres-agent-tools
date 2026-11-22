@@ -1,0 +1,162 @@
+{
+  "schema_id": "ugm-config-1.0",
+  "runtime": {
+    "deadline_seconds": 120,
+    "deterministic_output": true,
+    "default_format": "json",
+    "minimum_python": "3.9",
+    "python_39_syntax_checked": true
+  },
+  "limits": {
+    "max_brief_bytes": 1048576,
+    "max_source_bytes": 8388608,
+    "max_config_bytes": 1048576,
+    "max_catalog_bytes": 8388608,
+    "max_engine_profiles_bytes": 1048576,
+    "max_schema_bytes": 1048576,
+    "max_template_bytes": 2097152,
+    "max_docs_files": 32,
+    "max_doc_bytes": 2097152,
+    "max_generated_file_bytes": 16777216,
+    "max_total_output_bytes": 67108864,
+    "max_output_files": 1200,
+    "max_categories_per_request": 33,
+    "max_skills_per_request": 330,
+    "max_request_bytes": 1048576,
+    "max_request_schema_bytes": 1048576,
+    "max_category_profiles_bytes": 2097152,
+    "max_skill_lexicon_bytes": 4194304,
+    "max_gate_policy_bytes": 1048576,
+    "max_plan_bytes": 16777216,
+    "max_evidence_bytes": 16777216,
+    "max_export_files": 1200
+  },
+  "retry": {
+    "attempts": 3,
+    "backoff_seconds": 0.02
+  },
+  "cleanup": {
+    "remove_partial_on_failure": true
+  },
+  "recovery": {
+    "state_filename": "recovery-state.json",
+    "preserve_existing": true,
+    "allow_replace_existing": false
+  },
+  "approval": {
+    "confirmation_token": "APPROVE",
+    "external_execution": false,
+    "required_actions": [
+      "overwrite",
+      "delete",
+      "publish",
+      "deploy",
+      "release",
+      "store-submission",
+      "purchase",
+      "financial",
+      "credentials",
+      "credential",
+      "security-sensitive",
+      "security-change",
+      "network",
+      "external-execution",
+      "privileged",
+      "destructive",
+      "irreversible"
+    ]
+  },
+  "providers": {
+    "blueprint": "local-standard-library",
+    "prototype": "local-template",
+    "documentation": "local-filesystem",
+    "external": "disabled",
+    "production_contracts": "local-profile-lexicon",
+    "evidence_gate": "local-policy"
+  },
+  "models": {
+    "blueprint": "deterministic-template-v1",
+    "prototype": "canvas-arcade-v1",
+    "documentation": "evidence-extractor-v1",
+    "production_plan": "deterministic-contract-v2",
+    "evidence_gate": "policy-evaluator-v1"
+  },
+  "prompts": {
+    "production_template": "ultimate-game-maker/asset-production-template.md",
+    "html5_template": "ultimate-game-maker/asset-html5-prototype.html"
+  },
+  "policies": {
+    "approval_config": "ultimate-game-maker/tools-default-config.json",
+    "no_external_actions": true,
+    "no_secrets": true,
+    "evidence_policy": "ultimate-game-maker/asset-gate-policy.json"
+  },
+  "paths": {
+    "catalog": "ultimate-game-maker/asset-catalog.json",
+    "engine_profiles": "ultimate-game-maker/asset-engine-profiles.json",
+    "brief_schema": "ultimate-game-maker/asset-brief-schema.json",
+    "brief_template": "ultimate-game-maker/asset-brief-template.json",
+    "category_profiles": "ultimate-game-maker/asset-category-profiles.json",
+    "skill_lexicon": "ultimate-game-maker/asset-skill-lexicon.json",
+    "request_schema": "ultimate-game-maker/asset-request-schema.json",
+    "gate_policy": "ultimate-game-maker/asset-gate-policy.json",
+    "request_template": "ultimate-game-maker/asset-production-request-template.json"
+  },
+  "storage": {
+    "type": "local-filesystem",
+    "output_root": "game-production-output",
+    "production_output_root": "game-production-bundle"
+  },
+  "version_intelligence": {
+    "local_documentation_sources": [],
+    "allowed_extensions": [
+      ".txt",
+      ".md",
+      ".markdown",
+      ".html",
+      ".htm",
+      ".json"
+    ],
+    "required_version_tokens": [
+      "version",
+      "deprecated",
+      "removed",
+      "added",
+      "changed",
+      "migration",
+      "API",
+      "package",
+      "build",
+      "export",
+      "SDK"
+    ],
+    "unverified_authenticity_note": "The tool can inspect user-supplied local files but cannot prove that they are official.",
+    "external_fetch": {
+      "enabled": false,
+      "reason": "No network adapter is implemented; supply local UTF-8 official documentation files."
+    }
+  },
+  "prototype": {
+    "default_engine": "html5",
+    "target_score": 8,
+    "time_limit_seconds": 90,
+    "lives": 3,
+    "world_width": 960,
+    "world_height": 540,
+    "allow_local_storage": true,
+    "allow_audio": true
+  },
+  "selftest": {
+    "cli_timeout_seconds": 30,
+    "node_timeout_seconds": 15,
+    "max_process_output_bytes": 2000000,
+    "skip_node": false
+  },
+  "security": {
+    "allow_network": false,
+    "allow_shell": false,
+    "allow_arbitrary_code": false,
+    "allow_external_tool_execution": false,
+    "allow_absolute_internal_references": false
+  }
+}

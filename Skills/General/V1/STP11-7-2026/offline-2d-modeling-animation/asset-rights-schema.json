@@ -1,0 +1,50 @@
+{
+  "name": "studio-rights-schema",
+  "version": "1.0",
+  "description": "License classes, attribution template, provenance fields and consent records used by the rights commands (tools-project.py). Machine-readable so the release gate can block shipping when an asset lacks an approved basis.",
+  "license_classes": {
+    "proprietary": {"basis": "written client/employer agreement", "redistributable": false},
+    "public-domain": {"basis": "expiration or dedication (CC0)", "redistributable": true},
+    "permissive": {"basis": "MIT/BSD/Zlib-style", "redistributable": true,
+                   "requires": "retain notice"},
+    "copyleft": {"basis": "GPL/CC-BY-SA style", "redistributable": true,
+                 "requires": "share-alike terms; source offer where applicable"},
+    "attribution-required": {"basis": "CC-BY style", "redistributable": true,
+                             "requires": "credit line per author"},
+    "noncommercial": {"basis": "CC-BY-NC style", "redistributable": false,
+                      "requires": "commercial use prohibited"},
+    "editorial": {"basis": "news/editorial only", "redistributable": false},
+    "unknown": {"basis": "none on file", "redistributable": false,
+                "gate": "blocks release until classified"}
+  },
+  "asset_license_fields": ["asset_id", "license_class", "license_file", "authors",
+                           "source_url_or_offline_origin", "acquired", "modification_allowed",
+                           "embedding_allowed", "commercial_use", "notes"],
+  "font_specific": {
+    "rights_split": ["desktop use", "web use", "app embedding", "document embedding",
+                     "modification", "bundling redistribution"],
+    "safe_delivery": "convert text to outlines for final frames; keep editable source internal",
+    "unknown_font_policy": "treat as unknown class; outline before delivery"
+  },
+  "model_specific": {
+    "fields": ["model_id", "source", "version", "sha256", "license_class",
+               "commercial_use_allowed", "output_ownership_claimed", "attribution_required",
+               "training_data_disclosure"],
+    "gate_rule": "generated output ships only when the model license permits the intended use"
+  },
+  "consent_record_fields": ["person", "contribution", "consent_type",
+                            "scope", "recorded", "expires", "document", "restrictions"],
+  "consent_types": ["voice", "face-likeness", "motion-capture-reference", "photo-reference",
+                    "interview", "performance"],
+  "attribution_template": [
+    "This work includes the following third-party materials:",
+    "- {asset} by {authors} — {license} {license_url_or_file}",
+    "- {asset} by {authors} — {license} {license_url_or_file}",
+    "Fonts used under their respective licenses; final-frame text is rendered as outlines.",
+    "Generated imagery produced with locally-run models under {model_license}."
+  ],
+  "sanitizer_targets": ["png tEXt/zTXt chunks", "absolute filesystem paths",
+                        "user names in metadata", "hidden layers flagged reference",
+                        "embedded thumbnails", "comment fields"],
+  "release_gate_rule": "block when any shipped asset has license_class unknown or missing consent for likeness/voice"
+}

@@ -1,0 +1,27 @@
+{
+  "project_title": "Clean Water, Clear Future",
+  "prompt": "Open on a sunrise over a coastal town. Show volunteers filling reusable bottles at a community water station. End with a child drinking clean water and the message: Every refill matters.",
+  "objective": "Explain a community refill initiative with a hopeful, factual tone.",
+  "audience": "Local residents and community partners",
+  "duration_seconds": 12,
+  "aspect_ratio": "16:9",
+  "resolution": [1280, 720],
+  "fps": 24,
+  "language": "en",
+  "seed": 42,
+  "categories": [
+    "prompt-engineering-and-creative-briefing",
+    "preproduction-shot-lists-and-storyboards",
+    "captioning-subtitles-and-accessibility",
+    "quality-assurance-and-evaluation",
+    "safety-rights-consent-and-provenance"
+  ],
+  "shots": [
+    {"id": "shot-01", "title": "Sunrise", "visual": "Wide shot of a coastal town at sunrise; slow push in.", "caption": "A new day begins with a simple choice.", "duration_seconds": 4, "camera": "wide, slow push in"},
+    {"id": "shot-02", "title": "Community refill", "visual": "Medium close-ups of volunteers filling reusable bottles.", "caption": "Together, we make clean water easier to reach.", "duration_seconds": 4, "camera": "medium close-up"},
+    {"id": "shot-03", "title": "Every refill matters", "visual": "Portrait detail of a reusable bottle, then cut to the closing message.", "caption": "Every refill matters.", "duration_seconds": 4, "camera": "detail to static end card"}
+  ],
+  "assets": [],
+  "safety": {"contains_real_person": false, "voice_cloning": false, "sensitive_content": false, "factual_reconstruction": false, "political_content": false},
+  "delivery": {"container": "mp4", "codec": "libx264", "audio": false, "captions": true, "disclosure": "Previsualization generated from an editable production brief."}
+}

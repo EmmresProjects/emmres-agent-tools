@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "tool": "offline-research-writing-translation",
+  "version": "1.0.0",
+  "runtime": {
+    "python_min": "3.9",
+    "network": "disabled",
+    "standard_library_only": true,
+    "max_input_bytes": 10485760,
+    "max_documents": 10000,
+    "max_document_chars": 500000,
+    "max_query_chars": 4096,
+    "max_output_bytes": 20971520,
+    "timeout_seconds": 30,
+    "retries": 1,
+    "retry_backoff_seconds": 0.05,
+    "cancel_poll_seconds": 0.1,
+    "cleanup_temp_on_exit": true
+  },
+  "asset_paths": {
+    "catalog": "asset-capability-catalog.json",
+    "source_schema": "asset-source-schema.json",
+    "sample_corpus": "asset-sample-corpus.jsonl",
+    "glossary": "asset-glossary.csv",
+    "translation_memory": "asset-translation-memory.json",
+    "report_template": "asset-report-template.md",
+    "rubric": "asset-acceptance-rubric.json",
+    "request_schema": "asset-request-schema.json"
+  },
+  "storage": {
+    "workspace": "runtime-workspace",
+    "corpus": "corpus.jsonl",
+    "index": "index.json",
+    "vector_index": "vector-index.json",
+    "audit_log": "audit.jsonl",
+    "approvals": "approvals.json",
+    "checkpoint_prefix": "checkpoint-",
+    "pipeline_prefix": "pipeline-",
+    "output_prefix": "output-"
+  },
+  "providers": {
+    "ocr": {
+      "mode": "text-sidecar",
+      "model_id": null,
+      "local_path": null,
+      "status": "configurable-not-executed",
+      "reason": "Image OCR model binaries are not bundled."
+    },
+    "handwriting": {
+      "mode": "text-sidecar",
+      "model_id": null,
+      "local_path": null,
+      "status": "configurable-not-executed",
+      "reason": "Handwriting model binaries are not bundled."
+    },
+    "asr": {
+      "mode": "transcript-sidecar",
+      "model_id": null,
+      "local_path": null,
+      "status": "configurable-not-executed",
+      "reason": "Audio decoding and ASR model binaries are not bundled."
+    },
+    "translation": {
+      "mode": "memory-and-glossary",
+      "model_id": null,
+      "local_path": null,
+      "status": "configurable-not-executed",
+      "reason": "Neural translation model binaries are not bundled."
+    },
+    "embedding": {
+      "mode": "deterministic-hashed-ngrams",
+      "model_id": "builtin-hashed-ngrams-v1",
+      "local_path": null,
+      "status": "implemented"
+    },
+    "reranker": {
+      "mode": "lexical-feature-reranker",
+      "model_id": "builtin-lexical-v1",
+      "local_path": null,
+      "status": "implemented"
+    },
+    "language_model": {
+      "mode": "extractive-only",
+      "model_id": null,
+      "local_path": null,
+      "status": "configurable-not-executed",
+      "reason": "No local LLM is bundled; writing is deterministic and evidence-extractive."
+    }
+  },
+  "policies": {
+    "languages": ["en", "es", "fil", "fr", "de", "zh", "ja", "ko", "ar"],
+    "default_language": "en",
+    "default_target_language": "es",
+    "jurisdiction": "operator-configured",
+    "source_hierarchy": ["primary", "secondary", "tertiary", "unverified"],
+    "blocked_statuses": ["retracted", "superseded", "unverified"],
+    "min_authority": 0.4,
+    "max_quote_chars": 300,
+    "require_permissions_for": ["search", "quote", "redistribute", "export"],
+    "require_human_review_for": ["export", "publish", "purge", "secure-dispose", "rights-exception"],
+    "prompt_injection_terms": ["ignore previous instructions", "disregard the system", "reveal the secret", "execute shell", "exfiltrate"],
+    "secret_like_patterns": ["api[_-]?key", "secret[_-]?token", "private[_-]?key", "password\\s*[:=]", "bearer\\s+[a-z0-9._-]{12,}"],
+    "pii_like_patterns": ["[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}", "\\+?\\d[\\d -]{8,}\\d", "\\b\\d{3}-\\d{2}-\\d{4}\\b"],
+    "allow_overwrite": false,
+    "allow_parent_traversal_in_internal_paths": false,
+    "allow_external_urls": false
+  },
+  "approval": {
+    "confirmation_text": "APPROVE",
+    "delete_confirmation_text": "DELETE",
+    "token_ttl_hours": 24,
+    "require_nonempty_approver": true,
+    "self_approval_allowed": false
+  },
+  "recovery": {
+    "checkpoint_after_each_operation": true,
+    "resume_from_last_completed_stage": true,
+    "retry_transient_io_errors": true,
+    "retain_failed_stage_report": true
+  }
+}

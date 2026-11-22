@@ -1,0 +1,226 @@
+{
+  "schema_version": "1.0",
+  "title": "Worker and official program routing table",
+  "note": "Routing hints only. `provides` lists capability classes a profile can serve; `requires` lists what must be true before work is routed there.",
+  "requirement_labels": {
+    "gpu": "GPU REQUIRED",
+    "fpga-hardware": "FPGA HARDWARE REQUIRED",
+    "windows-host": "WINDOWS HOST REQUIRED",
+    "macos-host": "MACOS HOST REQUIRED",
+    "official-sdk": "OFFICIAL SDK REQUIRED",
+    "official-devkit": "OFFICIAL DEVKIT REQUIRED",
+    "partner-account": "LICENSE REQUIRED",
+    "cartridge-reader": "PHYSICAL HARDWARE REQUIRED",
+    "optical-drive": "PHYSICAL HARDWARE REQUIRED",
+    "capture-device": "PHYSICAL HARDWARE REQUIRED",
+    "virtualization": "VIRTUALIZATION REQUIRED",
+    "network": "NETWORK REQUIRED",
+    "user-media": "USER-OWNED MEDIA REQUIRED",
+    "user-firmware": "BIOS OR FIRMWARE REQUIRED FROM USER"
+  },
+  "workers": [
+    {
+      "profile_id": "linux-x86_64-core",
+      "name": "Linux x86_64 core worker",
+      "host_type": "linux",
+      "architecture": "x86_64",
+      "provides": [
+        "build-toolchain",
+        "hashing",
+        "media-inspection",
+        "dat-verification",
+        "reporting",
+        "emulator-runtime",
+        "open-fpga-toolchain"
+      ],
+      "requires": [],
+      "notes": "default worker for every local, non-privileged capability"
+    },
+    {
+      "profile_id": "linux-gpu-worker",
+      "name": "Linux GPU worker",
+      "host_type": "linux",
+      "provides": [
+        "gpu-rendering",
+        "shader-comparison",
+        "capture",
+        "frame-comparison"
+      ],
+      "requires": [
+        "gpu"
+      ],
+      "notes": "needed for renderer accuracy work, shader comparison and frame capture"
+    },
+    {
+      "profile_id": "windows-console-worker",
+      "name": "Licensed Windows console tool worker",
+      "host_type": "windows",
+      "provides": [
+        "windows-media-tools",
+        "windows-debuggers",
+        "optical-drive-tools",
+        "signed-tooling"
+      ],
+      "requires": [
+        "windows-host"
+      ],
+      "notes": "licensed Windows-only tools; credentials stay on the worker"
+    },
+    {
+      "profile_id": "macos-console-worker",
+      "name": "macOS console tool worker",
+      "host_type": "macos",
+      "provides": [
+        "xcode-toolchain",
+        "metal-capture",
+        "notarization"
+      ],
+      "requires": [
+        "macos-host"
+      ],
+      "notes": "Xcode and Metal capture work; keep credentials isolated"
+    },
+    {
+      "profile_id": "fpga-lab",
+      "name": "FPGA and logic analysis lab",
+      "provides": [
+        "fpga-synthesis",
+        "place-and-route",
+        "logic-analysis",
+        "hdl-simulation",
+        "board-documentation"
+      ],
+      "requires": [
+        "fpga-hardware"
+      ],
+      "notes": "vendor suites (Quartus, Vivado, Diamond) plus sigrok and OpenOCD"
+    },
+    {
+      "profile_id": "physical-console-lab",
+      "name": "Physical console and media lab",
+      "provides": [
+        "cartridge-dumping",
+        "optical-dumping",
+        "save-extraction",
+        "controller-testing",
+        "hardware-capture"
+      ],
+      "requires": [
+        "cartridge-reader",
+        "optical-drive",
+        "capture-device",
+        "user-media"
+      ],
+      "notes": "the only place raw media work happens; repeated reads are mandatory"
+    },
+    {
+      "profile_id": "official-playstation-partner",
+      "name": "PlayStation Partners worker",
+      "provides": [
+        "ps4-development",
+        "ps5-development",
+        "playstation-certification",
+        "playstation-performance-analysis"
+      ],
+      "requires": [
+        "partner-account",
+        "official-sdk",
+        "official-devkit"
+      ],
+      "official_program": "PlayStation Partners (Sony Interactive Entertainment)",
+      "notes": "no public substitute exists; route all PS4/PS5 work here"
+    },
+    {
+      "profile_id": "official-xbox-gdk",
+      "name": "Microsoft GDK worker",
+      "provides": [
+        "xbox-one-development",
+        "xbox-series-development",
+        "xbox-certification",
+        "xbox-performance-analysis"
+      ],
+      "requires": [
+        "partner-account",
+        "official-sdk",
+        "official-devkit"
+      ],
+      "official_program": "Microsoft Xbox developer program (GDK)",
+      "notes": "GDK access is granted per account; never substitute leaked SDKs"
+    },
+    {
+      "profile_id": "official-nintendo-dev",
+      "name": "Nintendo developer portal worker",
+      "provides": [
+        "switch-development",
+        "switch-2-development",
+        "nintendo-certification",
+        "nintendo-lotcheck"
+      ],
+      "requires": [
+        "partner-account",
+        "official-sdk",
+        "official-devkit"
+      ],
+      "official_program": "Nintendo Developer Portal",
+      "notes": "Switch and Switch 2 development requires portal access and licensed hardware"
+    },
+    {
+      "profile_id": "steamworks-verification",
+      "name": "Steamworks and handheld verification worker",
+      "provides": [
+        "steam-deck-verification",
+        "windows-handheld-verification",
+        "linux-runtime-verification"
+      ],
+      "requires": [
+        "partner-account"
+      ],
+      "official_program": "Steamworks partner program",
+      "notes": "covers Steam Deck, SteamOS and Windows handheld verification"
+    }
+  ],
+  "platform_routing": {
+    "ps1": "linux-x86_64-core",
+    "ps2": "linux-x86_64-core",
+    "ps3": "linux-x86_64-core",
+    "ps4": "official-playstation-partner",
+    "ps5": "official-playstation-partner",
+    "ps5-pro": "official-playstation-partner",
+    "psp": "linux-x86_64-core",
+    "vita": "linux-x86_64-core",
+    "xbox": "linux-x86_64-core",
+    "xbox-360": "linux-x86_64-core",
+    "xbox-one": "official-xbox-gdk",
+    "xbox-series-x": "official-xbox-gdk",
+    "xbox-series-s": "official-xbox-gdk",
+    "nes": "physical-console-lab",
+    "snes": "physical-console-lab",
+    "n64": "physical-console-lab",
+    "gamecube": "linux-x86_64-core",
+    "wii": "linux-x86_64-core",
+    "wii-u": "linux-x86_64-core",
+    "switch": "official-nintendo-dev",
+    "switch-2": "official-nintendo-dev",
+    "game-boy": "physical-console-lab",
+    "game-boy-advance": "physical-console-lab",
+    "ds": "linux-x86_64-core",
+    "3ds": "linux-x86_64-core",
+    "genesis": "physical-console-lab",
+    "dreamcast": "physical-console-lab",
+    "saturn": "physical-console-lab",
+    "arcade": "physical-console-lab",
+    "steam-deck": "steamworks-verification",
+    "windows-handheld": "steamworks-verification",
+    "fpga": "fpga-lab"
+  },
+  "modern_official_platforms": [
+    "ps4",
+    "ps5",
+    "ps5-pro",
+    "xbox-one",
+    "xbox-series-x",
+    "xbox-series-s",
+    "switch",
+    "switch-2"
+  ]
+}
