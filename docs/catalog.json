@@ -3,8 +3,8 @@
   "name": "Emmre's Agent Tools",
   "summary": {
     "Tools": {
-      "files": 0,
-      "categories": 0
+      "files": 5,
+      "categories": 3
     },
     "Knowledge": {
       "files": 0,
@@ -30,6 +30,11 @@
       "section": "Tools",
       "path": "Tools/Code",
       "name": "Code"
+    },
+    {
+      "section": "Tools",
+      "path": "Tools/Code/Emmre's Ultimate Roblox Developer",
+      "name": "Emmre's Ultimate Roblox Developer"
     },
     {
       "section": "Tools",
@@ -573,6 +578,109 @@
     }
   ],
   "files": [
+    {
+      "section": "Tools",
+      "category": "Audio",
+      "subcategories": [
+        "Audio"
+      ],
+      "name": "Emmre's Offline Neural Voice System (1.0.0).xml",
+      "title": "Emmre's Offline Neural Voice System (1.0.0)",
+      "path": "Tools/Audio/Emmre's Offline Neural Voice System (1.0.0).xml",
+      "url": "Tools/Audio/Emmre's Offline Neural Voice System (1.0.0).xml",
+      "bytes": 137197164,
+      "size": "130.8 MiB",
+      "extension": ".xml",
+      "mime": "text/xml",
+      "kind": "readable",
+      "searchable": true,
+      "downloadable": true,
+      "description": "",
+      "sha256": "476d448d1bc7603fcc1a53e4858fc272fa249ffcf63bcb9de617094e85d28bd9"
+    },
+    {
+      "section": "Tools",
+      "category": "Code",
+      "subcategories": [
+        "Code",
+        "Emmre's Ultimate Roblox Developer"
+      ],
+      "name": "Emmre's Ultimate Roblox Developer - Part 1.xml",
+      "title": "Emmre's Ultimate Roblox Developer   Part 1",
+      "path": "Tools/Code/Emmre's Ultimate Roblox Developer/Emmre's Ultimate Roblox Developer - Part 1.xml",
+      "url": "Tools/Code/Emmre's Ultimate Roblox Developer/Emmre's Ultimate Roblox Developer - Part 1.xml",
+      "bytes": 167395081,
+      "size": "159.6 MiB",
+      "extension": ".xml",
+      "mime": "text/xml",
+      "kind": "readable",
+      "searchable": true,
+      "downloadable": true,
+      "description": "",
+      "sha256": "6ecff472dc98dcfa7ccd064029a20aedb64030f59d6e5bd3f4c2422bff52ae99"
+    },
+    {
+      "section": "Tools",
+      "category": "Code",
+      "subcategories": [
+        "Code",
+        "Emmre's Ultimate Roblox Developer"
+      ],
+      "name": "Emmre's Ultimate Roblox Developer - Part 2.xml",
+      "title": "Emmre's Ultimate Roblox Developer   Part 2",
+      "path": "Tools/Code/Emmre's Ultimate Roblox Developer/Emmre's Ultimate Roblox Developer - Part 2.xml",
+      "url": "Tools/Code/Emmre's Ultimate Roblox Developer/Emmre's Ultimate Roblox Developer - Part 2.xml",
+      "bytes": 405242539,
+      "size": "386.5 MiB",
+      "extension": ".xml",
+      "mime": "text/xml",
+      "kind": "readable",
+      "searchable": true,
+      "downloadable": true,
+      "description": "",
+      "sha256": "05b4b98c07afaef2fcdd77a5c0bc10ac71a271fb35d63ca41fc7b82387d264c3"
+    },
+    {
+      "section": "Tools",
+      "category": "Code",
+      "subcategories": [
+        "Code",
+        "Emmre's Ultimate Roblox Developer"
+      ],
+      "name": "Emmre's Ultimate Roblox Developer - Part 3.xml",
+      "title": "Emmre's Ultimate Roblox Developer   Part 3",
+      "path": "Tools/Code/Emmre's Ultimate Roblox Developer/Emmre's Ultimate Roblox Developer - Part 3.xml",
+      "url": "Tools/Code/Emmre's Ultimate Roblox Developer/Emmre's Ultimate Roblox Developer - Part 3.xml",
+      "bytes": 20170940,
+      "size": "19.2 MiB",
+      "extension": ".xml",
+      "mime": "text/xml",
+      "kind": "readable",
+      "searchable": true,
+      "downloadable": true,
+      "description": "",
+      "sha256": "694fb03b9694532bcc6c4feaa39715a5726de14777ad331835a60e375aac4089"
+    },
+    {
+      "section": "Tools",
+      "category": "Web",
+      "subcategories": [
+        "Web"
+      ],
+      "name": "Emmre's Ultimate Web Developer.xml",
+      "title": "Emmre's Ultimate Web Developer",
+      "path": "Tools/Web/Emmre's Ultimate Web Developer.xml",
+      "url": "Tools/Web/Emmre's Ultimate Web Developer.xml",
+      "bytes": 458760750,
+      "size": "437.5 MiB",
+      "extension": ".xml",
+      "mime": "text/xml",
+      "kind": "readable",
+      "searchable": true,
+      "downloadable": true,
+      "description": "",
+      "sha256": "cf9f446478f200e893a69f66fc957f1b66ccae0fded00581e169665bdddfc457"
+    },
     {
       "section": "Skills",
       "category": "General",
